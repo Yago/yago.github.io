@@ -1,0 +1,11 @@
+node_modules
+.sass-cache
+*.DS_Store
+.publish
+
+/dist
+/build
+/styleguide
+
+tests/regression/compare
+tests/regression/temp
