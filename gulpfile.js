@@ -16,6 +16,7 @@ require(config.tasks + 'icons')();              // $ gulp icons
 require(config.tasks + 'favicons')();           // $ gulp favicons
 require(config.tasks + 'clean')();              // $ gulp clean
 require(config.tasks + 'server')();             // $ gulp serve
+require(config.tasks + 'metalsmith')();         // $ gulp metalsmith
 require(config.tasks + 'gh-pages')();           // $ gulp deploy
 require(config.tasks + 'tests-regression')();   // $ gulp regression
 require(config.tasks + 'tests-unit')();         // $ gulp test:unit
@@ -36,7 +37,7 @@ gulp.task('init', function() {
  * Task to build assets on production server
  */
 gulp.task('build',['clean'], function() {
-  return gulp.start('vendors', 'styles', 'img', 'scripts', 'icons');
+  return gulp.start('vendors', 'styles', 'img', 'scripts', 'icons', 'metalsmith');
 });
 
 
@@ -44,5 +45,5 @@ gulp.task('build',['clean'], function() {
  * Default task
  */
 gulp.task('default', ['clean'], function(done){
-  runSequence(['css-vendors', 'js-vendors', 'fonts-vendors', 'polyfills-vendors', 'img', 'icons', 'styles', 'scripts'], 'favicons', done);
+  runSequence(['css-vendors', 'js-vendors', 'fonts-vendors', 'polyfills-vendors', 'img', 'icons', 'styles', 'scripts'], 'favicons', 'metalsmith', done);
 });

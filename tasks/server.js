@@ -32,6 +32,9 @@ module.exports = function() {
     gulp.watch([config.assets + 'js/**/*.js'], function() {
       runSequence('scripts', reload);
     });
+    gulp.watch([config.content + '**/*.md', config.assets + 'components/**/*.{html,swig}', config.assets + 'templates/**/*.{html,swig}'], function() {
+      runSequence('metalsmith', reload);
+    });
   });
 
 }
