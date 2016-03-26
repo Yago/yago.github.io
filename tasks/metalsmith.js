@@ -8,6 +8,7 @@ var gulp          = require('gulp'),
 var markdown      = require('metalsmith-markdown'),
     permalinks    = require('metalsmith-permalinks'),
     layouts       = require('metalsmith-layouts'),
+    pagination    = require('metalsmith-pagination'),
     collections   = require('metalsmith-collections');
 
 module.exports = function() {
@@ -26,8 +27,9 @@ module.exports = function() {
       .pipe($.metalsmith({
         use: [
           markdown(),
-          permalinks(),
+          permalinks(config.metalsmith.plugins.collections),
           collections(config.metalsmith.plugins.collections),
+          pagination(config.metalsmith.plugins.pagination),
           // function(files, metalsmith, done){
           //   console.log(files)
           //   done();

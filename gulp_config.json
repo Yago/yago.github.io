@@ -46,21 +46,29 @@
   "browsers": ["last 2 versions", "safari 5", "ie 8", "ie 9", "ff 27", "opera 12.1"],
   "metalsmith": {
     "plugins": {
+      "permalinks": {
+        "date": "YYYY",
+        "pattern": ":collection/:title"
+      },
       "collections": {
         "posts": {
           "sortBy": "date",
           "reverse": true
         }
       },
-      "permalinks": {
-        "date": "YYYY",
-        "pattern": ":collection/:title"
-      },
       "layouts": {
         "engine": "swig",
         "default": "base.swig",
         "directory": "assets/templates",
         "rename": true
+      },
+      "pagination": {
+        "collections.posts": {
+          "perPage": 1,
+          "layout": "base.swig",
+          "first": "index.html",
+          "path": "posts/:num/index.html"
+        }
       }
     }
   }

@@ -1,15 +1,21 @@
 <!doctype html>
 <html>
 <head>
-  <title>{{ title }}</title>
+  <title>{{ pagination.num }}</title>
 </head>
 <body>
   <h1>Homepage</h1>
   <pre>{{collections|raw}}</pre>
   <ul>
-    {% for post in collections.posts %}
-      <li><a href="{{post.path}}">{{post.title}}</a></li>
+    {% for post in pagination.files %}
+      <li><a href="/{{post.path}}">{{post.title}}</a></li>
     {% endfor %}
   </ul>
+  {% if pagination.previous.path %}
+    <a href="/{{pagination.previous.path}}">Previous</a>
+  {% endif %}
+  {% if pagination.next.path %}
+    <a href="/{{pagination.next.path}}">Next</a>
+  {% endif %}
 </body>
 </html>
