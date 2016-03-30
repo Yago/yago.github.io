@@ -1,10 +1,11 @@
-/*
-Title: Styles modulaires - bonnes pratiques
-Description: La modularité ou OO (object oriented) est un concept depuis longtemps utilisé en programmation. Avec l'apparition des préprocesseurs CSS, le monde du frontend a commencé à s'ouvrir gentiment à cette idée afin de créer des styles plus flexibles et réutilisables. 
-Author: Yann Gouffon
-Date: 2013-11-25 16:06:30
-Tags: html-css
-*/
+---
+title: Styles modulaires - bonnes pratiques
+description: La modularité ou OO (object oriented) est un concept depuis longtemps utilisé en programmation. Avec l'apparition des préprocesseurs CSS, le monde du frontend a commencé à s'ouvrir gentiment à cette idée afin de créer des styles plus flexibles et réutilisables. 
+author: Yann Gouffon
+date: 2013-11-25 16:06:30
+collection: posts
+tags: html-css
+---
 
 La modularité ou OO (object oriented) est un concept depuis longtemps utilisé en programmation. Avec l'apparition des préprocesseurs CSS, le monde du frontend a commencé à s'ouvrir gentiment à cette idée afin de créer des styles plus flexibles et réutilisables. Maintenant que le temps de l'expérimentation de ses nouvelles technologies est passé, et avec le recul nécessaire, **voici les bonnes pratiques à observer pour des styles au top**.
 

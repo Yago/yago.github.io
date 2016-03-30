@@ -1,10 +1,11 @@
-/*
-Title: Choisissez le SVG
-Description: Avec la multiplication des différences de densité de pixel sur les nouveaux devices, rendre une image où un pictogramme peut devenir un véritable casse-tête. Il existe plusieurs solutions afin d'arriver au meilleur résultat.
-Author: Yann Gouffon
-Date: 2013-05-24 09:12:47
-Tags: html-css
-*/
+---
+title: Choisissez le SVG
+description: Avec la multiplication des différences de densité de pixel sur les nouveaux devices, rendre une image où un pictogramme peut devenir un véritable casse-tête. Il existe plusieurs solutions afin d'arriver au meilleur résultat.
+author: Yann Gouffon
+date: 2013-05-24 09:12:47
+collection: posts
+tags: html-css
+---
 
 Avec la multiplication des différences de densité de pixel sur les nouveaux devices, rendre une image où un pictogramme peut devenir un véritable casse-tête. Il existe des solutions comme [Slicy](http://macrabbit.com/slicy/) qui dédoubleront vos images afin de les optimiser pour retina, mais cela demande un effort supplémentaire.
 

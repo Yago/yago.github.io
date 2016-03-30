@@ -1,6 +1,6 @@
-/*
-Title: Blog
+---
+title: Blog
 Slug: blog
 Template: blog
-*/
+---
 
