@@ -1,8 +1,8 @@
-/*
-Title: Affiche libre
+---
+title: Affiche libre
 Description: Durant le cours de graphisme de 2ème, nous devions réaliser une affiche libre.
-Author: Yann Gouffon
-Date: 2013-05-17 18:02:30
+author: Yann Gouffon
+date: 2013-05-17 18:02:30
 Tags: graphic
 */
 

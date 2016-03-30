@@ -1,8 +1,8 @@
-/*
-Title: Samuraï teaser
+---
+title: Samuraï teaser
 Description: Pour le cours de motion, nous devions faire le teaser d'une bande dessinée au choix.
-Author: Yann Gouffon
-Date: 2013-05-17 18:19:42
+author: Yann Gouffon
+date: 2013-05-17 18:19:42
 Tags: motion
 */
 

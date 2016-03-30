@@ -1,8 +1,8 @@
-/*
-Title: Bali
+---
+title: Bali
 Description: Quelques photographies prisent durant mon voyage à Bali.
-Author: Yann Gouffon
-Date: 2013-11-24 12:48:14
+author: Yann Gouffon
+date: 2013-11-24 12:48:14
 Tags: photographie
 */
 

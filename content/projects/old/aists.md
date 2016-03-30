@@ -1,8 +1,8 @@
-/*
-Title: AISTS
+---
+title: AISTS
 Description: À partir du design réalisé par [TAZ](http://www.taz-communication.ch/), nous avons déployé le site.
-Author: Yann Gouffon
-Date: 2013-05-22 18:22:44
+author: Yann Gouffon
+date: 2013-05-22 18:22:44
 Tags: web
 */
 

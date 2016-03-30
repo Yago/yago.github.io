@@ -1,7 +1,7 @@
-/*
-Title: Cardis
-Author: Yann Gouffon
-Date: 2014-07-01
+---
+title: Cardis
+author: Yann Gouffon
+date: 2014-07-01
 Tags: web
 */
 

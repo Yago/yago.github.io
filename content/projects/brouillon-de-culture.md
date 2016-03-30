@@ -1,7 +1,7 @@
-/*
-Title: Brouillon de Culture
-Author: Yann Gouffon
-Date: 2014-06-01
+---
+title: Brouillon de Culture
+author: Yann Gouffon
+date: 2014-06-01
 Tags: web
 */
 

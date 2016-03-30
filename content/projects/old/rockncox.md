@@ -1,8 +1,8 @@
-/*
-Title: Rock'n'Cox
+---
+title: Rock'n'Cox
 Description: Après avoir conçu le logo d'un multiplex fictif, il fallait créer la couverture de leur compilation musicale officielle.
-Author: Yann Gouffon
-Date: 2013-05-17 15:11:25
+author: Yann Gouffon
+date: 2013-05-17 15:11:25
 Tags: graphic
 */
 

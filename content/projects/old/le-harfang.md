@@ -1,8 +1,8 @@
-/*
-Title: Le Harfang
+---
+title: Le Harfang
 Description: Le Harfang est un hybride entre un Chebec arabe du XVIIe et une Jonque chinoise. Je voulais construire un bateau relativement rapide et très manoeuvrable tout en restant un vaisseau de combat.
-Author: Yann Gouffon
-Date: 2013-05-10 06:13:05
+author: Yann Gouffon
+date: 2013-05-10 06:13:05
 Tags: 3d
 */
 

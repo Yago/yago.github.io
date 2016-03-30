@@ -1,8 +1,8 @@
-/*
-Title: Couleur3 Billboard
+---
+title: Couleur3 Billboard
 Description: Pour le cours de 3D, il nous était demandé de créer un billboard pour Couleur3 avec une bande sonore imposée.
-Author: Yann Gouffon
-Date: 2013-05-17 18:06:58
+author: Yann Gouffon
+date: 2013-05-17 18:06:58
 Tags: motion
 */
 

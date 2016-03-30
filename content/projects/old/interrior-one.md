@@ -1,8 +1,8 @@
-/*
-Title: Interrior One
+---
+title: Interrior One
 Description: Après une petite formation sur l'excellent Vray, je me suis attelé à la création d'un intérieur avec un rendu semi-réaliste.
-Author: Yann Gouffon
-Date: 2013-05-17 15:19:59
+author: Yann Gouffon
+date: 2013-05-17 15:19:59
 Tags: 3d
 */
 

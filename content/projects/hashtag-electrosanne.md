@@ -1,8 +1,8 @@
-/*
-Title: Hashtag electrosanne
+---
+title: Hashtag electrosanne
 Description: Plateforme sociale live mise en place lors du festival de musique électronique lausannois.
-Author: Yann Gouffon
-Date: 2013-11-24 12:18:30
+author: Yann Gouffon
+date: 2013-11-24 12:18:30
 Tags: web
 */
 

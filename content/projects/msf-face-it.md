@@ -1,8 +1,8 @@
-/*
-Title: MSF - Face-it
+---
+title: MSF - Face-it
 Description: Face-it, une plateforme présentant l'exposition interactive réalisé par Médecins sans Frontières.
-Author: Yann Gouffon
-Date: 2013-11-24 11:26:48
+author: Yann Gouffon
+date: 2013-11-24 11:26:48
 Tags: web
 */
 

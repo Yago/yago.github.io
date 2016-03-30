@@ -1,8 +1,8 @@
-/*
-Title: Dublin
+---
+title: Dublin
 Description: Clichés réalisés lors de mon voyage à Dublin, une ville chaleureuse et tellement sympathique. 
-Author: Yann Gouffon
-Date: 2013-05-14 18:04:59
+author: Yann Gouffon
+date: 2013-05-14 18:04:59
 Tags: photographie
 */
 

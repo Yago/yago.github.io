@@ -1,8 +1,8 @@
-/*
-Title: Lausanne Panorama
+---
+title: Lausanne Panorama
 Description: D'après un design de [Vincent](https://twitter.com/_20_cents), j'ai intégré ce site dans le Frog, un CMS PHP.
-Author: Yann Gouffon
-Date: 2013-05-22 16:22:17
+author: Yann Gouffon
+date: 2013-05-22 16:22:17
 Tags: web
 */
 

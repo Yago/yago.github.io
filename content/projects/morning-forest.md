@@ -1,8 +1,8 @@
-/*
-Title: Morning Forest
+---
+title: Morning Forest
 Description: Petite séance photo en forêt, un matin de janvier. 
-Author: Yann Gouffon
-Date: 2013-05-22 18:40:50
+author: Yann Gouffon
+date: 2013-05-22 18:40:50
 Tags: photographie
 */
 

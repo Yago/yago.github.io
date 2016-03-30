@@ -1,8 +1,8 @@
-/*
-Title: Dessin en vrac
+---
+title: Dessin en vrac
 Description: Quelques dessins sortit de mon carnet de croquis. 
-Author: Yann Gouffon
-Date: 2013-05-17 18:10:12
+author: Yann Gouffon
+date: 2013-05-17 18:10:12
 Tags: graphic
 */
 

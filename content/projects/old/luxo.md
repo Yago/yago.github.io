@@ -1,8 +1,8 @@
-/*
-Title: Luxo
+---
+title: Luxo
 Description: Pour le cours de 3D, nous devions mettre en scène la lampe de pixar dans un mini-métrage humoristique.
-Author: Yann Gouffon
-Date: 2013-05-17 18:17:23
+author: Yann Gouffon
+date: 2013-05-17 18:17:23
 Tags: 3d
 */
 

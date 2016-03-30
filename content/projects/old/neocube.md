@@ -1,8 +1,8 @@
-/*
-Title: Neocube
+---
+title: Neocube
 Description: Dans le cadre des examens de fin de 2ème, nous devions réaliser un site ainsi qu'une vidéo de présentation d'un jouet pour geeks et créatifs : le neocube.
-Author: Yann Gouffon
-Date: 2013-05-17 18:12:23
+author: Yann Gouffon
+date: 2013-05-17 18:12:23
 Tags: 3d
 */
 

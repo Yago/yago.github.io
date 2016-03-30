@@ -1,8 +1,8 @@
-/*
-Title: Rome
+---
+title: Rome
 Description: Clichés rapportés de la Ville Éternelle. 
-Author: Yann Gouffon
-Date: 2013-05-17 18:22:53
+author: Yann Gouffon
+date: 2013-05-17 18:22:53
 Tags: photographie
 */
 

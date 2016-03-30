@@ -1,8 +1,8 @@
-/*
-Title: CFC : Elocyclo
+---
+title: CFC : Elocyclo
 Description: Elocyclo, association de VLS sur Montreux, nous mandate afin de concevoir et réaliser sa communication.
-Author: Yann Gouffon
-Date: 2013-05-17 18:25:38
+author: Yann Gouffon
+date: 2013-05-17 18:25:38
 Tags: graphic
 */
 

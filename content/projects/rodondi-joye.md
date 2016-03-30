@@ -1,9 +1,10 @@
-/*
-Title: Rodondi Joye
-Author: Yann Gouffon
-Date: 2014-01-09
-Tags: web
-*/
+---
+title: Rodondi Joye
+author: Yann Gouffon
+date: 2014-01-09
+collection: projects
+tags: web
+---
 
 ### Client : Rodondi-Joye
 ### Réalisation : [Antistatique](http://www.antistatique.net/)
