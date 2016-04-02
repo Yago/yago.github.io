@@ -66,7 +66,7 @@
       },
       "layouts": {
         "engine": "swig",
-        "default": "base.swig",
+        "default": "default.swig",
         "directory": "assets/templates",
         "rename": true
       },
@@ -74,7 +74,6 @@
         "collections.posts": {
           "perPage": 10,
           "layout": "base.swig",
-          "first": "index.html",
           "path": "posts/:num/index.html"
         }
       }

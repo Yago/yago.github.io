@@ -1,7 +1,6 @@
-/*
-Title: Accueil
-Description: This description will go in the meta description tag
-*/
-
-I'm a **rainbow coder** who focuses on modular, performant and maintainable web development.
+---
+title: Accueil
+layout: homepage.swig
+---
+Ahoy there ! I'm Yann, a french speaking web adventurer who *designs* and `code`. I'm focused on modular and performant development.
 
