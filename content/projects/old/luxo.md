@@ -3,7 +3,7 @@ title: Luxo
 Description: Pour le cours de 3D, nous devions mettre en scène la lampe de pixar dans un mini-métrage humoristique.
 author: Yann Gouffon
 date: 2013-05-17 18:17:23
-collection: projects
+collection: oldies
 tags: 3d
 ---
 

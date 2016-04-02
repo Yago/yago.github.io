@@ -3,7 +3,7 @@ title: Rome
 Description: Clichés rapportés de la Ville Éternelle. 
 author: Yann Gouffon
 date: 2013-05-17 18:22:53
-collection: projects
+collection: oldies
 tags: photographie
 ---
 

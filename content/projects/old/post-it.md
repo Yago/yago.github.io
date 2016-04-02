@@ -3,7 +3,7 @@ title: Post-It
 Description: Développer un concept de communication audiovisuelle qui raconte Post-it et son slogan.
 author: Yann Gouffon
 date: 2013-05-17 18:14:34
-collection: projects
+collection: oldies
 tags: 3d
 ---
 

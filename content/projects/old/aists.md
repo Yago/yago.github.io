@@ -3,7 +3,7 @@ title: AISTS
 Description: À partir du design réalisé par [TAZ](http://www.taz-communication.ch/), nous avons déployé le site.
 author: Yann Gouffon
 date: 2013-05-22 18:22:44
-collection: projects
+collection: oldies
 tags: web
 ---
 

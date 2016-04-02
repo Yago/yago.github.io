@@ -3,7 +3,7 @@ title: Alien
 Description: Après avoir suivi une petite formation vidéo sur Zbrush 4 et de ses nouveautés, je me suis attelé à la création d'une figure humanoïde.
 author: Yann Gouffon
 date: 2013-05-17 15:14:28
-collection: projects
+collection: oldies
 tags: 3d
 ---
 

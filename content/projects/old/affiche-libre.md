@@ -3,7 +3,7 @@ title: Affiche libre
 Description: Durant le cours de graphisme de 2ème, nous devions réaliser une affiche libre.
 author: Yann Gouffon
 date: 2013-05-17 18:02:30
-collection: projects
+collection: oldies
 tags: graphic
 ---
 

@@ -3,7 +3,7 @@ title: Elektro Kardiogram - Clip
 Description: Nous avions plusieurs morceaux de musique électronique à choix et nous devions en faire le clip vidéo. Le but était d'illustrer la musique et de parler d'une thématique relative à la musique.
 author: Yann Gouffon
 date: 2013-05-17 17:49:48
-collection: projects
+collection: oldies
 tags: motion
 ---
 

@@ -3,7 +3,7 @@ title: Découverte de la femme
 Description: Durant de cours de photo de 1ère année, nous avons dû choisir une toile de maître est en faire une appropriation photographique.
 author: Yann Gouffon
 date: 2013-05-17 15:13:01
-collection: projects
+collection: oldies
 tags: photographie
 ---
 

@@ -3,7 +3,7 @@ title: Opening TV - Civilisations
 Description: Pour le cours de motion, il nous était demandé de réaliser une petite opening TV pour une émission à choix (fictive ou existante).
 author: Yann Gouffon
 date: 2013-05-17 15:09:02
-collection: projects
+collection: oldies
 tags: motion
 ---
 

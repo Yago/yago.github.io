@@ -3,7 +3,7 @@ title: Breizh Panorama
 Description: Lors de mes quelques voyages en pays breton, j'ai réalisé quelques clichés panoramiques du paysage. 
 author: Yann Gouffon
 date: 2013-05-17 18:04:39
-collection: projects
+collection: oldies
 tags: photographie
 ---
 

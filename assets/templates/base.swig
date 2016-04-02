@@ -5,6 +5,15 @@
 </head>
 <body>
   <h1>Homepage</h1>
+
+  <h3>Projects</h3>
+  <ul>
+    {% for project in collections.projects %}
+      <li><a href="/{{project.path}}">{{project.title}}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h3>Posts</h3>
   <ul>
     {% for post in pagination.files %}
       <li><a href="/{{post.path}}">{{post.title}}</a></li>
