@@ -1,10 +1,10 @@
 ---
 title: Google Drive comme CMS !
-description: N'avez-vous jamais rêvé de mettre en place une petite administration pour votre site afin d'y ajouter ou d'y modifier du contenu sans douleur ? Maintenant, avec Google, c'est possible !
 author: Yann Gouffon
 date: 2014-03-11 13:05:25
 collection: posts
 tags: tips
+description: "N'avez-vous jamais rêvé de mettre en place une petite administration pour votre site afin d'y ajouter ou d'y modifier du contenu sans douleur ? Maintenant, avec Google, c'est possible !"
 ---
 
 N'avez-vous jamais rêvé de mettre en place une petite administration pour votre site afin d'y ajouter ou d'y modifier du contenu sans douleur ? Maintenant, avec Google, c'est possible !

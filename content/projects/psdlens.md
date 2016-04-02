@@ -1,10 +1,9 @@
 ---
 title: PSDLENS
 Description: PSDLENS est une App en ligne de commande permettant de retourner plusieurs types d'informations concernant les fichiers Photoshop scannés.
-  author: Yann Gouffon
-  date: 2013-08-29 07:15:56
-  tags: projet
-
+author: Yann Gouffon
+date: 2013-08-29 07:15:56
+tags: projet
 ---
 
 ![PSDLens animation](http://staging.yago.io/content/images/micro-white.gif)

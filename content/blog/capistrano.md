@@ -1,10 +1,10 @@
 ---
 title: Capistrano
-description: Il existe plusieurs frameworks de déploiement et Capistrano est surement l'un des plus connus. Avec un simple "cap deploy", vos dernières mises à jour seront automatiquement envoyées via SSH sur votre serveur de production. Il nécessite cependant une petite installation, mais rien en comparaison du temps que vous allez gagner.
 author: Yann Gouffon
 date: 2013-05-28 05:34:59
 collection: posts
 tags: framework
+description: "Il existe plusieurs frameworks de déploiement et Capistrano est surement l'un des plus connus. Avec un simple \"cap deploy\", vos dernières mises à jour seront automatiquement envoyées via SSH sur votre serveur de production. Il nécessite cependant une petite installation, mais rien en comparaison du temps que vous allez gagner."
 ---
 
 Avant, pour mettre mon site en ligne, je devais envoyer mes fichiers via FTP, régler la config en ligne, faire un Dump de ma base de données et la réimporter dans la DB distante, mais ça, c'était avant.

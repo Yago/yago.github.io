@@ -1,5 +1,5 @@
 ---
-title:  EDGE Mag 
+title: EDGE Mag 
 Description: Pour le cours de graphisme de 3ème, il nous était demandé de réaliser une maquette d'un magazine anglophone de design, d'architecture et de graphisme. Le nom était libre et donc le dessin du logo également.
 author: Yann Gouffon
 date: 2013-05-10 06:01:07

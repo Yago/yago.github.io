@@ -1,10 +1,10 @@
 ---
 title: Révolution VR
-description: Qui n'a jamais rêvé d'entrer dans la Matrice via un câble connecté directement à votre encéphale ou d'arpenter votre mémoire génétique grâce à l'Animus. Bonne nouvelle, votre rêve est sur le point de se réaliser grâce à émergence des technologies de réalité virtuelle.
 author: Yann Gouffon
 date: 2013-12-05 19:12:53
 collection: posts
 tags: various
+description: "Qui n'a jamais rêvé d'entrer dans la Matrice via un câble connecté directement à votre encéphale ou d'arpenter votre mémoire génétique grâce à l'Animus. Bonne nouvelle, votre rêve est sur le point de se réaliser grâce à émergence des technologies de réalité virtuelle."
 ---
 
 **Qui n'a jamais rêvé d'entrer dans la Matrice via un câble connecté directement à votre encéphale ou d'arpenter votre mémoire génétique grâce à l'Animus.** Vous avez sans doute remarqué que le terme VR (virtual reality) ne date pas d'hier, mais à tendance à revenir de plus en plus fréquemment sur la toile depuis quelque temps. En effet, de talentueux jeunes ingénieurs à travers le globe sont sur le point de commercialiser des produits qui rendront votre expérience de gamer tout simplement révolutionnaire !

@@ -1,10 +1,10 @@
 ---
 title: Live coding
-description: Lors de la création des styles de votre site, combien de fois enregistrez, switchez sur dans votre navigateur préféré (ou pas) et rafraichissez-vous la page ? Une fois la question soulevée, vous vous rendrez bien vite compte du nombre hallucinant de fois que vous le faites machinalement. Si vous en avez ras le bol de subir cette manipulation, la suite va vous plaire !
 author: Yann Gouffon
 date: 2014-09-13
 collection: posts
 tags: tips
+description: "Lors de la création des styles de votre site, combien de fois enregistrez, switchez sur dans votre navigateur préféré (ou pas) et rafraichissez-vous la page ? Une fois la question soulevée, vous vous rendrez bien vite compte du nombre hallucinant de fois que vous le faites machinalement. Si vous en avez ras le bol de subir cette manipulation, la suite va vous plaire !"
 ---
 
 Lors de la création des styles de votre site, combien de fois **enregistrez**, **switchez** sur dans votre navigateur préféré (ou pas) et **rafraichissez-vous** la page ? Une fois la question soulevée, vous vous rendrez bien vite compte du nombre hallucinant de fois que vous le faites machinalement. Au final, il s'agit d'une quantité non négligeable de précieuses minutes ainsi gaspillées. Si vous en avez ras le bol de subir cette manipulation, **la suite va vous plaire !**

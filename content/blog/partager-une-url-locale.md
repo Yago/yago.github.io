@@ -1,10 +1,10 @@
 ---
 title: Partager une URL locale
-description: En cours de mandat, il vous est surement déjà arrivé de vouloir montrer votre travail à un collègue ou à votre client, mais sans pour autant effectuer tout un déploiement. Il existe, en effet, des moyens tout simple pour partager votre site local vers un réseau local ou externe.
 author: Yann Gouffon
 date: 2013-06-03 05:40:46
 collection: posts
 tags: tips
+description: "En cours de mandat, il vous est surement déjà arrivé de vouloir montrer votre travail à un collègue ou à votre client, mais sans pour autant effectuer tout un déploiement. Il existe, en effet, des moyens tout simple pour partager votre site local vers un réseau local ou externe."
 ---
 
 En cours de mandat, il vous est surement déjà arrivé de vouloir montrer votre travail à un collègue ou à votre client, mais sans pour autant effectuer tout un déploiement. Vous pourriez en effet utiliser [Capistrano](http://www.yago.io/blog/capistrano) afin d'éviter toute hésitation de déploiement. Cependant, il existe des moyens tout simple pour partager votre site local vers un réseau local ou externe.

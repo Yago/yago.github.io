@@ -1,10 +1,10 @@
 ---
 title: Optez pour le Markdown !
-description: Plus léger que l'HTML, le Markdown est un langage qui a gagné en popularité ses dernières années. Très apprécié par la plupart des rédacteurs digitaux, il offre la possibilité de formater aisément un texte grâce à une syntaxe discrète et  facile à prendre en main.
 author: Yann Gouffon
 date: 2014-06-06 07:36:33
 collection: posts
 tags: tips
+description: "Plus léger que l'HTML, le Markdown est un langage qui a gagné en popularité ses dernières années. Très apprécié par la plupart des rédacteurs digitaux, il offre la possibilité de formater aisément un texte grâce à une syntaxe discrète et  facile à prendre en main."
 ---
 
 Plus léger que l'HTML, le Markdown est un langage qui a gagné en popularité ses dernières années. Très apprécié par la plupart des rédacteurs digitaux, il offre la possibilité de formater aisément un texte grâce à une syntaxe discrète et  facile à prendre en main.

@@ -1,10 +1,10 @@
 ---
 title: Voyage à Bali
-description: Cela fait déjà 3 mois que je suis rentré de mon voyage à Bali, mais les souvenirs restent encore bien présents dans ma tête. Les fabuleux paysages aussi divers que variés, la gentillesse des gens et la richesse d'une culture millénaire. Y a pas à dire, Bali ne vole pas son surnom d'île des Dieux.
 author: Yann Gouffon
 date: 2013-11-24 14:07:21
 collection: posts
 tags: various
+description: "Cela fait déjà 3 mois que je suis rentré de mon voyage à Bali, mais les souvenirs restent encore bien présents dans ma tête. Les fabuleux paysages aussi divers que variés, la gentillesse des gens et la richesse d'une culture millénaire. Y a pas à dire, Bali ne vole pas son surnom d'île des Dieux."
 ---
 
 Cela fait déjà 3 mois que je suis rentré de notre voyage à Bali, mais les souvenirs restent encore bien présents dans ma tête. Les fabuleux paysages aussi divers que variés, la gentillesse des gens et la richesse d'une culture millénaire. Y a pas à dire, **Bali ne vole pas son surnom d'île des Dieux**.

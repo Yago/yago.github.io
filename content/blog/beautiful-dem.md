@@ -1,10 +1,10 @@
 ---
 title: Beautiful DEM
-description: Après avoir écrit un article sur la cartographie web, j'ai voulu pousser plus loin la création de cartes. Du coup, je me suis mis à TileMill et les portes du vaste monde du SIG open source se sont ouvertes devant moi. La cartographie web reste un domaine très technique et relativement peu accessible, mais une fois les premières clefs obtenues, le reste vient de soi.
 author: Yann Gouffon
 date: 2013-06-24 17:22:29
 collection: posts
 tags: gis
+description: "Après avoir écrit un article sur la cartographie web, j'ai voulu pousser plus loin la création de cartes. Du coup, je me suis mis à TileMill et les portes du vaste monde du SIG open source se sont ouvertes devant moi. La cartographie web reste un domaine très technique et relativement peu accessible, mais une fois les premières clefs obtenues, le reste vient de soi."
 ---
 
 Après avoir écrit un [article](http://antistatique.net/blog/2013/04/05/devenez-un-maitre-cartographe/) sur la cartographie web, j'ai voulu pousser plus loin la création de cartes. Du coup, je me suis mis à [TileMill](http://www.mapbox.com/tilemill/) et les portes du vaste monde du SIG open source se sont ouvertes devant moi. La cartographie web reste un domaine très technique et relativement peu accessible, mais une fois les premières clefs obtenues, le reste vient de soi.

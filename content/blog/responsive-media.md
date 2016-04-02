@@ -1,10 +1,10 @@
 ---
 title: Responsive media
-description: Les développeurs frontend ont de plus en plus d'expérience en responsive web design, mais il y a des éléments sur lequel on peut encore se casser les dents comme les images ou les vidéos intégrées. Il existe pourtant des recettes toutes simples pour pallier à ce petit tracas.
 author: Yann Gouffon
 date: 2013-05-31 12:33:46
 collection: posts
 tags: html-css
+description: "Les développeurs frontend ont de plus en plus d'expérience en responsive web design, mais il y a des éléments sur lequel on peut encore se casser les dents comme les images ou les vidéos intégrées. Il existe pourtant des recettes toutes simples pour pallier à ce petit tracas."
 ---
 
 Avec la standardisation du responsive web design, il est devenu normal de rendre tous sites web (ou presque) de façon la plus optimale pour tous les types de supports (tablettes, smartphones, ...). 
