@@ -3,8 +3,9 @@ title: Agrid.css
 Description: Agrid est un système de grille fluide et hyper facile d'utilisation. Il suffit de baliser l'html de quelques classes pour créer une mise en page. Agrid permet aussi de réaliser une grille personnalisable dans ses moindres paramètres.
 author: Yann Gouffon
 date: 2013-05-22 14:54:43
-Tags: projet
-*/
+collection: projects
+tags: projet
+---
 
 Agrid est un système de grille fluide. Il est <strong>léger, facile à utiliser et extrêmement flexible</strong>. Tout comme un Twitter Bootstrap, il suffit de définir une structure html de base agrémentée de classe définissant les proportions de vos blocs.
 

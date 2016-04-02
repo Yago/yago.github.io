@@ -3,8 +3,9 @@ title: Ophidien
 Description: Pour le cours de vidéo, nous devions réaliser un petit court métrage sur un animal au choix.
 author: Yann Gouffon
 date: 2013-05-17 17:56:10
-Tags: motion
-*/
+collection: projects
+tags: motion
+---
 
 ###CLIENT : eikonEMF
 ###ANNÉES : 2010 - 2011

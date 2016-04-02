@@ -3,8 +3,9 @@ title: Dessin en vrac
 Description: Quelques dessins sortit de mon carnet de croquis. 
 author: Yann Gouffon
 date: 2013-05-17 18:10:12
-Tags: graphic
-*/
+collection: projects
+tags: graphic
+---
 
 ###CLIENT : TRAVAIL PERSONNEL
 ###ANNÉES : 2008 - 2011

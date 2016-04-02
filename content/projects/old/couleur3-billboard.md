@@ -3,8 +3,9 @@ title: Couleur3 Billboard
 Description: Pour le cours de 3D, il nous était demandé de créer un billboard pour Couleur3 avec une bande sonore imposée.
 author: Yann Gouffon
 date: 2013-05-17 18:06:58
-Tags: motion
-*/
+collection: projects
+tags: motion
+---
 
 ###CLIENT : eikonEMF
 ###ANNÉE : 2012

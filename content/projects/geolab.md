@@ -3,8 +3,9 @@ title: Geolab
 Description: Geolab est une plateforme d'expérimentation cartographique permettant de présenter, partager et discuter des maps produites par tout un chacun.
 author: Yann Gouffon
 date: 2013-08-29 07:07:09
-Tags: projet
-*/
+collection: projects
+tags: projet
+---
 
 ![Goelab.io](http://staging.yago.io/content/images/geolab.jpg)
 

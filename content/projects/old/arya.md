@@ -3,8 +3,9 @@ title: Arya
 Description: Après mes premiers balbutiements sur Zbrush, je me suis attelé à mon premier modèle humain.
 author: Yann Gouffon
 date: 2013-05-17 18:08:23
-Tags: 3d
-*/
+collection: projects
+tags: 3d
+---
 
 ###CLIENT : TRAVAIL PERSONNEL
 ###ANNÉE : 2011

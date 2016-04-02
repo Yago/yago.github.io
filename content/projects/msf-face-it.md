@@ -3,8 +3,9 @@ title: MSF - Face-it
 Description: Face-it, une plateforme présentant l'exposition interactive réalisé par Médecins sans Frontières.
 author: Yann Gouffon
 date: 2013-11-24 11:26:48
-Tags: web
-*/
+collection: projects
+tags: web
+---
 
 ### Client : MSF - Médecins sans Frontières
 ### Réalisation : [Antistatique](http://www.antistatique.net/)

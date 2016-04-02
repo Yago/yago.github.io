@@ -2,8 +2,9 @@
 title: Brouillon de Culture
 author: Yann Gouffon
 date: 2014-06-01
-Tags: web
-*/
+collection: projects
+tags: web
+---
 
 ### Client : RTS
 ### Réalisation : [Antistatique](http://www.antistatique.net/)

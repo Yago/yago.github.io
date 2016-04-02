@@ -3,8 +3,9 @@ title: Bali
 Description: Quelques photographies prisent durant mon voyage à Bali.
 author: Yann Gouffon
 date: 2013-11-24 12:48:14
-Tags: photographie
-*/
+collection: projects
+tags: photographie
+---
 
 Quelques photographies prisent durant mon voyage à Bali. Pour voir toute la [galerie](http://photo.yago.io/Showroom/Bali-2013).
 

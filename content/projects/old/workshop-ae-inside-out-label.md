@@ -3,8 +3,9 @@ title: Workshop AE : Inside Out Label
 Description: Dans le cadre du Workshop After Effect de 2ème année, il était demandé de réaliser un petit spot pour fêter la première année d'Inside-Out label.
 author: Yann Gouffon
 date: 2013-05-10 05:49:37
-Tags: motion
-*/
+collection: projects
+tags: motion
+---
 
 ###CLIENT : eikonEMF
 ###ANNÉE : 2011

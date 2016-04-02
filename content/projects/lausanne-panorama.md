@@ -3,8 +3,9 @@ title: Lausanne Panorama
 Description: D'après un design de [Vincent](https://twitter.com/_20_cents), j'ai intégré ce site dans le Frog, un CMS PHP.
 author: Yann Gouffon
 date: 2013-05-22 16:22:17
-Tags: web
-*/
+collection: projects
+tags: web
+---
 
 ###Client : Foncia Valorisation
 ###Réalisation : [Antistatique](http://www.antistatique.net/)

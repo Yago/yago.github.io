@@ -2,8 +2,9 @@
 title: Cardis
 author: Yann Gouffon
 date: 2014-07-01
-Tags: web
-*/
+collection: projects
+tags: web
+---
 
 ### Client : Cardis Immobilier
 ### Réalisation : [Antistatique](http://www.antistatique.net/)

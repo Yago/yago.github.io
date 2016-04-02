@@ -3,8 +3,9 @@ title: Hashtag electrosanne
 Description: Plateforme sociale live mise en place lors du festival de musique électronique lausannois.
 author: Yann Gouffon
 date: 2013-11-24 12:18:30
-Tags: web
-*/
+collection: projects
+tags: web
+---
 
 ### Client : Electrosanne / Antistatique
 ### Réalisation : [Antistatique](http://www.antistatique.net/)

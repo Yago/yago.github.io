@@ -3,8 +3,9 @@ title: Scorpion
 Description: Premier gros projet 3D de 2ème année, réaliser un insecte à choix avec un rendu "réaliste".
 author: Yann Gouffon
 date: 2013-05-17 17:58:01
-Tags: 3d
-*/
+collection: projects
+tags: 3d
+---
 
 ###CLIENT : eikonEMF
 ###ANNÉES : 2010 - 2011

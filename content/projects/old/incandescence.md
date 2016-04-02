@@ -3,8 +3,9 @@ title: Incandescence
 Description: Pour le cours de photo de 1ère année, nous devions réaliser une série de clichés libres basés sur la technique de Light Painting.
 author: Yann Gouffon
 date: 2013-05-17 15:16:11
-Tags: photographie
-*/
+collection: projects
+tags: photographie
+---
 
 ###CLIENT : eikonEMF
 ###ANNÉES : 2009 - 2010

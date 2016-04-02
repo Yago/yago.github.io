@@ -3,8 +3,9 @@ title: deRham
 Description: J'ai eu la chance de travailler sur ce [grand projet](http://antistatique.net/fr/portfolio/derham) qu'est la refonte de l'identité digitale de De Rham Sotheby's International Realty
 author: Yann Gouffon
 date: 2013-05-22 18:16:03
-Tags: web
-*/
+collection: projects
+tags: web
+---
 
 ###Client : deRham
 ###Réalisation : [Antistatique](http://www.antistatique.net/)
