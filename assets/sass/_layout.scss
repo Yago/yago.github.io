@@ -1,6 +1,7 @@
 @charset 'UTF-8';
 
-.container {
+.article-container {
   max-width: 650px;
   margin: 0 auto;
+  padding: 0 $gutter;
 }

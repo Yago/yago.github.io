@@ -3,6 +3,18 @@
 html {
   font-size: $base;
   line-height: $gr * 1em;
+
+  @media screen and (max-width: 70em) {
+    font-size: floor(($base * 0.92));
+  }
+
+  @media screen and (max-width: 60em) {
+    font-size: floor(($base * 0.88));
+  }
+
+  @media screen and (max-width: 40em) {
+    font-size: floor(($base * 0.8));
+  }
 }
 
 body {
@@ -41,6 +53,7 @@ h1,
 .h1 {
   font-size: $gr * 2em;
   &:before {content: none;}
+  @media screen and (max-width: 60em) {font-size: $gr * 1.5em;}
 }
 
 p {

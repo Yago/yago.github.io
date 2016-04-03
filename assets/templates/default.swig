@@ -2,7 +2,7 @@
 
 {% block content %}
   <img src="/img/cover/{{ title | lower | replace(' ', '-') }}.jpg" class="cover">
-  <div class="container">
+  <div class="article-container">
     <div class="text-center">
       <h1>{{title}}</h1>
       <div class="date">
