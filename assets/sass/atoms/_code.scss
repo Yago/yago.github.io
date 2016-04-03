@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+
+pre[class*=language-] {
+  background: $heavy-metal;
+  font-size: 0.75em;
+  border-radius: 2px;
+
+  code[class*=language-] {line-height: 1.7em;}
+}
+
+.line-numbers .line-numbers-rows {
+  border-right-color: $tundora;
+}

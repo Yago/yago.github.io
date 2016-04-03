@@ -20,12 +20,12 @@ Le plus compliqué dans cet exercice a été de trouver des données DEM (digita
 Ce que vous allez télécharger en fichier .dem ou .hgt sont des données brutes qu'il faudra transformer en images utilisables dans TileMill ou Mapnik. Pour cela, il existe une librairie libre permettant de traiter les images géographiques : [Gdal](http://www.gdal.org/index.html). Pour les utilisateurs de Mac, rendez-vous sur [kyngchaos.com](http://www.kyngchaos.com/software:frameworks) pour obtenir un framework prêt à l'emploi de la librairie et de ses dépendances.
 
 Après avoir installé la librairie, veillez à ne pas oublier de configurer le chemin dans le fichier de configuration de votre terminal :
-```shell
+```bash
 export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
 ```
 
 Une fois installé, il va vous falloir merger tous vos fichiers afin de garder un seul fichier DEM. Pour cela, exécutez gdal-merge en spécifiant le nom du fichier combiné, suivi de tous les fichiers que vous souhaitez fusionner.
-```shell
+```bash
 $ gdal_merge.py -init "255" -o combined.dem file01.dem file02.dem file03.dem
 ```
 
@@ -35,7 +35,7 @@ Gdal, entre autres choses, permet de créer des GeoTIFF utilisables dans TileMil
 
 ###Hillshade
 L'image Hillshade permet d'appréhender au mieux un relief. Grâce à ce modèle numérique de terrain répondant aux conventions d'illumination, l'appréhension du relief de votre carte sera optimal. Pour cela :
-```shell
+```bash
 $ gdaldem hillshade -s 111120 combined.dem hillshade.tif
 ```
 
@@ -43,7 +43,8 @@ $ gdaldem hillshade -s 111120 combined.dem hillshade.tif
 
 ###Color-relief
 Le color-relief vous permettra d'ajouter des couleurs à votre carte, déterminées par l'altitude. Pour cela, commencez par créer un fichier **color.txt** dans lequel vous donnerez des couleurs rgb en fonction de l'altitude (ici 0m, 500m, 1000m, 2500m et 4000m).
-```plain
+
+```
 0 71 68 62
 500 119 101 74 
 1000 85 107 50 
@@ -52,7 +53,7 @@ Le color-relief vous permettra d'ajouter des couleurs à votre carte, détermin�
 ```
 
 Et dans le terminal :
-```shell
+```bash
 $ gdaldem color-relief combined.dem color.txt color.tif
 ```
 
@@ -60,13 +61,13 @@ $ gdaldem color-relief combined.dem color.txt color.tif
 
 ###Slope
 Le slope est une image qui va mettre en valeur le relief d'une façon différente de l'image hillshade, mais qui va apporter une grosse plus value à votre carte finale. Comme pour color-relief, créez un fichier **color_slope.txt**, indiquant cette fois la coloration en fonction de la pente (entre 0 et 90°).
-```shell
+```bash
 0 255 255 255
 90 0 0 0
 ```
 
 Et dans votre console :
-```shell
+```bash
 $ gdaldem slope combined.dem preslope.tif -s 111120
 $ gdaldem color-relief preslope.tif color_slope.txt slope.tif
 ```

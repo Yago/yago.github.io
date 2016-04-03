@@ -17,7 +17,7 @@ Pour utiliser Capistrano, il vous faut :
 
 * Un accès SSH à votre serveur avec votre clef publique
 * Une version de Ruby supérieur à 1.3.0
-```shell
+```bash
 $ gem -v
 ```
 * L'utilisation de [Git](http://git-scm.com/) dans votre projet (pas obligatoire, mais vivement recommandé)
@@ -25,14 +25,14 @@ $ gem -v
 ##Installation
 
 Pour installer Capistrano et ses extensions :
-```shell
+```bash
 $ gem install capistrano
 $ gem install capistrano-ext
 $ gem install railsless-deploy
 ```
 
 Ensuite, allez dans votre répertoire et lancez Capistrano :
-```shell
+```bash
 $ cd path/to/your/directory/
 $ capify .
 ```
@@ -43,7 +43,7 @@ Capistrano ne va pas simplement envoyer vos fichiers sur votre serveur, il va é
 
 En soit, la structure est relativement simple. À la racine de votre répertoire, il va créer un répertoire **shared** pour tous les fichiers partagés, un répertoire **releases** pour toutes les versions de votre site et un lien symbolique **current** qui pointera vers la dernière release.
 
-```shell
+```bash
 monSite
 ├── current -> /home/monSite/releases/20130527070530
 ├── releases
@@ -174,29 +174,29 @@ after "deploy:update_code", "deploy:cleanup"
 ##Enfin le déploiement !
 
 Maintenant que la recette est écrite, il ne reste plus qu'à déployer. Au premier déploiement et pour créer les différents répertoires:
-```shell
+```bash
 $ cap deploy:setup
 ```
 
 Ensuite la commande magique pour chaque mise à jour :
-```shell
+```bash
 $ cap deploy:setup
 ```
 
 Et selon ma recette, si vous souhaitez seulement migrer la base de données:
-```shell
+```bash
 $ cap db:migrate
 ```
 
 Un problème ?
-```shell
+```bash
 $ cap deploy:rollback
 ```
 
 ##Hum... le site ne marche pas !
 
 Et c'est normal, car comme je vous l'ai expliqué plus haut, il vous faut encore paramétrer le serveur pour qu'il pointe sur **current** afin d'exécuter la bonne release. Donc pour cela, créez un **.htaccess** à la racine:
-```shell
+```bash
 <IfModule mod_rewrite.c>
     RewriteEngine on
     RewriteCond %{REQUEST_URI} !^/current

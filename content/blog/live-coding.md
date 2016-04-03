@@ -26,12 +26,12 @@ Eh oui, **BrowserSync génère un proxy pointant vers votre projet** qui, en uti
 ## L'utilisation
 Premièrement, il vous faut NodeJS et [npm](https://www.npmjs.org/). Ensuite, il vous suffit d'installer le module sur votre système :
 
-```shell
+```bash
 $ npm install -g browser-sync
 ```
 Maintenant, avant de le lancer, il faut comprendre une chose. **Vous devez lui donner les fichiers à observer** sur lesquels il se basera pour lancer le rafraichissement. Il y a également une série d'options magnifiquement décrites dans la [documentation](http://www.browsersync.io/docs/command-line/) du module. En pratique, cela donne quelque chose comme cela :
 
-```shell
+```bash
 $ browser-sync start --server --files "build/css/*.css"
 ```
 

@@ -16,8 +16,9 @@ module.exports = function() {
   gulp.task('serve', ['default'], function () {
     browserSync({
       server: {
-        baseDir: [config.app.basedir],
+        baseDir: [config.app.basedir]
       },
+      notify: false,
       open: false
     });
     gulp.watch([config.assets + 'sass/**/*.scss'], function() {

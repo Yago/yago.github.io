@@ -8,13 +8,21 @@
     <meta name="keywords" content="HTML,CSS,XML,JavaScript">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://use.typekit.net/cwx4xcg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
   <body>
-    {% block content %}{% endblock %}
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+
+    <script src="/js/vendors.min.js"></script>
   </body>
 </html>

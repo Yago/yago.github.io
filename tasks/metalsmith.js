@@ -6,6 +6,7 @@ var gulp          = require('gulp'),
     argv          = require('yargs').argv;
 
 var markdown      = require('metalsmith-markdown'),
+    prism         = require('metalsmith-prism'),
     permalinks    = require('metalsmith-permalinks'),
     layouts       = require('metalsmith-layouts'),
     pagination    = require('metalsmith-pagination'),
@@ -26,7 +27,10 @@ module.exports = function() {
       .pipe($.plumber({errorHandler: errorAlert}))
       .pipe($.metalsmith({
         use: [
-          markdown(),
+          markdown({ langPrefix: 'language-' }),
+          prism({
+    lineNumbers: true
+  }),
           permalinks(config.metalsmith.plugins.collections),
           collections(config.metalsmith.plugins.collections),
           pagination(config.metalsmith.plugins.pagination),
