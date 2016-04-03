@@ -11,7 +11,7 @@ Avant, pour mettre mon site en ligne, je devais envoyer mes fichiers via FTP, r�
 
 Il existe plusieurs frameworks de déploiement et [Capistrano](https://github.com/capistrano/capistrano) est surement l'un des plus connus. Avec un simple "cap deploy", vos dernières mises à jour seront automatiquement envoyées via SSH sur votre serveur de production. Il nécessite cependant une petite installation, mais rien en comparaison du temps que vous allez gagner.
 
-##Quelques prérequis
+## Quelques prérequis
 
 Pour utiliser Capistrano, il vous faut :
 
@@ -22,7 +22,7 @@ $ gem -v
 ```
 * L'utilisation de [Git](http://git-scm.com/) dans votre projet (pas obligatoire, mais vivement recommandé)
 
-##Installation
+## Installation
 
 Pour installer Capistrano et ses extensions :
 ```bash
@@ -37,7 +37,7 @@ $ cd path/to/your/directory/
 $ capify .
 ```
 
-##Comment ça fonctionne en fait ?
+## Comment ça fonctionne en fait ?
 
 Capistrano ne va pas simplement envoyer vos fichiers sur votre serveur, il va également créer une arborescence destinée à versionner votre site. De ce fait et en cas de problème, Capistrano vous permettra de retourner à la version précédente en une fraction de seconde.
 
@@ -53,13 +53,13 @@ monSite
 └── shared
 ```
 
-##Le script de déploiement
+## Le script de déploiement
 
 Capistrano n'est qu'un exécuteur. Afin de le faire fonctionner, il faut lui donner une recette. En exécutant la commande "capify .", Capistrano vous a créé un fichier **Capifile** et un répertoire **config** avec **deploy.rb** à l'intérieur. C'est ce dernier qui va donner la recette de votre déploiement à Capistrano.
 
 Dans ce fichier, vous pouvez absolument tout faire en définissant des paramètres et en exécutant des lignes de commandes dans un ordre défini.
 
-##Ma méthode
+## Ma méthode
 
 Le script que je vais vous présenter est utilisable pour la plupart des CMS PHP, du type Wordpress, utilisant une base de données. Avec quelques ajustements, il peut très bien être utilisé pour un site statique ou que sais-je encore. Donc tout d'abord dans **Capfile** :
 
@@ -171,7 +171,7 @@ after "deploy:update_code", "deploy:config_file"
 after "deploy:update_code", "deploy:cleanup"
 ```
 
-##Enfin le déploiement !
+## Enfin le déploiement !
 
 Maintenant que la recette est écrite, il ne reste plus qu'à déployer. Au premier déploiement et pour créer les différents répertoires:
 ```bash
@@ -193,7 +193,7 @@ Un problème ?
 $ cap deploy:rollback
 ```
 
-##Hum... le site ne marche pas !
+## Hum... le site ne marche pas !
 
 Et c'est normal, car comme je vous l'ai expliqué plus haut, il vous faut encore paramétrer le serveur pour qu'il pointe sur **current** afin d'exécuter la bonne release. Donc pour cela, créez un **.htaccess** à la racine:
 ```bash
@@ -204,7 +204,7 @@ Et c'est normal, car comme je vous l'ai expliqué plus haut, il vous faut encore
 </IfModule>
 ```
 
-##Conclusion
+## Conclusion
 
 Capistrano est **LA** solution qui simplifiera votre vie et dont vous ne pourrez plus vous passer. Malgré les prérequis nécessaires, c'est un outil qui se prend vite en main et qui, malgré le temps d'apprentissage, vous fera gagner un temps considérable dans tous vos projets.
 

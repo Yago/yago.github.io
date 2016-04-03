@@ -26,23 +26,26 @@
 
 @font-face {
     font-family: 'Cala';
-    src: url('../fonts/CalaMed-webfont.eot');
-    src: url('../fonts/CalaMed-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/CalaMed-webfont.woff2') format('woff2'),
-         url('../fonts/CalaMed-webfont.woff') format('woff'),
-         url('../fonts/CalaMed-webfont.ttf') format('truetype'),
-         url('../fonts/CalaMed-webfont.svg#calamedium') format('svg');
+    src: url('../fonts/CalaBol-webfont.eot');
+    src: url('../fonts/CalaBol-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/CalaBol-webfont.woff2') format('woff2'),
+         url('../fonts/CalaBol-webfont.woff') format('woff'),
+         url('../fonts/CalaBol-webfont.ttf') format('truetype'),
+         url('../fonts/CalaBol-webfont.svg#calamedium') format('svg');
     font-weight: bold;
     font-style: normal;
 }
 
 // init:
 @import 'main-variables';
+@import '../../node_modules/normalize.css/normalize';
 
 @import 'typography';
 @import 'grid';
 
 // atoms
 @import 'atoms/code';
+@import 'atoms/images';
+@import 'atoms/dates';
 
 

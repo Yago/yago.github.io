@@ -19,9 +19,7 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
-      {% block content %}{% endblock %}
-    </div>
+    {% block content %}{% endblock %}
 
     <script src="/js/vendors.min.js"></script>
   </body>

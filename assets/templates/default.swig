@@ -1,5 +1,17 @@
 {% extends "base.swig" %}
 
 {% block content %}
-  {{ contents|raw }}
+  <img src="/img/cover/{{ title | lower | replace(' ', '-') }}.jpg" class="cover">
+  <div class="container">
+    <div class="text-center">
+      <h1>{{title}}</h1>
+      <div class="date">
+        {{date|date('d.m.Y')}} &bullet; {{author}}
+      </div>
+    </div>
+
+    <article>
+      {{ contents|raw }}
+    </article>
+  </div>
 {% endblock %}
