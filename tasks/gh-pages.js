@@ -11,7 +11,9 @@ module.exports = function() {
   */
   gulp.task('deploy', function () {
     return gulp.src(config.app.ghpages + '/**/*')
-      .pipe($.ghPages());
+      .pipe($.ghPages({
+        branch: "master"
+      }));
   });
 
 };

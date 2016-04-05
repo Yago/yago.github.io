@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Beautiful DEM</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/types.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://use.typekit.net/cwx4xcg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+  <img src="/img/cover/beautiful-dem.jpg" class="cover">
+  <div class="article-container">
+    <div class="text-center">
+      <h1>Beautiful DEM</h1>
+      <div class="date">
+        24.06.2013 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article>
+      <p>Apr&#xE8;s avoir &#xE9;crit un <a href="http://antistatique.net/blog/2013/04/05/devenez-un-maitre-cartographe/">article</a> sur la cartographie web, j&apos;ai voulu pousser plus loin la cr&#xE9;ation de cartes. Du coup, je me suis mis &#xE0; <a href="http://www.mapbox.com/tilemill/">TileMill</a> et les portes du vaste monde du SIG open source se sont ouvertes devant moi. La cartographie web reste un domaine tr&#xE8;s technique et relativement peu accessible, mais une fois les premi&#xE8;res clefs obtenues, le reste vient de soi.</p>
+<p>Apr&#xE8;s avoir vu une petite <a href="http://www.mapbox.com/blog/tilemill-raster-colorizer/">d&#xE9;monstration</a> d&apos;un d&#xE9;veloppeur de chez MapBox, j&apos;ai cherch&#xE9; &#xE0; reproduire l&apos;exemple sans utiliser la version de d&#xE9;veloppement de TileMill et en appliquant l&apos;exp&#xE9;rimentation &#xE0; notre belle Suisse.</p>
+<p>##Trouver les donn&#xE9;es</p>
+<p>Le plus compliqu&#xE9; dans cet exercice a &#xE9;t&#xE9; de trouver des donn&#xE9;es DEM (digital elevation model) open source et avec une r&#xE9;solution suffisante &#xE0; un niveau de zoom correct. Il se trouve que les USA sont tr&#xE8;s en avance en la mati&#xE8;re, mais l&apos;Europe... Bref, j&apos;ai fini par trouver <a href="http://www.viewfinderpanoramas.org/dem3.html">un site</a> tr&#xE8;s bien qui en partage un certain nombre avec des qualit&#xE9;s variant de 1&apos;&apos; &#xE0; 15&apos;&apos;.</p>
+<p>##Traiter les donn&#xE9;es</p>
+<p>Ce que vous allez t&#xE9;l&#xE9;charger en fichier .dem ou .hgt sont des donn&#xE9;es brutes qu&apos;il faudra transformer en images utilisables dans TileMill ou Mapnik. Pour cela, il existe une librairie libre permettant de traiter les images g&#xE9;ographiques : <a href="http://www.gdal.org/index.html">Gdal</a>. Pour les utilisateurs de Mac, rendez-vous sur <a href="http://www.kyngchaos.com/software:frameworks">kyngchaos.com</a> pour obtenir un framework pr&#xEA;t &#xE0; l&apos;emploi de la librairie et de ses d&#xE9;pendances.</p>
+<p>Apr&#xE8;s avoir install&#xE9; la librairie, veillez &#xE0; ne pas oublier de configurer le chemin dans le fichier de configuration de votre terminal :</p>
+<pre class="line-numbers"><code class="language-bash"><span class="token function">export</span> PATH<span class="token operator">=</span>/Library/Frameworks/GDAL.framework/Programs:<span class="token variable">$PATH</span>
+</code></pre>
+<p>Une fois install&#xE9;, il va vous falloir merger tous vos fichiers afin de garder un seul fichier DEM. Pour cela, ex&#xE9;cutez gdal-merge en sp&#xE9;cifiant le nom du fichier combin&#xE9;, suivi de tous les fichiers que vous souhaitez fusionner.</p>
+<pre class="line-numbers"><code class="language-bash">$ gdal_merge.py -init <span class="token string">&quot;255&quot;</span> -o combined.dem file01.dem file02.dem file03.dem
+</code></pre>
+<p>##Obtenir des GeoTIFF</p>
+<p>Gdal, entre autres choses, permet de cr&#xE9;er des GeoTIFF utilisables dans TileMill ou Mapnik &#xE0; partir d&apos;un fichier DEM. Pour cet exemple nous aurons besoin de 3 images diff&#xE9;rentes.</p>
+<p>###Hillshade
+L&apos;image Hillshade permet d&apos;appr&#xE9;hender au mieux un relief. Gr&#xE2;ce &#xE0; ce mod&#xE8;le num&#xE9;rique de terrain r&#xE9;pondant aux conventions d&apos;illumination, l&apos;appr&#xE9;hension du relief de votre carte sera optimal. Pour cela :</p>
+<pre class="line-numbers"><code class="language-bash">$ gdaldem hillshade -s 111120 combined.dem hillshade.tif
+</code></pre>
+<p><img src="http://staging.yago.io/content/images/alps-hillshade.jpg" alt="gdal hillshade"></p>
+<p>###Color-relief
+Le color-relief vous permettra d&apos;ajouter des couleurs &#xE0; votre carte, d&#xE9;termin&#xE9;es par l&apos;altitude. Pour cela, commencez par cr&#xE9;er un fichier <strong>color.txt</strong> dans lequel vous donnerez des couleurs rgb en fonction de l&apos;altitude (ici 0m, 500m, 1000m, 2500m et 4000m).</p>
+<pre><code>0 71 68 62
+500 119 101 74 
+1000 85 107 50 
+2500 187 187 120 
+4000 217 222 170
+</code></pre><p>Et dans le terminal :</p>
+<pre class="line-numbers"><code class="language-bash">$ gdaldem color-relief combined.dem color.txt color.tif
+</code></pre>
+<p><img src="http://staging.yago.io/content/images/alps-color.jpg" alt="gdal color-relief"></p>
+<p>###Slope
+Le slope est une image qui va mettre en valeur le relief d&apos;une fa&#xE7;on diff&#xE9;rente de l&apos;image hillshade, mais qui va apporter une grosse plus value &#xE0; votre carte finale. Comme pour color-relief, cr&#xE9;ez un fichier <strong>color_slope.txt</strong>, indiquant cette fois la coloration en fonction de la pente (entre 0 et 90&#xB0;).</p>
+<pre class="line-numbers"><code class="language-bash">0 255 255 255
+90 0 0 0
+</code></pre>
+<p>Et dans votre console :</p>
+<pre class="line-numbers"><code class="language-bash">$ gdaldem slope combined.dem preslope.tif -s 111120
+$ gdaldem color-relief preslope.tif color_slope.txt slope.tif
+</code></pre>
+<p><img src="http://staging.yago.io/content/images/alps-slope.jpg" alt="gdal slope"></p>
+<p>##Finalisation</p>
+<p>Ouvrez TileMill et ajoutez vos 3 nouveaux calques en choisissant le bon syst&#xE8;me de projection (probablement WGS84). Encore un petit peu de CartoCSS et votre carte sera pr&#xEA;te ! Dans l&apos;ordre d&apos;empilement :</p>
+<pre class="line-numbers"><code class="language-css"><span class="token selector">.slope</span> <span class="token punctuation">{</span>
+  <span class="token property">raster-opacity</span><span class="token punctuation">:</span>0.4<span class="token punctuation">;</span>
+  <span class="token property">raster-scaling</span><span class="token punctuation">:</span>lanczos<span class="token punctuation">;</span>
+  <span class="token property">raster-comp-op</span><span class="token punctuation">:</span> grain-extract<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.hillshade</span> <span class="token punctuation">{</span>
+  <span class="token property">raster-opacity</span><span class="token punctuation">:</span>1<span class="token punctuation">;</span>
+  <span class="token property">raster-scaling</span><span class="token punctuation">:</span>lanczos<span class="token punctuation">;</span>
+  <span class="token property">raster-comp-op</span><span class="token punctuation">:</span> soft-light<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.color</span> <span class="token punctuation">{</span>
+  <span class="token property">raster-opacity</span><span class="token punctuation">:</span>1<span class="token punctuation">;</span>
+  <span class="token property">raster-scaling</span><span class="token punctuation">:</span>lanczos<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>Le r&#xE9;sultat</strong> : <a href="http://geolab.io/swissdem.html">geolab.io/swissdem.html</a></p>
+<p>##Conclusion</p>
+<p>&#xC0; partir de cette petite d&#xE9;mo, on saisit rapidement l&apos;&#xE9;tendue des possibilit&#xE9;s offertes, pouvant ainsi cr&#xE9;er toutes sortes de fonds pour nos cartes web. Vous voici entr&#xE9; dans la cour des grands !</p>
+
+    </article>
+  </div>
+
+
+    <script src="/js/vendors.min.js"></script>
+  </body>
+</html>

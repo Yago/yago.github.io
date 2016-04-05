@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>PSDLENS</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/types.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://use.typekit.net/cwx4xcg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+  <img src="/img/cover/psdlens.jpg" class="cover">
+  <div class="article-container">
+    <div class="text-center">
+      <h1>PSDLENS</h1>
+      <div class="date">
+        29.08.2013 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article>
+      <p><img src="http://staging.yago.io/content/images/micro-white.gif" alt="PSDLens animation"></p>
+<p>Apr&#xE8;s avoir d&#xE9;couvert l&apos;incroyable librairie Ruby <a href="http://cosmos.layervault.com/psdrb.html">PSD.rb</a>, j&apos;ai d&#xE9;cid&#xE9; de mettre en place un outil tirant partit du meilleur de cette technologie. Mon envie &#xE9;tait de cr&#xE9;er une App en ligne de commande permettant de retourner plusieurs types d&apos;informations concernant les fichiers Photoshop scann&#xE9;s.</p>
+<p>###Installation</p>
+<p>Pour faire tourner <a href="https://github.com/Yago31/psdlens">PSDLENS</a>, il vous faut bien s&#xFB;r <a href="http://cosmos.layervault.com/psdrb.html">PSD.rb</a> install&#xE9; :</p>
+<pre class="line-numbers"><code class="language-bash">$ gem <span class="token function">install</span> psd
+$ gem <span class="token function">install</span> psdlens
+</code></pre>
+<p>###Utilisation</p>
+<p>Il suffit de d&#xE9;finir le dossier contenant les PSD ainsi qu&apos;une m&#xE9;thode.</p>
+<pre class="line-numbers"><code class="language-bash">$ psdlens <span class="token punctuation">[</span>path<span class="token punctuation">]</span> <span class="token punctuation">[</span>method<span class="token punctuation">]</span>
+</code></pre>
+<p>###Le dossier</p>
+<p>Le path peut &#xEA;tre d&#xE9;fini en absolut o&#xF9; par la position actuelle en utilisant le point.</p>
+<pre class="line-numbers"><code class="language-bash">$ psdlens /path/to/your/dir/ meta
+<span class="token comment" spellcheck="true"># ou</span>
+$ psdlens <span class="token keyword">.</span> meta
+</code></pre>
+<p>###Les m&#xE9;thodes</p>
+<ul>
+<li>meta : Retourne les informations principales telles que la taille, le mode colorim&#xE9;trique et les fonts utilis&#xE9;es</li>
+<li>text : Retourne tous les contenus texte en sp&#xE9;cifiant la typo utilis&#xE9;e, la taille et la couleur.</li>
+<li>font : Retourne toutes les fonts utilis&#xE9;es</li>
+<li>content : Retourne uniquement les contenus texte bruts.</li>
+<li>report : Cr&#xE9;e un rapport JSON complet pour chaque fichier PSD</li>
+</ul>
+
+    </article>
+  </div>
+
+
+    <script src="/js/vendors.min.js"></script>
+  </body>
+</html>

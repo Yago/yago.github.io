@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Responsive media</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/types.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://use.typekit.net/cwx4xcg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+  <img src="/img/cover/responsive-media.jpg" class="cover">
+  <div class="article-container">
+    <div class="text-center">
+      <h1>Responsive media</h1>
+      <div class="date">
+        31.05.2013 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article>
+      <p>Avec la standardisation du responsive web design, il est devenu normal de rendre tous sites web (ou presque) de fa&#xE7;on la plus optimale pour tous les types de supports (tablettes, smartphones, ...). </p>
+<p>Les d&#xE9;veloppeurs frontend ont de plus en plus d&apos;exp&#xE9;rience en la mati&#xE8;re, mais il y a des &#xE9;l&#xE9;ments sur lequel on peut encore se casser les dents comme les images ou les vid&#xE9;os int&#xE9;gr&#xE9;es. Il existe pourtant des recettes toutes simples pour pallier &#xE0; ce petit tracas.</p>
+<p>Pour les <strong>images</strong>, seul un peu de CSS suffit :</p>
+<pre class="line-numbers"><code class="language-css"><span class="token selector">img</span> <span class="token punctuation">{</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+  <span class="token property">vertical-align</span><span class="token punctuation">:</span> middle<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Quant au <strong>vid&#xE9;o</strong>, il faudra encore mettre un wrapper autour de votre iframe...</p>
+<pre class="line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>video-container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>560<span class="token punctuation">&quot;</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>315<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.youtube.com/embed/hWnAqFyaQ5s<span class="token punctuation">&quot;</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>0<span class="token punctuation">&quot;</span></span> <span class="token attr-name">allowfullscreen</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>...et y ajouter une pointe de CSS pour que la magie op&#xE8;re.</p>
+<pre class="line-numbers"><code class="language-css"><span class="token selector">.video-container</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 56.25%<span class="token punctuation">;</span> // D&#xE9;fini le ratio largeur/hauteur de votre vid&#xE9;o =&gt; ici 16/9
+  <span class="token property">padding-top</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span> 
+  <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.video-container iframe,
+.video-container object,
+.video-container embed</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Voil&#xE0;, en quelques lignes de CSS, tous vos soucis se sont envol&#xE9;s et vous voici libre de pr&#xE9;senter vos m&#xE9;dias sur tous les supports en prenant bien garde &#xE0; leur poids.</p>
+
+    </article>
+  </div>
+
+
+    <script src="/js/vendors.min.js"></script>
+  </body>
+</html>

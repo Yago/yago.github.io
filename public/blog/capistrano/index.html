@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Capistrano</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/types.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://use.typekit.net/cwx4xcg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+  <img src="/img/cover/capistrano.jpg" class="cover">
+  <div class="article-container">
+    <div class="text-center">
+      <h1>Capistrano</h1>
+      <div class="date">
+        28.05.2013 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article>
+      <p>Avant, pour mettre mon site en ligne, je devais envoyer mes fichiers via FTP, r&#xE9;gler la config en ligne, faire un Dump de ma base de donn&#xE9;es et la r&#xE9;importer dans la DB distante, mais &#xE7;a, c&apos;&#xE9;tait avant.</p>
+<p>Il existe plusieurs frameworks de d&#xE9;ploiement et <a href="https://github.com/capistrano/capistrano">Capistrano</a> est surement l&apos;un des plus connus. Avec un simple &quot;cap deploy&quot;, vos derni&#xE8;res mises &#xE0; jour seront automatiquement envoy&#xE9;es via SSH sur votre serveur de production. Il n&#xE9;cessite cependant une petite installation, mais rien en comparaison du temps que vous allez gagner.</p>
+<h2 id="quelques-pr-requis">Quelques pr&#xE9;requis</h2>
+<p>Pour utiliser Capistrano, il vous faut :</p>
+<ul>
+<li>Un acc&#xE8;s SSH &#xE0; votre serveur avec votre clef publique</li>
+<li>Une version de Ruby sup&#xE9;rieur &#xE0; 1.3.0<pre class="line-numbers"><code class="language-bash">$ gem -v
+</code></pre>
+</li>
+<li>L&apos;utilisation de <a href="http://git-scm.com/">Git</a> dans votre projet (pas obligatoire, mais vivement recommand&#xE9;)</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>Pour installer Capistrano et ses extensions :</p>
+<pre class="line-numbers"><code class="language-bash">$ gem <span class="token function">install</span> capistrano
+$ gem <span class="token function">install</span> capistrano-ext
+$ gem <span class="token function">install</span> railsless-deploy
+</code></pre>
+<p>Ensuite, allez dans votre r&#xE9;pertoire et lancez Capistrano :</p>
+<pre class="line-numbers"><code class="language-bash">$ <span class="token function">cd</span> path/to/your/directory/
+$ capify <span class="token keyword">.</span>
+</code></pre>
+<h2 id="comment-a-fonctionne-en-fait-">Comment &#xE7;a fonctionne en fait ?</h2>
+<p>Capistrano ne va pas simplement envoyer vos fichiers sur votre serveur, il va &#xE9;galement cr&#xE9;er une arborescence destin&#xE9;e &#xE0; versionner votre site. De ce fait et en cas de probl&#xE8;me, Capistrano vous permettra de retourner &#xE0; la version pr&#xE9;c&#xE9;dente en une fraction de seconde.</p>
+<p>En soit, la structure est relativement simple. &#xC0; la racine de votre r&#xE9;pertoire, il va cr&#xE9;er un r&#xE9;pertoire <strong>shared</strong> pour tous les fichiers partag&#xE9;s, un r&#xE9;pertoire <strong>releases</strong> pour toutes les versions de votre site et un lien symbolique <strong>current</strong> qui pointera vers la derni&#xE8;re release.</p>
+<pre class="line-numbers"><code class="language-bash">monSite
+&#x251C;&#x2500;&#x2500; current -<span class="token operator">&gt;</span> /home/monSite/releases/20130527070530
+&#x251C;&#x2500;&#x2500; releases
+&#x2502;   &#x251C;&#x2500;&#x2500; 20130527065508
+&#x2502;   &#x251C;&#x2500;&#x2500; 20130527065907
+&#x2502;   &#x2514;&#x2500;&#x2500; 20130527070530
+&#x2514;&#x2500;&#x2500; shared
+</code></pre>
+<h2 id="le-script-de-d-ploiement">Le script de d&#xE9;ploiement</h2>
+<p>Capistrano n&apos;est qu&apos;un ex&#xE9;cuteur. Afin de le faire fonctionner, il faut lui donner une recette. En ex&#xE9;cutant la commande &quot;capify .&quot;, Capistrano vous a cr&#xE9;&#xE9; un fichier <strong>Capifile</strong> et un r&#xE9;pertoire <strong>config</strong> avec <strong>deploy.rb</strong> &#xE0; l&apos;int&#xE9;rieur. C&apos;est ce dernier qui va donner la recette de votre d&#xE9;ploiement &#xE0; Capistrano.</p>
+<p>Dans ce fichier, vous pouvez absolument tout faire en d&#xE9;finissant des param&#xE8;tres et en ex&#xE9;cutant des lignes de commandes dans un ordre d&#xE9;fini.</p>
+<h2 id="ma-m-thode">Ma m&#xE9;thode</h2>
+<p>Le script que je vais vous pr&#xE9;senter est utilisable pour la plupart des CMS PHP, du type Wordpress, utilisant une base de donn&#xE9;es. Avec quelques ajustements, il peut tr&#xE8;s bien &#xEA;tre utilis&#xE9; pour un site statique ou que sais-je encore. Donc tout d&apos;abord dans <strong>Capfile</strong> :</p>
+<pre class="line-numbers"><code class="language-ruby"><span class="token keyword">require</span> <span class="token string">&apos;rubygems&apos;</span>
+<span class="token keyword">require</span> <span class="token string">&apos;railsless-deploy&apos;</span>
+load <span class="token string">&apos;config/deploy.rb&apos;</span> <span class="token keyword">if</span> respond_to<span class="token operator">?</span><span class="token punctuation">(</span><span class="token symbol">:namespace</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Puis dans <strong>deploy.rb</strong>, on commence par d&#xE9;finir nos param&#xE8;tres serveur :</p>
+<pre class="line-numbers"><code class="language-ruby"><span class="token comment" spellcheck="true"># SERVER (exemple user@user.hostingservice.com)</span>
+set <span class="token symbol">:domain</span><span class="token punctuation">,</span>  <span class="token string">&quot;user.hostingservice.com&quot;</span>
+set <span class="token symbol">:user</span><span class="token punctuation">,</span>    <span class="token string">&quot;user&quot;</span>
+
+<span class="token comment" spellcheck="true"># NAME</span>
+set <span class="token symbol">:application</span><span class="token punctuation">,</span> <span class="token string">&quot;monApplication&quot;</span>
+</code></pre>
+<p>Ensuite, on va d&#xE9;finir les param&#xE8;tres li&#xE9;s &#xE0; notre repository Git :</p>
+<pre class="line-numbers"><code class="language-ruby"><span class="token comment" spellcheck="true"># REPOSITORY (exemple avec un repo Bitbucket)</span>
+set <span class="token symbol">:repository</span><span class="token punctuation">,</span> <span class="token string">&quot;git@bitbucket.org:User/application-name.git&quot;</span>
+server <span class="token string">&quot;<span class="token interpolation"><span class="token delimiter tag">#{</span>domain<span class="token delimiter tag">}</span></span>&quot;</span><span class="token punctuation">,</span> <span class="token symbol">:app</span><span class="token punctuation">,</span> <span class="token symbol">:web</span><span class="token punctuation">,</span> <span class="token symbol">:db</span><span class="token punctuation">,</span> <span class="token symbol">:primary</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">true</span>
+set <span class="token symbol">:deploy_via</span><span class="token punctuation">,</span> <span class="token symbol">:copy</span>
+set <span class="token symbol">:copy_exclude</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;.git&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;.DS_Store&quot;</span><span class="token punctuation">]</span>
+set <span class="token symbol">:scm</span><span class="token punctuation">,</span> <span class="token symbol">:git</span>
+set <span class="token symbol">:branch</span><span class="token punctuation">,</span> <span class="token string">&quot;master&quot;</span>
+</code></pre>
+<p>Puis les param&#xE8;tres li&#xE9;s au d&#xE9;ploiement :</p>
+<pre class="line-numbers"><code class="language-ruby"><span class="token comment" spellcheck="true"># DEPLOY PARAMETERS</span>
+set <span class="token symbol">:deploy_to</span><span class="token punctuation">,</span> <span class="token string">&quot;/home/user/webapps/<span class="token interpolation"><span class="token delimiter tag">#{</span>application<span class="token delimiter tag">}</span></span>&quot;</span>
+set <span class="token symbol">:use_sudo</span><span class="token punctuation">,</span> <span class="token keyword">false</span>
+set <span class="token symbol">:git_shallow_clone</span><span class="token punctuation">,</span> <span class="token number">1</span>
+set <span class="token symbol">:keep_releases</span><span class="token punctuation">,</span> <span class="token number">10</span>
+ssh_options<span class="token punctuation">[</span><span class="token symbol">:paranoid</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">false</span>
+</code></pre>
+<p>Et pour finir, les param&#xE8;tres li&#xE9;s &#xE0; la base de donn&#xE9;es :</p>
+<pre class="line-numbers"><code class="language-ruby"><span class="token comment" spellcheck="true"># DATABASE</span>
+set <span class="token symbol">:dump_name</span><span class="token punctuation">,</span> <span class="token string">&quot;dump.<span class="token interpolation"><span class="token delimiter tag">#{</span>Time<span class="token punctuation">.</span>now<span class="token punctuation">.</span>strftime <span class="token string">&apos;%Y%m%d%H%M%S&apos;</span><span class="token delimiter tag">}</span></span>.sql&quot;</span>
+set <span class="token symbol">:dbuser</span><span class="token punctuation">,</span> <span class="token string">&quot;remote_user&quot;</span> 
+set <span class="token symbol">:dbhost</span><span class="token punctuation">,</span> <span class="token string">&quot;server.hostingservice.com&quot;</span>
+set <span class="token symbol">:dbpassword</span><span class="token punctuation">,</span> <span class="token string">&quot;PASSWORD&quot;</span>
+set <span class="token symbol">:application_db</span><span class="token punctuation">,</span> <span class="token string">&quot;remote_db_name&quot;</span>
+set <span class="token symbol">:local_db_host</span><span class="token punctuation">,</span> <span class="token string">&quot;localhost&quot;</span>
+set <span class="token symbol">:local_db_user</span><span class="token punctuation">,</span> <span class="token string">&quot;root&quot;</span>
+set <span class="token symbol">:local_db_password</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span>
+set <span class="token symbol">:local_db</span><span class="token punctuation">,</span> <span class="token string">&quot;local_db_name&quot;</span>
+</code></pre>
+<p>Ensuite, on va cr&#xE9;er des fonctions de d&#xE9;ploiement en commen&#xE7;ant par celle qui enverra les fichiers et qui installera votre fichier de config, ici <strong>db.php.dist</strong> qui va remplacer <strong>db.php</strong>.</p>
+<pre class="line-numbers"><code class="language-ruby">namespace <span class="token symbol">:deploy</span> <span class="token keyword">do</span>
+  desc <span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token operator">-</span><span class="token constant">DESC</span>
+  <span class="token constant">A</span> macro<span class="token operator">-</span>task that updates the code <span class="token keyword">and</span> fixes the symlink<span class="token punctuation">.</span>
+  <span class="token constant">DESC</span>
+  task <span class="token symbol">:default</span> <span class="token keyword">do</span>
+    transaction <span class="token keyword">do</span>
+      update_code
+      symlink
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+
+  task <span class="token symbol">:update_code</span><span class="token punctuation">,</span> <span class="token symbol">:except</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token symbol">:no_release</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">true</span> <span class="token punctuation">}</span> <span class="token keyword">do</span>
+    on_rollback <span class="token punctuation">{</span> run <span class="token string">&quot;rm -rf <span class="token interpolation"><span class="token delimiter tag">#{</span>release_path<span class="token delimiter tag">}</span></span>; true&quot;</span> <span class="token punctuation">}</span>
+    strategy<span class="token punctuation">.</span>deploy<span class="token operator">!</span>
+  <span class="token keyword">end</span>
+
+  desc <span class="token string">&quot;Set config file&quot;</span>
+  task <span class="token symbol">:config_file</span> <span class="token keyword">do</span>
+    run <span class="token string">&quot;rm <span class="token interpolation"><span class="token delimiter tag">#{</span>release_path<span class="token delimiter tag">}</span></span>/cms/config/db.php&quot;</span>
+    run <span class="token string">&quot;cp <span class="token interpolation"><span class="token delimiter tag">#{</span>release_path<span class="token delimiter tag">}</span></span>/cms/config/db.php.dist <span class="token interpolation"><span class="token delimiter tag">#{</span>release_path<span class="token delimiter tag">}</span></span>/anchor/config/db.php&quot;</span>
+    run <span class="token string">&quot;rm <span class="token interpolation"><span class="token delimiter tag">#{</span>release_path<span class="token delimiter tag">}</span></span>/cms/config/db.php.dist&quot;</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>Nous allons ensuite nous occuper de la fonction qui va migrer votre base de donn&#xE9;es vers la base de donn&#xE9;es distante. Cette fonction est tr&#xE8;s simple : elle va cr&#xE9;er un Dump dans le r&#xE9;pertoire <strong>dump/</strong> (qu&apos;il faudra pr&#xE9;alablement cr&#xE9;er) avec la date extacte afin d&apos;avoir un fichier unique, puis va l&apos;envoyer via SSH sur le MYSQL de votre serveur. J&apos;ai pris le parti de ne pas supprimer les Dumps afin de garder un versionnement de ma DB, mais libre &#xE0; vous de les supprimer. Dans tous les cas, je vous conseille de ne pas les commiter sur votre repo Git.</p>
+<pre class="line-numbers"><code class="language-ruby">namespace <span class="token symbol">:db</span> <span class="token keyword">do</span>
+  desc <span class="token string">&quot;Clone local DB to remote&quot;</span>
+  task <span class="token symbol">:migrate</span> <span class="token keyword">do</span>
+    system <span class="token string">&quot;mysqldump -u <span class="token interpolation"><span class="token delimiter tag">#{</span>local_db_user<span class="token delimiter tag">}</span></span> -B <span class="token interpolation"><span class="token delimiter tag">#{</span>local_db<span class="token delimiter tag">}</span></span> &gt; dump/<span class="token interpolation"><span class="token delimiter tag">#{</span>dump_name<span class="token delimiter tag">}</span></span>&quot;</span>
+    system <span class="token string">&quot;ssh -C <span class="token interpolation"><span class="token delimiter tag">#{</span>user<span class="token delimiter tag">}</span></span>@<span class="token interpolation"><span class="token delimiter tag">#{</span>domain<span class="token delimiter tag">}</span></span> mysql -u <span class="token interpolation"><span class="token delimiter tag">#{</span>dbuser<span class="token delimiter tag">}</span></span> --password=<span class="token interpolation"><span class="token delimiter tag">#{</span>dbpassword<span class="token delimiter tag">}</span></span> <span class="token interpolation"><span class="token delimiter tag">#{</span>application_db<span class="token delimiter tag">}</span></span> &lt; dump/<span class="token interpolation"><span class="token delimiter tag">#{</span>dump_name<span class="token delimiter tag">}</span></span>&quot;</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>Pour en finir avec <strong>deploy.rb</strong>, il faut encore d&#xE9;finir quelles fonctions vont &#xEA;tre execut&#xE9;, et dans quel ordre.</p>
+<pre class="line-numbers"><code class="language-ruby"><span class="token comment" spellcheck="true">#En premier nous allons migrer la base de donn&#xE9;es</span>
+before <span class="token string">&quot;deploy:update_code&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;db:migrate&quot;</span>
+
+<span class="token comment" spellcheck="true">#Puis apr&#xE8;s l&apos;envoi des fichiers, installer le fichier de config</span>
+after <span class="token string">&quot;deploy:update_code&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;deploy:config_file&quot;</span>
+
+<span class="token comment" spellcheck="true">#Pour finir, supprimer les veilles releases selon -&gt; set :keep_releases</span>
+after <span class="token string">&quot;deploy:update_code&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;deploy:cleanup&quot;</span>
+</code></pre>
+<h2 id="enfin-le-d-ploiement-">Enfin le d&#xE9;ploiement !</h2>
+<p>Maintenant que la recette est &#xE9;crite, il ne reste plus qu&apos;&#xE0; d&#xE9;ployer. Au premier d&#xE9;ploiement et pour cr&#xE9;er les diff&#xE9;rents r&#xE9;pertoires:</p>
+<pre class="line-numbers"><code class="language-bash">$ cap deploy:setup
+</code></pre>
+<p>Ensuite la commande magique pour chaque mise &#xE0; jour :</p>
+<pre class="line-numbers"><code class="language-bash">$ cap deploy:setup
+</code></pre>
+<p>Et selon ma recette, si vous souhaitez seulement migrer la base de donn&#xE9;es:</p>
+<pre class="line-numbers"><code class="language-bash">$ cap db:migrate
+</code></pre>
+<p>Un probl&#xE8;me ?</p>
+<pre class="line-numbers"><code class="language-bash">$ cap deploy:rollback
+</code></pre>
+<h2 id="hum-le-site-ne-marche-pas-">Hum... le site ne marche pas !</h2>
+<p>Et c&apos;est normal, car comme je vous l&apos;ai expliqu&#xE9; plus haut, il vous faut encore param&#xE9;trer le serveur pour qu&apos;il pointe sur <strong>current</strong> afin d&apos;ex&#xE9;cuter la bonne release. Donc pour cela, cr&#xE9;ez un <strong>.htaccess</strong> &#xE0; la racine:</p>
+<pre class="line-numbers"><code class="language-bash"><span class="token operator">&lt;</span>IfModule mod_rewrite.c<span class="token operator">&gt;</span>
+    RewriteEngine on
+    RewriteCond %<span class="token punctuation">{</span>REQUEST_URI<span class="token punctuation">}</span> <span class="token operator">!</span>^/current
+    RewriteRule ^<span class="token punctuation">(</span>.*<span class="token punctuation">)</span>$ /current/<span class="token variable">$1</span> <span class="token punctuation">[</span>L<span class="token punctuation">]</span>
+<span class="token operator">&lt;</span>/IfModule<span class="token operator">&gt;</span>
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>Capistrano est <strong>LA</strong> solution qui simplifiera votre vie et dont vous ne pourrez plus vous passer. Malgr&#xE9; les pr&#xE9;requis n&#xE9;cessaires, c&apos;est un outil qui se prend vite en main et qui, malgr&#xE9; le temps d&apos;apprentissage, vous fera gagner un temps consid&#xE9;rable dans tous vos projets.</p>
+<p>N&apos;h&#xE9;sitez pas si vous avez une question et pour ceux qui souhaiterais en savoir plus:<br>
+<a href="https://github.com/capistrano/capistrano/wiki">Le Wiki officiel</a><br>
+<a href="http://capifony.org/">Pour Symfony2</a><br>
+<a href="http://ryanflorence.com/deploying-with-capistrano-without-rails/">Un excellent article</a></p>
+
+    </article>
+  </div>
+
+
+    <script src="/js/vendors.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Styles modulaires - bonnes pratiques</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/types.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://use.typekit.net/cwx4xcg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+  <img src="/img/cover/styles-modulaires - bonnes pratiques.jpg" class="cover">
+  <div class="article-container">
+    <div class="text-center">
+      <h1>Styles modulaires - bonnes pratiques</h1>
+      <div class="date">
+        25.11.2013 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article>
+      <p>La modularit&#xE9; ou OO (object oriented) est un concept depuis longtemps utilis&#xE9; en programmation. Avec l&apos;apparition des pr&#xE9;processeurs CSS, le monde du frontend a commenc&#xE9; &#xE0; s&apos;ouvrir gentiment &#xE0; cette id&#xE9;e afin de cr&#xE9;er des styles plus flexibles et r&#xE9;utilisables. Maintenant que le temps de l&apos;exp&#xE9;rimentation de ses nouvelles technologies est pass&#xE9;, et avec le recul n&#xE9;cessaire, <strong>voici les bonnes pratiques &#xE0; observer pour des styles au top</strong>.</p>
+<p>Il y a 6 mois, j&apos;ai &#xE9;cris un <a href="http://antistatique.net/blog/2013/03/12/less-possibilites-et-utilisation/">article</a> sur le blog de l&apos;agence dans lequel je parlais des bonnes pratiques des langages de pr&#xE9;processing CSS. Maintenant, plus que dans l&apos;utilisation du langage, certains concepts g&#xE9;n&#xE9;raux doivent &#xEA;tre observ&#xE9;s afin d&apos;obtenir des styles modulaires.</p>
+<h2 id="fragmentation">Fragmentation</h2>
+<p>Plut&#xF4;t que d&apos;avoir une feuille de styles &#xE0; 5&apos;000 lignes, <strong>d&#xE9;coupez de fa&#xE7;on logique votre code</strong>. Peu importe le mode de fragmentation, il faut que ce dernier soit coh&#xE9;rent et qu&apos;il puisse &#xEA;tre compris de tous. Dans l&apos;id&#xE9;al, le fichier principal qui va &#xEA;tre export&#xE9; en CSS ne doit contenir que des imports bien document&#xE9;s.</p>
+<p>Un peu &#xE0; la <a href="http://getbootstrap.com">Twiter Bootstrap</a>, s&#xE9;parez et groupez votre code par &#xE9;l&#xE9;ments, portions de layouts ou cat&#xE9;gorie. Voici &#xE0; quoi votre main.scss, ou que sais-je, pourrait ressembler :</p>
+<pre class="line-numbers"><code class="language-scss"><span class="token comment" spellcheck="true">// main.scss example *****************</span>
+
+<span class="token comment" spellcheck="true">// Basis</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;normalize&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;grid-system&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;mixins&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;variables&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Elements</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;text&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;layout&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;form&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;table&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;list&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;button&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Layout area</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;header&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;navigation&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;list-item&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;profile&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;article&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&apos;footer&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="variables-et-mixins">Variables et mixins</h2>
+<p>L&apos;utilisation des variables est indispensable &#xE0; moins que vous ne soyez plut&#xF4;t partisan du &quot;chercher / remplacer&quot; &#xE0; outrance. Dans le cas contraire, cr&#xE9;er un fichier ind&#xE9;pendant pour les variables et un autre pour les mixins semble &#xEA;tre une d&#xE9;duction logique du principe &#xE9;nonc&#xE9; plus haut.</p>
+<p>Comme pour les fichiers, <strong>vos variables doivent &#xEA;tre regroup&#xE9;es selon une certaine logique</strong>. Dans l&apos;id&#xE9;e, cr&#xE9;ez une rubrique par couleurs, fonts et cotes. Vous pouvez le faire diff&#xE9;remment, mais ce dernier a le m&#xE9;rite d&apos;&#xEA;tre &#xE0; la port&#xE9;e de tous. Et comme toujours, documenter votre code, car les variables seront le nerf de vos styles.</p>
+<p>Pour ce qui est des mixins, comme avant, regroupez-les et documentez-les pour pouvoir vous y retrouver quand elles commenceront &#xE0; se multiplier. <strong>Gardez a l&apos;esprit que chaque fois que vous devrez dupliquer une portion de code pour en changer les valeurs, cr&#xE9;ez une mixin</strong>. Comme en programmation, la mixin est une machine plus ou moins complexe qui vous permettra, en fonction des param&#xE8;tres que vous lui passerez, d&apos;aboutir au r&#xE9;sultat d&#xE9;sir&#xE9; sans dupliquer le moindre code.</p>
+<h2 id="les-styleguides">Les styleguides</h2>
+<p>L&apos;emploi d&apos;un syst&#xE8;me de styleguide vous obligera &#xE0; penser et coder modulaire. En effet, si vous commencer par concevoir les &#xE9;l&#xE9;ments de votre design ind&#xE9;pendamment les uns des autres en ne les consultants que dans votre styleguide, vous aurez int&#xE9;gr&#xE9; le plus gros du concept. En effet, avant de toucher la moindre portion d&apos;HTML, <strong>cr&#xE9;er vos &#xE9;l&#xE9;ments dans votre styleguide</strong> et une fois le catalogue plus ou moins complet, mettez-le &#xE0; l&apos;&#xE9;preuve en condition r&#xE9;elle. Il y aura toujours des ajustements, mais le constat serra sans &#xE9;quivoque : cr&#xE9;er une nouvelle page vous semblera aussi ais&#xE9; qu&apos;utiliser un framework CSS.</p>
+<p>Dans les technologies mises &#xE0; disposition, vous avez le c&#xE9;l&#xE8;bre <a href="http://warpspire.com/kss/">KSS</a> utilis&#xE9; notamment pour Github, mais aussi <a href="http://kaleistyleguide.com">Kalei Styleguide</a> plus simple &#xE0; mettre en place et qui utilise une syntaxe Markdown tr&#xE8;s pratique. Il existe aussi <a href="http://jacobrask.github.io/styledocco/">StyleDocco</a> qui reprend le m&#xEA;me principe que Kalei. Bref, au final plusieurs options s&apos;offrent &#xE0; vous et <strong>il vous reste &#xE0; employer celui avec lequel vous serez le plus &#xE0; l&apos;aise</strong>.</p>
+<h2 id="un-nouveau-monde-s-offre-vous-">Un nouveau monde s&apos;offre &#xE0; vous!</h2>
+<p>Fini le casse-t&#xEA;te des mises &#xE0; jour, finis le calvaire des ajustements dans le design, finis les d&#xE9;finitions de style trop contraignantes, <strong>vous voici aux portes du merveilleux monde du d&#xE9;veloppement modulaire !</strong></p>
+
+    </article>
+  </div>
+
+
+    <script src="/js/vendors.min.js"></script>
+  </body>
+</html>

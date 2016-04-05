@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Choisissez le SVG</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/types.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://use.typekit.net/cwx4xcg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+  <img src="/img/cover/choisissez-le svg.jpg" class="cover">
+  <div class="article-container">
+    <div class="text-center">
+      <h1>Choisissez le SVG</h1>
+      <div class="date">
+        24.05.2013 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article>
+      <p>Avec la multiplication des diff&#xE9;rences de densit&#xE9; de pixel sur les nouveaux devices, rendre une image o&#xF9; un pictogramme peut devenir un v&#xE9;ritable casse-t&#xEA;te. Il existe des solutions comme <a href="http://macrabbit.com/slicy/">Slicy</a> qui d&#xE9;doubleront vos images afin de les optimiser pour retina, mais cela demande un effort suppl&#xE9;mentaire.</p>
+<p>Personnellement et pour toute image flat ou pictographique, je vous recommande fortement le SVG. Comme son nom l&apos;indique (Scalable Vector Graphics), il sera toujours rendu parfaitement quel que soit sa taille et quel que soit la densit&#xE9; de pixel pr&#xE9;sente sur le device. Le SVG n&apos;est malheureusement pas compatible avec tous les navigateurs. Pour parer &#xE0; ce probl&#xE8;me, il existe plusieurs solutions. On peut tout &#xE0; fait utiliser une librairie comme <a href="http://raphaeljs.com/">Rapha&#xEB;l</a> qui, en plus de rendre votre SVG correctement, vous permettra de l&apos;animer en JavaScript. <a href="http://code.google.com/p/svgweb/">SVGWeb</a> est &#xE9;galement un bon choix dans le sens o&#xF9; il encapsulera votre animation dans du Flash pour les navigateurs ne supportant pas cette technologie.</p>
+<p>Mais pour ceux qui souhaiteraient simplement int&#xE9;grer une image SVG avec une compatibilit&#xE9; maximum, il existe un moyen facile. Cr&#xE9;er votre SVG et exporter une copie en PNG, puis dans l&apos;HTML :</p>
+<pre class="line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>images/logo.svg<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onerror</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>this.onerror<span class="token punctuation">=</span>null; this.src<span class="token punctuation">=</span><span class="token punctuation">&apos;</span>images/logo.png<span class="token punctuation">&apos;</span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>logo<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre>
+<p>Dans le cas o&#xF9; le navigateur ne supporte pas le SVG, le JavaScript le remplacera par son homologue PNG.</p>
+
+    </article>
+  </div>
+
+
+    <script src="/js/vendors.min.js"></script>
+  </body>
+</html>

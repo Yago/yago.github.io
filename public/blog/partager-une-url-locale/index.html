@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Partager une URL locale</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/types.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://use.typekit.net/cwx4xcg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+  <img src="/img/cover/partager-une url locale.jpg" class="cover">
+  <div class="article-container">
+    <div class="text-center">
+      <h1>Partager une URL locale</h1>
+      <div class="date">
+        03.06.2013 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article>
+      <p>En cours de mandat, il vous est surement d&#xE9;j&#xE0; arriv&#xE9; de vouloir montrer votre travail &#xE0; un coll&#xE8;gue ou &#xE0; votre client, mais sans pour autant effectuer tout un d&#xE9;ploiement. Vous pourriez en effet utiliser <a href="http://www.yago.io/blog/capistrano">Capistrano</a> afin d&apos;&#xE9;viter toute h&#xE9;sitation de d&#xE9;ploiement. Cependant, il existe des moyens tout simple pour partager votre site local vers un r&#xE9;seau local ou externe.</p>
+<p>Si vous souhaitez partagez un site install&#xE9; sur votre apache local, il suffit de lui attribuer un port et de donner votre IP suivi du port pour que quiconque sur votre r&#xE9;seau local puisse y acc&#xE9;der. Pour ce faire, allez d&#xE9;finir le port dans votre fichier <strong>http-vhosts.conf</strong> :</p>
+<pre class="line-numbers"><code class="language-apacheconf"><span class="token directive-inline property">Listen</span> 8001
+<span class="token directive-block tag"><span class="token directive-block tag"><span class="token punctuation">&lt;</span>VirtualHost</span><span class="token directive-block-parameter attr-value"> *<span class="token punctuation">:</span>8001</span><span class="token punctuation">&gt;</span></span>
+    <span class="token directive-inline property">ServerName</span> monSite.dev
+    <span class="token directive-inline property">DocumentRoot</span> <span class="token string">&quot;/Users/Me/Sites/monSite&quot;</span>
+    <span class="token directive-inline property">DirectoryIndex</span> index.php
+<span class="token directive-block tag"><span class="token directive-block tag"><span class="token punctuation">&lt;/</span>VirtualHost</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>Puis il suffit de donner votre IP suivi du port d&#xE9;fini ci-dessus. Par exemple :</p>
+<pre class="line-numbers"><code class="language-bash">192.168.0.1:8001
+</code></pre>
+<p>Pour ceux qui souhaiterais partager leur apache local vers un r&#xE9;seau externe, un super outil gratuit existe : <a href="http://progrium.com/localtunnel/">Localtunnel</a>. Il vous suffit de l&apos;installer, puis de lui faire &#xE9;couter un port et il se chargera de vous fournir une URL que vous pourrez partager. En pratique, il va cr&#xE9;er un tunnel SSH entre votre machine et lui pour que tout un chacun puisse acc&#xE9;der &#xE0; votre port.</p>
+<p>Donc pour installer Localtunnel et lui transmettre votre clef SSH public :</p>
+<pre class="line-numbers"><code class="language-bash">$ <span class="token function">sudo</span> gem <span class="token function">install</span> localtunnel
+$ localtunnel -k ~/.ssh/id_rsa.pub 8080
+</code></pre>
+<p>Puis autant fois que vous le d&#xE9;sirez :</p>
+<pre class="line-numbers"><code class="language-bash">$ localtunnel 8001
+</code></pre>
+<p>Localtunnel va vous donner quelque chose dans ce go&#xFB;t-l&#xE0;, vous n&apos;aurez plus qu&apos;&#xE0; copier l&apos;URL.</p>
+<pre class="line-numbers"><code class="language-bash">This localtunnel <span class="token function">service</span> is brought to you by Twilio.
+Port 8001 is now publicly accessible from http://3yag.localtunnel.com <span class="token punctuation">..</span>.
+</code></pre>
+<p>Voil&#xE0;, maintenant vous savez tout et vous pouvez enfin partager vos projets les plus fous &#xE0; tous vos amis !</p>
+
+    </article>
+  </div>
+
+
+    <script src="/js/vendors.min.js"></script>
+  </body>
+</html>

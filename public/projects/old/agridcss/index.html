@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Agrid.css</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/types.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://use.typekit.net/cwx4xcg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+  <img src="/img/cover/agrid.css.jpg" class="cover">
+  <div class="article-container">
+    <div class="text-center">
+      <h1>Agrid.css</h1>
+      <div class="date">
+        22.05.2013 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article>
+      <p>Agrid est un syst&#xE8;me de grille fluide. Il est <strong>l&#xE9;ger, facile &#xE0; utiliser et extr&#xEA;mement flexible</strong>. Tout comme un Twitter Bootstrap, il suffit de d&#xE9;finir une structure html de base agr&#xE9;ment&#xE9;e de classe d&#xE9;finissant les proportions de vos blocs.</p>
+<pre class="line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>row<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>span4<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>span4<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>span4 last<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>&#xC0; partir de cette structure simple et logique, tout est possible !</p>
+<p>Pour ceux qui souhaiteraient aller plus loin, <strong>agrid.less</strong> permet de g&#xE9;n&#xE9;rer une grille personnalis&#xE9;e en choisissant quelques param&#xE8;tres. Il est possible de choisir le nombre de colonnes, la taille des goutti&#xE8;res proportionnelle &#xE0; celles des colonnes et la largeur maximum du conteneur. Avec ces quelques param&#xE8;tres, la grille s&apos;adaptera parfaitement &#xE0; tous les besoins.</p>
+<pre class="line-numbers"><code class="language-less"><span class="token comment" spellcheck="true">// CONTROL PANEL</span>
+<span class="token comment" spellcheck="true">//=========================================</span>
+
+<span class="token comment" spellcheck="true">// Define the number of columns</span>
+<span class="token variable">@columnNumber <span class="token punctuation">:</span></span> 12<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// You want Gutter ? (yes=1/no=0)</span>
+<span class="token variable">@gutterExist <span class="token punctuation">:</span></span> 1<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Define the smallest .span</span>
+<span class="token variable">@startFrom <span class="token punctuation">:</span></span> 1<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Define the ratio between column and gutter</span>
+<span class="token variable">@columnRatio <span class="token punctuation">:</span></span> 1.61803399<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Define the max-width of your Grid</span>
+<span class="token variable">@maxWidth <span class="token punctuation">:</span></span> 1140px<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Define the Media Queries steps</span>
+<span class="token variable">@limit <span class="token punctuation">:</span></span> 767px<span class="token punctuation">;</span>
+<span class="token variable">@ieLimit <span class="token punctuation">:</span></span> 950px<span class="token punctuation">;</span>
+</code></pre>
+<p>N&apos;h&#xE9;sitez pas &#xE0; faire un tour sur la page de <a href="http://yago31.github.io/agrid.css/">pr&#xE9;sentation</a> et &#xE0; forker le projet <a href="https://github.com/yago31/agrid.css">Github</a></p>
+
+    </article>
+  </div>
+
+
+    <script src="/js/vendors.min.js"></script>
+  </body>
+</html>

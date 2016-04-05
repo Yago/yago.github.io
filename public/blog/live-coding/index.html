@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Live coding</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/types.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://use.typekit.net/cwx4xcg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+  <img src="/img/cover/live-coding.jpg" class="cover">
+  <div class="article-container">
+    <div class="text-center">
+      <h1>Live coding</h1>
+      <div class="date">
+        13.09.2014 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article>
+      <p>Lors de la cr&#xE9;ation des styles de votre site, combien de fois <strong>enregistrez</strong>, <strong>switchez</strong> sur dans votre navigateur pr&#xE9;f&#xE9;r&#xE9; (ou pas) et <strong>rafraichissez-vous</strong> la page ? Une fois la question soulev&#xE9;e, vous vous rendrez bien vite compte du nombre hallucinant de fois que vous le faites machinalement. Au final, il s&apos;agit d&apos;une quantit&#xE9; non n&#xE9;gligeable de pr&#xE9;cieuses minutes ainsi gaspill&#xE9;es. Si vous en avez ras le bol de subir cette manipulation, <strong>la suite va vous plaire !</strong></p>
+<h2 id="la-solution-old-school">La solution old school</h2>
+<p>Pour ceux pr&#xE9;f&#xE9;rant utiliser un pr&#xE9;processeur CSS pour &#xE9;laborer leurs styles, la qu&#xEA;te DU compilateur est toujours d&apos;actualit&#xE9;. Je vous conseille fortement d&apos;employer la solution de base via le terminal, <strong>mais pour ceux dont la console provoque une violente &#xE9;ruption cutan&#xE9;e</strong>, il y a<strong> <a href="http://livereload.com/">LiveReload</a></strong> !</p>
+<p><img src="http://yago.io/content/images/live-coding-livereload.png" alt="LiveReload"></p>
+<p>Servant en premier lieu de compilateur pour tous les langages de pr&#xE9;processing, il permet &#xE9;galement, via une extension d&#xE9;di&#xE9;e &#xE0; votre browser favori, de recharger la page &#xE0; chaque modification d&apos;un des fichiers de votre projet. Vous n&apos;avez plus qu&apos;&#xE0; coder et &#xE0; chaque enregistrement, le navigateur situ&#xE9; &#xE0; c&#xF4;t&#xE9; se recherchera tout seul !</p>
+<h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<p><strong>Pour ceux pour qui le terminal ne fait pas peur et qui souhaiteraient aller un peu plus loin</strong>, il y a <strong><a href="http://www.browsersync.io/">BrowserSync</a></strong> ! Bas&#xE9; sur NodeJS, BrowserSync utilise la c&#xE9;l&#xE8;bre librairie <a href="http://socket.io/">Socket.io</a> afin de synchroniser tous les navigateurs connect&#xE9;s.</p>
+<blockquote>
+<p>Wait, what ?!?</p>
+</blockquote>
+<p>Eh oui, <strong>BrowserSync g&#xE9;n&#xE8;re un proxy pointant vers votre projet</strong> qui, en utilisant l&apos;URL fournie, permet de synchroniser vos browsers, desktops ou mobiles. Vous remarquez, perspicaces lecteurs, que j&apos;utilise le terme &quot;synchroniser&quot; et pas &quot;recharger&quot; comme pour LiveReload. En effet, BrowserSync fait bien plus que recharger vos navigateurs, <strong>il offre une navigation synchronis&#xE9;e durant vos tests</strong>. Cela signifie que lorsque que vous changez de page, tous les navigateurs changent de page et quand vous scrollez, tous les navigateurs scroll en m&#xEA;me temps !</p>
+<h2 id="l-utilisation">L&apos;utilisation</h2>
+<p>Premi&#xE8;rement, il vous faut NodeJS et <a href="https://www.npmjs.org/">npm</a>. Ensuite, il vous suffit d&apos;installer le module sur votre syst&#xE8;me :</p>
+<pre class="line-numbers"><code class="language-bash">$ npm <span class="token function">install</span> -g browser-sync
+</code></pre>
+<p>Maintenant, avant de le lancer, il faut comprendre une chose. <strong>Vous devez lui donner les fichiers &#xE0; observer</strong> sur lesquels il se basera pour lancer le rafraichissement. Il y a &#xE9;galement une s&#xE9;rie d&apos;options magnifiquement d&#xE9;crites dans la <a href="http://www.browsersync.io/docs/command-line/">documentation</a> du module. En pratique, cela donne quelque chose comme cela :</p>
+<pre class="line-numbers"><code class="language-bash">$ browser-sync start --server --files <span class="token string">&quot;build/css/*.css&quot;</span>
+</code></pre>
+<p>Du coup, chaque fois que mon CSS sera compil&#xE9;, BrowserSync va rafraichir tous les navigateurs connect&#xE9;s.</p>
+<p><img src="http://yago.io/content/images/live-coding2.gif" alt="Live coding gif demo"></p>
+<h2 id="parfait-avec-un-task-runner">Parfait avec un task runner</h2>
+<p>Le gros avantage de BrowserSync est sa simplicit&#xE9; d&apos;impl&#xE9;mentation dans des task runners tel que <a href="http://gruntjs.com/">Grunt</a> ou <a href="http://gulpjs.com/">Gulp</a>.<strong> Il peut tr&#xE8;s facilement &#xEA;tre lanc&#xE9; apr&#xE8;s l&apos;ex&#xE9;cution de t&#xE2;ches sp&#xE9;cifiques</strong> afin de s&apos;int&#xE9;grer au mieux dans votre workflow. Sa souplesse en fait donc un outil proche de la perfection !</p>
+<h2 id="vive-le-live-coding-">Vive le live coding !</h2>
+<p>J&apos;esp&#xE8;re avoir pu encore <strong>contribuer &#xE0; l&apos;am&#xE9;lioration de votre condition d&apos;int&#xE9;grateur</strong>. Quoi qu&apos;il en soit, utiliser un des outils pr&#xE9;sent&#xE9;s ci-dessus va rendre votre travail clairement plus cool et si vous souhaiter voir un morphing de votre design &#xE0; chaque reload, ajouter simplement ceci en haut de votre feuille de style :</p>
+<pre class="line-numbers"><code class="language-css"><span class="token selector">*</span> <span class="token punctuation">{</span><span class="token property">transition</span><span class="token punctuation">:</span> all 0.3s<span class="token punctuation">;</span><span class="token punctuation">}</span>
+</code></pre>
+<p>Apr&#xE8;s, &#xE7;a reste juste pour le fun, <strong>&#xE9;vitez donc de l&apos;appliquer en production</strong> ;)</p>
+
+    </article>
+  </div>
+
+
+    <script src="/js/vendors.min.js"></script>
+  </body>
+</html>
