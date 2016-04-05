@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/types.css">
     <link rel="stylesheet" href="/css/main.css">
 
     <script src="https://use.typekit.net/cwx4xcg.js"></script>
