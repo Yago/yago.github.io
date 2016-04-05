@@ -2,7 +2,7 @@
   "app": {
     "env": "dev",
     "basedir": "public",
-    "ghpages": "."
+    "ghpages": "public"
   },
   "vendors": {
     "css": [
