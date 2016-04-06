@@ -12,6 +12,12 @@
   margin-top: -11px;
   padding: 0;
 
+  &:active,
+  &:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
   span {
     display: block;
     width: 100%;

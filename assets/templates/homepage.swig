@@ -1,5 +1,7 @@
 {% extends "base.swig" %}
 
 {% block content %}
-  {{ contents|raw }}
+  <div class="article-container">
+    {{ contents|raw }}
+  </div>
 {% endblock %}
