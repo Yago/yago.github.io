@@ -20,6 +20,8 @@
     <![endif]-->
   </head>
   <body>
+    {% include '../components/organisms/header.swig' %}
+
     {% block content %}{% endblock %}
 
     <script src="/js/vendors.min.js"></script>

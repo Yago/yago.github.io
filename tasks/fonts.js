@@ -15,7 +15,7 @@ module.exports = function() {
       .pipe($.inlineFonts({
         name: 'Cala',
         weight: 'bold',
-        formats: ['ttf', 'eot', 'svg', 'woff', 'woff2']
+        formats: ['woff', 'woff2']
       }))
       .pipe($.concat('cala-bold.css'))
       .pipe(gulp.dest(config.build + 'css'));
@@ -27,7 +27,7 @@ module.exports = function() {
         name: 'Cala',
         style: 'italic',
         weight: 'normal',
-        formats: ['ttf', 'eot', 'svg', 'woff', 'woff2']
+        formats: ['woff', 'woff2']
       }))
       .pipe($.concat('cala-italic.css'))
       .pipe(gulp.dest(config.build + 'css'));
@@ -39,7 +39,7 @@ module.exports = function() {
         name: 'Cala',
         style: 'normal',
         weight: 'normal',
-        formats: ['ttf', 'eot', 'svg', 'woff', 'woff2']
+        formats: ['woff', 'woff2']
       }))
       .pipe($.concat('cala-regular.css'))
       .pipe(gulp.dest(config.build + 'css'));
