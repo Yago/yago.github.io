@@ -20,10 +20,18 @@
     <![endif]-->
   </head>
   <body>
-    {% include '../components/organisms/header.swig' %}
+    <div class="main-wrapper">
+      <div class="content-wrapper">
+        {% include '../components/organisms/header.swig' %}
+        {% block content %}{% endblock %}
+      </div>
+      <div class="side-wrapper console-wrapper">
+        <div id="console" class="console"></div>
+      </div>
+    </div>
 
-    {% block content %}{% endblock %}
 
     <script src="/js/vendors.min.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

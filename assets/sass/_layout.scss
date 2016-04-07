@@ -1,5 +1,27 @@
 @charset 'UTF-8';
 
+.main-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.content-wrapper {
+  width: 100%;
+  transform: translateX(25%);
+  transition: transform 0.3s;
+}
+
+.side-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100vh;
+  background: $black;
+}
+
 .article-container {
   max-width: 650px;
   margin: 0 auto;

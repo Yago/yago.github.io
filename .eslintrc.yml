@@ -1,6 +1,6 @@
 env:
   browser: true
-  es6: true
+  es6: false
 extends: 'eslint:recommended'
 ecmaFeatures:
   blockBindings: true
@@ -14,7 +14,7 @@ rules:
   linebreak-style:
     - error
     - unix
-  no-var: 2
+  no-var: off
   no-console: 1
   quotes:
     - error
