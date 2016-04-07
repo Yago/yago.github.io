@@ -6,7 +6,7 @@
   $(document).ready(function () {
 
     var jqconsole = $('#console').jqconsole('Hi\n', '> ', 'coucou', true);
-    console.log(jqconsole);
+
     var startPrompt = function () {
       jqconsole.Prompt(true, function (input) {
         if (input === 'help') {
@@ -17,7 +17,12 @@
         startPrompt();
       });
     };
-    startPrompt();
+
+    $('#console-button').click(function () {
+      $('#console-wrapper').toggleClass('open');
+      $('#content-wrapper').toggleClass('left-open');
+      startPrompt();
+    });
 
   });
 }(jQuery));
