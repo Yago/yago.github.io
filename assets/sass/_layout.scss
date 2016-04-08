@@ -13,6 +13,7 @@
   transition: transform 0.3s;
 
   &.left-open {transform: translateX(25%);}
+  &.right-open {transform: translateX(-25%);}
 }
 
 .side-wrapper {
@@ -22,10 +23,16 @@
   width: 25%;
   height: 100vh;
   background: $black;
+  transition: transform 0.3s;
 
   &.console-wrapper {
     transform: translateX(-100%);
-    transition: transform 0.3s;
+  }
+
+  &.menu-wrapper {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
   }
 
   &.open {transform: translateX(0);}

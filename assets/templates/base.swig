@@ -28,6 +28,9 @@
       <div id="console-wrapper" class="side-wrapper console-wrapper">
         <div id="console" class="console"></div>
       </div>
+      <div id="menu-wrapper" class="side-wrapper menu-wrapper">
+        <div id="menu" class="menu"></div>
+      </div>
     </div>
 
 

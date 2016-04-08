@@ -4,8 +4,11 @@
 
 (function($){
   $(document).ready(function () {
-
-    var jqconsole = $('#console').jqconsole('Hi\n', '> ', 'coucou', true);
+    var $contentWrapper = $('#content-wrapper'),
+        $consoleWrapper = $('#console-wrapper'),
+        $consoleToggle = $('#console-toggle'),
+        $console = $('#console'),
+        jqconsole = $console.jqconsole('Hi\n', '> ', 'coucou', true);
 
     var startPrompt = function () {
       jqconsole.Prompt(true, function (input) {
@@ -18,9 +21,9 @@
       });
     };
 
-    $('#console-button').click(function () {
-      $('#console-wrapper').toggleClass('open');
-      $('#content-wrapper').toggleClass('left-open');
+    $consoleToggle.click(function () {
+      $consoleWrapper.toggleClass('open');
+      $contentWrapper.toggleClass('left-open');
       startPrompt();
     });
 
