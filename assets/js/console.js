@@ -5,6 +5,7 @@
 (function($){
   $(document).ready(function () {
     var $contentWrapper = $('#content-wrapper'),
+        $menuWrapper = $('#menu-wrapper'),
         $consoleWrapper = $('#console-wrapper'),
         $consoleToggle = $('#console-toggle'),
         $console = $('#console'),
@@ -21,11 +22,24 @@
       });
     };
 
+    startPrompt();
+
     $consoleToggle.click(function () {
       $consoleWrapper.toggleClass('open');
       $contentWrapper.toggleClass('left-open');
       startPrompt();
+      jqconsole.Focus();
     });
 
+    $(document).keyup(function(e) {
+      if (e.altKey && e.keyCode === 67) {
+        $consoleWrapper.toggleClass('open');
+        $contentWrapper.toggleClass('left-open');
+        $contentWrapper.removeClass('right-open');
+        $menuWrapper.removeClass('open');
+        startPrompt();
+        jqconsole.Focus();
+      }
+    });
   });
 }(jQuery));

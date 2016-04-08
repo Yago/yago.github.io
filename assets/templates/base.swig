@@ -21,11 +21,11 @@
   </head>
   <body>
     <div class="main-wrapper">
-      <div id="content-wrapper" class="content-wrapper">
+      <div id="content-wrapper" class="content-wrapper left-open">
         {% include '../components/organisms/header.swig' %}
         {% block content %}{% endblock %}
       </div>
-      <div id="console-wrapper" class="side-wrapper console-wrapper">
+      <div id="console-wrapper" class="side-wrapper console-wrapper open">
         <div id="console" class="console"></div>
       </div>
       <div id="menu-wrapper" class="side-wrapper menu-wrapper">
