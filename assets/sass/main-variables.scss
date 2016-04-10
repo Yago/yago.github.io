@@ -1,23 +1,43 @@
-$gr: 1.61803398875;
+// Basics ---------------------------------
+$base:     22px;
+$gr:       1.61803398875;
+$gutter:   $gr * 1em;
 
-$anzac: #dcb853;
+// Colors ---------------------------------
+$anzac:           #dcb853;
 
-$viking: #76aedd;
-$curious-blue: #2d95e3;
+$viking:          #76aedd;
+$curious-blue:    #2d95e3;
 
-$pear: #a6e22e;
+$pear:            #a6e22e;
 
-$white: #fff;
-$gallery: #ededed;
-$silver: #c1c1c1;
-$boulder: #7d7d7d;
-$tundora: #434343;
-$heavy-metal: #272822;
-$black: #000;
+$white:           #fff;
+$gallery:         #ededed;
+$silver:          #c1c1c1;
+$boulder:         #7d7d7d;
+$tundora:         #434343;
+$heavy-metal:     #272822;
+$black:           #000;
 
-$serif: 'Cala', Georgia, serif;
-$sans: 'Ratio', Helvetica Neue, Helvetica, Arial, sans-serif;
-$monospace: Monaco, "Lucida Console", monospace;
+// Fonts ---------------------------------
+$serif:       'Cala', Georgia, serif;
+$sans:        'Ratio', Helvetica Neue, Helvetica, Arial, sans-serif;
+$monospace:   Monaco, "Lucida Console", monospace;
 
-$base: 22px;
-$gutter: $gr * 1em;
+// Breakpoints ---------------------------
+$screen-xs:          30em !default;
+$screen-xs-min:      $screen-xs !default;
+
+$screen-sm:          48em !default;
+$screen-sm-min:      $screen-sm !default;
+
+$screen-md:          62em !default;
+$screen-md-min:      $screen-md !default;
+
+$screen-lg:          93.375em !default;
+$screen-lg-min:      $screen-lg !default;
+
+$screen-xs-max:      ($screen-sm-min - 1) !default;
+$screen-sm-max:      ($screen-md-min - 1) !default;
+$screen-md-max:      ($screen-lg-min - 1) !default;
+

@@ -4,15 +4,15 @@ html {
   font-size: $base;
   line-height: $gr * 1em;
 
-  @media screen and (max-width: 70em) {
+  @media screen and (max-width: $screen-sm-max) {
     font-size: floor(($base * 0.92));
   }
 
-  @media screen and (max-width: 60em) {
+  @media screen and (max-width: $screen-xs-max) {
     font-size: floor(($base * 0.88));
   }
 
-  @media screen and (max-width: 40em) {
+  @media screen and (max-width: $screen-xs) {
     font-size: floor(($base * 0.8));
   }
 }

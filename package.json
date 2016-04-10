@@ -4,6 +4,7 @@
   "main": "index.html",
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
+    "highcharts": "^4.2.3",
     "html5shiv": "^3.7.3",
     "jq-console": "^2.13.2",
     "jquery": "^2.1.4",

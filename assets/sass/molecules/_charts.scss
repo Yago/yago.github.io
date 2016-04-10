@@ -1,0 +1,10 @@
+@charset 'UTF-8';
+
+.pie-chart {
+  width: 50%;
+  float: right;
+
+  @media screen and (max-width: $screen-xs-max) {
+    width: 100%;
+  }
+}

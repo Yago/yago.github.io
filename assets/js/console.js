@@ -19,18 +19,15 @@
       jqconsole.RegisterMatching('{', '}', 'brackets');
       jqconsole.Prompt(true, function (input) {
         switch (input) {
-          case 'help':
-            jqconsole.Write('Some help\ntext here\n', 'jqconsole-output');
-            break;
-          case 'pwd':
-            jqconsole.Write('/home/yago' + window.location.pathname, 'jqconsole-output');
-            break;
-          case 'pwd':
-            jqconsole.Write('/home/yago' + window.location.pathname, 'jqconsole-output');
-            break;
-          default:
-            jqconsole.Write(input + '\n', 'jqconsole-output');
-            break;
+        case 'help':
+          jqconsole.Write('Some help\ntext here\n', 'jqconsole-output');
+          break;
+        case 'pwd':
+          jqconsole.Write('/home/yago' + window.location.pathname, 'jqconsole-output');
+          break;
+        default:
+          jqconsole.Write(input + '\n', 'jqconsole-output');
+          break;
         }
         startPrompt();
       });
