@@ -20,7 +20,29 @@
     <![endif]-->
   </head>
   <body>
-    
+    <div class="main-wrapper">
+      <div id="content-wrapper" class="content-wrapper">
+        <header>
+  <a href="/">
+    <img class="logo" src="/svg/yago-logo.svg" onerror="this.onerror=null; this.src='/img/yago-logo.png'" alt="Yago logotype" />
+  </a>
+
+  <button type="button" class="console-toggle" id="console-toggle">
+  <span class="sr-only">Toggle console</span>
+  <span></span>
+  <span></span>
+</button>
+
+  <button type="button" class="menu-toggle" id="menu-toggle">
+  <span class="sr-only">Toggle navigation</span>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+</header>
+
+        
   <img src="/img/cover/pianovino.jpg" class="cover">
   <div class="article-container">
     <div class="text-center">
@@ -42,7 +64,17 @@
     </article>
   </div>
 
+      </div>
+      <div id="console-wrapper" class="side-wrapper console-wrapper">
+        <div id="console" class="console"></div>
+      </div>
+      <div id="menu-wrapper" class="side-wrapper menu-wrapper">
+        <div id="menu" class="menu"></div>
+      </div>
+    </div>
+
 
     <script src="/js/vendors.min.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
