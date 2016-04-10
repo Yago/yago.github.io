@@ -54,13 +54,19 @@
           languagesFormatted.push({'name': 'Other','level':0,'y':otherPoints});
           languagesFormatted.sort(sortLevel);
 
+          var status = '<tr><th>Coding now</th><td>false</td></tr>';
+
+          if (res.programming_now) {
+            status = '<tr><th>Coding now</th><td>'+ res.programming_now +'</td></tr><tr><th>Current language</th><td>'+ res.current_language.replace('.sublime-syntax', '') +'</td></tr>';
+          }
+
           $personnalInfos.html(''+
             '<table>'+
             '<tr><th>User</th><td><a href="https://github.com/yago">'+ res.name +'</a></td></tr>'+
               '<tr><th>Level</th><td>'+ res.level +'</td></tr>'+
               '<tr><th>Platform</th><td>OSX</td></tr>'+
-              '<tr><th>Coding now</th><td>'+ res.programming_now +'</td></tr>'+
-              '<tr><th>Current language</th><td>'+ res.current_language.replace('.sublime-syntax', '') +'</td></tr>'+
+              status+
+              '</td></tr>'+
             '');
 
           // Create Pie chart
