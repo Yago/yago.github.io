@@ -9,20 +9,35 @@
         $consoleWrapper = $('#console-wrapper'),
         $consoleToggle = $('#console-toggle'),
         $console = $('#console'),
-        jqconsole = $console.jqconsole('Hi\n', '> ', 'coucou', true);
+        jqconsole = $console.jqconsole(
+          'Hi !\n',
+          'root@yago.io:~'+window.location.pathname+'$ ',
+          '',
+          true);
 
     var startPrompt = function () {
+      jqconsole.RegisterMatching('{', '}', 'brackets');
       jqconsole.Prompt(true, function (input) {
-        if (input === 'help') {
-          jqconsole.Write('Some help\n text here\n', 'jqconsole-output');
-        } else {
-          jqconsole.Write(input + '\n', 'jqconsole-output');
+        switch (input) {
+          case 'help':
+            jqconsole.Write('Some help\ntext here\n', 'jqconsole-output');
+            break;
+          case 'pwd':
+            jqconsole.Write('/home/yago' + window.location.pathname, 'jqconsole-output');
+            break;
+          case 'pwd':
+            jqconsole.Write('/home/yago' + window.location.pathname, 'jqconsole-output');
+            break;
+          default:
+            jqconsole.Write(input + '\n', 'jqconsole-output');
+            break;
         }
         startPrompt();
       });
     };
 
     startPrompt();
+    jqconsole.Focus();
 
     $consoleToggle.click(function () {
       $consoleWrapper.toggleClass('open');

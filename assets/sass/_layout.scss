@@ -12,7 +12,7 @@
   transform: translateX(0);
   transition: transform 0.3s;
 
-  &.left-open {transform: translateX(25%);}
+  &.left-open {transform: translateX(75%);}
   &.right-open {transform: translateX(-25%);}
 }
 
@@ -20,16 +20,17 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 25%;
   height: 100vh;
   background: $black;
   transition: transform 0.3s;
 
   &.console-wrapper {
+    width: 75%;
     transform: translateX(-100%);
   }
 
   &.menu-wrapper {
+    width: 25%;
     left: auto;
     right: 0;
     transform: translateX(100%);

@@ -6,11 +6,15 @@
   max-width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  color: #fff;
 }
 
 .jqconsole {
   padding: 10px;
+  font-family: $monospace !important;
+  font-size: 0.8em;
+  line-height: 1.4em;
+  font-weight: normal;
+  color: $anzac;
 }
 
 .jqconsole-cursor {
@@ -18,33 +22,49 @@
 }
 
 .jqconsole-blurred .jqconsole-cursor {
-  background-color: #666;
+  background-color: transparent;
+}
+
+.jqconsole-header {
+  display: block;
+  padding-bottom: 0.4em;
+  color: $white;
+}
+
+.jqconsole-output,
+.jqconsole-old-prompt,
+.jqconsole-prompt,
+.jqconsole-header {
+  white-space: normal;
+  word-wrap:break-word;
+  display: block;
+  padding: 0.12em 0;
 }
 
 .jqconsole-prompt {
-  color: #0d0;
-  white-space: normal;
-  word-wrap:break-word;
+  color: $anzac;
 }
 
-.jqconsole-prompt-text:empty {
-  padding-left: 0.5em;
+.jqconsole-prompt-text {
+  white-space: pre-wrap;
+  &:empty {padding-left: 0.5em;}
 }
 
 .jqconsole-old-prompt {
-  color: #0b0;
+  color: $anzac;
   font-weight: normal;
 }
 
 .jqconsole-input {
-  color: #dd0;
+  color: $anzac;
 }
 
 .jqconsole-old-input {
-  color: #bb0;
+  color: $anzac;
   font-weight: normal;
 }
 
 .jqconsole-output {
-  color: white;
+  white-space: pre;
+  color: $white;
 }
