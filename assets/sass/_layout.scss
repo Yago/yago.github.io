@@ -39,14 +39,12 @@
   &.open {transform: translateX(0);}
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 $gutter;
-}
-
 .article-container {
   max-width: 650px;
   margin: 0 auto;
   padding: 0 $gutter;
+}
+
+[class*="col-"] {
+  box-sizing: border-box;
 }

@@ -8,7 +8,7 @@
     chart: {
       backgroundColor: null,
       style: {
-        fontFamily: 'Dosis, sans-serif'
+        fontFamily: '"Ratio", Helvetica Neue, Helvetica, Arial, sans-serif;'
       }
     },
     title: {
@@ -20,8 +20,11 @@
     },
     tooltip: {
       borderWidth: 0,
-      backgroundColor: 'rgba(219,219,216,0.8)',
-      shadow: false
+      backgroundColor: 'rgba(0,0,0,1)',
+      shadow: false,
+      style: {
+        color: 'rgba(255,255,255,1)'
+      }
     },
     legend: {
       itemStyle: {

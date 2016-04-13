@@ -1,12 +1,37 @@
 @charset 'UTF-8';
 
 .pie-chart {
-  width: 50%;
-  float: right;
-
-  @media screen and (max-width: $screen-xs-max) {
-    width: 100%;
-  }
+  width: 100%;
 }
 
-iframe, svg {max-width: 100%;}
+.highcharts-tooltip + text {fill: transparent !important;}
+
+.tools {
+  font-size: 3em;
+
+  &.tools-vertical a {
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+
+  &.tools-horizontal a {
+    display: inline-block;
+    width: 1em;
+    text-align: left;
+  }
+
+  a {
+    color: darken($gallery, 5%);
+    padding: 0.1em 0;
+    &:hover {color: $anzac;}
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    &.tools-vertical a  {
+      display: inline-block;
+      width: 1em;
+      text-align: center;
+    }
+  }
+}

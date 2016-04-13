@@ -28,3 +28,10 @@ pre[class*=language-] {
   [class*=language-] {line-height: 1.7em;}
 }
 
+.data {color: $anzac;}
+
+.code-legend {
+  position: relative;
+  top: -0.8em;
+}
+

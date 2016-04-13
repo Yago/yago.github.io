@@ -1,7 +1,9 @@
 // Basics ---------------------------------
 $base:     22px;
 $gr:       1.61803398875;
-$gutter:   $gr * 1em;
+$grid-columns: 12;
+$gutter:   2em;
+$grid-gutter-width: $gutter;
 
 // Colors ---------------------------------
 $anzac:           #dcb853;
@@ -26,15 +28,19 @@ $monospace:   Monaco, "Lucida Console", monospace;
 
 // Breakpoints ---------------------------
 $screen-xs:          30em !default;
+$container-xs:       100% !default;
 $screen-xs-min:      $screen-xs !default;
 
 $screen-sm:          48em !default;
+$container-sm:       100% !default;
 $screen-sm-min:      $screen-sm !default;
 
 $screen-md:          62em !default;
+$container-md:       100% !default;
 $screen-md-min:      $screen-md !default;
 
 $screen-lg:          93.375em !default;
+$container-lg:       $screen-md !default;
 $screen-lg-min:      $screen-lg !default;
 
 $screen-xs-max:      ($screen-sm-min - 1) !default;

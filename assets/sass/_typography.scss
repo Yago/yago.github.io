@@ -63,15 +63,26 @@ p {
   }
 }
 
-article a {
+a {
+  transition: color 0.3s;
+
+  &:active,
+  &:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+article a,
+table a {
   color: $black;
   text-decoration: none;
   position: relative;
   transition: color 0.3s;
 
   &:hover {
-    color: $curious-blue;
-    &:after {background: $curious-blue;}
+    color: $anzac !important;
+    &:after {background: $anzac !important;}
   }
 
   &:after {
@@ -91,4 +102,22 @@ ul {
 }
 
 .text-center {text-align: center;}
+.text-right {text-align: right;}
 .text-color {color: $curious-blue;}
+.text-serif {font-family: $serif;}
+
+.text-sans {
+  font-family: $sans;
+  font-size: 0.9em;
+
+  b,
+  strong,
+  th {font-weight: 500;}
+}
+
+.text-clear {
+  color: $silver;
+  a {color: $silver;}
+  a:after {background: $silver;}
+}
+

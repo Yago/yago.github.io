@@ -3,6 +3,12 @@
 // init:
 @import 'main-variables';
 @import '../../node_modules/normalize.css/normalize';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_clearfix.scss';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid.scss';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_grid.scss';
+
+
 
 @import 'typography';
 @import 'layout';
@@ -18,6 +24,7 @@
 
 // molecules
 @import 'molecules/charts';
+@import 'molecules/tables';
 
 // organisms
 @import 'organisms/header';

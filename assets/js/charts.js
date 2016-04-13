@@ -5,9 +5,12 @@
 (function($){
   $(document).ready(function () {
     if ($('#pie-chart').length > 0) {
-      var $personnalInfos = $('#personnal-infos'),
-          $pieChart = $('#pie-chart'),
+      var $pieChart = $('#pie-chart'),
           data = 'http://codeivate.com/users/yago.json',
+          shade = function (color, percent){
+            var f=parseInt(color.slice(1),16),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=f>>16,G=f>>8&0x00FF,B=f&0x0000FF;
+            return '#'+(0x1000000+(Math.round((t-R)*p)+R)*0x10000+(Math.round((t-G)*p)+G)*0x100+(Math.round((t-B)*p)+B)).toString(16).slice(1);
+          },
           sortLevel = function (a,b) {
             if (a.level > b.level) {
               return -1;
@@ -51,23 +54,17 @@
               languagesFormatted.push(languages[lang]);
             }
           }
-          languagesFormatted.push({'name': 'Other','level':0,'y':otherPoints});
+          languagesFormatted.push({'name': 'Other','level':1,'y':otherPoints});
           languagesFormatted.sort(sortLevel);
 
-          var status = '<tr><th>Coding now</th><td>false</td></tr>';
-
-          if (res.programming_now) {
-            status = '<tr><th>Coding now</th><td>'+ res.programming_now +'</td></tr><tr><th>Current language</th><td>'+ res.current_language.replace('.sublime-syntax', '') +'</td></tr>';
+          // Populate data pre
+          $('#skills-name').html(res.name);
+          $('#skills-level').html(res.level);
+          $('#skills-coding').html(res.programming_now);
+          $('#skills-language').html(res.current_language.replace('.sublime-syntax', ''));
+          if (!res.programming_now) {
+            $('#skills-language-wrapper').addClass('hide');
           }
-
-          $personnalInfos.html(''+
-            '<table>'+
-            '<tr><th>User</th><td><a href="https://github.com/yago">'+ res.name +'</a></td></tr>'+
-              '<tr><th>Level</th><td>'+ res.level +'</td></tr>'+
-              '<tr><th>Platform</th><td>OSX</td></tr>'+
-              status+
-              '</td></tr>'+
-            '');
 
           // Create Pie chart
           $pieChart.highcharts({
@@ -76,7 +73,8 @@
             },
             title: '',
             tooltip: {
-              pointFormat: '<b>{point.percentage:.1f}%</b>'
+              headerFormat: '',
+              pointFormat: '<b>Usage : </b>{point.percentage:.1f}%'
             },
             plotOptions: {
               series: {
@@ -89,7 +87,7 @@
                   events: {
                     mouseOver: function () {
                       this.options.oldColor = this.color;
-                      this.graphic.attr('fill', 'black');
+                      this.graphic.attr('fill', shade(this.color, -0.1));
                     },
                     mouseOut: function () {
                       this.graphic.attr('fill', this.options.oldColor);
