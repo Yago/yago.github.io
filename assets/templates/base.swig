@@ -24,6 +24,7 @@
       <div id="content-wrapper" class="content-wrapper">
         {% include '../components/organisms/header.swig' %}
         {% block content %}{% endblock %}
+        {% include '../components/organisms/footer.swig' %}
       </div>
       <div id="console-wrapper" class="side-wrapper console-wrapper">
         <div id="console" class="console"></div>

@@ -45,5 +45,4 @@
     </div>
   </div>
 
-  <div class="spacer spacer-xl"></div>
 {% endblock %}

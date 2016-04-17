@@ -39,6 +39,8 @@
   &.open {transform: translateX(0);}
 }
 
+.container {box-sizing: border-box;}
+
 .article-container {
   max-width: 650px;
   margin: 0 auto;
