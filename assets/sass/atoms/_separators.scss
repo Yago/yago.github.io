@@ -3,19 +3,19 @@
 .separator {
   display: flex;
   align-items: center;
-  color: darken($gallery, 4%);
+  color: darken($gallery, 5%);
   font-size: 1.5em;
 
   &:before,
   &:after {
     content: " ";
-    border-bottom: solid $gallery 1px;
+    border-bottom: solid darken($gallery, 5%) 1px;
     flex-grow: 1;
-    margin-right: 0.2em;
+    margin-right: 0.3em;
   }
 
   &:after {
-    margin-left: 0.2em;
+    margin-left: 0.3em;
     margin-right: 0;
   }
 }

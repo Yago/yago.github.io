@@ -13,7 +13,7 @@
     transition: color 0.3s;
     margin: 1em 0 0;
 
-    .icon {font-size: 0.8em;}
+    .icon {font-size: 0.75em;}
 
     &:after {
       content: '\00a0';
@@ -21,10 +21,13 @@
       top: .77em;
       width: 100%;
       left: 2%;
-      border-top: 1px solid #cdcece;
+      border-top: 1px solid darken($gallery, 5%);
       position: relative;
+      transition: border 0.3s;
     }
   }
 
-  &:hover h4 {color: $anzac;}
+  &:hover {
+    h4:after {border-color: $anzac;}
+  }
 }

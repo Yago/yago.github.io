@@ -1,3 +1,3 @@
 <div class="separator">
-  <i class="icon icon-axe"></i>
+  <i class="icon icon-drakar"></i>
 </div>
