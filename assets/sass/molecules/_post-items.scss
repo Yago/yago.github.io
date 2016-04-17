@@ -6,10 +6,24 @@
   text-decoration: none;
 
   h4 {
+    display: table;
+    white-space: nowrap;
     font-family: $serif;
     font-weight: normal;
     transition: color 0.3s;
     margin: 1em 0 0;
+
+    .icon {font-size: 0.8em;}
+
+    &:after {
+      content: '\00a0';
+      display: table-cell;
+      top: .77em;
+      width: 100%;
+      left: 2%;
+      border-top: 1px solid #cdcece;
+      position: relative;
+    }
   }
 
   &:hover h4 {color: $anzac;}

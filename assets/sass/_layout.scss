@@ -52,4 +52,7 @@
 .row-flex {
   display: flex;
   flex-wrap: wrap;
+  @media screen and (max-width: $screen-xs-max) {
+    display: block;
+  }
 }

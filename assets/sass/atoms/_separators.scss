@@ -3,13 +3,13 @@
 .separator {
   display: flex;
   align-items: center;
-  color: $silver;
-  font-size: 1.8em;
+  color: darken($gallery, 4%);
+  font-size: 1.5em;
 
   &:before,
   &:after {
     content: " ";
-    border-bottom: solid $silver 1px;
+    border-bottom: solid $gallery 1px;
     flex-grow: 1;
     margin-right: 0.2em;
   }

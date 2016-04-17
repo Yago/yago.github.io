@@ -8,7 +8,7 @@
   <div class="container">
     <div class="spacer"></div>
     <div class="row">
-      <div class="col-sm-10 col-sm-offset-1">
+      <div class="col-sm-8 col-sm-offset-2">
         <h2 class="text-center">Projects</h2>
         <div class="spacer spacer-sm"></div>
         <div class="row row-flex">
@@ -24,15 +24,18 @@
         {% include '../components/atoms/separator.swig' %}
         {% include '../components/organisms/facts.swig' %}
         <div class="spacer"></div>
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2">
-            {% include '../components/atoms/separator.swig' %}
-            <h2 class="text-center">Last blog posts</h2>
+        {% include '../components/atoms/separator.swig' %}
+        <h2 class="text-center">Last blog posts</h2>
+        <div class="row ">
+          <div class="col-sm-10 col-sm-offset-1">
             {% for post in posts %}
               {% if loop.index < 6 %}
                 {% include '../components/molecules/post-item.swig' with post %}
               {% endif %}
             {% endfor %}
+            <a href="/blog" class="post-item">
+              <h4><i class="icon icon-chukchi"></i> More posts</h4>
+            </a>
           </div>
         </div>
       </div>
