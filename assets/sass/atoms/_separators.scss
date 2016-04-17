@@ -1,23 +1,21 @@
 @charset 'UTF-8';
 
-.date {
+.separator {
   display: flex;
   align-items: center;
-  color: $boulder;
-  font-style: italic;
-  margin-top: 2.5em;
-  font-size: 0.85em;
+  color: $silver;
+  font-size: 1.8em;
 
   &:before,
   &:after {
     content: " ";
     border-bottom: solid $silver 1px;
     flex-grow: 1;
-    margin-right: 0.5em;
+    margin-right: 0.2em;
   }
 
   &:after {
-    margin-left: 0.5em;
+    margin-left: 0.2em;
     margin-right: 0;
   }
 }

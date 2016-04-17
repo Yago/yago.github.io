@@ -56,6 +56,21 @@ h1,
   @media screen and (max-width: 60em) {font-size: $gr * 1.5em;}
 }
 
+h2,
+.h2 {
+  font-size: 2em;
+}
+
+h3,
+.h3 {
+  font-size: 1.5em;
+}
+
+h4,
+.h4 {
+  font-size: 1.15em;
+}
+
 p {
   article &:first-child {
     font-size: 1.15em;

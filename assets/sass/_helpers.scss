@@ -1,13 +1,13 @@
 @charset 'UTF-8';
 
-.sr-only {display: none !important;}
-
 hr {
   border: 0;
   height: 1px;
   background: darken($gallery, 5%);
   margin: 2em 0;
 }
+
+.bg-clear {background: $gallery;}
 
 .spacer {
   height: 4.0625em;
@@ -31,3 +31,14 @@ hr {
 }
 
 .hide {display: none;}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}

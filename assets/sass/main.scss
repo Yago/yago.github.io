@@ -15,6 +15,7 @@
 @import 'helpers';
 
 // atoms
+@import 'atoms/separators';
 @import 'atoms/code';
 @import 'atoms/contributions';
 @import 'atoms/images';
@@ -25,6 +26,8 @@
 // molecules
 @import 'molecules/charts';
 @import 'molecules/tables';
+@import 'molecules/post-items';
+@import 'molecules/project-items';
 
 // organisms
 @import 'organisms/header';

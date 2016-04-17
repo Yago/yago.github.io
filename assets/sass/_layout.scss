@@ -48,3 +48,8 @@
 [class*="col-"] {
   box-sizing: border-box;
 }
+
+.row-flex {
+  display: flex;
+  flex-wrap: wrap;
+}

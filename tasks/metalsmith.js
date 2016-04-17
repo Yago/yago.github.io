@@ -12,6 +12,8 @@ var markdown      = require('metalsmith-markdown'),
     pagination    = require('metalsmith-pagination'),
     collections   = require('metalsmith-collections');
 
+require('./filters.js')();
+
 module.exports = function() {
 
   function errorAlert(error){
@@ -29,8 +31,8 @@ module.exports = function() {
         use: [
           markdown({ langPrefix: 'language-' }),
           prism({
-    lineNumbers: true
-  }),
+            lineNumbers: true
+          }),
           permalinks(config.metalsmith.plugins.collections),
           collections(config.metalsmith.plugins.collections),
           pagination(config.metalsmith.plugins.pagination),
