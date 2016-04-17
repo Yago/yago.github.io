@@ -60,9 +60,11 @@
           // Populate data pre
           $('#skills-name').html(res.name);
           $('#skills-level').html(res.level);
-          $('#skills-coding').html(res.programming_now);
-          $('#skills-language').html(res.current_language.replace('.sublime-syntax', ''));
-          if (!res.programming_now) {
+          if (res.programming_now) {
+            $('#skills-coding').html(res.programming_now);
+            $('#skills-language').html(res.current_language.replace('.sublime-syntax', ''));
+          } else {
+            $('#skills-coding').html('false');
             $('#skills-language-wrapper').addClass('hide');
           }
 
