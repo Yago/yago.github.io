@@ -26,12 +26,8 @@
         {% block content %}{% endblock %}
         {% include '../components/organisms/footer.swig' %}
       </div>
-      <div id="console-wrapper" class="side-wrapper console-wrapper">
-        <div id="console" class="console"></div>
-      </div>
-      <div id="menu-wrapper" class="side-wrapper menu-wrapper">
-        <div id="menu" class="menu"></div>
-      </div>
+      {% include '../components/organisms/panel-console.swig' %}
+      {% include '../components/organisms/panel-menu.swig' %}
     </div>
 
 

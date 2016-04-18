@@ -13,7 +13,11 @@
   transition: transform 0.3s;
 
   &.left-open {transform: translateX(75%);}
-  &.right-open {transform: translateX(-25%);}
+  &.right-open {transform: translateX(-20%);}
+
+  @media screen and (max-width: $screen-xs-max) {
+    &.right-open {transform: translateX(-75%);}
+  }
 }
 
 .side-wrapper {
@@ -30,13 +34,17 @@
   }
 
   &.menu-wrapper {
-    width: 25%;
+    width: 20%;
     left: auto;
     right: 0;
     transform: translateX(100%);
   }
 
   &.open {transform: translateX(0);}
+
+  @media screen and (max-width: $screen-xs-max) {
+    &.menu-wrapper {width: 75%;}
+  }
 }
 
 .container {box-sizing: border-box;}
