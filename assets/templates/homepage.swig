@@ -11,7 +11,9 @@
         <div class="spacer spacer-sm"></div>
         <div class="row row-flex">
           {% for project in collections.projects %}
-            {% include '../components/molecules/project-item.swig' with project %}
+            {% if loop.index < 11 %}
+              {% include '../components/molecules/project-item.swig' with project %}
+            {% endif %}
           {% endfor %}
           <a href="/projects" class="project-item col-sm-4">
             <h4><i class="icon icon-origami"></i> All Projects.</h4>
@@ -36,7 +38,7 @@
                 {% include '../components/molecules/post-item.swig' with post %}
               {% endif %}
             {% endfor %}
-            <a href="/blog" class="post-item">
+            <a href="/blog/1" class="post-item">
               <h4><i class="icon icon-chukchi"></i> More posts</h4>
             </a>
           </div>

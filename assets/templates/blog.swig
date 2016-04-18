@@ -1,30 +1,27 @@
-<!doctype html>
-<html>
-<head>
-  <title>{{ pagination.num }}</title>
-</head>
-<body>
-  <h1>Homepage</h1>
+{% extends "base.swig" %}
 
-  <h3>Projects</h3>
-  <ul>
-    {% for project in collections.projects %}
-      <li><a href="/{{project.path}}">{{project.title}}</a></li>
-    {% endfor %}
-  </ul>
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1 class="h2 text-center">Blog</h1>
 
-  <h3>Posts</h3>
-  <ul>
-    {% for post in pagination.files %}
-      <li><a href="/{{post.path}}">{{post.title}}</a></li>
-    {% endfor %}
-  </ul>
+      <div class="spacer spacer-sm"></div>
+      {% for post in posts %}
+        {% include '../components/molecules/post-item.swig' with post %}
+      {% endfor %}
+      <div class="spacer spacer-sm"></div>
 
-  {% if pagination.previous.path %}
-    <a href="/{{pagination.previous.path}}">Previous</a>
-  {% endif %}
-  {% if pagination.next.path %}
-    <a href="/{{pagination.next.path}}">Next</a>
-  {% endif %}
-</body>
-</html>
+      <div class="pagers">
+        {% if pagination.next.path %}
+          <a href="/{{pagination.next.path}}">&lsaquo; Previous</a>
+          &nbsp;&nbsp;&nbsp;
+        {% endif %}
+        {% if pagination.previous.path %}
+          <a href="/{{pagination.previous.path}}">Next &rsaquo;</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

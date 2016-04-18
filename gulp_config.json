@@ -69,8 +69,8 @@
       "pagination": {
         "collections.posts": {
           "perPage": 10,
-          "layout": "base.swig",
-          "path": "posts/:num/index.html"
+          "layout": "blog.swig",
+          "path": "blog/:num/index.html"
         }
       }
     }

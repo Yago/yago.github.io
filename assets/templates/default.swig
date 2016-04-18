@@ -1,7 +1,7 @@
 {% extends "base.swig" %}
 
 {% block content %}
-  <img src="/img/cover/{{ title | lower | replace(' ', '-') }}.jpg" class="cover">
+  <img src="/img/cover/{{path|slug}}.jpg" class="cover">
   <div class="article-container">
     <div class="text-center">
       <h1>{{title}}</h1>
