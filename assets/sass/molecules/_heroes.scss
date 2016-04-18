@@ -11,7 +11,8 @@
 .hero-content {
   max-width: 60%;
   padding-left: 1em;
-  border-left: 1px solid $gallery;
+  padding-bottom: 1em;
+  border-left: 1px solid darken($gallery, 8%);
 
   p {margin: 0.3em 0;}
 
