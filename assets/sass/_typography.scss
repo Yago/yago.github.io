@@ -78,7 +78,8 @@ a {
 article a,
 table a,
 footer a,
-.pagers a {
+.pagers a,
+.breadcrumb a {
   color: $black;
   text-decoration: none;
   position: relative;
