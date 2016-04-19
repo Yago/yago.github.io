@@ -23,6 +23,12 @@
         $contentWrapper.removeClass('left-open');
         $consoleWrapper.removeClass('open');
       }
+
+      if (e.keyCode == 27) {
+        $menuToggle.removeClass('open');
+        $menuWrapper.removeClass('open');
+        $contentWrapper.removeClass('right-open');
+      }
     });
   });
 }(jQuery));

@@ -54,6 +54,12 @@
         startPrompt();
         jqconsole.Focus();
       }
+
+      if (e.keyCode == 27) {
+        $consoleToggle.removeClass('open');
+        $consoleWrapper.removeClass('open');
+        $contentWrapper.removeClass('left-open');
+      }
     });
   });
 }(jQuery));
