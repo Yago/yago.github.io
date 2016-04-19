@@ -19,6 +19,15 @@
     outline: none !important;
   }
 
+  &:hover {
+    span:nth-child(2) {transform: rotate(-45deg) translateX(-4px) translateY(-4px);}
+    span:last-child {transform: translateY(4px);}
+  }
+
+  &.open {
+    span:nth-child(2) {transform: rotate(-225deg) translateX(-20px) translateY(-20px);}
+  }
+
   span:nth-child(2) {
     display: block;
     width: 10px;
@@ -27,6 +36,7 @@
     border-bottom: 4px solid $black;
     transform: rotate(-45deg);
     margin-left: -25%;
+    transition: transform 0.3s;
   }
 
   span:last-child {
@@ -36,6 +46,7 @@
     background: $black;
     margin-top: 3px;
     margin-left: 35%;
+    transition: transform 0.3s;
     &:last-child {margin-bottom: 0;}
   }
 }

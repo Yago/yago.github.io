@@ -10,12 +10,14 @@
         $consoleWrapper = $('#console-wrapper');
 
     $menuToggle.click(function () {
+      $menuToggle.toggleClass('open');
       $menuWrapper.toggleClass('open');
       $contentWrapper.toggleClass('right-open');
     });
 
     $(document).keyup(function(e) {
       if (e.altKey && e.keyCode === 77) {
+        $menuToggle.toggleClass('open');
         $menuWrapper.toggleClass('open');
         $contentWrapper.toggleClass('right-open');
         $contentWrapper.removeClass('left-open');

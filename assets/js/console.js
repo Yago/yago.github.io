@@ -37,6 +37,7 @@
     jqconsole.Focus();
 
     $consoleToggle.click(function () {
+      $consoleToggle.toggleClass('open');
       $consoleWrapper.toggleClass('open');
       $contentWrapper.toggleClass('left-open');
       startPrompt();
@@ -45,6 +46,7 @@
 
     $(document).keyup(function(e) {
       if (e.altKey && e.keyCode === 67) {
+        $consoleToggle.toggleClass('open');
         $consoleWrapper.toggleClass('open');
         $contentWrapper.toggleClass('left-open');
         $contentWrapper.removeClass('right-open');
