@@ -20,16 +20,17 @@
     <![endif]-->
   </head>
   <body>
-    <div class="main-wrapper">
+    <div id="main" class="main-wrapper onchange">
       <div id="content-wrapper" class="content-wrapper">
         {% include '../components/organisms/header.swig' %}
-        {% block content %}{% endblock %}
+        <div class="smooth-content" id="smooth-content">
+          {% block content %}{% endblock %}
+        </div>
         {% include '../components/organisms/footer.swig' %}
       </div>
       {% include '../components/organisms/panel-console.swig' %}
       {% include '../components/organisms/panel-menu.swig' %}
     </div>
-
 
     <script src="/js/vendors.min.js"></script>
     <script src="/js/main.js"></script>

@@ -20,6 +20,11 @@
   }
 }
 
+.smooth-content {
+  transition: opacity 0.3s;
+  .onchange & {opacity: 0;}
+}
+
 .side-wrapper {
   position: fixed;
   top: 0;
