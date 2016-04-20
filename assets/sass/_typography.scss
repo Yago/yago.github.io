@@ -106,6 +106,13 @@ ul {
   padding-left: 1em;
 }
 
+blockquote {
+  margin: 2.5em 1em;
+  margin-left: 0;
+  padding-left: 1em;
+  border-left: 1px solid darken($gallery, 8%);
+}
+
 .text-center {text-align: center;}
 .text-right {text-align: right;}
 .text-color {color: $curious-blue;}
