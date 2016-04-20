@@ -2,8 +2,7 @@
 
 /* global jQuery */
 
-(function($){
-  console.log('hello');
+var jconsole = function ($) {
   $(document).ready(function () {
     var $contentWrapper = $('#content-wrapper'),
         $menuWrapper = $('#menu-wrapper'),
@@ -63,4 +62,6 @@
       }
     });
   });
-}(jQuery));
+};
+
+jconsole(jQuery);

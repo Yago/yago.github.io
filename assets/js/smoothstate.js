@@ -1,6 +1,6 @@
-// 'use strict';
+'use strict';
 
-/* global jQuery */
+/* global jQuery, chartTheme, charts, jconsole, contributions, menu */
 
 (function($){
   var $main = $('#main'),
@@ -18,12 +18,16 @@
           duration: 0,
           render: function ($container, $newContent) {
             $container.html($newContent);
-            console.log('ready');
           }
         },
         onAfter: function($container, $newContent) {
-          console.log('after');
           $container.removeClass('onchange');
+
+          chartTheme();
+          charts(jQuery);
+          jconsole(jQuery);
+          contributions(jQuery);
+          menu(jQuery);
         }
       };
 

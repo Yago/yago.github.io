@@ -2,7 +2,7 @@
 
 /* global jQuery */
 
-(function($){
+var contributions = function ($) {
   $(document).ready(function () {
     if ($('#contributions').length > 0) {
       var $contributions = $('#contributions'),
@@ -18,4 +18,6 @@
 
     }
   });
-}(jQuery));
+};
+
+contributions(jQuery);

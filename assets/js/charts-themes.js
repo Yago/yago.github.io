@@ -2,7 +2,7 @@
 
 /* global Highcharts */
 
-(function(){
+var chartTheme = function () {
   Highcharts.theme = {
     colors: ['#d5ab32', '#d9b143', '#dcb853', '#dfbf63', '#e3c574', '#e6cc84', '#e9d394', '#eddaa4', '#f0e0b5', '#f3e7c5', '#f7eed5', '#faf5e6', '#fdfbf6'],
     chart: {
@@ -63,4 +63,6 @@
 
   // Apply the theme
   Highcharts.setOptions(Highcharts.theme);
-}());
+};
+
+chartTheme();

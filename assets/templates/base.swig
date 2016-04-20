@@ -20,7 +20,7 @@
     <![endif]-->
   </head>
   <body>
-    <div id="main" class="main-wrapper onchange">
+    <div id="main" class="main-wrapper">
       <div id="content-wrapper" class="content-wrapper">
         {% include '../components/organisms/header.swig' %}
         <div class="smooth-content" id="smooth-content">

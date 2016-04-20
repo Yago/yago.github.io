@@ -2,7 +2,8 @@
 
 /* global jQuery, Highcharts */
 
-(function($){
+var charts = function ($) {
+
   $(document).ready(function () {
     if ($('#pie-chart').length > 0) {
       var $pieChart = $('#pie-chart'),
@@ -121,4 +122,6 @@
 
     }
   });
-}(jQuery));
+};
+
+charts(jQuery);

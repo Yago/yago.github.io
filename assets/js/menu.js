@@ -2,7 +2,7 @@
 
 /* global jQuery */
 
-(function($){
+var menu = function ($) {
   $(document).ready(function () {
     var $contentWrapper = $('#content-wrapper'),
         $menuWrapper = $('#menu-wrapper'),
@@ -31,4 +31,6 @@
       }
     });
   });
-}(jQuery));
+};
+
+menu(jQuery);
