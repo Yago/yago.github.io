@@ -15,6 +15,12 @@ var menu = function ($) {
       $contentWrapper.toggleClass('right-open');
     });
 
+    $menuWrapper.find('a').click(function () {
+      $menuToggle.toggleClass('open');
+      $menuWrapper.toggleClass('open');
+      $contentWrapper.toggleClass('right-open');
+    });
+
     $(document).keyup(function(e) {
       if (e.altKey && e.keyCode === 77) {
         $menuToggle.toggleClass('open');
