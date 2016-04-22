@@ -28,6 +28,9 @@
   "images": [
     "assets/img/**/*"
   ],
+  "emojis": [
+    "node_modules/emojify.js/dist/images/basic/**/*"
+  ],
   "svg": [
     "assets/svg/**/*"
   ],
@@ -66,6 +69,10 @@
         "default": "default.swig",
         "directory": "assets/templates",
         "rename": true
+      },
+      "emojify": {
+        "img_dir": "/img/emojis",
+        "ignore_emoticons": false
       },
       "pagination": {
         "collections.posts": {

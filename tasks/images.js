@@ -22,6 +22,19 @@ module.exports = function() {
   });
 
   /**
+   * Copy emojis
+   */
+   gulp.task('img-emojis', function() {
+     return gulp.src(config.emojis)
+       .pipe($.imagemin({
+         progressive: true,
+         use: [pngquant()]
+       }))
+       .pipe($.size({title: 'EMOJIS'}))
+       .pipe(gulp.dest(config.build + 'img/emojis'));
+   });
+
+  /**
    * Copy svg
    */
    gulp.task('svg-optim', function() {
@@ -35,6 +48,6 @@ module.exports = function() {
        .pipe(gulp.dest(config.build + 'svg'));
    });
 
-   gulp.task('img', ['img-optim', 'svg-optim']);
+   gulp.task('img', ['img-optim', 'img-emojis', 'svg-optim']);
 
 };

@@ -10,6 +10,7 @@ var markdown      = require('metalsmith-markdown'),
     permalinks    = require('metalsmith-permalinks'),
     layouts       = require('metalsmith-layouts'),
     pagination    = require('metalsmith-pagination'),
+    emojify        = require('../node_modules/emojify.js/dist/js/emojify.js'),
     collections   = require('metalsmith-collections');
 
 require('./filters.js')();
@@ -33,13 +34,16 @@ module.exports = function() {
           prism({
             lineNumbers: true
           }),
-          permalinks(config.metalsmith.plugins.collections),
+          permalinks(config.metalsmith.plugins.permalinks),
           collections(config.metalsmith.plugins.collections),
           pagination(config.metalsmith.plugins.pagination),
-          // function(files, metalsmith, done){
-          //   console.log(files)
-          //   done();
-          // },
+          function(files, metalsmith, done){
+            emojify.setConfig(config.metalsmith.plugins.emojify);
+            for (var file in files) {
+              files[file].contents = new Buffer(emojify.replace(files[file].contents.toString()));
+            }
+            done();
+          },
           layouts(config.metalsmith.plugins.layouts),
         ]
       }))
