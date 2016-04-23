@@ -7,7 +7,7 @@ var articleGallery = function ($) {
     var current = parseInt(gallery.getCurrentIndex(), 10) + 1,
         total = gallery.options.getNumItemsFn();
 
-        $('.pswp__counter').html('<span class="counter-big"><sup>'+current+'</sup></span>/<span class="counter-small"><sub>'+total+'</sub></span>');
+    $('.pswp__counter').html('<span class="counter-big"><sup>'+current+'</sup></span>/<span class="counter-small"><sub>'+total+'</sub></span>');
   };
 
   $(document).ready(function () {
@@ -33,7 +33,6 @@ var articleGallery = function ($) {
           h: height,
           title: $thumb.attr('alt')
         };
-        console.log(item);
         container.push(item);
         index++;
       }
