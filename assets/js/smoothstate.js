@@ -1,12 +1,14 @@
 'use strict';
 
-/* global jQuery, chartTheme, charts, jconsole, contributions, emojis, menu */
+/* global jQuery, chartTheme, charts, jconsole, contributions, articleGallery, emojis, menu */
 
 (function($){
   var $main = $('#main'),
       options = {
         prefetch: true,
         cacheLength: 2,
+        hrefRegex: '^\/',
+        blacklist: '.gallery-item',
         onStart: {
           duration: 300,
           render: function ($container) {
@@ -28,6 +30,7 @@
           jconsole(jQuery);
           contributions(jQuery);
           emojis(jQuery);
+          articleGallery(jQuery);
           menu(jQuery);
         }
       };

@@ -32,6 +32,10 @@
       {% include '../components/organisms/panel-menu.swig' %}
     </div>
 
+    {% if collection == 'posts' %}
+      {% include '../components/organisms/photoswipe.swig' %}
+    {% endif %}
+
     <script src="/js/vendors.min.js"></script>
     <script src="/js/main.js"></script>
   </body>

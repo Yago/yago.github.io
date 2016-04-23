@@ -7,7 +7,9 @@
   "vendors": {
     "css": [
       "node_modules/prismjs/themes/prism-coy.css",
-      "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css"
+      "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
+      "node_modules/photoswipe/dist/photoswipe.css",
+      "node_modules/photoswipe/dist/default-skin/default-skin.css"
     ],
     "js": [
       "node_modules/jquery/dist/jquery.js",
@@ -15,7 +17,9 @@
       "node_modules/prismjs/prism.js",
       "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js",
       "node_modules/highcharts/highcharts.js",
-      "node_modules/smoothstate/src/jquery.smoothState.js"
+      "node_modules/smoothstate/src/jquery.smoothState.js",
+      "node_modules/photoswipe/dist/photoswipe.js",
+      "node_modules/photoswipe/dist/photoswipe-ui-default.js"
     ],
     "fonts": [
       "assets/fonts/*"

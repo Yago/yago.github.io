@@ -10,6 +10,7 @@
     "jq-console": "^2.13.2",
     "jquery": "^2.1.4",
     "normalize.css": "^4.0.0",
+    "photoswipe": "^4.1.1",
     "respond.js": "^1.4.2",
     "smoothstate": "^0.7.2"
   },

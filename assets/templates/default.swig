@@ -30,8 +30,9 @@
       </div>
     </div>
 
-    <article>
+    <article id="article">
       {{ contents|raw }}
     </article>
   </div>
+
 {% endblock %}
