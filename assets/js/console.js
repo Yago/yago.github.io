@@ -175,12 +175,19 @@ var jconsole = function ($) {
       });
     };
 
-    $consoleToggle.click(function () {
+    $consoleToggle.click(function ($event) {
+      $event.stopPropagation();
       $consoleToggle.toggleClass('open');
       $consoleWrapper.toggleClass('open');
       $contentWrapper.toggleClass('left-open');
       startPrompt();
       jqconsole.Focus();
+    });
+
+    $contentWrapper.click(function () {
+      $consoleToggle.removeClass('open');
+      $consoleWrapper.removeClass('open');
+      $contentWrapper.removeClass('left-open');
     });
 
     $(document).keyup(function(e) {

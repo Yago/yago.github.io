@@ -9,10 +9,17 @@ var menu = function ($) {
         $menuToggle = $('#menu-toggle'),
         $consoleWrapper = $('#console-wrapper');
 
-    $menuToggle.click(function () {
+    $menuToggle.click(function ($event) {
+      $event.stopPropagation();
       $menuToggle.toggleClass('open');
       $menuWrapper.toggleClass('open');
       $contentWrapper.toggleClass('right-open');
+    });
+
+    $contentWrapper.click(function () {
+      $menuToggle.removeClass('open');
+      $menuWrapper.removeClass('open');
+      $contentWrapper.removeClass('right-open');
     });
 
     $menuWrapper.find('a').click(function () {

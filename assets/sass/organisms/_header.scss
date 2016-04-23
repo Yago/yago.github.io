@@ -4,4 +4,10 @@ header {
   padding: 2em 0;
   text-align: center;
   position: relative;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding: 0.6em 0;
+
+    img {max-height: 2.2em;}
+  }
 }
