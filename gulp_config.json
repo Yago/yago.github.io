@@ -52,7 +52,11 @@
       },
       "permalinks": {
         "date": "YYYY",
-        "pattern": ":collection/:title"
+        "pattern": ":collection/:title",
+        "linksets": [{
+          "match": { "collection": "posts" },
+          "pattern": "blog/:title"
+        }]
       },
       "collections": {
         "posts": {
