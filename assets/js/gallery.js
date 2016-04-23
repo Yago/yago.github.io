@@ -58,8 +58,6 @@ var articleGallery = function ($) {
         counterUpdate(gallery);
       });
     });
-
-    $('.gallery-item:first-child').trigger('click');
   });
 };
 

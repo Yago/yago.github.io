@@ -1,6 +1,6 @@
 'use strict';
 
-/* global jQuery, chartTheme, charts, jconsole, contributions, articleGallery, emojis, menu */
+/* global jQuery, chartTheme, charts, jconsole, contributions, articleGallery, menu, Prism */
 
 (function($){
   var $main = $('#main'),
@@ -29,9 +29,9 @@
           charts(jQuery);
           jconsole(jQuery);
           contributions(jQuery);
-          emojis(jQuery);
           articleGallery(jQuery);
           menu(jQuery);
+          Prism.highlightAll();
         }
       };
 
