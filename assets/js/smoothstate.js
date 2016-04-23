@@ -1,6 +1,6 @@
 'use strict';
 
-/* global jQuery, chartTheme, charts, jconsole, contributions, articleGallery, menu, Prism */
+/* global jQuery, init, router, chartTheme, charts, jconsole, contributions, articleGallery, menu, Prism */
 
 (function($){
   var $main = $('#main'),
@@ -13,7 +13,7 @@
           duration: 300,
           render: function ($container) {
             $container.addClass('onchange');
-            smoothState.restartCSSAnimations();
+            router.restartCSSAnimations();
           }
         },
         onReady: {
@@ -24,7 +24,8 @@
         },
         onAfter: function($container) {
           $container.removeClass('onchange');
-
+          console.log('after');
+          init();
           chartTheme();
           charts(jQuery);
           jconsole(jQuery);
@@ -35,5 +36,5 @@
         }
       };
 
-  var smoothState = $main.smoothState(options).data('smoothState');
+  router = $main.smoothState(options).data('smoothState');
 }(jQuery));

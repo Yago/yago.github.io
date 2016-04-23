@@ -30,6 +30,8 @@
       </div>
       {% include '../components/organisms/panel-console.swig' %}
       {% include '../components/organisms/panel-menu.swig' %}
+
+      {% include '../components/organisms/console-helper.swig' %}
     </div>
 
     {% if collection == 'posts' %}
