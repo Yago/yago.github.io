@@ -6,7 +6,10 @@
 
 .pswp__button .icon {
   pointer-events: none;
+  transition: color 0.3s;
 }
+
+.pswp__button:hover .icon {color: $anzac;}
 
 .pswp__ui--fit .pswp__top-bar,
 .pswp__button--arrow--left:before,

@@ -2,7 +2,6 @@
 
 pre[class*=language-] {
   background: $white;
-  margin: 2em 0;
   font-size: 0.75em;
   border-radius: 2px;
   box-shadow: none;
@@ -29,10 +28,13 @@ pre[class*=language-] {
   [class*=language-] {line-height: 1.7em;}
 }
 
+article pre[class*=language-] {margin: 2em 0;}
+
 .data {color: $anzac;}
 
 .code-legend {
   position: relative;
   top: -0.8em;
 }
+
 
