@@ -20,8 +20,8 @@ J'ai choisi de réaliser le spot "privé" en racontant l'histoire d'une rencontr
 
 L'entier de la partie 3D a été réalisé sous Maya et rendu avec V-ray. 
 
-![Post-It](http://staging.yago.io/content/images/postit01.jpg.jpg)
-![Post-It](http://staging.yago.io/content/images/postit02.jpg.jpg)
-![Post-It](http://staging.yago.io/content/images/postit03.jpg.jpg)
+![Post-It](/img/images/postit01.jpg.jpg)
+![Post-It](/img/images/postit02.jpg.jpg)
+![Post-It](/img/images/postit03.jpg.jpg)
 
 <iframe width="601" height="338" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="http://player.vimeo.com/video/39616915?title=0&amp;byline=0&amp;portrait=0&amp;color=2d95e3"></iframe>

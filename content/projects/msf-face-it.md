@@ -19,7 +19,7 @@ Malgré tout, et après plusieurs jours de mise en place, nous avons établi une
 
 Au final, malgré le stress et les embuches rencontrées tout au long du mandat, je suis fier d'avoir pu participer à ce projet humanitaire.
 
-![Face-It](http://staging.yago.io/content/images/faceit-imac.png)
+![Face-It](/img/images/faceit-imac.png)
 
 <iframe width="601" height="338" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="http://player.vimeo.com/video/69696017?title=0&amp;byline=0&amp;portrait=0&amp;color=2d95e3"></iframe>
 

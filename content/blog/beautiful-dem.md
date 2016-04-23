@@ -39,7 +39,7 @@ L'image Hillshade permet d'appréhender au mieux un relief. Grâce à ce modèle
 $ gdaldem hillshade -s 111120 combined.dem hillshade.tif
 ```
 
-![gdal hillshade](http://staging.yago.io/content/images/alps-hillshade.jpg)
+![gdal hillshade](/img/images/alps-hillshade.jpg)
 
 ###Color-relief
 Le color-relief vous permettra d'ajouter des couleurs à votre carte, déterminées par l'altitude. Pour cela, commencez par créer un fichier **color.txt** dans lequel vous donnerez des couleurs rgb en fonction de l'altitude (ici 0m, 500m, 1000m, 2500m et 4000m).
@@ -57,7 +57,7 @@ Et dans le terminal :
 $ gdaldem color-relief combined.dem color.txt color.tif
 ```
 
-![gdal color-relief](http://staging.yago.io/content/images/alps-color.jpg)
+![gdal color-relief](/img/images/alps-color.jpg)
 
 ###Slope
 Le slope est une image qui va mettre en valeur le relief d'une façon différente de l'image hillshade, mais qui va apporter une grosse plus value à votre carte finale. Comme pour color-relief, créez un fichier **color_slope.txt**, indiquant cette fois la coloration en fonction de la pente (entre 0 et 90°).
@@ -72,7 +72,7 @@ $ gdaldem slope combined.dem preslope.tif -s 111120
 $ gdaldem color-relief preslope.tif color_slope.txt slope.tif
 ```
 
-![gdal slope](http://staging.yago.io/content/images/alps-slope.jpg)
+![gdal slope](/img/images/alps-slope.jpg)
 
 ##Finalisation
 

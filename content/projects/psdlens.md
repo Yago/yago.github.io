@@ -6,7 +6,7 @@ date: 2013-08-29 07:15:56
 tags: projet
 ---
 
-![PSDLens animation](http://staging.yago.io/content/images/micro-white.gif)
+![PSDLens animation](/img/images/micro-white.gif)
 
 Après avoir découvert l'incroyable librairie Ruby [PSD.rb](http://cosmos.layervault.com/psdrb.html), j'ai décidé de mettre en place un outil tirant partit du meilleur de cette technologie. Mon envie était de créer une App en ligne de commande permettant de retourner plusieurs types d'informations concernant les fichiers Photoshop scannés.
 

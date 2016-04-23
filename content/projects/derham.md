@@ -14,5 +14,5 @@ tags: web
 ##Mandat :
 J'ai eu la chance de travailler sur ce [grand projet](http://antistatique.net/fr/portfolio/derham) qu'est la refonte de l'identité digitale de De Rham Sotheby's International Realty. Basé sur Symfony 2, abordé ce site n'a pas été aisé pour moi qui ne connaissais pas ce framework. Toute l'[équipe](http://antistatique.net/fr/team) d'Antistatique a apporté sa contribution pour rendre le site le plus performant possible.
 
-![DeRham](http://staging.yago.io/content/images/derham-1.jpg.jpg)
-![DeRham](http://staging.yago.io/content/images/derham-2.jpg.jpg)
+![DeRham](/img/images/derham-1.jpg.jpg)
+![DeRham](/img/images/derham-2.jpg.jpg)

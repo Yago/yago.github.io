@@ -12,7 +12,7 @@ description: "Qui n'a jamais rêvé d'entrer dans la Matrice via un câble conne
 ## La vue
 Il est clair que le premier élément touché par la réalité virtuelle est la vue. **Sans une visualisation réellement immersive dans l'environnement, l'expérience est vouée à l'échec.** Les moyens d'y parvenir ne sont pas nombreux. Le premier serait de projeter l'environnement autour du sujet pour lui donner l'illusion d'être ailleurs. Une autre solution est d'apporter l'écran au plus près du sujet afin de remplacer la réalité par une vision virtuelle. C'est à partir de la deuxième option que [l'Oculus Rift](http://www.oculusvr.com/), ou Oculus VR, est né.
 
-![Oculus Rift](http://staging.yago.io/content/images/oculus-rift.jpg)
+![Oculus Rift](/img/images/oculus-rift.jpg)
 
 Ce petit bijou de technologie, en forme de grosse lunette de ski, est équipé de deux écrans montés de lentilles afin d'offrir une vision 3D au joueur. Mais la magie de ce produit ne réside pas dans la proximité des écrans par rapport aux yeux, **mais bien dans le suivi des mouvements de la tête**. En effet, si vous tournez votre tête ou tout votre corps dans une direction ou une autre, votre vision suivra. C'est cet ultime détail qui permettra une expérience virtuelle réellement immersive.
 
@@ -21,7 +21,7 @@ L'expérience est décrite comme tellement immersive que le cerveau du sujet pei
 ## Les gestes
 Votre vue peut être totalement immergée dans un univers différent, le reste de votre corps vous rappellera bien vite la réalité. En effet, pour une immersion complète, **il faut que votre corps puisse également évoluer dans la réalité virtuelle**. Pour cela, les solutions comme le Kinect de Microsoft ou le Playstation Move peuvent sembler parer à ce manque. Malgré tout, pour pouvoir réellement vous mouvoir dans un univers virtuel, des produits comme [l'Omni](http://www.virtuix.com/) ont été mis au point.
 
-![Omin](http://staging.yago.io/content/images/omni.jpg)
+![Omin](/img/images/omni.jpg)
 
 Ce plateau muni d'un harnais, va vous permettre de vous déplacer sur place, non pas comme un tapis de course, mais dans toutes les directions. Ceci en transmettant les informations à l'ordinateur, déplaçant ainsi votre avatar à la même vitesse. **Il vous serra donc possible de faire votre footing dans votre jeu préféré sans risquer de vous cogner à votre mobilier.**
 

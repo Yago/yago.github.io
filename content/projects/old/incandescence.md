@@ -14,7 +14,7 @@ tags: photographie
 
 Pour le cours de photo de 1ère année, nous devions réaliser une série de clichés libres basés sur la technique de Light Painting.
 
-![Incandescence](http://staging.yago.io/content/images/incandescence.jpg.jpg)
-![Incandescence](http://staging.yago.io/content/images/incandescence01.jpg.jpg)
-![Incandescence](http://staging.yago.io/content/images/incandescence02.jpg.jpg)
-![Incandescence](http://staging.yago.io/content/images/incandescence03.jpg.jpg)
+![Incandescence](/img/images/incandescence.jpg.jpg)
+![Incandescence](/img/images/incandescence01.jpg.jpg)
+![Incandescence](/img/images/incandescence02.jpg.jpg)
+![Incandescence](/img/images/incandescence03.jpg.jpg)

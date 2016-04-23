@@ -14,11 +14,11 @@ tags: photographie
 
 Clichés rapportés de la Ville Éternelle. 
 
-![Rome](http://staging.yago.io/content/images/rome01.jpg.jpg)
-![Rome](http://staging.yago.io/content/images/rome02.jpg.jpg)
-![Rome](http://staging.yago.io/content/images/rome03.jpg.jpg)
-![Rome](http://staging.yago.io/content/images/rome04.jpg.jpg)
-![Rome](http://staging.yago.io/content/images/rome05.jpg.jpg)
-![Rome](http://staging.yago.io/content/images/rome06.jpg.jpg)
-![Rome](http://staging.yago.io/content/images/rome07.jpg.jpg)
-![Rome](http://staging.yago.io/content/images/rome08.jpg.jpg)
+![Rome](/img/images/rome01.jpg.jpg)
+![Rome](/img/images/rome02.jpg.jpg)
+![Rome](/img/images/rome03.jpg.jpg)
+![Rome](/img/images/rome04.jpg.jpg)
+![Rome](/img/images/rome05.jpg.jpg)
+![Rome](/img/images/rome06.jpg.jpg)
+![Rome](/img/images/rome07.jpg.jpg)
+![Rome](/img/images/rome08.jpg.jpg)

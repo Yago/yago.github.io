@@ -14,8 +14,8 @@ tags: graphic
 
 Quelques dessins sortit de mon carnet de croquis. 
 
-![Dessin](http://staging.yago.io/content/images/dessin01.jpg.jpg)
-![Dessin](http://staging.yago.io/content/images/dessin02.jpg.jpg)
-![Dessin](http://staging.yago.io/content/images/dessin03.jpg.jpg)
-![Dessin](http://staging.yago.io/content/images/dessin04.jpg.jpg)
-![Dessin](http://staging.yago.io/content/images/dessin05.jpg.jpg)
+![Dessin](/img/images/dessin01.jpg.jpg)
+![Dessin](/img/images/dessin02.jpg.jpg)
+![Dessin](/img/images/dessin03.jpg.jpg)
+![Dessin](/img/images/dessin04.jpg.jpg)
+![Dessin](/img/images/dessin05.jpg.jpg)

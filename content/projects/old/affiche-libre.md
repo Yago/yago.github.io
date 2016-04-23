@@ -14,4 +14,4 @@ tags: graphic
 
 Durant le cours de graphisme de 2ème, nous devions réaliser une affiche libre. J'ai choisi de faire une affiche pour BD-Fil, le festival de bande dessinée de Lausanne. BD-Fil n'a évidemment pas connaissance de ce travail, il ne s'agit là que d'un exercice. 
 
-![title](http://staging.yago.io/content/images/bdfil.jpg.jpg)
+![title](/img/images/bdfil.jpg.jpg)

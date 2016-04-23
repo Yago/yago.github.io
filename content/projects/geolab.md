@@ -7,7 +7,7 @@ collection: projects
 tags: projet
 ---
 
-![Goelab.io](http://staging.yago.io/content/images/geolab.jpg)
+![Goelab.io](/img/images/geolab.jpg)
 
 Après avoir été pris d'une passion soudaine pour la cartographie web et avoir expérimenté divers outils SIG open sources, j'ai commencé à produire mes propres cartes. 
 

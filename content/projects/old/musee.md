@@ -16,4 +16,4 @@ Pour notre dernier mandat en 3D, nous devions réaliser, en relativement peu de 
 
 L'entier de la scène a été travaillé sur Maya et rendu avec Mental Ray. 
 
-![Musée](http://staging.yago.io/content/images/musee.jpg.jpg)
+![Musée](/img/images/musee.jpg.jpg)

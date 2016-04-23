@@ -16,5 +16,5 @@ Dans le cadre des examens de milieu de 3ème année, nous devions réaliser un c
 
 En partant de notre concept, j'ai choisi de créer un site à la fois épuré et reprenant les couleurs du vin. J'ai choisi aussi de mettre en valeur l'artiste et le vin avant les informations concernant la soirée. 
 
-![Pianovino](http://staging.yago.io/content/images/pianovinologo.jpg.jpg)
-![Pianovino](http://staging.yago.io/content/images/pianovinosite.jpg.jpg)
+![Pianovino](/img/images/pianovinologo.jpg.jpg)
+![Pianovino](/img/images/pianovinosite.jpg.jpg)

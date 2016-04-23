@@ -18,11 +18,11 @@ Le Harfang est un hybride entre un Chebec arabe du XVIIe et une Jonque chinoise.
 
 Toute la conception du navire s'est faite sous Maya durant de nombreuses heures. Je n'ai pour l'instant pas encore eu le courage de le texturer, craignant pour la vie de ma pauvre machine, mais le but final reste la mise en situation dans Vue sur une forte houle et par un bon vent. 
 
-![Le Harfang](http://staging.yago.io/content/images/junk01.jpg.jpg)
-![Le Harfang](http://staging.yago.io/content/images/junk02.jpg.jpg)
-![Le Harfang](http://staging.yago.io/content/images/junk03.jpg.jpg)
-![Le Harfang](http://staging.yago.io/content/images/junk04.jpg.jpg)
-![Le Harfang](http://staging.yago.io/content/images/junk05.jpg.jpg)
-![Le Harfang](http://staging.yago.io/content/images/junk06.jpg.jpg)
-![Le Harfang](http://staging.yago.io/content/images/junk07.jpg.jpg)
-![Le Harfang](http://staging.yago.io/content/images/junk08.jpg.jpg)
+![Le Harfang](/img/images/junk01.jpg.jpg)
+![Le Harfang](/img/images/junk02.jpg.jpg)
+![Le Harfang](/img/images/junk03.jpg.jpg)
+![Le Harfang](/img/images/junk04.jpg.jpg)
+![Le Harfang](/img/images/junk05.jpg.jpg)
+![Le Harfang](/img/images/junk06.jpg.jpg)
+![Le Harfang](/img/images/junk07.jpg.jpg)
+![Le Harfang](/img/images/junk08.jpg.jpg)

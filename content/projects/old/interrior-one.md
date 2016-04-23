@@ -16,5 +16,5 @@ Après une petite formation sur l'excellent Vray, je me suis attelé à la créa
 
 J'ai réalisé le tout sur Maya, mais avec Vray et non Mental Ray comme à mon habitude. Comme quoi le changement peut payer ;) 
 
-![Interrior one](http://staging.yago.io/content/images/interior1.jpg.jpg)
-![Interrior one](http://staging.yago.io/content/images/interior2.jpg.jpg)
+![Interrior one](/img/images/interior1.jpg.jpg)
+![Interrior one](/img/images/interior2.jpg.jpg)

@@ -14,7 +14,7 @@ tags: photographie
 
 Durant de cours de photo de 1ère année, nous avons dû choisir une toile de maître est en faire une appropriation photographique. Le but n'était pas de garder le sujet original, mais de le détourner. 
 
-![Découverte de la femme](http://staging.yago.io/content/images/decouverte.jpg.jpg)
-![Découverte de la femme](http://staging.yago.io/content/images/decouvertelayout.jpg.jpg)
+![Découverte de la femme](/img/images/decouverte.jpg.jpg)
+![Découverte de la femme](/img/images/decouvertelayout.jpg.jpg)
 
 

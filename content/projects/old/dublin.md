@@ -14,7 +14,7 @@ tags: photographie
 
 Clichés réalisés lors de mon voyage à Dublin, une ville chaleureuse et tellement sympathique. 
 
-![Dublin](http://staging.yago.io/content/images/dublin01.jpg.jpg)
-![Dublin](http://staging.yago.io/content/images/dublin02.jpg.jpg)
-![Dublin](http://staging.yago.io/content/images/dublin03.jpg.jpg)
-![Dublin](http://staging.yago.io/content/images/dublin04.jpg.jpg)
+![Dublin](/img/images/dublin01.jpg.jpg)
+![Dublin](/img/images/dublin02.jpg.jpg)
+![Dublin](/img/images/dublin03.jpg.jpg)
+![Dublin](/img/images/dublin04.jpg.jpg)

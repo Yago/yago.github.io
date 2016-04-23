@@ -16,5 +16,5 @@ Après avoir suivi une petite formation vidéo sur Zbrush 4 et de ses nouveauté
 
 La totalité du travail a été fait sous Zbrush 4. 
 
-![Alien](http://staging.yago.io/content/images/alien.jpg.jpg)
-![Alien](http://staging.yago.io/content/images/alien2.jpg.jpg)
+![Alien](/img/images/alien.jpg.jpg)
+![Alien](/img/images/alien2.jpg.jpg)

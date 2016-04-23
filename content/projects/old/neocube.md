@@ -16,7 +16,7 @@ Dans le cadre des examens de fin de 2ème, nous devions réaliser un site ainsi 
 
 J'ai choisi d'orienter ma communication autour d'un univers futuriste apprécié et bien connu du public cible qui n'est pas sans rappeler un certain jeu casse-tête. Après réflexion, j'ai choisi de séparer le site en deux pages, une home-page pour les informations relatives au produit et une page plus communautaire avec une galerie d'images des créations des clients. 
 
-![Neocube](http://staging.yago.io/content/images/neocube_galery.jpg.jpg)
-![Neocube](http://staging.yago.io/content/images/neocube_home.jpg.jpg)
+![Neocube](/img/images/neocube_galery.jpg.jpg)
+![Neocube](/img/images/neocube_home.jpg.jpg)
 
 <iframe width="601" height="338" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="http://player.vimeo.com/video/25361332?title=0&amp;byline=0&amp;portrait=0&amp;color=2d95e3"></iframe>

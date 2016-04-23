@@ -16,7 +16,7 @@ Après mes premiers balbutiements sur Zbrush, je me suis attelé à mon premier 
 
 Je suis donc parti de Zspheres afin de créer un mannequin humanoïde convaincant, excellente base pour commencer la modélisation. Puis, à grand coup de Clay Tubes et de Move, notre jeune femme commença peu à peu à prendre forme. 
 
-![title](http://staging.yago.io/content/images/girl_01.jpg.jpg)
-![title](http://staging.yago.io/content/images/girl_02.jpg.jpg)
-![title](http://staging.yago.io/content/images/girl_03.jpg.jpg)
-![title](http://staging.yago.io/content/images/girl_04.jpg.jpg)
+![title](/img/images/girl_01.jpg.jpg)
+![title](/img/images/girl_02.jpg.jpg)
+![title](/img/images/girl_03.jpg.jpg)
+![title](/img/images/girl_04.jpg.jpg)

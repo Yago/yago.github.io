@@ -18,9 +18,9 @@ J'ai choisi d'appeler mon magazine : Edge. Ce terme, relatif aux trois secteur
 
 Voici quelques pages en exemple et le PDF complet est disponible à la suite. 
 
-![Edge magazine](http://staging.yago.io/content/images/edgelogo.jpg.jpg)
-![Edge magazine](http://staging.yago.io/content/images/magpage01.jpg.jpg)
-![Edge magazine](http://staging.yago.io/content/images/magpage02.jpg.jpg)
-![Edge magazine](http://staging.yago.io/content/images/magpage03.jpg.jpg)
-![Edge magazine](http://staging.yago.io/content/images/magpage04.jpg.jpg)
-![Edge magazine](http://staging.yago.io/content/images/magpage05.jpg.jpg)
+![Edge magazine](/img/images/edgelogo.jpg.jpg)
+![Edge magazine](/img/images/magpage01.jpg.jpg)
+![Edge magazine](/img/images/magpage02.jpg.jpg)
+![Edge magazine](/img/images/magpage03.jpg.jpg)
+![Edge magazine](/img/images/magpage04.jpg.jpg)
+![Edge magazine](/img/images/magpage05.jpg.jpg)

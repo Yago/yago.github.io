@@ -15,4 +15,4 @@ Dans le cadre du festival de musique électronique lausannois, [Antistatique](ht
 
 Se basant sur l'API des célèbres réseaux sociaux, cette web app permet de récupérer le flux et de le stocker avant de l'afficher sur la page principale. Visible directement sur internet, mais aussi projetée au coeur du festival sur un grand écran, la plateforme a eu un grand succès auprès du public.
 
-![Electrosanne](http://staging.yago.io/content/images/electro_macbook.jpg)
+![Electrosanne](/img/images/electro_macbook.jpg)

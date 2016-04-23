@@ -14,11 +14,11 @@ tags: photographie
 
 Lors de mes quelques voyages en pays breton, j'ai réalisé quelques clichés panoramiques du paysage. 
 
-![title](http://staging.yago.io/content/images/pano01.jpg.jpg)
-![title](http://staging.yago.io/content/images/pano02.jpg.jpg)
-![title](http://staging.yago.io/content/images/pano03.jpg.jpg)
-![title](http://staging.yago.io/content/images/pano04.jpg.jpg)
-![title](http://staging.yago.io/content/images/pano05.jpg.jpg)
-![title](http://staging.yago.io/content/images/pano06.jpg.jpg)
-![title](http://staging.yago.io/content/images/pano07.jpg.jpg)
-![title](http://staging.yago.io/content/images/pano08.jpg.jpg)
+![title](/img/images/pano01.jpg.jpg)
+![title](/img/images/pano02.jpg.jpg)
+![title](/img/images/pano03.jpg.jpg)
+![title](/img/images/pano04.jpg.jpg)
+![title](/img/images/pano05.jpg.jpg)
+![title](/img/images/pano06.jpg.jpg)
+![title](/img/images/pano07.jpg.jpg)
+![title](/img/images/pano08.jpg.jpg)

@@ -20,11 +20,11 @@ Mon choix s’est porté sur la solution de communiquer sur les usagers. De ce f
 
 Présenter tous les avantages d’être « elocycliste » au travers d’un univers visuel sobre et explicite afin de provoquer une prise de conscience. Mettre en avant la liberté, la simplicité et la préservation de l’environnement qui résultent d’un tel réseau par l’utilisation d’animations graphiques simples et claires. 
 
-![Elocyclo](http://staging.yago.io/content/images/elocycloconstruction.jpg.jpg)
-![Elocyclo](http://staging.yago.io/content/images/elocyclologo.jpg.jpg)
-![Elocyclo](http://staging.yago.io/content/images/elocyclocarte.png.png)
-![Elocyclo](http://staging.yago.io/content/images/elocyclolettre.jpg.jpg)
-![Elocyclo](http://staging.yago.io/content/images/elocycloborne3.jpg.jpg)
-![Elocyclo](http://staging.yago.io/content/images/elocyclosite.png.png)
+![Elocyclo](/img/images/elocycloconstruction.jpg.jpg)
+![Elocyclo](/img/images/elocyclologo.jpg.jpg)
+![Elocyclo](/img/images/elocyclocarte.png.png)
+![Elocyclo](/img/images/elocyclolettre.jpg.jpg)
+![Elocyclo](/img/images/elocycloborne3.jpg.jpg)
+![Elocyclo](/img/images/elocyclosite.png.png)
 
 <iframe width="601" height="338" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="http://player.vimeo.com/video/44024754?title=0&amp;byline=0&amp;portrait=0&amp;color=2d95e3"></iframe>

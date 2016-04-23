@@ -18,7 +18,7 @@ Bien que le scorpion ne soit pas un insecte, mais un arthropode de la classe des
 
 L'entier du projet a été mené sur Maya 2011. 
 
-![Arya](http://staging.yago.io/content/images/scorpionocc01.jpg.jpg)
-![Arya](http://staging.yago.io/content/images/scorpionocc02.jpg.jpg)
-![Arya](http://staging.yago.io/content/images/scorpioncolor01.jpg.jpg)
-![Arya](http://staging.yago.io/content/images/scorpioncolor02.jpg.jpg)
+![Arya](/img/images/scorpionocc01.jpg.jpg)
+![Arya](/img/images/scorpionocc02.jpg.jpg)
+![Arya](/img/images/scorpioncolor01.jpg.jpg)
+![Arya](/img/images/scorpioncolor02.jpg.jpg)
