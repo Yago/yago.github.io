@@ -20,7 +20,7 @@
     <![endif]-->
   </head>
   <body>
-    <div class="main-wrapper">
+    <div id="main" class="main-wrapper">
       <div id="content-wrapper" class="content-wrapper">
         <header>
   <a href="/">
@@ -42,9 +42,26 @@
 
 </header>
 
+        <div class="smooth-content" id="smooth-content">
+          
+  <div class="text-center">
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="icon icon-tipi"></i></a></li>
+      <li>
         
-  <img src="/img/cover/psdlens.jpg" class="cover">
-  <div class="article-container">
+      </li>
+      <li class="active">PSDLENS</li>
+    </ol>
+  </div>
+
+  
+    <div class="cover">
+      <img src="/img/cover/psdlens.jpg">
+      <div class="inset-shadow"></div>
+    </div>
+  
+
+  <div class="article-container" id="article-container">
     <div class="text-center">
       <h1>PSDLENS</h1>
       <div class="date">
@@ -52,7 +69,7 @@
       </div>
     </div>
 
-    <article>
+    <article id="article">
       <p><img src="http://staging.yago.io/content/images/micro-white.gif" alt="PSDLens animation"></p>
 <p>Apr&#xE8;s avoir d&#xE9;couvert l&apos;incroyable librairie Ruby <a href="http://cosmos.layervault.com/psdrb.html">PSD.rb</a>, j&apos;ai d&#xE9;cid&#xE9; de mettre en place un outil tirant partit du meilleur de cette technologie. Mon envie &#xE9;tait de cr&#xE9;er une App en ligne de commande permettant de retourner plusieurs types d&apos;informations concernant les fichiers Photoshop scann&#xE9;s.</p>
 <p>###Installation</p>
@@ -80,19 +97,80 @@ $ psdlens <span class="token keyword">.</span> meta
 </ul>
 
     </article>
+
+    
   </div>
+
+
+        </div>
+        <footer>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="separator">
+  <i class="icon icon-drakar"></i>
+</div>
+
+
+        <p>
+          <em>Let's keep in touch !</em>
+        </p>
+
+        <ul>
+          <li>
+            <i class="icon icon-github-alt"></i> <a href="https://github.com/yago" target="_blank">Github</a>
+          </li>
+          <li>
+            <i class="icon icon-twitter"></i> <a href="https://twitter.com/Yago_0" target="_blank">Twitter</a>
+          </li>
+          <li>
+            <i class="icon icon-linkedin"></i> <a href="https://ch.linkedin.com/in/yanngouffon" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
+          </li>
+          <li>
+            <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
 
       </div>
       <div id="console-wrapper" class="side-wrapper console-wrapper">
-        <div id="console" class="console"></div>
-      </div>
+  <div id="console" class="console"></div>
+</div>
+
       <div id="menu-wrapper" class="side-wrapper menu-wrapper">
-        <div id="menu" class="menu"></div>
-      </div>
+  <div id="menu" class="menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/blog/1">Blog</a></li>
+      <li><i class="icon icon-bonsai"></i></li>
+    </ul>
+  </div>
+</div>
+
     </div>
 
+    
 
     <script src="/js/vendors.min.js"></script>
     <script src="/js/main.js"></script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-41124823-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>

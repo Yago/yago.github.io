@@ -20,7 +20,7 @@
     <![endif]-->
   </head>
   <body>
-    <div class="main-wrapper">
+    <div id="main" class="main-wrapper">
       <div id="content-wrapper" class="content-wrapper">
         <header>
   <a href="/">
@@ -42,29 +42,324 @@
 
 </header>
 
-        
-  <div class="article-container">
-    <p>Ahoy there ! I&#39;m Yann, a french speaking web adventurer who <em>designs</em> and <code>code</code>. I&#39;m focused on modular and performant development. <i class="icon icon-igloo"></i></p>
-
-  </div>
+        <div class="smooth-content" id="smooth-content">
+          
+  <div class="hero">
   <div class="container">
-    <div class="spacer"></div>
-    <div id="personnal-infos" class="personnal-infos"></div>
-    <div id="pie-chart" class="pie-chart"></div>
-    <iframe src="https://github.com/users/yago/contributions" frameborder="0" width="100%" height="100px"></iframe>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="hero-content">
+          <p>Ahoy there ! I&#39;m Yann, a web adventurer who <em>designs</em> and <code>code</code>. I&#39;m focused on modular, performant and maintainable development.</p>
+<p><i class="icon icon-igloo"></i> Based in Lausanne, Switzerland</p>
+
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
+
+  <div class="container">
+    <div class="spacer spacer-sm"></div>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h2>Projects</h2>
+        <div class="spacer spacer-sm"></div>
+        <div class="row row-flex">
+          
+            
+              <a href="/projects/cardis" class="project-item col-sm-4">
+  <h4>Cardis.</h4>
+  <div class="project-thumb" style="background-image: url('/img/thumbs/cardis.jpg');">
+    <img src="/img/thumbs/cardis.jpg" class="sr-only">
+  </div>
+</a>
+
+            
+          
+            
+              <a href="/projects/brouillon-de-culture" class="project-item col-sm-4">
+  <h4>Brouillon de Culture.</h4>
+  <div class="project-thumb" style="background-image: url('/img/thumbs/brouillon-de-culture.jpg');">
+    <img src="/img/thumbs/brouillon-de-culture.jpg" class="sr-only">
+  </div>
+</a>
+
+            
+          
+            
+              <a href="/projects/rodondi-joye" class="project-item col-sm-4">
+  <h4>Rodondi Joye.</h4>
+  <div class="project-thumb" style="background-image: url('/img/thumbs/rodondi-joye.jpg');">
+    <img src="/img/thumbs/rodondi-joye.jpg" class="sr-only">
+  </div>
+</a>
+
+            
+          
+            
+              <a href="/projects/bali" class="project-item col-sm-4">
+  <h4>Bali.</h4>
+  <div class="project-thumb" style="background-image: url('/img/thumbs/bali.jpg');">
+    <img src="/img/thumbs/bali.jpg" class="sr-only">
+  </div>
+</a>
+
+            
+          
+            
+              <a href="/projects/hashtag-electrosanne" class="project-item col-sm-4">
+  <h4>Hashtag electrosanne.</h4>
+  <div class="project-thumb" style="background-image: url('/img/thumbs/hashtag-electrosanne.jpg');">
+    <img src="/img/thumbs/hashtag-electrosanne.jpg" class="sr-only">
+  </div>
+</a>
+
+            
+          
+            
+              <a href="/projects/msf-face-it" class="project-item col-sm-4">
+  <h4>MSF - Face-it.</h4>
+  <div class="project-thumb" style="background-image: url('/img/thumbs/msf-face-it.jpg');">
+    <img src="/img/thumbs/msf-face-it.jpg" class="sr-only">
+  </div>
+</a>
+
+            
+          
+            
+              <a href="/projects/geolab" class="project-item col-sm-4">
+  <h4>Geolab.</h4>
+  <div class="project-thumb" style="background-image: url('/img/thumbs/geolab.jpg');">
+    <img src="/img/thumbs/geolab.jpg" class="sr-only">
+  </div>
+</a>
+
+            
+          
+            
+              <a href="/projects/morning-forest" class="project-item col-sm-4">
+  <h4>Morning Forest.</h4>
+  <div class="project-thumb" style="background-image: url('/img/thumbs/morning-forest.jpg');">
+    <img src="/img/thumbs/morning-forest.jpg" class="sr-only">
+  </div>
+</a>
+
+            
+          
+            
+              <a href="/projects/derham" class="project-item col-sm-4">
+  <h4>deRham.</h4>
+  <div class="project-thumb" style="background-image: url('/img/thumbs/derham.jpg');">
+    <img src="/img/thumbs/derham.jpg" class="sr-only">
+  </div>
+</a>
+
+            
+          
+            
+              <a href="/projects/lausanne-panorama" class="project-item col-sm-4">
+  <h4>Lausanne Panorama.</h4>
+  <div class="project-thumb" style="background-image: url('/img/thumbs/lausanne-panorama.jpg');">
+    <img src="/img/thumbs/lausanne-panorama.jpg" class="sr-only">
+  </div>
+</a>
+
+            
+          
+          <a href="/projects" class="project-item col-sm-4">
+            <h4><i class="icon icon-origami"></i> All Projects.</h4>
+            <div class="project-thumb"></div>
+          </a>
+        </div>
+
+        <div class="spacer spacer-md"></div>
+        <div class="separator">
+  <i class="icon icon-drakar"></i>
+</div>
+
+
+        <h2>Dev facts</h2>
+        <div class="spacer spacer-xs"></div>
+<div class="row">
+  <div class="col-sm-10">
+    <div class="spacer spacer-xs"></div>
+    <pre class="line-numbers language-json skills"><code class=" language-json"><span class="token punctuation">{</span>
+    <span class="token keys">"name"</span><span class="token punctuation">:</span> "<span id="skills-name" class="data"></span>"<span class="token punctuation">,</span>
+    <span class="token keys">"profile"</span><span class="token punctuation">:</span> "<a href="https://github.com/yago" target="_blank" class="data">github.com/yago</a>"<span class="token punctuation">,</span>
+    <span class="token keys">"level"</span><span class="token punctuation">:</span> <span id="skills-level" class="data"></span><span class="token punctuation">,</span>
+    <span class="token keys">"platform"</span><span class="token punctuation">:</span> "<span class="data">OSX</span>"<span class="token punctuation">,</span>
+    <span class="token keys">"coding_now"</span><span class="token punctuation">:</span> <span class="token boolean"><span id="skills-coding" class="data"></span></span><span id="skills-language-wrapper"><span class="token punctuation">,</span>
+    <span class="token keys">"current_language"</span><span class="token punctuation">:</span> "<span id="skills-language" class="data"></span>"</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="text-right code-legend">
+  <em class="text-clear"><small>Source: <a href="http://www.codeivate.com/users/yago" target="_blank">Codeivate</a></small></em>
+</div>
+
+    <div id="pie-chart" class="pie-chart"></div>
+    <hr>
+  </div>
+  <div class="col-sm-2 tools tools-vertical">
+    <a href="https://angularjs.org/"><i class="icon icon-angular-simple"></i></a>
+    <a href="http://getbootstrap.com/" target="_blank"><i class="icon icon-bootstrap"></i></a>
+    <a href="http://yeoman.io/" target="_blank"><i class="icon icon-yeoman"></i></a>
+    <a href="http://gulpjs.com/" target="_blank"><i class="icon icon-gulp"></i></a>
+    <a href="https://www.mongodb.org/" target="_blank"><i class="icon icon-mongodb"></i></a>
+    <a href="https://nodejs.org/" target="_blank"><i class="icon icon-nodejs-small"></i></a>
+    <a href="https://git-scm.com/" target="_blank"><i class="icon icon-git"></i></a>
+    <a href="https://wordpress.org/" target="_blank"><i class="icon icon-wordpress"></i></a>
+    <a href="http://ionicframework.com/" target="_blank"><i class="icon icon-ionic"></i></a>
+    <a href="https://www.npmjs.com/" target="_blank"><i class="icon icon-npm"></i></a>
+  </div>
+</div>
+<div class="spacer spacer-xs"></div>
+<div id="contributions" class="contributions"></div>
+
+
+        <div class="spacer"></div>
+        <div class="separator">
+  <i class="icon icon-drakar"></i>
+</div>
+
+
+        <h2>Last blog posts</h2>
+        <div class="row ">
+          <div class="col-sm-9">
+            
+              
+                <a href="/blog/live-coding" class="post-item">
+  <h4>Live coding</h4>
+  <small class="text-clear"><em>13.09.2014</em></small>
+</a>
+
+              
+            
+              
+                <a href="/blog/optez-pour-le-markdown" class="post-item">
+  <h4>Optez pour le Markdown !</h4>
+  <small class="text-clear"><em>06.06.2014</em></small>
+</a>
+
+              
+            
+              
+                <a href="/blog/google-drive-comme-cms" class="post-item">
+  <h4>Google Drive comme CMS !</h4>
+  <small class="text-clear"><em>11.03.2014</em></small>
+</a>
+
+              
+            
+              
+                <a href="/blog/r-volution-vr" class="post-item">
+  <h4>Révolution VR</h4>
+  <small class="text-clear"><em>05.12.2013</em></small>
+</a>
+
+              
+            
+              
+                <a href="/blog/styles-modulaires-bonnes-pratiques" class="post-item">
+  <h4>Styles modulaires - bonnes pratiques</h4>
+  <small class="text-clear"><em>25.11.2013</em></small>
+</a>
+
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+            <a href="/blog/1" class="post-item">
+              <h4><i class="icon icon-chukchi"></i> More posts</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+        </div>
+        <footer>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="separator">
+  <i class="icon icon-drakar"></i>
+</div>
+
+
+        <p>
+          <em>Let's keep in touch !</em>
+        </p>
+
+        <ul>
+          <li>
+            <i class="icon icon-github-alt"></i> <a href="https://github.com/yago" target="_blank">Github</a>
+          </li>
+          <li>
+            <i class="icon icon-twitter"></i> <a href="https://twitter.com/Yago_0" target="_blank">Twitter</a>
+          </li>
+          <li>
+            <i class="icon icon-linkedin"></i> <a href="https://ch.linkedin.com/in/yanngouffon" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
+          </li>
+          <li>
+            <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
 
       </div>
       <div id="console-wrapper" class="side-wrapper console-wrapper">
-        <div id="console" class="console"></div>
-      </div>
+  <div id="console" class="console"></div>
+</div>
+
       <div id="menu-wrapper" class="side-wrapper menu-wrapper">
-        <div id="menu" class="menu"></div>
-      </div>
+  <div id="menu" class="menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/blog/1">Blog</a></li>
+      <li><i class="icon icon-bonsai"></i></li>
+    </ul>
+  </div>
+</div>
+
     </div>
 
+    
 
     <script src="/js/vendors.min.js"></script>
     <script src="/js/main.js"></script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-41124823-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>

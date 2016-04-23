@@ -2,13 +2,13 @@
 
 /* global Highcharts */
 
-(function () {
+var chartTheme = function chartTheme() {
   Highcharts.theme = {
     colors: ['#d5ab32', '#d9b143', '#dcb853', '#dfbf63', '#e3c574', '#e6cc84', '#e9d394', '#eddaa4', '#f0e0b5', '#f3e7c5', '#f7eed5', '#faf5e6', '#fdfbf6'],
     chart: {
       backgroundColor: null,
       style: {
-        fontFamily: 'Dosis, sans-serif'
+        fontFamily: '"Ratio", Helvetica Neue, Helvetica, Arial, sans-serif;'
       }
     },
     title: {
@@ -20,8 +20,11 @@
     },
     tooltip: {
       borderWidth: 0,
-      backgroundColor: 'rgba(219,219,216,0.8)',
-      shadow: false
+      backgroundColor: 'rgba(0,0,0,1)',
+      shadow: false,
+      style: {
+        color: 'rgba(255,255,255,1)'
+      }
     },
     legend: {
       itemStyle: {
@@ -60,17 +63,28 @@
 
   // Apply the theme
   Highcharts.setOptions(Highcharts.theme);
-})();
+};
+
+chartTheme();
 'use strict';
 
 /* global jQuery, Highcharts */
 
-(function ($) {
+var charts = function charts($) {
+
   $(document).ready(function () {
     if ($('#pie-chart').length > 0) {
-      var $personnalInfos = $('#personnal-infos'),
-          $pieChart = $('#pie-chart'),
+      var $pieChart = $('#pie-chart'),
           data = 'http://codeivate.com/users/yago.json',
+          shade = function shade(color, percent) {
+        var f = parseInt(color.slice(1), 16),
+            t = percent < 0 ? 0 : 255,
+            p = percent < 0 ? percent * -1 : percent,
+            R = f >> 16,
+            G = f >> 8 & 0x00FF,
+            B = f & 0x0000FF;
+        return '#' + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
+      },
           sortLevel = function sortLevel(a, b) {
         if (a.level > b.level) {
           return -1;
@@ -114,10 +128,19 @@
               languagesFormatted.push(languages[lang]);
             }
           }
-          languagesFormatted.push({ 'name': 'Other', 'level': 0, 'y': otherPoints });
+          languagesFormatted.push({ 'name': 'Other', 'level': 1, 'y': otherPoints });
           languagesFormatted.sort(sortLevel);
 
-          $personnalInfos.html('' + '<table>' + '<tr><th>User</th><td><a href="https://github.com/yago">' + res.name + '</a></td></tr>' + '<tr><th>Level</th><td>' + res.level + '</td></tr>' + '<tr><th>Platform</th><td>OSX</td></tr>' + '<tr><th>Coding now</th><td>' + res.programming_now + '</td></tr>' + '<tr><th>Current language</th><td>' + res.current_language.replace('.sublime-syntax', '') + '</td></tr>' + '');
+          // Populate data pre
+          $('#skills-name').html(res.name);
+          $('#skills-level').html(res.level);
+          if (res.programming_now) {
+            $('#skills-coding').html(res.programming_now);
+            $('#skills-language').html(res.current_language.replace('.sublime-syntax', ''));
+          } else {
+            $('#skills-coding').html('false');
+            $('#skills-language-wrapper').addClass('hide');
+          }
 
           // Create Pie chart
           $pieChart.highcharts({
@@ -126,7 +149,8 @@
             },
             title: '',
             tooltip: {
-              pointFormat: '<b>{point.percentage:.1f}%</b>'
+              headerFormat: '',
+              pointFormat: '<b>Usage : </b>{point.percentage:.1f}%'
             },
             plotOptions: {
               series: {
@@ -139,7 +163,7 @@
                   events: {
                     mouseOver: function mouseOver() {
                       this.options.oldColor = this.color;
-                      this.graphic.attr('fill', 'black');
+                      this.graphic.attr('fill', shade(this.color, -0.1));
                     },
                     mouseOut: function mouseOut() {
                       this.graphic.attr('fill', this.options.oldColor);
@@ -170,12 +194,14 @@
       });
     }
   });
-})(jQuery);
+};
+
+charts(jQuery);
 'use strict';
 
 /* global jQuery */
 
-(function ($) {
+var jconsole = function jconsole($) {
   $(document).ready(function () {
     var $contentWrapper = $('#content-wrapper'),
         $menuWrapper = $('#menu-wrapper'),
@@ -206,6 +232,7 @@
     jqconsole.Focus();
 
     $consoleToggle.click(function () {
+      $consoleToggle.toggleClass('open');
       $consoleWrapper.toggleClass('open');
       $contentWrapper.toggleClass('left-open');
       startPrompt();
@@ -214,6 +241,7 @@
 
     $(document).keyup(function (e) {
       if (e.altKey && e.keyCode === 67) {
+        $consoleToggle.toggleClass('open');
         $consoleWrapper.toggleClass('open');
         $contentWrapper.toggleClass('left-open');
         $contentWrapper.removeClass('right-open');
@@ -221,31 +249,107 @@
         startPrompt();
         jqconsole.Focus();
       }
+
+      if (e.keyCode == 27) {
+        $consoleToggle.removeClass('open');
+        $consoleWrapper.removeClass('open');
+        $contentWrapper.removeClass('left-open');
+      }
     });
   });
-})(jQuery);
+};
+
+jconsole(jQuery);
 'use strict';
 
 /* global jQuery */
 
-(function ($) {
-  // $.ajax({
-  //   url: 'https://github.com/users/yago/contributions',
-  //   jsonp: 'callback',
-  //   dataType: 'jsonp',
-  //   data: {
-  //     format: 'json'
-  //   },
-  //   success: function (res) {
-  //     console.log(res);
-  //   }
-  // });
-})(jQuery);
+var contributions = function contributions($) {
+  $(document).ready(function () {
+    if ($('#contributions').length > 0) {
+      var $contributions = $('#contributions'),
+          data = 'http://api.yago.io/contributions/';
+
+      // Get contributions data
+      $.ajax({
+        url: data,
+        success: function success(res) {
+          $contributions.html(res);
+        }
+      });
+    }
+  });
+};
+
+contributions(jQuery);
+'use strict';
+
+/* global jQuery, PhotoSwipe, PhotoSwipeUI_Default */
+
+var articleGallery = function articleGallery($) {
+  var counterUpdate = function counterUpdate(gallery) {
+    var current = parseInt(gallery.getCurrentIndex(), 10) + 1,
+        total = gallery.options.getNumItemsFn();
+
+    $('.pswp__counter').html('<span class="counter-big"><sup>' + current + '</sup></span>/<span class="counter-small"><sub>' + total + '</sub></span>');
+  };
+
+  $(document).ready(function () {
+    var index = 0,
+        container = [];
+
+    // Create gallery container
+    $('#article').find('a').each(function () {
+      var $that = $(this),
+          target = $that.attr('href'),
+          $thumb = $that.find('img'),
+          coef = 2800 / $thumb.width(),
+          width = 2800,
+          height = $thumb.height() * coef;
+
+      if (target.indexOf('/img/') > -1) {
+        $that.addClass('gallery-item');
+        $that.attr('data-index', index);
+
+        var item = {
+          src: target,
+          w: width,
+          h: height,
+          title: $thumb.attr('alt')
+        };
+        container.push(item);
+        index++;
+      }
+    });
+
+    // Enable photoswipe instance on thumb's click
+    $('.gallery-item').click(function (event) {
+      event.preventDefault();
+
+      var $pswp = $('.pswp')[0],
+          options = {
+        index: $(this).data('index'),
+        bgOpacity: 1,
+        showHideOpacity: true
+      };
+
+      var gallery = new PhotoSwipe($pswp, PhotoSwipeUI_Default, container, options);
+      gallery.init();
+
+      counterUpdate(gallery);
+      gallery.listen('afterChange', function () {
+        counterUpdate(gallery);
+      });
+    });
+  });
+};
+
+articleGallery(jQuery);
 'use strict';
 
 /* global jQuery */
 
-(function ($) {
+var menu = function menu($) {
   $(document).ready(function () {
     var $contentWrapper = $('#content-wrapper'),
         $menuWrapper = $('#menu-wrapper'),
@@ -253,17 +357,72 @@
         $consoleWrapper = $('#console-wrapper');
 
     $menuToggle.click(function () {
+      $menuToggle.toggleClass('open');
+      $menuWrapper.toggleClass('open');
+      $contentWrapper.toggleClass('right-open');
+    });
+
+    $menuWrapper.find('a').click(function () {
+      $menuToggle.toggleClass('open');
       $menuWrapper.toggleClass('open');
       $contentWrapper.toggleClass('right-open');
     });
 
     $(document).keyup(function (e) {
       if (e.altKey && e.keyCode === 77) {
+        $menuToggle.toggleClass('open');
         $menuWrapper.toggleClass('open');
         $contentWrapper.toggleClass('right-open');
         $contentWrapper.removeClass('left-open');
         $consoleWrapper.removeClass('open');
       }
+
+      if (e.keyCode == 27) {
+        $menuToggle.removeClass('open');
+        $menuWrapper.removeClass('open');
+        $contentWrapper.removeClass('right-open');
+      }
     });
   });
+};
+
+menu(jQuery);
+'use strict';
+
+/* global jQuery, chartTheme, charts, jconsole, contributions, articleGallery, menu, Prism */
+
+(function ($) {
+  var $main = $('#main'),
+      options = {
+    prefetch: true,
+    cacheLength: 2,
+    hrefRegex: '^\/',
+    blacklist: '.gallery-item',
+    onStart: {
+      duration: 300,
+      render: function render($container) {
+        $container.addClass('onchange');
+        smoothState.restartCSSAnimations();
+      }
+    },
+    onReady: {
+      duration: 0,
+      render: function render($container, $newContent) {
+        $container.html($newContent);
+      }
+    },
+    onAfter: function onAfter($container) {
+      $container.removeClass('onchange');
+
+      chartTheme();
+      charts(jQuery);
+      jconsole(jQuery);
+      contributions(jQuery);
+      articleGallery(jQuery);
+      menu(jQuery);
+      Prism.highlightAll();
+    }
+  };
+
+  var smoothState = $main.smoothState(options).data('smoothState');
 })(jQuery);
