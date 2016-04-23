@@ -19,7 +19,10 @@
   </div>
 
   {% if not nocover %}
-    <img src="/img/cover/{{path|slug}}.jpg" class="cover">
+    <div class="cover">
+      <img src="/img/cover/{{path|slug}}.jpg">
+      <div class="inset-shadow"></div>
+    </div>
   {% endif %}
 
   <div class="article-container" id="article-container">
