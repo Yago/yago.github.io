@@ -25,7 +25,12 @@ module.exports = function() {
     this.emit("end");
   };
 
-  gulp.task('metalsmith', function() {
+  gulp.task('cname', function() {
+    return gulp.src('CNAME')
+      .pipe(gulp.dest(config.build));
+  });
+
+  gulp.task('metalsmith', ['cname'], function() {
     return gulp.src(config.content + '**/*.md')
       .pipe($.plumber({errorHandler: errorAlert}))
       .pipe($.metalsmith({
