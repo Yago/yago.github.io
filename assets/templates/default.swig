@@ -11,7 +11,7 @@
           <a href="/projects">projects</a>
         {% elseif collection == 'oldies' %}
           <a href="/projects">projects</a></li>
-          <li><a href="/oldies">oldies</a>
+          <li><a href="/projects/old">oldies</a>
         {% endif %}
       </li>
       <li class="active">{{title}}</li>

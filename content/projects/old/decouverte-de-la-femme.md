@@ -7,10 +7,10 @@ collection: oldies
 tags: photographie
 ---
 
-###CLIENT : eikonEMF
-###ANNÉES : 2009 - 2010
+### Client : eikonEMF
+### ANNÉES : 2009 - 2010
 
-##MANDAT :
+## MANDAT :
 
 Durant de cours de photo de 1ère année, nous avons dû choisir une toile de maître est en faire une appropriation photographique. Le but n'était pas de garder le sujet original, mais de le détourner. 
 

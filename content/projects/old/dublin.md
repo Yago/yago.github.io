@@ -7,10 +7,10 @@ collection: oldies
 tags: photographie
 ---
 
-###CLIENT : TRAVAIL PERSONNEL
-###ANNÉE : 2011
+### Client : TRAVAIL PERSONNEL
+### ANNÉE : 2011
 
-##MANDAT :
+## MANDAT :
 
 Clichés réalisés lors de mon voyage à Dublin, une ville chaleureuse et tellement sympathique. 
 

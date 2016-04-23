@@ -7,10 +7,10 @@ collection: oldies
 tags: 3d
 ---
 
-###CLIENT : TRAVAIL PERSONNEL
-###ANNÉE : 2011
+### Client : TRAVAIL PERSONNEL
+### ANNÉE : 2011
 
-##MANDAT :
+## MANDAT :
 
 Après mes premiers balbutiements sur Zbrush, je me suis attelé à mon premier modèle humain. J'ai donc choisi de modéliser une jeune femme aux courbes avantageuses. Pourquoi une femme pour commencer? Non pas par volonté lubrique, mais bien parce que la femme dispose d'une anatomie beaucoup plus douce et harmonieuse, pas forcément plus facile à modeler.
 

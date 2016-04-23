@@ -7,10 +7,10 @@ collection: oldies
 tags: motion
 ---
 
-###CLIENT : eikonEMF
-###ANNÉES : 2011
+### Client : eikonEMF
+### ANNÉES : 2011
 
-##MANDAT :
+## MANDAT :
 
 Pour le cours de motion, il nous était demandé de réaliser une petite opening TV pour une émission à choix (fictive ou existante). Cet opening devait durer 25 secondes et comprendre au moins une incrustation d'un objet 3D.
 

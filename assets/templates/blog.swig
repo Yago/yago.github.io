@@ -7,7 +7,7 @@
       <h1 class="h2 text-center">Blog</h1>
 
       <div class="spacer spacer-sm"></div>
-      {% for post in posts %}
+      {% for post in pagination.files %}
         {% include '../components/molecules/post-item.swig' with post %}
       {% endfor %}
       <div class="spacer spacer-sm"></div>

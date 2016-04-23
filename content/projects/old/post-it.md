@@ -7,10 +7,10 @@ collection: oldies
 tags: 3d
 ---
 
-###CLIENT : eikonEMF
-###ANNÉE : 2012
+### Client : eikonEMF
+### ANNÉE : 2012
 
-##MANDAT :
+## MANDAT :
 
 Développer un concept de communication audiovisuelle qui raconte Post-it et son slogan. Pour cela, nous devions proposer une intention narrative s’appliquant aux trois publics cibles choisis, soit l’usage privé, scolaire et professionnel. Pour finir, nous devions choisir l'un des trois publics et en réaliser le spot.
 

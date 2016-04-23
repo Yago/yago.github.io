@@ -7,10 +7,10 @@ collection: oldies
 tags: graphic
 ---
 
-###CLIENT : TRAVAIL PERSONNEL
-###ANNÉES : 2008 - 2011
+### Client : TRAVAIL PERSONNEL
+### ANNÉES : 2008 - 2011
 
-##MANDAT :
+## MANDAT :
 
 Quelques dessins sortit de mon carnet de croquis. 
 

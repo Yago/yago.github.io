@@ -7,10 +7,10 @@ collection: oldies
 tags: photographie
 ---
 
-###CLIENT : TRAVAIL PERSONNEL
-###ANNÉES : 2008 - 2010
+### Client : TRAVAIL PERSONNEL
+### ANNÉES : 2008 - 2010
 
-##MANDAT :
+## MANDAT :
 
 Lors de mes quelques voyages en pays breton, j'ai réalisé quelques clichés panoramiques du paysage. 
 

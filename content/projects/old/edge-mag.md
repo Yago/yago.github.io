@@ -7,10 +7,10 @@ collection: oldies
 tags: graphic
 ---
 
-###CLIENT : eikonEMF
-###ANNÉE : 2011
+### Client : eikonEMF
+### ANNÉE : 2011
 
-##MANDAT :
+## MANDAT :
 
 Pour le cours de graphisme de 3ème, il nous était demandé de réaliser une maquette d'un magazine anglophone de design, d'architecture et de graphisme. Le nom était libre et donc le dessin du logo également.
 

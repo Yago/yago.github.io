@@ -7,10 +7,10 @@ collection: oldies
 tags: motion
 ---
 
-###CLIENT : eikonEMF
-###ANNÉE : 2012
+### Client : eikonEMF
+### ANNÉE : 2012
 
-##MANDAT :
+## MANDAT :
 
 Pour le cours de 3D, il nous était demandé de créer un billboard pour Couleur3 avec une bande sonore imposée. Il fallait représenter l'univers décalé de la chaîne en très peu de temps et garder une certaine cohérence avec le son.
 

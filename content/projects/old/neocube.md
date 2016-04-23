@@ -7,10 +7,10 @@ collection: oldies
 tags: 3d
 ---
 
-###CLIENT : eikonEMF
-###ANNÉE : 2011
+### Client : eikonEMF
+### ANNÉE : 2011
 
-##MANDAT :
+## MANDAT :
 
 Dans le cadre des examens de fin de 2ème, nous devions réaliser un site ainsi qu'une vidéo de présentation d'un jouet pour geeks et créatifs : le neocube. Le site devait comprendre plusieurs choses : une description du produit, un renvoi vers les réseaux sociaux et la possibilité de s'abonner, un renvoi vers QoQa.ch qui vend le produit et la possibilité de partager ses propres créations.
 

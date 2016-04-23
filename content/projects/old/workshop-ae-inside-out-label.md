@@ -7,10 +7,10 @@ collection: oldies
 tags: motion
 ---
 
-###CLIENT : eikonEMF
-###ANNÉE : 2011
+### Client : eikonEMF
+### ANNÉE : 2011
 
-##MANDAT :
+## MANDAT :
 
 Dans le cadre du Workshop After Effect de 2ème année, il était demandé de réaliser un petit spot pour fêter la première année d'Inside-Out label. Ce label étant fictif, le style musical était totalement libre. Le spot, de 30 secondes environ, devait refléter à la fois l'univers musical du label ainsi qu'un léger aperçut de son catalogue.
 

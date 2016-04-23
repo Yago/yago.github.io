@@ -7,10 +7,10 @@ collection: oldies
 tags: 3d
 ---
 
-###CLIENT : TRAVAIL PERSONNEL
-###ANNÉE : 2011
+### Client : TRAVAIL PERSONNEL
+### ANNÉE : 2011
 
-##MANDAT :
+## MANDAT :
 
 Après avoir suivi une petite formation vidéo sur Zbrush 4 et de ses nouveautés, je me suis attelé à la création d'une figure humanoïde. J'ai voulu créer un être d'un autre monde, remarquablement intelligent avec un soupçon d'orgueil.
 

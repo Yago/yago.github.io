@@ -7,10 +7,10 @@ collection: oldies
 tags: 3d
 ---
 
-###CLIENT : eikonEMF
-###ANNÉES : 2010 - 2011
+### Client : eikonEMF
+### ANNÉES : 2010 - 2011
 
-##MANDAT :
+## MANDAT :
 
 Premier gros projet 3D de 2ème année, réaliser un insecte à choix avec un rendu "réaliste". N'étant pas des Entomologues, il n'était pas demandé que l'insecte soit une exacte réplique de son alter ego réel, mais qu'il puisse le faire croire et qu'il n'aille pas un rendu cartoon.
 

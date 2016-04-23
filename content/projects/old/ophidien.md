@@ -7,10 +7,10 @@ collection: oldies
 tags: motion
 ---
 
-###CLIENT : eikonEMF
-###ANNÉES : 2010 - 2011
+### Client : eikonEMF
+### ANNÉES : 2010 - 2011
 
-##MANDAT :
+## MANDAT :
 
 Pour le cours de vidéo, nous devions réaliser un petit court métrage sur un animal au choix. Avec Maxime Lonfat, nous avons choisi de réaliser notre métrage sur le boa. Notre idée était de le mettre en scène, lui et sa maîtresse, sous forme d'une rencontre lyrique, le tout sur une musique douce, cassant avec les clichés de peur qui accompagne l'animal. 
 

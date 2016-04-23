@@ -7,10 +7,10 @@ collection: oldies
 tags: 3d
 ---
 
-###CLIENT : TRAVAIL PERSONNEL
-###ANNÉES : 2010 - 2012
+### Client : TRAVAIL PERSONNEL
+### ANNÉES : 2010 - 2012
 
-##MANDAT :
+## MANDAT :
 
 Passionné de voile et d'aventures maritimes, j'ai commencé à modéliser ce bateau dès que j'en eus les capacités techniques. L'idée était, comme pour un vrai bateau, de construire pièce par pièce les différents éléments qui le composent. De la coque au mât de misaine et de la poupe à la proue, chaque pièce est indépendante et tend à rendre le navire le plus crédible possible.
 

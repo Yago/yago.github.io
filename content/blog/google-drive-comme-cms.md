@@ -11,7 +11,7 @@ N'avez-vous jamais rêvé de mettre en place une petite administration pour votr
 
 Google, avec son Drive, propose en effet de créer et de stocker dans le cloud des documents de plusieurs types différents; des documents textes, des tableurs, des présentations et même des formulaires. Dans notre cas, nous allons utiliser les formulaires et les tableurs, ou "spreadsheet".
 
-##Le concept
+## Le concept
 
 Comme dans une administration classique, nous allons utiliser un formulaire, lié à une spreadsheet où nous irons rechercher les données précédemment entrées. 
 
@@ -21,7 +21,7 @@ Aucune, le système est le même, mais l'avantage de ce système est sa rapidit�
 
 Dans notre exemple, nous allons créer une petite administration afin d'ajouter et d'afficher la liste des membres de notre association (fictive).
 
-##Ajouter des membres
+## Ajouter des membres
 
 Pour cela, nous allons commencer par créer un nouveau formulaire que nous nommerons "Ajout de membres" avec les champs nom, prénom et E-mail. Ensuite, avec "Choisir une destination pour la réponse", nous allons lui assigner une nouvelle spreadsheet que nous nommerons "Liste des membres".
 
@@ -55,7 +55,7 @@ par :
 
 Nous voici près à rentrer nos membres ! Maintenant, si nous souhaitions être les seuls à pouvoir accéder à ce formulaire comme dans une administration classique, rien ne nous empêche de le placer dans un répertoire protégé par un .htpasswd.
 
-##Afficher les membres
+## Afficher les membres
 
 Avant toute chose, il nous faut nous rendre dans notre spreadsheet de résultats et la rendre consultable avec le lien (option de partage). Puis, dans Fichier/Publier sur le Web, nous allons démarrer la publication. Ce sera cette publication, duplicata de notre spreadsheet, qui sera utilisée pour afficher les données. N'oubliez pas de recopier la clé de votre document.
 
@@ -81,7 +81,7 @@ foreach($data['feed']['entry'] as $row) {
 }
 ```
 
-##Conclusion
+## Conclusion
 
 On peut bien évidemment aller plus loin dans la complexité, jusqu'à créer un petit moteur de blog sur ce principe. Néanmoins, il reste plus adéquat d'utiliser une "vraie" base de données dans le cas d'un site plus complexe.
 

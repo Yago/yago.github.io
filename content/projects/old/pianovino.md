@@ -7,10 +7,10 @@ collection: oldies
 tags: web
 ---
 
-###CLIENT : eikonEMF
-###ANNÉE : 2012
+### Client : eikonEMF
+### ANNÉE : 2012
 
-##MANDAT :
+## MANDAT :
 
 Dans le cadre des examens de milieu de 3ème année, nous devions réaliser un concept de communication, une identité graphique, ainsi qu'une maquette de site et une animatique de lancement pour une entreprise organisant des concerts-dégustations de vins et de piano.
 
