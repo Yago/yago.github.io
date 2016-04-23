@@ -58,6 +58,10 @@
   max-width: 650px;
   margin: 0 auto;
   padding: 0 $gutter;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding: 0 $gutter/2;
+  }
 }
 
 [class*="col-"] {

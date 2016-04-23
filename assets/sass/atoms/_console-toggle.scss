@@ -49,4 +49,8 @@
     transition: transform 0.3s;
     &:last-child {margin-bottom: 0;}
   }
+
+  @media screen and (max-width: $screen-xs-max) {
+    left: $gutter/2;
+  }
 }
