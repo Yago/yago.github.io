@@ -38,7 +38,6 @@
       else if (projectRegexp.test(window.location.pathname)) {scope = 'parent-projects';}
       else {scope = 'home';}
     {% endif %}
-    console.log(scope);
   };
 
   init();

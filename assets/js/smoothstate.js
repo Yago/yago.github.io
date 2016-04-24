@@ -24,7 +24,7 @@
         },
         onAfter: function($container) {
           $container.removeClass('onchange');
-          console.log('after');
+
           init();
           chartTheme();
           charts(jQuery);

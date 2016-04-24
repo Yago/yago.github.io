@@ -135,7 +135,7 @@ var jconsole = function ($) {
         }
 
         else if (cmdContact.test(input)) {
-          window.location.href = "mailto:hello@yago.io";
+          window.location.href = 'mailto:hello@yago.io';
         }
 
         else if (cmdPs.test(input)) {

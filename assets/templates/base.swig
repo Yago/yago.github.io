@@ -34,7 +34,7 @@
       {% include '../components/organisms/console-helper.swig' %}
     </div>
 
-    {% if collection == 'posts' %}
+    {% if collection.length > 0  %}
       {% include '../components/organisms/photoswipe.swig' %}
     {% endif %}
 

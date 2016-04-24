@@ -6,9 +6,9 @@ collection: projects
 tags: web
 ---
 
-### Client : Cardis Immobilier
-### Réalisation : [Antistatique](http://www.antistatique.net/)
-### Années : 2014
+#### Client : Cardis Immobilier
+#### Réalisation : [Antistatique](http://www.antistatique.net/)
+#### Années : 2014 - 
 
 ## Mandat :
 Suite au rachat de la société de Rham Sotheby’s International Realty par Philippe Cardis, ex-CEO du Groupe immobilier de Rham, la marque à besoin d'adapter l'ancien site à la nouvelle identité et à sa principale activité, le courtage immobilier.
