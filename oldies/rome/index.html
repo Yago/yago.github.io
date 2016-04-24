@@ -12,6 +12,25 @@
     <link rel="stylesheet" href="/css/types.css">
     <link rel="stylesheet" href="/css/main.css">
 
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+    <meta name="msapplication-square70x70logo" content="/favicons/smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="/favicons/mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="/favicons/widetile.png" />
+    <meta name="msapplication-square310x310logo" content="/favicons/largetile.png" />
+
     <script src="https://use.typekit.net/cwx4xcg.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
@@ -159,6 +178,14 @@
   sitemap.base.push('blog');
 
   
+    sitemap.projects.push('house-of-switzerland');
+  
+    sitemap.projects.push('les-toits-de-lutry');
+  
+    sitemap.projects.push('le-temps');
+  
+    sitemap.projects.push('densite-ch');
+  
     sitemap.projects.push('cardis');
   
     sitemap.projects.push('brouillon-de-culture');
@@ -240,6 +267,8 @@
   
 
   
+    sitemap.posts.push('jquery-au-taquet');
+  
     sitemap.posts.push('live-coding');
   
     sitemap.posts.push('optez-pour-le-markdown');
@@ -270,13 +299,68 @@
     
       scope = 'oldies';
     
-    console.log(scope);
   };
 
   init();
 </script>
 
     </div>
+
+    
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe.
+     It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides.
+      PhotoSwipe keeps only 3 of them in the DOM to save memory.
+      Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)">
+          <i class="icon icon-close"></i>
+        </button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen">
+          <i class="icon icon-fullscreen"></i>
+        </button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out">
+          <i class="icon icon-search"></i>
+        </button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        <i class="icon icon-left"></i>
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        <i class="icon icon-right"></i>
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
     
 

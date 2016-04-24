@@ -322,7 +322,7 @@ var jconsole = function jconsole($) {
               }
             }
         } else if (cmdContact.test(input)) {
-          window.location.href = "mailto:hello@yago.io";
+          window.location.href = 'mailto:hello@yago.io';
         } else if (cmdPs.test(input)) {
           jqconsole.Write('Someone here is a bit too curius !', 'jqconsole-output');
         } else if (cmdGif.test(input)) {
@@ -425,8 +425,8 @@ var articleGallery = function articleGallery($) {
       var $that = $(this),
           target = $that.attr('href'),
           $thumb = $that.find('img'),
-          coef = 2800 / $thumb.width(),
-          width = 2800,
+          coef = 1900 / $thumb.width(),
+          width = 1900,
           height = $thumb.height() * coef;
 
       if (target.indexOf('/img/') > -1) {
@@ -542,7 +542,7 @@ menu(jQuery);
     },
     onAfter: function onAfter($container) {
       $container.removeClass('onchange');
-      console.log('after');
+
       init();
       chartTheme();
       charts(jQuery);
