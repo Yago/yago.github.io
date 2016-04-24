@@ -6,9 +6,9 @@ collection: projects
 tags: web
 ---
 
-### Client : Rodondi-Joye
-### Réalisation : [Antistatique](http://www.antistatique.net/)
-### Années : 2012-2013
+#### Client : Rodondi-Joye
+#### Réalisation : [Antistatique](http://www.antistatique.net/)
+#### Années : 2012-2013
 
 ## Mandat :
 Après le travail graphique réalisé par [Vincent](https://twitter.com/_20_cents) sur l'identité et le design du site, j'ai été chargé de l'intégration et de l'implémentation du CMS. Afin de répondre à nos nouveaux standards de développement, j'ai tout d'abord commencé par la création des différents modules qui compose le design directement dans le styleguide.

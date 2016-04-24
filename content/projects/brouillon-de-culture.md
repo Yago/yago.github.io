@@ -6,9 +6,9 @@ collection: projects
 tags: web
 ---
 
-### Client : RTS
-### Réalisation : [Antistatique](http://www.antistatique.net/)
-### Années : 2013-2014
+#### Client : RTS
+#### Réalisation : [Antistatique](http://www.antistatique.net/)
+#### Années : 2013-2014
 
 ## Mandat :
 La Radio Télévision Suisse a besoin d'un site pour présenter sa nouvelle websérie : Brouillon de Cutlure. Comprenant dix épisodes, la série doit être présentée sur une seule et même page présentant une expérience de navigation originale. La plateforme doit aussi être parfaitement consultable depuis tous types de supports et y offrir la même originalité.

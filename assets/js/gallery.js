@@ -19,8 +19,8 @@ var articleGallery = function ($) {
       var $that = $(this),
           target = $that.attr('href'),
           $thumb = $that.find('img'),
-          coef = 2800 / $thumb.width(),
-          width = 2800,
+          coef = 1900 / $thumb.width(),
+          width = 1900,
           height = $thumb.height() * coef;
 
       if (target.indexOf('/img/') > -1) {

@@ -7,9 +7,9 @@ collection: projects
 tags: web
 ---
 
-### Client : MSF - Médecins sans Frontières
-### Réalisation : [Antistatique](http://www.antistatique.net/)
-### Années : 2013
+#### Client : MSF - Médecins sans Frontières
+#### Réalisation : [Antistatique](http://www.antistatique.net/)
+#### Années : 2013
 
 En parallèle de son exposition interactive présentant le travail des médecins sur le terrain, **MSF** avait besoin d'une plateforme web pour en communiquer en Suisse et à l'étranger. Cette [réalisation](http://antistatique.net/fr/portfolio/faceit) devait se faire sous forme d'une présentation visuelle et interactive avec comme finalité, un don à l'association.
 

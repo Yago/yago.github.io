@@ -6,7 +6,7 @@ collection: projects
 tags: web
 ---
 
-Suite au rachat du très réputé journal **Le Temps** par le groupe Ringier, [Antistatique](http://antistatique.net) a été mandaté pour se charger de la refonte graphique du site. 
+Suite au rachat du très réputé journal **Le Temps** par le groupe Ringier, [Antistatique](http://antistatique.net/fr/nous/travaillons/avec/le-temps) a été mandaté pour se charger de la refonte graphique du site. 
 
 En passant par l'analyse, la conception, le design et pour finir par le développement frontend, ce projet a été extrêmement motivant. Premièrement, parce que Le Temps est **un des quotidiens les plus prestigieux de Suisse romande** et deuxièmement parce qu'il s'est révélé être un client qui **partage nos valeurs et notre vision** du digital.
 

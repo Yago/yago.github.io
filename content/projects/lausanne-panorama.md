@@ -7,9 +7,9 @@ collection: projects
 tags: web
 ---
 
-### Client : Foncia Valorisation
-### Réalisation : [Antistatique](http://www.antistatique.net/)
-### Années : 2012
+#### Client : Foncia Valorisation
+#### Réalisation : [Antistatique](http://www.antistatique.net/)
+#### Années : 2012
 
 ## Mandat :
 D'après un design de [Vincent](https://twitter.com/_20_cents), j'ai intégré ce site dans le Frog, un CMS PHP. J'ai adapté le design pour obtenir une version responsive du site et permettre ainsi sa consultation sur tous types de devices. Nous avons également travaillé les animations sur les buttons circulaires pour donner plus de dynamisme à la navigation.

@@ -7,9 +7,9 @@ collection: projects
 tags: web
 ---
 
-### Client : Electrosanne / Antistatique
-### Réalisation : [Antistatique](http://www.antistatique.net/)
-### Années : 2013
+#### Client : Electrosanne / Antistatique
+#### Réalisation : [Antistatique](http://www.antistatique.net/)
+#### Années : 2013
 
 Dans le cadre du festival de musique électronique lausannois, [Antistatique](http://antistatique.net/fr/portfolio/electrosanne) en collaboration avec le comité d'organisation, a mis en place une plateforme sociale permettant de **partager en direct des tweets ainsi que des photos instagram**.
 
