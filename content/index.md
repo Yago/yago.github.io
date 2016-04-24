@@ -1,5 +1,5 @@
 ---
-title: Accueil
+title: Home
 layout: homepage.swig
 ---
 Ahoy there ! I'm Yann, a web adventurer who *designs* and `code`. I'm focused on modular, performant and maintainable development.
