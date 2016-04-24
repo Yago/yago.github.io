@@ -51,11 +51,12 @@
       {% include '../components/organisms/panel-menu.swig' %}
 
       {% include '../components/organisms/console-helper.swig' %}
+
+      {% if collection.length > 0  %}
+        {% include '../components/organisms/photoswipe.swig' %}
+      {% endif %}
     </div>
 
-    {% if collection.length > 0  %}
-      {% include '../components/organisms/photoswipe.swig' %}
-    {% endif %}
 
     <script src="/js/vendors.min.js"></script>
     <script src="/js/main.js"></script>
