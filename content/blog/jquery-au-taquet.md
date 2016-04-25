@@ -8,7 +8,7 @@ description: ""
 nocover: true
 ---
 
-jQuery fêtera le 29 août prochain ses 10 ans. Malgré sa perte progressive de sex appeal, peu d'autres librairies peuvent se targuer d'une aussi belle longévité.
+jQuery fêtera ses 10 ans le 29 août prochain. Malgré sa perte progressive de sex appeal, peu d'autres librairies peuvent se targuer d'une aussi belle longévité.
 
 **Mon premier contact avec JavaScript s'est fait à travers jQuery**. Je ne peux pas dire que je suis un développeur de la vieille école, car ma formation était plus artistique que technique. Quoi qu'il en soit, afin de mettre un peu d'interactivité dans mon design, c'est avec jQuery que je m'y prenais. **La librairie offre de façon extrêmement aisée tout ce qui touche aux interactions avec le DOM**. Que ce soit la manipulation d'éléments, la gestion des événements ou encore l'animation, jQuery est depuis longtemps reconnu comme la surcouche JavaScript quasis indispensable à tous sites web.
 
