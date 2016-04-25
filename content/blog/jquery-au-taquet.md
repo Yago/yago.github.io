@@ -14,7 +14,7 @@ jQuery fêtera ses 10 ans le 29 août prochain. Malgré sa perte progressive de 
 
 ## En perte de popularité
 
-Les choses évoluent et face à des Angular et autres React, jQuery a de plus en plus de peine à séduire. Son utilisation reste extrêmement répandue, mais **l'engouement de la communauté des développeurs tend à décliner**. Il est vrai que depuis mon histoire d'amour récente avec AngularJS, j'ai tendance à voir jQuery comme une librairie qui a fait son temps et qui devrait gentiment songer à la retraite. Il est bien évidemment simpliste de comparer ces “nouveaux” joueurs qui sont plus orientés applicatifs, mais bêtement la confrontation existe bel et bien...
+Les choses évoluent et face à des Angular et autres React, jQuery a de plus en plus de peine à séduire. Son utilisation reste extrêmement répandue, mais **l'engouement de la communauté des développeurs tend à décliner**. Il est vrai que depuis mon histoire d'amour récente avec AngularJS, j'ai tendance à voir jQuery comme une librairie qui a fait son temps et qui devrait gentiment songer à la retraite. Il est bien évidemment simpliste de comparer ces “nouveaux” joueurs qui sont plus orientés applicatifs, mais bêtement la comparaison existe...
 
 ## Ne pas succomber aux trends
 
@@ -28,8 +28,8 @@ Pas que nous ayons utilisé des technologies hyper expérimentales, mais rien qu
 
 ## Des plugins en masse
 
-Heureusement, dans cette histoire il y a encore des développeurs qui portent un intérêt inchangé pour jQuery et qui apporte leur contribution. La période 2015-2016 a vu fleurir nombre de plugins dignes d'intérêt comme [smoothState](https://github.com/miguel-perez/smoothState.js). Rappelons au passage que les composants JavaScript de **Bootstrap 4 et de Foundation 6 se basent toujours sur jQuery**.
+Heureusement, dans cette histoire il y a encore des développeurs qui portent un intérêt inchangé pour jQuery et qui apportent leur contribution. La période 2015-2016 a vu fleurir nombre de plugins dignes d'intérêt comme [smoothState](https://github.com/miguel-perez/smoothState.js). Rappelons au passage que les composants JavaScript de **Bootstrap 4 et de Foundation 6 se basent toujours sur jQuery**.
 
 ## En conclusion
 
-Bien que la suprématie des frameworks applicatifs comme React, Angular ou encore Ember ne sont plus à remettre en question dans le domaine des applications clientes, jQuery a encore de beaux jours devant lui dans l'interactivité web classique. **Rien ne sert de se casser la tête à faire du JavaScript vanilla pour la hype**, alors que jQuery offre une aisance et une compatibilité très supérieures. Comme pour tout, il faut savoir utiliser les outils appropriés à chaque projet et jQuery n'est pas à exclure. N'ayez plus “honte” de l'utiliser et célébrons tous ensemble sa première décennie :kissing_smiling_eyes::tada:
+Bien que la suprématie des frameworks comme React, Angular ou encore Ember ne sont plus à remettre en question dans le domaine des applications clientes, jQuery a encore de beaux jours devant lui dans l'interactivité web classique. **Rien ne sert de se casser la tête à faire du JavaScript vanilla pour la hype**, alors que jQuery offre une aisance et une compatibilité très supérieures. Comme pour tout, il faut savoir utiliser les outils appropriés à chaque projet et jQuery n'est pas à exclure. N'ayez plus “honte” de l'utiliser et célébrons tous ensemble sa première décennie :kissing_smiling_eyes::tada:
