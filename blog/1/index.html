@@ -41,6 +41,12 @@
     <script src="https://use.typekit.net/cwx4xcg.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js" async></script>
+
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
