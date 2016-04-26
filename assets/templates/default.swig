@@ -20,7 +20,22 @@
 
   {% if not nocover %}
     <div class="cover">
-      <img src="/img/cover/{{path|slug}}.jpg">
+      <picture>
+        <source
+          media="(min-width: 93.375em)"
+          srcset="/img/cover/{{path|slug}}-1920.jpg 1x, /img/cover/{{path|slug}}.jpg 2x">
+        <source
+          media="(min-width: 62em)"
+          srcset="/img/cover/{{path|slug}}-1500.jpg 1x, /img/cover/{{path|slug}}.jpg 2x">
+        <source
+          media="(min-width: 48em)"
+          srcset="/img/cover/{{path|slug}}-990.jpg 1x, /img/cover/{{path|slug}}-1920.jpg 2x">
+        <source
+          media="(min-width: 30em)"
+          srcset="/img/cover/{{path|slug}}-480.jpg 1x, /img/cover/{{path|slug}}-990.jpg 2x">
+        <source srcset="/img/cover/{{path|slug}}-400.jpg 1x, /img/cover/{{path|slug}}-400@2x.jpg 2x">
+        <img src="/img/cover/{{path|slug}}-1500.jpg">
+      </picture>
       <div class="inset-shadow"></div>
     </div>
   {% endif %}
