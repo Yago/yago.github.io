@@ -432,10 +432,9 @@ Port 8001 is now publicly accessible from http://3yag.localtunnel.com <span clas
       
     </div>
 
-
-    <script src="/js/vendors.min.js"></script>
-    <script src="/js/main.js"></script>
-
+    <script type="text/javascript">
+      loadJS("/js/vendors.min.js", function() {loadJS("/js/main.js");});
+    </script>
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-41124823-1']);
