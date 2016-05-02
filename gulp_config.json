@@ -11,6 +11,10 @@
       "node_modules/photoswipe/dist/photoswipe.css",
       "node_modules/photoswipe/dist/default-skin/default-skin.css"
     ],
+    "headjs": [
+      "node_modules/fg-loadcss/src/loadCSS.js",
+      "node_modules/fg-loadcss/src/cssrelpreload.js"
+    ],
     "js": [
       "node_modules/jquery/dist/jquery.js",
       "node_modules/jq-console/jqconsole.min.js",

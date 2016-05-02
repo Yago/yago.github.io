@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "emojify.js": "^1.1.0",
+    "fg-loadcss": "^1.2.0",
     "highcharts": "^4.2.3",
     "html5shiv": "^3.7.3",
     "jq-console": "^2.13.2",

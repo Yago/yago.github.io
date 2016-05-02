@@ -28,6 +28,17 @@ module.exports = function() {
       .pipe(gulp.dest(config.build + 'js'));
   });
 
+  /*
+   * Head JS Vendors
+   */
+   gulp.task('js-vendors', function() {
+     return gulp.src(config.vendors.headjs)
+       .pipe($.concat('head.min.js'))
+       .pipe($.uglify())
+       .pipe($.size({title: 'HEAD JS VENDORS', showFiles: true}))
+       .pipe(gulp.dest(config.build + 'js'));
+   });
+
  /*
   * Fonts Sources
   */

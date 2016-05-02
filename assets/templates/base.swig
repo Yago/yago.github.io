@@ -16,7 +16,6 @@
     <meta property="og:image" content="http://yago.io/img/yago.png" />
 
     <link rel="stylesheet" href="/css/vendors.min.css">
-    <link rel="stylesheet" href="/css/types.css">
     <link rel="stylesheet" href="/css/main.css">
 
     <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
@@ -37,6 +36,10 @@
     <meta name="msapplication-square150x150logo" content="/favicons/mediumtile.png" />
     <meta name="msapplication-wide310x150logo" content="/favicons/widetile.png" />
     <meta name="msapplication-square310x310logo" content="/favicons/largetile.png" />
+
+    <link rel="preload" href="/css/types.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/types.css"></noscript>
+    <script src="/js/head.min.js"></script>
 
     <script>
       (function(d) {
