@@ -82,7 +82,10 @@
     </div>
 
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {loadJS("/js/main.js");});
+      loadJS("/js/vendors.min.js", function() {
+        loadJS("/js/main.js");
+        Prism.highlightAll();
+      });
     </script>
     <script type="text/javascript">
       var _gaq = _gaq || [];
