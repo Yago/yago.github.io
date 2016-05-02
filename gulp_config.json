@@ -13,7 +13,8 @@
     ],
     "headjs": [
       "node_modules/fg-loadcss/src/loadCSS.js",
-      "node_modules/fg-loadcss/src/cssrelpreload.js"
+      "node_modules/fg-loadcss/src/cssrelpreload.js",
+      "node_modules/fg-loadjs/loadJS.js"
     ],
     "js": [
       "node_modules/jquery/dist/jquery.js",
