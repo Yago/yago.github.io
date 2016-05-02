@@ -31,7 +31,7 @@ module.exports = function() {
   /*
    * Head JS Vendors
    */
-   gulp.task('js-vendors', function() {
+   gulp.task('headjs-vendors', function() {
      return gulp.src(config.vendors.headjs)
        .pipe($.concat('head.min.js'))
        .pipe($.uglify())
@@ -63,7 +63,7 @@ module.exports = function() {
   * Build vendors dependencies
   */
   gulp.task('vendors', function() {
-    return gulp.start('css-vendors', 'js-vendors', 'fonts-vendors', 'polyfills-vendors');
+    return gulp.start('css-vendors', 'js-vendors', 'headjs-vendors', 'fonts-vendors', 'polyfills-vendors');
   });
 
 };
