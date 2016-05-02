@@ -3,10 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>jQuery au taquet !</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <title>Yann Gouffon | jQuery au taquet !</title>
+
+    <meta name="description" content="Ahoy there ! I'm Yann, a web adventurer who designs and code. I'm focused on modular, performant and maintainable development.">
+    <meta name="keywords" content="yann, gouffon, developer, frontend, html, javascript, sass, css, php">
     <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="Yann Gouffon | frontend developer and designer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Ahoy there ! I'm Yann, a web adventurer who designs and code. I'm focused on modular, performant and maintainable development." />
+    <meta property="og:site_name" content="Yann Gouffon, frontend developer and designer" />
+    <meta property="og:url" content="http://yago.io" />
+    <meta property="og:image" content="http://yago.io/img/yago.png" />
 
     <link rel="stylesheet" href="/css/vendors.min.css">
     <link rel="stylesheet" href="/css/types.css">
@@ -33,6 +40,12 @@
 
     <script src="https://use.typekit.net/cwx4xcg.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js" async></script>
 
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -86,19 +99,19 @@
     </div>
 
     <article id="article">
-      <p>jQuery fêtera le 29 août prochain ses 10 ans. Malgré sa perte progressive de sex appeal, peu d&#39;autres librairies peuvent se targuer d&#39;une aussi belle longévité.</p>
+      <p>jQuery fêtera ses 10 ans le 29 août prochain. Malgré sa perte progressive de sex appeal, peu d&#39;autres librairies peuvent se targuer d&#39;une aussi belle longévité.</p>
 <p><strong>Mon premier contact avec JavaScript s&#39;est fait à travers jQuery</strong>. Je ne peux pas dire que je suis un développeur de la vieille école, car ma formation était plus artistique que technique. Quoi qu&#39;il en soit, afin de mettre un peu d&#39;interactivité dans mon design, c&#39;est avec jQuery que je m&#39;y prenais. <strong>La librairie offre de façon extrêmement aisée tout ce qui touche aux interactions avec le DOM</strong>. Que ce soit la manipulation d&#39;éléments, la gestion des événements ou encore l&#39;animation, jQuery est depuis longtemps reconnu comme la surcouche JavaScript quasis indispensable à tous sites web.</p>
 <h2 id="en-perte-de-popularit-">En perte de popularité</h2>
-<p>Les choses évoluent et face à des Angular et autres React, jQuery a de plus en plus de peine à séduire. Son utilisation reste extrêmement répandue, mais <strong>l&#39;engouement de la communauté des développeurs tend à décliner</strong>. Il est vrai que depuis mon histoire d&#39;amour récente avec AngularJS, j&#39;ai tendance à voir jQuery comme une librairie qui a fait son temps et qui devrait gentiment songer à la retraite. Il est bien évidemment simpliste de comparer ces “nouveaux” joueurs qui sont plus orientés applicatifs, mais bêtement la confrontation existe bel et bien...</p>
+<p>Les choses évoluent et face à des Angular et autres React, jQuery a de plus en plus de peine à séduire. Son utilisation reste extrêmement répandue, mais <strong>l&#39;engouement de la communauté des développeurs tend à décliner</strong>. Il est vrai que depuis mon histoire d&#39;amour récente avec AngularJS, j&#39;ai tendance à voir jQuery comme une librairie qui a fait son temps et qui devrait gentiment songer à la retraite. Il est bien évidemment simpliste de comparer ces “nouveaux” joueurs qui sont plus orientés applicatifs, mais bêtement la comparaison existe...</p>
 <h2 id="ne-pas-succomber-aux-trends">Ne pas succomber aux trends</h2>
 <p>En tant que développeur frontend, j&#39;ai une soif insatiable de nouveauté. Un outil que j&#39;utilise depuis un an, soit une éternité en temps web, tend à rapidement me lasser. Donc quoi de plus logique que de reléguer jQuery au placard et d&#39;utiliser Angular ou React dans tous nos sites. Cependant avec l&#39;expérience et le recul, j&#39;ai appris à modérer cette ardeur et à <strong>sélectionner de façon rationnelle les outils les plus adaptés</strong> à une réalisation.</p>
 <h2 id="un-cas-concret">Un cas concret</h2>
 <p>Dernièrement, nous avons réalisé un petit site promotionnel pour un client. Trois pages, un design atypique et un budget plus que suffisant pour y passer du temps. Avec l&#39;arrivée fracassante d&#39;ES6 l&#39;année dernière, nous avons pris la décision de <strong>n&#39;utiliser que de l&#39;ES6 vanilla</strong> et grâce à Gulp et Babel, nous avons rapidement mis en place un environnement . Quand est arrivé le temps de tester notre site sur le panel encore utilisé des IEs et sur d&#39;anciens terminaux mobiles, pratiquement rien ne fonctionnait.</p>
 <p>Pas que nous ayons utilisé des technologies hyper expérimentales, mais rien qu&#39;une méthode comme <code>classList</code> nous a donné des sueurs. En effet, celle-ci n&#39;est pratiquement pas supportée par l&#39;ensemble des IEs et ne comptez pas sur les polyfills, ceux-ci offrent un support très relatif. Même si notre regard s&#39;oriente vers le futur, <strong>nos clients ont rarement le même environnement de pointe</strong>. Il est donc impératif de pouvoir offrir une rétrocompatibilité satisfaisante, chose que la manipulation de DOM en pure ES6 ne fournit pas.</p>
 <h2 id="des-plugins-en-masse">Des plugins en masse</h2>
-<p>Heureusement, dans cette histoire il y a encore des développeurs qui portent un intérêt inchangé pour jQuery et qui apporte leur contribution. La période 2015-2016 a vu fleurir nombre de plugins dignes d&#39;intérêt comme <a href="https://github.com/miguel-perez/smoothState.js">smoothState</a>. Rappelons au passage que les composants JavaScript de <strong>Bootstrap 4 et de Foundation 6 se basent toujours sur jQuery</strong>.</p>
+<p>Heureusement, dans cette histoire il y a encore des développeurs qui portent un intérêt inchangé pour jQuery et qui apportent leur contribution. La période 2015-2016 a vu fleurir nombre de plugins dignes d&#39;intérêt comme <a href="https://github.com/miguel-perez/smoothState.js">smoothState</a>. Rappelons au passage que les composants JavaScript de <strong>Bootstrap 4 et de Foundation 6 se basent toujours sur jQuery</strong>.</p>
 <h2 id="en-conclusion">En conclusion</h2>
-<p>Bien que la suprématie des frameworks applicatifs comme React, Angular ou encore Ember ne sont plus à remettre en cause dans le domaine des applications clientes, jQuery a encore de beaux jours devant lui dans l&#39;interactivité web classique. <strong>Rien ne sert de ce casser la tête à faire du JavaScript vanilla pour la hype</strong>, alors que jQuery offre une aisance et une compatibilité très supérieures. Comme pour tout, il faut savoir utiliser les outils appropriés à chaque projet et jQuery n&#39;est pas à exclure. N&#39;ayez plus “honte” de l&#39;utiliser et célébrons tous ensemble sa première décennie <img align='absmiddle' alt=':kissing_smiling_eyes:' class='emoji' src='/img/emojis/kissing_smiling_eyes.png' title=':kissing_smiling_eyes:' /><img align='absmiddle' alt=':tada:' class='emoji' src='/img/emojis/tada.png' title=':tada:' /></p>
+<p>Bien que la suprématie des frameworks comme React, Angular ou encore Ember ne sont plus à remettre en question dans le domaine des applications clientes, jQuery a encore de beaux jours devant lui dans l&#39;interactivité web classique. <strong>Rien ne sert de se casser la tête à faire du JavaScript vanilla pour la hype</strong>, alors que jQuery offre une aisance et une compatibilité très supérieures. Comme pour tout, il faut savoir utiliser les outils appropriés à chaque projet et jQuery n&#39;est pas à exclure. N&#39;ayez plus “honte” de l&#39;utiliser et célébrons tous ensemble sa première décennie <img align='absmiddle' alt=':kissing_smiling_eyes:' class='emoji' src='/img/emojis/kissing_smiling_eyes.png' title=':kissing_smiling_eyes:' /><img align='absmiddle' alt=':tada:' class='emoji' src='/img/emojis/tada.png' title=':tada:' /></p>
 
     </article>
 
@@ -316,10 +329,9 @@
   init();
 </script>
 
-    </div>
 
-    
-      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+      
+        <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
   <!-- Background of PhotoSwipe.
      It's a separate element as animating opacity is faster than rgba(). -->
@@ -374,7 +386,9 @@
   </div>
 </div>
 
-    
+      
+    </div>
+
 
     <script src="/js/vendors.min.js"></script>
     <script src="/js/main.js"></script>
