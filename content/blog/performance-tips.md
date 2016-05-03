@@ -9,12 +9,12 @@ nocover: true
 
 Performance is in the heart of any discussions those days. Building amazing and fancy websites is nice, but if half of your users quit because of a lack of performances, it's simply useless.
 
-Since I remake my own website recently, I think it will be a good opportunity to present some method to quickly improve performances. I choose to split this article into **three major tips** that will make the difference. To illustrate the evolution, I will use **Google [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)**. It's not the only tool I use to analyse performances, but the quick notation gives a good insight of the situation.
+Since I remake my own website recently, I think it will be a good opportunity to present some methods to quickly improve performances. I choose to split this article into **three major tips** that will make the difference. To illustrate the evolution, I will use **Google [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)**. It's not the only tool I use to analyse performances, but the quick notation gives a good insight of the situation.
 
 ## Before starting
-Right after the first release of this website, I didn't make any optimisation. I keep it in mind during all the development process, but normally and for small realisations like this, I do all the performance improvements at the end. 
+Right after the first release of the website, I didn't make any optimisation. I keep it in mind during all the development process, but normally and for small realisations like this, I do all the performance improvements at the end. 
 
-For now, the performances are pretty bad. **PageSpeed** give me **41/100** on mobiles and **48/100** on desktop which is really bad. I also take a quick look on [WebPageTest](http://www.webpagetest.org) and I found that my site takes around **3 seconds to load**, which is slow for such a minimalist interface...
+For now, the performances are pretty bad. **PageSpeed** give me **41/100** on mobiles and **48/100** on desktop. I also take a quick look on [WebPageTest](http://www.webpagetest.org) and I found that my site takes around **3 seconds to load**, which is slow for such a minimalist interface...
 
 [![Not really brilliant...](/img/small/perf-starting.jpg)](/img/larges/perf-starting.jpg)
 
@@ -33,7 +33,7 @@ In your `<head>` :
 <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js" async></script>
 ```
 
-In your code :
+In your page :
 
 ```html
 <picture>
@@ -53,7 +53,7 @@ Only with this “small” improvement, I win **600 ms** on loading and PageSpee
 [![Result of picture tag](/img/small/perf-picture.jpg)](/img/larges/perf-picture.jpg)
 
 ## Tips 2 : CSS/JS Optimisation
-One of the first  advice that gave me PageSpeed is to reduce the amount of render-bocking stylesheets and scripts. Because of my minimalist design, my stylesheets shouldn't be heavy, but I use a custom font… So, I choose to load asynchronously the font file, because it's not essential for rendering the page and because it represents 90% of the total CSS weight of my site. I can do that in many different ways, but I choose the [LoadCSS](https://github.com/filamentgroup/loadCSS) library.
+One of the first  advice that gave me PageSpeed is to reduce the amount of render-bocking stylesheets and scripts. Because of my minimalist design, my stylesheets shouldn't be heavy, but I use a custom font… So, **I choose to load asynchronously the font file**, because it's not essential for rendering the page and because it represents 90% of the total CSS weight of my site. I can do that in many different ways, but I choose the [LoadCSS](https://github.com/filamentgroup/loadCSS) library.
 
 In your `<head>`
 
@@ -67,7 +67,7 @@ In your `<head>`
 
 My other stylesheets are pretty light, so except minification, I don't do anything else. If you have much heavy CSS, you can use the [critical CSS](https://github.com/addyosmani/critical) approach, which loads critical styles first and non-critical asynchronously.
 
-My scripts are already loaded at the bottom of my footer, but on mobiles, they are considered as render-blocking. I have to load them also asynchronously. For that, I can use the `async defer ` attributes, but they are not well supported. So I choose to use another **Filament Group** very useful module: [LoadJS](https://github.com/filamentgroup/loadJS). I keep the LoadJS code in my `<head>` and always at the bottom of my `<body>` :
+My scripts are already loaded at the bottom of my footer, but on mobiles, they are considered as render-blocking. I have to load them also asynchronously. For that, I can use the `async defer ` attributes, but they are not well supported. So I choose to use another **Filament Group** module: [LoadJS](https://github.com/filamentgroup/loadJS). I keep the LoadJS code in my `<head>` and always at the bottom of my `<body>` :
 
 ```html
 <script type="text/javascript">
