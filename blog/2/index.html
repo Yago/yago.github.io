@@ -94,6 +94,12 @@
 
       <div class="spacer spacer-sm"></div>
       
+        <a href="/blog/responsive-media" class="post-item">
+  <h4>Responsive media</h4>
+  <small class="text-clear"><em>31.05.2013</em></small>
+</a>
+
+      
         <a href="/blog/capistrano" class="post-item">
   <h4>Capistrano</h4>
   <small class="text-clear"><em>28.05.2013</em></small>
@@ -280,6 +286,8 @@
   
 
   
+    sitemap.posts.push('performances-in-three-tips');
+  
     sitemap.posts.push('jquery-au-taquet');
   
     sitemap.posts.push('live-coding');
@@ -329,7 +337,10 @@
     </div>
 
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {loadJS("/js/main.js");});
+      loadJS("/js/vendors.min.js", function() {
+        loadJS("/js/main.js");
+        Prism.highlightAll();
+      });
     </script>
     <script type="text/javascript">
       var _gaq = _gaq || [];

@@ -94,6 +94,12 @@
 
       <div class="spacer spacer-sm"></div>
       
+        <a href="/blog/performances-in-three-tips" class="post-item">
+  <h4>Performances in three tips</h4>
+  <small class="text-clear"><em>03.05.2016</em></small>
+</a>
+
+      
         <a href="/blog/jquery-au-taquet" class="post-item">
   <h4>jQuery au taquet !</h4>
   <small class="text-clear"><em>24.04.2016</em></small>
@@ -145,12 +151,6 @@
         <a href="/blog/partager-une-url-locale" class="post-item">
   <h4>Partager une URL locale</h4>
   <small class="text-clear"><em>03.06.2013</em></small>
-</a>
-
-      
-        <a href="/blog/responsive-media" class="post-item">
-  <h4>Responsive media</h4>
-  <small class="text-clear"><em>31.05.2013</em></small>
 </a>
 
       
@@ -323,6 +323,8 @@
   
 
   
+    sitemap.posts.push('performances-in-three-tips');
+  
     sitemap.posts.push('jquery-au-taquet');
   
     sitemap.posts.push('live-coding');
@@ -372,7 +374,10 @@
     </div>
 
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {loadJS("/js/main.js");});
+      loadJS("/js/vendors.min.js", function() {
+        loadJS("/js/main.js");
+        Prism.highlightAll();
+      });
     </script>
     <script type="text/javascript">
       var _gaq = _gaq || [];

@@ -459,6 +459,8 @@ after <span class="token string">&quot;deploy:update_code&quot;</span><span clas
   
 
   
+    sitemap.posts.push('performances-in-three-tips');
+  
     sitemap.posts.push('jquery-au-taquet');
   
     sitemap.posts.push('live-coding');
@@ -557,7 +559,10 @@ after <span class="token string">&quot;deploy:update_code&quot;</span><span clas
     </div>
 
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {loadJS("/js/main.js");});
+      loadJS("/js/vendors.min.js", function() {
+        loadJS("/js/main.js");
+        Prism.highlightAll();
+      });
     </script>
     <script type="text/javascript">
       var _gaq = _gaq || [];
