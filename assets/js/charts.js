@@ -20,28 +20,33 @@ var charts = function ($) {
             } else {
               return 0;
             }
+          },
+          pad = function (str) {
+            return ("0"+str).slice(-2);
+          },
+          hhmmss = function (secs) {
+            var minutes = Math.floor(secs / 60);
+            secs = secs%60;
+            var hours = Math.floor(minutes/60)
+            minutes = minutes%60;
+            return pad(hours)+"h"+pad(minutes)
           };
 
       // Get Codeivate data
       $.ajax({
         url: data,
-        jsonp: 'callback',
-        dataType: 'jsonp',
-        data: {
-          format: 'json'
-        },
         success: function (res) {
           var languages = [],
               otherPoints = 0.0,
               languagesFormatted = [];
 
           // Process Data
-          for (var item in res.languages) {
-            if (res.languages.hasOwnProperty(item)) {
+          for (var item in res.data.languages) {
+            if (res.data.languages.hasOwnProperty(item)) {
               var language = {
-                'name': item,
-                'level': res.languages[item].level,
-                'y': res.languages[item].points
+                'name': res.data.languages[item].name,
+                'time': res.data.languages[item].total_seconds,
+                'y': res.data.languages[item].percent
               };
 
               languages.push(language);
@@ -49,25 +54,25 @@ var charts = function ($) {
           }
 
           for (var lang in languages) {
-            if (languages[lang].y < 50) {
+            if (languages[lang].y < 1 || languages[lang].name === 'Other') {
               otherPoints += languages[lang].y;
             } else {
               languagesFormatted.push(languages[lang]);
             }
           }
-          languagesFormatted.push({'name': 'Other','level':1,'y':otherPoints});
+          languagesFormatted.push({'name': 'Other','Time spending':1,'y':otherPoints});
           languagesFormatted.sort(sortLevel);
 
           // Populate data pre
-          $('#skills-name').html(res.name);
-          $('#skills-level').html(res.level);
-          if (res.programming_now) {
-            $('#skills-coding').html(res.programming_now);
-            $('#skills-language').html(res.current_language.replace('.sublime-syntax', ''));
-          } else {
-            $('#skills-coding').html('false');
-            $('#skills-language-wrapper').addClass('hide');
-          }
+          $('#skills-name').html(res.data.username);
+          $('#skills-time').html(res.data.human_readable_total);
+          // if (res.programming_now) {
+          //   $('#skills-coding').html(res.programming_now);
+          //   $('#skills-language').html(res.current_language.replace('.sublime-syntax', ''));
+          // } else {
+          //   $('#skills-coding').html('false');
+          //   $('#skills-language-wrapper').addClass('hide');
+          // }
 
           // Create Pie chart
           $pieChart.highcharts({
