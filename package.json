@@ -10,7 +10,7 @@
     "highcharts": "^4.2.5",
     "html5shiv": "^3.7.3",
     "jq-console": "^2.13.2",
-    "jquery": "^3.0.0",
+    "jquery": "^2.1.4",
     "normalize.css": "^4.1.1",
     "photoswipe": "^4.1.1",
     "respond.js": "^1.4.2",
