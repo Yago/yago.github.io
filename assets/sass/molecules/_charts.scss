@@ -7,12 +7,14 @@
 .highcharts-tooltip + text {fill: transparent !important;}
 
 .tools {
+  padding: 0;
   font-size: 3em;
+  text-align: center;
 
   &.tools-vertical a {
     display: block;
     width: 100%;
-    text-align: right;
+    // text-align: right;
   }
 
   &.tools-horizontal a {
