@@ -1,63 +1,58 @@
-'use strict';
+import gulp from 'gulp';
+import config from '../gulp_config.json';
+import merge from 'merge-stream';
+import del from 'del';
 
-var gulp          = require('gulp'),
-    $             = require('gulp-load-plugins')(),
-    config        = require('../gulp_config.json'),
-    runSequence   = require('run-sequence');
-
-module.exports = function() {
+import loadPlugins from 'gulp-load-plugins';
+const $ = loadPlugins();
 
  /*
   * Build font stylesheet base on raw fonts
   */
-  gulp.task('bold', function(){
-    return gulp.src(config.fonts + '/CalaBol-webfont.*')
-      .pipe($.inlineFonts({
-        name: 'Cala',
-        weight: 'bold',
-        formats: ['woff', 'woff2']
-      }))
-      .pipe($.concat('cala-bold.css'))
-      .pipe(gulp.dest(config.build + 'css'));
-  });
-
-  gulp.task('italic', function(){
-    return gulp.src(config.fonts + '/CalaIta-webfont.*')
-      .pipe($.inlineFonts({
-        name: 'Cala',
-        style: 'italic',
-        weight: 'normal',
-        formats: ['woff', 'woff2']
-      }))
-      .pipe($.concat('cala-italic.css'))
-      .pipe(gulp.dest(config.build + 'css'));
-  });
-
-  gulp.task('regular', function(){
-    return gulp.src(config.fonts + '/CalaReg-webfont.*')
-      .pipe($.inlineFonts({
-        name: 'Cala',
-        style: 'normal',
-        weight: 'normal',
-        formats: ['woff', 'woff2']
-      }))
-      .pipe($.concat('cala-regular.css'))
-      .pipe(gulp.dest(config.build + 'css'));
-  });
-
-  gulp.task('concat-fonts', function(){
-    return gulp.src(config.build + 'css/cala-*.css')
-      .pipe($.concat('types.css'))
-      .pipe(gulp.dest(config.build + 'css'));
-  });
-
-  gulp.task('clean-fonts', function(){
-    return gulp.src(config.build + 'css/cala-*.css', {read: false})
-      .pipe($.clean());
-  });
-
-  gulp.task('fonts', ['bold', 'italic', 'regular'], function(){
-    runSequence('concat-fonts', 'clean-fonts');
-  });
-
+export const fontBold = () => {
+  return gulp.src(`${config.fonts}/CalaBol-webfont.*`)
+    .pipe($.inlineFonts({
+      name: 'Cala',
+      weight: 'bold',
+      formats: ['woff', 'woff2']
+    }))
+    .pipe($.concat('cala-bold.css'))
+    .pipe(gulp.dest(`${config.build}css`));
 };
+
+export const fontItalic = () => {
+  return gulp.src(`${config.fonts}/CalaIta-webfont.*`)
+    .pipe($.inlineFonts({
+      name: 'Cala',
+      style: 'italic',
+      weight: 'normal',
+      formats: ['woff', 'woff2']
+    }))
+    .pipe($.concat('cala-italic.css'))
+    .pipe(gulp.dest(`${config.build}css`));
+};
+
+export const fontRegular = () => {
+  return gulp.src(`${config.fonts}/CalaReg-webfont.*`)
+    .pipe($.inlineFonts({
+      name: 'Cala',
+      style: 'normal',
+      weight: 'normal',
+      formats: ['woff', 'woff2']
+    }))
+    .pipe($.concat('cala-regular.css'))
+    .pipe(gulp.dest(`${config.build}css`));
+};
+
+export const fontConcat = () => {
+  return gulp.src(`${config.build}css/cala-*.css`)
+    .pipe($.concat('types.css'))
+    .pipe(gulp.dest(`${config.build}css`));
+};
+
+export const fontClean = del.bind(null, [
+  `${config.build}css/cala-*.css`
+]);
+
+export const fonts = gulp.series(fontBold, fontItalic, fontRegular, fontConcat, fontClean);
+export const fontsTask = gulp.task('fonts', fonts);

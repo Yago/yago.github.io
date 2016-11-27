@@ -1,13 +1,27 @@
-'use strict';
+import swig from 'swig';
+import marked from 'marked';
 
-var swig          = require('swig');
+export const markdown = swig.setFilter('markdown', string => {
+  return marked(string);
+});
 
-module.exports = function() {
+export const dump = swig.setFilter('dump', input => {
+  return JSON.stringify(input, null, 2);
+});
 
-  swig.setFilter('slug', function (path) {
-    var splited = path.split('/');
-    return splited[splited.length-1];
-  });
+export const slug = swig.setFilter('slug', path => {
+  const splited = path.split('/');
+  return splited[splited.length-1];
+});
 
-
-};
+export const get = swig.setFilter('get', (array, value) => {
+  let obj = {};
+  if (array) {
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].id == value) {
+        obj = array[i];
+      }
+    }
+  }
+  return obj;
+});
