@@ -8,6 +8,7 @@ import contributions from './contributions';
 import gallery from './gallery';
 import jqConsole from './console';
 import menu from './menu';
+import photo from './photo';
 import smoothstate from './smoothstate';
 
 smoothstate();
@@ -18,6 +19,7 @@ $(document).ready(() => {
   charts();
   contributions();
   gallery();
+  photo();
   jqConsole();
   menu();
 });

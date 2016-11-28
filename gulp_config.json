@@ -49,10 +49,6 @@
       "destination": "public/"
     },
     {
-      "source": "./node_modules/photoswipe/dist/default-skin/default-skin.png",
-      "destination": "public/css/"
-    },
-    {
       "source": "./node_modules/emojify.js/dist/images/basic/**.*",
       "destination": "public/img/emojis/"
     }

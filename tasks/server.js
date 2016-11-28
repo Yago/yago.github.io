@@ -93,7 +93,10 @@ export const serve = () => {
 
   gulp.watch([
     `${config.assets}js/**/*.js`
-  ], gulp.series(scripts));
+  ], gulp.series(
+    scripts,
+    reload
+  ));
 
   gulp.watch([
     `${config.assets}components/**/*.{html,hbs,md,swig}`,

@@ -22,9 +22,14 @@
             <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
           </li>
           <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
             <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
           </li>
         </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
       </div>
     </div>
   </div>

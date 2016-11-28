@@ -7,6 +7,7 @@
 .pswp__button .icon {
   pointer-events: none;
   transition: color 0.3s;
+  color: $boulder;
 }
 
 .pswp__button:hover .icon { color: $anzac; }
@@ -19,9 +20,9 @@
 
 .pswp__counter {
   margin-top: 0.2em;
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: $serif;
-  color: $black;
+  color: $boulder;
 }
 
 .counter-big { font-weight: 700; }
@@ -33,7 +34,8 @@
 }
 
 .pswp__caption__center {
-  padding-bottom: 0.5em;
-  font-size: 1em;
-  color: $black;
+  // padding-bottom: 0.5em;
+  font-size: 0.7em;
+  text-align: center;
+  color: $boulder;
 }

@@ -76,9 +76,7 @@
 
       {% include '../components/organisms/console-helper.swig' %}
 
-      {% if collection.length > 0  %}
-        {% include '../components/organisms/photoswipe.swig' %}
-      {% endif %}
+      {% include '../components/organisms/photoswipe.swig' %}
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

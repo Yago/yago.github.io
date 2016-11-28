@@ -3,6 +3,7 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
       <li><a href="/blog/1">Blog</a></li>
       <li><i class="icon icon-bonsai"></i></li>
     </ul>

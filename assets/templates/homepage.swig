@@ -24,6 +24,14 @@
         <div class="spacer spacer-md"></div>
         {% include '../components/atoms/separator.swig' %}
 
+        <h2>Photographs</h2>
+        <div id="photo-container" class="photo-container photo-container-teaser"></div>
+        <a href="/photo" class="post-item">
+          <h4><i class="icon icon-film"></i> More photographs</h4>
+        </a>
+
+        <div class="spacer spacer-md"></div>
+
         <h2>Dev facts</h2>
         {% include '../components/organisms/facts.swig' %}
 

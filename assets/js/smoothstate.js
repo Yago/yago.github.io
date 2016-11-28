@@ -5,6 +5,7 @@ import chartTheme from './charts-themes';
 import charts from './charts';
 import contributions from './contributions';
 import gallery from './gallery';
+import photo from './photo';
 import jqConsole from './console';
 import menu from './menu';
 
@@ -39,6 +40,7 @@ export default () => {
       contributions();
       jqConsole();
       gallery();
+      photo();
       menu();
       Prism.highlightAll();
     },

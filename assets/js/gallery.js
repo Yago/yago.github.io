@@ -20,15 +20,15 @@ export default () => {
   const container = [];
 
   // Create gallery container
-  $('#article').find('a').each(function () { // eslint-disable-line prefer-arrow-callback
+  $('#article, #photo-container').find('a').each(function () { // eslint-disable-line prefer-arrow-callback
     const $that = $(this);
     const target = $that.attr('href');
     const $thumb = $that.find('img');
     const coef = 1900 / $thumb.width();
-    const width = 1900;
-    const height = $thumb.height() * coef;
+    const width = $that.attr('data-ow') || 1900;
+    const height = $that.attr('data-oh') ||  $thumb.height() * coef;
 
-    if (target.indexOf('/img/') > -1) {
+    if (target.indexOf('/img/') > -1 || target.indexOf('staticflickr') > -1) {
       $that.addClass('gallery-item');
       $that.attr('data-index', index);
 
