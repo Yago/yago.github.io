@@ -81,10 +81,13 @@
       {% endif %}
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {
-        loadJS("/js/main.js");
-        Prism.highlightAll();
+      loadJS("{{data.bundlePath}}vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("{{data.bundlePath}}app.bundle.js");
+        });
       });
     </script>
     <script type="text/javascript">

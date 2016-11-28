@@ -1,17 +1,13 @@
-'use strict';
+import gulp from 'gulp';
+import config from '../gulp_config.json';
+import del from 'del';
 
-var gulp          = require('gulp'),
-    $             = require('gulp-load-plugins')(),
-    config        = require('../gulp_config.json'),
-    del           = require('del');
+/**
+ * Clean output directories
+ */
+export const clean = del.bind(null, [
+  config.build.substr(0, config.build.length - 1),
+  config.metalsmith.dist
+]);
 
-module.exports = function() {
-
- /**
-  * Clean output directories
-  */
-  gulp.task('clean', del.bind(null, [
-    config.build.substr(0, config.build.length - 1)
-  ]));
-
-}
+export const cleanTask = gulp.task('clean', clean);

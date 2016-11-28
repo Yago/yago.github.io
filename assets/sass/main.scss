@@ -8,8 +8,7 @@
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss';
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_grid.scss';
 
-
-
+@import 'icon';
 @import 'typography';
 @import 'layout';
 @import 'helpers';
@@ -37,5 +36,3 @@
 @import 'organisms/footer';
 @import 'organisms/menu';
 @import 'organisms/photoswipe';
-
-

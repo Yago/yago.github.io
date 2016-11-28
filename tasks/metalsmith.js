@@ -1,58 +1,66 @@
-'use strict';
+/* globals process, Buffer, require */
 
-var gulp          = require('gulp'),
-    $             = require('gulp-load-plugins')(),
-    config        = require('../gulp_config.json'),
-    argv          = require('yargs').argv;
+import gulp from 'gulp';
+import yargs from 'yargs';
+import loadPlugins from 'gulp-load-plugins';
+import markdown from 'metalsmith-markdown';
+import permalinks from 'metalsmith-permalinks';
+import pagination from 'metalsmith-pagination';
+import prism from 'metalsmith-prism';
+import layouts from 'metalsmith-layouts';
+import emojify from 'emojify.js/dist/js/emojify';
+import define from 'metalsmith-define';
+import collections from 'metalsmith-collections';
 
-var markdown      = require('metalsmith-markdown'),
-    prism         = require('metalsmith-prism'),
-    permalinks    = require('metalsmith-permalinks'),
-    layouts       = require('metalsmith-layouts'),
-    pagination    = require('metalsmith-pagination'),
-    emojify        = require('../node_modules/emojify.js/dist/js/emojify.js'),
-    collections   = require('metalsmith-collections');
+import config from '../gulp_config.json';
+import * as filters from './filters';
 
-require('./filters.js')();
+const $ = loadPlugins();
+const metadatas = [];
 
-module.exports = function() {
+function errorAlert(error) {
+  if (!yargs.argv.production) {
+    $.notify.onError({ title: 'Metalsmith Error', message: 'Check your terminal', sound: 'Sosumi' })(error);
+    $.util.log(error);
+  }
+  this.emit('end');
+}
 
-  function errorAlert(error){
-    if (!argv.production) {
-      $.notify.onError({title: "Metalsmith Error", message: "Check your terminal", sound: "Sosumi"})(error);
-      $.util.log(error);
-    }
-    this.emit("end");
-  };
-
-  gulp.task('cname', function() {
-    return gulp.src('CNAME')
-      .pipe(gulp.dest(config.build));
-  });
-
-  gulp.task('metalsmith', ['cname'], function() {
-    return gulp.src(config.content + '**/*.md')
-      .pipe($.plumber({errorHandler: errorAlert}))
-      .pipe($.metalsmith({
-        use: [
-          markdown({ langPrefix: 'language-' }),
-          prism({
-            lineNumbers: true
-          }),
-          permalinks(config.metalsmith.plugins.permalinks),
-          collections(config.metalsmith.plugins.collections),
-          pagination(config.metalsmith.plugins.pagination),
-          function(files, metalsmith, done){
-            emojify.setConfig(config.metalsmith.plugins.emojify);
-            for (var file in files) {
-              files[file].contents = new Buffer(emojify.replace(files[file].contents.toString()));
-            }
-            done();
-          },
-          layouts(config.metalsmith.plugins.layouts),
-        ]
-      }))
-      .pipe(gulp.dest(config.build));
-  });
-
+/*
+ * Generate styleguide doc
+ */
+export const metalsmithDocs = () => {
+  return gulp.src([
+    `${config.content}**/*.md`,
+  ])
+    .pipe($.plumber({ errorHandler: errorAlert }))
+    .pipe($.metalsmith({
+      use: [
+        markdown({ langPrefix: 'language-' }),
+        prism({
+          lineNumbers: true,
+        }),
+        permalinks(config.metalsmith.plugins.permalinks),
+        collections(config.metalsmith.plugins.collections),
+        pagination(config.metalsmith.plugins.pagination),
+        function (files, metalsmith, done) {
+          emojify.setConfig(config.metalsmith.plugins.emojify);
+          for (var file in files) {
+            files[file].contents = new Buffer(emojify.replace(files[file].contents.toString()));
+          }
+          metadatas['bundlePath'] = yargs.argv.production ? '/js/' : '/';
+          done();
+        },
+        define({
+          data: metadatas
+        }),
+        layouts(config.metalsmith.plugins.layouts),
+      ],
+    }))
+    .pipe(gulp.dest(config.metalsmith.dist));
 };
+
+/*
+ * Build metalsmith
+ */
+export const metalsmith = metalsmithDocs;
