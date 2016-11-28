@@ -22,8 +22,9 @@ import { clean, cleanTask } from './tasks/clean';
 import { single, singleTask } from './tasks/single';
 import { deploy, deployTask } from './tasks/deploy';
 import { serve } from './tasks/server';
+import { metalsmith } from './tasks/metalsmith';
 
-const conditionalStyleguide = yargs.argv.production ? '' : './tasks/metalsmith';
+const conditionalStyleguide = './tasks/metalsmith';
 const inprod = done => done();
 
 /**
@@ -38,7 +39,7 @@ gulp.task('init', function() {
 /**
 * Task to build assets on production server
 */
-const build = gulp.series(clean, vendors, single, styles, img, icons, fonts);
+const build = gulp.series(clean, vendors, single, scripts, styles, img, icons, fonts);
 gulp.task('build', build);
 
 /**
@@ -72,4 +73,4 @@ const serveTask = gulp.task('serve', () => defaultFunc(res => res(), true));
 /**
  * Metalsmith task
  */
-const metalsmithTask = gulp.task('metalsmith', yargs.argv.production ? inprod : require('./tasks/metalsmith').metalsmith);
+const metalsmithTask = gulp.task('metalsmith', metalsmith);

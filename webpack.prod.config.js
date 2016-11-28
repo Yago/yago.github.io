@@ -13,6 +13,9 @@ module.exports = {
     path: path.join(__dirname, `./${config.build}js`),
     filename: '[name].bundle.js'
   },
+  externals: {
+    "jquery": "jQuery"
+  },
   module: {
     loaders: [
       {

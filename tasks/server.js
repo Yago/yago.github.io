@@ -11,6 +11,7 @@ import { img } from './images';
 import { styles } from './styles';
 import { scripts } from './scripts';
 import { icons } from './icons';
+import { metalsmith } from './metalsmith';
 
 const bundler = webpack(webpackSettings);
 
@@ -78,7 +79,7 @@ export const serve = () => {
     `${config.assets}svg/**/*`
   ], gulp.series(
     img,
-    yargs.argv.production ? inprod : require('./metalsmith').metalsmith,
+    metalsmith,
     reload
   ));
 
@@ -86,7 +87,7 @@ export const serve = () => {
     `${config.assets}icons/**/*`
   ], gulp.series(
     icons,
-    yargs.argv.production ? inprod : require('./metalsmith').metalsmith,
+    metalsmith,
     reload
   ));
 
@@ -100,7 +101,7 @@ export const serve = () => {
     `${config.assets}docs/**/*.md`,
     `${config.assets}data/**/*.{json,yml}`
   ], gulp.series(
-    yargs.argv.production ? inprod : require('./metalsmith').metalsmithDocs,
+    metalsmith,
     reload
   ));
 };

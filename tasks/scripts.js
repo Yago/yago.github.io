@@ -22,8 +22,8 @@ function errorAlert(error){
  */
 export const scriptsBuild = (done) => {
   // run webpack
-  if (yargs.argv.production || yargs.argv.ghpages) {
-    webpack(webpackSettings, function(err, stats) {
+  if (yargs.argv.production) {
+    webpack(webpackSettings, (err, stats) => {
       if(err) throw new $.util.PluginError('webpack', err);
       $.util.log('[webpack]', stats.toString({
         cached: false,

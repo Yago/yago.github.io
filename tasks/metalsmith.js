@@ -16,6 +16,7 @@ import config from '../gulp_config.json';
 import * as filters from './filters';
 
 const $ = loadPlugins();
+const metadatas = [];
 
 function errorAlert(error) {
   if (!yargs.argv.production) {
@@ -47,8 +48,12 @@ export const metalsmithDocs = () => {
           for (var file in files) {
             files[file].contents = new Buffer(emojify.replace(files[file].contents.toString()));
           }
+          metadatas['bundlePath'] = yargs.argv.production ? '/js/' : '/';
           done();
         },
+        define({
+          data: metadatas
+        }),
         layouts(config.metalsmith.plugins.layouts),
       ],
     }))

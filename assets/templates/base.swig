@@ -84,9 +84,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
     <script type="text/javascript">
-      loadJS("/vendors.bundle.js", function() {
+      loadJS("{{data.bundlePath}}vendors.bundle.js", function() {
         loadJS("/js/vendors.min.js", function() {
-          loadJS("/app.bundle.js");
+          loadJS("{{data.bundlePath}}app.bundle.js");
         });
       });
     </script>
