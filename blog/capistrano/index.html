@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Yann Gouffon | Capistrano</title>
+
+    <meta name="description" content="Ahoy there ! I'm Yann, a web adventurer who designs and code. I'm focused on modular, performant and maintainable development.">
+    <meta name="keywords" content="yann, gouffon, developer, frontend, html, javascript, sass, css, php">
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="Yann Gouffon | frontend developer and designer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Ahoy there ! I'm Yann, a web adventurer who designs and code. I'm focused on modular, performant and maintainable development." />
+    <meta property="og:site_name" content="Yann Gouffon, frontend developer and designer" />
+    <meta property="og:url" content="http://yago.io" />
+    <meta property="og:image" content="http://yago.io/img/yago.png" />
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+    <meta name="msapplication-square70x70logo" content="/favicons/smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="/favicons/mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="/favicons/widetile.png" />
+    <meta name="msapplication-square310x310logo" content="/favicons/largetile.png" />
+
+    <link rel="preload" href="/css/types.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/types.css"></noscript>
+    <script src="/js/head.min.js"></script>
+
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'cwx4xcg',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js" async></script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="main" class="main-wrapper">
+      <div id="content-wrapper" class="content-wrapper">
+        <header>
+  <a href="/">
+    <img class="logo" src="/svg/yago-logo.svg" onerror="this.onerror=null; this.src='/img/yago-logo.png'" alt="Yago logotype" />
+  </a>
+
+  <button type="button" class="console-toggle" id="console-toggle">
+  <span class="sr-only">Toggle console</span>
+  <span></span>
+  <span></span>
+</button>
+
+  <button type="button" class="menu-toggle" id="menu-toggle">
+  <span class="sr-only">Toggle navigation</span>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+</header>
+
+        <div class="smooth-content" id="smooth-content">
+          
+  <div class="text-center">
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="icon icon-tipi"></i></a></li>
+      <li>
+        
+          <a href="/blog/1">blog</a>
+        
+      </li>
+      <li class="active">Capistrano</li>
+    </ol>
+  </div>
+
+  
+    <div class="cover">
+      <picture>
+        <source
+          media="(min-width: 93.375em)"
+          srcset="/img/cover/capistrano-1920.jpg 1x, /img/cover/capistrano.jpg 2x">
+        <source
+          media="(min-width: 62em)"
+          srcset="/img/cover/capistrano-1500.jpg 1x, /img/cover/capistrano.jpg 2x">
+        <source
+          media="(min-width: 48em)"
+          srcset="/img/cover/capistrano-990.jpg 1x, /img/cover/capistrano-1920.jpg 2x">
+        <source
+          media="(min-width: 30em)"
+          srcset="/img/cover/capistrano-480.jpg 1x, /img/cover/capistrano-990.jpg 2x">
+        <source srcset="/img/cover/capistrano-480.jpg 1x, /img/cover/capistrano-990.jpg 2x">
+        <img src="/img/cover/capistrano-1500.jpg">
+      </picture>
+      <div class="inset-shadow"></div>
+    </div>
+  
+
+  <div class="article-container" id="article-container">
+    <div class="text-center">
+      <h1>Capistrano</h1>
+      <div class="date">
+        28.05.2013 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article id="article">
+      <p>Avant, pour mettre mon site en ligne, je devais envoyer mes fichiers via FTP, r&#xE9;gler la config en ligne, faire un Dump de ma base de donn&#xE9;es et la r&#xE9;importer dans la DB distante, mais &#xE7;a, c&apos;&#xE9;tait avant.</p>
+<p>Il existe plusieurs frameworks de d&#xE9;ploiement et <a href="https://github.com/capistrano/capistrano">Capistrano</a> est surement l&apos;un des plus connus. Avec un simple &quot;cap deploy&quot;, vos derni&#xE8;res mises &#xE0; jour seront automatiquement envoy&#xE9;es via SSH sur votre serveur de production. Il n&#xE9;cessite cependant une petite installation, mais rien en comparaison du temps que vous allez gagner.</p>
+<h2 id="quelques-pr-requis">Quelques pr&#xE9;requis</h2>
+<p>Pour utiliser Capistrano, il vous faut :</p>
+<ul>
+<li>Un acc&#xE8;s SSH &#xE0; votre serveur avec votre clef publique</li>
+<li>Une version de Ruby sup&#xE9;rieur &#xE0; 1.3.0<pre class="language-bash line-numbers"><code class="language-bash">$ gem -v
+</code></pre>
+</li>
+<li>L&apos;utilisation de <a href="http://git-scm.com/">Git</a> dans votre projet (pas obligatoire, mais vivement recommand&#xE9;)</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>Pour installer Capistrano et ses extensions :</p>
+<pre class="language-bash line-numbers"><code class="language-bash">$ gem <span class="token function">install</span> capistrano
+$ gem <span class="token function">install</span> capistrano-ext
+$ gem <span class="token function">install</span> railsless-deploy
+</code></pre>
+<p>Ensuite, allez dans votre r&#xE9;pertoire et lancez Capistrano :</p>
+<pre class="language-bash line-numbers"><code class="language-bash">$ <span class="token function">cd</span> path/to/your/directory/
+$ capify <span class="token keyword">.</span>
+</code></pre>
+<h2 id="comment-a-fonctionne-en-fait-">Comment &#xE7;a fonctionne en fait ?</h2>
+<p>Capistrano ne va pas simplement envoyer vos fichiers sur votre serveur, il va &#xE9;galement cr&#xE9;er une arborescence destin&#xE9;e &#xE0; versionner votre site. De ce fait et en cas de probl&#xE8;me, Capistrano vous permettra de retourner &#xE0; la version pr&#xE9;c&#xE9;dente en une fraction de seconde.</p>
+<p>En soit, la structure est relativement simple. &#xC0; la racine de votre r&#xE9;pertoire, il va cr&#xE9;er un r&#xE9;pertoire <strong>shared</strong> pour tous les fichiers partag&#xE9;s, un r&#xE9;pertoire <strong>releases</strong> pour toutes les versions de votre site et un lien symbolique <strong>current</strong> qui pointera vers la derni&#xE8;re release.</p>
+<pre class="language-bash line-numbers"><code class="language-bash">monSite
+&#x251C;&#x2500;&#x2500; current -<span class="token operator">&gt;</span> /home/monSite/releases/20130527070530
+&#x251C;&#x2500;&#x2500; releases
+&#x2502;   &#x251C;&#x2500;&#x2500; 20130527065508
+&#x2502;   &#x251C;&#x2500;&#x2500; 20130527065907
+&#x2502;   &#x2514;&#x2500;&#x2500; 20130527070530
+&#x2514;&#x2500;&#x2500; shared
+</code></pre>
+<h2 id="le-script-de-d-ploiement">Le script de d&#xE9;ploiement</h2>
+<p>Capistrano n&apos;est qu&apos;un ex&#xE9;cuteur. Afin de le faire fonctionner, il faut lui donner une recette. En ex&#xE9;cutant la commande &quot;capify .&quot;, Capistrano vous a cr&#xE9;&#xE9; un fichier <strong>Capifile</strong> et un r&#xE9;pertoire <strong>config</strong> avec <strong>deploy.rb</strong> &#xE0; l&apos;int&#xE9;rieur. C&apos;est ce dernier qui va donner la recette de votre d&#xE9;ploiement &#xE0; Capistrano.</p>
+<p>Dans ce fichier, vous pouvez absolument tout faire en d&#xE9;finissant des param&#xE8;tres et en ex&#xE9;cutant des lignes de commandes dans un ordre d&#xE9;fini.</p>
+<h2 id="ma-m-thode">Ma m&#xE9;thode</h2>
+<p>Le script que je vais vous pr&#xE9;senter est utilisable pour la plupart des CMS PHP, du type Wordpress, utilisant une base de donn&#xE9;es. Avec quelques ajustements, il peut tr&#xE8;s bien &#xEA;tre utilis&#xE9; pour un site statique ou que sais-je encore. Donc tout d&apos;abord dans <strong>Capfile</strong> :</p>
+<pre class="language-ruby line-numbers"><code class="language-ruby"><span class="token keyword">require</span> <span class="token string">&apos;rubygems&apos;</span>
+<span class="token keyword">require</span> <span class="token string">&apos;railsless-deploy&apos;</span>
+load <span class="token string">&apos;config/deploy.rb&apos;</span> <span class="token keyword">if</span> respond_to<span class="token operator">?</span><span class="token punctuation">(</span><span class="token symbol">:namespace</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Puis dans <strong>deploy.rb</strong>, on commence par d&#xE9;finir nos param&#xE8;tres serveur :</p>
+<pre class="language-ruby line-numbers"><code class="language-ruby"><span class="token comment" spellcheck="true"># SERVER (exemple user@user.hostingservice.com)</span>
+set <span class="token symbol">:domain</span><span class="token punctuation">,</span>  <span class="token string">&quot;user.hostingservice.com&quot;</span>
+set <span class="token symbol">:user</span><span class="token punctuation">,</span>    <span class="token string">&quot;user&quot;</span>
+
+<span class="token comment" spellcheck="true"># NAME</span>
+set <span class="token symbol">:application</span><span class="token punctuation">,</span> <span class="token string">&quot;monApplication&quot;</span>
+</code></pre>
+<p>Ensuite, on va d&#xE9;finir les param&#xE8;tres li&#xE9;s &#xE0; notre repository Git :</p>
+<pre class="language-ruby line-numbers"><code class="language-ruby"><span class="token comment" spellcheck="true"># REPOSITORY (exemple avec un repo Bitbucket)</span>
+set <span class="token symbol">:repository</span><span class="token punctuation">,</span> <span class="token string">&quot;git@bitbucket.org:User/application-name.git&quot;</span>
+server <span class="token string">&quot;<span class="token interpolation"><span class="token delimiter tag">#{</span>domain<span class="token delimiter tag">}</span></span>&quot;</span><span class="token punctuation">,</span> <span class="token symbol">:app</span><span class="token punctuation">,</span> <span class="token symbol">:web</span><span class="token punctuation">,</span> <span class="token symbol">:db</span><span class="token punctuation">,</span> <span class="token symbol">:primary</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">true</span>
+set <span class="token symbol">:deploy_via</span><span class="token punctuation">,</span> <span class="token symbol">:copy</span>
+set <span class="token symbol">:copy_exclude</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;.git&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;.DS_Store&quot;</span><span class="token punctuation">]</span>
+set <span class="token symbol">:scm</span><span class="token punctuation">,</span> <span class="token symbol">:git</span>
+set <span class="token symbol">:branch</span><span class="token punctuation">,</span> <span class="token string">&quot;master&quot;</span>
+</code></pre>
+<p>Puis les param&#xE8;tres li&#xE9;s au d&#xE9;ploiement :</p>
+<pre class="language-ruby line-numbers"><code class="language-ruby"><span class="token comment" spellcheck="true"># DEPLOY PARAMETERS</span>
+set <span class="token symbol">:deploy_to</span><span class="token punctuation">,</span> <span class="token string">&quot;/home/user/webapps/<span class="token interpolation"><span class="token delimiter tag">#{</span>application<span class="token delimiter tag">}</span></span>&quot;</span>
+set <span class="token symbol">:use_sudo</span><span class="token punctuation">,</span> <span class="token keyword">false</span>
+set <span class="token symbol">:git_shallow_clone</span><span class="token punctuation">,</span> <span class="token number">1</span>
+set <span class="token symbol">:keep_releases</span><span class="token punctuation">,</span> <span class="token number">10</span>
+ssh_options<span class="token punctuation">[</span><span class="token symbol">:paranoid</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">false</span>
+</code></pre>
+<p>Et pour finir, les param&#xE8;tres li&#xE9;s &#xE0; la base de donn&#xE9;es :</p>
+<pre class="language-ruby line-numbers"><code class="language-ruby"><span class="token comment" spellcheck="true"># DATABASE</span>
+set <span class="token symbol">:dump_name</span><span class="token punctuation">,</span> <span class="token string">&quot;dump.<span class="token interpolation"><span class="token delimiter tag">#{</span>Time<span class="token punctuation">.</span>now<span class="token punctuation">.</span>strftime <span class="token string">&apos;%Y%m%d%H%M%S&apos;</span><span class="token delimiter tag">}</span></span>.sql&quot;</span>
+set <span class="token symbol">:dbuser</span><span class="token punctuation">,</span> <span class="token string">&quot;remote_user&quot;</span> 
+set <span class="token symbol">:dbhost</span><span class="token punctuation">,</span> <span class="token string">&quot;server.hostingservice.com&quot;</span>
+set <span class="token symbol">:dbpassword</span><span class="token punctuation">,</span> <span class="token string">&quot;PASSWORD&quot;</span>
+set <span class="token symbol">:application_db</span><span class="token punctuation">,</span> <span class="token string">&quot;remote_db_name&quot;</span>
+set <span class="token symbol">:local_db_host</span><span class="token punctuation">,</span> <span class="token string">&quot;localhost&quot;</span>
+set <span class="token symbol">:local_db_user</span><span class="token punctuation">,</span> <span class="token string">&quot;root&quot;</span>
+set <span class="token symbol">:local_db_password</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span>
+set <span class="token symbol">:local_db</span><span class="token punctuation">,</span> <span class="token string">&quot;local_db_name&quot;</span>
+</code></pre>
+<p>Ensuite, on va cr&#xE9;er des fonctions de d&#xE9;ploiement en commen&#xE7;ant par celle qui enverra les fichiers et qui installera votre fichier de config, ici <strong>db.php.dist</strong> qui va remplacer <strong>db.php</strong>.</p>
+<pre class="language-ruby line-numbers"><code class="language-ruby">namespace <span class="token symbol">:deploy</span> <span class="token keyword">do</span>
+  desc <span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token operator">-</span><span class="token constant">DESC</span>
+  <span class="token constant">A</span> macro<span class="token operator">-</span>task that updates the code <span class="token keyword">and</span> fixes the symlink<span class="token punctuation">.</span>
+  <span class="token constant">DESC</span>
+  task <span class="token symbol">:default</span> <span class="token keyword">do</span>
+    transaction <span class="token keyword">do</span>
+      update_code
+      symlink
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+
+  task <span class="token symbol">:update_code</span><span class="token punctuation">,</span> <span class="token symbol">:except</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token symbol">:no_release</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">true</span> <span class="token punctuation">}</span> <span class="token keyword">do</span>
+    on_rollback <span class="token punctuation">{</span> run <span class="token string">&quot;rm -rf <span class="token interpolation"><span class="token delimiter tag">#{</span>release_path<span class="token delimiter tag">}</span></span>; true&quot;</span> <span class="token punctuation">}</span>
+    strategy<span class="token punctuation">.</span>deploy<span class="token operator">!</span>
+  <span class="token keyword">end</span>
+
+  desc <span class="token string">&quot;Set config file&quot;</span>
+  task <span class="token symbol">:config_file</span> <span class="token keyword">do</span>
+    run <span class="token string">&quot;rm <span class="token interpolation"><span class="token delimiter tag">#{</span>release_path<span class="token delimiter tag">}</span></span>/cms/config/db.php&quot;</span>
+    run <span class="token string">&quot;cp <span class="token interpolation"><span class="token delimiter tag">#{</span>release_path<span class="token delimiter tag">}</span></span>/cms/config/db.php.dist <span class="token interpolation"><span class="token delimiter tag">#{</span>release_path<span class="token delimiter tag">}</span></span>/anchor/config/db.php&quot;</span>
+    run <span class="token string">&quot;rm <span class="token interpolation"><span class="token delimiter tag">#{</span>release_path<span class="token delimiter tag">}</span></span>/cms/config/db.php.dist&quot;</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>Nous allons ensuite nous occuper de la fonction qui va migrer votre base de donn&#xE9;es vers la base de donn&#xE9;es distante. Cette fonction est tr&#xE8;s simple : elle va cr&#xE9;er un Dump dans le r&#xE9;pertoire <strong>dump/</strong> (qu&apos;il faudra pr&#xE9;alablement cr&#xE9;er) avec la date extacte afin d&apos;avoir un fichier unique, puis va l&apos;envoyer via SSH sur le MYSQL de votre serveur. J&apos;ai pris le parti de ne pas supprimer les Dumps afin de garder un versionnement de ma DB, mais libre &#xE0; vous de les supprimer. Dans tous les cas, je vous conseille de ne pas les commiter sur votre repo Git.</p>
+<pre class="language-ruby line-numbers"><code class="language-ruby">namespace <span class="token symbol">:db</span> <span class="token keyword">do</span>
+  desc <span class="token string">&quot;Clone local DB to remote&quot;</span>
+  task <span class="token symbol">:migrate</span> <span class="token keyword">do</span>
+    system <span class="token string">&quot;mysqldump -u <span class="token interpolation"><span class="token delimiter tag">#{</span>local_db_user<span class="token delimiter tag">}</span></span> -B <span class="token interpolation"><span class="token delimiter tag">#{</span>local_db<span class="token delimiter tag">}</span></span> &gt; dump/<span class="token interpolation"><span class="token delimiter tag">#{</span>dump_name<span class="token delimiter tag">}</span></span>&quot;</span>
+    system <span class="token string">&quot;ssh -C <span class="token interpolation"><span class="token delimiter tag">#{</span>user<span class="token delimiter tag">}</span></span>@<span class="token interpolation"><span class="token delimiter tag">#{</span>domain<span class="token delimiter tag">}</span></span> mysql -u <span class="token interpolation"><span class="token delimiter tag">#{</span>dbuser<span class="token delimiter tag">}</span></span> --password=<span class="token interpolation"><span class="token delimiter tag">#{</span>dbpassword<span class="token delimiter tag">}</span></span> <span class="token interpolation"><span class="token delimiter tag">#{</span>application_db<span class="token delimiter tag">}</span></span> &lt; dump/<span class="token interpolation"><span class="token delimiter tag">#{</span>dump_name<span class="token delimiter tag">}</span></span>&quot;</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>Pour en finir avec <strong>deploy.rb</strong>, il faut encore d&#xE9;finir quelles fonctions vont &#xEA;tre execut&#xE9;, et dans quel ordre.</p>
+<pre class="language-ruby line-numbers"><code class="language-ruby"><span class="token comment" spellcheck="true">#En premier nous allons migrer la base de donn&#xE9;es</span>
+before <span class="token string">&quot;deploy:update_code&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;db:migrate&quot;</span>
+
+<span class="token comment" spellcheck="true">#Puis apr&#xE8;s l&apos;envoi des fichiers, installer le fichier de config</span>
+after <span class="token string">&quot;deploy:update_code&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;deploy:config_file&quot;</span>
+
+<span class="token comment" spellcheck="true">#Pour finir, supprimer les veilles releases selon -&gt; set :keep_releases</span>
+after <span class="token string">&quot;deploy:update_code&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;deploy:cleanup&quot;</span>
+</code></pre>
+<h2 id="enfin-le-d-ploiement-">Enfin le d&#xE9;ploiement !</h2>
+<p>Maintenant que la recette est &#xE9;crite, il ne reste plus qu&apos;&#xE0; d&#xE9;ployer. Au premier d&#xE9;ploiement et pour cr&#xE9;er les diff&#xE9;rents r&#xE9;pertoires:</p>
+<pre class="language-bash line-numbers"><code class="language-bash">$ cap deploy:setup
+</code></pre>
+<p>Ensuite la commande magique pour chaque mise &#xE0; jour :</p>
+<pre class="language-bash line-numbers"><code class="language-bash">$ cap deploy:setup
+</code></pre>
+<p>Et selon ma recette, si vous souhaitez seulement migrer la base de donn&#xE9;es:</p>
+<pre class="language-bash line-numbers"><code class="language-bash">$ cap db:migrate
+</code></pre>
+<p>Un probl&#xE8;me ?</p>
+<pre class="language-bash line-numbers"><code class="language-bash">$ cap deploy:rollback
+</code></pre>
+<h2 id="hum-le-site-ne-marche-pas-">Hum... le site ne marche pas !</h2>
+<p>Et c&apos;est normal, car comme je vous l&apos;ai expliqu&#xE9; plus haut, il vous faut encore param&#xE9;trer le serveur pour qu&apos;il pointe sur <strong>current</strong> afin d&apos;ex&#xE9;cuter la bonne release. Donc pour cela, cr&#xE9;ez un <strong>.htaccess</strong> &#xE0; la racine:</p>
+<pre class="language-bash line-numbers"><code class="language-bash"><span class="token operator">&lt;</span>IfModule mod_rewrite.c<span class="token operator">&gt;</span>
+    RewriteEngine on
+    RewriteCond %<span class="token punctuation">{</span>REQUEST_URI<span class="token punctuation">}</span> <span class="token operator">!</span>^/current
+    RewriteRule ^<span class="token punctuation">(</span>.*<span class="token punctuation">)</span>$ /current/<span class="token variable">$1</span> <span class="token punctuation">[</span>L<span class="token punctuation">]</span>
+<span class="token operator">&lt;</span>/IfModule<span class="token operator">&gt;</span>
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>Capistrano est <strong>LA</strong> solution qui simplifiera votre vie et dont vous ne pourrez plus vous passer. Malgr&#xE9; les pr&#xE9;requis n&#xE9;cessaires, c&apos;est un outil qui se prend vite en main et qui, malgr&#xE9; le temps d&apos;apprentissage, vous fera gagner un temps consid&#xE9;rable dans tous vos projets.</p>
+<p>N&apos;h&#xE9;sitez pas si vous avez une question et pour ceux qui souhaiterais en savoir plus:<br>
+<a href="https://github.com/capistrano/capistrano/wiki">Le Wiki officiel</a><br>
+<a href="http://capifony.org/">Pour Symfony2</a><br>
+<a href="http://ryanflorence.com/deploying-with-capistrano-without-rails/">Un excellent article</a></p>
+
+    </article>
+
+    
+      <div class="spacer spacer-xs"></div>
+      <hr>
+      <div class="spacer spacer-xs"></div>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'yago-io'; // required: replace example with your forum shortname
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+
+
+        </div>
+        <footer>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="separator">
+  <i class="icon icon-drakar"></i>
+</div>
+
+
+        <p>
+          <em>Let's keep in touch !</em>
+        </p>
+
+        <ul>
+          <li>
+            <i class="icon icon-github-alt"></i> <a href="https://github.com/yago" target="_blank">Github</a>
+          </li>
+          <li>
+            <i class="icon icon-twitter"></i> <a href="https://twitter.com/Yago_0" target="_blank">Twitter</a>
+          </li>
+          <li>
+            <i class="icon icon-linkedin"></i> <a href="https://ch.linkedin.com/in/yanngouffon" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
+          </li>
+          <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
+            <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
+          </li>
+        </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div>
+      <div id="console-wrapper" class="side-wrapper console-wrapper">
+  <div id="console" class="console"></div>
+</div>
+
+      <div id="menu-wrapper" class="side-wrapper menu-wrapper">
+  <div id="menu" class="menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
+      <li><a href="/blog/1">Blog</a></li>
+      <li><i class="icon icon-bonsai"></i></li>
+    </ul>
+  </div>
+</div>
+
+
+      <script>
+  var router,
+      scope,
+      sitemap = {};
+
+  sitemap.base = [],
+  sitemap.projects = [],
+  sitemap.oldies = [],
+  sitemap.posts = [];
+
+  sitemap.base.push('projects');
+  sitemap.base.push('blog');
+
+  
+    sitemap.projects.push('house-of-switzerland');
+  
+    sitemap.projects.push('les-toits-de-lutry');
+  
+    sitemap.projects.push('le-temps');
+  
+    sitemap.projects.push('densite-ch');
+  
+    sitemap.projects.push('cardis');
+  
+    sitemap.projects.push('brouillon-de-culture');
+  
+    sitemap.projects.push('rodondi-joye');
+  
+    sitemap.projects.push('bali');
+  
+    sitemap.projects.push('hashtag-electrosanne');
+  
+    sitemap.projects.push('msf-face-it');
+  
+    sitemap.projects.push('geolab');
+  
+    sitemap.projects.push('morning-forest');
+  
+    sitemap.projects.push('derham');
+  
+    sitemap.projects.push('lausanne-panorama');
+  
+  sitemap.projects.push('oldies');
+
+  
+    sitemap.oldies.push('aists');
+  
+    sitemap.oldies.push('agrid-css');
+  
+    sitemap.oldies.push('cfc-elocyclo');
+  
+    sitemap.oldies.push('rome');
+  
+    sitemap.oldies.push('mus-e');
+  
+    sitemap.oldies.push('samurai-teaser');
+  
+    sitemap.oldies.push('luxo');
+  
+    sitemap.oldies.push('post-it');
+  
+    sitemap.oldies.push('neocube');
+  
+    sitemap.oldies.push('dessin-en-vrac');
+  
+    sitemap.oldies.push('arya');
+  
+    sitemap.oldies.push('couleur3-billboard');
+  
+    sitemap.oldies.push('breizh-panorama');
+  
+    sitemap.oldies.push('affiche-libre');
+  
+    sitemap.oldies.push('scorpion');
+  
+    sitemap.oldies.push('ophidien');
+  
+    sitemap.oldies.push('elektro-kardiogram-clip');
+  
+    sitemap.oldies.push('interrior-one');
+  
+    sitemap.oldies.push('incandescence');
+  
+    sitemap.oldies.push('alien');
+  
+    sitemap.oldies.push('d-couverte-de-la-femme');
+  
+    sitemap.oldies.push('rock-n-cox');
+  
+    sitemap.oldies.push('opening-tv-civilisations');
+  
+    sitemap.oldies.push('pianovino');
+  
+    sitemap.oldies.push('dublin');
+  
+    sitemap.oldies.push('le-harfang');
+  
+    sitemap.oldies.push('edge-mag');
+  
+    sitemap.oldies.push('workshop-ae-inside-out-label');
+  
+
+  
+    sitemap.posts.push('performances-in-three-tips');
+  
+    sitemap.posts.push('jquery-au-taquet');
+  
+    sitemap.posts.push('live-coding');
+  
+    sitemap.posts.push('optez-pour-le-markdown');
+  
+    sitemap.posts.push('google-drive-comme-cms');
+  
+    sitemap.posts.push('r-volution-vr');
+  
+    sitemap.posts.push('styles-modulaires-bonnes-pratiques');
+  
+    sitemap.posts.push('voyage-bali');
+  
+    sitemap.posts.push('beautiful-dem');
+  
+    sitemap.posts.push('partager-une-url-locale');
+  
+    sitemap.posts.push('responsive-media');
+  
+    sitemap.posts.push('capistrano');
+  
+    sitemap.posts.push('choisissez-le-svg');
+  
+    sitemap.posts.push('un-nouveau-site');
+  
+
+  // Define scope
+  var init = function () {
+    
+      scope = 'posts';
+    
+  };
+
+  init();
+</script>
+
+
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe.
+     It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides.
+      PhotoSwipe keeps only 3 of them in the DOM to save memory.
+      Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)">
+          <i class="icon icon-close"></i>
+        </button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen">
+          <i class="icon icon-fullscreen"></i>
+        </button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out">
+          <i class="icon icon-search"></i>
+        </button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        <i class="icon icon-left"></i>
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        <i class="icon icon-right"></i>
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
+      });
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-41124823-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

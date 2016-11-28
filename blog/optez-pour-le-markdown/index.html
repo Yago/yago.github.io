@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Yann Gouffon | Optez pour le Markdown !</title>
+
+    <meta name="description" content="Ahoy there ! I'm Yann, a web adventurer who designs and code. I'm focused on modular, performant and maintainable development.">
+    <meta name="keywords" content="yann, gouffon, developer, frontend, html, javascript, sass, css, php">
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="Yann Gouffon | frontend developer and designer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Ahoy there ! I'm Yann, a web adventurer who designs and code. I'm focused on modular, performant and maintainable development." />
+    <meta property="og:site_name" content="Yann Gouffon, frontend developer and designer" />
+    <meta property="og:url" content="http://yago.io" />
+    <meta property="og:image" content="http://yago.io/img/yago.png" />
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+    <meta name="msapplication-square70x70logo" content="/favicons/smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="/favicons/mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="/favicons/widetile.png" />
+    <meta name="msapplication-square310x310logo" content="/favicons/largetile.png" />
+
+    <link rel="preload" href="/css/types.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/types.css"></noscript>
+    <script src="/js/head.min.js"></script>
+
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'cwx4xcg',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js" async></script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="main" class="main-wrapper">
+      <div id="content-wrapper" class="content-wrapper">
+        <header>
+  <a href="/">
+    <img class="logo" src="/svg/yago-logo.svg" onerror="this.onerror=null; this.src='/img/yago-logo.png'" alt="Yago logotype" />
+  </a>
+
+  <button type="button" class="console-toggle" id="console-toggle">
+  <span class="sr-only">Toggle console</span>
+  <span></span>
+  <span></span>
+</button>
+
+  <button type="button" class="menu-toggle" id="menu-toggle">
+  <span class="sr-only">Toggle navigation</span>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+</header>
+
+        <div class="smooth-content" id="smooth-content">
+          
+  <div class="text-center">
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="icon icon-tipi"></i></a></li>
+      <li>
+        
+          <a href="/blog/1">blog</a>
+        
+      </li>
+      <li class="active">Optez pour le Markdown !</li>
+    </ol>
+  </div>
+
+  
+    <div class="cover">
+      <picture>
+        <source
+          media="(min-width: 93.375em)"
+          srcset="/img/cover/optez-pour-le-markdown-1920.jpg 1x, /img/cover/optez-pour-le-markdown.jpg 2x">
+        <source
+          media="(min-width: 62em)"
+          srcset="/img/cover/optez-pour-le-markdown-1500.jpg 1x, /img/cover/optez-pour-le-markdown.jpg 2x">
+        <source
+          media="(min-width: 48em)"
+          srcset="/img/cover/optez-pour-le-markdown-990.jpg 1x, /img/cover/optez-pour-le-markdown-1920.jpg 2x">
+        <source
+          media="(min-width: 30em)"
+          srcset="/img/cover/optez-pour-le-markdown-480.jpg 1x, /img/cover/optez-pour-le-markdown-990.jpg 2x">
+        <source srcset="/img/cover/optez-pour-le-markdown-480.jpg 1x, /img/cover/optez-pour-le-markdown-990.jpg 2x">
+        <img src="/img/cover/optez-pour-le-markdown-1500.jpg">
+      </picture>
+      <div class="inset-shadow"></div>
+    </div>
+  
+
+  <div class="article-container" id="article-container">
+    <div class="text-center">
+      <h1>Optez pour le Markdown !</h1>
+      <div class="date">
+        06.06.2014 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article id="article">
+      <p>Plus l&#xE9;ger que l&apos;HTML, le Markdown est un langage qui a gagn&#xE9; en popularit&#xE9; ses derni&#xE8;res ann&#xE9;es. Tr&#xE8;s appr&#xE9;ci&#xE9; par la plupart des r&#xE9;dacteurs digitaux, il offre la possibilit&#xE9; de formater ais&#xE9;ment un texte gr&#xE2;ce &#xE0; une syntaxe discr&#xE8;te et  facile &#xE0; prendre en main.</p>
+<h2 id="sa-cr-ation">Sa cr&#xE9;ation</h2>
+<p>Cr&#xE9;&#xE9; par <a href="http://fr.wikipedia.org/wiki/John_Gruber">John Gruber</a> et <a href="http://fr.wikipedia.org/wiki/Aaron_Swartz">Aaron Swartz</a> en 2004, le Markdown a pour but d&apos;offrir une syntaxe facile &#xE0; lire et &#xE0; &#xE9;crire. Souvent converti dans sa finalit&#xE9;, il est ainsi lisible sous forme de page web (HTML) ou de &quot;plain text&quot;. En opposition avec la r&#xE9;daction WYSIWYG (What you see is what you get) qui utilise un formatage plus ou moins automatique, l&apos;utilisateur doit formater le Markdown manuellement par l&apos;ajout de signes dans son texte.</p>
+<h2 id="une-popularit-croissante">Une popularit&#xE9; croissante</h2>
+<p>Il n&apos;est, bien entendu, pas le premier de son genre, mais sa popularit&#xE9; fait de lui le poids lourd de la cat&#xE9;gorie des langages de balisage l&#xE9;ger. Avec la multiplication de tr&#xE8;s bons &#xE9;diteurs Markdown comme <a href="http://writer.pro/">Writer</a>, <a href="http://bywordapp.com/">Byword</a>, <a href="http://writeapp.net/mac/">Write</a> et <a href="http://mouapp.com/">Mou</a>, le langage est devenu l&apos;apanage des r&#xE9;dacteurs digitaux modernes. Et puis, gr&#xE2;ce &#xE0; <a href="http://github.com">Github</a> et son &quot;GitHub Flavored Markdown&quot;, le Mardown est conventionnellement utilis&#xE9; pour <strong>r&#xE9;diger</strong> la documentation technique d&apos;une librairie. Il est &#xE9;galement utilis&#xE9; comme langage de r&#xE9;daction par d&#xE9;faut de certains CMS comme <a href="https://ghost.org/">Ghost</a> ou <a href="http://anchorcms.com/">Anchor</a>. &#xC0; l&apos;heure actuelle, chaque langage de programmation dispose de son parseur et convertisseur Markdown pour HTML.</p>
+<h2 id="quelques-exemples">Quelques exemples</h2>
+<p>Alors vous me direz peut-&#xEA;tre que c&apos;est trop technique pour vous, pauvre profane des technologies web, mais vous vous trompez ! Ce langage est justement destin&#xE9; &#xE0; tout un chacun souhaitant formater manuellement et proprement son texte. Venons-en rapidement aux exemples concrets, si je souhaite ajouter un passage en gras dans un paragraphe, il me suffit d&apos;ajouter deux ast&#xE9;risques de chaque c&#xF4;t&#xE9; de mon segment.</p>
+<p><strong>Exemple</strong> :</p>
+<pre class="language-markdown line-numbers"><code class="language-markdown">La th&#xE9;orie, c&apos;est quand on sait tout et que rien ne fonctionne. <span class="token bold"><span class="token punctuation">**</span>La pratique, c&apos;est quand tout fonctionne et que personne ne sait pourquoi<span class="token punctuation">**</span></span>. Si la pratique et la th&#xE9;orie sont r&#xE9;unies, rien ne fonctionne et on ne sait pas pourquoi.
+</code></pre>
+<p>Maintenant si vous souhaitez obtenir diff&#xE9;rents niveaux de titres, rien de plus simple, il vous suffit d&apos;ajouter devant chaque titre le nombre de di&#xE8;ses correspondant &#xE0; son niveau (jusqu&apos;&#xE0; six).</p>
+<p><strong>Exemple</strong> :</p>
+<pre class="language-markdown line-numbers"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> Titre de niveau 1</span>
+<span class="token title important"><span class="token punctuation">##</span> Titre de niveau 2</span>
+<span class="token title important"><span class="token punctuation">###</span> Titre de niveau 3</span>
+</code></pre>
+<p>Vous pourrez trouver la liste compl&#xE8;te des toutes les possibilit&#xE9;s dans <a href="https://guides.github.com/features/mastering-markdown/">le guide de Github</a>.</p>
+<h2 id="go-d-part-">Go d&#xE9;part !</h2>
+<p>J&apos;esp&#xE8;re avoir largement convaincu ceux qui ne l&apos;utilisait pas encore, car personnellement je trouve que ce langage, &#xE0; la port&#xE9;e de tous, m&#xE9;rite clairement qu&apos;on s&apos;y int&#xE9;resse. En effet, apr&#xE8;s quelques minutes de prise en main, vous pourrez facilement mettre en page tout type de contenu sans ne plus jamais avoir &#xE0; faire avec l&apos;interface chaotique de Microsoft Word.</p>
+<p><a href="http://antistatique.net/blog/2014/06/06/optez-pour-le-markdown/">Retrouver cet article sur le blog d&apos;Antistatique !</a></p>
+
+    </article>
+
+    
+      <div class="spacer spacer-xs"></div>
+      <hr>
+      <div class="spacer spacer-xs"></div>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'yago-io'; // required: replace example with your forum shortname
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+
+
+        </div>
+        <footer>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="separator">
+  <i class="icon icon-drakar"></i>
+</div>
+
+
+        <p>
+          <em>Let's keep in touch !</em>
+        </p>
+
+        <ul>
+          <li>
+            <i class="icon icon-github-alt"></i> <a href="https://github.com/yago" target="_blank">Github</a>
+          </li>
+          <li>
+            <i class="icon icon-twitter"></i> <a href="https://twitter.com/Yago_0" target="_blank">Twitter</a>
+          </li>
+          <li>
+            <i class="icon icon-linkedin"></i> <a href="https://ch.linkedin.com/in/yanngouffon" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
+          </li>
+          <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
+            <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
+          </li>
+        </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div>
+      <div id="console-wrapper" class="side-wrapper console-wrapper">
+  <div id="console" class="console"></div>
+</div>
+
+      <div id="menu-wrapper" class="side-wrapper menu-wrapper">
+  <div id="menu" class="menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
+      <li><a href="/blog/1">Blog</a></li>
+      <li><i class="icon icon-bonsai"></i></li>
+    </ul>
+  </div>
+</div>
+
+
+      <script>
+  var router,
+      scope,
+      sitemap = {};
+
+  sitemap.base = [],
+  sitemap.projects = [],
+  sitemap.oldies = [],
+  sitemap.posts = [];
+
+  sitemap.base.push('projects');
+  sitemap.base.push('blog');
+
+  
+    sitemap.projects.push('house-of-switzerland');
+  
+    sitemap.projects.push('les-toits-de-lutry');
+  
+    sitemap.projects.push('le-temps');
+  
+    sitemap.projects.push('densite-ch');
+  
+    sitemap.projects.push('cardis');
+  
+    sitemap.projects.push('brouillon-de-culture');
+  
+    sitemap.projects.push('rodondi-joye');
+  
+    sitemap.projects.push('bali');
+  
+    sitemap.projects.push('hashtag-electrosanne');
+  
+    sitemap.projects.push('msf-face-it');
+  
+    sitemap.projects.push('geolab');
+  
+    sitemap.projects.push('morning-forest');
+  
+    sitemap.projects.push('derham');
+  
+    sitemap.projects.push('lausanne-panorama');
+  
+  sitemap.projects.push('oldies');
+
+  
+    sitemap.oldies.push('aists');
+  
+    sitemap.oldies.push('agrid-css');
+  
+    sitemap.oldies.push('cfc-elocyclo');
+  
+    sitemap.oldies.push('rome');
+  
+    sitemap.oldies.push('mus-e');
+  
+    sitemap.oldies.push('samurai-teaser');
+  
+    sitemap.oldies.push('luxo');
+  
+    sitemap.oldies.push('post-it');
+  
+    sitemap.oldies.push('neocube');
+  
+    sitemap.oldies.push('dessin-en-vrac');
+  
+    sitemap.oldies.push('arya');
+  
+    sitemap.oldies.push('couleur3-billboard');
+  
+    sitemap.oldies.push('breizh-panorama');
+  
+    sitemap.oldies.push('affiche-libre');
+  
+    sitemap.oldies.push('scorpion');
+  
+    sitemap.oldies.push('ophidien');
+  
+    sitemap.oldies.push('elektro-kardiogram-clip');
+  
+    sitemap.oldies.push('interrior-one');
+  
+    sitemap.oldies.push('incandescence');
+  
+    sitemap.oldies.push('alien');
+  
+    sitemap.oldies.push('d-couverte-de-la-femme');
+  
+    sitemap.oldies.push('rock-n-cox');
+  
+    sitemap.oldies.push('opening-tv-civilisations');
+  
+    sitemap.oldies.push('pianovino');
+  
+    sitemap.oldies.push('dublin');
+  
+    sitemap.oldies.push('le-harfang');
+  
+    sitemap.oldies.push('edge-mag');
+  
+    sitemap.oldies.push('workshop-ae-inside-out-label');
+  
+
+  
+    sitemap.posts.push('performances-in-three-tips');
+  
+    sitemap.posts.push('jquery-au-taquet');
+  
+    sitemap.posts.push('live-coding');
+  
+    sitemap.posts.push('optez-pour-le-markdown');
+  
+    sitemap.posts.push('google-drive-comme-cms');
+  
+    sitemap.posts.push('r-volution-vr');
+  
+    sitemap.posts.push('styles-modulaires-bonnes-pratiques');
+  
+    sitemap.posts.push('voyage-bali');
+  
+    sitemap.posts.push('beautiful-dem');
+  
+    sitemap.posts.push('partager-une-url-locale');
+  
+    sitemap.posts.push('responsive-media');
+  
+    sitemap.posts.push('capistrano');
+  
+    sitemap.posts.push('choisissez-le-svg');
+  
+    sitemap.posts.push('un-nouveau-site');
+  
+
+  // Define scope
+  var init = function () {
+    
+      scope = 'posts';
+    
+  };
+
+  init();
+</script>
+
+
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe.
+     It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides.
+      PhotoSwipe keeps only 3 of them in the DOM to save memory.
+      Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)">
+          <i class="icon icon-close"></i>
+        </button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen">
+          <i class="icon icon-fullscreen"></i>
+        </button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out">
+          <i class="icon icon-search"></i>
+        </button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        <i class="icon icon-left"></i>
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        <i class="icon icon-right"></i>
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
+      });
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-41124823-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
