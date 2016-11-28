@@ -1,23 +1,16 @@
-'use strict';
+import $ from 'jquery';
 
-/* global jQuery */
+export default () => {
+  if ($('#contributions').length > 0) {
+    const $contributions = $('#contributions');
+    const data = 'http://api.yago.io/contributions/';
 
-var contributions = function ($) {
-  $(document).ready(function () {
-    if ($('#contributions').length > 0) {
-      var $contributions = $('#contributions'),
-          data = 'http://api.yago.io/contributions/';
-
-      // Get contributions data
-      $.ajax({
-        url: data,
-        success: function (res) {
-          $contributions.html(res);
-        }
-      });
-
-    }
-  });
+    // Get contributions data
+    $.ajax({
+      url: data,
+      success: (res) => {
+        $contributions.html(res);
+      },
+    });
+  }
 };
-
-contributions(jQuery);

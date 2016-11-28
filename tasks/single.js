@@ -9,7 +9,7 @@ const $ = loadPlugins();
  * Deploy to GH pages
  */
 export const single = (done) => {
-  return merge().isEmpty() ? done() : merge(config.singles.map(single => {
+  return merge(config.singles.map(single => {
     return gulp.src(single.source)
       .pipe(single.name ? $.rename(single.name) : $.util.noop())
       .pipe(gulp.dest(single.destination));

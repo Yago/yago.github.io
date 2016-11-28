@@ -17,14 +17,7 @@
       "node_modules/fg-loadjs/loadJS.js"
     ],
     "js": [
-      "node_modules/jquery/dist/jquery.js",
-      "node_modules/jq-console/jqconsole.min.js",
-      "node_modules/prismjs/prism.js",
-      "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js",
-      "node_modules/highcharts/highcharts.js",
-      "node_modules/smoothstate/src/jquery.smoothState.js",
-      "node_modules/photoswipe/dist/photoswipe.js",
-      "node_modules/photoswipe/dist/photoswipe-ui-default.js"
+      "node_modules/smoothstate/src/jquery.smoothState.js"
     ],
     "fonts": [
       "assets/fonts/*"
@@ -54,6 +47,14 @@
     {
       "source": "CNAME",
       "destination": "public/"
+    },
+    {
+      "source": "./node_modules/photoswipe/dist/default-skin/default-skin.png",
+      "destination": "public/css/"
+    },
+    {
+      "source": "./node_modules/emojify.js/dist/images/basic/**.*",
+      "destination": "public/img/emojis/"
     }
   ],
   "metalsmith": {

@@ -65,5 +65,5 @@ export const polyfillsVendors = () => {
 /*
 * Build vendors dependencies
 */
-export const vendors = gulp.series(cssVendors, jsVendors, fontsVendors, polyfillsVendors);
+export const vendors = gulp.series(cssVendors, jsVendors, headjsVendors, fontsVendors, polyfillsVendors);
 export const vendorsTask = gulp.task('vendors', vendors);

@@ -1,40 +1,48 @@
-'use strict';
+import jQuery from 'jquery';
+import Prism from 'prismjs';
 
-/* global jQuery, init, router, chartTheme, charts, jconsole, contributions, articleGallery, menu, Prism */
+import chartTheme from './charts-themes';
+import charts from './charts';
+import contributions from './contributions';
+import gallery from './gallery';
+import jqConsole from './console';
+import menu from './menu';
 
-(function($){
-  var $main = $('#main'),
-      options = {
-        prefetch: true,
-        cacheLength: 2,
-        hrefRegex: '^\/',
-        blacklist: '.gallery-item',
-        onStart: {
-          duration: 300,
-          render: function ($container) {
-            $container.addClass('onchange');
-            router.restartCSSAnimations();
-          }
-        },
-        onReady: {
-          duration: 0,
-          render: function ($container, $newContent) {
-            $container.html($newContent);
-          }
-        },
-        onAfter: function($container) {
-          $container.removeClass('onchange');
+/* global smoothState, init, router */
 
-          init();
-          chartTheme();
-          charts(jQuery);
-          jconsole(jQuery);
-          contributions(jQuery);
-          articleGallery(jQuery);
-          menu(jQuery);
-          Prism.highlightAll();
-        }
-      };
+export default () => {
+  const $main = jQuery('#main');
+  const options = {
+    prefetch: true,
+    cacheLength: 2,
+    hrefRegex: '^\/', // eslint-disable-line no-useless-escape
+    blacklist: '.gallery-item',
+    onStart: {
+      duration: 300,
+      render: ($container) => {
+        $container.addClass('onchange');
+        router.restartCSSAnimations();
+      },
+    },
+    onReady: {
+      duration: 0,
+      render: ($container, $newContent) => {
+        $container.html($newContent);
+      },
+    },
+    onAfter: ($container) => {
+      $container.removeClass('onchange');
 
-  router = $main.smoothState(options).data('smoothState');
-}(jQuery));
+      init();
+      chartTheme();
+      charts();
+      contributions();
+      jqConsole();
+      gallery();
+      menu();
+      Prism.highlightAll();
+    },
+  };
+
+  router = $main.smoothState(options).data('smoothState'); // eslint-disable-line no-global-assign
+};

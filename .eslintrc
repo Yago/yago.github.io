@@ -9,7 +9,7 @@
     "camelcase": 0,
     "global-require": 0,
     "import/extensions": 0,
-    "import/no-unresolved": 0,
+    "import/no-unresolved": 0
   },
   "plugins": []
 }

@@ -18,7 +18,7 @@ const bundler = webpack(webpackSettings);
  * Hot css injection
  */
 const inject = () => {
-  return gulp.src([`${config.metalsmith.dist}/build/**/*.css`])
+  return gulp.src([`${config.metalsmith.dist}/**/*.css`])
     .pipe(browserSync.stream({match: '**/*.css'}));
 };
 
@@ -71,7 +71,6 @@ export const serve = () => {
     `${config.assets}sass/**/*.scss`
   ], gulp.series(
     styles,
-    yargs.argv.production ? inprod : require('./metalsmith').metalsmithAssets,
     inject));
 
   gulp.watch([

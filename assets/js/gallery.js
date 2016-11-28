@@ -1,63 +1,66 @@
-'use strict';
+import $ from 'jquery';
+import PhotoSwipe from 'photoswipe/dist/photoswipe';
+import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 
-/* global jQuery, PhotoSwipe, PhotoSwipeUI_Default */
+export default () => {
+  const counterUpdate = (gallery) => {
+    const current = parseInt(gallery.getCurrentIndex(), 10) + 1;
+    const total = gallery.options.getNumItemsFn();
 
-var articleGallery = function ($) {
-  var counterUpdate = function (gallery) {
-    var current = parseInt(gallery.getCurrentIndex(), 10) + 1,
-        total = gallery.options.getNumItemsFn();
-
-    $('.pswp__counter').html('<span class="counter-big"><sup>'+current+'</sup></span>/<span class="counter-small"><sub>'+total+'</sub></span>');
+    $('.pswp__counter').html(`
+      <span class="counter-big">
+        <sup>${current}</sup>
+      </span>/<span class="counter-small">
+        <sub>${total}</sub>
+      </span>
+    `);
   };
 
-  $(document).ready(function () {
-    var index = 0,
-        container = [];
+  let index = 0;
+  const container = [];
 
-    // Create gallery container
-    $('#article').find('a').each(function(){
-      var $that = $(this),
-          target = $that.attr('href'),
-          $thumb = $that.find('img'),
-          coef = 1900 / $thumb.width(),
-          width = 1900,
-          height = $thumb.height() * coef;
+  // Create gallery container
+  $('#article').find('a').each(function () { // eslint-disable-line prefer-arrow-callback
+    const $that = $(this);
+    const target = $that.attr('href');
+    const $thumb = $that.find('img');
+    const coef = 1900 / $thumb.width();
+    const width = 1900;
+    const height = $thumb.height() * coef;
 
-      if (target.indexOf('/img/') > -1) {
-        $that.addClass('gallery-item');
-        $that.attr('data-index', index);
+    if (target.indexOf('/img/') > -1) {
+      $that.addClass('gallery-item');
+      $that.attr('data-index', index);
 
-        var item = {
-          src: target,
-          w: width,
-          h: height,
-          title: $thumb.attr('alt')
-        };
-        container.push(item);
-        index++;
-      }
-    });
+      const item = {
+        src: target,
+        w: width,
+        h: height,
+        title: $thumb.attr('alt'),
+      };
 
-    // Enable photoswipe instance on thumb's click
-    $('.gallery-item').click(function(event){
-      event.preventDefault();
+      container.push(item);
+      index += 1;
+    }
+  });
 
-      var $pswp = $('.pswp')[0],
-          options = {
-            index: $(this).data('index'),
-            bgOpacity: 1,
-            showHideOpacity: true
-          };
+  // Enable photoswipe instance on thumb's click
+  $('.gallery-item').click(function (event) { // eslint-disable-line prefer-arrow-callback
+    event.preventDefault();
 
-      var gallery = new PhotoSwipe($pswp, PhotoSwipeUI_Default, container, options);
-      gallery.init();
+    const $pswp = $('.pswp')[0];
+    const options = {
+      index: $(this).data('index'),
+      bgOpacity: 1,
+      showHideOpacity: true,
+    };
 
+    const gallery = new PhotoSwipe($pswp, PhotoSwipeUI_Default, container, options);
+    gallery.init();
+
+    counterUpdate(gallery);
+    gallery.listen('afterChange', function () { // eslint-disable-line prefer-arrow-callback
       counterUpdate(gallery);
-      gallery.listen('afterChange', function() {
-        counterUpdate(gallery);
-      });
     });
   });
 };
-
-articleGallery(jQuery);

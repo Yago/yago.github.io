@@ -14,8 +14,11 @@ module.exports = {
     vendors: []
   },
   output: {
-    path: path.join(__dirname, `./${config.app.basedir}/build/js`),
+    path: path.join(__dirname, `./${config.app.basedir}/${config.build}js`),
     filename: '[name].bundle.js'
+  },
+  externals: {
+    "jquery": "jQuery"
   },
   module: {
     loaders: [
