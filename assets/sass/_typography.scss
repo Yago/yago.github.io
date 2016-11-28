@@ -29,18 +29,19 @@ h3,
 h4,
 h5,
 h6 {
+  position: relative;
+  margin: 1.2em 0 0.4em;
+  line-height: 1.1em;
   font-family: $sans;
   font-weight: 700;
-  line-height: 1.1em;
-  margin: 1.2em 0 0.4em;
-  position: relative;
 }
 
 h1,
 .h1 {
   font-size: $gr * 2em;
-  &:before {content: none;}
-  @media screen and (max-width: 60em) {font-size: $gr * 1.5em;}
+  &:before { content: none; }
+
+  @media screen and (max-width: 60em) { font-size: $gr * 1.5em; }
 }
 
 h2,
@@ -80,14 +81,14 @@ table a,
 footer a,
 .pagers a,
 .breadcrumb a {
+  position: relative;
   color: $black;
   text-decoration: none;
-  position: relative;
   transition: color 0.2s;
 
   &:hover {
     color: $anzac !important;
-    &:after {background: $anzac !important;}
+    &:after { background: $anzac !important; }
   }
 
   &:after {
@@ -113,10 +114,10 @@ blockquote {
   border-left: 1px solid darken($gallery, 8%);
 }
 
-.text-center {text-align: center;}
-.text-right {text-align: right;}
-.text-color {color: $curious-blue;}
-.text-serif {font-family: $serif;}
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-color { color: $curious-blue; }
+.text-serif { font-family: $serif; }
 
 .text-sans {
   font-family: $sans;
@@ -124,11 +125,11 @@ blockquote {
 
   b,
   strong,
-  th {font-weight: 500;}
+  th { font-weight: 500; }
 }
 
 .text-clear {
   color: $silver;
-  a {color: $silver;}
-  a:after {background: $silver;}
+  a { color: $silver; }
+  a:after { background: $silver; }
 }

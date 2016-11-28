@@ -17,9 +17,9 @@
   color: $anzac;
 
   a {
-    color: $pear;
     display: inline-block;
     margin: 1em 0;
+    color: $pear;
   }
 
   img {
@@ -58,12 +58,12 @@
 
 .jqconsole-prompt-text {
   white-space: pre-wrap;
-  &:empty {padding-left: 0.5em;}
+  &:empty { padding-left: 0.5em; }
 }
 
 .jqconsole-old-prompt {
-  color: $anzac;
   font-weight: normal;
+  color: $anzac;
 }
 
 .jqconsole-input {
@@ -71,8 +71,8 @@
 }
 
 .jqconsole-old-input {
-  color: $anzac;
   font-weight: normal;
+  color: $anzac;
 }
 
 .jqconsole-output {

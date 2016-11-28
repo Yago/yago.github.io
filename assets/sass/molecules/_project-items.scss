@@ -4,24 +4,24 @@
   display: block;
   position: relative;
   text-decoration: none;
-  padding: 6px $gutter / 2;
   margin-bottom: $gutter / 2;
+  padding: 6px $gutter / 2;
 
   h4 {
+    display: inline-block;
     position: relative;
     z-index: 50;
-    display: inline-block;
     max-width: 55%;
+    margin: 0;
     padding: 0.5em;
     padding-left: 0;
-    margin: 0;
+    background: $white;
     font-family: $serif;
     font-weight: normal;
     color: $black;
-    background: $white;
   }
 
-  .icon {font-size: 0.8em;}
+  .icon { font-size: 0.8em; }
 
   &:hover .project-thumb {
     top: 0;
@@ -33,14 +33,14 @@
 }
 
 .project-thumb {
-  background: $anzac;
   position: absolute;
   top: calc(100% - 6px);
+  right: $gutter / 2;
   bottom: 0;
   left: $gutter / 2;
-  right: $gutter / 2;
   z-index: 40;
   overflow: hidden;
+  background: $anzac;
   background-size: cover;
   background-position: center center;
   transition: top 0.2s;

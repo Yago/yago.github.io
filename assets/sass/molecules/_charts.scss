@@ -4,7 +4,7 @@
   width: 100%;
 }
 
-.highcharts-tooltip + text {fill: transparent !important;}
+.highcharts-tooltip + text { fill: transparent !important; }
 
 .tools {
   padding: 0;
@@ -24,13 +24,13 @@
   }
 
   a {
-    color: darken($gallery, 5%);
     padding: 0.1em 0;
-    &:hover {color: $anzac;}
+    color: darken($gallery, 5%);
+    &:hover { color: $anzac; }
   }
 
   @media screen and (max-width: $screen-xs-max) {
-    &.tools-vertical a  {
+    &.tools-vertical a {
       display: inline-block;
       width: 1em;
       text-align: center;

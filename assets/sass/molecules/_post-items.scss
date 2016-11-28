@@ -7,27 +7,27 @@
 
   h4 {
     display: table;
+    margin: 1em 0 0;
     white-space: nowrap;
     font-family: $serif;
     font-weight: normal;
     transition: color 0.3s;
-    margin: 1em 0 0;
 
-    .icon {font-size: 0.75em;}
+    .icon { font-size: 0.75em; }
 
     &:after {
       content: '\00a0';
       display: table-cell;
-      top: .77em;
-      width: 100%;
-      left: 2%;
-      border-top: 1px solid darken($gallery, 5%);
       position: relative;
+      top: 0.77em;
+      left: 2%;
+      width: 100%;
+      border-top: 1px solid darken($gallery, 5%);
       transition: border 0.3s;
     }
   }
 
   &:hover {
-    h4:after {border-color: $anzac;}
+    h4:after { border-color: $anzac; }
   }
 }

@@ -7,11 +7,11 @@
   left: 3em;
   width: 22px;
   height: 22px;
-  background: none;
-  box-shadow: none;
-  border: 0;
   margin-top: -11px;
   padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
 
   &:active,
   &:focus {
@@ -20,22 +20,22 @@
   }
 
   &:hover {
-    span:nth-child(2) {transform: rotate(-45deg) translateX(-4px) translateY(-4px);}
-    span:last-child {transform: translateY(4px);}
+    span:nth-child(2) { transform: rotate(-45deg) translateX(-4px) translateY(-4px); }
+    span:last-child { transform: translateY(4px); }
   }
 
   &.open {
-    span:nth-child(2) {transform: rotate(-225deg) translateX(-20px) translateY(-20px);}
+    span:nth-child(2) { transform: rotate(-225deg) translateX(-20px) translateY(-20px); }
   }
 
   span:nth-child(2) {
     display: block;
     width: 10px;
     height: 10px;
+    margin-left: -25%;
     border-right: 4px solid $black;
     border-bottom: 4px solid $black;
     transform: rotate(-45deg);
-    margin-left: -25%;
     transition: transform 0.3s;
   }
 
@@ -43,11 +43,11 @@
     display: block;
     width: 65%;
     height: 4px;
-    background: $black;
     margin-top: 3px;
     margin-left: 35%;
+    background: $black;
     transition: transform 0.3s;
-    &:last-child {margin-bottom: 0;}
+    &:last-child { margin-bottom: 0; }
   }
 
   @media screen and (max-width: $screen-xs-max) {

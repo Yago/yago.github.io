@@ -9,7 +9,7 @@
   transition: color 0.3s;
 }
 
-.pswp__button:hover .icon {color: $anzac;}
+.pswp__button:hover .icon { color: $anzac; }
 
 .pswp__ui--fit .pswp__top-bar,
 .pswp__button--arrow--left:before,
@@ -18,13 +18,13 @@
 }
 
 .pswp__counter {
-  color: $black;
-  font-family: $serif;
-  font-size: 1.2em;
   margin-top: 0.2em;
+  font-size: 1.2em;
+  font-family: $serif;
+  color: $black;
 }
 
-.counter-big {font-weight: 700;}
+.counter-big { font-weight: 700; }
 
 .pswp__caption {
   padding-top: 0.8em;
@@ -37,5 +37,3 @@
   font-size: 1em;
   color: $black;
 }
-
-

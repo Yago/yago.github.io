@@ -14,7 +14,7 @@
   padding-bottom: 1em;
   border-left: 1px solid darken($gallery, 8%);
 
-  p {margin: 0.3em 0;}
+  p { margin: 0.3em 0; }
 
   p:first-child {
     font-size: 1.2em;
@@ -29,8 +29,8 @@
   .icon {
     position: relative;
     top: 0.1em;
-    font-size: 1.2em;
     padding-right: 0.2em;
+    font-size: 1.2em;
   }
 
   @media screen and (max-width: $screen-md-max) {

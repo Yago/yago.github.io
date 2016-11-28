@@ -3,7 +3,8 @@
     "assets/sass/main.scss",
     "assets/sass/main-variables.scss",
     "assets/sass/bootstrap-variables.scss",
-    "assets/sass/bootstrap.scss"
+    "assets/sass/bootstrap.scss",
+    "assets/sass/icon.scss"
   ],
   "extends": "stylelint-config-standard",
   "rules": {
@@ -12,6 +13,7 @@
     "property-no-vendor-prefix": true,
     "selector-no-vendor-prefix": true,
     "value-no-vendor-prefix": true,
+    "selector-pseudo-element-colon-notation": "single",
     "declaration-block-properties-order": [
       "content",
       "display",

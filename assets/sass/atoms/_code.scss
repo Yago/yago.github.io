@@ -2,13 +2,15 @@
 
 pre[class*=language-] {
   background: $white;
-  font-size: 0.75em;
-  border-radius: 2px;
-  box-shadow: none;
   border: 1px solid $gallery;
+  border-radius: 2px;
+  font-size: 0.75em;
+  box-shadow: none;
 
   &:before,
-  &:after {content: none;}
+  &:after {
+    content: none;
+  }
 
   &.line-numbers {
     code {
@@ -21,20 +23,18 @@ pre[class*=language-] {
       padding: 5px 0;
       border-right-color: $gallery;
 
-      span:before {color: $silver;}
+      span:before { color: $silver; }
     }
   }
 
-  [class*=language-] {line-height: 1.7em;}
+  [class*=language-] { line-height: 1.7em; }
 }
 
-article pre[class*=language-] {margin: 2em 0;}
+article pre[class*=language-] { margin: 2em 0; }
 
-.data {color: $anzac;}
+.data { color: $anzac; }
 
 .code-legend {
   position: relative;
   top: -0.8em;
 }
-
-

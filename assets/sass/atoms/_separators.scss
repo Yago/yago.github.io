@@ -3,15 +3,15 @@
 .separator {
   display: flex;
   align-items: center;
-  color: darken($gallery, 5%);
   font-size: 1.5em;
+  color: darken($gallery, 5%);
 
   &:before,
   &:after {
     content: " ";
-    border-bottom: solid darken($gallery, 5%) 1px;
     flex-grow: 1;
     margin-right: 0.3em;
+    border-bottom: solid darken($gallery, 5%) 1px;
   }
 
   &:after {

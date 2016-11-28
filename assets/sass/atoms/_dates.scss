@@ -3,17 +3,17 @@
 .date {
   display: flex;
   align-items: center;
-  color: $boulder;
-  font-style: italic;
   margin-top: 2.5em;
   font-size: 0.85em;
+  font-style: italic;
+  color: $boulder;
 
   &:before,
   &:after {
     content: " ";
-    border-bottom: solid $silver 1px;
     flex-grow: 1;
     margin-right: 0.5em;
+    border-bottom: solid $silver 1px;
   }
 
   &:after {

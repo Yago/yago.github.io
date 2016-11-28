@@ -2,9 +2,9 @@
 
 .breadcrumb {
   display: inline-block;
+  position: relative;
   margin: 0.5em 0;
   margin-bottom: 1.5em;
-  position: relative;
   padding: 0;
   padding-bottom: 1em;
   font-size: 0.9em;
@@ -12,7 +12,7 @@
   opacity: 0.3;
   transition: opacity 0.3s;
 
-  &:hover {opacity: 1;}
+  &:hover { opacity: 1; }
 
   &:after {
     content: '\00a0';
@@ -20,8 +20,8 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    height: 1px;
     width: 20%;
+    height: 1px;
     margin-left: -10%;
     background: $silver;
   }
@@ -36,13 +36,13 @@
     }
   }
 
-  a:after {content: none;}
+  a:after { content: none; }
 
   .icon {
     position: relative;
     top: 0.15em;
-    font-size: 0.85em;
     padding-right: 0.2em;
+    font-size: 0.85em;
   }
 
   li.active {

@@ -4,26 +4,26 @@ footer {
   padding-top: 4em;
   padding-bottom: 1.5em;
 
-  ul {padding: 0;}
+  ul { padding: 0; }
 
   li {
-    font-size: 0.8em;
-    color: $boulder;
     display: inline;
     padding: 0 0.75em;
-    a {color: $boulder;}
-    a:after {border-color: $boulder;}
+    font-size: 0.8em;
+    color: $boulder;
+    a { color: $boulder; }
+    a:after { border-color: $boulder; }
   }
 
   li .icon {
-    font-size: 0.8em;
     position: relative;
     top: 0.05em;
+    font-size: 0.8em;
   }
 
   li:first-child .icon {
+    top: 0.2em;
     font-size: 1.25em;
     line-height: 0.8em;
-    top: 0.2em;
   }
 }
