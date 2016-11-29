@@ -9,7 +9,9 @@ const $ = loadPlugins();
  */
 export const deploy = () => {
   return gulp.src(`${config.app.ghpages}/**/*`)
-    .pipe($.ghPages());
+    .pipe($.ghPages({
+      branch: 'master',
+    }));
 };
 
 export const deployTask = gulp.task('deploy', deploy);
