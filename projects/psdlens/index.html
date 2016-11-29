@@ -132,16 +132,16 @@
 <p>Apr&#xE8;s avoir d&#xE9;couvert l&apos;incroyable librairie Ruby <a href="http://cosmos.layervault.com/psdrb.html">PSD.rb</a>, j&apos;ai d&#xE9;cid&#xE9; de mettre en place un outil tirant partit du meilleur de cette technologie. Mon envie &#xE9;tait de cr&#xE9;er une App en ligne de commande permettant de retourner plusieurs types d&apos;informations concernant les fichiers Photoshop scann&#xE9;s.</p>
 <p>###Installation</p>
 <p>Pour faire tourner <a href="https://github.com/Yago31/psdlens">PSDLENS</a>, il vous faut bien s&#xFB;r <a href="http://cosmos.layervault.com/psdrb.html">PSD.rb</a> install&#xE9; :</p>
-<pre class="line-numbers"><code class="language-bash">$ gem <span class="token function">install</span> psd
+<pre class="language-bash line-numbers"><code class="language-bash">$ gem <span class="token function">install</span> psd
 $ gem <span class="token function">install</span> psdlens
 </code></pre>
 <p>###Utilisation</p>
 <p>Il suffit de d&#xE9;finir le dossier contenant les PSD ainsi qu&apos;une m&#xE9;thode.</p>
-<pre class="line-numbers"><code class="language-bash">$ psdlens <span class="token punctuation">[</span>path<span class="token punctuation">]</span> <span class="token punctuation">[</span>method<span class="token punctuation">]</span>
+<pre class="language-bash line-numbers"><code class="language-bash">$ psdlens <span class="token punctuation">[</span>path<span class="token punctuation">]</span> <span class="token punctuation">[</span>method<span class="token punctuation">]</span>
 </code></pre>
 <p>###Le dossier</p>
 <p>Le path peut &#xEA;tre d&#xE9;fini en absolut o&#xF9; par la position actuelle en utilisant le point.</p>
-<pre class="line-numbers"><code class="language-bash">$ psdlens /path/to/your/dir/ meta
+<pre class="language-bash line-numbers"><code class="language-bash">$ psdlens /path/to/your/dir/ meta
 <span class="token comment" spellcheck="true"># ou</span>
 $ psdlens <span class="token keyword">.</span> meta
 </code></pre>
@@ -188,9 +188,14 @@ $ psdlens <span class="token keyword">.</span> meta
             <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
           </li>
           <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
             <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
           </li>
         </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
       </div>
     </div>
   </div>
@@ -206,6 +211,7 @@ $ psdlens <span class="token keyword">.</span> meta
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
       <li><a href="/blog/1">Blog</a></li>
       <li><i class="icon icon-bonsai"></i></li>
     </ul>
@@ -363,13 +369,70 @@ $ psdlens <span class="token keyword">.</span> meta
 </script>
 
 
-      
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe.
+     It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides.
+      PhotoSwipe keeps only 3 of them in the DOM to save memory.
+      Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)">
+          <i class="icon icon-close"></i>
+        </button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen">
+          <i class="icon icon-fullscreen"></i>
+        </button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out">
+          <i class="icon icon-search"></i>
+        </button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        <i class="icon icon-left"></i>
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        <i class="icon icon-right"></i>
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {
-        loadJS("/js/main.js");
-        Prism.highlightAll();
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
       });
     </script>
     <script type="text/javascript">

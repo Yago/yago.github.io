@@ -135,7 +135,7 @@
 <h2 id="fragmentation">Fragmentation</h2>
 <p>Plut&#xF4;t que d&apos;avoir une feuille de styles &#xE0; 5&apos;000 lignes, <strong>d&#xE9;coupez de fa&#xE7;on logique votre code</strong>. Peu importe le mode de fragmentation, il faut que ce dernier soit coh&#xE9;rent et qu&apos;il puisse &#xEA;tre compris de tous. Dans l&apos;id&#xE9;al, le fichier principal qui va &#xEA;tre export&#xE9; en CSS ne doit contenir que des imports bien document&#xE9;s.</p>
 <p>Un peu &#xE0; la <a href="http://getbootstrap.com">Twiter Bootstrap</a>, s&#xE9;parez et groupez votre code par &#xE9;l&#xE9;ments, portions de layouts ou cat&#xE9;gorie. Voici &#xE0; quoi votre main.scss, ou que sais-je, pourrait ressembler :</p>
-<pre class="line-numbers"><code class="language-scss"><span class="token comment" spellcheck="true">// main.scss example *****************</span>
+<pre class="language-scss line-numbers"><code class="language-scss"><span class="token comment" spellcheck="true">// main.scss example *****************</span>
 
 <span class="token comment" spellcheck="true">// Basis</span>
 <span class="token keyword">@import</span> <span class="token string">&apos;normalize&apos;</span><span class="token punctuation">;</span>
@@ -220,9 +220,14 @@
             <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
           </li>
           <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
             <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
           </li>
         </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
       </div>
     </div>
   </div>
@@ -238,6 +243,7 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
       <li><a href="/blog/1">Blog</a></li>
       <li><i class="icon icon-bonsai"></i></li>
     </ul>
@@ -388,8 +394,7 @@
 </script>
 
 
-      
-        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
   <!-- Background of PhotoSwipe.
      It's a separate element as animating opacity is faster than rgba(). -->
@@ -444,13 +449,15 @@
   </div>
 </div>
 
-      
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {
-        loadJS("/js/main.js");
-        Prism.highlightAll();
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
       });
     </script>
     <script type="text/javascript">

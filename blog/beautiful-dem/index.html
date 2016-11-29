@@ -137,16 +137,16 @@
 <h2 id="traiter-les-donn-es">Traiter les donn&#xE9;es</h2>
 <p>Ce que vous allez t&#xE9;l&#xE9;charger en fichier .dem ou .hgt sont des donn&#xE9;es brutes qu&apos;il faudra transformer en images utilisables dans TileMill ou Mapnik. Pour cela, il existe une librairie libre permettant de traiter les images g&#xE9;ographiques : <a href="http://www.gdal.org/index.html">Gdal</a>. Pour les utilisateurs de Mac, rendez-vous sur <a href="http://www.kyngchaos.com/software:frameworks">kyngchaos.com</a> pour obtenir un framework pr&#xEA;t &#xE0; l&apos;emploi de la librairie et de ses d&#xE9;pendances.</p>
 <p>Apr&#xE8;s avoir install&#xE9; la librairie, veillez &#xE0; ne pas oublier de configurer le chemin dans le fichier de configuration de votre terminal :</p>
-<pre class="line-numbers"><code class="language-bash"><span class="token function">export</span> PATH<span class="token operator">=</span>/Library/Frameworks/GDAL.framework/Programs:<span class="token variable">$PATH</span>
+<pre class="language-bash line-numbers"><code class="language-bash"><span class="token function">export</span> PATH<span class="token operator">=</span>/Library/Frameworks/GDAL.framework/Programs:<span class="token variable">$PATH</span>
 </code></pre>
 <p>Une fois install&#xE9;, il va vous falloir merger tous vos fichiers afin de garder un seul fichier DEM. Pour cela, ex&#xE9;cutez gdal-merge en sp&#xE9;cifiant le nom du fichier combin&#xE9;, suivi de tous les fichiers que vous souhaitez fusionner.</p>
-<pre class="line-numbers"><code class="language-bash">$ gdal_merge.py -init <span class="token string">&quot;255&quot;</span> -o combined.dem file01.dem file02.dem file03.dem
+<pre class="language-bash line-numbers"><code class="language-bash">$ gdal_merge.py -init <span class="token string">&quot;255&quot;</span> -o combined.dem file01.dem file02.dem file03.dem
 </code></pre>
 <h2 id="obtenir-des-geotiff">Obtenir des GeoTIFF</h2>
 <p>Gdal, entre autres choses, permet de cr&#xE9;er des GeoTIFF utilisables dans TileMill ou Mapnik &#xE0; partir d&apos;un fichier DEM. Pour cet exemple nous aurons besoin de 3 images diff&#xE9;rentes.</p>
 <h3 id="hillshade">Hillshade</h3>
 <p>L&apos;image Hillshade permet d&apos;appr&#xE9;hender au mieux un relief. Gr&#xE2;ce &#xE0; ce mod&#xE8;le num&#xE9;rique de terrain r&#xE9;pondant aux conventions d&apos;illumination, l&apos;appr&#xE9;hension du relief de votre carte sera optimal. Pour cela :</p>
-<pre class="line-numbers"><code class="language-bash">$ gdaldem hillshade -s 111120 combined.dem hillshade.tif
+<pre class="language-bash line-numbers"><code class="language-bash">$ gdaldem hillshade -s 111120 combined.dem hillshade.tif
 </code></pre>
 <p><img src="/img/images/alps-hillshade.jpg" alt="gdal hillshade"></p>
 <h3 id="color-relief">Color-relief</h3>
@@ -157,22 +157,22 @@
 2500 187 187 120 
 4000 217 222 170
 </code></pre><p>Et dans le terminal :</p>
-<pre class="line-numbers"><code class="language-bash">$ gdaldem color-relief combined.dem color.txt color.tif
+<pre class="language-bash line-numbers"><code class="language-bash">$ gdaldem color-relief combined.dem color.txt color.tif
 </code></pre>
 <p><img src="/img/images/alps-color.jpg" alt="gdal color-relief"></p>
 <h3 id="slope">Slope</h3>
 <p>Le slope est une image qui va mettre en valeur le relief d&apos;une fa&#xE7;on diff&#xE9;rente de l&apos;image hillshade, mais qui va apporter une grosse plus value &#xE0; votre carte finale. Comme pour color-relief, cr&#xE9;ez un fichier <strong>color_slope.txt</strong>, indiquant cette fois la coloration en fonction de la pente (entre 0 et 90&#xB0;).</p>
-<pre class="line-numbers"><code class="language-bash">0 255 255 255
+<pre class="language-bash line-numbers"><code class="language-bash">0 255 255 255
 90 0 0 0
 </code></pre>
 <p>Et dans votre console :</p>
-<pre class="line-numbers"><code class="language-bash">$ gdaldem slope combined.dem preslope.tif -s 111120
+<pre class="language-bash line-numbers"><code class="language-bash">$ gdaldem slope combined.dem preslope.tif -s 111120
 $ gdaldem color-relief preslope.tif color_slope.txt slope.tif
 </code></pre>
 <p><img src="/img/images/alps-slope.jpg" alt="gdal slope"></p>
 <h2 id="finalisation">Finalisation</h2>
 <p>Ouvrez TileMill et ajoutez vos 3 nouveaux calques en choisissant le bon syst&#xE8;me de projection (probablement WGS84). Encore un petit peu de CartoCSS et votre carte sera pr&#xEA;te ! Dans l&apos;ordre d&apos;empilement :</p>
-<pre class="line-numbers"><code class="language-css"><span class="token selector">.slope</span> <span class="token punctuation">{</span>
+<pre class="language-css line-numbers"><code class="language-css"><span class="token selector">.slope</span> <span class="token punctuation">{</span>
   <span class="token property">raster-opacity</span><span class="token punctuation">:</span>0.4<span class="token punctuation">;</span>
   <span class="token property">raster-scaling</span><span class="token punctuation">:</span>lanczos<span class="token punctuation">;</span>
   <span class="token property">raster-comp-op</span><span class="token punctuation">:</span> grain-extract<span class="token punctuation">;</span>
@@ -242,9 +242,14 @@ $ gdaldem color-relief preslope.tif color_slope.txt slope.tif
             <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
           </li>
           <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
             <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
           </li>
         </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
       </div>
     </div>
   </div>
@@ -260,6 +265,7 @@ $ gdaldem color-relief preslope.tif color_slope.txt slope.tif
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
       <li><a href="/blog/1">Blog</a></li>
       <li><i class="icon icon-bonsai"></i></li>
     </ul>
@@ -410,8 +416,7 @@ $ gdaldem color-relief preslope.tif color_slope.txt slope.tif
 </script>
 
 
-      
-        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
   <!-- Background of PhotoSwipe.
      It's a separate element as animating opacity is faster than rgba(). -->
@@ -466,13 +471,15 @@ $ gdaldem color-relief preslope.tif color_slope.txt slope.tif
   </div>
 </div>
 
-      
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {
-        loadJS("/js/main.js");
-        Prism.highlightAll();
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
       });
     </script>
     <script type="text/javascript">

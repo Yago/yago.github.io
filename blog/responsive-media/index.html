@@ -133,7 +133,7 @@
       <p>Avec la standardisation du responsive web design, il est devenu normal de rendre tous sites web (ou presque) de fa&#xE7;on la plus optimale pour tous les types de supports (tablettes, smartphones, ...). </p>
 <p>Les d&#xE9;veloppeurs frontend ont de plus en plus d&apos;exp&#xE9;rience en la mati&#xE8;re, mais il y a des &#xE9;l&#xE9;ments sur lequel on peut encore se casser les dents comme les images ou les vid&#xE9;os int&#xE9;gr&#xE9;es. Il existe pourtant des recettes toutes simples pour pallier &#xE0; ce petit tracas.</p>
 <p>Pour les <strong>images</strong>, seul un peu de CSS suffit :</p>
-<pre class="line-numbers"><code class="language-css"><span class="token selector">img</span> <span class="token punctuation">{</span>
+<pre class="language-css line-numbers"><code class="language-css"><span class="token selector">img</span> <span class="token punctuation">{</span>
   <span class="token property">max-width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
   <span class="token property">width</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
@@ -142,12 +142,12 @@
 <span class="token punctuation">}</span>
 </code></pre>
 <p>Quant au <strong>vid&#xE9;o</strong>, il faudra encore mettre un wrapper autour de votre iframe...</p>
-<pre class="line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>video-container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="language-html line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>video-container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>560<span class="token punctuation">&quot;</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>315<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.youtube.com/embed/hWnAqFyaQ5s<span class="token punctuation">&quot;</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>0<span class="token punctuation">&quot;</span></span> <span class="token attr-name">allowfullscreen</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p>...et y ajouter une pointe de CSS pour que la magie op&#xE8;re.</p>
-<pre class="line-numbers"><code class="language-css"><span class="token selector">.video-container</span> <span class="token punctuation">{</span>
+<pre class="language-css line-numbers"><code class="language-css"><span class="token selector">.video-container</span> <span class="token punctuation">{</span>
   <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
   <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 56.25%<span class="token punctuation">;</span> // D&#xE9;fini le ratio largeur/hauteur de votre vid&#xE9;o =&gt; ici 16/9
   <span class="token property">padding-top</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span> 
@@ -218,9 +218,14 @@
             <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
           </li>
           <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
             <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
           </li>
         </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
       </div>
     </div>
   </div>
@@ -236,6 +241,7 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
       <li><a href="/blog/1">Blog</a></li>
       <li><i class="icon icon-bonsai"></i></li>
     </ul>
@@ -386,8 +392,7 @@
 </script>
 
 
-      
-        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
   <!-- Background of PhotoSwipe.
      It's a separate element as animating opacity is faster than rgba(). -->
@@ -442,13 +447,15 @@
   </div>
 </div>
 
-      
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {
-        loadJS("/js/main.js");
-        Prism.highlightAll();
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
       });
     </script>
     <script type="text/javascript">

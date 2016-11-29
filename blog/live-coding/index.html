@@ -143,10 +143,10 @@
 <p>Eh oui, <strong>BrowserSync g&#xE9;n&#xE8;re un proxy pointant vers votre projet</strong> qui, en utilisant l&apos;URL fournie, permet de synchroniser vos browsers, desktops ou mobiles. Vous remarquez, perspicaces lecteurs, que j&apos;utilise le terme &quot;synchroniser&quot; et pas &quot;recharger&quot; comme pour LiveReload. En effet, BrowserSync fait bien plus que recharger vos navigateurs, <strong>il offre une navigation synchronis&#xE9;e durant vos tests</strong>. Cela signifie que lorsque que vous changez de page, tous les navigateurs changent de page et quand vous scrollez, tous les navigateurs scroll en m&#xEA;me temps !</p>
 <h2 id="l-utilisation">L&apos;utilisation</h2>
 <p>Premi&#xE8;rement, il vous faut NodeJS et <a href="https://www.npmjs.org/">npm</a>. Ensuite, il vous suffit d&apos;installer le module sur votre syst&#xE8;me :</p>
-<pre class="line-numbers"><code class="language-bash">$ npm <span class="token function">install</span> -g browser-sync
+<pre class="language-bash line-numbers"><code class="language-bash">$ npm <span class="token function">install</span> -g browser-sync
 </code></pre>
 <p>Maintenant, avant de le lancer, il faut comprendre une chose. <strong>Vous devez lui donner les fichiers &#xE0; observer</strong> sur lesquels il se basera pour lancer le rafraichissement. Il y a &#xE9;galement une s&#xE9;rie d&apos;options magnifiquement d&#xE9;crites dans la <a href="http://www.browsersync.io/docs/command-line/">documentation</a> du module. En pratique, cela donne quelque chose comme cela :</p>
-<pre class="line-numbers"><code class="language-bash">$ browser-sync start --server --files <span class="token string">&quot;build/css/*.css&quot;</span>
+<pre class="language-bash line-numbers"><code class="language-bash">$ browser-sync start --server --files <span class="token string">&quot;build/css/*.css&quot;</span>
 </code></pre>
 <p>Du coup, chaque fois que mon CSS sera compil&#xE9;, BrowserSync va rafraichir tous les navigateurs connect&#xE9;s.</p>
 <p><img src="http://yago.io/content/images/live-coding2.gif" alt="Live coding gif demo"></p>
@@ -154,7 +154,7 @@
 <p>Le gros avantage de BrowserSync est sa simplicit&#xE9; d&apos;impl&#xE9;mentation dans des task runners tel que <a href="http://gruntjs.com/">Grunt</a> ou <a href="http://gulpjs.com/">Gulp</a>.<strong> Il peut tr&#xE8;s facilement &#xEA;tre lanc&#xE9; apr&#xE8;s l&apos;ex&#xE9;cution de t&#xE2;ches sp&#xE9;cifiques</strong> afin de s&apos;int&#xE9;grer au mieux dans votre workflow. Sa souplesse en fait donc un outil proche de la perfection !</p>
 <h2 id="vive-le-live-coding-">Vive le live coding !</h2>
 <p>J&apos;esp&#xE8;re avoir pu encore <strong>contribuer &#xE0; l&apos;am&#xE9;lioration de votre condition d&apos;int&#xE9;grateur</strong>. Quoi qu&apos;il en soit, utiliser un des outils pr&#xE9;sent&#xE9;s ci-dessus va rendre votre travail clairement plus cool et si vous souhaiter voir un morphing de votre design &#xE0; chaque reload, ajouter simplement ceci en haut de votre feuille de style :</p>
-<pre class="line-numbers"><code class="language-css"><span class="token selector">*</span> <span class="token punctuation">{</span><span class="token property">transition</span><span class="token punctuation">:</span> all 0.3s<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<pre class="language-css line-numbers"><code class="language-css"><span class="token selector">*</span> <span class="token punctuation">{</span><span class="token property">transition</span><span class="token punctuation">:</span> all 0.3s<span class="token punctuation">;</span><span class="token punctuation">}</span>
 </code></pre>
 <p>Apr&#xE8;s, &#xE7;a reste juste pour le fun, <strong>&#xE9;vitez donc de l&apos;appliquer en production</strong> <img align='absmiddle' alt=':wink:' class='emoji' src='/img/emojis/wink.png' title=':wink:' /></p>
 
@@ -209,9 +209,14 @@
             <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
           </li>
           <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
             <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
           </li>
         </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
       </div>
     </div>
   </div>
@@ -227,6 +232,7 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
       <li><a href="/blog/1">Blog</a></li>
       <li><i class="icon icon-bonsai"></i></li>
     </ul>
@@ -377,8 +383,7 @@
 </script>
 
 
-      
-        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
   <!-- Background of PhotoSwipe.
      It's a separate element as animating opacity is faster than rgba(). -->
@@ -433,13 +438,15 @@
   </div>
 </div>
 
-      
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {
-        loadJS("/js/main.js");
-        Prism.highlightAll();
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
       });
     </script>
     <script type="text/javascript">

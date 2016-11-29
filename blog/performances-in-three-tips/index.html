@@ -120,14 +120,14 @@
 <p>Like any conscious frontend developer, <strong>I properly compress all my images</strong> with the finest tools on the market, but sadly (or not), it&apos;s not enough. Even if you use a 20% compression and you still serve a 2000px large image to iPhone4 users, they don&apos;t going to like you. So, you have to <strong>serve various images sizes depending on devices resolutions</strong>.</p>
 <p>To do it, you can use the <code>&lt;picture&gt;</code> tag and because it syntax is not fully supported, a great <a href="http://scottjehl.github.io/picturefill/">polyfill</a> is available.</p>
 <p>In your <code>&lt;head&gt;</code> :</p>
-<pre class="line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<pre class="language-html line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
   <span class="token comment" spellcheck="true">// Picture element HTML5 shiv</span>
   document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span> <span class="token string">&quot;picture&quot;</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js<span class="token punctuation">&quot;</span></span> <span class="token attr-name">async</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p>In your page :</p>
-<pre class="line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">&gt;</span></span>
+<pre class="language-html line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span>
     <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>(min-width: 62em)<span class="token punctuation">&quot;</span></span>
     <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/img/big-img.jpg 1x, /img/big-img@2x.jpg 2x<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
@@ -143,7 +143,7 @@
 <h2 id="tips-2-css-js-optimisation">Tips 2 : CSS/JS Optimisation</h2>
 <p>One of the first  advice that gave me PageSpeed is to reduce the amount of render-bocking stylesheets and scripts. Because of my minimalist design, my stylesheets shouldn&apos;t be heavy, but I use a custom font&#x2026; So, <strong>I choose to load asynchronously the font file</strong>, because it&apos;s not essential for rendering the page and because it represents 90% of the total CSS weight of my site. I can do that in many different ways, but I choose the <a href="https://github.com/filamentgroup/loadCSS">LoadCSS</a> library.</p>
 <p>In your <code>&lt;head&gt;</code></p>
-<pre class="line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>preload<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/css/font.css<span class="token punctuation">&quot;</span></span> <span class="token attr-name">as</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>style<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onload</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>this.rel<span class="token punctuation">=</span><span class="token punctuation">&apos;</span>stylesheet<span class="token punctuation">&apos;</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="language-html line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>preload<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/css/font.css<span class="token punctuation">&quot;</span></span> <span class="token attr-name">as</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>style<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onload</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>this.rel<span class="token punctuation">=</span><span class="token punctuation">&apos;</span>stylesheet<span class="token punctuation">&apos;</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>noscript</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/css/font.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>noscript</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
     <span class="token comment" spellcheck="true">// LoadCSS script here...</span>
@@ -151,7 +151,7 @@
 </code></pre>
 <p>My other stylesheets are pretty light, so except minification, I don&apos;t do anything else. If you have much heavy CSS, you can use the <a href="https://github.com/addyosmani/critical">critical CSS</a> approach, which loads critical styles first and non-critical asynchronously.</p>
 <p>My scripts are already loaded at the bottom of my footer, but on mobiles, they are considered as render-blocking. I have to load them also asynchronously. For that, I can use the <code>async defer</code> attributes, but they are not well supported. So I choose to use another <strong>Filament Group</strong> module: <a href="https://github.com/filamentgroup/loadJS">LoadJS</a>. I keep the LoadJS code in my <code>&lt;head&gt;</code> and always at the bottom of my <code>&lt;body&gt;</code> :</p>
-<pre class="line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<pre class="language-html line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
   <span class="token function">loadJS</span><span class="token punctuation">(</span><span class="token string">&quot;/js/vendors.min.js&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">loadJS</span><span class="token punctuation">(</span><span class="token string">&quot;/js/main.js&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -222,9 +222,14 @@
             <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
           </li>
           <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
             <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
           </li>
         </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
       </div>
     </div>
   </div>
@@ -240,6 +245,7 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
       <li><a href="/blog/1">Blog</a></li>
       <li><i class="icon icon-bonsai"></i></li>
     </ul>
@@ -390,8 +396,7 @@
 </script>
 
 
-      
-        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
   <!-- Background of PhotoSwipe.
      It's a separate element as animating opacity is faster than rgba(). -->
@@ -446,13 +451,15 @@
   </div>
 </div>
 
-      
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {
-        loadJS("/js/main.js");
-        Prism.highlightAll();
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
       });
     </script>
     <script type="text/javascript">

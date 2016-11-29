@@ -94,7 +94,7 @@
       <div class="spacer spacer-sm"></div>
       <div class="row row-flex">
         
-          <a href="/projects/house-of-switzerland" class="project-item col-sm-4">
+          <a href="/projects/house-of-switzerland/index.html" class="project-item col-sm-4">
   <h4>House of Switzerland.</h4>
   <div class="project-thumb">
     <picture>
@@ -111,7 +111,7 @@
 </a>
 
         
-          <a href="/projects/les-toits-de-lutry" class="project-item col-sm-4">
+          <a href="/projects/les-toits-de-lutry/index.html" class="project-item col-sm-4">
   <h4>Les Toits de Lutry.</h4>
   <div class="project-thumb">
     <picture>
@@ -128,7 +128,7 @@
 </a>
 
         
-          <a href="/projects/le-temps" class="project-item col-sm-4">
+          <a href="/projects/le-temps/index.html" class="project-item col-sm-4">
   <h4>Le Temps.</h4>
   <div class="project-thumb">
     <picture>
@@ -145,7 +145,7 @@
 </a>
 
         
-          <a href="/projects/densite-ch" class="project-item col-sm-4">
+          <a href="/projects/densite-ch/index.html" class="project-item col-sm-4">
   <h4>Densite.ch.</h4>
   <div class="project-thumb">
     <picture>
@@ -162,7 +162,7 @@
 </a>
 
         
-          <a href="/projects/cardis" class="project-item col-sm-4">
+          <a href="/projects/cardis/index.html" class="project-item col-sm-4">
   <h4>Cardis.</h4>
   <div class="project-thumb">
     <picture>
@@ -179,7 +179,7 @@
 </a>
 
         
-          <a href="/projects/brouillon-de-culture" class="project-item col-sm-4">
+          <a href="/projects/brouillon-de-culture/index.html" class="project-item col-sm-4">
   <h4>Brouillon de Culture.</h4>
   <div class="project-thumb">
     <picture>
@@ -196,7 +196,7 @@
 </a>
 
         
-          <a href="/projects/rodondi-joye" class="project-item col-sm-4">
+          <a href="/projects/rodondi-joye/index.html" class="project-item col-sm-4">
   <h4>Rodondi Joye.</h4>
   <div class="project-thumb">
     <picture>
@@ -213,7 +213,7 @@
 </a>
 
         
-          <a href="/projects/bali" class="project-item col-sm-4">
+          <a href="/projects/bali/index.html" class="project-item col-sm-4">
   <h4>Bali.</h4>
   <div class="project-thumb">
     <picture>
@@ -230,7 +230,7 @@
 </a>
 
         
-          <a href="/projects/hashtag-electrosanne" class="project-item col-sm-4">
+          <a href="/projects/hashtag-electrosanne/index.html" class="project-item col-sm-4">
   <h4>Hashtag electrosanne.</h4>
   <div class="project-thumb">
     <picture>
@@ -247,7 +247,7 @@
 </a>
 
         
-          <a href="/projects/msf-face-it" class="project-item col-sm-4">
+          <a href="/projects/msf-face-it/index.html" class="project-item col-sm-4">
   <h4>MSF - Face-it.</h4>
   <div class="project-thumb">
     <picture>
@@ -264,7 +264,7 @@
 </a>
 
         
-          <a href="/projects/geolab" class="project-item col-sm-4">
+          <a href="/projects/geolab/index.html" class="project-item col-sm-4">
   <h4>Geolab.</h4>
   <div class="project-thumb">
     <picture>
@@ -281,7 +281,7 @@
 </a>
 
         
-          <a href="/projects/morning-forest" class="project-item col-sm-4">
+          <a href="/projects/morning-forest/index.html" class="project-item col-sm-4">
   <h4>Morning Forest.</h4>
   <div class="project-thumb">
     <picture>
@@ -298,7 +298,7 @@
 </a>
 
         
-          <a href="/projects/derham" class="project-item col-sm-4">
+          <a href="/projects/derham/index.html" class="project-item col-sm-4">
   <h4>deRham.</h4>
   <div class="project-thumb">
     <picture>
@@ -315,7 +315,7 @@
 </a>
 
         
-          <a href="/projects/lausanne-panorama" class="project-item col-sm-4">
+          <a href="/projects/lausanne-panorama/index.html" class="project-item col-sm-4">
   <h4>Lausanne Panorama.</h4>
   <div class="project-thumb">
     <picture>
@@ -369,9 +369,14 @@
             <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
           </li>
           <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
             <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
           </li>
         </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
       </div>
     </div>
   </div>
@@ -387,6 +392,7 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
       <li><a href="/blog/1">Blog</a></li>
       <li><i class="icon icon-bonsai"></i></li>
     </ul>
@@ -544,13 +550,70 @@
 </script>
 
 
-      
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe.
+     It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides.
+      PhotoSwipe keeps only 3 of them in the DOM to save memory.
+      Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)">
+          <i class="icon icon-close"></i>
+        </button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen">
+          <i class="icon icon-fullscreen"></i>
+        </button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out">
+          <i class="icon icon-search"></i>
+        </button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        <i class="icon icon-left"></i>
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        <i class="icon icon-right"></i>
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {
-        loadJS("/js/main.js");
-        Prism.highlightAll();
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
       });
     </script>
     <script type="text/javascript">

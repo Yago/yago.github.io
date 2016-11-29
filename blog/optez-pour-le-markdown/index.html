@@ -138,11 +138,11 @@
 <h2 id="quelques-exemples">Quelques exemples</h2>
 <p>Alors vous me direz peut-&#xEA;tre que c&apos;est trop technique pour vous, pauvre profane des technologies web, mais vous vous trompez ! Ce langage est justement destin&#xE9; &#xE0; tout un chacun souhaitant formater manuellement et proprement son texte. Venons-en rapidement aux exemples concrets, si je souhaite ajouter un passage en gras dans un paragraphe, il me suffit d&apos;ajouter deux ast&#xE9;risques de chaque c&#xF4;t&#xE9; de mon segment.</p>
 <p><strong>Exemple</strong> :</p>
-<pre class="line-numbers"><code class="language-markdown">La th&#xE9;orie, c&apos;est quand on sait tout et que rien ne fonctionne. <span class="token bold"><span class="token punctuation">**</span>La pratique, c&apos;est quand tout fonctionne et que personne ne sait pourquoi<span class="token punctuation">**</span></span>. Si la pratique et la th&#xE9;orie sont r&#xE9;unies, rien ne fonctionne et on ne sait pas pourquoi.
+<pre class="language-markdown line-numbers"><code class="language-markdown">La th&#xE9;orie, c&apos;est quand on sait tout et que rien ne fonctionne. <span class="token bold"><span class="token punctuation">**</span>La pratique, c&apos;est quand tout fonctionne et que personne ne sait pourquoi<span class="token punctuation">**</span></span>. Si la pratique et la th&#xE9;orie sont r&#xE9;unies, rien ne fonctionne et on ne sait pas pourquoi.
 </code></pre>
 <p>Maintenant si vous souhaitez obtenir diff&#xE9;rents niveaux de titres, rien de plus simple, il vous suffit d&apos;ajouter devant chaque titre le nombre de di&#xE8;ses correspondant &#xE0; son niveau (jusqu&apos;&#xE0; six).</p>
 <p><strong>Exemple</strong> :</p>
-<pre class="line-numbers"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> Titre de niveau 1</span>
+<pre class="language-markdown line-numbers"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> Titre de niveau 1</span>
 <span class="token title important"><span class="token punctuation">##</span> Titre de niveau 2</span>
 <span class="token title important"><span class="token punctuation">###</span> Titre de niveau 3</span>
 </code></pre>
@@ -202,9 +202,14 @@
             <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
           </li>
           <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
             <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
           </li>
         </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
       </div>
     </div>
   </div>
@@ -220,6 +225,7 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
       <li><a href="/blog/1">Blog</a></li>
       <li><i class="icon icon-bonsai"></i></li>
     </ul>
@@ -370,8 +376,7 @@
 </script>
 
 
-      
-        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
   <!-- Background of PhotoSwipe.
      It's a separate element as animating opacity is faster than rgba(). -->
@@ -426,13 +431,15 @@
   </div>
 </div>
 
-      
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {
-        loadJS("/js/main.js");
-        Prism.highlightAll();
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
       });
     </script>
     <script type="text/javascript">

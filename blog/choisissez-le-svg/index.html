@@ -133,7 +133,7 @@
       <p>Avec la multiplication des diff&#xE9;rences de densit&#xE9; de pixel sur les nouveaux devices, rendre une image o&#xF9; un pictogramme peut devenir un v&#xE9;ritable casse-t&#xEA;te. Il existe des solutions comme <a href="http://macrabbit.com/slicy/">Slicy</a> qui d&#xE9;doubleront vos images afin de les optimiser pour retina, mais cela demande un effort suppl&#xE9;mentaire.</p>
 <p>Personnellement et pour toute image flat ou pictographique, je vous recommande fortement le SVG. Comme son nom l&apos;indique (Scalable Vector Graphics), il sera toujours rendu parfaitement quel que soit sa taille et quel que soit la densit&#xE9; de pixel pr&#xE9;sente sur le device. Le SVG n&apos;est malheureusement pas compatible avec tous les navigateurs. Pour parer &#xE0; ce probl&#xE8;me, il existe plusieurs solutions. On peut tout &#xE0; fait utiliser une librairie comme <a href="http://raphaeljs.com/">Rapha&#xEB;l</a> qui, en plus de rendre votre SVG correctement, vous permettra de l&apos;animer en JavaScript. <a href="http://code.google.com/p/svgweb/">SVGWeb</a> est &#xE9;galement un bon choix dans le sens o&#xF9; il encapsulera votre animation dans du Flash pour les navigateurs ne supportant pas cette technologie.</p>
 <p>Mais pour ceux qui souhaiteraient simplement int&#xE9;grer une image SVG avec une compatibilit&#xE9; maximum, il existe un moyen facile. Cr&#xE9;er votre SVG et exporter une copie en PNG, puis dans l&apos;HTML :</p>
-<pre class="line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>images/logo.svg<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onerror</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>this.onerror<span class="token punctuation">=</span>null; this.src<span class="token punctuation">=</span><span class="token punctuation">&apos;</span>images/logo.png<span class="token punctuation">&apos;</span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>logo<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+<pre class="language-html line-numbers"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>images/logo.svg<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onerror</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>this.onerror<span class="token punctuation">=</span>null; this.src<span class="token punctuation">=</span><span class="token punctuation">&apos;</span>images/logo.png<span class="token punctuation">&apos;</span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>logo<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
 </code></pre>
 <p>Dans le cas o&#xF9; le navigateur ne supporte pas le SVG, le JavaScript le remplacera par son homologue PNG.</p>
 
@@ -188,9 +188,14 @@
             <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
           </li>
           <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
             <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
           </li>
         </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
       </div>
     </div>
   </div>
@@ -206,6 +211,7 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
       <li><a href="/blog/1">Blog</a></li>
       <li><i class="icon icon-bonsai"></i></li>
     </ul>
@@ -356,8 +362,7 @@
 </script>
 
 
-      
-        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
   <!-- Background of PhotoSwipe.
      It's a separate element as animating opacity is faster than rgba(). -->
@@ -412,13 +417,15 @@
   </div>
 </div>
 
-      
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <script type="text/javascript">
-      loadJS("/js/vendors.min.js", function() {
-        loadJS("/js/main.js");
-        Prism.highlightAll();
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
       });
     </script>
     <script type="text/javascript">
