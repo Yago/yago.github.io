@@ -36,7 +36,7 @@ export default () => {
         src: target,
         w: width,
         h: height,
-        title: $thumb.attr('alt'),
+        title: $thumb.attr('alt') || '©Yann Gouffon, All Rights Reserved',
       };
 
       container.push(item);
