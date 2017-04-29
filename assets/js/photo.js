@@ -12,8 +12,6 @@ export default () => {
     const limit = $container.hasClass('photo-container-teaser') ? 4 : Math.pow(10,6);
     let index = -1;
 
-    console.log(10^6);
-
     const initGrid = () => {
       return new FlexImages({
         selector: '#photo-container',
