@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Yann Gouffon | RxJS</title>
+
+    <meta name="description" content="Ahoy there ! I'm Yann, a web adventurer who designs and code. I'm focused on modular, performant and maintainable development.">
+    <meta name="keywords" content="yann, gouffon, developer, frontend, html, javascript, sass, css, php">
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="Yann Gouffon | frontend developer and designer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Ahoy there ! I'm Yann, a web adventurer who designs and code. I'm focused on modular, performant and maintainable development." />
+    <meta property="og:site_name" content="Yann Gouffon, frontend developer and designer" />
+    <meta property="og:url" content="http://yago.io" />
+    <meta property="og:image" content="http://yago.io/img/yago.png" />
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+    <meta name="msapplication-square70x70logo" content="/favicons/smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="/favicons/mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="/favicons/widetile.png" />
+    <meta name="msapplication-square310x310logo" content="/favicons/largetile.png" />
+
+    <link rel="preload" href="/css/types.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/types.css"></noscript>
+    <script src="/js/head.min.js"></script>
+
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'cwx4xcg',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js" async></script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="main" class="main-wrapper">
+      <div id="content-wrapper" class="content-wrapper">
+        <header>
+  <a href="/">
+    <img class="logo" src="/svg/yago-logo.svg" onerror="this.onerror=null; this.src='/img/yago-logo.png'" alt="Yago logotype" />
+  </a>
+
+  <button type="button" class="console-toggle" id="console-toggle">
+  <span class="sr-only">Toggle console</span>
+  <span></span>
+  <span></span>
+</button>
+
+  <button type="button" class="menu-toggle" id="menu-toggle">
+  <span class="sr-only">Toggle navigation</span>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+</header>
+
+        <div class="smooth-content" id="smooth-content">
+          
+  <div class="text-center">
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="icon icon-tipi"></i></a></li>
+      <li>
+        
+          <a href="/blog/1">blog</a>
+        
+      </li>
+      <li class="active">RxJS</li>
+    </ol>
+  </div>
+
+  
+
+  <div class="article-container" id="article-container">
+    <div class="text-center">
+      <h1>RxJS</h1>
+      <div class="date">
+        02.05.2017 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article id="article">
+      <p><strong>Le monde de JavaScript est palpitant</strong>. Ces derni&#xE8;res ann&#xE9;es ont &#xE9;t&#xE9; riches en nouveaut&#xE9;s; refonte du langage et pl&#xE9;thore de nouvelles librairies et frameworks. Parmi tout &#xE7;a, un paradigme de programmation a, lui aussi, gagn&#xE9; en popularit&#xE9; parmi les adeptes de l&#x2019;ECMAScript : <strong>le reactive programming</strong>.</p>
+<blockquote>
+<p>Reactive programming is an asynchronous programming paradigm oriented around data streams and the propagation of change.
+&#x2014; Wikipedia</p>
+</blockquote>
+<p>En soit, ce paradigme ne date pas d&#x2019;hier, mais c&#x2019;est sa popularit&#xE9; &#xE0; grande &#xE9;chelle dans l&#x2019;&#xE9;cosyst&#xE8;me JavaScript qui est relativement r&#xE9;cente, <strong>notamment gr&#xE2;ce &#xE0; RxJS</strong>, port JS de <a href="http://reactivex.io/">ReactiveX</a>. Largement utilis&#xE9;e &#xE0; partir de la version 2 d&#x2019;Angular, la librairie a progressivement gagn&#xE9; le coeur de toute une communaut&#xE9;, moi y compris.</p>
+<h2 id="tout-est-observable">Tout est observable</h2>
+<p>Le coeur de RxJS est l&#x2019;<code>Observable</code>. Entit&#xE9; &#xE0; laquelle <strong>on peut s&#x2019;inscrire</strong> pour en recevoir les donn&#xE9;es, il peut &#xEA;tre cr&#xE9;&#xE9; &#xE0; partir d&#x2019;une multitude de sources. La plus &#xE9;vidente est l&#x2019;<code>Array</code> permettant &#xE0; l&#x2019;<code>Observable</code> d&#x2019;en distiller les valeurs, mais &#xE9;galement &#xE0; partir d&#x2019;un intervalle temporel, d&#x2019;une promesse, d&#x2019;une fusion de deux autres <code>Observable</code> ou m&#xEA;me de rien.</p>
+<pre class="language-javascript line-numbers"><code class="language-javascript"><span class="token keyword">const</span> listStream <span class="token operator">=</span> Rx<span class="token punctuation">.</span>Observable<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> timeStream <span class="token operator">=</span> Rx<span class="token punctuation">.</span>Observable<span class="token punctuation">.</span><span class="token function">interval</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 1000ms */</span>
+<span class="token keyword">const</span> promiseStream <span class="token operator">=</span> Rx<span class="token punctuation">.</span>Observable<span class="token punctuation">.</span><span class="token function">fromPromise</span><span class="token punctuation">(</span><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">&apos;ip.jsontest.com&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> mergedStreams <span class="token operator">=</span> Rx<span class="token punctuation">.</span>Observable<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>listStream<span class="token punctuation">,</span> timeStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> emptyStream <span class="token operator">=</span> Rx<span class="token punctuation">.</span>Observable<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Une fois cr&#xE9;&#xE9;, on va pouvoir s&#x2019;inscrire &#xE0; l&#x2019;<code>Observable</code> et ainsi pouvoir lancer des m&#xE9;thodes chaque fois qu&#x2019;il &#xE9;met une nouvelle valeur (<code>onNext</code>), une erreur (<code>onError</code>) ou qu&#x2019;il a termin&#xE9; sont travail (<code>onComplete</code>). Selon nos besoins, il est possible de s&#x2019;inscrire plusieurs fois et &#xE0; diff&#xE9;rents endroits de notre code &#xE0; un m&#xEA;me <code>Observable</code>.</p>
+<pre class="language-javascript line-numbers"><code class="language-javascript"><span class="token keyword">const</span> stream <span class="token operator">=</span> Rx<span class="token punctuation">.</span>Observable<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+stream<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Done &#x1F44D;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x2014;<em>live demo sur <a href="https://jsbin.com/kamolem/2/edit?js,console">JS Bin</a></em></p>
+<h2 id="op-rateur-fais-moi-sortir-">Op&#xE9;rateur. Fais-moi sortir.</h2>
+<p>Tr&#xE8;s proches de l&#x2019;API de l&#x2019;<code>Array</code>, <strong>les op&#xE9;rateurs sont les m&#xE9;thodes qui vont travailler sur les valeurs &#xE9;mises</strong> par l&#x2019;<code>Observable</code>. Pr&#xE9;sents dans son <code>prototype</code>, ils vont ainsi permettre de modifier ces valeurs, de les concat&#xE9;ner, de les fitrer, etc. Ils peuvent &#xEA;tre &#xE9;galement combin&#xE9;s afin de permettre des op&#xE9;rations complexes.</p>
+<pre class="language-javascript line-numbers"><code class="language-javascript"><span class="token keyword">const</span> stream <span class="token operator">=</span> Rx<span class="token punctuation">.</span>Observable<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+stream
+  <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>x <span class="token operator">=</span><span class="token operator">&gt;</span> x <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">=</span><span class="token operator">&gt;</span> x <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">skip</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>
+    <span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Cypher ?&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x2014;<em>live demo sur <a href="https://jsbin.com/kamolem/3/edit?js,console">JS Bin</a></em></p>
+<h2 id="subject-the-perfect-trigger">Subject, the perfect trigger</h2>
+<p>Il existe diff&#xE9;rentes variantes de l&#x2019;<code>Observable</code> selon les langages, dont une particuli&#xE8;rement utile; le <code>Subject</code>. Il ne va &#xE9;mettre aucune valeur en particulier, mais va permettre de <em>trigger</em> une action partout o&#xF9; le <code>Subject</code> est accessible, gr&#xE2;ce &#xE0; la m&#xE9;thode <code>.next()</code>. Par exemple, <strong>il pourra faire office de parfait proxy</strong> dans le cas d&#x2019;un service Angular.</p>
+<pre class="language-javascript line-numbers"><code class="language-javascript"><span class="token keyword">const</span> trigger <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rx<span class="token punctuation">.</span>Subject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> action <span class="token operator">=</span> trigger<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Fire &#x1F680; !&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Somewhere else</span>
+trigger<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x2014;<em>live demo sur <a href="https://jsbin.com/remeyis/2/edit?js,console">JS Bin</a></em></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Une fois le paradigme int&#xE9;gr&#xE9;, la librairie est tr&#xE8;s facile d&#x2019;utilisation et rapidement prise en main. La <a href="https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/observable.md">documentation de l&#x2019;<code>Observable</code></a>, indispensable outil du reactive-js-dev, vous aidera tout au long de votre initiation. J&#x2019;esp&#xE8;re avoir pu contribuer &#xE0; &#xE9;largir votre horizon et vous offrir les cl&#xE9;s du d&#xE9;veloppement r&#xE9;actif !</p>
+<p>Happy coding <img align='absmiddle' alt=':kissing_heart:' class='emoji' src='/img/emojis/kissing_heart.png' title=':kissing_heart:' /></p>
+
+    </article>
+
+    
+      <div class="spacer spacer-xs"></div>
+      <hr>
+      <div class="spacer spacer-xs"></div>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'yago-io'; // required: replace example with your forum shortname
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+
+
+        </div>
+        <footer>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="separator">
+  <i class="icon icon-drakar"></i>
+</div>
+
+
+        <p>
+          <em>Let's keep in touch !</em>
+        </p>
+
+        <ul>
+          <li>
+            <i class="icon icon-github-alt"></i> <a href="https://github.com/yago" target="_blank">Github</a>
+          </li>
+          <li>
+            <i class="icon icon-twitter"></i> <a href="https://twitter.com/Yago_0" target="_blank">Twitter</a>
+          </li>
+          <li>
+            <i class="icon icon-linkedin"></i> <a href="https://ch.linkedin.com/in/yanngouffon" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
+          </li>
+          <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
+            <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
+          </li>
+        </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div>
+      <div id="console-wrapper" class="side-wrapper console-wrapper">
+  <div id="console" class="console"></div>
+</div>
+
+      <div id="menu-wrapper" class="side-wrapper menu-wrapper">
+  <div id="menu" class="menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
+      <li><a href="/blog/1">Blog</a></li>
+      <li><i class="icon icon-bonsai"></i></li>
+    </ul>
+  </div>
+</div>
+
+
+      <script>
+  var router,
+      scope,
+      sitemap = {};
+
+  sitemap.base = [],
+  sitemap.projects = [],
+  sitemap.oldies = [],
+  sitemap.posts = [];
+
+  sitemap.base.push('projects');
+  sitemap.base.push('blog');
+
+  
+    sitemap.projects.push('house-of-switzerland');
+  
+    sitemap.projects.push('les-toits-de-lutry');
+  
+    sitemap.projects.push('le-temps');
+  
+    sitemap.projects.push('densite-ch');
+  
+    sitemap.projects.push('cardis');
+  
+    sitemap.projects.push('brouillon-de-culture');
+  
+    sitemap.projects.push('rodondi-joye');
+  
+    sitemap.projects.push('bali');
+  
+    sitemap.projects.push('hashtag-electrosanne');
+  
+    sitemap.projects.push('msf-face-it');
+  
+    sitemap.projects.push('geolab');
+  
+    sitemap.projects.push('morning-forest');
+  
+    sitemap.projects.push('derham');
+  
+    sitemap.projects.push('lausanne-panorama');
+  
+  sitemap.projects.push('oldies');
+
+  
+    sitemap.oldies.push('aists');
+  
+    sitemap.oldies.push('agrid-css');
+  
+    sitemap.oldies.push('cfc-elocyclo');
+  
+    sitemap.oldies.push('rome');
+  
+    sitemap.oldies.push('mus-e');
+  
+    sitemap.oldies.push('samurai-teaser');
+  
+    sitemap.oldies.push('luxo');
+  
+    sitemap.oldies.push('post-it');
+  
+    sitemap.oldies.push('neocube');
+  
+    sitemap.oldies.push('dessin-en-vrac');
+  
+    sitemap.oldies.push('arya');
+  
+    sitemap.oldies.push('couleur3-billboard');
+  
+    sitemap.oldies.push('breizh-panorama');
+  
+    sitemap.oldies.push('affiche-libre');
+  
+    sitemap.oldies.push('scorpion');
+  
+    sitemap.oldies.push('ophidien');
+  
+    sitemap.oldies.push('elektro-kardiogram-clip');
+  
+    sitemap.oldies.push('interrior-one');
+  
+    sitemap.oldies.push('incandescence');
+  
+    sitemap.oldies.push('alien');
+  
+    sitemap.oldies.push('d-couverte-de-la-femme');
+  
+    sitemap.oldies.push('rock-n-cox');
+  
+    sitemap.oldies.push('opening-tv-civilisations');
+  
+    sitemap.oldies.push('pianovino');
+  
+    sitemap.oldies.push('dublin');
+  
+    sitemap.oldies.push('le-harfang');
+  
+    sitemap.oldies.push('edge-mag');
+  
+    sitemap.oldies.push('workshop-ae-inside-out-label');
+  
+
+  
+    sitemap.posts.push('rxjs');
+  
+    sitemap.posts.push('lisboa');
+  
+    sitemap.posts.push('performances-in-three-tips');
+  
+    sitemap.posts.push('jquery-au-taquet');
+  
+    sitemap.posts.push('live-coding');
+  
+    sitemap.posts.push('optez-pour-le-markdown');
+  
+    sitemap.posts.push('google-drive-comme-cms');
+  
+    sitemap.posts.push('r-volution-vr');
+  
+    sitemap.posts.push('styles-modulaires-bonnes-pratiques');
+  
+    sitemap.posts.push('voyage-bali');
+  
+    sitemap.posts.push('beautiful-dem');
+  
+    sitemap.posts.push('partager-une-url-locale');
+  
+    sitemap.posts.push('responsive-media');
+  
+    sitemap.posts.push('capistrano');
+  
+    sitemap.posts.push('choisissez-le-svg');
+  
+    sitemap.posts.push('un-nouveau-site');
+  
+
+  // Define scope
+  var init = function () {
+    
+      scope = 'posts';
+    
+  };
+
+  init();
+</script>
+
+
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe.
+     It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides.
+      PhotoSwipe keeps only 3 of them in the DOM to save memory.
+      Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)">
+          <i class="icon icon-close"></i>
+        </button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen">
+          <i class="icon icon-fullscreen"></i>
+        </button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out">
+          <i class="icon icon-search"></i>
+        </button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        <i class="icon icon-left"></i>
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        <i class="icon icon-right"></i>
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
+      });
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-41124823-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
