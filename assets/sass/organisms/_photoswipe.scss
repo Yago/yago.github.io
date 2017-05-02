@@ -18,6 +18,10 @@
   background-color: transparent;
 }
 
+.pswp__caption, .pswp__top-bar {
+  background-color: transparent !important;
+}
+
 .pswp__counter {
   margin-top: 0.2em;
   font-size: 1em;
