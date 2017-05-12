@@ -37,7 +37,7 @@ stream.subscribe(
   () => { console.log('Done 👍'); }
 );
 ```
-—*live demo sur [JS Bin](https://jsbin.com/kamolem/2/edit?js,console)*
+>*live demo sur [JS Bin](https://jsbin.com/kamolem/2/edit?js,console)*
 
 ## Opérateur. Fais-moi sortir.
 Très proches de l’API de l’`Array`, **les opérateurs sont les méthodes qui vont travailler sur les valeurs émises** par l’`Observable`. Présents dans son `prototype`, ils vont ainsi permettre de modifier ces valeurs, de les concaténer, de les fitrer, etc. Ils peuvent être également combinés afin de permettre des opérations complexes.
@@ -55,7 +55,7 @@ stream
     () => { console.log('Cypher ?'); }
   );
 ```
-—*live demo sur [JS Bin](https://jsbin.com/kamolem/3/edit?js,console)*
+>*live demo sur [JS Bin](https://jsbin.com/kamolem/3/edit?js,console)*
 
 ## Subject, the perfect trigger
 Il existe différentes variantes de l’`Observable` selon les langages, dont une particulièrement utile; le `Subject`. Il ne va émettre aucune valeur en particulier, mais va permettre de *trigger* une action partout où le `Subject` est accessible, grâce à la méthode `.next()`. Par exemple, **il pourra faire office de parfait proxy** dans le cas d’un service Angular.
@@ -69,7 +69,7 @@ const action = trigger.subscribe(() => {
 // Somewhere else
 trigger.next();
 ```
-—*live demo sur [JS Bin](https://jsbin.com/remeyis/2/edit?js,console)*
+>*live demo sur [JS Bin](https://jsbin.com/remeyis/2/edit?js,console)*
 
 ## Conclusion
 Une fois le paradigme intégré, la librairie est très facile d’utilisation et rapidement prise en main. La [documentation de l’`Observable`](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/observable.md), indispensable outil du reactive-js-dev, vous aidera tout au long de votre initiation. J’espère avoir pu contribuer à élargir votre horizon et vous offrir les clés du développement réactif !

@@ -10,6 +10,7 @@ import jqConsole from './console';
 import menu from './menu';
 import photo from './photo';
 import smoothstate from './smoothstate';
+import content from './content';
 
 smoothstate();
 
@@ -22,4 +23,5 @@ $(document).ready(() => {
   photo();
   jqConsole();
   menu();
+  content();
 });

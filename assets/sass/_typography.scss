@@ -114,6 +114,16 @@ blockquote {
   border-left: 1px solid darken($gallery, 8%);
 }
 
+pre + blockquote {
+  margin-top: 0.3em;
+  padding-left: 0;
+  border: 0;
+  font-size: 0.7em;
+  text-align: right;
+
+  p { margin-top: 0; }
+}
+
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 .text-color { color: $curious-blue; }

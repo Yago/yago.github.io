@@ -8,6 +8,7 @@ import gallery from './gallery';
 import photo from './photo';
 import jqConsole from './console';
 import menu from './menu';
+import content from './content';
 
 /* global smoothState, init, router */
 
@@ -42,6 +43,7 @@ export default () => {
       gallery();
       photo();
       menu();
+      content();
       Prism.highlightAll();
     },
   };

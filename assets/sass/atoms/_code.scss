@@ -31,7 +31,16 @@ pre.skills {
   [class*=language-] { line-height: 1.7em; }
 }
 
-article pre[class*=language-] { margin: 2em 0; }
+article {
+  pre[class*=language-] { margin-bottom: 0; }
+
+  pre[class*=language-],
+  pre[class*=language-] + p,
+  pre[class*=language-] + h2,
+  pre[class*=language-] + h3,
+  pre[class*=language-] + h4,
+  pre[class*=language-] + h5 { margin-top: 2em; }
+}
 
 pre.skills {
   padding: 5px;
