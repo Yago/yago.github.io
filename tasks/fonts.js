@@ -1,9 +1,8 @@
 import gulp from 'gulp';
-import config from '../gulp_config.json';
-import merge from 'merge-stream';
 import del from 'del';
-
 import loadPlugins from 'gulp-load-plugins';
+import config from '../gulp_config.json';
+
 const $ = loadPlugins();
 
  /*
@@ -14,7 +13,7 @@ export const fontBold = () => {
     .pipe($.inlineFonts({
       name: 'Cala',
       weight: 'bold',
-      formats: ['woff', 'woff2']
+      formats: ['woff', 'woff2'],
     }))
     .pipe($.concat('cala-bold.css'))
     .pipe(gulp.dest(`${config.build}css`));
@@ -26,7 +25,7 @@ export const fontItalic = () => {
       name: 'Cala',
       style: 'italic',
       weight: 'normal',
-      formats: ['woff', 'woff2']
+      formats: ['woff', 'woff2'],
     }))
     .pipe($.concat('cala-italic.css'))
     .pipe(gulp.dest(`${config.build}css`));
@@ -38,7 +37,7 @@ export const fontRegular = () => {
       name: 'Cala',
       style: 'normal',
       weight: 'normal',
-      formats: ['woff', 'woff2']
+      formats: ['woff', 'woff2'],
     }))
     .pipe($.concat('cala-regular.css'))
     .pipe(gulp.dest(`${config.build}css`));
@@ -51,7 +50,7 @@ export const fontConcat = () => {
 };
 
 export const fontClean = del.bind(null, [
-  `${config.build}css/cala-*.css`
+  `${config.build}css/cala-*.css`,
 ]);
 
 export const fonts = gulp.series(fontBold, fontItalic, fontRegular, fontConcat, fontClean);

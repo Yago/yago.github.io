@@ -1,18 +1,18 @@
 import gulp from 'gulp';
-import config from '../gulp_config.json';
-import merge from 'merge-stream';
-
 import loadPlugins from 'gulp-load-plugins';
+import merge from 'merge-stream';
+import config from '../gulp_config.json';
+
 const $ = loadPlugins();
 
 /**
  * Deploy to GH pages
  */
 export const single = (done) => {
-  return merge(config.singles.map(single => {
-    return gulp.src(single.source)
-      .pipe(single.name ? $.rename(single.name) : $.util.noop())
-      .pipe(gulp.dest(single.destination));
+  return merge(config.singles.map((item) => {
+    return gulp.src(item.source)
+      .pipe(item.name ? $.rename(item.name) : $.util.noop())
+      .pipe(gulp.dest(item.destination));
   }));
 };
 

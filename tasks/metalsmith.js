@@ -52,7 +52,7 @@ export const metalsmithDocs = () => {
           done();
         },
         define({
-          data: metadatas
+          data: metadatas,
         }),
         layouts(config.metalsmith.plugins.layouts),
       ],

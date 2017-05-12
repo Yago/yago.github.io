@@ -1,8 +1,8 @@
 import gulp from 'gulp';
-import config from '../gulp_config.json';
-import slug from 'slug';
-
 import loadPlugins from 'gulp-load-plugins';
+import slug from 'slug';
+import config from '../gulp_config.json';
+
 const $ = loadPlugins();
 
 const name = slug(config.iconsFontName).toLowerCase();
@@ -15,18 +15,18 @@ export const icons = () => {
     .pipe($.iconfont({
       fontName: name,
       appendCodepoints: true,
-      normalize:true,
-      fontHeight: 1001
+      normalize: true,
+      fontHeight: 1001,
     }))
-    .on('glyphs', function(glyphs) {
+    .on('glyphs', (glyphs) => {
       gulp.src('node_modules/toolbox-utils/templates/_icons.scss')
         .pipe($.consolidate('lodash', {
-          glyphs: glyphs.map(function(glyph) {
+          glyphs: glyphs.map((glyph) => {
             return { name: glyph.name, codepoint: glyph.unicode[0].charCodeAt(0) };
           }),
           fontName: name,
           fontPath: '../fonts/',
-          className: name
+          className: name,
         }))
         .pipe($.rename(`${name}.scss`))
         .pipe(gulp.dest(`${config.assets}sass/`));

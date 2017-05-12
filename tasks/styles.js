@@ -3,9 +3,9 @@ import yargs from 'yargs';
 import autoprefixer from 'autoprefixer';
 // required -> import stylelint from 'stylelint';
 import reporter from 'postcss-reporter';
+import loadPlugins from 'gulp-load-plugins';
 import config from '../gulp_config.json';
 
-import loadPlugins from 'gulp-load-plugins';
 const $ = loadPlugins();
 
 function errorAlert(error) {
@@ -53,11 +53,11 @@ export const stylesLint = () => {
         [
           require('stylelint')(),
           reporter({
-            clearMessages: true
+            clearMessages: true,
           })
         ],
         {
-          syntax: require('postcss-scss')
+          syntax: require('postcss-scss'),
         }));
 };
 export const stylesLintTask = gulp.task('styles:lint', stylesLint);

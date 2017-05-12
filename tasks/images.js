@@ -1,7 +1,7 @@
 import gulp from 'gulp';
+import loadPlugins from 'gulp-load-plugins';
 import config from '../gulp_config.json';
 
-import loadPlugins from 'gulp-load-plugins';
 const $ = loadPlugins();
 
 
@@ -10,7 +10,7 @@ const $ = loadPlugins();
  */
 export const imgOptim = () => {
   return gulp.src(config.images)
-    .pipe($.size({title: 'IMAGES'}))
+    .pipe($.size({ title: 'IMAGES' }))
     .pipe(gulp.dest(`${config.build}img`));
 };
 
@@ -19,7 +19,7 @@ export const imgOptim = () => {
  */
 export const svgOptim = () => {
   return gulp.src(config.svg)
-    .pipe($.size({title: 'SVG'}))
+    .pipe($.size({ title: 'SVG' }))
     .pipe(gulp.dest(`${config.build}svg`));
 };
 

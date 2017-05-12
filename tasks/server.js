@@ -1,11 +1,10 @@
 import gulp from 'gulp';
 import webpack from 'webpack';
-import yargs from 'yargs';
-import config from '../gulp_config.json';
-import webpackSettings from '../webpack.dev.config';
 import browserSync from 'browser-sync';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
+import config from '../gulp_config.json';
+import webpackSettings from '../webpack.dev.config';
 
 import { img } from './images';
 import { styles } from './styles';
@@ -20,7 +19,7 @@ const bundler = webpack(webpackSettings);
  */
 const inject = () => {
   return gulp.src([`${config.metalsmith.dist}/**/*.css`])
-    .pipe(browserSync.stream({match: '**/*.css'}));
+    .pipe(browserSync.stream({ match: '**/*.css' }));
 };
 
 /**
@@ -49,62 +48,62 @@ export const serve = () => {
           stats: {
             cached: false,
             colors: true,
-          }
+          },
         }),
-        webpackHotMiddleware(bundler)
-      ]
+        webpackHotMiddleware(bundler),
+      ],
     },
     notify: {
       styles: {
-        padding: "5px",
-        fontSize: "0.7em",
+        padding: '5px',
+        fontSize: '0.7em',
         top: 'auto',
         bottom: 0,
         borderBottomLeftRadius: 0,
-        borderTopLeftRadius: "5px",
-        backgroundColor: "#dcb853",
+        borderTopLeftRadius: '5px',
+        backgroundColor: '#dcb853',
       }
     },
-    open: false
+    open: false,
   });
 
   gulp.watch([
-    `${config.assets}sass/**/*.scss`
+    `${config.assets}sass/**/*.scss`,
   ], gulp.series(
     styles,
     inject));
 
   gulp.watch([
     `${config.assets}img/**/*`,
-    `${config.assets}svg/**/*`
+    `${config.assets}svg/**/*`,
   ], gulp.series(
     img,
     metalsmith,
-    reload
+    reload,
   ));
 
   gulp.watch([
-    `${config.assets}icons/**/*`
+    `${config.assets}icons/**/*`,
   ], gulp.series(
     icons,
     metalsmith,
-    reload
+    reload,
   ));
 
   gulp.watch([
-    `${config.assets}js/**/*.js`
+    `${config.assets}js/**/*.js`,
   ], gulp.series(
     scripts,
-    reload
+    reload,
   ));
 
   gulp.watch([
     `${config.assets}components/**/*.{html,hbs,md,swig}`,
     `${config.assets}templates/**/*.{html,hbs,md,swig}`,
     `${config.assets}docs/**/*.md`,
-    `${config.assets}data/**/*.{json,yml}`
+    `${config.assets}data/**/*.{json,yml}`,
   ], gulp.series(
     metalsmith,
-    reload
+    reload,
   ));
 };
