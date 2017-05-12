@@ -6,8 +6,8 @@
 
 .pswp__button .icon {
   pointer-events: none;
-  transition: color 0.3s;
   color: $boulder;
+  transition: color 0.3s;
 }
 
 .pswp__button:hover .icon { color: $anzac; }
@@ -18,7 +18,8 @@
   background-color: transparent;
 }
 
-.pswp__caption, .pswp__top-bar {
+.pswp__caption,
+.pswp__top-bar {
   background-color: transparent !important;
 }
 

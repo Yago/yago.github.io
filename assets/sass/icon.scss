@@ -19,7 +19,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon:before {
+.icon {
   @extend %icon;
 }
 
@@ -36,6 +36,13 @@
   width: 1.2857142857142858em;
   text-align: center;
 }
+
+// transform the icon
+.icon-flip-horizontal { transform: scaleX(-1); }
+.icon-flip-vertical { transform: scaleY(-1); }
+.icon-rotate-90deg { transform: rotate(90deg); }
+.icon-rotate-180deg { transform: rotate(180deg); }
+.icon-rotate-270deg { transform: rotate(270deg); }
 
 // Variables with the unicode character
 $icon-500px: "\EA01";

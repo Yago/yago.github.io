@@ -101,6 +101,7 @@ export const serve = () => {
     `${config.assets}components/**/*.{html,hbs,md,swig}`,
     `${config.assets}templates/**/*.{html,hbs,md,swig}`,
     `${config.assets}docs/**/*.md`,
+    `${config.content}**/*.md`,
     `${config.assets}data/**/*.{json,yml}`,
   ], gulp.series(
     metalsmith,
