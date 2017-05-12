@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Yann Gouffon | Traiter ses RAWs, choisir le bon outil</title>
+
+    <meta name="description" content="Ahoy there ! I'm Yann, a web adventurer who designs and code. I'm focused on modular, performant and maintainable development.">
+    <meta name="keywords" content="yann, gouffon, developer, frontend, html, javascript, sass, css, php">
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="Yann Gouffon | frontend developer and designer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Ahoy there ! I'm Yann, a web adventurer who designs and code. I'm focused on modular, performant and maintainable development." />
+    <meta property="og:site_name" content="Yann Gouffon, frontend developer and designer" />
+    <meta property="og:url" content="http://yago.io" />
+    <meta property="og:image" content="http://yago.io/img/yago.png" />
+
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+    <meta name="msapplication-square70x70logo" content="/favicons/smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="/favicons/mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="/favicons/widetile.png" />
+    <meta name="msapplication-square310x310logo" content="/favicons/largetile.png" />
+
+    <link rel="preload" href="/css/types.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/types.css"></noscript>
+    <script src="/js/head.min.js"></script>
+
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'cwx4xcg',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js" async></script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="main" class="main-wrapper">
+      <div id="content-wrapper" class="content-wrapper">
+        <header>
+  <a href="/">
+    <img class="logo" src="/svg/yago-logo.svg" onerror="this.onerror=null; this.src='/img/yago-logo.png'" alt="Yago logotype" />
+  </a>
+
+  <button type="button" class="console-toggle" id="console-toggle">
+  <span class="sr-only">Toggle console</span>
+  <span></span>
+  <span></span>
+</button>
+
+  <button type="button" class="menu-toggle" id="menu-toggle">
+  <span class="sr-only">Toggle navigation</span>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+</header>
+
+        <div class="smooth-content" id="smooth-content">
+          
+  <div class="text-center">
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="icon icon-tipi"></i></a></li>
+      <li>
+        
+          <a href="/blog/1">blog</a>
+        
+      </li>
+      <li class="active">Traiter ses RAWs, choisir le bon outil</li>
+    </ol>
+  </div>
+
+  
+
+  <div class="article-container" id="article-container">
+    <div class="text-center">
+      <h1>Traiter ses RAWs, choisir le bon outil</h1>
+      <div class="date">
+        12.05.2017 &bullet; Yann Gouffon
+      </div>
+    </div>
+
+    <article id="article">
+      <p>Depuis que j’ai commencé la photographie, mon workflow de développement digital n’a cessé d’évoluer. Traitement de JPEGs sous Photoshop Element début des années 2000 pour ensuite Photoshop CS2, puis découverte de l’avantage d’utiliser les RAWs avec Camera Raw et pour finir, Lightroom. <strong>La seule constante dans toute cette évolution a été Adobe</strong>. Jusqu’à récemment, je n’ai jamais remis en question les capacités de son moteur de rendu.</p>
+<h2 id="les-challengers">Les challengers</h2>
+<p>Comme dans tous marchés concurrentiels, il existe des alternatives au moteur de rendu d’Adobe.  Pour ce test, je me suis placé dans la peau d’un nouvel utilisateur devant faire un choix. J’ai ainsi sélectionné les quatre moteurs principaux disponibles sur le maché.</p>
+<ul>
+<li><a href="http://www.adobe.com/ch_fr/creativecloud/photography.html"><strong>Adobe Photoshop/Lightroom</strong></a> (win|mac ~10$/m) : plus besoin de présenter ce poids lourd qui est de loin, la solution la plus utilisée.</li>
+<li><a href="https://affinity.serif.com/fr/photo/"><strong>Affinity Photo</strong></a> (win|mac 48$) : avec son excellent rapport qualité-prix, Affinity Photo est un petit nouveau dans la place qui a tout d’un grand.</li>
+<li><a href="https://www.phaseone.com/en/Products/Software/Capture-One-Pro/Highlights.aspx"><strong>Capture One Pro</strong></a> (win|mac ~12$/m ou 280$) : très apprécié par les professionnels, Capture a sû se démarquer de Lightroom par ces contrôles colorimétriques.</li>
+<li><a href="http://rawtherapee.com/"><strong>RawTherapee</strong></a> (win|mac free) : le quatrième challenger dans la place est non seulement gratuit, mais également open source !</li>
+</ul>
+<h2 id="comparatif">Comparatif</h2>
+<p>Afin de permettre une comparaison équitable, des photographies provenant d’un <strong>Nikon D800</strong> (plein format, capteur CMOS 24×36) et d’un <strong>Fujifilm X-T2</strong> (APS-C, capteur X-Trans CMOS III) ont été ouvertes sur ces quatre applications et, sans ajustements aucuns, ont été exportées en TIFFs. Le profile <strong>Adobe RGB 98</strong> a été conservé tout au long du processus.</p>
+<p>Les critères, très subjectifs, vont porter sur la <strong>notion de piqué</strong> ou l’impression de netteté, ainsi que la <strong>gestion des couleurs</strong>. Nous pourrions aller plus loin en comparant les courbes produites par ces logiciels, mais cela sera peut-être le sujet d’un autre article. Pour l’instant, nous allons nous focaliser sur l’essence même de la photographie, le ressenti.</p>
+<h4 id="paris-d800-50mm-f10-400-iso-1-400">Paris - D800 | 50mm | f10 | 400 ISO | 1/400</h4>
+<p><a href="/img/larges/paris_global.jpg"><img src="/img/small/paris_global.jpg" alt=""></a></p>
+<p>Sur la vue d’ensemble, peu de différences si ce n’est des nuances de bleu variant d’un moteur à l’autre, et des couleurs un tantinet plus vibrantes chez <strong>Capture One Pro</strong>. </p>
+<p><a href="/img/larges/paris_zoomed.jpg"><img src="/img/small/paris_zoomed.jpg" alt=""></a></p>
+<p>À l’échelle 1:1, les moteurs commencent à nettement se différencier. Au niveau de la gestion du piqué, <strong>Capture One Pro</strong> est légèrement en tête et <strong>Affinity Photo</strong> arrive clairement en queue de peloton. <strong>RawTherapee</strong> semble moins bien gérer le bruit que ses concurrents. <strong>Adobe</strong> n’est ni excellent ni mauvais, mais peine à briller.</p>
+<h4 id="vache-d800-70mm-f6-3-400-iso-1-160">Vache - D800 | 70mm | f6.3 | 400 ISO | 1/160</h4>
+<p><a href="/img/larges/cow_global.jpg"><img src="/img/small/cow_global.jpg" alt=""></a></p>
+<p>Sur la vue d’ensemble, horsmi <strong>RawTherapee</strong> qui fait état d’un rendu réellement mauvais, les trois autres concurrents sont très proches, même si <strong>Capture One Pro</strong> témoigne d’une légère supériorité dans la gestion des couleurs. Le rendu d’<strong>Affinity Photo</strong> est légèrement sous-exposé par rapport aux autres.</p>
+<p><a href="/img/larges/cow_zoomed.jpg"><img src="/img/small/cow_zoomed.jpg" alt=""></a></p>
+<p>À l’échelle 1:1, encore une fois, meilleure gestion du piqué pour <strong>Capture One Pro</strong> et rendu très <em>bruyant</em> pour <strong>RawTherapee</strong>. </p>
+<h4 id="lisbonne-x-t2-23mm-f8-200-iso-1-550">Lisbonne - X-T2 | 23mm | f8 | 200 ISO | 1/550</h4>
+<p><a href="/img/larges/city_global.jpg"><img src="/img/small/city_global.jpg" alt=""></a></p>
+<p>Avec ces façades colorées, le quartier de l’Alfama met en avant les qualités colorimétriques de <strong>Capture One Pro</strong>. Plus terne, <strong>Adobe</strong> et <strong>Affinity Pro</strong> ont produit des images neutres, mais équilibrées. Finalement, RawTherapee est nettement sous-exposé par rapport aux autres.</p>
+<p><a href="/img/larges/citi_zoomed.jpg"><img src="/img/small/citi_zoomed.jpg" alt=""></a></p>
+<p>Une fois à 1:1, les différences sont plus marquées qu’avec le D800, <strong>Adobe</strong> et <strong>RawTherapee</strong> sont clairement plus <em>bruyants</em>. <strong>Affinity Photo</strong> produit un rendu avec un léger <em>glow</em> et une impression de flou. Le rendu de <strong>Capture One Pro</strong> est, quant à lui, clean avec un piqué très correct.</p>
+<h4 id="cheval-x-t2-23mm-f2-100-iso-1-1500">Cheval - X-T2 | 23mm | f2 | 100 ISO | 1/1500</h4>
+<p><a href="/img/larges/horse_global.jpg"><img src="/img/small/horse_global.jpg" alt=""></a></p>
+<p>Sur ce premier cliché réalisé avec mon Fujifilm, les résultats sont également très intéressants. <strong>Affinity Photo</strong> a produit une image très (trop) exposée, <strong>Adobe</strong> une image plus terne et <strong>Capture One Pro</strong> et <strong>RawTherapee</strong>, des images plus saturées avec un vignettage également plus marqué que les autres.</p>
+<p><a href="/img/larges/horse_zoomed.jpg"><img src="/img/small/horse_zoomed.jpg" alt=""></a></p>
+<p>C’est à l’échelle 1:1 de cette photo que mon questionnement a démarré. Vous observerez que sur le rendu d’<strong>Adobe</strong>, autour de l’oeil, se dégage une impression d’accentuation du piqué assez atroce. J’appelle ça le rendu “paquet de vers” comme si de petits asticots composaient mon image. C’est un chouia exagéré, mais quand on se tourne vers le rendu de <strong>Capture One Pro</strong>, cette impression disparaît. Sur ce sujet <strong>RawTherapee</strong> est vraiment bon et <strong>Affinity Photo</strong> toujours un peu <em>flou</em>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Avec mon Nikon, je n’ai jamais été très pointilleux sur le rendu 1:1 de mes clichés. C’est quand j’ai traité les RAWs de mon Fujifilm la première fois que j’ai déçu. Bien que haut gamme, j’ai pensé que le capteur de cet appareil était à l’origine de ce résultat, jusqu’à ce que je tombe sur un article vantant les mérites de Capture One Pro et que je prenne le temps de faire la comparaison moi même.</p>
+<p>Sur ces quatre moteurs, aucun n’est particulièrement mauvais, bien au contraire. Gratuit et open source, <strong>RawTherapee</strong> mérite qu’on s’y intéresse, malgré une interface moins intuitive que les autres. <strong>Affinity Photo</strong> est également un très bon choix, surtout quand on regarde son coût dérisoire qui le propulse en tête du classement rapport qualité/prix. <strong>Adobe</strong> reste tout de même un des meilleurs moteurs de la catégorie, les différences vont être plus marquées selon le capteur utilisé.</p>
+<p>Je pense que vous avez fini par deviner où va ma préférence. En effet, en plus d’une magnifique gestion des couleurs véritablement plus vibrantes que chez les autres, le moteur <strong>Capture One Pro</strong> produit des images au piqué irréprochable. Ni trop forcé, ni trop légé, <strong>le rendu est comme son logiciel, très haut de gamme pour utilisateurs pointilleux</strong> (ou super maniaque du détail comme moi <img align='absmiddle' alt=':sweat_smile:' class='emoji' src='/img/emojis/sweat_smile.png' title=':sweat_smile:' />). Il ne vous reste plus qu’à faire vos propres comparaisons avec les versions d’essais de ces logiciels et de définir lequel vous satisfait le plus. Et ne regardez pas trop au prix, si vous avez mis plusieurs centaines de francs dans une seule optique, une licence permettant de sublimer vos images sera toujours un bon choix.</p>
+
+    </article>
+
+    
+      <div class="spacer spacer-xs"></div>
+      <hr>
+      <div class="spacer spacer-xs"></div>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'yago-io'; // required: replace example with your forum shortname
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+
+
+        </div>
+        <footer>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="separator">
+  <i class="icon icon-drakar"></i>
+</div>
+
+
+        <p>
+          <em>Let's keep in touch !</em>
+        </p>
+
+        <ul>
+          <li>
+            <i class="icon icon-github-alt"></i> <a href="https://github.com/yago" target="_blank">Github</a>
+          </li>
+          <li>
+            <i class="icon icon-twitter"></i> <a href="https://twitter.com/Yago_0" target="_blank">Twitter</a>
+          </li>
+          <li>
+            <i class="icon icon-linkedin"></i> <a href="https://ch.linkedin.com/in/yanngouffon" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <i class="icon icon-instagram"></i> <a href="https://www.instagram.com/yago_0/" target="_blank">Instagram</a>
+          </li>
+          <li>
+            <i class="icon icon-500px"></i> <a href="https://500px.com/yanngouffon" target="_blank">500px</a>
+          </li>
+          <li>
+            <i class="icon icon-send"></i> <a href="mailto:hello@yago.io" target="_blank">Email</a>
+          </li>
+        </ul>
+
+        <small class="terms">©Yann Gouffon, All Rights Reserved</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div>
+      <div id="console-wrapper" class="side-wrapper console-wrapper">
+  <div id="console" class="console"></div>
+</div>
+
+      <div id="menu-wrapper" class="side-wrapper menu-wrapper">
+  <div id="menu" class="menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/photo">Photos</a></li>
+      <li><a href="/blog/1">Blog</a></li>
+      <li><i class="icon icon-bonsai"></i></li>
+    </ul>
+  </div>
+</div>
+
+
+      <script>
+  var router,
+      scope,
+      sitemap = {};
+
+  sitemap.base = [],
+  sitemap.projects = [],
+  sitemap.oldies = [],
+  sitemap.posts = [];
+
+  sitemap.base.push('projects');
+  sitemap.base.push('blog');
+
+  
+    sitemap.projects.push('house-of-switzerland');
+  
+    sitemap.projects.push('les-toits-de-lutry');
+  
+    sitemap.projects.push('le-temps');
+  
+    sitemap.projects.push('densite-ch');
+  
+    sitemap.projects.push('cardis');
+  
+    sitemap.projects.push('brouillon-de-culture');
+  
+    sitemap.projects.push('rodondi-joye');
+  
+    sitemap.projects.push('bali');
+  
+    sitemap.projects.push('hashtag-electrosanne');
+  
+    sitemap.projects.push('msf-face-it');
+  
+    sitemap.projects.push('geolab');
+  
+    sitemap.projects.push('morning-forest');
+  
+    sitemap.projects.push('derham');
+  
+    sitemap.projects.push('lausanne-panorama');
+  
+  sitemap.projects.push('oldies');
+
+  
+    sitemap.oldies.push('aists');
+  
+    sitemap.oldies.push('agrid-css');
+  
+    sitemap.oldies.push('cfc-elocyclo');
+  
+    sitemap.oldies.push('rome');
+  
+    sitemap.oldies.push('mus-e');
+  
+    sitemap.oldies.push('samurai-teaser');
+  
+    sitemap.oldies.push('luxo');
+  
+    sitemap.oldies.push('post-it');
+  
+    sitemap.oldies.push('neocube');
+  
+    sitemap.oldies.push('dessin-en-vrac');
+  
+    sitemap.oldies.push('arya');
+  
+    sitemap.oldies.push('couleur3-billboard');
+  
+    sitemap.oldies.push('breizh-panorama');
+  
+    sitemap.oldies.push('affiche-libre');
+  
+    sitemap.oldies.push('scorpion');
+  
+    sitemap.oldies.push('ophidien');
+  
+    sitemap.oldies.push('elektro-kardiogram-clip');
+  
+    sitemap.oldies.push('interrior-one');
+  
+    sitemap.oldies.push('incandescence');
+  
+    sitemap.oldies.push('alien');
+  
+    sitemap.oldies.push('d-couverte-de-la-femme');
+  
+    sitemap.oldies.push('rock-n-cox');
+  
+    sitemap.oldies.push('opening-tv-civilisations');
+  
+    sitemap.oldies.push('pianovino');
+  
+    sitemap.oldies.push('dublin');
+  
+    sitemap.oldies.push('le-harfang');
+  
+    sitemap.oldies.push('edge-mag');
+  
+    sitemap.oldies.push('workshop-ae-inside-out-label');
+  
+
+  
+    sitemap.posts.push('traiter-ses-raws-choisir-le-bon-outil');
+  
+    sitemap.posts.push('rxjs');
+  
+    sitemap.posts.push('lisboa');
+  
+    sitemap.posts.push('performances-in-three-tips');
+  
+    sitemap.posts.push('jquery-au-taquet');
+  
+    sitemap.posts.push('live-coding');
+  
+    sitemap.posts.push('optez-pour-le-markdown');
+  
+    sitemap.posts.push('google-drive-comme-cms');
+  
+    sitemap.posts.push('r-volution-vr');
+  
+    sitemap.posts.push('styles-modulaires-bonnes-pratiques');
+  
+    sitemap.posts.push('voyage-bali');
+  
+    sitemap.posts.push('beautiful-dem');
+  
+    sitemap.posts.push('partager-une-url-locale');
+  
+    sitemap.posts.push('responsive-media');
+  
+    sitemap.posts.push('capistrano');
+  
+    sitemap.posts.push('choisissez-le-svg');
+  
+    sitemap.posts.push('un-nouveau-site');
+  
+
+  // Define scope
+  var init = function () {
+    
+      scope = 'posts';
+    
+  };
+
+  init();
+</script>
+
+
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe.
+     It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides.
+      PhotoSwipe keeps only 3 of them in the DOM to save memory.
+      Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)">
+          <i class="icon icon-close"></i>
+        </button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen">
+          <i class="icon icon-fullscreen"></i>
+        </button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out">
+          <i class="icon icon-search"></i>
+        </button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        <i class="icon icon-left"></i>
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        <i class="icon icon-right"></i>
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      loadJS("/js/vendors.bundle.js", function() {
+        loadJS("/js/vendors.min.js", function() {
+          loadJS("/js/app.bundle.js");
+        });
+      });
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-41124823-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
