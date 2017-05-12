@@ -6,12 +6,11 @@ My personnal website hosted on Github :blush:
 
 ```bash
 $ yarn
-$ gulp serve
+$ yarn start
 ```
 
 ## Deploy
 
 ```bash
-$ gulp --production
-$ gulp deploy
+$ yarn run deploy
 ```
