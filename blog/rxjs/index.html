@@ -133,7 +133,9 @@ stream<span class="token punctuation">.</span><span class="token function">subsc
   <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Done &#x1F44D;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>&#x2014;<em>live demo sur <a href="https://jsbin.com/kamolem/2/edit?js,console">JS Bin</a></em></p>
+<blockquote>
+<p><em>live demo sur <a href="https://jsbin.com/kamolem/2/edit?js,console">JS Bin</a></em></p>
+</blockquote>
 <h2 id="op-rateur-fais-moi-sortir-">Op&#xE9;rateur. Fais-moi sortir.</h2>
 <p>Tr&#xE8;s proches de l&#x2019;API de l&#x2019;<code>Array</code>, <strong>les op&#xE9;rateurs sont les m&#xE9;thodes qui vont travailler sur les valeurs &#xE9;mises</strong> par l&#x2019;<code>Observable</code>. Pr&#xE9;sents dans son <code>prototype</code>, ils vont ainsi permettre de modifier ces valeurs, de les concat&#xE9;ner, de les fitrer, etc. Ils peuvent &#xEA;tre &#xE9;galement combin&#xE9;s afin de permettre des op&#xE9;rations complexes.</p>
 <pre class="language-javascript line-numbers"><code class="language-javascript"><span class="token keyword">const</span> stream <span class="token operator">=</span> Rx<span class="token punctuation">.</span>Observable<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -148,7 +150,9 @@ stream
     <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Cypher ?&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>&#x2014;<em>live demo sur <a href="https://jsbin.com/kamolem/3/edit?js,console">JS Bin</a></em></p>
+<blockquote>
+<p><em>live demo sur <a href="https://jsbin.com/kamolem/3/edit?js,console">JS Bin</a></em></p>
+</blockquote>
 <h2 id="subject-the-perfect-trigger">Subject, the perfect trigger</h2>
 <p>Il existe diff&#xE9;rentes variantes de l&#x2019;<code>Observable</code> selon les langages, dont une particuli&#xE8;rement utile; le <code>Subject</code>. Il ne va &#xE9;mettre aucune valeur en particulier, mais va permettre de <em>trigger</em> une action partout o&#xF9; le <code>Subject</code> est accessible, gr&#xE2;ce &#xE0; la m&#xE9;thode <code>.next()</code>. Par exemple, <strong>il pourra faire office de parfait proxy</strong> dans le cas d&#x2019;un service Angular.</p>
 <pre class="language-javascript line-numbers"><code class="language-javascript"><span class="token keyword">const</span> trigger <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rx<span class="token punctuation">.</span>Subject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -159,7 +163,9 @@ stream
 <span class="token comment" spellcheck="true">// Somewhere else</span>
 trigger<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>&#x2014;<em>live demo sur <a href="https://jsbin.com/remeyis/2/edit?js,console">JS Bin</a></em></p>
+<blockquote>
+<p><em>live demo sur <a href="https://jsbin.com/remeyis/2/edit?js,console">JS Bin</a></em></p>
+</blockquote>
 <h2 id="conclusion">Conclusion</h2>
 <p>Une fois le paradigme int&#xE9;gr&#xE9;, la librairie est tr&#xE8;s facile d&#x2019;utilisation et rapidement prise en main. La <a href="https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/observable.md">documentation de l&#x2019;<code>Observable</code></a>, indispensable outil du reactive-js-dev, vous aidera tout au long de votre initiation. J&#x2019;esp&#xE8;re avoir pu contribuer &#xE0; &#xE9;largir votre horizon et vous offrir les cl&#xE9;s du d&#xE9;veloppement r&#xE9;actif !</p>
 <p>Happy coding <img align='absmiddle' alt=':kissing_heart:' class='emoji' src='/img/emojis/kissing_heart.png' title=':kissing_heart:' /></p>
