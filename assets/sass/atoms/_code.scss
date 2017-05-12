@@ -1,6 +1,7 @@
 @charset 'UTF-8';
 
-pre[class*=language-] {
+pre[class*=language-],
+pre.skills {
   background: $white;
   border: 1px solid $gallery;
   border-radius: 2px;
@@ -31,6 +32,17 @@ pre[class*=language-] {
 }
 
 article pre[class*=language-] { margin: 2em 0; }
+
+pre.skills {
+  padding: 5px;
+  padding-left: 3.4em;
+
+  &.line-numbers .line-numbers-rows {
+    top: 0.3em;
+    left: 0;
+    padding: 0;
+  }
+}
 
 .data { color: $anzac; }
 

@@ -12,10 +12,11 @@
     <div id="contributions" class="contributions"></div>
   </div>
   <div class="col-sm-2 tools tools-vertical">
-    <a href="https://angularjs.org/"><i class="icon icon-angular-simple"></i></a>
+    <a href="https://angular.io/" target="_blank"><i class="icon icon-angular-simple"></i></a>
     <a href="https://facebook.github.io/react/" target="_blank"><i class="icon icon-react"></i></a>
     <a href="http://redux.js.org/" target="_blank"><i class="icon icon-redux" style="font-size:0.7em;"></i></a>
     <a href="http://ionicframework.com/" target="_blank"><i class="icon icon-ionic"></i></a>
+    <a href="http://reactivex.io/rxjs/" target="_blank"><i class="icon icon-reactivex"></i></a>
     <a href="http://getbootstrap.com/" target="_blank"><i class="icon icon-bootstrap"></i></a>
     <a href="http://yeoman.io/" target="_blank"><i class="icon icon-yeoman"></i></a>
     <a href="http://gulpjs.com/" target="_blank"><i class="icon icon-gulp"></i></a>

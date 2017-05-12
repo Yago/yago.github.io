@@ -150,37 +150,38 @@ $icon-photoshop: "\EA66";
 $icon-php: "\EA67";
 $icon-rasberry-pi: "\EA68";
 $icon-react: "\EA69";
-$icon-redis: "\EA6A";
-$icon-redux: "\EA6B";
-$icon-requirejs: "\EA6C";
-$icon-responsive: "\EA6D";
-$icon-right: "\EA6E";
-$icon-ruby: "\EA6F";
-$icon-safari: "\EA70";
-$icon-sass: "\EA71";
-$icon-scrum: "\EA72";
-$icon-search: "\EA73";
-$icon-send: "\EA74";
-$icon-smashing-magazine: "\EA75";
-$icon-snap-svg: "\EA76";
-$icon-stackoverflow: "\EA77";
-$icon-sublime: "\EA78";
-$icon-symfony-badge: "\EA79";
-$icon-symfony: "\EA7A";
-$icon-terminal-badge: "\EA7B";
-$icon-terminal: "\EA7C";
-$icon-tipi: "\EA7D";
-$icon-torii: "\EA7E";
-$icon-travis: "\EA7F";
-$icon-trello: "\EA80";
-$icon-twitter: "\EA81";
-$icon-ubuntu: "\EA82";
-$icon-vim: "\EA83";
-$icon-w3c: "\EA84";
-$icon-waterfall: "\EA85";
-$icon-windows: "\EA86";
-$icon-wordpress: "\EA87";
-$icon-yeoman: "\EA88";
+$icon-reactivex: "\EA6A";
+$icon-redis: "\EA6B";
+$icon-redux: "\EA6C";
+$icon-requirejs: "\EA6D";
+$icon-responsive: "\EA6E";
+$icon-right: "\EA6F";
+$icon-ruby: "\EA70";
+$icon-safari: "\EA71";
+$icon-sass: "\EA72";
+$icon-scrum: "\EA73";
+$icon-search: "\EA74";
+$icon-send: "\EA75";
+$icon-smashing-magazine: "\EA76";
+$icon-snap-svg: "\EA77";
+$icon-stackoverflow: "\EA78";
+$icon-sublime: "\EA79";
+$icon-symfony-badge: "\EA7A";
+$icon-symfony: "\EA7B";
+$icon-terminal-badge: "\EA7C";
+$icon-terminal: "\EA7D";
+$icon-tipi: "\EA7E";
+$icon-torii: "\EA7F";
+$icon-travis: "\EA80";
+$icon-trello: "\EA81";
+$icon-twitter: "\EA82";
+$icon-ubuntu: "\EA83";
+$icon-vim: "\EA84";
+$icon-w3c: "\EA85";
+$icon-waterfall: "\EA86";
+$icon-windows: "\EA87";
+$icon-wordpress: "\EA88";
+$icon-yeoman: "\EA89";
 
 
 .icon-500px:before { content: $icon-500px; }
@@ -288,6 +289,7 @@ $icon-yeoman: "\EA88";
 .icon-php:before { content: $icon-php; }
 .icon-rasberry-pi:before { content: $icon-rasberry-pi; }
 .icon-react:before { content: $icon-react; }
+.icon-reactivex:before { content: $icon-reactivex; }
 .icon-redis:before { content: $icon-redis; }
 .icon-redux:before { content: $icon-redux; }
 .icon-requirejs:before { content: $icon-requirejs; }
