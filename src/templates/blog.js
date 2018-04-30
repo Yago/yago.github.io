@@ -1,5 +1,3 @@
-
-
 import React, { Component } from "react";
 import Link from "gatsby-link";
 
@@ -19,7 +17,6 @@ export default function Index({ data, pathContext }) {
 
   return (
     <div className="blog-posts">
-      <h4>{index}/{pageCount}</h4>
       {group
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {

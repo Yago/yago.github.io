@@ -33,7 +33,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       edges: result.data.allMarkdownRemark.edges,
       createPage,
       pageTemplate: "./src/templates/blog.js",
-      pageLength: 1,
+      pageLength: 10,
       pathPrefix: "blog",
       context: {}
     });

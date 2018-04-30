@@ -2,32 +2,24 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
+  <header>
+    <a href="/">
+      <img className="logo" src="/build/svg/yago-logo.svg" alt="Yago logotype" />
+    </a>
+
+    <button type="button" className="console-toggle">
+      <span className="sr-only">Toggle console</span>
+      <span></span>
+      <span></span>
+    </button>    
+    
+    <button type="button" className="menu-toggle">
+      <span className="sr-only">Toggle navigation</span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
 )
 
 export default Header
