@@ -20,14 +20,20 @@
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "cloudinary-react": "^1.1.0",
     "gatsby": "^2.0.107",
     "gatsby-image": "^2.0.29",
+    "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-manifest": "^2.0.16",
     "gatsby-plugin-offline": "^2.0.22",
     "gatsby-plugin-react-helmet": "^3.0.5",
-    "gatsby-plugin-sharp": "^2.0.19",
+    "gatsby-remark-copy-linked-files": "^2.0.8",
+    "gatsby-remark-prismjs": "^3.2.3",
     "gatsby-source-filesystem": "^2.0.19",
-    "gatsby-transformer-sharp": "^2.1.13",
+    "gatsby-transformer-remark": "^2.2.2",
+    "graphql-skip-limit": "^2.0.4",
+    "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -35,7 +41,8 @@
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.7",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "rehype-react": "^3.1.0"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0"
