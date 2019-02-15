@@ -3,35 +3,33 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
+import DeveloperStats from '../components/DeveloperStats';
 import Icon from '../components/Icon';
 import SEO from '../components/Seo';
+
+const intro = `
+Ahoy there ! I'm Yann, Frontend and JavaScript <span class="text-mono">developer</span> by day and <i>photographer</i> when the night comes (or my days off).
+`;
 
 const IndexPage = ({ data, location }) => (
   <Layout location={location}>
     <SEO />
 
-    <div className="row mt-6 mb-6">
-      <div className="col-sm-10 col-md-8 col-lg-5">
-        <p className="lead">
-          Ahoy there ! I'm Yann, Frontend and JavaScript
-          {' '}
-          <span className="text-mono">developer</span>
-          {' '}
-by day and
-          <em> photographer</em>
-          {' '}
-when the night comes (or my days off).
-        </p>
+    <div className="container-fluid">
+      <div className="row mt-6 mb-6">
+        <div className="col-sm-10 col-md-8 col-lg-5">
+          <p className="lead" dangerouslySetInnerHTML={{ __html: intro }} />
 
-        <small className="text-sans text-muted">
-          —
-          {' '}
-          <Icon icon="igloo" />
-          {' '}
-Based in Lausanne, Switzerland
-        </small>
+          <small className="text-sans text-muted">
+            <span>- </span>
+            <Icon icon="igloo" />
+            <span> Based in Lausanne, Switzerland</span>
+          </small>
+        </div>
       </div>
     </div>
+
+    <DeveloperStats />
   </Layout>
 );
 

@@ -31,8 +31,8 @@ const Layout = ({
         <div className="main-container">
           <div className="container-fluid">
             <Header />
-            {children}
           </div>
+          {children}
         </div>
       </div>
     </>

@@ -8,7 +8,9 @@
   line-height: 1.6rem;
   counter-reset: rows;
 
-  i { font-style: normal; }
+  i {
+    font-style: normal;
+  }
 
   > i:before {
     content: counter(rows);
@@ -21,5 +23,19 @@
     text-align: right;
     // font-size: 0.6rem;
     color: $gray-600;
+  }
+}
+
+$contributions: (
+  '0': darken($green, 0%),
+  '1': darken($green, 20%),
+  '2': darken($green, 40%),
+  '3': darken($green, 60%),
+  '4': darken($green, 80%),
+);
+
+@each $level, $color in $contributions {
+  .contrib-#{$level} {
+    fill: $color !important;
   }
 }
