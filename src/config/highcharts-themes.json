@@ -1,0 +1,70 @@
+{
+  "colors": [
+    "#22E922",
+    "#1DDB1D",
+    "#19CE19",
+    "#15C015",
+    "#11B311",
+    "#0EA50E",
+    "#0B980B",
+    "#088A08",
+    "#067D06",
+    "#046F04",
+    "#026202",
+    "#015401",
+    "#004700"
+  ],
+  "chart": {
+    "backgroundColor": null,
+    "style": {
+      "fontFamily": "'Runda', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"
+    }
+  },
+  "title": {
+    "style": {
+      "fontSize": "16px",
+      "fontWeight": "bold",
+      "textTransform": "uppercase"
+    }
+  },
+  "tooltip": {
+    "borderWidth": 0,
+    "backgroundColor": "rgba(0,0,0,1)",
+    "shadow": false,
+    "style": {
+      "color": "rgba(255,255,255,1)"
+    }
+  },
+  "legend": {
+    "itemStyle": {
+      "fontWeight": "bold",
+      "fontSize": "13px"
+    }
+  },
+  "xAxis": {
+    "gridLineWidth": 1,
+    "labels": {
+      "style": {
+        "fontSize": "12px"
+      }
+    }
+  },
+  "yAxis": {
+    "minorTickInterval": "auto",
+    "title": {
+      "style": {
+        "textTransform": "uppercase"
+      }
+    },
+    "labels": {
+      "style": {
+        "fontSize": "12px"
+      }
+    }
+  },
+  "plotOptions": {
+    "candlestick": {
+      "lineColor": "#404048"
+    }
+  }
+}

@@ -34,6 +34,8 @@
     "gatsby-source-filesystem": "^2.0.19",
     "gatsby-transformer-remark": "^2.2.2",
     "graphql-skip-limit": "^2.0.4",
+    "highcharts": "^7.0.3",
+    "highcharts-react-official": "^2.0.0",
     "javascript-terminal": "^1.0.2",
     "moment": "^2.24.0",
     "prismjs": "^1.15.0",
