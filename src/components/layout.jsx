@@ -1,76 +1,46 @@
-import React, { Component, Children } from 'react';
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
 
-import Header from './header';
-import './layout.css';
-import { actions as navigationActions } from '../store/navigation';
+import Header from './Header';
+import SidePanel from './SidePanel';
+import Icons from './Icons';
 
-const query = graphql`
-  query HeadingQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;
+import '../../styleguide/assets/fonts/types.css';
+import '../../styleguide/assets/components/base.scss';
 
-class Layout extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    toggleMenu: PropTypes.func.isRequired,
-    navigation: PropTypes.object.isRequired,
-  };
+const Layout = ({ children, navigation: { menuOpen, terminalOpen } }) => (
+  <>
+    <Helmet>
+      <link rel="stylesheet" href="https://use.typekit.net/jjy6lvf.css" />
+    </Helmet>
 
-  handleToggle() {
-    const { toggleMenu, navigation } = this.props;
-    toggleMenu(!navigation.menuOpen);
-  }
+    <Icons />
 
-  render() {
-    const { children } = this.props;
+    <div className={`main-wrapper${menuOpen || terminalOpen ? ' open' : ''}`} id="main-wrapper">
+      <SidePanel />
 
-    return (
-      <>
-        <StaticQuery
-          query={query}
-          render={data => <Header siteTitle={data.site.siteMetadata.title} />}
-        />
-        <button type="button" onClick={this.handleToggle.bind(this)}>
-          Click me
-        </button>
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
-        >
-          <main>{children}</main>
+      <div className="main-container">
+        <div className="container-fluid">
+          <Header />
+          {children}
         </div>
-      </>
-    );
-  }
-}
+      </div>
+    </div>
+  </>
+);
 
-const mapState = ({ navigation }) => {
-  return {
-    navigation,
-  };
+Layout.propTypes = {
+  children: PropTypes.element,
+  navigation: PropTypes.object.isRequired,
 };
+Layout.defaultProps = { children: <span>no content</span> };
 
+const mapState = ({ navigation }) => ({ navigation });
 const mapDispatch = (dispatch) => {
-  const { toggleMenu } = navigationActions;
-  return bindActionCreators(
-    {
-      toggleMenu,
-    },
-    dispatch,
-  );
+  return bindActionCreators({}, dispatch);
 };
 
 export default connect(

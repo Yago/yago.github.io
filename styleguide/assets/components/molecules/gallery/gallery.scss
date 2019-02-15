@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+.gallery-item {
+  display: inline-block;
+  width: calc(100% + #{$grid-gutter-width * 2});
+  margin-left: $grid-gutter-width / -1 !important;
+  margin-right: $grid-gutter-width / -1 !important;
+
+  img { width: 100%; border-radius: 5px; }
+  figcaption { padding-top: 0.5rem; }
+}

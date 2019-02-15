@@ -1,42 +1,61 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from 'gatsby';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
+import logo from '../../styleguide/assets/svg/yago.svg';
+import { actions as navigationActions } from '../store/navigation';
+
+const Header = ({ toggleMenu, toggleTerminal, navigation: { menuOpen, terminalOpen } }) => (
+  <header className="header">
+    <Link to="/" className="brand">
+      <img
+        src={logo}
+        alt="Yann Gouffon, JavaScript Developer and photographer"
+        className="img-fluid"
+      />
+    </Link>
+
+    <button
+      type="button"
+      className={`terminal-toggle${terminalOpen ? ' open' : ''}`}
+      id="terminal-toggle"
+      onClick={() => toggleTerminal(!terminalOpen)}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+      <span className="sr-only">Toggle terminal</span>
+      <span />
+      <span />
+    </button>
+
+    <button
+      type="button"
+      className={`menu-toggle${menuOpen ? ' open' : ''}`}
+      id="menu-toggle"
+      onClick={() => toggleMenu(!menuOpen)}
+    >
+      <span className="sr-only">Toggle navigation</span>
+      <span />
+      <span />
+      <span />
+    </button>
   </header>
-)
+);
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  toggleMenu: PropTypes.func.isRequired,
+  toggleTerminal: PropTypes.func.isRequired,
+  navigation: PropTypes.object.isRequired,
+};
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+const mapState = ({ navigation }) => ({ navigation });
 
-export default Header
+const mapDispatch = (dispatch) => {
+  const { toggleMenu, toggleTerminal } = navigationActions;
+  return bindActionCreators({ toggleMenu, toggleTerminal }, dispatch);
+};
+
+export default connect(
+  mapState,
+  mapDispatch,
+)(Header);

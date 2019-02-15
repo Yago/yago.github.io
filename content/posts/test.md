@@ -18,5 +18,5 @@ alert(s);
 ```
 
 ```html
-<div>Yo</div>
+<gallery-item src="https://i.ytimg.com/vi/G8ukFQbJYYw/maxresdefault.jpg"></gallery-item>
 ```

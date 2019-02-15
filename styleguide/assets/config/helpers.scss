@@ -1,0 +1,24 @@
+@charset 'utf-8';
+
+.bg-dark {
+  background: #1d1f21 !important;
+  color: $gray-100;
+  margin-left: $gutter / -4;
+  margin-right: $gutter / -4;
+  [class*="border"] { border-color: $gray-700 !important; }
+
+  @include media-breakpoint-down(md) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .text-primary {
+    color: theme-color('success') !important;
+  }
+}
+
+.table-sm td {
+  padding-left: 0;
+  padding-bottom: 0.1rem;
+  padding-top: 0.1rem;
+}

@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import 'prismjs/themes/prism.css';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import GalleryItem from '../components/content/GalleryItem';
 import Picture from '../components/content/Picture';
 

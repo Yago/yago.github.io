@@ -1,0 +1,22 @@
+@charset 'UTF-8';
+
+[class*='transition-opacity-'] {
+  transition: opacity 0.4s ease-in-out;
+
+  &.transition-opacity-entering {
+    display: inherit !important;
+    opacity: 0;
+  }
+
+  &.transition-opacity-entered {
+    opacity: 1;
+  }
+
+  &.transition-opacity-exiting {
+    opacity: 0;
+  }
+
+  &.transition-opacity-exited {
+    display: none !important;
+  }
+}

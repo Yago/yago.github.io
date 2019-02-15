@@ -1,0 +1,35 @@
+@charset 'utf-8';
+
+a {
+  transition: color 0.2s;
+}
+
+.link-primary {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  color: $body-color;
+  cursor: pointer;
+  * { transition: color 0.2s; }
+
+  @include link-pretty(theme-color('primary'), $white, theme-color('primary'), 1px);
+
+  &:hover,
+  &:hover .text-primary {
+    color: theme-color('primary') !important;
+    .icon { color: $body-color !important; }
+  }
+}
+
+.bg-dark .link-primary {
+  color: $gray-100;
+  @include link-pretty(theme-color('success'), $gray-900, $gray-100, 1px);
+
+  &:hover,
+  &:hover .text-primary {
+    color: $gray-100 !important;
+  }
+}
+
+article a:not(.btn) {
+  @extend .link-primary;
+}

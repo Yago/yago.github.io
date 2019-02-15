@@ -1,0 +1,82 @@
+<div class="main-wrapper" id="main-wrapper">
+  {% include "@organisms/side-panel/side-panel.twig" %}
+
+  <div class="main-container">
+    <div class="container-fluid">
+      {% include "@organisms/header/header.twig" %}
+
+      <div class="row mt-6 mb-6">
+        <div class="col-sm-10 col-md-8 col-lg-5">
+          <p class="lead">
+            Ahoy there ! I'm Yann, Frontend and JavaScript <span class="text-mono">developer</span> by day and <i>photographer</i> when the night comes (or my days off).
+          </p>
+
+          <small class="text-sans text-muted">
+            — {% include "@atoms/icon/icon.twig" with { icon: 'icon-tipi' } %} Based in Lausanne, Switzerland
+          </small>
+        </div>
+      </div>
+
+
+      <div class="d-flex align-items-center justify-content-between">
+        <h2>Last projects</h2>
+        <a href="#" class="btn btn-outline-dark">See all</a>
+      </div>
+
+      <div class="row mt-3">
+        {% for i in 0..5 %}
+          <div class="col-md-4 mb-2">
+            {% include "@molecules/project-teaser/project-teaser.twig" %}
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+    <div class="bg-dark mt-4 py-4">
+      <div class="container-fluid">
+        <h2>Developer facts</h2>
+
+        <div class="row mb-2">
+          <div class="col-md-6 mt-2">
+            {% include "@molecules/dev-facts/dev-facts.twig" %}
+            <div class="mt-3">
+              {% include "@molecules/contributions/contributions.twig" %}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src="images/pie.png" class="img-fluid">
+          </div>
+        </div>
+
+        {% include "@molecules/libraries/libraries.twig" %}
+      </div>
+    </div>
+
+    <div class="container-fluid">
+
+
+      <div class="d-flex align-items-center justify-content-between mt-4">
+        <h2>Last blog posts</h2>
+        <a href="#" class="btn btn-outline-dark">See all</a>
+      </div>
+
+      <div class="row mt-2">
+        {% for i in 0..5 %}
+          <div class="col-md-6">
+            {% include "@molecules/post-teaser/post-teaser.twig" %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="mt-4 mb-2">
+        {% include "@atoms/separator/separator.twig" with {
+          icon: 'icon-drakar'
+        } %}
+      </div>
+
+      {% include "@organisms/footer/footer.twig" %}
+    </div>
+  </div>
+
+</div>

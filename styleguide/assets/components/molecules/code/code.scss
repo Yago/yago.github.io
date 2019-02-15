@@ -1,0 +1,22 @@
+@charset 'utf-8';
+
+pre[class*="language"] {
+  display: inline-block;
+  width: calc(100% + #{$grid-gutter-width * 2});
+  margin-left: $grid-gutter-width / -1 !important;
+  margin-right: $grid-gutter-width / -1 !important;
+  padding: $grid-gutter-width / 1.2 $grid-gutter-width !important;
+  border-radius: 5px !important;
+
+  * {
+    font-size: 15.5px !important;
+    line-height: 1.6em;
+    font-family: $font-family-monospace !important;
+  }
+
+  @include media-breakpoint-down(md) {
+    border-radius: 0 !important;
+
+    * { font-size: 13px !important; }
+  }
+}

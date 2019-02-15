@@ -1,0 +1,89 @@
+{
+  "icons": [
+    "icon-react"
+  ],
+  "libs": [
+    {
+      "url": "https://facebook.github.io/react/",
+      "icon": "icon-react"
+    },
+    {
+      "url": "http://redux.js.org/",
+      "icon": "icon-redux"
+    },
+    {
+      "url": "https://graphql.org",
+      "icon": "icon-graphql"
+    },
+    {
+      "url": "https://gatsbyjs.org",
+      "icon": "icon-gatsby"
+    },
+    {
+      "url": "http://ionicframework.com/",
+      "icon": "icon-ionic"
+    },
+    {
+      "url": "http://reactivex.io/rxjs/",
+      "icon": "icon-reactivex"
+    },
+    {
+      "url": "https://nodejs.org/",
+      "icon": "icon-nodejs"
+    },
+    {
+      "url": "https://git-scm.com/",
+      "icon": "icon-git"
+    },
+    {
+      "url": "http://getbootstrap.com/",
+      "icon": "icon-bootstrap"
+    },
+    {
+      "url": "http://yeoman.io/",
+      "icon": "icon-yeoman"
+    },
+    {
+      "url": "http://gulpjs.com/",
+      "icon": "icon-gulp"
+    },
+    {
+      "url": "https://www.mongodb.org/",
+      "icon": "icon-mongodb"
+    },
+    {
+      "url": "https://www.npmjs.com/",
+      "icon": "icon-npm"
+    },
+    {
+      "url": "https://yarnpkg.com/lang/en/",
+      "icon": "icon-yarn"
+    },
+    {
+      "url": "https://wordpress.org/",
+      "icon": "icon-wordpress"
+    }
+  ],
+  "socials": [
+    {
+      "label": "Github",
+      "icon": "icon-github"
+    },
+    {
+      "label": "Twitter",
+      "icon": "icon-twitter"
+    },
+    {
+      "label": "Instagram",
+      "icon": "icon-instagram"
+    },
+    {
+      "label": "500px",
+      "icon": "icon-500px"
+    },
+    {
+      "label": "Email",
+      "icon": "icon-email"
+    }
+  ]
+}

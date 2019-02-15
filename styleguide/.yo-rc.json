@@ -1,0 +1,10 @@
+{
+  "generator-toolbox": {
+    "promptValues": {
+      "repo": "git@github.com:antistatique/evam.git",
+      "atomic": "atoms<molecules<organisms",
+      "src": "assets/",
+      "dest": "web/app/themes/evam/resources/dist/"
+    }
+  }
+}

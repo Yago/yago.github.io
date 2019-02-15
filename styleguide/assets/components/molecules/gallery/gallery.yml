@@ -1,0 +1,5 @@
+title: Gallery
+name: gallery
+variants:
+  - name: item
+    title: Gallery item

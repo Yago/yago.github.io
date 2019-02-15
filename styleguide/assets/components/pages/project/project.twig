@@ -1,0 +1,66 @@
+<div class="main-wrapper" id="main-wrapper">
+  {% include "@organisms/side-panel/side-panel.twig" %}
+
+  <div class="main-container">
+    <div class="container-fluid">
+      {% include "@organisms/header/header.twig" %}
+      {% include "@molecules/breadcrumb/breadcrumb.twig" %}
+
+      <div class="row mt-2">
+        <div class="col-sm-6 offset-sm-1 d-flex align-items-start flex-column justify-content-between mb-2">
+          <div>
+            <h1>Cardis préstige</h1>
+            <h2 class="h3 text-muted mb-2">Site promotion immobilière</h2>
+          </div>
+
+          <table class="text-sans text-sm table table-borderless table-sm">
+            <tbody>
+              <tr>
+                <td>Agence</td>
+                <td><a href="#" class="link-primary" target="_blank">Antistatique</a></td>
+              </tr>
+              <tr>
+                <td>Réalisation</td>
+                <td>
+                  Dévelopement Frontend<br>
+                  Dévelopement Wordpress
+                </td>
+              </tr>
+              <tr>
+                <td>Année</td>
+                <td>2017</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="mt-auto mb-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            At cum de plurimis eadem dicit, tum certe de maximis. Verum tamen cum de rebus grandioribus dicas, ipsae res verba rapiunt; Quasi vero, inquit, perpetua oratio rhetorum solum, non etiam philosophorum sit. Duo Reges: constructio interrete.
+          </p>
+
+        </div>
+
+        <div class="col-sm-4 offset-sm-1">
+          <img src="https://via.placeholder.com/750x950.jpg" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        {% for i in 0..5 %}
+          <div class="col-sm-3 mb-2">
+            <img src="https://res.cloudinary.com/dwzk6imzg/image/upload/c_crop,g_center,h_900,w_1200/v1549034410/share/les-toits-de-lutry.jpg" class="img-fluid" alt="DESC">
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="mt-4 mb-2">
+        {% include "@atoms/separator/separator.twig" with {
+          icon: 'icon-drakar'
+        } %}
+      </div>
+
+      {% include "@organisms/footer/footer.twig" %}
+
+    </div>
+  </div>
+</div>

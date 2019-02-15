@@ -1,0 +1,44 @@
+<div class="main-wrapper" id="main-wrapper">
+  {% include "@organisms/side-panel/side-panel.twig" %}
+
+  <div class="main-container">
+    <div class="container-fluid">
+      {% include "@organisms/header/header.twig" %}
+      {% include "@molecules/breadcrumb/breadcrumb.twig" %}
+
+      <div class="container">
+        <article>
+          <h1 class="mt-2">Elegant loops</h1>
+          <h2 class="text-muted mb-4">Yann Gouffon — 21.01.2019</h2>
+
+          <p>
+            <strong>JavaScript offers a lot of ways when you need to loop over an array and do stuff</strong>. Here are my recommendations about when and how to <code>use</code> them, mainly for the sake of code <em>clarity and readability</em>.
+          </p>
+
+          {% include "@molecules/code/code.twig" %}
+
+          <h2>Case #1 : Change each value with something else</h2>
+
+          <p>Based on our spiderMovies array, we want to create a new array containing only the titles to have something simpler. So we need to iterate over each array's <a href="#">value</a> and keep only the title property. For this kind of case, Array.prototype.map() is the most elegant way to do it, because each value must return something new (or not) and we still maintain the array length. Finally, you will directly assign the result of your .map() to a new array variable.</p>
+
+          <h2>Case #2 : Filter some value</h2>
+
+          <p>In this case, we simply want to keep only the movies produced after 2010. <strong>The most indicated and obvious way to do it is to use <code>Array.prototype.filter()</code></strong>. Instead of returning a value, you will return true or false depending if you want to keep it or not.</p>
+
+          {% include "@molecules/gallery/gallery-item.twig" %}
+
+
+        </article>
+
+        <div class="mt-4 mb-2">
+          {% include "@atoms/separator/separator.twig" with {
+            icon: 'icon-drakar'
+          } %}
+        </div>
+
+        {% include "@organisms/footer/footer.twig" %}
+      </div>
+
+    </div>
+  </div>
+</div>

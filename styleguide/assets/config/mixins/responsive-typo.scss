@@ -1,0 +1,27 @@
+@charset 'utf-8';
+
+@mixin responsive-typography($base: 22px, $sizes: ("default": 1), $limit: 1600px) {
+  @each $element, $ratio in $sizes {
+    @if ($element == 'default') {
+      html,
+      body {
+        font-size: calc(#{$base} + #{$ratio * 0.5vw});
+
+        @media only screen and (min-width: $limit) {
+          font-size: $base + $limit / 200 * $ratio;
+        }
+      }
+    }
+
+    @else {
+      #{$element},
+      .#{$element} {
+        font-size: calc(1em + #{$ratio * 0.5vw});
+
+        @media only screen and (min-width: $limit) {
+          font-size: calc(1em + #{$limit / 200 * $ratio});
+        }
+      }
+    }
+  }
+}

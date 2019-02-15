@@ -8,12 +8,14 @@ export default function atomicReducer(state = initialState, action) {
       return {
         ...state,
         menuOpen: action.payload,
+        terminalOpen: false,
       };
 
     case TOGGLE_TERMINAL:
       return {
         ...state,
         terminalOpen: action.payload,
+        menuOpen: false,
       };
 
     case RESET:

@@ -1,0 +1,30 @@
+@charset 'utf-8';
+
+.main-wrapper {
+  width: 100%;
+}
+
+.main-container {
+  width: 100%;
+  padding: $gutter / 4;
+  transition: transform 0.5s;
+
+  @include media-breakpoint-down(md) {
+    padding: 0;
+
+    .open & {
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translateX(0);
+    }
+  }
+
+  .open & {
+    transform: translateX(-50%);
+  }
+}
+
+.container-fluid {
+  max-width: 1600px;
+}

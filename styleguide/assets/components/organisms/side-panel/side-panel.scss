@@ -1,0 +1,34 @@
+@charset 'utf-8';
+
+.side-panel {
+  position: fixed !important;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: 50%;
+  margin: 0 !important;
+  transition: transform 0.5s;
+  .open & { transform: translateX(-100%); }
+
+  @include media-breakpoint-down(md) {
+    top: 65px;
+    width: 100%;
+  }
+}
+
+.side-navigation {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  .nav {
+    flex: 0 1 80%;
+  }
+
+  .nav-link {
+    color: $gray-200;
+    &:hover { color: theme-color('success'); }
+  }
+}

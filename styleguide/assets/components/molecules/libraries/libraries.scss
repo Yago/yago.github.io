@@ -1,0 +1,29 @@
+@charset 'utf-8';
+
+.libraries {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  > * { margin: 0; }
+
+  h3 {
+    white-space: nowrap;
+    // margin-right: auto;
+  }
+
+  .border-bottom {
+    flex: 1 1 10%;
+    margin: 0 1rem;
+  }
+
+  a {
+    display: inline-block;
+    margin: 0.5rem;
+    color: $gray-600;
+    &:hover { color: theme-color("success"); }
+  }
+
+  .icon { font-size: 2rem; }
+}

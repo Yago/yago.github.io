@@ -1,0 +1,10 @@
+<table class="table">
+  <tbody>
+    {% for icon in icons %}
+      <tr>
+        <td style="padding-right: 1rem;">{% include "@atoms/icon/icon.twig" with { icon: icon } %}</td>
+        <td><code>#{{icon}}</code></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

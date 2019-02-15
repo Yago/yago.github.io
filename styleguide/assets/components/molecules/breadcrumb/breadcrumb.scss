@@ -1,0 +1,25 @@
+@charset 'utf-8';
+
+.breadcrumb {
+  display: inline-flex;
+  opacity: 0.6;
+  font-size: $font-size-sm;
+  font-family: $font-family-sans-serif;
+  transform: rotate(-90deg) translateX(-100%) translateY(0.2rem);
+  transform-origin: center left;
+  transition: opacity 0.4s;
+
+  .icon { font-size: 0.9em; }
+  &:hover { opacity: 1; }
+
+  .active {
+    max-width: 12rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  @include media-breakpoint-down(md) {
+    transform: none;
+  }
+}

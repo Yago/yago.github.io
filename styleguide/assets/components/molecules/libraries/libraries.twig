@@ -1,0 +1,9 @@
+<div class="libraries">
+  <h3 class="h6 text-muted">Favorite tools</h3>
+  <span class="border-bottom"></span>
+  {% for lib in libs %}
+    <a href="{{lib.url}}" target="_blank">
+      {% include "@atoms/icon/icon.twig" with { icon: lib.icon } %}
+    </a>
+  {% endfor %}
+</div>

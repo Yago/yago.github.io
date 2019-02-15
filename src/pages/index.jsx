@@ -1,20 +1,34 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Layout from '../components/Layout';
+import Icon from '../components/Icon';
+import SEO from '../components/Seo';
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
-    <h1>
-      Hi people
-      {data.site.siteMetadata.title}
-    </h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }} />
-    <Link to="/page-2/">Go to page 2</Link>
+    <div className="row mt-6 mb-6">
+      <div className="col-sm-10 col-md-8 col-lg-5">
+        <p className="lead">
+          Ahoy there ! I'm Yann, Frontend and JavaScript
+          {' '}
+          <span className="text-mono">developer</span>
+          {' '}
+by day and
+          <em> photographer</em>
+          {' '}
+when the night comes (or my days off).
+        </p>
+
+        <small className="text-sans text-muted">
+          —
+          {' '}
+          <Icon icon="igloo" />
+          {' '}
+Based in Lausanne, Switzerland
+        </small>
+      </div>
+    </div>
   </Layout>
 );
 

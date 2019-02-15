@@ -67,3 +67,7 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Styleguide
+styleguide/build/
+styleguide/node_modules/

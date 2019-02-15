@@ -1,0 +1,31 @@
+@charset 'utf-8';
+
+$brand-width: 50px;
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: $grid-gutter-width / 2 0;
+
+  @include media-breakpoint-down(md) {
+    img {
+      max-width: $brand-width * 0.6;
+      max-height: $brand-width * 0.6;
+    }
+  }
+
+  img {
+    max-width: $brand-width;
+    max-height: $brand-width;
+  }
+
+  [class*='toggle'] {
+    // display: none;
+  }
+}
+
+.brand {
+  display: block;
+  flex: 0 0 $brand-width;
+  margin-right: auto;
+}

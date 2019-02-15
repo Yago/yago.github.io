@@ -1,0 +1,27 @@
+{
+  "src": "assets/",
+  "dest": "build/",
+  "ghpages": "build/",
+  "remote": "",
+  "images": [
+    "build/images/**/*"
+  ],
+  "svg": [
+    "build/svg/**/*"
+  ],
+  "icons": [
+    "build/icons/**/*"
+  ],
+  "iconsFontName": "icon",
+  "fonts": [
+    "build/fonts/**/*"
+  ],
+  "vendors": {
+    "css": [],
+    "js": []
+  },
+  "singles": [{
+    "src": "assets/fonts/types.css",
+    "dest": "build/css"
+  }]
+}

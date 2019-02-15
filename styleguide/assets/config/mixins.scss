@@ -1,0 +1,10 @@
+@charset 'utf-8';
+
+@import 'mixins/responsive-typo';
+@import 'mixins/links.scss';
+
+@mixin ie {
+  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+    @content;
+  }
+}

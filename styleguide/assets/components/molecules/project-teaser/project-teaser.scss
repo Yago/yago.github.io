@@ -1,0 +1,30 @@
+@charset 'utf-8';
+
+a.card {
+  color: $body-color;
+  transition: transform 0.2s ease-in-out;
+
+  img {
+    // filter: grayscale(100%) contrast(120%);
+    // transform: scale(1.025);
+    transition:
+      filter 0.5s,
+      box-shadow 0.3s,
+      transform 0.3s;
+    // transform: scale(1.03);
+    // box-shadow: 0 0 30px -1px transparentize($black, 0.6);
+  }
+
+
+  &:hover {
+    text-decoration: none;
+
+    img {
+      // transform: scale(1);
+      // filter: grayscale(0%);
+    }
+  }
+}
+
+.card-body { padding-top: $card-spacer-y; }
+// .card-img-wrapper { overflow: hidden; }

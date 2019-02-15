@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+
+.separator {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: $gray-400;
+
+  &:before,
+  &:after {
+    content: " ";
+    flex-grow: 1;
+    margin-right: 0.5rem;
+    border-bottom: solid $gray-400 1px;
+  }
+
+  &:after {
+    margin-left: 0.5rem;
+    margin-right: 0;
+  }
+}

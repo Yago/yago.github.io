@@ -1,0 +1,16 @@
+<footer class="footer pt-2 mb-2">
+  <p class="lead">
+    Let's keep in touch !
+  </p>
+
+  <p>
+    {% for social in socials %}
+      <a href="#" class="link-primary text-sans text-sm mx-1">
+        {% include "@atoms/icon/icon.twig" with { icon: social.icon } %}
+        {{social.label}}
+      </a>
+    {% endfor %}
+  </p>
+
+  <p class="text-sans text-sm text-muted">©Yann Gouffon, All Rights Reserved</p>
+</footer>

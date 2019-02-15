@@ -1,0 +1,26 @@
+@charset 'utf-8';
+
+$icon-size-base: 1em;
+
+.icon {
+  display: inline-flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 0.11em;
+  width: 1em;
+  height: 1em;
+  font-size: $icon-size-base;
+  color: inherit;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+  }
+
+  svg .icon-bg {
+    color: $body-bg !important;
+  }
+}

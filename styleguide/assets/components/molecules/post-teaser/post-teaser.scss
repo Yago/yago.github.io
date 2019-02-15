@@ -1,0 +1,8 @@
+@charset 'utf-8';
+
+.post-teaser {
+  display: block;
+  color: $body-color;
+
+  &:hover { text-decoration: none; }
+}
