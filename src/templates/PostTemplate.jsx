@@ -16,9 +16,9 @@ const renderAst = new RehypeReact({
   },
 }).Compiler;
 
-const Post = ({ data: { markdownRemark }, location }) => (
+const PostTemplate = ({ data: { markdownRemark }, location }) => (
   <Layout location={location}>
-    <div className="blog-post-container">
+    <div className="container">
       <Link to="/">Home</Link>
       <div className="blog-post">
         <h1>{markdownRemark.frontmatter.title}</h1>
@@ -28,11 +28,11 @@ const Post = ({ data: { markdownRemark }, location }) => (
   </Layout>
 );
 
-Post.prototype = {
+PostTemplate.prototype = {
   data: PropTypes.object.required,
 };
 
-export default Post;
+export default PostTemplate;
 
 export const query = graphql`
   query PostByPath($path: String!) {

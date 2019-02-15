@@ -2,20 +2,19 @@ const path = require('path');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-  const blogPostTemplate = path.resolve('./src/templates/post.jsx');
+  const PostTemplate = path.resolve('./src/templates/PostTemplate.jsx');
+  const ProjectTemplate = path.resolve('./src/templates/ProjectTemplate.jsx');
 
   return graphql(`
     {
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
         edges {
           node {
-            excerpt(pruneLength: 250)
-            html
             id
             frontmatter {
-              date
               path
               title
+              type
             }
           }
         }
@@ -27,10 +26,14 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      const component = node.frontmatter.type === 'post' ? PostTemplate : ProjectTemplate;
+
       createPage({
         path: node.frontmatter.path,
-        component: blogPostTemplate,
-        context: {},
+        component,
+        context: {
+          id: node.frontmatter.id,
+        },
       });
     });
   });

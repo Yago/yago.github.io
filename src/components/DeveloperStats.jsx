@@ -27,6 +27,7 @@ const facts = stats => `
 `;
 
 const DeveloperStats = () => {
+  // Refactor call using Redux
   const [contributions, setContributions] = useState({});
   const [stats, setStats] = useState({});
 
