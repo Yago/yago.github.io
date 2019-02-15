@@ -61,7 +61,9 @@ function SEO({
                   : [],
               )
               .concat(meta)}
-          />
+          >
+            <link rel="stylesheet" href="https://use.typekit.net/jjy6lvf.css" />
+          </Helmet>
         );
       }}
     />

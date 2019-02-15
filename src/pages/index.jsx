@@ -8,6 +8,8 @@ import SEO from '../components/Seo';
 
 const IndexPage = ({ data, location }) => (
   <Layout location={location}>
+    <SEO />
+
     <div className="row mt-6 mb-6">
       <div className="col-sm-10 col-md-8 col-lg-5">
         <p className="lead">

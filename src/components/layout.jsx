@@ -23,10 +23,6 @@ const Layout = ({
 
   return (
     <>
-      <Helmet>
-        <link rel="stylesheet" href="https://use.typekit.net/jjy6lvf.css" />
-      </Helmet>
-
       <Icons />
 
       <div className={`main-wrapper${menuOpen || terminalOpen ? ' open' : ''}`} id="main-wrapper">
