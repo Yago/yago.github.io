@@ -80,8 +80,6 @@ const IndexPage = ({ data, location }) => {
             <Icon icon="drakar" />
           </div>
         </div>
-
-        {/* {% include "@organisms/footer/footer.twig" %} */}
       </div>
     </Layout>
   );

@@ -11,16 +11,13 @@ const SideNavigation = ({ status }) => (
   <div className={`side-navigation transition-opacity-${status} py-2`}>
     <nav className="nav flex-column text-sans">
       <Link className="nav-link active" to="/">
-        Active
+        Homepage
       </Link>
-      <Link className="nav-link" to="/">
-        Link
+      <Link className="nav-link" to="/projects">
+        Projects
       </Link>
-      <Link className="nav-link" to="/">
-        Link
-      </Link>
-      <Link className="nav-link disabled" to="/" tabIndex="-1" aria-disabled="true">
-        Disabled
+      <Link className="nav-link" to="/blog">
+        Blog
       </Link>
     </nav>
   </div>

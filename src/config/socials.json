@@ -1,0 +1,27 @@
+[
+  {
+    "label": "Github",
+    "icon": "github",
+    "url": "https://github.com/yago/"
+  },
+  {
+    "label": "Twitter",
+    "icon": "twitter",
+    "url": "https://twitter.com/Yago_0"
+  },
+  {
+    "label": "Instagram",
+    "icon": "instagram",
+    "url": "https://www.instagram.com/yago_0/"
+  },
+  {
+    "label": "500px",
+    "icon": "500px",
+    "url": "https://500px.com/YannGouffon"
+  },
+  {
+    "label": "Email",
+    "icon": "email",
+    "url": "mailto:hello@yago.io"
+  }
+]

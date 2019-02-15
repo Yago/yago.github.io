@@ -5,6 +5,8 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
+import Footer from './Footer';
+import Breadcrumb from './Breadcrumb';
 import SidePanel from './SidePanel';
 import Icons from './Icons';
 
@@ -31,8 +33,12 @@ const Layout = ({
         <div className="main-container">
           <div className="container-fluid">
             <Header />
+            {location.pathname !== '/' && <Breadcrumb location={location} />}
           </div>
           {children}
+          <div className="container-fluid">
+            <Footer />
+          </div>
         </div>
       </div>
     </>
