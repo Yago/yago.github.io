@@ -1,4 +1,6 @@
-import { TOGGLE_MENU, TOGGLE_TERMINAL, RESET } from './navigation-actions';
+import {
+  TOGGLE_MENU, TOGGLE_TERMINAL, UPDATE_LOCATION, RESET,
+} from './navigation-actions';
 
 import initialState from './navigation-initial-state';
 
@@ -16,6 +18,12 @@ export default function atomicReducer(state = initialState, action) {
         ...state,
         terminalOpen: action.payload,
         menuOpen: false,
+      };
+
+    case UPDATE_LOCATION:
+      return {
+        ...state,
+        location: action.payload,
       };
 
     case RESET:

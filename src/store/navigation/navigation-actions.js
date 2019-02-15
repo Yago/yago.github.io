@@ -1,5 +1,6 @@
 export const TOGGLE_MENU = 'TOGGLE_MENU';
 export const TOGGLE_TERMINAL = 'TOGGLE_TERMINAL';
+export const UPDATE_LOCATION = 'UPDATE_LOCATION';
 export const RESET = 'RESET';
 
 export function toggleMenu(isOpen) {
@@ -16,6 +17,13 @@ export function toggleTerminal(isOpen) {
   };
 }
 
+export function updateLocation(location) {
+  return {
+    type: UPDATE_LOCATION,
+    payload: location,
+  };
+}
+
 export function reset() {
   return {
     type: RESET,
@@ -25,8 +33,10 @@ export function reset() {
 export default {
   TOGGLE_MENU,
   TOGGLE_TERMINAL,
+  UPDATE_LOCATION,
   RESET,
   toggleMenu,
   toggleTerminal,
+  updateLocation,
   reset,
 };

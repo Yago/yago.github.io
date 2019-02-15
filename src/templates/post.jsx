@@ -16,8 +16,8 @@ const renderAst = new RehypeReact({
   },
 }).Compiler;
 
-const Post = ({ data: { markdownRemark } }) => (
-  <Layout>
+const Post = ({ data: { markdownRemark }, location }) => (
+  <Layout location={location}>
     <div className="blog-post-container">
       <Link to="/">Home</Link>
       <div className="blog-post">

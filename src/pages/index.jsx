@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import Icon from '../components/Icon';
 import SEO from '../components/Seo';
 
-const IndexPage = ({ data }) => (
-  <Layout>
+const IndexPage = ({ data, location }) => (
+  <Layout location={location}>
     <div className="row mt-6 mb-6">
       <div className="col-sm-10 col-md-8 col-lg-5">
         <p className="lead">
@@ -31,6 +32,11 @@ Based in Lausanne, Switzerland
     </div>
   </Layout>
 );
+
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+};
 
 export default IndexPage;
 

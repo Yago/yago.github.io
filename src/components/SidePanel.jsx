@@ -1,9 +1,11 @@
 import React from 'react';
-import { TransitionGroup, Transition } from 'react-transition-group';
+import { Transition } from 'react-transition-group';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+
+import Terminal from './Terminal';
 
 const SideNavigation = ({ status }) => (
   <div className={`side-navigation transition-opacity-${status} py-2`}>
@@ -28,9 +30,11 @@ SideNavigation.propTypes = { status: PropTypes.string.isRequired };
 
 const SidePanel = ({ navigation: { menuOpen, terminalOpen } }) => (
   <div className="side-panel bg-dark" id="side-panel">
-    {/* {menuOpen && <SideNavigation />} */}
     <Transition in={menuOpen} timeout={{ enter: 0, exit: 400 }}>
       {status => <SideNavigation status={status} />}
+    </Transition>
+    <Transition in={terminalOpen} timeout={{ enter: 0, exit: 400 }}>
+      {status => <Terminal status={status} />}
     </Transition>
   </div>
 );
