@@ -12,13 +12,13 @@ const Breadcrumb = ({ location }) => {
         {steps.map((step, i) => {
           if (i === steps.length - 1) {
             return (
-              <li className="breadcrumb-item active" aria-current="page">
+              <li key={i} className="breadcrumb-item active" aria-current="page">
                 {step}
               </li>
             );
           }
           return (
-            <li className="breadcrumb-item">
+            <li key={i} className="breadcrumb-item">
               <Link to={steps.slice(0, i + 1).join('/')} className="link-primary">
                 {step === '' ? <Icon icon="tipi" /> : step}
               </Link>

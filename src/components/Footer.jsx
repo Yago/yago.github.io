@@ -11,9 +11,17 @@ const Footer = () => (
 
     <p>
       {socials.map(social => (
-        <a href={social.url} className="link-primary text-sans text-sm mx-1" target="_blank">
+        <a
+          key={social.icon}
+          href={social.url}
+          className="link-primary text-sans text-sm mx-1"
+          target="_blank"
+        >
           <Icon icon={social.icon} />
-          {social.label}
+          <span>
+            {' '}
+            {social.label}
+          </span>
         </a>
       ))}
     </p>
