@@ -54,6 +54,11 @@ th {
   font-weight: bold !important;
 }
 
+i,
+em {
+  font-style: italic;
+}
+
 h1,
 h2,
 h3,
@@ -133,7 +138,7 @@ svg text {
 
 .text-mono {
   font-family: $font-family-monospace;
-  font-size: 0.9em;
+  font-size: 0.84em;
 
   b,
   strong,

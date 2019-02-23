@@ -10,7 +10,7 @@ import Icon from '../components/Icon';
 import SEO from '../components/Seo';
 
 const intro = `
-Ahoy there ! I'm Yann, Frontend and JavaScript <span className="text-mono">developer</span> by day and <i>photographer</i> when the night comes (or my days off).
+Ahoy there ! I'm Yann, Frontend and JavaScript <span class="text-mono">developer</span> by day and <em>photographer</em> when the night comes (or my days off).
 `;
 
 const IndexPage = ({ data, location }) => {

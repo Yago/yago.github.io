@@ -7,14 +7,10 @@ a.card {
   img {
     // filter: grayscale(100%) contrast(120%);
     // transform: scale(1.025);
-    transition:
-      filter 0.5s,
-      box-shadow 0.3s,
-      transform 0.3s;
+    transition: filter 0.5s, box-shadow 0.3s, transform 0.3s;
     // transform: scale(1.03);
     // box-shadow: 0 0 30px -1px transparentize($black, 0.6);
   }
-
 
   &:hover {
     text-decoration: none;
@@ -26,5 +22,25 @@ a.card {
   }
 }
 
-.card-body { padding-top: $card-spacer-y; }
-// .card-img-wrapper { overflow: hidden; }
+.card-body {
+  padding-top: $card-spacer-y;
+  transform: translateZ(20px);
+}
+
+.card-img-wrapper {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+
+  // &:after {
+  //   content: ' ';
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   width: 0;
+  //   height: 0;
+  //   border-style: solid;
+  //   border-width: 0 20px 20px 0;
+  //   border-color: transparent $white transparent transparent;
+  // }
+}

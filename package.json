@@ -47,6 +47,7 @@
     "react-helmet": "^5.2.0",
     "react-redux": "^6.0.0",
     "react-terminal-component": "^1.4.0",
+    "react-tilt": "^0.1.4",
     "react-transition-group": "^2.5.3",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.7",
