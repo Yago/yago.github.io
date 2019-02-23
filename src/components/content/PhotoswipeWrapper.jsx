@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Icon from '../Icon';
+
 // Root element of PhotoSwipe. Must have class pswp.
 const PhotoswipeWrapper = () => (
   <div className="pswp" id="pswp" tabIndex="-1" role="dialog" aria-hidden="true">
@@ -21,8 +23,12 @@ const PhotoswipeWrapper = () => (
         <div className="pswp__top-bar">
           {/* Controls are self-explanatory. Order can be changed. */}
           <div className="pswp__counter" />
-          <button className="pswp__button pswp__button--close" title="Close (Esc)" />
-          <button className="pswp__button pswp__button--zoom" title="Zoom in/out" />
+          <button type="button" className="pswp__button pswp__button--close" title="Close (Esc)">
+            <Icon icon="close" />
+          </button>
+          <button type="button" className="pswp__button pswp__button--zoom" title="Zoom in/out">
+            <Icon icon="zoom" />
+          </button>
           {/* Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR */}
           {/* element will get class pswp__preloader--active when preloader is running */}
           <div className="pswp__preloader">
@@ -36,8 +42,20 @@ const PhotoswipeWrapper = () => (
         <div className="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
           <div className="pswp__share-tooltip" />
         </div>
-        <button className="pswp__button pswp__button--arrow--left" title="Previous (arrow left)" />
-        <button className="pswp__button pswp__button--arrow--right" title="Next (arrow right)" />
+        <button
+          type="button"
+          className="pswp__button pswp__button--arrow--left"
+          title="Previous (arrow left)"
+        >
+          <Icon icon="left" />
+        </button>
+        <button
+          type="button"
+          className="pswp__button pswp__button--arrow--right"
+          title="Next (arrow right)"
+        >
+          <Icon icon="right" />
+        </button>
         <div className="pswp__caption">
           <div className="pswp__caption__center" />
         </div>

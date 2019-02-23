@@ -24,12 +24,11 @@ a.card {
 
 .card-body {
   padding-top: $card-spacer-y;
-  transform: translateZ(20px);
+  transform: translateZ(20px) translateX(5px);
 }
 
 .card-img-wrapper {
   position: relative;
-  border-radius: 4px;
   overflow: hidden;
 
   // &:after {

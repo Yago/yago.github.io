@@ -8,13 +8,15 @@ import 'photoswipe/dist/default-skin/default-skin.css';
 
 import Picture from './Picture';
 
-const Gallery = ({ sources, containerClass, itemClass }) => {
+const Gallery = ({
+  sources, containerClass, itemClass, displayCaption, thumbRatio,
+}) => {
   const cleanSources = typeof sources === 'string' ? JSON.parse(sources) : sources;
   const container = cleanSources.map((src) => {
     return {
       ...src,
       src: `https://res.cloudinary.com/dwzk6imzg/image/upload/c_scale,q_65,w_2880/v1550240899/${
-        src.src
+        src.id
       }`,
     };
   });
@@ -24,7 +26,7 @@ const Gallery = ({ sources, containerClass, itemClass }) => {
     const pswp = document.querySelectorAll('.pswp')[0];
     const options = {
       index,
-      bgOpacity: 0.85,
+      bgOpacity: 1,
       showHideOpacity: true,
       history: false,
     };
@@ -37,7 +39,7 @@ const Gallery = ({ sources, containerClass, itemClass }) => {
   return (
     <div className={containerClass}>
       {container
-        && container.map((src, i) => (
+        && container.map((item, i) => (
           <figure
             key={i}
             className={`gallery-item ${itemClass}`}
@@ -46,9 +48,9 @@ const Gallery = ({ sources, containerClass, itemClass }) => {
             itemType="http://schema.org/ImageObject"
             data-index={i}
           >
-            <a href={src.src} onClick={e => openGallery(e, i)} itemProp="contentUrl">
-              <Picture id={src.src} />
-              <figcaption>{src.caption}</figcaption>
+            <a href={item.src} onClick={e => openGallery(e, i)} itemProp="contentUrl">
+              <Picture id={item.id} ratio={thumbRatio} />
+              {displayCaption && <figcaption>{item.title}</figcaption>}
             </a>
           </figure>
         ))}
@@ -60,11 +62,15 @@ Gallery.propTypes = {
   sources: PropTypes.oneOfType([PropTypes.array, PropTypes.string.isRequired]).isRequired,
   containerClass: PropTypes.string,
   itemClass: PropTypes.string,
+  displayCaption: PropTypes.bool,
+  thumbRatio: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 Gallery.defaultProps = {
   containerClass: '',
   itemClass: '',
+  displayCaption: true,
+  thumbRatio: null,
 };
 
 export default Gallery;

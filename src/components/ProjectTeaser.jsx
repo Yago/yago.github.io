@@ -13,7 +13,7 @@ const ProjectTeaser = ({ project }) => (
   >
     <Link to={project.frontmatter.path} className="project-teaser card">
       <div className="card-img-wrapper img-fluid">
-        <Picture id={project.frontmatter.cover} />
+        <Picture id={project.frontmatter.cover} ratio="1.6" />
       </div>
       <div className="card-body text-sans">
         <h3 className="h6">{project.frontmatter.title}</h3>

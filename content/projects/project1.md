@@ -5,15 +5,22 @@ title: Amazin first project
 subtitle: Site promotion immobilière
 type: project
 cover: yago.io/greece.jpg
+agency:
+  name: Antistatique
+  url: https://antistatique.net
+year: 2015
+roles: 
+  - Frontend development
+  - JavaScript development
 gallery:
-  - src: "yago.io/greece.jpg"
-    caption: "Greece, land of the Gods"
+  - id: "yago.io/greece.jpg"
+    title: "Greece, land of the Gods"
     w: 5122
     h: 3415
-  - src: "yago.io/arjun-kapoor-1366631-unsplash.jpg"
-    caption: "snow"
+  - id: "yago.io/arjun-kapoor-1366631-unsplash.jpg"
+    title: "snow"
     w: 4032
     h: 3024
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter enim explicari, quod quaeritur, non potest. Quid est, quod ab ea absolvi et perfici debeat? Nos quidem Virtutes sic natae sumus, ut tibi serviremus, aliud negotii nihil habemus. Duo Reges: constructio interrete. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Quid iudicant sensus? Expectoque quid ad id, quod quaerebam, respondeas.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non enim quaero quid verum, sed quid cuique dicendum sit. Quos quidem tibi studiose et diligenter tractandos magnopere censeo.
