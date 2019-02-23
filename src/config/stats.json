@@ -1,0 +1,34 @@
+[
+  {
+    "name": "JavaScript",
+    "y": 34.32
+  },
+  {
+    "name": "SCSS",
+    "y": 21.25
+  },
+  {
+    "name": "Twig",
+    "y": 16.51
+  },
+  {
+    "name": "JSON",
+    "y": 5.71
+  },
+  {
+    "name": "Markdown",
+    "y": 5.3
+  },
+  {
+    "name": "HTML",
+    "y": 2.83
+  },
+  {
+    "name": "YAML",
+    "y": 2.01
+  },
+  {
+    "name": "Other",
+    "y": 6.3199999999999985
+  }
+]

@@ -4,8 +4,9 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 import highchartsTheme from '../config/highcharts-themes.json';
+import stats from '../config/stats.json';
 
-const Pie = ({ stats }) => {
+const Pie = () => {
   Highcharts.setOptions(highchartsTheme);
 
   /* eslint-disable */
@@ -30,38 +31,8 @@ const Pie = ({ stats }) => {
   };
   /* eslint-enable */
 
-  const sortLevel = (a, b) => {
-    if (a.level > b.level) {
-      return -1;
-    }
-    if (a.level < b.level) {
-      return 1;
-    }
-
-    return 0;
-  };
-
-  let otherPoints = 0.0;
-
   // Process Data
-  const languages = stats.data.languages
-    .map(lang => ({
-      name: lang.name,
-      time: lang.total_seconds,
-      y: lang.percent,
-    }))
-    .filter((lang) => {
-      const test = lang.y < 1 || lang.name === 'Other';
-      if (test) otherPoints += lang.y;
-      return !test;
-    });
-
-  languages.push({
-    name: 'Other',
-    'Time spending': 1,
-    y: otherPoints,
-  });
-  languages.sort(sortLevel);
+  const languages = stats;
 
   const options = {
     // eslint-disable-line no-unused-vars
@@ -119,10 +90,6 @@ const Pie = ({ stats }) => {
   };
 
   return <HighchartsReact highcharts={Highcharts} options={options} />;
-};
-
-Pie.propTypes = {
-  stats: PropTypes.object.isRequired,
 };
 
 export default Pie;

@@ -9,33 +9,20 @@ import libraries from '../config/libraries.json';
 import Icon from './Icon';
 import Pie from './Pie';
 
-const facts = stats => `
+const facts = () => `
 <pre class="dev-facts">
 <i>{</i>
 <i>  "name": "<i class="text-primary">yago</i>",</i>
 <i>  "profile": "<a class="link-primary" href="https://github.com/yago/" target="_blank"><i class="text-primary">github.com/yago</i></a>",</i>
-<i>  "time_total": "<i class="text-primary">${
-  stats.data ? stats.data.human_readable_total : ''
-}</i>",</i>
-<i>  "editor": "<i class="text-primary">vscode</i>",</i>
+<i>  "editor": "<i class="text-primary">VSCode</i>",</i>
 <i>  "platform": "<i class="text-primary">macOS</i>"</i>
 <i>}</i>
 </pre>
-<p class="text-right text-muted text-sm text-sans">
-  Last year data : <a class="link-primary" href="https://wakatime.com/@yago" target="_blank">Wakatime</a>
-</p>
 `;
 
 const DeveloperStats = () => {
   // Refactor call using Redux
   const [contributions, setContributions] = useState({});
-  const [stats, setStats] = useState({});
-
-  if (contributions.data === undefined) {
-    axios.get('http://api.yago.io/stats/').then((res) => {
-      setStats(res.data);
-    });
-  }
 
   if (contributions.contributions === undefined) {
     axios.get('https://github-contributions-api.now.sh/v1/yago').then((res) => {
@@ -50,7 +37,7 @@ const DeveloperStats = () => {
 
         <div className="row mb-2">
           <div className="col-md-6 mt-2">
-            <div dangerouslySetInnerHTML={{ __html: facts(stats) }} />
+            <div dangerouslySetInnerHTML={{ __html: facts() }} />
 
             <div className="mt-3">
               {contributions.contributions && contributions.contributions.length > 0 && (
@@ -77,7 +64,7 @@ const DeveloperStats = () => {
             </div>
           </div>
           <div className="col-md-6 d-flex align-items-center">
-            {stats.data && <Pie stats={stats} />}
+            <Pie />
           </div>
         </div>
 

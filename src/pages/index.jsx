@@ -49,8 +49,8 @@ const IndexPage = ({ data, location }) => {
         </div>
 
         <div className="row mt-3">
-          {projects.map(project => (
-            <div className="col-md-4 mb-2">
+          {projects.map((project, i) => (
+            <div className="col-md-4 mb-2" key={i}>
               <ProjectTeaser project={project} />
             </div>
           ))}
@@ -68,8 +68,8 @@ const IndexPage = ({ data, location }) => {
         </div>
 
         <div className="row mt-2">
-          {posts.map(post => (
-            <div className="col-md-6">
+          {posts.map((post, i) => (
+            <div className="col-md-6" key={i}>
               <PostTeaser post={post} />
             </div>
           ))}

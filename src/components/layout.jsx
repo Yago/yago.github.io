@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
@@ -46,7 +45,7 @@ const Layout = ({
 };
 
 Layout.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
   location: PropTypes.object.isRequired,
   navigation: PropTypes.object.isRequired,
   updateLocation: PropTypes.func.isRequired,
