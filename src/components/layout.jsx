@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -15,11 +15,19 @@ import '../../styleguide/assets/fonts/types.css';
 import '../../styleguide/assets/components/base.scss';
 
 const Layout = ({
-  children, location, navigation: { menuOpen, terminalOpen }, updateLocation,
+  children,
+  location,
+  navigation: { menuOpen, terminalOpen },
+  updateLocation,
+  toggleMenu,
 }) => {
+  const [enter, setEnter] = useState(false);
+  setTimeout(() => setEnter(true), 400);
+
   // Update Redux navigation.location on location change
   useEffect(() => {
     updateLocation(location);
+    toggleMenu(false);
   }, [location]);
 
   return (
@@ -34,7 +42,7 @@ const Layout = ({
             <Header />
             {location.pathname !== '/' && <Breadcrumb location={location} />}
           </div>
-          {children}
+          <div className={`transition-opacity-${enter ? 'entered' : 'exiting'}`}>{children}</div>
           <div className="container-fluid">
             <Footer />
           </div>
@@ -54,8 +62,8 @@ Layout.defaultProps = { children: <span>no content</span> };
 
 const mapState = ({ navigation }) => ({ navigation });
 const mapDispatch = (dispatch) => {
-  const { updateLocation } = navigationActions;
-  return bindActionCreators({ updateLocation }, dispatch);
+  const { updateLocation, toggleMenu } = navigationActions;
+  return bindActionCreators({ updateLocation, toggleMenu }, dispatch);
 };
 
 export default connect(

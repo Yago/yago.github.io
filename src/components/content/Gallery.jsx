@@ -57,7 +57,7 @@ const Gallery = ({ sources, containerClass, itemClass }) => {
 };
 
 Gallery.propTypes = {
-  sources: PropTypes.string.isRequired,
+  sources: PropTypes.oneOfType([PropTypes.array, PropTypes.string.isRequired]).isRequired,
   containerClass: PropTypes.string,
   itemClass: PropTypes.string,
 };

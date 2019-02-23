@@ -22,8 +22,8 @@ const IndexPage = ({ data, location }) => {
           <h1>Blog</h1>
 
           <div className="row mt-2">
-            {posts.map(post => (
-              <div className="col-md-6">
+            {posts.map((post, i) => (
+              <div className="col-md-6" key={i}>
                 <PostTeaser post={post} />
               </div>
             ))}
