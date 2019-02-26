@@ -19,6 +19,9 @@ const SideNavigation = ({ status }) => (
       <Link className="nav-link" to="/blog">
         Blog
       </Link>
+      <Link className="nav-link" to="/pictures">
+        Pictures
+      </Link>
     </nav>
   </div>
 );

@@ -13,7 +13,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "picup": "cd ../500px_scraper/ && npm run start && cd ../2019/ && cp ../500px_scraper/pictures.json ./src/config/pictures.json"
   },
   "repository": {
     "type": "git",

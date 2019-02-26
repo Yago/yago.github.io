@@ -7,7 +7,7 @@ import PostTeaser from '../components/PostTeaser';
 import Icon from '../components/Icon';
 import SEO from '../components/Seo';
 
-const IndexPage = ({ data, location }) => {
+const BlogPage = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
     .filter(item => item.node.frontmatter.type === 'post')
     .map(item => item.node)
@@ -40,12 +40,12 @@ const IndexPage = ({ data, location }) => {
   );
 };
 
-IndexPage.propTypes = {
+BlogPage.propTypes = {
   data: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 };
 
-export default IndexPage;
+export default BlogPage;
 
 export const query = graphql`
   query AllPosts {

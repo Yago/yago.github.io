@@ -7,7 +7,7 @@ import ProjectTeaser from '../components/ProjectTeaser';
 import Icon from '../components/Icon';
 import SEO from '../components/Seo';
 
-const IndexPage = ({ data, location }) => {
+const ProjectsPage = ({ data, location }) => {
   const projects = data.allMarkdownRemark.edges
     .filter(item => item.node.frontmatter.type === 'project')
     .map(item => item.node);
@@ -39,12 +39,12 @@ const IndexPage = ({ data, location }) => {
   );
 };
 
-IndexPage.propTypes = {
+ProjectsPage.propTypes = {
   data: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 };
 
-export default IndexPage;
+export default ProjectsPage;
 
 export const query = graphql`
   query AllProjects {

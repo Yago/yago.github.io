@@ -19,9 +19,9 @@ const Breadcrumb = ({ location }) => {
           }
           return (
             <li key={i} className="breadcrumb-item">
-              <Link to={steps.slice(0, i + 1).join('/')} className="link-primary">
+              {/* <Link to={steps.slice(0, i + 1).join('/')} className="link-primary">
                 {step === '' ? <Icon icon="tipi" /> : step}
-              </Link>
+              </Link> */}
             </li>
           );
         })}
