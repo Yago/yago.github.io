@@ -8,11 +8,13 @@ cover: yago.io/greece.jpg
 
 Lorem ipsum dolor sit [amet](/blog/my-first-post/), consectetur adipiscing elit. Aliter enim explicari, quod quaeritur, non potest. Quid est, quod ab ea absolvi et perfici debeat? Nos quidem Virtutes sic natae sumus, ut tibi serviremus, aliud negotii nihil habemus. Duo Reges: constructio interrete. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Quid iudicant sensus? Expectoque quid ad id, quod quaerebam, respondeas.
 
+<!-- <gimg src="test2.jpg" /> -->
+
 <!-- <cimg></cimg> -->
 
 <div><gallery sources='[
-  { "src": "yago.io/greece.jpg", "caption": "Greece, land of the Gods", "w": "5122", "h": "3415" },
-  { "src": "yago.io/arjun-kapoor-1366631-unsplash.jpg", "caption": "snow", "w": "4032", "h": "3024" }
+  { "src": "test.jpg", "caption": "Greece, land of the Gods" },
+  { "src": "test2.jpg", "caption": "snow" }
 ]'></gallery></div>
 
 ```javascript{1}

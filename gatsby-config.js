@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   pathPrefix: 'styleguide/build/',
   siteMetadata: {
@@ -14,9 +16,25 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/content`,
+        path: path.join(__dirname, 'content', 'posts'),
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects',
+        path: path.join(__dirname, 'content', 'projects'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'content', 'images'),
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -31,7 +49,7 @@ module.exports = {
     {
       resolve: 'gatsby-remark-copy-linked-files',
       options: {
-        destinationDir: `${__dirname}/static/`,
+        destinationDir: path.join(__dirname, 'static'),
       },
     },
     {

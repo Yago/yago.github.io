@@ -12,12 +12,14 @@ import Seo from '../components/Seo';
 import Gallery from '../components/content/Gallery';
 import PhotoswipeWrapper from '../components/content/PhotoswipeWrapper';
 import Picture from '../components/content/Picture';
+import Image from '../components/content/Image';
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
   components: {
     gallery: Gallery,
     cimg: Picture,
+    gimg: Image,
     Link,
   },
 }).Compiler;

@@ -9,13 +9,13 @@ import Icon from '../components/Icon';
 import Seo from '../components/Seo';
 import Gallery from '../components/content/Gallery';
 import PhotoswipeWrapper from '../components/content/PhotoswipeWrapper';
-import Picture from '../components/content/Picture';
+import Image from '../components/content/Image';
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
   components: {
     gallery: Gallery,
-    cimg: Picture,
+    gimg: Image,
   },
 }).Compiler;
 
@@ -86,7 +86,7 @@ const ProjectTemplate = ({ data: { markdownRemark }, location }) => (
           containerClass="row mt-4"
           itemClass="col-sm-3 mb-2 img-fluid"
           displayCaption={false}
-          thumbRatio="1.6"
+          useThumb
         />
         <PhotoswipeWrapper />
       </>
@@ -121,10 +121,8 @@ export const query = graphql`
         year
         roles
         gallery {
-          id
-          title
-          w
-          h
+          src
+          caption
         }
       }
     }
