@@ -13,8 +13,7 @@ Lorem ipsum dolor sit [amet](/blog/my-first-post/), consectetur adipiscing elit.
 <!-- <cimg></cimg> -->
 
 <div><gallery sources='[
-  { "src": "test.jpg", "caption": "Greece, land of the Gods" },
-  { "src": "test2.jpg", "caption": "snow" }
+  { "src": "test.jpg", "caption": "Greece, land of the Gods" }
 ]'></gallery></div>
 
 ```javascript{1}

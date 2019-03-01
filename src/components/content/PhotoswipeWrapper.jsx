@@ -1,5 +1,8 @@
 import React from 'react';
 
+import 'photoswipe/dist/photoswipe.css';
+import 'photoswipe/dist/default-skin/default-skin.css';
+
 import Icon from '../Icon';
 
 // Root element of PhotoSwipe. Must have class pswp.
@@ -28,6 +31,9 @@ const PhotoswipeWrapper = () => (
           </button>
           <button type="button" className="pswp__button pswp__button--zoom" title="Zoom in/out">
             <Icon icon="zoom" />
+          </button>
+          <button type="button" className="pswp__button pswp__button--fs" title="Toggle fullscreen">
+            <Icon icon="fullscreen" />
           </button>
           {/* Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR */}
           {/* element will get class pswp__preloader--active when preloader is running */}

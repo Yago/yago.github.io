@@ -3,6 +3,7 @@
 article .gallery-item {
   display: inline-block;
   width: calc(100% + #{$grid-gutter-width * 2});
+  margin: 1rem 0;
   margin-left: $grid-gutter-width / -1 !important;
   margin-right: $grid-gutter-width / -1 !important;
 
@@ -12,12 +13,11 @@ article .gallery-item {
 
   figcaption {
     padding-top: 0.5rem;
+    padding-left: $grid-gutter-width;
+    font-size: $font-size-sm;
+    color: $gray-600;
   }
 }
-
-// .pswp__ui--idle > * {
-//   opacity: 1 !important;
-// }
 
 .pswp__bg {
   background: $white !important;
@@ -53,6 +53,10 @@ article .gallery-item {
 
   .icon {
     font-size: 0.8em;
+  }
+
+  small {
+    color: $gray-600 !important;
   }
 }
 

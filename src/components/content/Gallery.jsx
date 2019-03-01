@@ -5,9 +5,6 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import 'photoswipe/dist/photoswipe.css';
-import 'photoswipe/dist/default-skin/default-skin.css';
-
 const query = graphql`
   query GalleryImages {
     allImageSharp {
@@ -21,6 +18,7 @@ const query = graphql`
             sizes
             presentationWidth
             presentationHeight
+            originalImg
           }
           resize(width: 800, height: 500, quality: 70) {
             src
@@ -37,20 +35,21 @@ const Gallery = ({
   <StaticQuery
     query={query}
     render={(data) => {
-      console.log(sources);
+      // Create photoswipe container
       const cleanSources = typeof sources === 'string' ? JSON.parse(sources) : sources;
       const container = cleanSources.map((item) => {
         const images = data.allImageSharp.edges;
         const image = images.find(edge => edge.node.fluid.src.includes(item.src));
         return {
           ...image,
-          src: image.node.fluid.src,
+          src: image.node.fluid.originalImg,
           title: item.caption,
           w: image.node.fluid.presentationWidth,
           h: image.node.fluid.presentationHeight,
         };
       });
 
+      // Photoswipe trigger method
       const openGallery = (event, index) => {
         event.preventDefault();
         const pswp = document.querySelectorAll('.pswp')[0];
@@ -62,7 +61,6 @@ const Gallery = ({
         };
 
         const gallery = new PhotoSwipe(pswp, PhotoSwipeUI_Default, container, options);
-
         gallery.init();
       };
 
@@ -76,10 +74,8 @@ const Gallery = ({
                 itemProp="associatedMedia"
                 itemScope
                 itemType="http://schema.org/ImageObject"
-                data-index={i}
               >
                 <a href={item.src} onClick={e => openGallery(e, i)} itemProp="contentUrl">
-                  {JSON.stringify(useThumb)}
                   {useThumb ? (
                     <img src={item.node.resize.src} className="img-fluid" alt={item.title} />
                   ) : (
