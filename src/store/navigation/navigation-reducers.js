@@ -1,5 +1,10 @@
 import {
-  TOGGLE_MENU, TOGGLE_TERMINAL, UPDATE_LOCATION, RESET,
+  TOGGLE_MENU,
+  TOGGLE_TERMINAL,
+  UPDATE_LOCATION,
+  RESET,
+  SET_PAGE_TREE,
+  SET_PAGE_LIST,
 } from './navigation-actions';
 
 import initialState from './navigation-initial-state';
@@ -24,6 +29,18 @@ export default function atomicReducer(state = initialState, action) {
       return {
         ...state,
         location: action.payload,
+      };
+
+    case SET_PAGE_TREE:
+      return {
+        ...state,
+        pageTree: action.payload,
+      };
+
+    case SET_PAGE_LIST:
+      return {
+        ...state,
+        pageList: action.payload,
       };
 
     case RESET:

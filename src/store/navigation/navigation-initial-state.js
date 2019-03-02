@@ -1,7 +1,9 @@
 const initialState = {
   menuOpen: false,
-  terminalOpen: false,
+  terminalOpen: true,
   location: {},
+  pageTree: [],
+  pageList: [],
 };
 
 export default initialState;
