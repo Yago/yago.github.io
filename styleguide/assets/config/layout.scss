@@ -6,7 +6,7 @@
 
 .main-container {
   width: 100%;
-  padding: $gutter / 4;
+  padding: $gutter / 2;
   transition: transform 0.5s;
 
   @include media-breakpoint-down(md) {

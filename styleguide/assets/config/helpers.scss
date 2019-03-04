@@ -3,8 +3,10 @@
 .bg-dark {
   background: #1d1f21 !important;
   color: $gray-100;
-  margin-left: $gutter / -4;
-  margin-right: $gutter / -4;
+  margin-left: $gutter / -2;
+  margin-right: $gutter / -2;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
 
   @include media-breakpoint-down(md) {
     margin-left: 0;
