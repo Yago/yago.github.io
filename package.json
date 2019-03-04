@@ -49,6 +49,7 @@
     "react-calendar-heatmap": "^1.8.0",
     "react-dom": "^16.8.3",
     "react-helmet": "^5.2.0",
+    "react-hot-keys": "^1.2.2",
     "react-photo-gallery": "^6.3.2",
     "react-redux": "^6.0.1",
     "react-terminal-component": "^1.4.0",

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { navigate } from 'gatsby';
+import Hotkeys from 'react-hot-keys';
 import ReactTerminal from 'react-terminal-component';
 import {
   EmulatorState,
@@ -11,9 +13,10 @@ import {
   defaultCommandMapping,
   EnvironmentVariables,
 } from 'javascript-terminal';
-import { navigate } from 'gatsby';
 
-const Terminal = ({ status, navigation }) => {
+import { actions as navigationActions } from '../store/navigation';
+
+const Terminal = ({ status, navigation, toggleTerminal }) => {
   // react-terminal-component theme options
   const theme = {
     background: 'transparent',
@@ -145,7 +148,14 @@ So those are some of the available commands :
 
   return (
     <div className={`terminal-wrapper transition-opacity-${status}`}>
-      <ReactTerminal theme={theme} promptSymbol="▲&nbsp;" emulatorState={customState} />
+      <Hotkeys keyName="escape" onKeyDown={() => toggleTerminal(false)}>
+        <ReactTerminal
+          theme={theme}
+          promptSymbol="▲&nbsp;"
+          emulatorState={customState}
+          clickToFocus
+        />
+      </Hotkeys>
     </div>
   );
 };
@@ -153,11 +163,18 @@ So those are some of the available commands :
 Terminal.propTypes = {
   status: PropTypes.string.isRequired,
   navigation: PropTypes.object.isRequired,
+  toggleTerminal: PropTypes.func.isRequired,
 };
 
 const mapState = ({ navigation }) => ({ navigation });
 const mapDispatch = (dispatch) => {
-  return bindActionCreators({}, dispatch);
+  const { toggleTerminal } = navigationActions;
+  return bindActionCreators(
+    {
+      toggleTerminal,
+    },
+    dispatch,
+  );
 };
 
 export default connect(

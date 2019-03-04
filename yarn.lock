@@ -5020,6 +5020,10 @@ hosted-git-info@^2.1.4, hosted-git-info@^2.6.0:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
 
+hotkeys-js@^3.3.8:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/hotkeys-js/-/hotkeys-js-3.4.4.tgz#ecf24deb4b4df59123668a762a2fc970ca68abd8"
+
 hpack.js@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/hpack.js/-/hpack.js-2.1.6.tgz#87774c0949e513f42e84575b3c45681fade2a0b2"
@@ -8188,6 +8192,12 @@ react-helmet@^5.2.0:
     object-assign "^4.1.1"
     prop-types "^15.5.4"
     react-side-effect "^1.1.0"
+
+react-hot-keys@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-hot-keys/-/react-hot-keys-1.2.2.tgz#079dcecb15db7fa669300eeb844cfda8f920d4a4"
+  dependencies:
+    hotkeys-js "^3.3.8"
 
 react-hot-loader@^4.6.2:
   version "4.6.5"
