@@ -4,16 +4,23 @@ import { Link } from 'gatsby';
 import moment from 'moment';
 
 const PostTeaser = ({ post }) => (
-  <Link to={post.frontmatter.path} className="post-teaser my-2">
-    <h3>
-      <span className="link-grad-inner">{post.frontmatter.title}</span>
-      <small className="text-sans text-muted">
-        <span> — </span>
-        {moment(post.frontmatter.date).format('LL')}
-      </small>
-    </h3>
-    <p className="text-muted">{post.excerpt}</p>
-  </Link>
+  <>
+    <Link to={post.frontmatter.path} className="post-teaser my-2">
+      <h3>
+        <span className="link-grad-inner">{post.frontmatter.title}</span>
+        <small className="text-sans text-muted">
+          <span> — </span>
+          {moment(post.frontmatter.date).format('LL')}
+        </small>
+      </h3>
+      <p className="text-muted">{post.excerpt}</p>
+    </Link>
+    <div className="row">
+      <div className="col-6">
+        <hr />
+      </div>
+    </div>
+  </>
 );
 
 PostTeaser.propTypes = { post: PropTypes.object.isRequired };

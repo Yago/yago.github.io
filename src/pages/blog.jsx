@@ -18,15 +18,14 @@ const BlogPage = ({ data, location }) => {
 
       <div className="container-fluid">
         <div className="ml-md-4">
-          <h1>Blog</h1>
+          <div className="row">
+            <div className="col-md-8 offset-md-2">
+              <h1 className="mb-2">Blog</h1>
 
-          <div className="row mt-2">
-            {posts.map((post, i) => (
-              <div className="col-md-8" key={i}>
-                <PostTeaser post={post} />
-                <hr />
-              </div>
-            ))}
+              {posts.map((post, i) => (
+                <PostTeaser post={post} key={i} />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -52,7 +51,7 @@ export const query = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt(pruneLength: 300)
+          excerpt(pruneLength: 200)
           frontmatter {
             path
             title
