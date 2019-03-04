@@ -7,7 +7,7 @@ import 'prismjs/themes/prism.css';
 
 import Layout from '../components/Layout';
 import Icon from '../components/Icon';
-import Seo from '../components/Seo';
+import SEO from '../components/Seo';
 import Gallery from '../components/content/Gallery';
 import PhotoswipeWrapper from '../components/content/PhotoswipeWrapper';
 import Image from '../components/content/Image';
@@ -22,7 +22,7 @@ const renderAst = new RehypeReact({
 
 const ProjectTemplate = ({ data: { markdownRemark }, location }) => (
   <Layout location={location}>
-    <Seo />
+    <SEO title={markdownRemark.frontmatter.title} description={markdownRemark.excerpt} />
 
     <div className="container-fluid">
       <div className="row mt-2">
@@ -114,6 +114,7 @@ export const query = graphql`
   query ProjectByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       htmlAst
+      excerpt(pruneLength: 300)
       frontmatter {
         path
         title

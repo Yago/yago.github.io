@@ -56,7 +56,7 @@ const PicturesPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO />
+      <SEO title="Pictures" />
 
       <div className="container-fluid">
         <div className="ml-md-4">

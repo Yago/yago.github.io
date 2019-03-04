@@ -15,7 +15,7 @@ const BlogPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO />
+      <SEO title="Blog" />
 
       <div className="container-fluid">
         <div className="ml-md-4">

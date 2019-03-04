@@ -33,7 +33,7 @@ const IndexPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO />
+      <SEO title="Welcome" />
 
       <div className="container-fluid">
         <div className="row mt-6 mb-6">

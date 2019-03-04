@@ -10,7 +10,7 @@ import 'prism-themes/themes/prism-a11y-dark.css';
 
 import Layout from '../components/Layout';
 import Icon from '../components/Icon';
-import Seo from '../components/Seo';
+import SEO from '../components/Seo';
 import Gallery from '../components/content/Gallery';
 import PhotoswipeWrapper from '../components/content/PhotoswipeWrapper';
 import Image from '../components/content/Image';
@@ -27,7 +27,7 @@ const renderAst = new RehypeReact({
 const PostTemplate = ({ data: { markdownRemark }, location }) => (
   <Layout location={location}>
     <>
-      <Seo title={markdownRemark.frontmatter.title} />
+      <SEO title={markdownRemark.frontmatter.title} description={markdownRemark.excerpt} />
       <div className="container">
         <article>
           <h1 className="mt-2">{markdownRemark.frontmatter.title}</h1>
@@ -60,6 +60,7 @@ export const query = graphql`
   query PostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       htmlAst
+      excerpt(pruneLength: 300)
       frontmatter {
         date
         path

@@ -14,7 +14,7 @@ const ProjectsPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO />
+      <SEO title="Projects" />
 
       <div className="container-fluid">
         <div className="ml-md-4">
