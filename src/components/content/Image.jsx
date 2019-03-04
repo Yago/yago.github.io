@@ -5,10 +5,10 @@ import Img from 'gatsby-image';
 
 const query = graphql`
   query Images {
-    allImageSharp {
+    allImageSharp(filter: { original: { src: { regex: "/^((?!portfolio).)*$/" } } }) {
       edges {
         node {
-          fluid(maxWidth: 2800) {
+          fluid(maxWidth: 1680) {
             base64
             aspectRatio
             src
@@ -27,6 +27,7 @@ const Image = ({ src }) => (
     render={(data) => {
       const images = data.allImageSharp.edges;
       const image = images.find(edge => edge.node.fluid.src.includes(src));
+      if (image === undefined) return '';
       return <Img fluid={image.node.fluid} />;
     }}
   />

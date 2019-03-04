@@ -4,7 +4,7 @@ date: 2017-07-13T17:12:33.962Z
 title: Amazin first project
 subtitle: Site promotion immobilière
 type: project
-cover: yago.io/greece.jpg
+cover: "test2.jpg"
 agency:
   name: Antistatique
   url: https://antistatique.net

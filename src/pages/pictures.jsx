@@ -105,7 +105,7 @@ export default PicturesPage;
 
 export const query = graphql`
   query AllPictures {
-    allImageSharp {
+    allImageSharp(filter: { original: { src: { regex: "/portfolio/" } } }) {
       edges {
         node {
           fluid(maxWidth: 800) {

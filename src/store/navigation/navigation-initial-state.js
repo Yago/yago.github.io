@@ -1,6 +1,6 @@
 const initialState = {
   menuOpen: false,
-  terminalOpen: true,
+  terminalOpen: false,
   location: {},
   pageTree: [],
   pageList: [],

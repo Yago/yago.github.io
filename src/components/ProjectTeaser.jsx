@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Tilt from 'react-tilt';
 
-import Picture from './content/Picture';
+import Image from './content/Image';
 
 const ProjectTeaser = ({ project }) => (
   <Tilt
@@ -13,7 +13,7 @@ const ProjectTeaser = ({ project }) => (
   >
     <Link to={project.frontmatter.path} className="project-teaser card">
       <div className="card-img-wrapper img-fluid">
-        <Picture id={project.frontmatter.cover} ratio="1.6" />
+        <Image src={project.frontmatter.cover} />
       </div>
       <div className="card-body text-sans">
         <h3 className="h6">{project.frontmatter.title}</h3>

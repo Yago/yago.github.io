@@ -7,10 +7,10 @@ import Img from 'gatsby-image';
 
 const query = graphql`
   query GalleryImages {
-    allImageSharp {
+    allImageSharp(filter: { original: { src: { regex: "/^((?!portfolio).)*$/" } } }) {
       edges {
         node {
-          fluid(maxWidth: 2800) {
+          fluid(maxWidth: 1680) {
             base64
             aspectRatio
             src
