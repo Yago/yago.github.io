@@ -49,7 +49,7 @@ export default BlogPage;
 
 export const query = graphql`
   query AllPosts {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt(pruneLength: 300)
