@@ -20,7 +20,7 @@ const Terminal = ({ status, navigation, toggleTerminal }) => {
   // react-terminal-component theme options
   const theme = {
     background: 'transparent',
-    promptSymbolColor: '#22E922',
+    promptSymbolColor: '#F8E71C',
     commandColor: '#fcfcfc',
     outputColor: '#fcfcfc',
     errorOutputColor: '#FF1479',

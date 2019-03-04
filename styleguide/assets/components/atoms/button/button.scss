@@ -1,9 +1,50 @@
 @charset 'utf-8';
 
+@mixin gradition-border($from, $to1, $to2) {
+  border: 1px solid $from;
+  border-image-slice: 1;
+  transition: all 0.3;
+  box-sizing: border-box;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border: 1px solid $to1;
+    transition: opacity 0.3s;
+    border-image: linear-gradient(to right, $to1 0%, $to2 98%);
+    border-image-slice: 1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+}
+
 .btn {
   font-family: $font-family-sans-serif;
   text-transform: uppercase;
 }
 
-.btn-outline-primary { color: $body-color; }
-.btn-outline-dark { border-color: $gray-300; }
+.btn-outline-primary {
+  color: $body-color;
+}
+
+.btn-outline-dark {
+  border-color: $gray-300;
+}
+
+.btn-outline {
+  display: inline-block;
+  position: relative;
+
+  @include gradition-border($gray-300, $blue, $teal);
+
+  &:hover {
+    color: $blue;
+  }
+}
