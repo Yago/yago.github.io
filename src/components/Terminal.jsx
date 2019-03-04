@@ -25,7 +25,7 @@ const Terminal = ({ status, navigation, toggleTerminal }) => {
     outputColor: '#fcfcfc',
     errorOutputColor: '#FF1479',
     fontSize: '0.7rem',
-    spacing: '7%',
+    spacing: '10%',
     fontFamily: 'Arial',
     width: '100%',
     height: '100vh',

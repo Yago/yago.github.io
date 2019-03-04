@@ -9,7 +9,7 @@ import Terminal from './Terminal';
 
 const SideNavigation = ({ status }) => (
   <div className={`side-navigation transition-opacity-${status} py-2`}>
-    <nav className="nav flex-column text-sans">
+    <nav className="nav flex-column text-sans pt-1">
       <Link className="nav-link active" to="/">
         Homepage
       </Link>

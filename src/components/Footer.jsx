@@ -14,7 +14,7 @@ const Footer = () => (
         <a
           key={social.icon}
           href={social.url}
-          className="link-primary text-sans text-sm mx-1"
+          className="link-grad text-sans text-sm mx-1"
           target="_blank"
         >
           <Icon icon={social.icon} />

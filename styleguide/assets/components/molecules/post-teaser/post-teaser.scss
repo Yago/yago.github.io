@@ -4,5 +4,16 @@
   display: block;
   color: $body-color;
 
-  &:hover { text-decoration: none; }
+  .text-muted {
+    transition: color 0.2s ease-in-out;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: $body-color;
+
+    .text-muted {
+      color: $black !important;
+    }
+  }
 }

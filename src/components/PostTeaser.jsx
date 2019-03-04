@@ -6,7 +6,7 @@ import moment from 'moment';
 const PostTeaser = ({ post }) => (
   <Link to={post.frontmatter.path} className="post-teaser my-2">
     <h3>
-      <span>{post.frontmatter.title}</span>
+      <span className="link-grad-inner">{post.frontmatter.title}</span>
       <small className="text-sans text-muted">
         <span> — </span>
         {moment(post.frontmatter.date).format('LL')}

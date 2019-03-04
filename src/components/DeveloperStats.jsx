@@ -12,10 +12,10 @@ import Pie from './Pie';
 const facts = () => `
 <pre class="dev-facts">
 <i>{</i>
-<i>  "name": "<i class="text-primary">yago</i>",</i>
-<i>  "profile": "<a class="link-primary" href="https://github.com/yago/" target="_blank"><i class="text-primary">github.com/yago</i></a>",</i>
-<i>  "editor": "<i class="text-primary">VSCode</i>",</i>
-<i>  "platform": "<i class="text-primary">macOS</i>"</i>
+<i>  "name": "<i class="text-success">yago</i>",</i>
+<i>  "profile": "<a class="link-grad" href="https://github.com/yago/" target="_blank"><i class="text-info">github.com/yago</i></a>",</i>
+<i>  "editor": "<i class="text-success">VSCode</i>",</i>
+<i>  "platform": "<i class="text-success">macOS</i>"</i>
 <i>}</i>
 </pre>
 `;

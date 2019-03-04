@@ -3,5 +3,11 @@
 .footer {
   text-align: center;
 
-  a { white-space: nowrap; }
+  a {
+    white-space: nowrap;
+  }
+
+  a .icon {
+    color: $black;
+  }
 }

@@ -20,8 +20,9 @@
   }
 
   .terminalContainer {
-    overflow-y: auto !important;
+    padding: $gutter / 1.2 7% !important;
     line-height: 1.4rem;
+    overflow-y: auto !important;
     font-family: $font-family-monospace;
 
     input {
@@ -44,7 +45,7 @@
     color: $gray-200;
 
     &:hover {
-      color: theme-color('success');
+      color: $teal;
     }
   }
 }

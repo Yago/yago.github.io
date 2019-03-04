@@ -26,20 +26,6 @@
   }
 }
 
-$contributions: (
-  '0': darken($green, 0%),
-  '1': darken($green, 20%),
-  '2': darken($green, 40%),
-  '3': darken($green, 60%),
-  '4': darken($green, 80%),
-);
-
-@each $level, $color in $contributions {
-  .contrib-#{$level} {
-    fill: $color !important;
-  }
-}
-
 .highcharts-credits {
   display: none;
 }

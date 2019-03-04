@@ -9,8 +9,17 @@
   transform-origin: center left;
   transition: opacity 0.4s;
 
-  .icon { font-size: 0.9em; }
-  &:hover { opacity: 1; }
+  @include media-breakpoint-down(md) {
+    transform: none;
+  }
+
+  .icon {
+    font-size: 0.9em;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
 
   .active {
     max-width: 12rem;
@@ -19,7 +28,11 @@
     text-overflow: ellipsis;
   }
 
-  @include media-breakpoint-down(md) {
-    transform: none;
+  a {
+    color: $body-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
