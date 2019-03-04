@@ -13,7 +13,7 @@ const Breadcrumb = ({ location }) => {
           if (i === steps.length - 1) {
             return (
               <li key={i} className="breadcrumb-item active" aria-current="page">
-                {step}
+                {step.replace(/-/g, ' ')}
               </li>
             );
           }

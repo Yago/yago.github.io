@@ -1,9 +1,10 @@
 @charset 'utf-8';
 
-article p code.language-text {
+article code.language-text {
   padding: 0 0.2em;
   background: lighten($teal, 35%);
   font-size: 0.8em;
+  font-weight: normal !important;
   color: inherit !important;
   border-radius: 2px;
   text-shadow: none;
