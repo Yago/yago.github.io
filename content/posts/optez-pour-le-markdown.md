@@ -1,0 +1,41 @@
+---
+path: /blog/optez-pour-le-markdown
+title: Optez pour le Markdown !
+date: 2014-06-06 07:36:33
+type: post
+description: "Plus léger que l'HTML, le Markdown est un langage qui a gagné en popularité ses dernières années. Très apprécié par la plupart des rédacteurs digitaux, il offre la possibilité de formater aisément un texte grâce à une syntaxe discrète et  facile à prendre en main."
+---
+
+Plus léger que l'HTML, le Markdown est un langage qui a gagné en popularité ses dernières années. Très apprécié par la plupart des rédacteurs digitaux, il offre la possibilité de formater aisément un texte grâce à une syntaxe discrète et  facile à prendre en main.
+
+## Sa création
+Créé par [John Gruber](http://fr.wikipedia.org/wiki/John_Gruber) et [Aaron Swartz](http://fr.wikipedia.org/wiki/Aaron_Swartz) en 2004, le Markdown a pour but d'offrir une syntaxe facile à lire et à écrire. Souvent converti dans sa finalité, il est ainsi lisible sous forme de page web (HTML) ou de "plain text". En opposition avec la rédaction WYSIWYG (What you see is what you get) qui utilise un formatage plus ou moins automatique, l'utilisateur doit formater le Markdown manuellement par l'ajout de signes dans son texte.
+
+## Une popularité croissante
+Il n'est, bien entendu, pas le premier de son genre, mais sa popularité fait de lui le poids lourd de la catégorie des langages de balisage léger. Avec la multiplication de très bons éditeurs Markdown comme [Writer](http://writer.pro/), [Byword](http://bywordapp.com/), [Write](http://writeapp.net/mac/) et [Mou](http://mouapp.com/), le langage est devenu l'apanage des rédacteurs digitaux modernes. Et puis, grâce à [Github](http://github.com) et son "GitHub Flavored Markdown", le Mardown est conventionnellement utilisé pour **rédiger** la documentation technique d'une librairie. Il est également utilisé comme langage de rédaction par défaut de certains CMS comme [Ghost](https://ghost.org/) ou [Anchor](http://anchorcms.com/). À l'heure actuelle, chaque langage de programmation dispose de son parseur et convertisseur Markdown pour HTML.
+
+## Quelques exemples
+Alors vous me direz peut-être que c'est trop technique pour vous, pauvre profane des technologies web, mais vous vous trompez ! Ce langage est justement destiné à tout un chacun souhaitant formater manuellement et proprement son texte. Venons-en rapidement aux exemples concrets, si je souhaite ajouter un passage en gras dans un paragraphe, il me suffit d'ajouter deux astérisques de chaque côté de mon segment.
+
+**Exemple** :
+
+```markdown
+La théorie, c'est quand on sait tout et que rien ne fonctionne. **La pratique, c'est quand tout fonctionne et que personne ne sait pourquoi**. Si la pratique et la théorie sont réunies, rien ne fonctionne et on ne sait pas pourquoi.
+```
+
+Maintenant si vous souhaitez obtenir différents niveaux de titres, rien de plus simple, il vous suffit d'ajouter devant chaque titre le nombre de dièses correspondant à son niveau (jusqu'à six).
+
+**Exemple** :
+
+```markdown
+# Titre de niveau 1
+## Titre de niveau 2
+### Titre de niveau 3
+```
+
+Vous pourrez trouver la liste complète des toutes les possibilités dans [le guide de Github](https://guides.github.com/features/mastering-markdown/).
+
+## Go départ !
+J'espère avoir largement convaincu ceux qui ne l'utilisait pas encore, car personnellement je trouve que ce langage, à la portée de tous, mérite clairement qu'on s'y intéresse. En effet, après quelques minutes de prise en main, vous pourrez facilement mettre en page tout type de contenu sans ne plus jamais avoir à faire avec l'interface chaotique de Microsoft Word.
+
+[Retrouver cet article sur le blog d'Antistatique !](http://antistatique.net/blog/2014/06/06/optez-pour-le-markdown/)

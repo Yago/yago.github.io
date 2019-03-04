@@ -10,8 +10,7 @@ import SEO from '../components/Seo';
 const BlogPage = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
     .filter(item => item.node.frontmatter.type === 'post')
-    .map(item => item.node)
-    .slice(0, 5);
+    .map(item => item.node);
 
   return (
     <Layout location={location}>
@@ -23,8 +22,9 @@ const BlogPage = ({ data, location }) => {
 
           <div className="row mt-2">
             {posts.map((post, i) => (
-              <div className="col-md-6" key={i}>
+              <div className="col-md-8" key={i}>
                 <PostTeaser post={post} />
+                <hr />
               </div>
             ))}
           </div>

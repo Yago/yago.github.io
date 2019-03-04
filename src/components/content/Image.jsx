@@ -21,7 +21,7 @@ const query = graphql`
   }
 `;
 
-const Image = ({ src }) => (
+const Image = ({ src, alt }) => (
   <StaticQuery
     query={query}
     render={(data) => {
@@ -35,10 +35,12 @@ const Image = ({ src }) => (
 
 Image.propTypes = {
   src: PropTypes.string,
+  alt: PropTypes.string,
 };
 
 Image.defaultProps = {
   src: 'test.jpg',
+  alt: '',
 };
 
 export default Image;

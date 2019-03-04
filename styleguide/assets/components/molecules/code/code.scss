@@ -1,5 +1,14 @@
 @charset 'utf-8';
 
+article p code.language-text {
+  padding: 0 0.2em;
+  background: lighten($teal, 35%);
+  font-size: 0.8em;
+  color: inherit !important;
+  border-radius: 2px;
+  text-shadow: none;
+}
+
 pre[class*='language'] {
   display: inline-block;
   width: calc(100% + #{$grid-gutter-width * 2});

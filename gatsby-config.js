@@ -69,6 +69,12 @@ module.exports = {
         excerpt_separator: '<!-- end -->',
         plugins: [
           {
+            resolve: 'gatsby-remark-emoji',
+            options: {
+              emojiConversion: 'shortnameToUnicode',
+            },
+          },
+          {
             resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',

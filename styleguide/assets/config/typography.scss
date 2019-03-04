@@ -70,13 +70,6 @@ h6 {
   }
 }
 
-article p code {
-  padding: 0 0.2em;
-  background: lighten(theme-color('success'), 42%);
-  border-radius: 2px;
-  font-size: 0.8em;
-}
-
 article > * {
   margin-bottom: 1.6rem !important;
 }

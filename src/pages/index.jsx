@@ -20,12 +20,12 @@ const IndexPage = ({ data, location }) => {
   const projects = data.allMarkdownRemark.edges
     .filter(item => item.node.frontmatter.type === 'project')
     .map(item => item.node)
-    .slice(0, 5);
+    .slice(0, 6);
 
   const posts = data.allMarkdownRemark.edges
     .filter(item => item.node.frontmatter.type === 'post')
     .map(item => item.node)
-    .slice(0, 5);
+    .slice(0, 4);
 
   const picture = pictures.sort((a, b) => b.id - a.id)[0];
   const staticPic = data.allImageSharp.edges.find(i => i.node.original.src.includes(picture.id));
