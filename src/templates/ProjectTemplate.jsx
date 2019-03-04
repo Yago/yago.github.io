@@ -40,7 +40,7 @@ const ProjectTemplate = ({ data: { markdownRemark }, location }) => (
                   <td>
                     <a
                       href={markdownRemark.frontmatter.agency.url}
-                      className="link-primary"
+                      className="link-grad"
                       target="_blank"
                     >
                       {markdownRemark.frontmatter.agency.name}
@@ -76,7 +76,7 @@ const ProjectTemplate = ({ data: { markdownRemark }, location }) => (
           <p className="mt-auto mb-0">{renderAst(markdownRemark.htmlAst)}</p>
         </div>
 
-        <div className="col-sm-4 offset-sm-1">
+        <div className="col-sm-4 offset-sm-1 order-first order-md-2 mb-2 mb-md-0">
           <Image src={markdownRemark.frontmatter.cover} />
         </div>
       </div>

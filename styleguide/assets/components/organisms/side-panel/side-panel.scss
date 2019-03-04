@@ -13,6 +13,10 @@
   @include media-breakpoint-down(md) {
     top: 65px;
     width: 100%;
+
+    .terminal-wrapper .terminalContainer {
+      padding: $gutter / 2 4% !important;
+    }
   }
 
   .open & {

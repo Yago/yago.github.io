@@ -9,6 +9,9 @@ import DeveloperStats from '../components/DeveloperStats';
 import Icon from '../components/Icon';
 import SEO from '../components/Seo';
 
+import { formatTitle } from '../helpers/pictures';
+import pictures from '../config/pictures.json';
+
 const intro = `
 Ahoy there ! I'm Yann, Frontend and JavaScript <span class="text-mono">developer</span> by day and <em>photographer</em> when the night comes (or my days off).
 `;
@@ -23,6 +26,10 @@ const IndexPage = ({ data, location }) => {
     .filter(item => item.node.frontmatter.type === 'post')
     .map(item => item.node)
     .slice(0, 5);
+
+  const picture = pictures.sort((a, b) => b.id - a.id)[0];
+  const staticPic = data.allImageSharp.edges.find(i => i.node.original.src.includes(picture.id));
+  picture.src = staticPic.node.original.src;
 
   return (
     <Layout location={location}>
@@ -75,6 +82,22 @@ const IndexPage = ({ data, location }) => {
           ))}
         </div>
 
+        <div className="d-flex align-items-center justify-content-between mt-4">
+          <h2>Last photograph</h2>
+          <Link to="/pictures" className="btn btn-outline-dark">
+            See all
+          </Link>
+        </div>
+
+        <div className="row mt-4">
+          <div className="col-md-8 mb-2 mb-md-0">
+            <img src={picture.src} alt={formatTitle(picture)} className="img-fluid" />
+          </div>
+          <div className="col-md-4 d-flex align-items-center">
+            <div className="text-sans" dangerouslySetInnerHTML={{ __html: formatTitle(picture) }} />
+          </div>
+        </div>
+
         <div className="mt-4 mb-2">
           <div className="separator">
             <Icon icon="drakar" />
@@ -105,6 +128,15 @@ export const query = graphql`
             type
             cover
             date
+          }
+        }
+      }
+    }
+    allImageSharp {
+      edges {
+        node {
+          original {
+            src
           }
         }
       }

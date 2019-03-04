@@ -1,6 +1,6 @@
 ---
 path: /blog/post1
-date: 2017-07-13T17:12:33.962Z
+date: 2017-07-10T17:12:33.962Z
 title: un truc
 type: post
 cover: yago.io/greece.jpg

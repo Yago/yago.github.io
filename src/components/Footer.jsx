@@ -9,7 +9,7 @@ const Footer = () => (
   <footer className="footer pt-2 mb-2">
     <p className="lead">Let's keep in touch !</p>
 
-    <p>
+    <p className="socials">
       {socials.map(social => (
         <a
           key={social.icon}

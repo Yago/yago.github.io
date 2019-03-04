@@ -3,8 +3,16 @@
 .footer {
   text-align: center;
 
+  .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
   a {
     white-space: nowrap;
+    margin: 0.5rem 0;
   }
 
   a .icon {

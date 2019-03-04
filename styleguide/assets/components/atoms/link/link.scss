@@ -11,10 +11,14 @@ a {
   color: darken($blue, 12%);
   transition: background 0.25s ease-in-out;
   text-decoration: none !important;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
   background-size: 0 1px;
   background-repeat: no-repeat;
   background-position: left 90%;
+
+  // @include media-breakpoint-down(md) {
+  //   background-size: 100% 1px;
+  // }
 
   &:hover,
   a:hover & {

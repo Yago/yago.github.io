@@ -22,7 +22,7 @@ const ProjectsPage = ({ data, location }) => {
 
           <div className="row mt-3">
             {projects.map((project, i) => (
-              <div className="col-md-4 mb-2" key={i}>
+              <div className="col-6 col-md-4 mb-2" key={i}>
                 <ProjectTeaser project={project} />
               </div>
             ))}

@@ -9,8 +9,8 @@ $brand-width: 50px;
 
   @include media-breakpoint-down(md) {
     img {
-      max-width: $brand-width * 0.6;
-      max-height: $brand-width * 0.6;
+      max-width: $brand-width * 0.6 !important;
+      max-height: $brand-width * 0.6 !important;
     }
   }
 
