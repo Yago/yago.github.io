@@ -23,7 +23,14 @@ const BlogPage = ({ data, location }) => {
               <h1 className="mb-2">Blog</h1>
 
               {posts.map((post, i) => (
-                <PostTeaser post={post} key={i} />
+                <div>
+                  <PostTeaser post={post} key={i} />
+                  <div className="row">
+                    <div className="col-6">
+                      <hr />
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>

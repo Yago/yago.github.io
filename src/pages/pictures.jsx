@@ -63,13 +63,15 @@ const PicturesPage = ({ data, location }) => {
           <h1>Pictures</h1>
 
           <div className="mt-2">
-            <PhotoGallery
-              photos={photoGalleryContainer}
-              onClick={openGallery}
-              margin={4}
-              columns={4}
-              direction="row"
-            />
+            <div style={{ margin: '0 -45px' }}>
+              <PhotoGallery
+                photos={photoGalleryContainer}
+                onClick={openGallery}
+                margin={50}
+                columns={3}
+                direction="row"
+              />
+            </div>
           </div>
           <PhotoswipeWrapper />
         </div>

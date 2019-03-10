@@ -18,7 +18,6 @@ const Breadcrumb = ({ location }) => {
             );
           }
           const url = steps.slice(0, i + 1).join('/');
-          console.log(steps.slice(0, i + 1).join('/'));
           return (
             <li key={i} className="breadcrumb-item">
               <Link to={`${url}`}>{step === '' ? <Icon icon="tipi" /> : step}</Link>
