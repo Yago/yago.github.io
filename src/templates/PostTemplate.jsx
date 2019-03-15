@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import 'prismjs/themes/prism.css';
-// import 'prism-themes/themes/prism-atom-dark.css';
-import 'prism-themes/themes/prism-a11y-dark.css';
 
 import Layout from '../components/Layout';
 import Icon from '../components/Icon';

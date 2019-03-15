@@ -269,7 +269,7 @@ $embed-responsive-aspect-ratios: join(
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:      "Runda", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-serif:           "Cala", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif !default;
-$font-family-monospace:       Monaco, 'Lucida Console', monospace !default;
+$font-family-monospace:       'Fira code', Monaco, 'Lucida Console', monospace !default;
 $font-family-base:            $font-family-serif !default;
 // stylelint-enable value-keyword-case
 
