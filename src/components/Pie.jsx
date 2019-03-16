@@ -34,6 +34,18 @@ const Pie = () => {
 
   const options = {
     // eslint-disable-line no-unused-vars
+    colors: [
+      '#F8E71C',
+      '#EADA1A',
+      '#DBCC19',
+      '#CDBE17',
+      '#BEB115',
+      '#AFA314',
+      '#A19612',
+      '#928811',
+      '#847B0F',
+      '#756D0D',
+    ],
     chart: {
       type: 'pie',
       backgroundColor: null,
