@@ -1,13 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-import highchartsTheme from '../config/highcharts-themes.json';
 import stats from '../config/stats.json';
 
 const Pie = () => {
-  Highcharts.setOptions(highchartsTheme);
+  // Highcharts.setOptions(highchartsTheme);
 
   /* eslint-disable */
   const shade = (color, percent) => {
@@ -38,13 +36,54 @@ const Pie = () => {
     // eslint-disable-line no-unused-vars
     chart: {
       type: 'pie',
+      backgroundColor: null,
+      style: {
+        fontFamily:
+          "'Runda', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';",
+      },
     },
     title: '',
     tooltip: {
       headerFormat: '',
       pointFormat: '<b>Usage : </b>{point.percentage:.1f}%',
+      borderWidth: 0,
+      backgroundColor: 'rgba(0,0,0,1)',
+      shadow: false,
+      style: {
+        color: 'rgba(255,255,255,1)',
+      },
+    },
+    legend: {
+      itemStyle: {
+        fontWeight: 'bold',
+        fontSize: '13px',
+      },
+    },
+    xAxis: {
+      gridLineWidth: 1,
+      labels: {
+        style: {
+          fontSize: '12px',
+        },
+      },
+    },
+    yAxis: {
+      minorTickInterval: 'auto',
+      title: {
+        style: {
+          textTransform: 'uppercase',
+        },
+      },
+      labels: {
+        style: {
+          fontSize: '12px',
+        },
+      },
     },
     plotOptions: {
+      candlestick: {
+        lineColor: '#404048',
+      },
       series: {
         states: {
           hover: {

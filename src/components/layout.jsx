@@ -72,7 +72,7 @@ const Layout = ({
               <div className="main-container">
                 <div className="container-fluid">
                   <Header />
-                  {location.pathname !== '/' && <Breadcrumb location={location} />}
+                  {location && location.pathname !== '/' && <Breadcrumb location={location} />}
                 </div>
                 <div className={`transition-opacity-${enter ? 'entered' : 'exiting'}`}>
                   {children}
@@ -105,9 +105,15 @@ const mapDispatch = (dispatch) => {
   const {
     updateLocation, toggleMenu, setPageTree, setPageList,
   } = navigationActions;
-  return bindActionCreators({
-    updateLocation, toggleMenu, setPageTree, setPageList,
-  }, dispatch);
+  return bindActionCreators(
+    {
+      updateLocation,
+      toggleMenu,
+      setPageTree,
+      setPageList,
+    },
+    dispatch,
+  );
 };
 
 export default connect(
