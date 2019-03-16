@@ -8,6 +8,7 @@
   left: 100%;
   width: 50%;
   margin: 0 !important;
+  padding: 0 !important;
   transition: transform 0.5s;
 
   @include media-breakpoint-down(md) {
@@ -24,7 +25,7 @@
   }
 
   .terminalContainer {
-    padding: $gutter / 1.2 7% !important;
+    padding: $gutter / 1.2 10% !important;
     line-height: 1.4rem;
     overflow-y: auto !important;
     font-family: $font-family-monospace;
