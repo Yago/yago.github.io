@@ -65,7 +65,7 @@ const PicturesPage = ({ data, location }) => {
           <h1>Pictures</h1>
 
           <div className="mt-2">
-            <div style={{ margin: currentWidth > 990 ? '0 -45px' : '0 -10px' }}>
+            <div style={{ margin: currentWidth > 990 ? '0 -45px' : '0 -5px' }}>
               <PhotoGallery
                 photos={photoGalleryContainer}
                 onClick={openGallery}
