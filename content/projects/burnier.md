@@ -1,6 +1,6 @@
 ---
 path: /projects/burnier
-date: 2017-01-01
+date: 2017-06-01
 title: Burnier
 subtitle: Real estate agency 
 type: project
