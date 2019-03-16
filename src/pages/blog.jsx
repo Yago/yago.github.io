@@ -20,7 +20,7 @@ const BlogPage = ({ data, location }) => {
         <div className="ml-md-4">
           <div className="row">
             <div className="col-md-8 offset-md-2">
-              <h1 className="mb-2">Blog</h1>
+              <h1 className="mb-4">Blog</h1>
 
               {posts.map((post, i) => (
                 <div>
