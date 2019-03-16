@@ -134,6 +134,7 @@ svg text {
 .text-mono {
   font-family: $font-family-monospace;
   font-size: 0.84em;
+  font-weight: 400;
 
   @include media-breakpoint-down(md) {
     font-size: 1em;

@@ -20,6 +20,7 @@ gallery:
   - src: "burnier04.jpg"
   - src: "burnier06.jpg"
   - src: "burnier07.jpg"
+    caption: "Properties retrieving method"
 ---
 
 Based on NodeJS, this website present all the services of Burnier, but also connect itself to an external source of properties and index it into its own Mongo database to improve render time and global performances.
