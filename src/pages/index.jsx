@@ -126,7 +126,7 @@ export const query = graphql`
             title
             subtitle
             type
-            cover
+            thumbnail
             date
           }
         }

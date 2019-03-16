@@ -73,7 +73,7 @@ const ProjectTemplate = ({ data: { markdownRemark }, location }) => (
             </tbody>
           </table>
 
-          <p className="mt-auto mb-0">{renderAst(markdownRemark.htmlAst)}</p>
+          <div className="mt-auto mb-0">{renderAst(markdownRemark.htmlAst)}</div>
         </div>
 
         <div className="col-sm-4 offset-sm-1 order-first order-md-2 mb-2 mb-md-0">

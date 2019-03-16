@@ -1,0 +1,23 @@
+---
+path: /projects/mudac
+date: 2016-01-01
+title: Mudac
+subtitle: Design museum
+type: project
+cover: "mudac-cover.jpg"
+thumbnail: "mudac01.jpg"
+year: "2016 - 2017"
+agency:
+  name: Antistatique
+  url: https://antistatique.net
+roles: 
+  - Frontend developer
+gallery:
+  - src: "mudac01.jpg"
+  - src: "mudac02.jpg"
+  - src: "mudac03.jpg"
+  - src: "mudac04.jpg"
+  - src: "mudac05.jpg"
+---
+
+The Design and applied art museum of Lausanne, the Mudac, mandated us to create its new website. Based on Wordpress, it was a challenging and fresh design to implement with the most advanced frontend technologies at the time.
