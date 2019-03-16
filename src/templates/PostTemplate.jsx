@@ -6,9 +6,9 @@ import moment from 'moment';
 
 import 'prismjs/themes/prism.css';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import Icon from '../components/Icon';
-import SEO from '../components/Seo';
+import SEO from '../components/seo';
 import Gallery from '../components/content/Gallery';
 import PhotoswipeWrapper from '../components/content/PhotoswipeWrapper';
 import Image from '../components/content/Image';

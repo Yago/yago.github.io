@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import Header from './Header';
+import Header from './header';
 import Footer from './Footer';
 import Breadcrumb from './Breadcrumb';
 import SidePanel from './SidePanel';

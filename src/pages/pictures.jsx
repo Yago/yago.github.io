@@ -5,9 +5,9 @@ import PhotoSwipe from 'photoswipe/dist/photoswipe';
 import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import Icon from '../components/Icon';
-import SEO from '../components/Seo';
+import SEO from '../components/seo';
 import PhotoswipeWrapper from '../components/content/PhotoswipeWrapper';
 
 import { formatTitle } from '../helpers/pictures';

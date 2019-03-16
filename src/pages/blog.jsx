@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import PostTeaser from '../components/PostTeaser';
 import Icon from '../components/Icon';
-import SEO from '../components/Seo';
+import SEO from '../components/seo';
 
 const BlogPage = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges

@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import ProjectTeaser from '../components/ProjectTeaser';
 import Icon from '../components/Icon';
-import SEO from '../components/Seo';
+import SEO from '../components/seo';
 
 const ProjectsPage = ({ data, location }) => {
   const projects = data.allMarkdownRemark.edges
