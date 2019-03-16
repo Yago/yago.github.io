@@ -64,6 +64,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-41124823-1',
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         excerpt_separator: '<!-- end -->',
