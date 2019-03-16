@@ -33,12 +33,15 @@
     .terminalInput {
       span { color: $green !important; }
 
-      input {
+      input,
+      input:focus {
         padding: 0 !important;
         background: transparent !important;
         border: none !important;
         font-family: $font-family-monospace !important;
         color: #fcfcfc !important;
+        box-shadow: none !important;
+        outline: none !important;
       }
     }
   }
