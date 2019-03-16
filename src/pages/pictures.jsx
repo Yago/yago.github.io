@@ -14,6 +14,8 @@ import { formatTitle } from '../helpers/pictures';
 import pictures from '../config/pictures.json';
 
 const PicturesPage = ({ data, location }) => {
+  const currentWidth = typeof window !== 'undefined' ? window.innerWidth : 1000;
+
   // Create container for photoswipe
   const photoswipeContainer = pictures
     .sort((a, b) => b.id - a.id)
@@ -63,11 +65,11 @@ const PicturesPage = ({ data, location }) => {
           <h1>Pictures</h1>
 
           <div className="mt-2">
-            <div style={{ margin: window.innerWidth > 990 ? '0 -45px' : '0 -10px' }}>
+            <div style={{ margin: currentWidth > 990 ? '0 -45px' : '0 -10px' }}>
               <PhotoGallery
                 photos={photoGalleryContainer}
                 onClick={openGallery}
-                margin={window.innerWidth > 990 ? 50 : 10}
+                margin={currentWidth > 990 ? 50 : 10}
                 columns={3}
                 direction="row"
               />
