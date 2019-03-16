@@ -224,4 +224,4 @@ Honestly, it’s still hard and time consuming for me to write them. Maybe it’
 
 ---
 
-*Supported with 💛 by [Antistatique](https://antistatique.net)*
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*

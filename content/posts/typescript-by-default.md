@@ -24,7 +24,7 @@ Now it's time to dig in the small configuration required by each kind of project
 ## Node/Express server
 First, you'll need some new dependencies to execute your TypeScript code:
 
-```sh
+```bash
 $ npm install --save typescript @types/node ts-node
 # or
 $ yarn add typescript @types/node ts-node
@@ -59,7 +59,7 @@ Finally, you need a new `tsconfig.json` file at your project's root (like in any
 
 **And that's it!** Now your app's code will like something like:
 
-```ts
+```typescript
 import * as express from 'express';
 import { homeCtrl, aboutCtrl } from './controllers';
 
@@ -78,7 +78,7 @@ app.listen(port, () => console.log(`Typescript app listening on port ${port}!`))
 ## React applications
 Good news if you're using **react-create-app**, it's already embedded in it! The only thing you must do is to use the following command:
 
-```sh
+```bash
 npx create-react-app my-app --typescript
 # or
 yarn create react-app my-app --typescript
@@ -89,7 +89,7 @@ Same difference for file extensions here,  `.jsx` will be transformed to `.tsx`.
 ## Next.js applications
 Because SSR is more than a trendy thing, you'll maybe also add TypeScript to your Next.js powered project. To do that, just use the official plugin with:
 
-```sh
+```bash
 $ npm install --save @zeit/next-typescript
 # or
 $ yarn add @zeit/next-typescript
@@ -100,7 +100,7 @@ And follow the [official recipe](https://github.com/zeit/next-plugins/tree/maste
 ## Gatsby websites
 Same thing here, official plugin, great [doc](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-typescript).
 
-```sh
+```bash
 $ npm install --save gatsby-plugin-typescript
 # or
 $ yarn add gatsby-plugin-typescript
@@ -114,4 +114,4 @@ As you can see, **it's a fairly easy process** to create a new project or even m
 
 ---
 
-*Supported with 💛 by [Antistatique](https://antistatique.net)*
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*

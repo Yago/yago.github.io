@@ -89,4 +89,4 @@ I invite you to read all the good stuff of Immer.js on it [repository](https://g
 
 ---
 
-*Supported with 💛 by [Antistatique](https://antistatique.net)*
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*

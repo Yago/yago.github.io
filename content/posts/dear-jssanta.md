@@ -45,5 +45,5 @@ Never stop learning, readings, listening. Always be humble with your work and al
 
 ---
 
-*Supported with 💛 by [Antistatique](https://antistatique.net)*
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*
 

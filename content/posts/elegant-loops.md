@@ -128,4 +128,4 @@ Happy coding!
 
 ---
 
-*Supported with 💛 by [Antistatique](https://antistatique.net)*
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*

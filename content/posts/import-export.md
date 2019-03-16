@@ -115,4 +115,4 @@ As you can see, it's a pretty simple topic, but very useful, especially to keep 
 
 ---
 
-*Supported with 💛 by [Antistatique](https://antistatique.net)*
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*

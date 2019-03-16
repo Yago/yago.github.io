@@ -25,10 +25,10 @@ Maybe the one that everybody learns first and very close to a lot of other progr
 
 ```js
 function sum() {
-	return [...arguments].reduce(function (acc, n) {
-		if (typeof n === 'number') return acc + n;
-		return acc;
-	}, 0);
+  return [...arguments].reduce(function (acc, n) {
+    if (typeof n === 'number') return acc + n;
+    return acc;
+  }, 0);
 }
 ```
 
@@ -40,10 +40,10 @@ This is a very important point, because unless almost all of the following varia
 sum(31,7,4); // return 42
 
 function sum() {
-	return [...arguments].reduce(function (acc, n) {
-		if (typeof n === 'number') return acc + n;
-		return acc;
-	}, 0);
+  return [...arguments].reduce(function (acc, n) {
+    if (typeof n === 'number') return acc + n;
+    return acc;
+  }, 0);
 }
 ``` 
 
@@ -54,10 +54,10 @@ Very close to the “new” arrow function (see below), it consists of **assigni
 
 ```js
 const sum = function () {
-	return [...arguments].reduce(function (acc, n) {
-		if (typeof n === 'number') return acc + n;
-		return acc;
-	}, 0);
+  return [...arguments].reduce(function (acc, n) {
+    if (typeof n === 'number') return acc + n;
+    return acc;
+  }, 0);
 }
 
 sum(31,7,4); // return 42
@@ -73,18 +73,18 @@ It’s a combination the Function Declaration and Anonymous Function Expression.
 
 ```js
 const sum = function sum() {
-	return [...arguments].reduce(function (acc, n) {
-		if (typeof n === 'number') return acc + n;
-		return acc;
-	}, 0);
+  return [...arguments].reduce(function (acc, n) {
+    if (typeof n === 'number') return acc + n;
+    return acc;
+  }, 0);
 }
 
 sum(31,7,4); // return 42
 
 // For recursion
 person.communication.capabilities.greetings = greetings() {
-	console.log('Hello you ! ❤️');
-	greetings(); // Infinite greetings, yay !
+  console.log('Hello you ! ❤️');
+  greetings(); // Infinite greetings, yay !
 };
 ``` 
 
@@ -100,7 +100,7 @@ Basic rule:
 
 ```js
 const sum = (...args) => {
-	return args.reduce((acc, n) => typeof n === 'number' ? acc + n: acc, 0);
+  return args.reduce((acc, n) => typeof n === 'number' ? acc + n: acc, 0);
 }
 
 sum(31,7,4); // return 42
@@ -133,14 +133,14 @@ A basic **object’s function attribute** with its shorter ES2015+ form.
 ```js
 const calculator = {  
   sum(...args) {
-	  return args.reduce((acc, n) => typeof n === 'number' ? acc + n: acc, 0);
+    return args.reduce((acc, n) => typeof n === 'number' ? acc + n: acc, 0);
   },
   
   sumOldSchool: function () {
     return [...arguments].reduce(function (acc, n) {
-		  if (typeof n === 'number') return acc + n;
-		  return acc;
-	  }, 0);
+      if (typeof n === 'number') return acc + n;
+      return acc;
+    }, 0);
   },  
 };
 
@@ -158,7 +158,7 @@ class Calculator {
   }
   
   sum(...args) {
-	  return args.reduce((acc, n) => typeof n === 'number' ? acc + n: acc, this.origin);
+    return args.reduce((acc, n) => typeof n === 'number' ? acc + n: acc, this.origin);
   }
 }
 
@@ -190,4 +190,4 @@ thanks(); // 😘
 
 ---
 
-*Supported with 💛 by [Antistatique](https://antistatique.net)*
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*
