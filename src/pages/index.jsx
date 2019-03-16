@@ -49,7 +49,7 @@ const IndexPage = ({ data, location }) => {
         </div>
 
         <div className="d-flex align-items-center justify-content-between">
-          <h2>Last projects</h2>
+          <h2 className="mb-0">Last projects</h2>
           <Link to="/projects" className="btn btn-outline">
             See all
           </Link>
@@ -68,7 +68,7 @@ const IndexPage = ({ data, location }) => {
 
       <div className="container-fluid">
         <div className="d-flex align-items-center justify-content-between mt-4">
-          <h2>Last blog posts</h2>
+          <h2 className="mb-0">Last blog posts</h2>
           <Link to="/blog" className="btn btn-outline">
             See all
           </Link>
@@ -83,7 +83,7 @@ const IndexPage = ({ data, location }) => {
         </div>
 
         <div className="d-flex align-items-center justify-content-between mt-4">
-          <h2>Last photograph</h2>
+          <h2 className="mb-0">Last photograph</h2>
           <Link to="/pictures" className="btn btn-outline">
             See all
           </Link>

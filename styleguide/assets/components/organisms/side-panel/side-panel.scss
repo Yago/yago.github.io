@@ -30,8 +30,15 @@
     overflow-y: auto !important;
     font-family: $font-family-monospace;
 
-    input {
-      font-family: $font-family-monospace;
+    .terminalInput {
+      span { color: $green !important; }
+
+      input {
+        font-family: $font-family-monospace !important;
+        background: transparent !important;
+        border: none !important;
+        color: #fcfcfc !important;
+      }
     }
   }
 }

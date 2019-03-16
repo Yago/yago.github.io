@@ -63,11 +63,11 @@ const PicturesPage = ({ data, location }) => {
           <h1>Pictures</h1>
 
           <div className="mt-2">
-            <div style={{ margin: '0 -45px' }}>
+            <div style={{ margin: window.innerWidth > 990 ? '0 -45px' : '0 -10px' }}>
               <PhotoGallery
                 photos={photoGalleryContainer}
                 onClick={openGallery}
-                margin={50}
+                margin={window.innerWidth > 990 ? 50 : 10}
                 columns={3}
                 direction="row"
               />
