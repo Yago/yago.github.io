@@ -11,6 +11,11 @@
   padding: 0 !important;
   transition: transform 0.5s;
 
+  .terminal-wrapper {
+    overflow-y: auto;
+    max-height: 100%;
+  }
+
   @include media-breakpoint-down(md) {
     top: 65px;
     width: 100%;
