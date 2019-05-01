@@ -1,7 +1,7 @@
 ---
 path: /blog/generators
 title: "Generators, the forgotten spec"
-date: 2019-04-28
+date: 2019-04-28 
 type: post
 ---
 
@@ -28,6 +28,7 @@ console.log(counter.next()); // {value: undefined, done: true}
 
 ## A simple API
 There are only three methods attached to the Generator's prototype :
+
 - `.next()`: return the next “yielded” value
 - `.return()`: return the given value and force the generator to end (kill switch)
 - `.throw()`: throw an error to the generator and finish it in a more *errorish* way
