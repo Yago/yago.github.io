@@ -23,6 +23,19 @@ import icon60x60 from '../static-assets/apple-touch-icon-60x60.png';
 import icon57x57 from '../static-assets/apple-touch-icon-57x57.png';
 import icon192x192 from '../static-assets/android-chrome-192x192.png';
 
+const detailsQuery = graphql`
+  query DefaultSEOQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+        keywords
+      }
+    }
+  }
+`;
+
 function SEO({
   description, lang, meta, keywords, title,
 }) {
@@ -136,16 +149,3 @@ SEO.propTypes = {
 };
 
 export default SEO;
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        keywords
-      }
-    }
-  }
-`;

@@ -72,7 +72,7 @@ const DeveloperStats = () => {
           <h3 className="h6 text-muted">Favorite tools</h3>
           <span className="border-bottom" />
           {libraries.map(lib => (
-            <a href={lib.url} target="_blank" key={lib.icon}>
+            <a href={lib.url} target="_blank" rel="noopener noreferrer" key={lib.icon}>
               <Icon icon={lib.icon} />
             </a>
           ))}

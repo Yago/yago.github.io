@@ -42,6 +42,7 @@ const ProjectTemplate = ({ data: { markdownRemark }, location }) => (
                       href={markdownRemark.frontmatter.agency.url}
                       className="link-grad"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       {markdownRemark.frontmatter.agency.name}
                     </a>
@@ -56,6 +57,7 @@ const ProjectTemplate = ({ data: { markdownRemark }, location }) => (
                       href={markdownRemark.frontmatter.open_source.url}
                       className="link-grad"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       {markdownRemark.frontmatter.open_source.name}
                     </a>
@@ -117,9 +119,9 @@ const ProjectTemplate = ({ data: { markdownRemark }, location }) => (
   </Layout>
 );
 
-ProjectTemplate.prototype = {
-  data: PropTypes.object.required,
-  location: PropTypes.object.required,
+ProjectTemplate.propTypes = {
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default ProjectTemplate;

@@ -48,8 +48,8 @@ const PostTemplate = ({ data: { markdownRemark }, location }) => (
   </Layout>
 );
 
-PostTemplate.prototype = {
-  data: PropTypes.object.required,
+PostTemplate.propTypes = {
+  data: PropTypes.object.isRequired,
 };
 
 export default PostTemplate;

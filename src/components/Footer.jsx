@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import Icon from './Icon';
 import socials from '../config/socials.json';
@@ -16,6 +14,7 @@ const Footer = () => (
           href={social.url}
           className="link-grad text-sans text-sm mx-1"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <Icon icon={social.icon} />
           <span>
