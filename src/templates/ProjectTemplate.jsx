@@ -26,7 +26,7 @@ const ProjectTemplate = ({ data: { markdownRemark }, location }) => (
 
     <div className="container-fluid">
       <div className="row mt-2">
-        <div className="col-sm-6 offset-sm-1 d-flex align-items-start flex-column justify-content-between mb-2">
+        <article className="col-sm-6 offset-sm-1 d-flex align-items-start flex-column justify-content-between mb-2">
           <div>
             <h1>{markdownRemark.frontmatter.title}</h1>
             <h2 className="h3 text-muted mb-2">{markdownRemark.frontmatter.subtitle}</h2>
@@ -88,7 +88,7 @@ const ProjectTemplate = ({ data: { markdownRemark }, location }) => (
           </table>
 
           <div className="mt-auto mb-0">{renderAst(markdownRemark.htmlAst)}</div>
-        </div>
+        </article>
 
         <div className="col-sm-4 offset-sm-1 order-first order-md-2 mb-2 mb-md-0">
           <Image src={markdownRemark.frontmatter.cover} />
