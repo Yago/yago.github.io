@@ -25,7 +25,24 @@ const Footer = () => (
       ))}
     </p>
 
-    <p className="text-sans text-sm text-muted">©Yann Gouffon, All Rights Reserved</p>
+    <p className="text-sans text-sm text-muted">
+      ©Yann Gouffon, All Rights Reserved
+      <br />
+      <small className="text-xs">
+        The
+        {' '}
+        <a
+          href="https://github.com/Yago/yago.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link-grad"
+        >
+          code of this website
+        </a>
+        {' '}
+        is Open Source
+      </small>
+    </p>
   </footer>
 );
 
