@@ -48,6 +48,20 @@ const ProjectTemplate = ({ data: { markdownRemark }, location }) => (
                   </td>
                 </tr>
               )}
+              {markdownRemark.frontmatter.open_source && (
+                <tr>
+                  <td>Open Source</td>
+                  <td>
+                    <a
+                      href={markdownRemark.frontmatter.open_source.url}
+                      className="link-grad"
+                      target="_blank"
+                    >
+                      {markdownRemark.frontmatter.open_source.name}
+                    </a>
+                  </td>
+                </tr>
+              )}
               {markdownRemark.frontmatter.roles && (
                 <tr>
                   <td>
@@ -121,6 +135,10 @@ export const query = graphql`
         subtitle
         cover
         agency {
+          name
+          url
+        }
+        open_source {
           name
           url
         }
