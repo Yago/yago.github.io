@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
+import Fade from 'react-reveal/Fade';
 
 import Layout from '../components/layout';
 import ProjectTeaser from '../components/ProjectTeaser';
@@ -48,55 +49,62 @@ const IndexPage = ({ data, location }) => {
           </div>
         </div>
 
-        <div className="d-flex align-items-center justify-content-between">
-          <h2 className="mb-0">Last projects</h2>
-          <Link to="/projects" className="btn btn-outline">
-            See all
-          </Link>
-        </div>
+        <Fade bottom distance="50px">
+          <div className="d-flex align-items-center justify-content-between">
+            <h2 className="mb-0">Last projects</h2>
+            <Link to="/projects" className="btn btn-outline">
+              See all
+            </Link>
+          </div>
 
-        <div className="row mt-3">
-          {projects.map((project, i) => (
-            <div className="col-6 col-md-4 mb-2" key={i}>
-              <ProjectTeaser project={project} />
-            </div>
-          ))}
-        </div>
+          <div className="row mt-3">
+            {projects.map((project, i) => (
+              <div className="col-6 col-md-4 mb-2" key={i}>
+                <ProjectTeaser project={project} />
+              </div>
+            ))}
+          </div>
+        </Fade>
       </div>
 
-      <DeveloperStats />
+      <Fade><DeveloperStats /></Fade>
 
       <div className="container-fluid">
-        <div className="d-flex align-items-center justify-content-between mt-4">
-          <h2 className="mb-0">Last blog posts</h2>
-          <Link to="/blog" className="btn btn-outline">
-            See all
-          </Link>
-        </div>
 
-        <div className="row mt-2">
-          {posts.map((post, i) => (
-            <div className="col-md-6" key={i}>
-              <PostTeaser post={post} />
+        <Fade bottom distance="50px" cascade duration={800}>
+          <div className="d-flex align-items-center justify-content-between mt-4">
+            <h2 className="mb-0">Last blog posts</h2>
+            <Link to="/blog" className="btn btn-outline">
+              See all
+            </Link>
+          </div>
+
+          <div className="row mt-2">
+            {posts.map((post, i) => (
+              <div className="col-md-6" key={i}>
+                <PostTeaser post={post} />
+              </div>
+            ))}
+          </div>
+        </Fade>
+
+        <Fade>
+          <div className="d-flex align-items-center justify-content-between mt-4">
+            <h2 className="mb-0">Last photograph</h2>
+            <Link to="/pictures" className="btn btn-outline">
+              See all
+            </Link>
+          </div>
+
+          <div className="row mt-4">
+            <div className="col-md-8 mb-2 mb-md-0">
+              <img src={picture.src} alt={formatTitle(picture)} className="img-fluid" />
             </div>
-          ))}
-        </div>
-
-        <div className="d-flex align-items-center justify-content-between mt-4">
-          <h2 className="mb-0">Last photograph</h2>
-          <Link to="/pictures" className="btn btn-outline">
-            See all
-          </Link>
-        </div>
-
-        <div className="row mt-4">
-          <div className="col-md-8 mb-2 mb-md-0">
-            <img src={picture.src} alt={formatTitle(picture)} className="img-fluid" />
+            <div className="col-md-4 d-flex align-items-center">
+              <div className="text-sans" dangerouslySetInnerHTML={{ __html: formatTitle(picture) }} />
+            </div>
           </div>
-          <div className="col-md-4 d-flex align-items-center">
-            <div className="text-sans" dangerouslySetInnerHTML={{ __html: formatTitle(picture) }} />
-          </div>
-        </div>
+        </Fade>
 
         <div className="mt-4 mb-2">
           <div className="separator">

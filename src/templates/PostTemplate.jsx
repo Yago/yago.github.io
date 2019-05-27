@@ -3,6 +3,7 @@ import RehypeReact from 'rehype-react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import Fade from 'react-reveal/Fade';
 
 import 'prismjs/themes/prism.css';
 
@@ -28,13 +29,15 @@ const PostTemplate = ({ data: { markdownRemark }, location }) => (
       <SEO title={markdownRemark.frontmatter.title} description={markdownRemark.excerpt} />
       <div className="container">
         <article>
-          <h1 className="mt-2">{markdownRemark.frontmatter.title}</h1>
-          <h2 className="text-muted mb-4">
-            <span>Yann Gouffon — </span>
-            {moment(markdownRemark.frontmatter.date).format('LL')}
-          </h2>
+          <Fade>
+            <h1 className="mt-2">{markdownRemark.frontmatter.title}</h1>
+            <h2 className="text-muted mb-4">
+              <span>Yann Gouffon — </span>
+              {moment(markdownRemark.frontmatter.date).format('LL')}
+            </h2>
+          </Fade>
 
-          {renderAst(markdownRemark.htmlAst)}
+          <Fade bottom distance="30px" cascade>{renderAst(markdownRemark.htmlAst)}</Fade>
         </article>
 
         <div className="mt-4 mb-2">
@@ -50,6 +53,7 @@ const PostTemplate = ({ data: { markdownRemark }, location }) => (
 
 PostTemplate.propTypes = {
   data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default PostTemplate;

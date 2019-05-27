@@ -4,6 +4,7 @@ import PhotoGallery from 'react-photo-gallery';
 import PhotoSwipe from 'photoswipe/dist/photoswipe';
 import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 import { graphql } from 'gatsby';
+import Fade from 'react-reveal/Fade';
 
 import Layout from '../components/layout';
 import Icon from '../components/Icon';
@@ -62,19 +63,22 @@ const PicturesPage = ({ data, location }) => {
 
       <div className="container-fluid">
         <div className="ml-md-4">
-          <h1>Pictures</h1>
+          <Fade><h1>Pictures</h1></Fade>
 
-          <div className="mt-2">
-            <div style={{ margin: currentWidth > 990 ? '0 -45px' : '0 -5px' }}>
-              <PhotoGallery
-                photos={photoGalleryContainer}
-                onClick={openGallery}
-                margin={currentWidth > 990 ? 50 : 10}
-                columns={3}
-                direction="row"
-              />
+          <Fade bottom distance="30px" cascade>
+            <div className="mt-2">
+              <div style={{ margin: currentWidth > 990 ? '0 -45px' : '0 -5px' }}>
+                <PhotoGallery
+                  photos={photoGalleryContainer}
+                  onClick={openGallery}
+                  margin={currentWidth > 990 ? 50 : 10}
+                  columns={3}
+                  targetRowHeight={currentWidth > 990 ? 220 : 150}
+                  direction="row"
+                />
+              </div>
             </div>
-          </div>
+          </Fade>
           <PhotoswipeWrapper />
         </div>
 

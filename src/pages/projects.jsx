@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import Fade from 'react-reveal/Fade';
+
 
 import Layout from '../components/layout';
 import ProjectTeaser from '../components/ProjectTeaser';
@@ -18,15 +20,17 @@ const ProjectsPage = ({ data, location }) => {
 
       <div className="container-fluid">
         <div className="ml-md-4">
-          <h1>Projects</h1>
+          <Fade><h1>Projects</h1></Fade>
 
-          <div className="row mt-3">
-            {projects.map((project, i) => (
-              <div className="col-6 col-md-4 mb-2" key={i}>
-                <ProjectTeaser project={project} />
-              </div>
-            ))}
-          </div>
+          <Fade bottom distance="30px" cascade>
+            <div className="row mt-3">
+              {projects.map((project, i) => (
+                <div className="col-6 col-md-4 mb-2" key={i}>
+                  <ProjectTeaser project={project} />
+                </div>
+              ))}
+            </div>
+          </Fade>
         </div>
 
         <div className="mt-4 mb-2">

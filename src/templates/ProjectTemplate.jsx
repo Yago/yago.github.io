@@ -1,7 +1,7 @@
 import React from 'react';
 import RehypeReact from 'rehype-react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import Fade from 'react-reveal/Fade';
 import PropTypes from 'prop-types';
 import 'prismjs/themes/prism.css';
 
@@ -28,72 +28,76 @@ const ProjectTemplate = ({ data: { markdownRemark }, location }) => (
       <div className="row mt-2">
         <article className="col-sm-6 offset-sm-1 d-flex align-items-start flex-column justify-content-between mb-2">
           <div>
-            <h1>{markdownRemark.frontmatter.title}</h1>
-            <h2 className="h3 text-muted mb-2">{markdownRemark.frontmatter.subtitle}</h2>
+            <Fade>
+              <h1>{markdownRemark.frontmatter.title}</h1>
+              <h2 className="h3 text-muted mb-2">{markdownRemark.frontmatter.subtitle}</h2>
+            </Fade>
           </div>
 
-          <table className="text-sans text-sm table table-borderless table-sm">
-            <tbody>
-              {markdownRemark.frontmatter.agency && (
-                <tr>
-                  <td>Agency</td>
-                  <td>
-                    <a
-                      href={markdownRemark.frontmatter.agency.url}
-                      className="link-grad"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {markdownRemark.frontmatter.agency.name}
-                    </a>
-                  </td>
-                </tr>
-              )}
-              {markdownRemark.frontmatter.open_source && (
-                <tr>
-                  <td>Open Source</td>
-                  <td>
-                    <a
-                      href={markdownRemark.frontmatter.open_source.url}
-                      className="link-grad"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {markdownRemark.frontmatter.open_source.name}
-                    </a>
-                  </td>
-                </tr>
-              )}
-              {markdownRemark.frontmatter.roles && (
-                <tr>
-                  <td>
-                    <span>Role</span>
-                    {markdownRemark.frontmatter.roles.length > 1 && 's'}
-                  </td>
-                  <td>
-                    {markdownRemark.frontmatter.roles.map((role, i) => (
-                      <span key={i}>
-                        {role}
-                        <br />
-                      </span>
-                    ))}
-                  </td>
-                </tr>
-              )}
-              {markdownRemark.frontmatter.year && (
-                <tr>
-                  <td>year</td>
-                  <td>{markdownRemark.frontmatter.year}</td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+          <Fade bottom distance="30px">
+            <table className="text-sans text-sm table table-borderless table-sm">
+              <tbody>
+                {markdownRemark.frontmatter.agency && (
+                  <tr>
+                    <td>Agency</td>
+                    <td>
+                      <a
+                        href={markdownRemark.frontmatter.agency.url}
+                        className="link-grad"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {markdownRemark.frontmatter.agency.name}
+                      </a>
+                    </td>
+                  </tr>
+                )}
+                {markdownRemark.frontmatter.open_source && (
+                  <tr>
+                    <td>Open Source</td>
+                    <td>
+                      <a
+                        href={markdownRemark.frontmatter.open_source.url}
+                        className="link-grad"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {markdownRemark.frontmatter.open_source.name}
+                      </a>
+                    </td>
+                  </tr>
+                )}
+                {markdownRemark.frontmatter.roles && (
+                  <tr>
+                    <td>
+                      <span>Role</span>
+                      {markdownRemark.frontmatter.roles.length > 1 && 's'}
+                    </td>
+                    <td>
+                      {markdownRemark.frontmatter.roles.map((role, i) => (
+                        <span key={i}>
+                          {role}
+                          <br />
+                        </span>
+                      ))}
+                    </td>
+                  </tr>
+                )}
+                {markdownRemark.frontmatter.year && (
+                  <tr>
+                    <td>year</td>
+                    <td>{markdownRemark.frontmatter.year}</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
 
-          <div className="mt-auto mb-0">{renderAst(markdownRemark.htmlAst)}</div>
+            <div className="mt-auto mb-0">{renderAst(markdownRemark.htmlAst)}</div>
+          </Fade>
         </article>
 
         <div className="col-sm-4 offset-sm-1 order-first order-md-2 mb-2 mb-md-0">
-          <Image src={markdownRemark.frontmatter.cover} />
+          <Fade bottom distance="30px" delay={400}><Image src={markdownRemark.frontmatter.cover} /></Fade>
         </div>
       </div>
 

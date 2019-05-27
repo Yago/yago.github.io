@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
+import Fade from 'react-reveal/Fade';
 
 import Layout from '../components/layout';
 import PostTeaser from '../components/PostTeaser';
@@ -20,18 +21,22 @@ const BlogPage = ({ data, location }) => {
         <div className="ml-md-4">
           <div className="row">
             <div className="col-md-8 offset-md-2">
-              <h1 className="mb-4">Blog</h1>
+              <Fade><h1 className="mb-4">Blog</h1></Fade>
 
-              {posts.map((post, i) => (
+              <Fade bottom distance="30px" cascade>
                 <div>
-                  <PostTeaser post={post} key={i} />
-                  <div className="row">
-                    <div className="col-6">
-                      <hr />
+                  {posts.map((post, i) => (
+                    <div>
+                      <PostTeaser post={post} key={i} />
+                      <div className="row">
+                        <div className="col-6">
+                          <hr />
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </Fade>
             </div>
           </div>
         </div>

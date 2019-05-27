@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 import Header from './header';
 import Footer from './Footer';
@@ -38,9 +39,6 @@ const Layout = ({
   setPageTree,
   setPageList,
 }) => {
-  const [enter, setEnter] = useState(false);
-  setTimeout(() => setEnter(true), 400);
-
   // Update Redux navigation.location on location change
   useEffect(() => {
     updateLocation(location);
@@ -74,12 +72,12 @@ const Layout = ({
                   <Header />
                   {location && location.pathname !== '/' && <Breadcrumb location={location} />}
                 </div>
-                <div className={`transition-opacity-${enter ? 'entered' : 'exiting'}`}>
-                  {children}
-                </div>
-                <div className="container-fluid">
-                  <Footer />
-                </div>
+                {children}
+                <Fade bottom distance="50px">
+                  <div className="container-fluid">
+                    <Footer />
+                  </div>
+                </Fade>
               </div>
             </div>
           </>
