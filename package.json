@@ -8,17 +8,28 @@
     "gatsby"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "picup": "cd ../500px_scraper/ && npm run start && cd ../2019/ && cp ../500px_scraper/pictures.json ./src/config/pictures.json && cp ../500px_scraper/download/* ./content/images/portfolio/"
+    "picup": "cd ../500px_scraper/ && npm run start && cd ../2019/ && cp ../500px_scraper/pictures.json ./src/config/pictures.json && cp ../500px_scraper/download/* ./content/images/portfolio/",
+    "lint:css": "stylelint ./**/*.{css,scss,styles.js,styles.jsx}",
+    "lint:js": "eslint . --ext .js,.jsx --max-warnings=0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": "eslint --ext .js,.jsx --max-warnings=0",
+    "src/**/*.{css,scss,styles.js,styles.jsx}": "stylelint"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -64,24 +75,24 @@
     "rehype-react": "^4.0.1"
   },
   "devDependencies": {
+    "antistatique-linters-config": "0.0.4",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.3.0",
     "eslint-config-airbnb": "^18.0.1",
-    "node-sass": "^4.13.0"
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": "airbnb",
-    "env": {
-      "browser": true
-    },
-    "rules": {
-      "arrow-body-style": 0,
-      "camelcase": 0,
-      "global-require": 0,
-      "import/extensions": 0,
-      "import/no-unresolved": 0,
-      "react/forbid-prop-types": [
-        "any"
-      ]
-    }
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-config-wesbos": "0.0.19",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
+    "node-sass": "^4.13.0",
+    "prettier": "^1.18.2",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.1.0"
   }
 }
