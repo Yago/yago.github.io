@@ -26,13 +26,10 @@ const PicturesPage = ({ data, location }) => {
   const currentWidth = typeof window !== 'undefined' ? window.innerWidth : 1000;
 
   const addPictures = qty => {
-    console.log('more!', length, length + qty);
-
     setCollection([
       ...collection,
       ...photoGalleryContainer.current.slice(length, length + qty),
     ]);
-
     setLength(length + qty);
   };
 
@@ -41,17 +38,22 @@ const PicturesPage = ({ data, location }) => {
     // Create container for photoswipe
     photoswipeContainer.current = pictures
       .sort((a, b) => b.id - a.id)
-      .map(pic => {
+      .reduce((acc, val) => {
         const images = data.allImageSharp.edges;
-        const image = images.find(edge => edge.node.fluid.src.includes(pic.id));
-        return {
-          ...image,
-          src: image.node.fluid.originalImg,
-          title: formatTitle(pic),
-          w: pic.w,
-          h: pic.h,
-        };
-      });
+        const image = images.find(edge => edge.node.fluid.src.includes(val.id));
+
+        if (acc.findIndex(i => i.src === image.node.fluid.originalImg) === -1) {
+          acc.push({
+            ...image,
+            src: image.node.fluid.originalImg,
+            title: formatTitle(val),
+            w: val.w,
+            h: val.h,
+          });
+        }
+
+        return acc;
+      }, []);
 
     // Create container for react-photo-gallery
     photoGalleryContainer.current = photoswipeContainer.current.map(pic => ({
@@ -63,7 +65,7 @@ const PicturesPage = ({ data, location }) => {
       alt: pic.title,
     }));
 
-    addPictures(10);
+    addPictures(20);
   }, []);
 
   // Photoswipe trigger method
@@ -104,7 +106,7 @@ const PicturesPage = ({ data, location }) => {
                 {photoGalleryContainer.current.length > 0 && (
                   <InfiniteScroll
                     dataLength={collection.length}
-                    next={() => addPictures(10)}
+                    next={() => addPictures(20)}
                     hasMore={
                       photoGalleryContainer.current.length !== collection.length
                     }
