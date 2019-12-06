@@ -1,0 +1,119 @@
+---
+path: /blog/regex
+title: "Regular Expressions aka Regex"
+date: 2019-05-22 
+type: post
+---
+
+According to Wikipedia, a regular expression is a sequence of characters that define a *search pattern*. A simple, but very accurate definition actually. In JavaScript, most of the time, regex are used to *do stuff* with strings.
+
+## First encounter
+For beginners, regular expressions are often synonym of ancient Egyptian hieratic, something not understandable (even if you try very hard) and very frightening . Then, because you had this very specific problem and your dozen code lines are not sufficient, a random dude on StackOverflow gave you this magical single line who does exactly what you are trying to achieve in the past couple of hours, but still without understanding it. And one day, you woke up with a strength will of learning this foreign and forgotten (?) language. After reading a couple of articles and cheat sheets, **surprise, it's actually not that hard to use and write!**
+
+That's almost every developer story, even mine, but if you're still not at the stage of the “great enlightenment”, this article is for you!
+
+## Concept
+As described earlier, a regular expression is basically a search pattern which will help you retrieve information and manipulating strings. **Think it as a very flexible type of search.** Instead of searching something too specific like a couple of words, characters or numbers, you create a rule that will match with your criteria. This rule is written the same way you will read a text, from the beginning to the end. For example, you want to retrieve your name in a text, your rule will be something like: “Start reading this text, ignore all characters that are not Myname, capture Myname when you see it, continue until the end” Easy, right? Less verbose, regex are pretty much the same, but with special characters to have a more compact shape.
+
+## RegExr
+If you are new (or not) to regular expressions, **[RegExr](https://regexr.com/) is your must use tool.** It will offer the simplest interface to write, test and debug your regex. There is a very useful cheat sheet and, last but not least, community patterns with an insane amount of referenced regex that you can search and use. You can also save your own patterns for later. I personally never write a new regular expression without RegExr.
+
+## In JavaScript
+Regular expressions are mainly used in **three kinds of cases**:
+- Testing if our pattern matches our string
+- Retrieving data pattern from our string
+- Manipulating our string based on our pattern
+
+The constructor is [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp), but most of the methods are attached to the [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)'s prototype. Here is some simple examples to understand a bit more in which kind of case regular expressions can be useful:
+
+### Basic Email validation
+To check if our user enters a correct email address, we must check if there is: 
+- any characters (`.*`)
+- (at least) a `@` 
+- any characters, a dot and any characters for our domain name (`.*\..*`). 
+
+```js
+const emailRegex = new RegExp(/.*@.*\..*/);
+const isValidEmail = emailRegex.test('djoser@saqqara.com'); // true
+```
+
+**We can do something more complex to validate properly Email addresses, but take it as a practical example.*
+
+### Get Email
+Say that you have a message with an email inside and you want to retrieve it. For that, you will use the same regex as the previous example, but within this message context. We still need to check if there is:
+- any characters, but no space (`[^\s]*`)
+- a `@`
+- any characters, but no dot (`[^\.]*`)
+- a dot (`\.`)
+- any characters, but no dot and no space (`[^\s\.]*`)
+
+```js
+const messageRegex = new RegExp(/([^\s]*@[^\.]*\.[^\s\.]*)/g);
+const message = 'My dear Snefru, my email address is khufu@giza.com. Cheers!';
+const email = messageRegex.exec(message)[1]; // khufu@giza.com
+```
+It's a bit more complex, but still very accessible.
+
+### Get URL parameters
+If you are not using a fancy library to deal with URLs and you still want to retrieve and use parameters, you can write a little regex for it! Because, there are multiple parameters, think that your Regex will be used multiple times. So, in the following order, you must check:
+- it starts with a `?` or `&` without capturing it (`(?:\?|&)`)
+- any characters to capture for the key except the `=` (`([^=]+)`)
+- the `=` sign
+- any characters to capture for the value except the `&` (`([^&]+)`)
+
+```js
+const paramsRegex = new RegExp(/(?:\?|&)([^=]+)=([^&]+)/g);
+const url = 'https://giza.com/search?q=khafre&sourceid=chrome&ie=UTF-8';
+const parameters = [...url.matchAll(paramsRegex)].map(result => ({
+  key: result[1],
+  value: result[2],
+}));
+```
+Here `matchAll` is used to have this multiple capture iterator. This example will produce a nice parameter array of `{ key, value }` objects.
+
+### Clean HTML
+You want to extract some text from a piece of HTML (without jQuery), you can use the following and simple regex. To target HTML tags, check if there is:
+- a `<`
+- any characters except a `>` (`[^>]*`)
+- a `>`
+
+```js
+const tagsRegex = new RegExp(/<[^>]*>/gm);
+const html = '<p><b>Neferefre Isi</b> (also known as <b>Raneferef</b>, <b>Ranefer</b> and in <a href="/wiki/Ancient_Greek" title="Ancient Greek">Greek</a> as Cherês, <i>Χέρης</i>) was an <a href="/wiki/Ancient_Egypt" title="Ancient Egypt">ancient Egyptian pharaoh</a></p>';
+const text = html.replace(tagsRegex, '');
+// Neferefre Isi (also known as Raneferef, Ranefer and in Greek as Cherês, Χέρης) was an ancient Egyptian pharaoh
+```
+
+## Test your regex!
+Now that you've seen how to produce some real life regular expressions, it's time to not forget one of the most important part: tests. Even if you're sure that it works with your current example, you still must write various tests to secure your regex. We never know, with various characters...
+
+Take our basic Email validation example (using [Jest](https://jestjs.io)):
+
+```js
+describe('Email regex validation', () => {
+  it('schould work with test@gmail.com', () => {
+    expect(emailRegex.test('test@gmail.com')).toBe(true); // ✅
+  });
+
+  it('schould work with test@example.co.uk', () => {
+    expect(emailRegex.test('test@example.co.uk')).toBe(true); // ✅
+  });
+
+  it('schould fail with test@gmail', () => {
+    expect(emailRegex.test('test@gmail')).toBe(false); // ✅
+  });
+
+  it('schould fail with test[at]gmail.com', () => {
+    expect(emailRegex.test('test@gmail')).toBe(false); // ✅
+  });
+});
+```
+
+## Conclusion
+Regex are not something you can avoid. First, it's a very useful and powerful tool and second, it's universal. Aside of JavaScript, you can use regular expressions on any programming languages, but also on some software, OS rules, command lines, shell scripts,... Basically, you learn it once and you can use everywhere. Nifty, right?
+
+### [📦 Play with all the previous examples on Codesandbox!](https://codesandbox.io/s/regex-n51xw)
+
+---
+
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*
