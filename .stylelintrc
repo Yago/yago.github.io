@@ -1,0 +1,60 @@
+{
+  "ignoreFiles": [
+    "**/*.js",
+    "**/*.jsx",
+    "/**/*.html",
+    "/**/*.json",
+    "/**/*.md",
+    "/**/*.svg",
+    "/**/*.twig",
+    "assets/components/base.scss",
+    "assets/config/bootstrap.scss",
+    "assets/config/bootstrap-variables.scss"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-vendor-prefix": true,
+    "media-feature-name-no-vendor-prefix": true,
+    "property-no-vendor-prefix": true,
+    "selector-no-vendor-prefix": true,
+    "value-no-vendor-prefix": true,
+    "at-rule-no-unknown": null,
+    "no-descending-specificity": null,
+    "selector-pseudo-element-colon-notation": "single",
+    "at-rule-empty-line-before": null,
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "declarations",
+      "rules"
+    ],
+    "order/properties-order": [
+      "content",
+      "display",
+      "flex",
+      "position",
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "float",
+      "width",
+      "height",
+      "margin",
+      "padding",
+      "background",
+      "border",
+      "font-familly",
+      "font-size",
+      "line-height",
+      "font-weight",
+      "font-style",
+      "color",
+      "transform",
+      "transition"
+    ]
+  }
+}
