@@ -32,7 +32,7 @@
     "src/**/*.{css,scss,styles.js,styles.jsx}": "stylelint"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "cloudinary-react": "^1.2.1",
     "gatsby": "^2.18.7",
