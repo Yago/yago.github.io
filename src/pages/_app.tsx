@@ -3,6 +3,7 @@ import { MDXProvider } from '@mdx-js/react';
 
 import Counter from 'components/Counter';
 
+import '../styles/types.css';
 import '../styles/base.css';
 
 interface AppProps {
