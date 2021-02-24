@@ -1,4 +1,7 @@
 import React, { FunctionComponent } from 'react';
+import { MDXProvider } from '@mdx-js/react';
+
+import Counter from 'components/Counter';
 
 import '../styles/base.css';
 
@@ -9,7 +12,9 @@ interface AppProps {
 }
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
-  <Component {...pageProps} />
+  <MDXProvider components={{ Counter }}>
+    <Component {...pageProps} />
+  </MDXProvider>
 );
 
 export default MyApp;

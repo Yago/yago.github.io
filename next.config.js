@@ -1,6 +1,10 @@
 const path = require('path');
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+});
 
-module.exports = {
+module.exports = withMDX({
+  pageExtensions: ['tsx', 'mdx'],
   webpack(config) {
     config.resolve = {
       ...config.resolve,
@@ -10,4 +14,4 @@ module.exports = {
     return config;
   },
   env: {},
-};
+});
