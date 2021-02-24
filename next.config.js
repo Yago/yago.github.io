@@ -12,6 +12,14 @@ module.exports = withMDX({
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     };
 
+    config.module.rules = [
+      ...config.module.rules,
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+    ];
+
     return config;
   },
   env: {

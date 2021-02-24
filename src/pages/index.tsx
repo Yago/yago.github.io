@@ -2,6 +2,7 @@ import React from 'react';
 import { jsx } from '@emotion/react';
 import tw from 'twin.macro';
 
+import Icon from 'components/Icon';
 import Layout from 'components/Layout';
 
 const Home = (): JSX.Element => (
@@ -12,7 +13,7 @@ const Home = (): JSX.Element => (
       photographer when the night comes (or my days off).
     </p>
     <p tw="mt-4 text-lg font-normal text-gray-600">
-      — Based in Lausanne, Switzerland
+      — <Icon name="igloo" tw="text-lg" /> Based in Lausanne, Switzerland
     </p>
   </Layout>
 );
