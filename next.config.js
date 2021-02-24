@@ -2,6 +2,7 @@ const path = require('path');
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
 });
+const dirTree = require('directory-tree');
 
 module.exports = withMDX({
   pageExtensions: ['tsx', 'mdx'],
@@ -13,5 +14,7 @@ module.exports = withMDX({
 
     return config;
   },
-  env: {},
+  env: {
+    tree: dirTree('./src/pages/', { exclude: [/_app/, /index/] })
+  },
 });
