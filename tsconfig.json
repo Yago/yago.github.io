@@ -17,8 +17,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext",
-    "types": ["jest", "cypress"]
+    "target": "esnext"
   },
   "include": [
     "**/*.ts",
