@@ -2,6 +2,7 @@ import React from 'react';
 import { jsx } from '@emotion/react';
 import tw from 'twin.macro';
 
+import Button from 'components/Button';
 import Icon from 'components/Icon';
 import Layout from 'components/Layout';
 
@@ -15,6 +16,10 @@ const Home = (): JSX.Element => (
     <p tw="mt-4 text-lg font-normal text-gray-600">
       — <Icon name="igloo" tw="text-lg" /> Based in Lausanne, Switzerland
     </p>
+
+    <div tw="mt-10">
+      <Button href="/">See all</Button>
+    </div>
   </Layout>
 );
 
