@@ -3,6 +3,7 @@ import { jsx } from '@emotion/react';
 import tw from 'twin.macro';
 
 import Button from 'components/Button';
+import Divider from 'components/Divider';
 import Icon from 'components/Icon';
 import Layout from 'components/Layout';
 
@@ -11,6 +12,12 @@ const Home = (): JSX.Element => (
     <h1 tw="font-sans text-4xl font-medium text-gray-900" className="link">
       Last projects
     </h1>
+    <Divider>
+      <span tw="font-sans text-lg font-medium text-gray-500">
+        Yann Gouffon — June 25, 2019
+      </span>
+    </Divider>
+    <Divider icon="drakar" />
     <p tw="mt-5 font-serif text-2xl text-gray-900">
       Ahoy there ! I'm Yann, Frontend and JavaScript developer by day and
       photographer when the night comes (or my days off).
