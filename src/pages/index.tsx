@@ -8,7 +8,9 @@ import Layout from 'components/Layout';
 
 const Home = (): JSX.Element => (
   <Layout>
-    <h1 tw="font-sans text-4xl font-medium text-gray-900">Last projects</h1>
+    <h1 tw="font-sans text-4xl font-medium text-gray-900" className="link">
+      Last projects
+    </h1>
     <p tw="mt-5 font-serif text-2xl text-gray-900">
       Ahoy there ! I'm Yann, Frontend and JavaScript developer by day and
       photographer when the night comes (or my days off).
