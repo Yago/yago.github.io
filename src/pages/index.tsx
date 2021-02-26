@@ -9,7 +9,7 @@ import Layout from 'components/Layout';
 
 const Home = (): JSX.Element => (
   <Layout>
-    <h1 tw="font-sans text-4xl font-medium text-gray-900" className="link">
+    <h1 tw="mt-20 font-sans text-4xl font-medium text-gray-900">
       Last projects
     </h1>
     <Divider>

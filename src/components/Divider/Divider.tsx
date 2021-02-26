@@ -8,7 +8,7 @@ import { IconNames } from 'components/Icons/Icons';
 
 type Props = {
   icon?: IconNames;
-  children?: React.ReactChildren;
+  children?: React.ReactNode;
 };
 
 const Divider = ({ icon, children }: Props): JSX.Element => (

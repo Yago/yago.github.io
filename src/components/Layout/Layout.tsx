@@ -3,6 +3,7 @@ import { jsx } from '@emotion/react';
 import Head from 'next/head';
 import tw from 'twin.macro';
 
+import Header from 'components/Header';
 import Icons from 'components/Icons';
 
 type Props = {
@@ -15,9 +16,10 @@ const Layout = ({ children }: Props): JSX.Element => (
       <link rel="stylesheet" href="https://use.typekit.net/jjy6lvf.css" />
     </Head>
     <Icons />
-    <main tw="container px-10 mx-auto my-10 antialiased font-light">
+    <div tw="container mx-auto antialiased p-14">
+      <Header />
       {children}
-    </main>
+    </div>
   </>
 );
 
