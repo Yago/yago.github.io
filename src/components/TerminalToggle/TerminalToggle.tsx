@@ -1,29 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { jsx } from '@emotion/react';
 import tw from 'twin.macro';
 
-type Props = {
-  open?: boolean;
-  onClick: () => void;
-};
+import { AppContext } from 'contexts/AppProvider';
 
-const TerminalToggle = ({ open, onClick }: Props): JSX.Element => {
+const TerminalToggle = (): JSX.Element => {
   const [hover, setHover] = useState(false);
+  const { terminalOpen, setTerminalOpen } = useContext(AppContext);
 
   return (
     <button
       type="button"
-      onClick={onClick}
+      onClick={() => setTerminalOpen(!terminalOpen)}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       tw="block h-5 cursor-pointer w-9 transform scale-75 md:scale-100 duration-300 transition-transform focus:outline-none"
     >
-      <span tw="sr-only">Toggle navigation</span>
+      <span tw="sr-only">Toggle terminal</span>
       <span
         tw="block w-3 h-3 border-black mt-0.5 -ml-0.5 border-r-3 border-b-3 transform -rotate-45 duration-300 transition-transform"
         css={[
           hover && tw`-translate-x-2`,
-          open && tw`rotate-135 translate-x-7`,
+          terminalOpen && tw`rotate-135 translate-x-7`,
         ]}
       />
       <span
@@ -34,8 +32,6 @@ const TerminalToggle = ({ open, onClick }: Props): JSX.Element => {
   );
 };
 
-TerminalToggle.defaultProps = {
-  open: false,
-};
+TerminalToggle.defaultProps = {};
 
 export default TerminalToggle;
