@@ -3,7 +3,12 @@ import tw from 'twin.macro';
 
 export default css`
   .terminalContainer {
-    ${tw`font-mono overscroll-y-auto leading-8`}
+    ${tw`font-mono leading-8 p-8 md:p-14`}
+    overflow-y: auto !important;
+
+    @media only screen and (min-width: 762px) {
+      transform: translateX(15px);
+    }
 
     .terminalInput {
       span {

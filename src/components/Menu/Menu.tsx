@@ -4,7 +4,7 @@ import Link from 'next/link';
 import tw from 'twin.macro';
 
 const Menu = (): JSX.Element => (
-  <nav tw="flex flex-col p-14 space-y-8">
+  <nav tw="flex flex-col p-8 md:p-14 space-y-8">
     <Link href="/" passHref>
       <a tw="text-2xl font-light hover:text-green transition-colors duration-200">
         Homepage

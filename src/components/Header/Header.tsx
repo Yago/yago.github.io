@@ -10,7 +10,7 @@ import TerminalToggle from 'components/TerminalToggle';
 const Header = (): JSX.Element => (
   <header tw="flex items-center space-x-4">
     <Link href="/" passHref>
-      <a tw="block w-12 mr-auto">
+      <a tw="block w-8 mr-auto md:w-12">
         <Logo tw="w-full" />
       </a>
     </Link>

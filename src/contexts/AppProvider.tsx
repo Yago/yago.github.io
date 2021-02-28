@@ -25,6 +25,14 @@ const AppProvider = ({ children }: Props): JSX.Element => {
     if (terminalOpen === true) setMenuOpen(false);
   }, [terminalOpen]);
 
+  useEffect(() => {
+    if (terminalOpen === true || menuOpen === true) {
+      document.body.setAttribute('style', 'overflow: hidden;');
+    } else {
+      document.body.removeAttribute('style');
+    }
+  }, [menuOpen, terminalOpen]);
+
   return (
     <AppContext.Provider
       value={{ menuOpen, setMenuOpen, terminalOpen, setTerminalOpen }}

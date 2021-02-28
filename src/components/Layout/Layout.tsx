@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { jsx } from '@emotion/react';
+import { AnimatePresence, motion } from 'framer-motion';
 import Head from 'next/head';
 import tw from 'twin.macro';
 
@@ -26,38 +27,51 @@ const Layout = ({ children }: Props): JSX.Element => {
         <div tw="w-full overflow-x-hidden">
           <div
             tw="w-full transition-transform transform duration-500"
-            css={(menuOpen || terminalOpen) && tw`-translate-x-1/2`}
+            css={(menuOpen || terminalOpen) && tw`md:-translate-x-1/2`}
           >
-            <div tw="container mx-auto p-14">
+            <div tw="container px-4 py-4 mx-auto md:px-14 md:pt-14">
               <Header />
             </div>
           </div>
         </div>
 
-        <div
-          tw="fixed inset-y-0 right-0 w-1/2 text-white bg-gray-950 transform translate-x-full transition-transform duration-500"
-          css={(menuOpen || terminalOpen) && tw`translate-x-0`}
-        >
+        <AnimatePresence>
           <div
-            tw="hidden opacity-0 duration-200 transition-opacity"
-            css={menuOpen && tw`block opacity-100`}
+            tw="fixed bottom-0 right-0 z-50 w-full text-white md:inset-y-0 md:w-1/2 bg-gray-950 transform translate-x-full transition-transform duration-500"
+            css={[
+              { top: '66px' },
+              (menuOpen || terminalOpen) && tw`translate-x-0`,
+            ]}
           >
-            <Menu />
+            {menuOpen && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                tw="absolute top-0 left-0 w-full"
+              >
+                <Menu />
+              </motion.div>
+            )}
+            {terminalOpen && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                tw="absolute top-0 left-0 w-full"
+              >
+                <Terminal />
+              </motion.div>
+            )}
           </div>
-          <div
-            tw="hidden opacity-0 duration-200 transition-opacity"
-            css={terminalOpen && tw`block opacity-100`}
-          >
-            <Terminal />
-          </div>
-        </div>
+        </AnimatePresence>
 
         <div tw="w-full overflow-x-hidden">
           <div
             tw="w-full transition-transform transform duration-500"
-            css={(menuOpen || terminalOpen) && tw`-translate-x-1/2`}
+            css={(menuOpen || terminalOpen) && tw`md:-translate-x-1/2`}
           >
-            <div tw="container mx-auto p-14">{children}</div>
+            <div tw="container px-4 mx-auto md:px-14">{children}</div>
           </div>
         </div>
       </div>
