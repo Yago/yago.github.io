@@ -26,10 +26,12 @@ const AppProvider = ({ children }: Props): JSX.Element => {
   }, [terminalOpen]);
 
   useEffect(() => {
-    if (terminalOpen === true || menuOpen === true) {
-      document.body.setAttribute('style', 'overflow: hidden;');
-    } else {
-      document.body.removeAttribute('style');
+    if (window.innerWidth < 762) {
+      if (terminalOpen === true || menuOpen === true) {
+        document.body.setAttribute('style', 'overflow: hidden;');
+      } else {
+        document.body.removeAttribute('style');
+      }
     }
   }, [menuOpen, terminalOpen]);
 

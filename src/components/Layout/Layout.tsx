@@ -26,7 +26,7 @@ const Layout = ({ children }: Props): JSX.Element => {
       <div tw="antialiased">
         <div tw="w-full overflow-x-hidden">
           <div
-            tw="w-full transition-transform transform duration-500"
+            tw="w-full transition-transform transform duration-700"
             css={(menuOpen || terminalOpen) && tw`md:-translate-x-1/2`}
           >
             <div tw="container px-4 py-4 mx-auto md:px-14 md:pt-14">
@@ -37,7 +37,7 @@ const Layout = ({ children }: Props): JSX.Element => {
 
         <AnimatePresence>
           <div
-            tw="fixed bottom-0 right-0 z-50 w-full text-white md:inset-y-0 md:w-1/2 bg-gray-950 transform translate-x-full transition-transform duration-500"
+            tw="fixed bottom-0 right-0 z-50 w-full text-white md:inset-y-0 md:w-1/2 bg-gray-950 transform translate-x-full transition-transform duration-700"
             css={[
               { top: '66px' },
               (menuOpen || terminalOpen) && tw`translate-x-0`,
@@ -68,7 +68,7 @@ const Layout = ({ children }: Props): JSX.Element => {
 
         <div tw="w-full overflow-x-hidden">
           <div
-            tw="w-full transition-transform transform duration-500"
+            tw="w-full transition-transform transform duration-700"
             css={(menuOpen || terminalOpen) && tw`md:-translate-x-1/2`}
           >
             <div tw="container px-4 mx-auto md:px-14">{children}</div>
