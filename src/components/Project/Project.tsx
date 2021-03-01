@@ -10,7 +10,7 @@ import Gallery from 'components/Gallery';
 import Layout from 'components/Layout';
 import PhotoSwipe from 'components/PhotoSwipe';
 
-type Props = {
+export type ProjectProps = {
   children: React.ReactNode;
   meta: {
     path: string;
@@ -36,7 +36,7 @@ type Props = {
   };
 };
 
-const Project = ({ children, meta }: Props): JSX.Element => {
+const Project = ({ children, meta }: ProjectProps): JSX.Element => {
   const [index, setIndex] = useState<string | number | null>(null);
   const [open, setOpen] = useState<boolean>(false);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Hotkeys from 'react-hot-keys';
 import ReactTerminal from 'react-terminal-component';
 import {
@@ -10,21 +10,14 @@ import {
   OutputFactory,
 } from 'javascript-terminal';
 import { useRouter } from 'next/router';
-import { isNil } from 'ramda';
+
+import { AppContext } from 'contexts/AppProvider';
 
 import styles from './Terminal.styles';
 
-type Path = {
-  path: string;
-  children: Children;
-};
-
-type Children = Path[];
-
-type FS = Record<string, Record<string, string>>;
-
 const Terminal = (): JSX.Element => {
   const router = useRouter();
+  const { tree } = useContext(AppContext);
 
   // react-terminal-component theme options
   const theme = {
@@ -56,33 +49,12 @@ So those are some of the available commands :
     optDef: {},
   });
 
-  const cleanPath = (path: string): string =>
-    path.replace('src/pages', '').replace(/\.\w+$/g, '');
-
-  const getFS = (path: Path): FS =>
-    path.children.reduce((acc, val) => {
-      let newAcc: FS = acc;
-      newAcc[cleanPath(val.path)] = {};
-
-      if (!isNil(val.children)) {
-        newAcc = {
-          ...newAcc,
-          ...getFS(val),
-        };
-      }
-
-      return newAcc;
-    }, {});
-
-  console.log(
-    'getFS((process.env.tree as unknown) as Path)',
-    getFS((process.env.tree as unknown) as Path)
-  );
-
   const defaultState = EmulatorState.createEmpty();
   const defaultEnvVariables = defaultState.getEnvVariables();
   const customState = EmulatorState.create({
-    fs: FileSystem.create(getFS((process.env.tree as unknown) as Path)),
+    fs: FileSystem.create(
+      tree.reduce((acc, val) => ({ ...acc, [val.path]: val }), {})
+    ),
     environmentVariables: EnvironmentVariables.setEnvironmentVariable(
       defaultEnvVariables,
       'cwd',

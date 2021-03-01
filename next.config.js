@@ -23,6 +23,5 @@ module.exports = withMDX({
     return config;
   },
   env: {
-    tree: dirTree('./src/pages/', { exclude: [/_app/, /index/] })
   },
 });

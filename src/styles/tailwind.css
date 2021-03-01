@@ -12,6 +12,7 @@
 }
 
 @layer components {
+  .link-wrapper .link-inner,
   .link {
     @apply duration-200 transition-all inline no-underline bg-gradient-to-r from-blue to-teal cursor-pointer;
     background-size: 0 1px;
@@ -19,6 +20,8 @@
     background-position: left 90%;
     padding-bottom: 0.2em;
   }
+
+  .link-wrapper:hover .link-inner,
   .link:hover {
     background-size: 100% 1px;
   }
