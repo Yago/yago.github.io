@@ -24,12 +24,12 @@ const Layout = ({ children }: Props): JSX.Element => {
       </Head>
       <Icons />
       <div tw="antialiased">
-        <div tw="w-full overflow-x-hidden">
+        <div tw="w-full">
           <div
             tw="w-full transition-transform transform duration-700"
             css={(menuOpen || terminalOpen) && tw`md:-translate-x-1/2`}
           >
-            <div tw="container px-4 py-4 mx-auto md:px-14 md:pt-14">
+            <div tw="px-4 py-4 mx-auto max-w-screen-2xl md:px-14 md:pt-14">
               <Header />
             </div>
           </div>
@@ -66,12 +66,12 @@ const Layout = ({ children }: Props): JSX.Element => {
           </div>
         </AnimatePresence>
 
-        <div tw="w-full overflow-x-hidden">
+        <div tw="w-full">
           <div
             tw="w-full transition-transform transform duration-700"
             css={(menuOpen || terminalOpen) && tw`md:-translate-x-1/2`}
           >
-            <div tw="container px-4 mx-auto md:px-14">{children}</div>
+            <div tw="px-4 mx-auto max-w-screen-2xl md:px-14">{children}</div>
           </div>
         </div>
       </div>
