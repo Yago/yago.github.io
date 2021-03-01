@@ -1,0 +1,37 @@
+import Project from 'components/Project'
+
+export const meta = {
+  path: "projects/letemps",
+  date: "2015-01-01T00:00:00.000Z",
+  title: "Le Temps",
+  subtitle: "High quality newspaper",
+  type: "project",
+  cover: "letemps-cover.jpg",
+  thumbnail: "letemps04.jpg",
+  year: "2015 - 2016",
+  agency: {
+    name: "Antistatique",
+    url: "https://antistatique.net"
+  },
+  roles: [
+    "Frontend developer"
+  ],
+  gallery: [
+    {
+      src: "letemps01.jpg"
+    },
+    {
+      src: "letemps02.jpg"
+    },
+    {
+      src: "letemps03.jpg"
+    },
+    {
+      src: "letemps04.jpg"
+    }
+  ]
+}
+
+We were mandated to design and develop a styleguide for the new web platform of Le Temps, a prestigious Swiss french speaking newspaper. After a big focus on the typography, we also optimize the performances of the frontend to offer a great experience for slow connection users.
+
+export default ({ children }) => <Project meta={meta}>{children}</Project>
