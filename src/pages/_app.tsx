@@ -5,6 +5,7 @@ import Counter from 'components/Counter';
 import { Link } from 'components/Typography';
 import AppProvider from 'contexts/AppProvider';
 
+import 'photoswipe/dist/photoswipe.css';
 import '../styles/types.css';
 import '../styles/base.css';
 

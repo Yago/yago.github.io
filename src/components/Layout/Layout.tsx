@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Head from 'next/head';
 import tw from 'twin.macro';
 
+import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Icons from 'components/Icons';
 import Menu from 'components/Menu';
@@ -12,9 +13,10 @@ import { AppContext } from 'contexts/AppProvider';
 
 type Props = {
   children: React.ReactNode;
+  outsideChildren?: React.ReactNode;
 };
 
-const Layout = ({ children }: Props): JSX.Element => {
+const Layout = ({ children, outsideChildren }: Props): JSX.Element => {
   const { menuOpen, terminalOpen } = useContext(AppContext);
 
   return (
@@ -71,10 +73,14 @@ const Layout = ({ children }: Props): JSX.Element => {
             tw="w-full transition-transform transform duration-700"
             css={(menuOpen || terminalOpen) && tw`md:-translate-x-1/2`}
           >
-            <div tw="px-4 mx-auto max-w-screen-2xl md:px-14">{children}</div>
+            <div tw="px-4 mx-auto max-w-screen-2xl md:px-14">
+              {children}
+              <Footer />
+            </div>
           </div>
         </div>
       </div>
+      {outsideChildren}
     </>
   );
 };
