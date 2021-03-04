@@ -4,10 +4,14 @@ import tw from 'twin.macro';
 
 import styles from './Blank.styles';
 
-const Blank = (): JSX.Element => {
-  const title = 'Hello world';
+type Props = {
+  title: string;
+};
 
-  return <div css={styles}>{title}</div>;
+const Blank = ({ title }: Props): JSX.Element => {
+  const title2 = `Hello world${title}`;
+
+  return <div css={styles}>{title2}</div>;
 };
 
 Blank.defaultProps = {};

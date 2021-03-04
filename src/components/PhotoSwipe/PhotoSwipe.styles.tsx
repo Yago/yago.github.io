@@ -64,7 +64,7 @@ const styles = (theme = defaultTheme): any => css`
   .pswp__button--arrow--right:before {
     width: 44px;
     height: 44px;
-    background: url('/images/svg/default-skin.svg') 0 0 no-repeat;
+    background: url('/svg/default-skin.svg') 0 0 no-repeat;
     background-size: 264px 88px;
   }
 

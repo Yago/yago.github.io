@@ -1,11 +1,15 @@
 import React, { FunctionComponent } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
-import Counter from 'components/Counter';
+import { Code, Pre } from 'components/Code';
+import GalleryProxy from 'components/Gallery/GalleryProxy';
+import Picture from 'components/Picture';
 import { Link } from 'components/Typography';
 import AppProvider from 'contexts/AppProvider';
 
 import 'photoswipe/dist/photoswipe.css';
+import 'prism-themes/themes/prism-duotone-dark.css';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import '../styles/types.css';
 import '../styles/base.css';
 
@@ -17,7 +21,15 @@ interface AppProps {
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
   <AppProvider>
-    <MDXProvider components={{ Counter, a: Link }}>
+    <MDXProvider
+      components={{
+        a: Link,
+        gallery: GalleryProxy,
+        picture: Picture,
+        pre: Pre,
+        code: Code,
+      }}
+    >
       <Component {...pageProps} />
     </MDXProvider>
   </AppProvider>

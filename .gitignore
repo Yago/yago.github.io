@@ -30,7 +30,9 @@ yarn-error.log*
 
 # test
 cypress/videos
-tailwind.config.js
 
 .vercel
 cypress/screenshots/*
+
+# Sources
+src/config/pictures.json

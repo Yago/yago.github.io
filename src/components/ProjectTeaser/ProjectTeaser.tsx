@@ -1,10 +1,10 @@
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
 import { jsx } from '@emotion/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import tw from 'twin.macro';
 
+import Picture from 'components/Picture';
 import { ProjectProps } from 'components/Project/Project';
 
 type Props = {
@@ -21,13 +21,8 @@ const ProjectTeaser = ({ project, href }: Props): JSX.Element => (
         perspective={500}
         css={{ transformStyle: 'preserve-3d' }}
       >
-        <div tw="w-full mb-4 aspect-w-8 aspect-h-5">
-          <Image
-            src={`/images/projects/${project.thumbnail}`}
-            alt="Picture of the author"
-            layout="fill"
-            objectFit="contain"
-          />
+        <div tw="mb-4">
+          <Picture filename={project.thumbnail} alt="Picture of the author" />
         </div>
         <div css={{ transform: 'translateZ(20px) translateX(5px)' }}>
           <h3 tw="text-2xl font-medium" className="link-inner">

@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { jsx } from '@emotion/react';
-import Image from 'next/image';
 import { isNil } from 'ramda';
 import tw from 'twin.macro';
 
@@ -9,6 +8,8 @@ import Breadcrumb from 'components/Breadcrumb';
 import Gallery from 'components/Gallery';
 import Layout from 'components/Layout';
 import PhotoSwipe from 'components/PhotoSwipe';
+import Picture from 'components/Picture';
+import pictures from 'config/pictures';
 
 export type ProjectProps = {
   children: React.ReactNode;
@@ -37,33 +38,13 @@ export type ProjectProps = {
 };
 
 const Project = ({ children, meta }: ProjectProps): JSX.Element => {
-  const [index, setIndex] = useState<string | number | null>(null);
-  const [open, setOpen] = useState<boolean>(false);
-
   const container = meta.gallery.map((item, i) => ({
     uid: i,
-    src: `/images/projects/${item.src}`,
-    msrc: `/images/projects/${item.src}`,
-    w: 3000,
-    h: 1875,
+    ...pictures[item.src],
   }));
 
-  useEffect(() => {
-    if (!open && !isNil(index)) setOpen(true);
-  }, [index]);
-
   return (
-    <Layout
-      outsideChildren={
-        <PhotoSwipe
-          container={container}
-          onIndexChange={setIndex}
-          onOpenChange={setOpen}
-          index={index}
-          open={open}
-        />
-      }
-    >
+    <Layout outsideChildren={<PhotoSwipe />}>
       <Breadcrumb
         crumbs={[
           { href: '/projects', label: 'Projects' },
@@ -143,23 +124,13 @@ const Project = ({ children, meta }: ProjectProps): JSX.Element => {
           </div>
         </article>
         <div tw="relative w-full mb-6 mr-auto md:mr-0 md:w-1/3 md:ml-auto md:mb-0">
-          <div tw="w-full aspect-w-3 aspect-h-4">
-            <Image
-              src={`/images/projects/${meta.cover}`}
-              alt="Picture of the author"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
+          <Picture filename={meta.cover} alt={meta.title} />
         </div>
       </div>
       <div>
         <Gallery
           container={container}
-          onClick={setIndex}
           wrapperTw={tw`grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10 my-20`}
-          itemTw={tw`aspect-w-8 aspect-h-5`}
-          imgTw={tw`aspect-w-8 aspect-h-5`}
         />
       </div>
     </Layout>

@@ -1,20 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { jsx } from '@emotion/react';
-import Image from 'next/image';
+import { last } from 'ramda';
 import tw, { TwStyle } from 'twin.macro';
+import { PhotoSwipeContainer } from 'types';
 
-export type Container = {
-  uid: string | number;
-  src: string;
-  msrc: string;
-  w: number;
-  h: number;
-  title?: string;
-}[];
+import Picture from 'components/Picture';
+import { AppContext } from 'contexts/AppProvider';
 
 type Props = {
-  container: Container;
-  onClick: (uid: string | number) => void;
+  container: PhotoSwipeContainer;
   wrapperTw?: TwStyle;
   itemTw?: TwStyle;
   imgTw?: TwStyle;
@@ -22,17 +16,19 @@ type Props = {
 
 const Gallery = ({
   container,
-  onClick,
   wrapperTw,
   itemTw,
   imgTw,
 }: Props): JSX.Element => {
+  const { setPhotoswipeIndex, setPhotoswipeContainer } = useContext(AppContext);
+
   const handleClick = (
     e: React.MouseEvent<Element, MouseEvent>,
     i: string | number
   ): void => {
     e.preventDefault();
-    onClick(i);
+    setPhotoswipeIndex(i);
+    setPhotoswipeContainer(container);
   };
 
   return (
@@ -49,14 +45,11 @@ const Gallery = ({
             href={item.src}
             onClick={e => handleClick(e, item.uid || i)}
             itemProp="contentUrl"
-            data-size={`${item.w}x${item.h}`}
             css={imgTw}
           >
-            <Image
-              src={item.msrc}
-              alt={item.title}
-              layout="fill"
-              objectFit="contain"
+            <Picture
+              filename={last(item.src.split('/')) as string}
+              alt={item.title ?? ''}
             />
           </a>
         </figure>

@@ -1,4 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
+import { isNil } from 'ramda';
+import { PhotoSwipeContainer } from 'types';
 
 export type TreeItem = {
   path: string;
@@ -12,6 +15,12 @@ type AppContextType = {
   terminalOpen: boolean;
   setTerminalOpen: (newVal: boolean) => void;
   tree: TreeItem[];
+  photoswipeOpen: boolean;
+  setPhotoswipeOpen: (open: boolean) => void;
+  photoswipeIndex: string | number | null;
+  setPhotoswipeIndex: (index: string | number | null) => void;
+  photoswipeContainer: PhotoSwipeContainer | null;
+  setPhotoswipeContainer: (container: PhotoSwipeContainer | null) => void;
 };
 
 type Props = {
@@ -44,6 +53,14 @@ const importAll = (r: any) =>
 const AppProvider = ({ children }: Props): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [terminalOpen, setTerminalOpen] = useState(false);
+  const [photoswipeOpen, setPhotoswipeOpen] = useState(false);
+  const [
+    photoswipeContainer,
+    setPhotoswipeContainer,
+  ] = useState<Container | null>(null);
+  const [photoswipeIndex, setPhotoswipeIndex] = useState<
+    string | number | null
+  >(null);
   const tree = importAll(require.context('../pages/', true));
 
   useEffect(() => {
@@ -64,6 +81,10 @@ const AppProvider = ({ children }: Props): JSX.Element => {
     }
   }, [menuOpen, terminalOpen]);
 
+  useEffect(() => {
+    if (!photoswipeOpen && !isNil(photoswipeIndex)) setPhotoswipeOpen(true);
+  }, [photoswipeIndex]);
+
   return (
     <AppContext.Provider
       value={{
@@ -72,6 +93,12 @@ const AppProvider = ({ children }: Props): JSX.Element => {
         terminalOpen,
         setTerminalOpen,
         tree,
+        photoswipeOpen,
+        setPhotoswipeOpen,
+        photoswipeIndex,
+        setPhotoswipeIndex,
+        photoswipeContainer,
+        setPhotoswipeContainer,
       }}
     >
       {children}

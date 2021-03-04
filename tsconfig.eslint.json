@@ -2,5 +2,8 @@
   "extends": "./tsconfig.json",
   "exclude": [
     "node_modules",
+    "babel-plugin-macros.config.js",
+    "bin",
+    "next.config.js"
   ]
 }
