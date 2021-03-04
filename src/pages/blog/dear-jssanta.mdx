@@ -1,0 +1,55 @@
+import Post from 'components/Post'
+
+export const meta = {
+  path: "/blog/dear-jsSanta",
+  title: "Dear jSanta (aka my 2019 goals)",
+  date: "2018-12-24T00:00:00.000Z",
+  type: "post",
+  description: "I've been a good JavaScript developer this year. I have learned a lot of new trendy libraries, frameworks and syntax. I have attended the React Finland Conference to learn new stuff and meet the local community (or not, they're Finns). Finally, I have coded some projects using new and unmastered stacks for the best."
+}
+
+**Dear jSanta,**
+
+I've been a good JavaScript developer this year. I have learned a lot of new trendy libraries, frameworks and syntax. I have attended the React Finland Conference to learn new stuff and meet the local community (or not, they're Finns). Finally, I have coded some projects using new and unmastered stacks for the best (🤞).
+
+I don't need any gift from you; you have spoiled me too much during 2018 with new React APIs, GraphQL implementations, Dan Abramov's [blog](https://overreacted.io/), the continuous rise of Gatsby and Next.js, and so much more !
+
+For 2019, I'm thinking to focus myself on the following topics.
+
+## TypeScript
+It's not new to me. My Angular 2 / Ionic apps projects has long gone, but after all this time, TypeScript seems finally to reach the [JavaScript community's heart](https://2018.stateofjs.com/javascript-flavors/typescript/). It's not anymore the dedicated “language” of Angular (may it rest in peace). More and more people understand the benefits of types definition for medium and large scaled projects.
+
+**TypeScript is cool** for those reasons :
+- Types add this tiny bits of safety so appreciate by the adepts
+- You can keep your beloved ES6+ syntax
+- No more `prop-types` \o/
+- It's embed in [react-create-app](https://facebook.github.io/create-react-app/docs/adding-typescript)
+- VSCode IDE shines with TypeScript
+- and nothing is mandatory (seamless migration)
+
+## Tests
+I'm far for being a good student in that matter and I really want to became more constant, regardless of the size of the app. I think, certainly like a lot of frontend oriented developers, that tests are too often let down in profit of eye & click testing laziness, not the most efficient and trusting way to do it.
+
+I've learned enough of [Jest](https://jestjs.io/) and [Enzyme](https://airbnb.io/enzyme/) to start building some strong tests and having a more satisfying coverage (at least more than 0%).
+
+## More GraphQL
+Thanks to [Gatsby](gatsbyjs.org), [Apollo](https://www.apollographql.com/) and [Prisma](https://www.prisma.io/), GraphQL became more and more adopted by the community and it's about time ! Ok, there is still some reactionaries, like in any tech revolutions, but they are all going to kneel in front of its elegance.
+
+Unlike a lot of people are pleased to think, GraphQL isn't only dedicated for ultra large APIs with more than 3k REST endpoints. If Gatsby choose it as a query language for blogs (too reductive ?), it really means that GraphQL can be used anywhere !
+
+## Vue ?
+I still have mixed feeling about Vue. I escaped the tsunami of trendiness and now that it's a very mature and largely adopted framework, I still feel more comfortable in React land. I don't know if it's because of the “kind of” Angular markup (I loose some friends on that one ^^') or simply because of my ignorance in that matter, but I still don't see the benefits of adopting Vue when React don't stop evolving and shining for the best of my DX.
+
+To make peace with my dev friends (after the Angular-comparison-gates), I will give an another try to Vue in 2019 !
+
+## Conclusion
+2018 has been a great year for the JavaScript language and **2019 will be even better!** I hope that you all have the same fun as I have to use this amazing language, free of the old constraints of past web stacks.
+
+Never stop learning, readings, listening. Always be humble with your work and always try to write more efficient and more elegant code. Each years came with its new trends. Be moderate, don't be too enthusiastic or too reactionary, just be curious and everything will come seamlessly. At the end, even if the target of our JavaScript development activity is to live, you should definitely have fun on the daily basis. If not, move to new techs, frameworks or quit : JavaScript funniness are too important to be ignored.
+
+---
+
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>
+

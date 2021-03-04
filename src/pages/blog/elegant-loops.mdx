@@ -1,0 +1,138 @@
+import Post from 'components/Post'
+
+export const meta = {
+  path: "/blog/elegant-loops",
+  title: "Elegant loops",
+  date: "2018-12-20T00:00:00.000Z",
+  type: "post",
+  description: "JavaScript offers a lot of ways when you need to loop over an array and do stuff. Here are my recommendations about when and how to use them, mainly for the sake of code clarity and readability."
+}
+
+
+**JavaScript offers a lot of ways when you need to loop over an array and do stuff**. Here are my recommendations about when and how to use them, mainly for the sake of code clarity and readability.
+
+Take this array :
+
+```js
+const spiderMovies = [
+  {
+    title: "Spider Man",
+    year: 2002,
+  },
+  {
+    title: "Spider-Man 2",
+    year: 2004,
+  },
+  {
+    title: "Spider Man 3",
+    year: 2007,
+  },
+  {
+    title: "The Amazing Spider-Man",
+    year: 2012,
+  },
+  {
+    title: "The Amazing Spider-Man 2",
+    year: 2014,
+  },
+  {
+    title: "Spider-Man: Homecoming",
+    year: 2017,
+  },
+  {
+    title: "Spider-Man: Into the Spiderverse",
+    year: 2018,
+  },
+  {
+    title: "Spider-Man: Homecoming Sequel",
+    year: 2019,
+  },
+];
+```
+
+## Case #1: Change each value with something else
+Based on our `spiderMovies` array, we want to create a new array containing only the titles to have something simpler. **So we need to iterate over each array's value and keep only the `title` property**. For this kind of case, [`Array.prototype.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) is the most elegant way to do it, because each value must return something new (or not) and we still maintain the array `length`. Finally, you will directly assign the result of your `.map()` to a new array variable.
+
+```js
+const spiderMoviesTitles = spiderMovies.map(movie => movie.title);
+```
+
+
+## Case #2: Filter some value
+In this case, we simply want to keep only the movies produced after 2010. **The most indicated and obvious way to do it is to use [`Array.prototype.filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)**. Instead of returning a value, you will return `true` or `false` depending if you want to keep it or not.
+
+```js
+const spiderMoviesRecent = spiderMovies.filter(movie => movie.year > 2010);
+```
+
+## Case #3: Create something new, based on your array
+This time, something more tricky; we want to get the sum of all the movies production years (I know, it's pointless). **Each time you need to produce something more “complex” based on an array, [`Array.prototype.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) must be your tool of choice.**
+
+As the first two cases, `.reduce()` will iterate on each array value, but instead of returning the transformed value as with `.map()`, you must return something unique with `.reduce()`: the **accumulator**.  Basically, it can be any kind of value (initially defined after the callback method) that will evolve on each iteration.
+
+```js
+const spiderYears = spiderMovies.reduce((acc, value) => acc + value.year, 0);
+
+// or (more readable ?)
+const spiderYears = spiderMovies.reduce((acc, value) => {
+  const updatedAcc = acc + value.year;
+  return updatedAcc;
+}, 0);
+```
+
+
+## Case #4: Do something on each iteration
+This time you don't want to create anything, but you want to push array content to your remote database. For some reason and because it's an example, you can only pass one object per push. **So you don't want to create or return anything and because of it, [`Array.prototype.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/foreach) is the most elegant way to do it.**
+
+```js
+spiderMovies.forEach(movie => {
+  pushToDatabase(movie);
+});
+```
+
+
+## Bonus
+At this point, you must think:
+“Wtf man! Why are you not using `for`?”
+
+Good question ! You can surely and it's definitely more efficient on almost any cases I present you above (see [this benchmark](https://github.com/dg92/Performance-Analysis-JS)).
+
+```js
+// Array.prototype.map() equivalent
+const spiderMoviesTitles = [];
+for (let i = 0; i < spiderMovies.length; i++) {
+  spiderMoviesTitles.push(spiderMovies[i].title);
+}
+
+// Array.prototype.filter() equivalent
+const spiderMoviesRecent = [];
+for (let i = 0; i < spiderMovies.length; i++) {
+  if (spiderMovies[i].year > 2010) {
+    spiderMoviesRecent.push(spiderMovies[i]); 
+  }
+}
+
+// Array.prototype.reduce() equivalent
+let spiderYears = 0;
+for (let i = 0; i < spiderMovies.length; i++) {
+  spiderYears = spiderYears + spiderMovies[i].year;
+}
+
+// Array.prototype.forEach() equivalent
+for (let i = 0; i < spiderMovies.length; i++) {
+  pushToDatabase(spiderMovies[i]);
+}
+```
+
+OK, it's more efficient, but what about code readability and elegance ?  At this point, **you must decide if you can live with this small (in most cases) performance tradeoffs** and keep your code clean. At the end, for “small” loops, you won't feel this tradeoff (~0.1ms), but when you start dealing with a large number of iterations, the cost will quickly rise in opposite of your performances.
+
+## Conclusion
+There is never one true best way for looping through arrays. Based on the example cases above, you should be more aware to pick to right one. **It's your call to decide what is best for your case and the sake of your application**. And if you are not sure about the right one to use, benchmark your choices using a simple [`console.time()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/time) and you will be quickly fixed.
+
+Happy coding!
+
+---
+
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

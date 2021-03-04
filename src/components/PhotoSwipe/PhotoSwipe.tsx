@@ -40,7 +40,6 @@ const PhotoSwipe = ({ children, options = {} }: Props): JSX.Element => {
 
   // PhotoSwipe trigger method
   const openGallery = (i?: string | number): void => {
-    console.log('open gal');
     pswp.current = new PSWP(
       wrapper.current,
       photoSwipeUIDefault,

@@ -64,6 +64,9 @@ module.exports = {
     },
     fontFamily,
     extend: {
+      fontSize: {
+        '2xl': '23px',
+      },
       rotate: {
         135: '135deg',
       },
@@ -120,6 +123,24 @@ module.exports = {
               fontWeight: 500,
               marginTop: '60px',
               marginBottom: '12px',
+            },
+            strong: {
+              fontWeight: '500',
+            },
+            'ul > li::before': {
+              backgroundColor: '#000',
+            },
+            code: {
+              color: '#212529',
+              backgroundColor: '#eafcf8',
+              fontWeight: 400,
+              fontFamily: fontFamily.mono.join(', '),
+            },
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
             },
           },
         },

@@ -1,0 +1,79 @@
+import Post from 'components/Post'
+
+export const meta = {
+  path: "/blog/optional-chaining",
+  title: "Optional Chaining",
+  date: "2019-07-09T00:00:00.000Z",
+  type: "post",
+  description: "It's the future feature of JavaScript that I'm the most excited about: optional chaining. And I'm sure you too without even knowing it. So, what is exactly optional chaining  and how it can really help to produce a cleaner code."
+}
+
+It's the future feature of JavaScript that I'm the most excited about: [**optional chaining**](https://github.com/tc39/proposal-optional-chaining). And I'm sure you too without even knowing it. So, what is exactly *optional chaining*  and how it can really help to produce a cleaner code.
+
+## The proposal
+Two years ago, [Claude Pache](https://github.com/claudepache), [Gabriel Isenberg](https://github.com/gisenberg) and [Dustin Savery](https://github.com/dustinsavery) proposed *[optional chaining](https://github.com/tc39/proposal-optional-chaining)* to TC39. Their goal is to reduce repetition and/or intermediate assignment in deep property access.
+
+Take this (too) common examples:
+```js
+// Repetitions
+const email = person.contact && person.contact.email;
+const elderName = person.children && person.children[0] && person.children[0].info && person.children[0].info.name;
+
+// Intermediate assignment
+const elder = person.children && person.children[0];
+const elderInfo = elder && elder.info;
+const elderName = elderInfo && elder.info.name;
+```
+
+Not very slight, right? Sure, there are other strategies, but with *optional chaining*, you'll be able to achieve the same behaviour doing something like:
+
+```js
+// Repetitions
+const email = person?.contact.email;
+const elderName = person?.children?.[0]?.info.name;
+```
+
+Is it not sooo much better? With just a simple `?.`, you can test every level of your property access chain. This is the official proposal syntax:
+
+```javascript
+obj?.prop        // optional static property access
+obj?.[expr]      // optional dynamic property access
+func?.(...args)  // optional function or method call
+```
+
+Finally, **it's not something completely new in programming language**; [C#](https://msdn.microsoft.com/en-us/library/dn986595.aspx), [Swift](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html#//apple_ref/doc/uid/TP40014097-CH21-ID245), [CoffeeScript](http://coffeescript.org/#existential-operator) and others have similar features. We just have to wait a little bit more to see it in our plain JavaScript!
+
+## Status
+Actually, the proposal is in **stage 2**. It means it already pass the *proposal* phase and it's now in *draft*. During this phase, the authors have to “precisely describe the syntax and semantics using formal spec language”.  They already written the [initial spec text](https://tc39.es/proposal-optional-chaining/) and there is a fully working [Babel plugin](https://babeljs.io/docs/en/babel-plugin-proposal-optional-chaining). So we can be optimistic about an upcoming **stage 3**.
+
+## Using it now
+*Babel plugin* means that **you can use this feature right now**! Keep in mind that this is still not a final JavaScript feature, but this way you can test the concept and send feedback to the authors.
+
+So, first install the dependencies:
+```shell
+yarn add --dev @babel/cli @babel/core @babel/plugin-proposal-optional-chaining
+```
+
+Then, in your `.babelrc`:
+```json
+{
+  "plugins": [
+    ["@babel/plugin-proposal-optional-chaining", { "loose": false }],
+  ]
+}
+```
+
+And finally, just use your Babel to compile your *code:
+```shell
+./node_modules/.bin/babel src --out-dir dist
+```
+*\*Take a look at the compiled code, it's fun to see how it's translated into old ES5*
+
+## Conclusion
+**It's coming soon and it's going to be great!** We can't say when it will be released, those things take time, but hopefully in 2020 if it's not in 2019. Keep in touch and try the Babel plugin in the meantime.
+
+---
+
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

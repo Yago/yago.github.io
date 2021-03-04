@@ -1,0 +1,71 @@
+import Post from 'components/Post'
+
+export const meta = {
+  path: "/blog/no-comment",
+  title: "No comment",
+  date: "2019-03-29T00:00:00.000Z",
+  type: "post",
+  description: "OK the title sounds great in my head, but this blog post is more about comments in JavaScript and how to do it properly, not the contrary. I'm dead sure that, once in your dev life, you've contributed to a project without any comments and you've felt this sweet sensation of rejection and hate (retro-engineering contribution is NEVER fun)."
+}
+
+OK the title sounds great in my head, but **this blog post is more about comments in JavaScript and how to do it properly**, not the contrary. I'm dead sure that, once in your dev life, you've contributed to a project without any comments and you've felt this sweet sensation of rejection and hate (retro-engineering contribution is NEVER fun).
+
+I hear the voice of the cons guys who think that semantic names (for function, class, variables, ...) is sufficient. Yes and no; anybody who wants to contribute to your project, open-source or commercial, must be able to understand what you've done in a seamless way. **In the end, it's all about being inclusive** 😉
+
+## Conventions
+Unlike a lot of more mature (old) programming languages, JavaScript doesn't have a strong and unique comments writing convention. That's not entirely true, but we will come back on that later.
+
+The idea is to follow this simple rule (kind-of standard):
+
+- **Write a “big” descriptive** comment for “big” code entities. For example, Classes, Objects (in OO), methods, service, models, etc using `/* ... */`
+- **Write a “small” single-lined** comment for smaller entities like important variables, conditions, etc using `//`
+
+## JSDoc
+When I say there is no strong standard for comments, it's not true, there is [**JSDoc**](http://usejsdoc.org/index.html). It's just that JSDoc is often perceived as the untrendy documentation tool for old JS devs and not used as much as it must. Anyway, **I think JSDoc is the best practice so far**, even if you don't want to generate documentation based on your comments, it will give you enough conventions to build strong and standards comments.
+
+## Basic example
+Because we all love functional programming, **each method must be decently commented** to keep your code understandable, even for yourself in the future.
+
+For example:
+
+```js
+/**
+ * Convert a string to title case
+ *
+ * @param {String} text input string
+ * @returns {String} title case string
+ */
+const titleCase = (text) => text
+  .toLowerCase()
+  .split(' ')
+  .map(word => word[0].toUpperCase() + word.slice(1))
+  .join(' ');
+```
+
+— WTF?!? Six lines of comments for five of “real” code!<br />
+— Yep, huge investment, but it's for future generations 😘
+
+As you can see, JSDoc provide a way to describe what came in and out, but also which types are required. [Properly configured](https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76), your IDE can use those comments to type check your code, almost like TypeScript and Flow does.
+
+## Read the (JS) doc, please!
+I can show you all the possible examples, **it will never be as clear as the [JSDoc doc](http://usejsdoc.org/index.html) is.** We must admit that it's not the sexiest documentation out there, but it's very accessible and not only for JS purists or old school devs. Feel free to **take a look to all the block tags** that JSDoc has to offer to unleash its power.
+
+## Some tools
+I agree it's very verbose and not really fun to write the base canvas. So there are a lot of good tools to help you write your comments. Here are some examples for VSCode, but I'm sure there are similar modules for Atom, Sublime or any code editors:
+
+- [**Document This**](https://marketplace.visualstudio.com/items?itemName=joelday.docthis) by Joel Day : your JSDoc best friend, it will generate detailed JSDoc comments in TypeScript and JavaScript files on demand.
+- [**Preview JSDOC**](https://marketplace.visualstudio.com/items?itemName=ludorival.preview-jsdoc) by Ludovic Dorival : if you're interested of the JSDoc documentation generation, it's a very simple way of previewing it.
+-  [**Todo Tree**](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) by Gruntfuggly : because comments can be used for delayed tasks, this plugin will help you find all your `TODO`, `FIXME`, etc..
+- [**Rewrap**](https://marketplace.visualstudio.com/items?itemName=stkb.rewrap) by stkb : having more than 80-100 characters per line of comment is often (always) a bad idea, this plugin will help you to transform it into multiple lines.
+- [**vscode-fileheader**](https://marketplace.visualstudio.com/items?itemName=mikey.vscode-fileheader) by mikey : you're maybe a fan of signing each file, with that plugin, it will be easier with automatic date update.
+
+There is surely a ton of other great resources for you to live an easier comment writer's life, feel free to take a look around and found what suits you the most.
+
+## Conclusion
+No big and deep speech here, just keep in mind that this extra effort of writing clear and standard comments will help others who will work on your code, but also your future self and that's maybe the biggest benefit.
+
+---
+
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

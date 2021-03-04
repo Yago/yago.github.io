@@ -1,0 +1,91 @@
+import Post from 'components/Post'
+
+export const meta = {
+  path: "/blog/rendu-raw",
+  title: "Traiter ses RAWs, choisir le bon outil",
+  date: "2017-05-12T00:00:00.000Z",
+  type: "post",
+  description: "",
+  nocover: true,
+  description: "Depuis que j’ai commencé la photographie, mon workflow de développement digital n’a cessé d’évoluer. Traitement de JPEGs sous Photoshop Element début des années 2000 pour ensuite Photoshop CS2, puis découverte de l’avantage d’utiliser les RAWs avec Camera Raw et pour finir, Lightroom. La seule constante dans toute cette évolution a été Adobe. Jusqu’à récemment, je n’ai jamais remis en question les capacités de son moteur de rendu."
+}
+
+Depuis que j’ai commencé la photographie, mon workflow de développement digital n’a cessé d’évoluer. Traitement de JPEGs sous Photoshop Element début des années 2000 pour ensuite Photoshop CS2, puis découverte de l’avantage d’utiliser les RAWs avec Camera Raw et pour finir, Lightroom. **La seule constante dans toute cette évolution a été Adobe**. Jusqu’à récemment, je n’ai jamais remis en question les capacités de son moteur de rendu.
+
+## Les challengers
+Comme dans tous marchés concurrentiels, il existe des alternatives au moteur de rendu d’Adobe.  Pour ce test, je me suis placé dans la peau d’un nouvel utilisateur devant faire un choix. J’ai ainsi sélectionné les quatre moteurs principaux disponibles sur le maché.
+
+- [**Adobe Photoshop/Lightroom**](http://www.adobe.com/ch_fr/creativecloud/photography.html) (win|mac ~10$/m) : plus besoin de présenter ce poids lourd qui est de loin, la solution la plus utilisée.
+- [**Affinity Photo**](https://affinity.serif.com/fr/photo/) (win|mac 48$) : avec son excellent rapport qualité-prix, Affinity Photo est un petit nouveau dans la place qui a tout d’un grand.
+- [**Capture One Pro**](https://www.phaseone.com/en/Products/Software/Capture-One-Pro/Highlights.aspx) (win|mac ~12$/m ou 280$) : très apprécié par les professionnels, Capture a sû se démarquer de Lightroom par ces contrôles colorimétriques.
+- [**RawTherapee**](http://rawtherapee.com/) (win|mac free) : le quatrième challenger dans la place est non seulement gratuit, mais également open source !
+
+## Comparatif
+Afin de permettre une comparaison équitable, des photographies provenant d’un **Nikon D800** (plein format, capteur CMOS 24×36) et d’un **Fujifilm X-T2** (APS-C, capteur X-Trans CMOS III) ont été ouvertes sur ces quatre applications et, sans ajustements aucuns, ont été exportées en TIFFs. Le profile **Adobe RGB 98** a été conservé tout au long du processus.
+
+Les critères, très subjectifs, vont porter sur la **notion de piqué** ou l’impression de netteté, ainsi que la **gestion des couleurs**. Nous pourrions aller plus loin en comparant les courbes produites par ces logiciels, mais cela sera peut-être le sujet d’un autre article. Pour l’instant, nous allons nous focaliser sur l’essence même de la photographie, le ressenti.
+
+#### Paris - D800 | 50mm | f10 | 400 ISO | 1/400
+
+<div><gallery sources={[
+  "paris_global.jpg",
+]}></gallery></div>
+
+Sur la vue d’ensemble, peu de différences si ce n’est des nuances de bleu variant d’un moteur à l’autre, et des couleurs un tantinet plus vibrantes chez **Capture One Pro**. 
+
+<div><gallery sources={[
+  "paris_zoomed.jpg",
+]}></gallery></div>
+
+À l’échelle 1:1, les moteurs commencent à nettement se différencier. Au niveau de la gestion du piqué, **Capture One Pro** est légèrement en tête et **Affinity Photo** arrive clairement en queue de peloton. **RawTherapee** semble moins bien gérer le bruit que ses concurrents. **Adobe** n’est ni excellent ni mauvais, mais peine à briller.
+
+#### Vache - D800 | 70mm | f6.3 | 400 ISO | 1/160
+
+<div><gallery sources={[
+  "cow_global.jpg",
+]}></gallery></div>
+
+Sur la vue d’ensemble, horsmi **RawTherapee** qui fait état d’un rendu réellement mauvais, les trois autres concurrents sont très proches, même si **Capture One Pro** témoigne d’une légère supériorité dans la gestion des couleurs. Le rendu d’**Affinity Photo** est légèrement sous-exposé par rapport aux autres.
+
+<div><gallery sources={[
+  "cow_zoomed.jpg",
+]}></gallery></div>
+
+À l’échelle 1:1, encore une fois, meilleure gestion du piqué pour **Capture One Pro** et rendu très *bruyant* pour **RawTherapee**. 
+
+#### Lisbonne - X-T2 | 23mm | f8 | 200 ISO | 1/550
+
+<div><gallery sources={[
+  "city_global.jpg",
+]}></gallery></div>
+
+Avec ces façades colorées, le quartier de l’Alfama met en avant les qualités colorimétriques de **Capture One Pro**. Plus terne, **Adobe** et **Affinity Pro** ont produit des images neutres, mais équilibrées. Finalement, RawTherapee est nettement sous-exposé par rapport aux autres.
+
+<div><gallery sources={[
+  "citi_zoomed.jpg",
+]}></gallery></div>
+
+Une fois à 1:1, les différences sont plus marquées qu’avec le D800, **Adobe** et **RawTherapee** sont clairement plus *bruyants*. **Affinity Photo** produit un rendu avec un léger *glow* et une impression de flou. Le rendu de **Capture One Pro** est, quant à lui, clean avec un piqué très correct.
+
+#### Cheval - X-T2 | 23mm | f2 | 100 ISO | 1/1500
+
+<div><gallery sources={[
+  "horse_global.jpg",
+]}></gallery></div>
+
+Sur ce premier cliché réalisé avec mon Fujifilm, les résultats sont également très intéressants. **Affinity Photo** a produit une image très (trop) exposée, **Adobe** une image plus terne et **Capture One Pro** et **RawTherapee**, des images plus saturées avec un vignettage également plus marqué que les autres.
+
+<div><gallery sources={[
+  "horse_zoomed.jpg",
+]}></gallery></div>
+
+C’est à l’échelle 1:1 de cette photo que mon questionnement a démarré. Vous observerez que sur le rendu d’**Adobe**, autour de l’oeil, se dégage une impression d’accentuation du piqué assez atroce. J’appelle ça le rendu “paquet de vers” comme si de petits asticots composaient mon image. C’est un chouia exagéré, mais quand on se tourne vers le rendu de **Capture One Pro**, cette impression disparaît. Sur ce sujet **RawTherapee** est vraiment bon et **Affinity Photo** toujours un peu *flou*.
+
+## Conclusion
+Avec mon Nikon, je n’ai jamais été très pointilleux sur le rendu 1:1 de mes clichés. C’est quand j’ai traité les RAWs de mon Fujifilm la première fois que j’ai déçu. Bien que haut gamme, j’ai pensé que le capteur de cet appareil était à l’origine de ce résultat, jusqu’à ce que je tombe sur un article vantant les mérites de Capture One Pro et que je prenne le temps de faire la comparaison moi même.
+
+Sur ces quatre moteurs, aucun n’est particulièrement mauvais, bien au contraire. Gratuit et open source, **RawTherapee** mérite qu’on s’y intéresse, malgré une interface moins intuitive que les autres. **Affinity Photo** est également un très bon choix, surtout quand on regarde son coût dérisoire qui le propulse en tête du classement rapport qualité/prix. **Adobe** reste tout de même un des meilleurs moteurs de la catégorie, les différences vont être plus marquées selon le capteur utilisé.
+
+Je pense que vous avez fini par deviner où va ma préférence. En effet, en plus d’une magnifique gestion des couleurs véritablement plus vibrantes que chez les autres, le moteur **Capture One Pro** produit des images au piqué irréprochable. Ni trop forcé, ni trop légé, **le rendu est comme son logiciel, très haut de gamme pour utilisateurs pointilleux** (ou super maniaque du détail comme moi :sweat_smile:). Il ne vous reste plus qu’à faire vos propres comparaisons avec les versions d’essais de ces logiciels et de définir lequel vous satisfait le plus. Et ne regardez pas trop au prix, si vous avez mis plusieurs centaines de francs dans une seule optique, une licence permettant de sublimer vos images sera toujours un bon choix.
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

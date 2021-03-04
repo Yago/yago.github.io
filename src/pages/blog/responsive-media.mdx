@@ -1,0 +1,58 @@
+import Post from 'components/Post'
+
+export const meta = {
+  path: "/blog/responsive-media",
+  title: "Responsive media",
+  date: "2013-05-31T12:33:46.000Z",
+  type: "post",
+  description: "Les développeurs frontend ont de plus en plus d'expérience en responsive web design, mais il y a des éléments sur lequel on peut encore se casser les dents comme les images ou les vidéos intégrées. Il existe pourtant des recettes toutes simples pour pallier à ce petit tracas."
+}
+
+Avec la standardisation du responsive web design, il est devenu normal de rendre tous sites web (ou presque) de façon la plus optimale pour tous les types de supports (tablettes, smartphones, ...). 
+
+Les développeurs frontend ont de plus en plus d'expérience en la matière, mais il y a des éléments sur lequel on peut encore se casser les dents comme les images ou les vidéos intégrées. Il existe pourtant des recettes toutes simples pour pallier à ce petit tracas.
+
+Pour les **images**, seul un peu de CSS suffit :
+```css
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+```
+
+Quant au **vidéo**, il faudra encore mettre un wrapper autour de votre iframe...
+
+```html
+<div class="video-container">
+  <iframe width="560" height="315" src="http://www.youtube.com/embed/hWnAqFyaQ5s" frameborder="0" allowfullscreen></iframe>
+</div>
+```
+
+...et y ajouter une pointe de CSS pour que la magie opère.
+
+```css
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; // Défini le ratio largeur/hauteur de votre vidéo => ici 16/9
+  padding-top: 30px; 
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+```
+
+Voilà, en quelques lignes de CSS, tous vos soucis se sont envolés et vous voici libre de présenter vos médias sur tous les supports en prenant bien garde à leur poids.
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

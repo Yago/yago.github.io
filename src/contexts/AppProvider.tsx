@@ -85,6 +85,10 @@ const AppProvider = ({ children }: Props): JSX.Element => {
     if (!photoswipeOpen && !isNil(photoswipeIndex)) setPhotoswipeOpen(true);
   }, [photoswipeIndex]);
 
+  useEffect(() => {
+    if (!photoswipeOpen) setPhotoswipeIndex(null);
+  }, [photoswipeOpen]);
+
   return (
     <AppContext.Provider
       value={{
