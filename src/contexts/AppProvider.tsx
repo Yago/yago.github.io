@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import { isNil } from 'ramda';
 import { PhotoSwipeContainer } from 'types';
 
@@ -51,6 +52,7 @@ const importAll = (r: any) =>
     );
 
 const AppProvider = ({ children }: Props): JSX.Element => {
+  const { asPath } = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [photoswipeOpen, setPhotoswipeOpen] = useState(false);
@@ -70,6 +72,12 @@ const AppProvider = ({ children }: Props): JSX.Element => {
   useEffect(() => {
     if (terminalOpen === true) setMenuOpen(false);
   }, [terminalOpen]);
+
+  useEffect(() => {
+    console.log(asPath);
+    setMenuOpen(false);
+    setTerminalOpen(false);
+  }, [asPath]);
 
   useEffect(() => {
     if (window.innerWidth < 762) {

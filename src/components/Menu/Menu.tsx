@@ -10,12 +10,12 @@ const Menu = (): JSX.Element => (
         Homepage
       </a>
     </Link>
-    <Link href="/" passHref>
+    <Link href="/projects" passHref>
       <a tw="text-2xl font-light hover:text-green transition-colors duration-200">
         Projects
       </a>
     </Link>
-    <Link href="/" passHref>
+    <Link href="/blog" passHref>
       <a tw="text-2xl font-light hover:text-green transition-colors duration-200">
         Blog
       </a>
