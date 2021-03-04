@@ -9,17 +9,18 @@ import Divider from 'components/Divider';
 import Layout from 'components/Layout';
 import PhotoSwipe from 'components/PhotoSwipe';
 
-export type ProjectProps = {
+export type PostProps = {
   children: React.ReactNode;
   meta: {
     path: string;
     date: string;
     title: string;
     type: string;
+    description: string;
   };
 };
 
-const Post = ({ children, meta }: ProjectProps): JSX.Element => (
+const Post = ({ children, meta }: PostProps): JSX.Element => (
   <Layout outsideChildren={<PhotoSwipe />}>
     <Breadcrumb
       crumbs={[{ href: '/blog', label: 'Blog' }, { label: meta.title }]}

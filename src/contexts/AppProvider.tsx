@@ -57,7 +57,7 @@ const AppProvider = ({ children }: Props): JSX.Element => {
   const [
     photoswipeContainer,
     setPhotoswipeContainer,
-  ] = useState<Container | null>(null);
+  ] = useState<PhotoSwipeContainer | null>(null);
   const [photoswipeIndex, setPhotoswipeIndex] = useState<
     string | number | null
   >(null);
