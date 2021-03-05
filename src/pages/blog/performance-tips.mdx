@@ -19,7 +19,7 @@ Right after the first release of the website, I didn't make any optimisation. I 
 For now, the performances are pretty bad. **PageSpeed** give me **41/100** on mobiles and **48/100** on desktop. I also take a quick look on [WebPageTest](http://www.webpagetest.org) and I found that my site takes around **3 seconds to load**, which is slow for such a minimalist interface...
 
 <div><gallery sources={[
-  "perf-starting.jpg",
+  ["perf-starting.jpg", "Not really brilliant..."],
 ]}></gallery></div>
 
 ## Tips 1 : the Picture tag
@@ -55,7 +55,7 @@ In your page :
 Only with this “small” improvement, I win **600 ms** on loading and PageSpeed give me **57/100** on mobiles and **79/100** on desktop which starts to be much better ! Learn more about picture tag on [RICG website](http://ricg.io/).
 
 <div><gallery sources={[
-  "perf-picture.jpg",
+  ["perf-picture.jpg", "Result of picture tag"],
 ]}></gallery></div>
 
 ## Tips 2 : CSS/JS Optimisation
@@ -88,7 +88,7 @@ I use the method's fallback to load my vendors first and then, load and execute 
 After this step, PageSpeed gave me **68/100** on mobiles and finally a green **86/100** on desktop ! On WebPageTest side, the change is not also impressive, but it is still some milliseconds.  
 
 <div><gallery sources={[
-  "perf-cssjs.jpg",
+  ["perf-cssjs.jpg", "Result of CSS/JS optimisations"],
 ]}></gallery></div>
 
 ## Tips 3 : CDN
@@ -105,7 +105,7 @@ The bonus of using Cloudflare is the HTTPS options. Even if, like me, you host y
 Before relaunching all my magic analysis tools, I have to wait 24 hours to see the first CDN effects. Finally, my site takes 2.2s to be fully loaded and PageSpeed gave me a **79/100** on mobiles and **94/100 for** desktop. 
 
 <div><gallery sources={[
-  "perf-cdn.jpg",
+  ["perf-cdn.jpg", "Significant result after these 3 tips !"],
 ]}></gallery></div>
 
 ## Conclusion

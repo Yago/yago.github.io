@@ -18,7 +18,7 @@ const Projects = (): JSX.Element => {
         <h1 tw="mt-6 text-3xl font-medium text-gray-900 md:text-4xl lg:text-5xl">
           Projects
         </h1>
-        <div tw="mt-12 grid grid-cols-3 gap-x-10 gap-y-12">
+        <div tw="mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12">
           {projects
             .sort((a, b) => +new Date(b.meta.date) - +new Date(a.meta.date))
             .map((project, i) => (

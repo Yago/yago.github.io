@@ -18,8 +18,8 @@ type AppContextType = {
   tree: TreeItem[];
   photoswipeOpen: boolean;
   setPhotoswipeOpen: (open: boolean) => void;
-  photoswipeIndex: string | number | null;
-  setPhotoswipeIndex: (index: string | number | null) => void;
+  photoswipeIndex: number | null;
+  setPhotoswipeIndex: (index: number | null) => void;
   photoswipeContainer: PhotoSwipeContainer | null;
   setPhotoswipeContainer: (container: PhotoSwipeContainer | null) => void;
 };

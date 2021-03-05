@@ -25,10 +25,10 @@ const ProjectTeaser = ({ project, href }: Props): JSX.Element => (
           <Picture filename={project.thumbnail} alt="Picture of the author" />
         </div>
         <div css={{ transform: 'translateZ(20px) translateX(5px)' }}>
-          <h3 tw="text-2xl font-medium" className="link-inner">
+          <h3 tw="text-lg font-medium md:text-2xl" className="link-inner">
             {project.title}
           </h3>
-          <p tw="mt-2 text-xl">{project.subtitle}</p>
+          <p tw="md:mt-2 md:text-xl">{project.subtitle}</p>
         </div>
       </Tilt>
     </a>

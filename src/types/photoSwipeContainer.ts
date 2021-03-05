@@ -1,8 +1,10 @@
+import type { Picture } from 'types';
+
 export type PhotoSwipeContainer = {
-  uid: string | number;
+  uid: number;
   src: string;
-  msrc: string;
   w: number;
   h: number;
-  title?: string;
+  title: string | undefined;
+  meta: Picture;
 }[];

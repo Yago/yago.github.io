@@ -23,6 +23,9 @@ import medium from '../../assets/icons/medium.svg';
 import mongodb from '../../assets/icons/mongodb.svg';
 import nodejs from '../../assets/icons/nodejs.svg';
 import npm from '../../assets/icons/npm.svg';
+import pswpclose from '../../assets/icons/pswpclose.svg';
+import pswpfullscreen from '../../assets/icons/pswpfullscreen.svg';
+import pswpzoom from '../../assets/icons/pswpzoom.svg';
 import react from '../../assets/icons/react.svg';
 import reactivex from '../../assets/icons/reactivex.svg';
 import redux from '../../assets/icons/redux.svg';
@@ -54,6 +57,9 @@ export type IconNames =
   | 'mongodb'
   | 'nodejs'
   | 'npm'
+  | 'pswpclose'
+  | 'pswpfullscreen'
+  | 'pswpzoom'
   | 'px500'
   | 'react'
   | 'reactivex'
@@ -86,6 +92,9 @@ export const iconList: Record<string, string> = {
   mongodb,
   nodejs,
   npm,
+  pswpclose,
+  pswpfullscreen,
+  pswpzoom,
   px500,
   react,
   reactivex,

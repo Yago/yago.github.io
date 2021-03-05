@@ -1,26 +1,51 @@
-import React, { useContext } from 'react';
+/* eslint-disable prefer-destructuring */
+import React, { useContext, useEffect, useState } from 'react';
 import { jsx } from '@emotion/react';
-import { last } from 'ramda';
+import { isNil, last } from 'ramda';
 import tw, { TwStyle } from 'twin.macro';
 import { PhotoSwipeContainer } from 'types';
 
 import Picture from 'components/Picture';
+import pictures from 'config/pictures';
 import { AppContext } from 'contexts/AppProvider';
 
 type Props = {
-  container: PhotoSwipeContainer;
+  sources: (string | string[])[];
   wrapperTw?: TwStyle;
   itemTw?: TwStyle;
   imgTw?: TwStyle;
 };
 
-const Gallery = ({
-  container,
-  wrapperTw,
-  itemTw,
-  imgTw,
-}: Props): JSX.Element => {
+const Gallery = ({ sources, wrapperTw, itemTw, imgTw }: Props): JSX.Element => {
+  const [container, setContainer] = useState<PhotoSwipeContainer | null>();
   const { setPhotoswipeIndex, setPhotoswipeContainer } = useContext(AppContext);
+
+  useEffect(() => {
+    setContainer(
+      sources.map((src, i) => {
+        let filename;
+        let title;
+
+        if (typeof src === 'string') {
+          filename = src;
+        } else {
+          filename = src[0];
+          title = src[1];
+        }
+
+        const picture = pictures[filename];
+
+        return {
+          uid: i,
+          w: picture.w,
+          h: picture.h,
+          src: picture.src,
+          title,
+          meta: picture,
+        };
+      })
+    );
+  }, [sources]);
 
   const handleClick = (
     e: React.MouseEvent<Element, MouseEvent>,
@@ -28,12 +53,12 @@ const Gallery = ({
   ): void => {
     e.preventDefault();
     setPhotoswipeIndex(i);
-    setPhotoswipeContainer(container);
+    if (!isNil(container)) setPhotoswipeContainer(container);
   };
 
   return (
     <div itemScope itemType="http://schema.org/ImageGallery" css={wrapperTw}>
-      {container.map((item, i) => (
+      {container?.map((item, i) => (
         <figure
           key={`thumb-${item.uid || i}`}
           itemProp="associatedMedia"

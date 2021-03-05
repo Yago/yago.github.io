@@ -17,7 +17,7 @@ type CodeProps = {
 };
 
 export const Pre = ({ children }: PreProps): JSX.Element => (
-  <div css={styles} className="line-numbers" tw="-mx-10">
+  <div css={styles} className="line-numbers" tw="md:-mx-10">
     <pre>{children}</pre>
   </div>
 );

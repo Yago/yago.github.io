@@ -11,8 +11,14 @@ const styles = (theme = defaultTheme): any => css`
     background: ${theme.background};
   }
 
-  .pswp__container_transition {
-    transition: transform 333ms cubic-bezier(0.4, 0, 0.22, 1);
+  @media screen and (min-width: 768px) {
+    .pswp__rich .pswp__scroll-wrap {
+      left: 25%;
+      width: calc(75% - 42px);
+      top: 86px;
+      height: calc(100% - 174px);
+      overflow: visible;
+    }
   }
 
   /*
@@ -40,7 +46,7 @@ const styles = (theme = defaultTheme): any => css`
     transition: opacity 0.2s;
     cursor: pointer;
     overflow: visible;
-    opacity: 0.75;
+    opacity: 0.4;
     box-shadow: none;
   }
 
@@ -64,7 +70,7 @@ const styles = (theme = defaultTheme): any => css`
   .pswp__button--arrow--right:before {
     width: 44px;
     height: 44px;
-    background: url('/svg/default-skin.svg') 0 0 no-repeat;
+    /* background: url('/svg/default-skin.svg') 0 0 no-repeat; */
     background-size: 264px 88px;
   }
 
@@ -113,44 +119,67 @@ const styles = (theme = defaultTheme): any => css`
 */
   .pswp__button--arrow--left,
   .pswp__button--arrow--right {
-    position: absolute;
-    top: 50%;
-    width: 70px;
-    height: 100px;
-    background: none;
-    margin-top: -50px;
+    position: fixed;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    background: ${theme.background};
+    margin-top: 0;
+    padding: 0;
+    z-index: 9999;
+    opacity: 1;
+
+    .arrow * {
+      border-color: #adb5bd;
+    }
+    &:hover .arrow * {
+      border-color: #000;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .pswp__rich .pswp__button--arrow--left,
+    .pswp__rich .pswp__button--arrow--right {
+      bottom: 42px;
+      opacity: 0.4;
+      background: transparent;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .pswp__button--arrow--left,
+    .pswp__button--arrow--right {
+      display: none;
+    }
   }
 
   .pswp__button--arrow--left {
-    left: 0;
+    right: 50px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .pswp__rich .pswp__button--arrow--left {
+      right: 102px;
+    }
   }
 
   .pswp__button--arrow--right {
-    right: 0;
+    right: 0px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .pswp__rich .pswp__button--arrow--right {
+      right: 42px;
+    }
   }
 
   .pswp__button--arrow--left:before,
   .pswp__button--arrow--right:before {
-    content: '';
-    position: absolute;
-    top: 35px;
-    width: 32px;
-    height: 30px;
-    background-color: ${theme.background};
-  }
-
-  .pswp__button--arrow--left:before {
-    left: 6px;
-    background-position: -138px -44px;
-  }
-
-  .pswp__button--arrow--right:before {
-    right: 6px;
-    background-position: -94px -44px;
+    content: none;
   }
 
   /* 2. Share modal/popup and links */
-  .pswp__counter,
+  .pswp__count,
   .pswp__share-modal {
     user-select: none;
   }
@@ -244,19 +273,35 @@ const styles = (theme = defaultTheme): any => css`
 
   /* 3. Index indicator ("1 of X" counter) */
   .pswp__counter {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: none;
+  }
+  .pswp__count {
+    position: fixed;
+    top: -5px;
+    left: 0px;
     height: 44px;
     padding: 0 10px;
-    font-size: 13px;
     line-height: 44px;
     color: ${theme.foreground};
     opacity: 0.75;
+    z-index: 9999;
+  }
+
+  @media screen and (min-width: 768px) {
+    .pswp__rich .pswp__count {
+      top: 56px;
+      left: 56px;
+      font-size: 45px;
+    }
+
+    .pswp__rich .pswp__count > span:last-child {
+      font-size: 28px;
+    }
   }
 
   /* 4. Caption */
   .pswp__caption {
+    display: none;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -402,19 +447,27 @@ const styles = (theme = defaultTheme): any => css`
 
   /* root element of UI */
   .pswp__ui {
+    position: relative;
     visibility: visible;
     opacity: 1;
-    z-index: 1550;
+    z-index: 9999;
   }
 
   /* top background bar with buttons and "1 of X" indicator */
   .pswp__top-bar {
-    background: ${theme.background} !important;
     position: absolute;
+    background: ${theme.background} !important;
     top: 0;
     left: 0;
     width: 100%;
     height: 44px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .pswp__rich .pswp__top-bar {
+      bottom: 100%;
+      top: auto;
+    }
   }
 
   .pswp__caption,
@@ -444,12 +497,12 @@ const styles = (theme = defaultTheme): any => css`
 
   /* pswp__ui--idle class is added when mouse isn't moving for several seconds (JS option timeToIdle) */
   .pswp__ui--idle .pswp__top-bar {
-    opacity: 0;
+    opacity: 1;
   }
 
   .pswp__ui--idle .pswp__button--arrow--left,
   .pswp__ui--idle .pswp__button--arrow--right {
-    opacity: 0;
+    opacity: 1;
   }
 
   /*
@@ -467,7 +520,7 @@ const styles = (theme = defaultTheme): any => css`
   /* pswp__ui--one-slide class is added when there is just one item in gallery */
   .pswp__ui--one-slide .pswp__button--arrow--left,
   .pswp__ui--one-slide .pswp__button--arrow--right,
-  .pswp__ui--one-slide .pswp__counter {
+  .pswp__ui--one-slide .pswp__count {
     display: none;
   }
 
@@ -477,6 +530,40 @@ const styles = (theme = defaultTheme): any => css`
 
   .pswp--minimal--dark .pswp__top-bar {
     background: none;
+  }
+
+  .pswp__infobox {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 25%;
+    background: ${theme.background};
+    z-index: 9998;
+
+    & > * {
+      position: absolute;
+      left: 56px;
+      bottom: 56px;
+      width: calc(100% - 112px);
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .pswp__infobox {
+      width: 100%;
+      bottom: 0;
+      top: auto;
+
+      & > * {
+        position: absolute;
+        width: 100%;
+        padding: 15px;
+        left: 0;
+        bottom: 0;
+        background: ${theme.background};
+      }
+    }
   }
 `;
 
