@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { jsx } from '@emotion/react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import Head from 'next/head';
 import tw from 'twin.macro';
 
@@ -25,7 +25,7 @@ const Layout = ({ children, outsideChildren }: Props): JSX.Element => {
         <link rel="stylesheet" href="https://use.typekit.net/jjy6lvf.css" />
       </Head>
       <Icons />
-      <div tw="antialiased">
+      <AnimateSharedLayout tw="antialiased">
         <div tw="w-full">
           <div
             tw="w-full transition-transform transform duration-700"
@@ -79,7 +79,7 @@ const Layout = ({ children, outsideChildren }: Props): JSX.Element => {
             </div>
           </div>
         </div>
-      </div>
+      </AnimateSharedLayout>
       {outsideChildren}
     </>
   );

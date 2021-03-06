@@ -11,6 +11,7 @@ export type TreeItem = {
 };
 
 type AppContextType = {
+  closing: boolean;
   menuOpen: boolean;
   setMenuOpen: (newVal: boolean) => void;
   terminalOpen: boolean;
@@ -53,6 +54,7 @@ const importAll = (r: any) =>
 
 const AppProvider = ({ children }: Props): JSX.Element => {
   const { asPath } = useRouter();
+  const [closing, setClosing] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [photoswipeOpen, setPhotoswipeOpen] = useState(false);
@@ -60,9 +62,7 @@ const AppProvider = ({ children }: Props): JSX.Element => {
     photoswipeContainer,
     setPhotoswipeContainer,
   ] = useState<PhotoSwipeContainer | null>(null);
-  const [photoswipeIndex, setPhotoswipeIndex] = useState<
-    string | number | null
-  >(null);
+  const [photoswipeIndex, setPhotoswipeIndex] = useState<number | null>(null);
   const tree = importAll(require.context('../pages/', true));
 
   useEffect(() => {
@@ -74,6 +74,13 @@ const AppProvider = ({ children }: Props): JSX.Element => {
   }, [terminalOpen]);
 
   useEffect(() => {
+    if (menuOpen || terminalOpen) {
+      setClosing(true);
+      setTimeout(() => {
+        setClosing(false);
+      }, 700);
+    }
+
     setMenuOpen(false);
     setTerminalOpen(false);
   }, [asPath]);
@@ -99,6 +106,7 @@ const AppProvider = ({ children }: Props): JSX.Element => {
   return (
     <AppContext.Provider
       value={{
+        closing,
         menuOpen,
         setMenuOpen,
         terminalOpen,
