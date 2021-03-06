@@ -8,6 +8,7 @@ import bootstrap from '../../assets/icons/bootstrap.svg';
 import close from '../../assets/icons/close.svg';
 import drakar from '../../assets/icons/drakar.svg';
 import email from '../../assets/icons/email.svg';
+import film from '../../assets/icons/film.svg';
 import fullscreen from '../../assets/icons/fullscreen.svg';
 import gatsby from '../../assets/icons/gatsby.svg';
 import git from '../../assets/icons/git.svg';
@@ -42,6 +43,7 @@ export type IconNames =
   | 'close'
   | 'drakar'
   | 'email'
+  | 'film'
   | 'fullscreen'
   | 'gatsby'
   | 'git'
@@ -77,6 +79,7 @@ export const iconList: Record<string, string> = {
   close,
   drakar,
   email,
+  film,
   fullscreen,
   gatsby,
   git,

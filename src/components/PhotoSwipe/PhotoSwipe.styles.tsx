@@ -143,6 +143,12 @@ const styles = (theme = defaultTheme): any => css`
       bottom: 42px;
       opacity: 0.4;
       background: transparent;
+      .arrow * {
+        border-color: #000;
+      }
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 

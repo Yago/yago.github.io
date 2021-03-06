@@ -74,7 +74,6 @@ const AppProvider = ({ children }: Props): JSX.Element => {
   }, [terminalOpen]);
 
   useEffect(() => {
-    console.log(asPath);
     setMenuOpen(false);
     setTerminalOpen(false);
   }, [asPath]);
