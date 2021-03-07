@@ -1,103 +1,114 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { jsx } from '@emotion/react';
 import tw from 'twin.macro';
 
 import Button from 'components/Button';
-import Divider from 'components/Divider';
+import DevFacts from 'components/DevFacts';
+import FadeIn from 'components/FadeIn';
+import GalleryTeaser from 'components/GalleryTeaser';
 import Icon from 'components/Icon';
 import Layout from 'components/Layout';
+import PhotoSwipe from 'components/PhotoSwipe';
+import PostTeaser from 'components/PostTeaser';
+import ProjectTeaser from 'components/ProjectTeaser';
+import { AppContext } from 'contexts/AppProvider';
 
-const Home = (): JSX.Element => (
-  <Layout>
-    <h1 tw="mt-20 font-sans text-4xl font-medium text-gray-900">
-      Last projects
-    </h1>
-    <Divider>
-      <span tw="font-sans text-lg font-medium text-gray-500">
-        Yann Gouffon — June 25, 2019
-      </span>
-    </Divider>
-    <Divider icon="drakar" />
-    <p tw="mt-5 font-serif text-2xl text-gray-900">
-      Ahoy there ! I'm Yann, Frontend and JavaScript developer by day and
-      photographer when the night comes (or my days off).
-    </p>
-    <p tw="mt-4 text-lg font-normal text-gray-600">
-      — <Icon name="igloo" tw="text-lg" /> Based in Lausanne, Switzerland
-    </p>
+const Home = (): JSX.Element => {
+  const { tree } = useContext(AppContext);
+  const projects = tree.filter(i => i.path.includes('/projects/'));
+  const posts = tree.filter(i => i.path.includes('/blog/'));
 
-    <p tw="w-1/2 mx-auto text-lg">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ego quem huic
-      anteponam non audeo dicere; Illa videamus, quae a te de amicitia dicta
-      sunt. Atqui reperies, inquit, in hoc quidem pertinacem; Pudebit te,
-      inquam, illius tabulae, quam Cleanthes sane commode verbis depingere
-      solebat. An est aliquid, quod te sua sponte delectet? Videsne quam sit
-      magna dissensio? Scisse enim te quis coarguere possit? Homines optimi non
-      intellegunt totam rationem everti, si ita res se habeat. Ille vero, si
-      insipiens-quo certe, quoniam tyrannus -, numquam beatus; Sedulo, inquam,
-      faciam. Itaque vides, quo modo loquantur, nova verba fingunt, deserunt
-      usitata. Est tamen ea secundum naturam multoque nos ad se expetendam magis
-      hortatur quam superiora omnia. Non est enim vitium in oratione solum, sed
-      etiam in moribus. Cum ageremus, inquit, vitae beatum et eundem supremum
-      diem, scribebamus haec. Nos autem non solum beatae vitae istam esse
-      oblectationem videmus, sed etiam levamentum miseriarum. Sed haec quidem
-      liberius ab eo dicuntur et saepius. Quibus rebus vita consentiens
-      virtutibusque respondens recta et honesta et constans et naturae congruens
-      existimari potest. At ille non pertimuit saneque fidenter: Istis quidem
-      ipsis verbis, inquit; Tu enim ista lenius, hic Stoicorum more nos vexat.
-      Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant. Vide, ne
-      etiam menses! nisi forte eum dicis, qui, simul atque arripuit, interficit.
-      Duo Reges: constructio interrete. Quo studio Aristophanem putamus aetatem
-      in litteris duxisse? Eam tum adesse, cum dolor omnis absit; Vide, ne etiam
-      menses! nisi forte eum dicis, qui, simul atque arripuit, interficit. Ergo
-      hoc quidem apparet, nos ad agendum esse natos. Serpere anguiculos, nare
-      anaticulas, evolare merulas, cornibus uti videmus boves, nepas aculeis.
-      Quia dolori non voluptas contraria est, sed doloris privatio. Nec vero sum
-      nescius esse utilitatem in historia, non modo voluptatem. Si de re
-      disceptari oportet, nulla mihi tecum, Cato, potest esse dissensio. Cum
-      ageremus, inquit, vitae beatum et eundem supremum diem, scribebamus haec.
-      Quid enim de amicitia statueris utilitatis causa expetenda vides. Illud
-      urgueam, non intellegere eum quid sibi dicendum sit, cum dolorem summum
-      malum esse dixerit. Is ita vivebat, ut nulla tam exquisita posset inveniri
-      voluptas, qua non abundaret. Sin laboramus, quis est, qui alienae modum
-      statuat industriae? Oratio me istius philosophi non offendit; Haec quo
-      modo conveniant, non sane intellego. Sed quia studebat laudi et dignitati,
-      multum in virtute processerat. Non risu potius quam oratione eiciendum?
-      Quarum ambarum rerum cum medicinam pollicetur, luxuriae licentiam
-      pollicetur. Te enim iudicem aequum puto, modo quae dicat ille bene noris.
-      Non autem hoc: igitur ne illud quidem. Quae similitudo in genere etiam
-      humano apparet. Tollenda est atque extrahenda radicitus. Dic in quovis
-      conventu te omnia facere, ne doleas. Pisone in eo gymnasio, quod
-      Ptolomaeum vocatur, unaque nobiscum Q. Quid me istud rogas? Nec vero sum
-      nescius esse utilitatem in historia, non modo voluptatem. Sed quid
-      sentiat, non videtis. Obsecro, inquit, Torquate, haec dicit Epicurus? Illa
-      argumenta propria videamus, cur omnia sint paria peccata. Hoc ipsum
-      elegantius poni meliusque potuit. Si enim, ut mihi quidem videtur, non
-      explet bona naturae voluptas, iure praetermissa est; Illo enim addito
-      iuste fit recte factum, per se autem hoc ipsum reddere in officio ponitur.
-      Aliter homines, aliter philosophos loqui putas oportere? Eaedem res
-      maneant alio modo. Octavio fuit, cum illam severitatem in eo filio
-      adhibuit, quem in adoptionem D. Voluptatem cum summum bonum diceret,
-      primum in eo ipso parum vidit, deinde hoc quoque alienum; Igitur neque
-      stultorum quisquam beatus neque sapientium non beatus. Sed ad haec, nisi
-      molestum est, habeo quae velim. Quasi ego id curem, quid ille aiat aut
-      neget. Apparet statim, quae sint officia, quae actiones. Verum tamen cum
-      de rebus grandioribus dicas, ipsae res verba rapiunt; Nihil opus est
-      exemplis hoc facere longius. At ille non pertimuit saneque fidenter: Istis
-      quidem ipsis verbis, inquit; Etenim semper illud extra est, quod arte
-      comprehenditur. An me, inquis, tam amentem putas, ut apud imperitos isto
-      modo loquar? Age sane, inquam. Itaque vides, quo modo loquantur, nova
-      verba fingunt, deserunt usitata. Virtutibus igitur rectissime mihi videris
-      et ad consuetudinem nostrae orationis vitia posuisse contraria. Intellegi
-      quidem, ut propter aliam quampiam rem, verbi gratia propter voluptatem,
-      nos amemus; Eaedem enim utilitates poterunt eas labefactare atque
-      pervertere. Ea possunt paria non esse. Quod cum dixissent, ille contra.
-    </p>
+  return (
+    <Layout outsideChildren={<PhotoSwipe />} noContainer>
+      <div tw="px-4 mx-auto max-w-screen-2xl md:px-14">
+        <FadeIn move={false}>
+          <h1 tw="sr-only">Yann Gouffon, developer and photographer</h1>
+          <blockquote tw="w-10/12 my-44 md:w-8/12 lg:w-1/2 xl:w-5/12">
+            <p tw="font-serif text-lg font-light text-gray-900 md:text-2xl lg:text-2.5xl leading-7 md:leading-9 lg:leading-10">
+              Ahoy there ! I'm Yann, Frontend and JavaScript{' '}
+              <code tw="text-sm font-normal md:text-xl lg:text-2xl">
+                developer
+              </code>{' '}
+              by day and <em>photographer</em> when the night comes (or during
+              my days off).
+            </p>
+            <footer tw="mt-6 text-gray-600 md:text-lg lg:text-xl">
+              — <Icon name="igloo" /> Based in Lausanne, Switzerland
+            </footer>
+          </blockquote>
+        </FadeIn>
 
-    <div tw="mt-10">
-      <Button href="/">See all</Button>
-    </div>
-  </Layout>
-);
+        <FadeIn tw="flex items-baseline justify-between">
+          <h2 tw="text-2xl font-medium text-gray-900 md:text-3xl lg:text-4xl">
+            Last projects
+          </h2>
+          <Button href="/projects">See all</Button>
+        </FadeIn>
+
+        <div tw="mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12">
+          {projects
+            .sort((a, b) => +new Date(b.meta.date) - +new Date(a.meta.date))
+            .slice(0, 6)
+            .map((project, i) => (
+              <FadeIn key={`project-${i}`}>
+                <ProjectTeaser project={project.meta} href={project.path} />
+              </FadeIn>
+            ))}
+        </div>
+
+        <FadeIn tw="flex items-baseline justify-between mt-32">
+          <h2 tw="text-2xl font-medium text-gray-900 md:text-3xl lg:text-4xl">
+            Last photographs
+          </h2>
+          <Button href="/photographs">See all</Button>
+        </FadeIn>
+
+        <div tw="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-10 gap-y-12">
+          <FadeIn>
+            <GalleryTeaser
+              sources={[['lisboa-3.jpg', 'Nice view'], 'lisboa-7.jpg']}
+              cover="lisboa.jpg"
+              title="Urban"
+            />
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <GalleryTeaser
+              sources={[['lisboa-2.jpg', 'Nice view'], 'lisboa-7.jpg']}
+              cover="lisboa.jpg"
+              title="Urban"
+            />
+          </FadeIn>
+        </div>
+      </div>
+
+      <FadeIn tw="mt-32">
+        <DevFacts />
+      </FadeIn>
+
+      <div tw="px-4 mx-auto max-w-screen-2xl md:px-14">
+        <FadeIn tw="flex items-baseline justify-between mt-16">
+          <h2 tw="text-2xl font-medium text-gray-900 md:text-3xl lg:text-4xl">
+            Last blog posts
+          </h2>
+          <Button href="/blog">See all</Button>
+        </FadeIn>
+
+        <div tw="mt-16 grid lg:grid-cols-2 lg:gap-x-20 gap-y-16">
+          {posts
+            .sort((a, b) => +new Date(b.meta.date) - +new Date(a.meta.date))
+            .slice(0, 4)
+            .map((post, i) => (
+              <FadeIn
+                key={`post-${i}`}
+                css={i === posts.length - 1 && tw`mb-20`}
+              >
+                <PostTeaser post={post.meta} href={post.path} />
+              </FadeIn>
+            ))}
+        </div>
+      </div>
+    </Layout>
+  );
+};
 
 export default Home;

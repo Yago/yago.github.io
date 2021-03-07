@@ -14,12 +14,17 @@ export default css`
     box-border
     hover:text-blue
     cursor-pointer
-    px-4
-    py-2
+    px-3
+    md:px-4
+    py-1
+    md:py-2
+    text-sm
+    md:text-base
     focus:outline-none
     focus:ring-4
     focus:ring-blue
     focus:ring-opacity-10
+    uppercase
   `}
   border-image-slice: 1;
 

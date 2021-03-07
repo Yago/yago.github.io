@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { jsx } from '@emotion/react';
-import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Head from 'next/head';
 import tw from 'twin.macro';
 
@@ -14,9 +14,14 @@ import { AppContext } from 'contexts/AppProvider';
 type Props = {
   children: React.ReactNode;
   outsideChildren?: React.ReactNode;
+  noContainer?: boolean;
 };
 
-const Layout = ({ children, outsideChildren }: Props): JSX.Element => {
+const Layout = ({
+  children,
+  outsideChildren,
+  noContainer,
+}: Props): JSX.Element => {
   const { menuOpen, terminalOpen } = useContext(AppContext);
 
   return (
@@ -25,7 +30,7 @@ const Layout = ({ children, outsideChildren }: Props): JSX.Element => {
         <link rel="stylesheet" href="https://use.typekit.net/jjy6lvf.css" />
       </Head>
       <Icons />
-      <AnimateSharedLayout tw="antialiased">
+      <div tw="antialiased">
         <div tw="w-full">
           <div
             tw="w-full transition-transform transform duration-700"
@@ -73,18 +78,24 @@ const Layout = ({ children, outsideChildren }: Props): JSX.Element => {
             tw="w-full transition-transform transform duration-700"
             css={(menuOpen || terminalOpen) && tw`md:-translate-x-1/2`}
           >
-            <div tw="px-4 mx-auto max-w-screen-2xl md:px-14">
+            <div
+              css={!noContainer && tw`px-4 mx-auto max-w-screen-2xl md:px-14`}
+            >
               {children}
+            </div>
+            <div tw="px-4 mx-auto max-w-screen-2xl md:px-14">
               <Footer />
             </div>
           </div>
         </div>
-      </AnimateSharedLayout>
+      </div>
       {outsideChildren}
     </>
   );
 };
 
-Layout.defaultProps = {};
+Layout.defaultProps = {
+  noContainer: false,
+};
 
 export default Layout;

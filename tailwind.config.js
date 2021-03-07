@@ -56,16 +56,18 @@ module.exports = {
         950: '#0e1012',
       },
       blue: '#0002FC',
-      pink: '#FF0080',
-      orange: '#F5A623',
-      yellow: '#F8E71C',
-      green: '#22E922',
+      red: '#D00000',
+      orange: '#F48C06',
+      yellow: '#FFBA08',
+      green: '#67d15a',
+      indigo: '#9a86fd',
       teal: '#50E3C2',
     },
     fontFamily,
     extend: {
       fontSize: {
         '2xl': '23px',
+        '2.5xl': '26.5px',
       },
       rotate: {
         135: '135deg',
