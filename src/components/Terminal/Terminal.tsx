@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Hotkeys from 'react-hot-keys';
+import { useHotkeys } from 'react-hotkeys-hook';
 import ReactTerminal from 'react-terminal-component';
 import {
   CommandMapping,
@@ -17,7 +17,8 @@ import styles from './Terminal.styles';
 
 const Terminal = (): JSX.Element => {
   const router = useRouter();
-  const { tree } = useContext(AppContext);
+  const { tree, setTerminalOpen } = useContext(AppContext);
+  useHotkeys('escape', () => setTerminalOpen(false));
 
   // react-terminal-component theme options
   const theme = {
@@ -114,14 +115,12 @@ So those are some of the available commands :
 
   return (
     <div css={styles}>
-      <Hotkeys keyName="escape" onKeyDown={() => console.log(false)}>
-        <ReactTerminal
-          theme={theme}
-          promptSymbol="▲&nbsp;"
-          emulatorState={customState}
-          clickToFocus
-        />
-      </Hotkeys>
+      <ReactTerminal
+        theme={theme}
+        promptSymbol="▲&nbsp;"
+        emulatorState={customState}
+        clickToFocus
+      />
     </div>
   );
 };
