@@ -118,21 +118,21 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
                     <h3 tw="text-lg font-medium md:text-2xl">{item.title}</h3>
                   )}
                   <p tw="mt-2 text-gray-600 md:mt-4">
-                    {!isNil(item?.meta?.Make) && (
+                    {!isNil(item?.meta?.Model) && (
                       <span tw="pr-3 lowercase md:text-lg md:block md:pr-0">
-                        {item.meta?.Make} {item.meta?.Model}
+                        {item.meta?.Model}
                         <span tw="pl-2 text-gray-400 md:hidden">|</span>
                       </span>
                     )}
                     {!isNil(item?.meta?.FocalLength) && (
                       <span tw="pr-3 md:text-lg md:block md:pr-0">
-                        {item.meta?.FocalLength}mm
+                        {Math.round(item.meta?.FocalLength)}mm
                         <span tw="pl-2 text-gray-400 md:hidden">|</span>
                       </span>
                     )}
                     {!isNil(item?.meta?.ApertureValue) && (
                       <span tw="pr-3 md:text-lg md:block md:pr-0">
-                        ƒ/{item.meta?.ApertureValue}
+                        ƒ/{Math.round(item.meta?.ApertureValue * 10) / 10}
                         <span tw="pl-2 text-gray-400 md:hidden">|</span>
                       </span>
                     )}

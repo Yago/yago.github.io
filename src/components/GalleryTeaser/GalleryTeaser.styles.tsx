@@ -23,7 +23,7 @@ export const imageWraper = css`
       left: 50%;
       width: 140%;
       padding-bottom: 140%;
-      box-shadow: inset 0px 0px 60px 150px rgba(0, 0, 0, 0.5);
+      box-shadow: inset 0px 0px 60px 150px rgba(0, 0, 0, 0.3);
       border-radius: 50%;
     }
   }

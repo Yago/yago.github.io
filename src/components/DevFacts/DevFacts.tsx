@@ -34,7 +34,7 @@ const pieData = [
   { title: 'Twig', value: 1, color: '#DC2F02' },
   { title: 'HTML', value: 1, color: '#D00000' },
   { title: 'Markdown', value: 1, color: '#9D0208' },
-  { title: 'Oher', value: 2, color: '#6A040F' },
+  { title: 'Other', value: 2, color: '#870614' },
   { title: 'JS/JSX', value: 4, color: '#FFBA08' },
   { title: 'TS/TSX', value: 5, color: '#FAA307' },
 ];

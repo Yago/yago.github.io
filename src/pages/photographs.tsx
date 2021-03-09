@@ -7,6 +7,7 @@ import FadeIn from 'components/FadeIn';
 import GalleryTeaser from 'components/GalleryTeaser';
 import Layout from 'components/Layout';
 import PhotoSwipe from 'components/PhotoSwipe';
+import galleries from 'config/galleries.json';
 
 const Photographs = (): JSX.Element => (
   <Layout outsideChildren={<PhotoSwipe />}>
@@ -20,23 +21,51 @@ const Photographs = (): JSX.Element => (
       <div tw="w-11/12 mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-10 gap-y-12">
         <FadeIn>
           <GalleryTeaser
-            sources={[['lisboa-3.jpg', 'Nice view'], 'lisboa-7.jpg']}
-            cover="lisboa.jpg"
-            title="Urban"
+            sources={galleries.bali}
+            cover="bali.jpg"
+            title="Bali"
           />
         </FadeIn>
-        <FadeIn delay={0.4}>
+        <FadeIn>
           <GalleryTeaser
-            sources={[['lisboa-2.jpg', 'Nice view'], 'lisboa-7.jpg']}
-            cover="lisboa.jpg"
-            title="Urban"
+            sources={galleries.mountain}
+            cover="mountain.jpg"
+            title="Mountain"
           />
         </FadeIn>
-        <FadeIn delay={0.4}>
+        <FadeIn>
           <GalleryTeaser
-            sources={[['lisboa-1.jpg', 'Nice view'], 'lisboa-7.jpg']}
-            cover="lisboa.jpg"
-            title="Urban"
+            sources={galleries.italy}
+            cover="italy.jpg"
+            title="Italy"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
+            sources={galleries['reunion-maurice']}
+            cover="reunion-maurice.jpg"
+            title="Réunion/Mauritius"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
+            sources={galleries.north}
+            cover="north.jpg"
+            title="North"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
+            sources={galleries.mexico}
+            cover="mexico.jpg"
+            title="Yucatan"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
+            sources={galleries['sri-lanka']}
+            cover="sri-lanka.jpg"
+            title="Sri-Lanka"
           />
         </FadeIn>
       </div>

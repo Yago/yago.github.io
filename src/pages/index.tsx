@@ -11,6 +11,7 @@ import Layout from 'components/Layout';
 import PhotoSwipe from 'components/PhotoSwipe';
 import PostTeaser from 'components/PostTeaser';
 import ProjectTeaser from 'components/ProjectTeaser';
+import galleries from 'config/galleries.json';
 import { AppContext } from 'contexts/AppProvider';
 
 const Home = (): JSX.Element => {
@@ -66,16 +67,16 @@ const Home = (): JSX.Element => {
         <div tw="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-10 gap-y-12">
           <FadeIn>
             <GalleryTeaser
-              sources={[['lisboa-3.jpg', 'Nice view'], 'lisboa-7.jpg']}
-              cover="lisboa.jpg"
-              title="Urban"
+              sources={galleries.north}
+              cover="north.jpg"
+              title="North"
             />
           </FadeIn>
-          <FadeIn delay={0.4}>
+          <FadeIn>
             <GalleryTeaser
-              sources={[['lisboa-2.jpg', 'Nice view'], 'lisboa-7.jpg']}
-              cover="lisboa.jpg"
-              title="Urban"
+              sources={galleries.mountain}
+              cover="mountain.jpg"
+              title="Mountain"
             />
           </FadeIn>
         </div>
