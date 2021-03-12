@@ -14,6 +14,4 @@ const Blank = ({ title }: Props): JSX.Element => {
   return <div css={styles}>{title2}</div>;
 };
 
-Blank.defaultProps = {};
-
 export default Blank;

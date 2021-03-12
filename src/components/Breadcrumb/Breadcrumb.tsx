@@ -49,6 +49,4 @@ const Breadcrumb = ({ crumbs }: Props): JSX.Element => (
   </nav>
 );
 
-Breadcrumb.defaultProps = {};
-
 export default Breadcrumb;

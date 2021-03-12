@@ -47,6 +47,4 @@ const Post = ({ children, meta }: PostProps): JSX.Element => (
   </Layout>
 );
 
-Post.defaultProps = {};
-
 export default Post;

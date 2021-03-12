@@ -31,6 +31,4 @@ const PostTeaser = ({ post, href }: Props): JSX.Element => (
   </Link>
 );
 
-PostTeaser.defaultProps = {};
-
 export default PostTeaser;

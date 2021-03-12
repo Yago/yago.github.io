@@ -16,6 +16,4 @@ const Button = ({ href, children }: Props): JSX.Element => (
   </Link>
 );
 
-Button.defaultProps = {};
-
 export default Button;

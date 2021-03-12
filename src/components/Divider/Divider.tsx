@@ -31,6 +31,4 @@ const Divider = ({ icon, children }: Props): JSX.Element => (
   </div>
 );
 
-Divider.defaultProps = {};
-
 export default Divider;

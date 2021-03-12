@@ -38,6 +38,4 @@ const MenuToggle = (): JSX.Element => {
   );
 };
 
-MenuToggle.defaultProps = {};
-
 export default MenuToggle;

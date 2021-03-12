@@ -28,6 +28,4 @@ const Picture = ({ filename, alt, className }: Props): JSX.Element => {
   );
 };
 
-Picture.defaultProps = {};
-
 export default Picture;

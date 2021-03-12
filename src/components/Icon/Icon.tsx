@@ -11,14 +11,10 @@ export type Props = {
   className?: string;
 };
 
-const Icon = ({ name, className }: Props): JSX.Element => (
+const Icon = ({ name = 'tipi', className }: Props): JSX.Element => (
   <svg css={styles} className={className} aria-hidden="true">
     <use xlinkHref={`#${name}`} />
   </svg>
 );
-
-Icon.defaultProps = {
-  name: 'tipi',
-};
 
 export default Icon;

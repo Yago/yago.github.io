@@ -35,6 +35,4 @@ const Menu = (): JSX.Element => {
   );
 };
 
-Menu.defaultProps = {};
-
 export default Menu;

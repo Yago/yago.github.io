@@ -14,7 +14,12 @@ type Props = {
   props?: any;
 };
 
-const FadeIn = ({ move, delay, children, ...props }: Props): JSX.Element => {
+const FadeIn = ({
+  move = true,
+  delay = 0,
+  children,
+  ...props
+}: Props): JSX.Element => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const { closing } = useContext(AppContext);
@@ -44,11 +49,6 @@ const FadeIn = ({ move, delay, children, ...props }: Props): JSX.Element => {
       {children}
     </motion.div>
   );
-};
-
-FadeIn.defaultProps = {
-  move: true,
-  delay: 0,
 };
 
 export default FadeIn;

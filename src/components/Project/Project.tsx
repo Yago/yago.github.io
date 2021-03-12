@@ -159,6 +159,4 @@ const Project = ({ children, meta }: ProjectProps): JSX.Element => (
   </Layout>
 );
 
-Project.defaultProps = {};
-
 export default Project;

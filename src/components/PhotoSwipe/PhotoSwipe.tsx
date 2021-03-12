@@ -162,6 +162,4 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
   );
 };
 
-PhotoSwipe.defaultProps = {};
-
 export default PhotoSwipe;

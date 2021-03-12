@@ -29,7 +29,20 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const AppContext = React.createContext<AppContextType>({});
+export const AppContext = React.createContext<AppContextType>({
+  closing: false,
+  menuOpen: false,
+  setMenuOpen: console.log,
+  terminalOpen: false,
+  setTerminalOpen: console.log,
+  photoswipeOpen: false,
+  tree: [],
+  setPhotoswipeOpen: console.log,
+  photoswipeIndex: null,
+  setPhotoswipeIndex: console.log,
+  photoswipeContainer: null,
+  setPhotoswipeContainer: console.log,
+});
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const importAll = (r: any) =>

@@ -12,8 +12,8 @@ type Props = {
 };
 
 const FadeInChildren = ({
-  move,
-  delay,
+  move = true,
+  delay = 0,
   children,
   ...props
 }: Props): JSX.Element => (
@@ -29,10 +29,5 @@ const FadeInChildren = ({
     {children}
   </motion.div>
 );
-
-FadeInChildren.defaultProps = {
-  move: true,
-  delay: 0,
-};
 
 export default FadeInChildren;

@@ -76,6 +76,4 @@ const GalleryTeaser = ({ title, sources, cover }: Props): JSX.Element => {
   );
 };
 
-GalleryTeaser.defaultProps = {};
-
 export default GalleryTeaser;

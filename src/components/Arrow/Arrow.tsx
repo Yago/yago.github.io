@@ -8,7 +8,7 @@ type Props = {
   direction?: 'left' | 'right';
 };
 
-const Arrow = ({ direction }: Props): JSX.Element => (
+const Arrow = ({ direction = 'right' }: Props): JSX.Element => (
   <>
     <Global styles={styles} />
     <span
@@ -21,9 +21,5 @@ const Arrow = ({ direction }: Props): JSX.Element => (
     </span>
   </>
 );
-
-Arrow.defaultProps = {
-  direction: 'right',
-};
 
 export default Arrow;

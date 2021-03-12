@@ -20,7 +20,7 @@ type Props = {
 const Layout = ({
   children,
   outsideChildren,
-  noContainer,
+  noContainer = false,
 }: Props): JSX.Element => {
   const { menuOpen, terminalOpen } = useContext(AppContext);
 
@@ -92,10 +92,6 @@ const Layout = ({
       {outsideChildren}
     </>
   );
-};
-
-Layout.defaultProps = {
-  noContainer: false,
 };
 
 export default Layout;

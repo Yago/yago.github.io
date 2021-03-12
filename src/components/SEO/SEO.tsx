@@ -67,6 +67,4 @@ const SEO = ({ title, cover, description }: Props): JSX.Element => {
   );
 };
 
-SEO.defaultProps = {};
-
 export default SEO;

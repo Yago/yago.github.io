@@ -123,6 +123,4 @@ const DevFacts = (): JSX.Element => {
   );
 };
 
-DevFacts.defaultProps = {};
-
 export default DevFacts;

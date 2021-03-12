@@ -35,6 +35,4 @@ const ProjectTeaser = ({ project, href }: Props): JSX.Element => (
   </Link>
 );
 
-ProjectTeaser.defaultProps = {};
-
 export default ProjectTeaser;

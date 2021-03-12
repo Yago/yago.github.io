@@ -32,6 +32,4 @@ const TerminalToggle = (): JSX.Element => {
   );
 };
 
-TerminalToggle.defaultProps = {};
-
 export default TerminalToggle;

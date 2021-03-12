@@ -19,6 +19,4 @@ const Header = (): JSX.Element => (
   </header>
 );
 
-Header.defaultProps = {};
-
 export default Header;

@@ -12,6 +12,4 @@ const GalleryProxy = ({ sources }: Props): JSX.Element => (
   <Gallery sources={sources} wrapperTw={tw`md:-mx-10`} />
 );
 
-GalleryProxy.defaultProps = {};
-
 export default GalleryProxy;

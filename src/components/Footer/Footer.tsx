@@ -92,6 +92,4 @@ const Footer = (): JSX.Element => {
   );
 };
 
-Footer.defaultProps = {};
-
 export default Footer;

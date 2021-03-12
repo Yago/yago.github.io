@@ -24,6 +24,4 @@ const ContentLink = ({ children, href }: Props): JSX.Element => {
   );
 };
 
-ContentLink.defaultProps = {};
-
 export default ContentLink;

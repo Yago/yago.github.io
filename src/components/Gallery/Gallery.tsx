@@ -49,7 +49,7 @@ const Gallery = ({ sources, wrapperTw, itemTw, imgTw }: Props): JSX.Element => {
 
   const handleClick = (
     e: React.MouseEvent<Element, MouseEvent>,
-    i: string | number
+    i: number
   ): void => {
     e.preventDefault();
     setPhotoswipeIndex(i);
