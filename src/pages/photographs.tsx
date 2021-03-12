@@ -18,7 +18,7 @@ const Photographs = (): JSX.Element => (
           Photographs
         </h1>
       </FadeIn>
-      <div tw="w-11/12 mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-10 gap-y-12">
+      <div tw="mt-12 md:w-11/12 grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-10 gap-y-12">
         <FadeIn>
           <GalleryTeaser
             sources={galleries.bali}

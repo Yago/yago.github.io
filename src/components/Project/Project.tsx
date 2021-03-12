@@ -15,6 +15,7 @@ export type ProjectProps = {
   children: React.ReactNode;
   meta: {
     path: string;
+    published: boolean;
     date: string;
     title: string;
     subtitle: string;
@@ -32,6 +33,10 @@ export type ProjectProps = {
     };
     year?: string;
     gallery: (string | string[])[];
+    visit: {
+      url: string;
+      label: string;
+    };
   };
 };
 
@@ -104,8 +109,24 @@ const Project = ({ children, meta }: ProjectProps): JSX.Element => (
               )}
               {!isNil(meta.year) && (
                 <tr>
-                  <td tw="py-1 pr-3">year</td>
+                  <td tw="py-1 pr-3">Year</td>
                   <td tw="py-1">{meta.year}</td>
+                </tr>
+              )}
+              {!isNil(meta.visit) && (
+                <tr>
+                  <td tw="py-1 pr-3">Visit</td>
+                  <td tw="py-1">
+                    <a
+                      href={meta.visit.url}
+                      className="link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      tw="text-blue"
+                    >
+                      {meta.visit.label}
+                    </a>
+                  </td>
                 </tr>
               )}
             </tbody>

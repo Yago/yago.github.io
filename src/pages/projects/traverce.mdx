@@ -1,0 +1,33 @@
+import Project from 'components/Project'
+
+export const meta = {
+  date: "2020-09-01T09:12:53Z",
+  title: "Traverce",
+  subtitle: "COVID compliant travel",
+  type: "project",
+  cover: "traverce-cover.jpg",
+  thumbnail: "traverce04.jpg",
+  open_source: {
+    name: "Github repository (MIT)",
+    url: "https://github.com/yago/traverce"
+  },
+  year: "2020 -",
+  roles: [
+    "Designer",
+    "JavaScript developer"
+  ],
+  gallery: [
+    "traverce01.jpg",
+    "traverce02.jpg",
+    "traverce03.jpg",
+    "traverce04.jpg",
+  ],
+  visit: {
+    url: 'https://traverce.net',
+    label: 'traverce.net'
+  }
+};
+
+2020 was a hard year for all of us. As a developer I didn't come with a big solution, I just wanted to bring a small escape for all the people stuck at home (me included). So I aggregated some of the coolest first person walking video that I found on YouTube and display them a minimal UI that can easily filter destinations.
+
+export default ({ children }) => <Project meta={meta}>{children}</Project>

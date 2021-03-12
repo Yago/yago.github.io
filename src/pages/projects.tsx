@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { jsx } from '@emotion/react';
+import { isNil } from 'ramda';
 import tw from 'twin.macro';
 
 import Breadcrumb from 'components/Breadcrumb';
@@ -24,6 +25,7 @@ const Projects = (): JSX.Element => {
         <div tw="mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12">
           {projects
             .sort((a, b) => +new Date(b.meta.date) - +new Date(a.meta.date))
+            .filter(i => isNil(i.meta.published) || i.meta.published)
             .map((project, i) => (
               <FadeIn key={`project-${i}`}>
                 <ProjectTeaser project={project.meta} href={project.path} />

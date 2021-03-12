@@ -18,7 +18,7 @@ const fontFamily = {
     '"Noto Color Emoji"',
   ],
   serif: [
-    'Cala',
+    'CalaWeb',
     'ui-serif',
     'Georgia',
     'Cambria',
