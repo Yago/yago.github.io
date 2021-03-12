@@ -23,7 +23,7 @@ const Home = (): JSX.Element => {
 
   return (
     <Layout outsideChildren={<PhotoSwipe />} noContainer>
-      <SEO title="Homepage" />
+      <SEO title="Welcome" />
       <div tw="px-4 mx-auto max-w-screen-2xl md:px-14">
         <FadeIn move={false}>
           <h1 tw="sr-only">Yann Gouffon, developer and photographer</h1>
