@@ -12,6 +12,7 @@ import Layout from 'components/Layout';
 import PhotoSwipe from 'components/PhotoSwipe';
 import PostTeaser from 'components/PostTeaser';
 import ProjectTeaser from 'components/ProjectTeaser';
+import SEO from 'components/SEO';
 import galleries from 'config/galleries.json';
 import { AppContext } from 'contexts/AppProvider';
 
@@ -22,6 +23,7 @@ const Home = (): JSX.Element => {
 
   return (
     <Layout outsideChildren={<PhotoSwipe />} noContainer>
+      <SEO title="Homepage" />
       <div tw="px-4 mx-auto max-w-screen-2xl md:px-14">
         <FadeIn move={false}>
           <h1 tw="sr-only">Yann Gouffon, developer and photographer</h1>

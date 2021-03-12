@@ -7,6 +7,7 @@ import Breadcrumb from 'components/Breadcrumb';
 import FadeIn from 'components/FadeIn';
 import Layout from 'components/Layout';
 import ProjectTeaser from 'components/ProjectTeaser';
+import SEO from 'components/SEO';
 import { AppContext } from 'contexts/AppProvider';
 
 const Projects = (): JSX.Element => {
@@ -15,6 +16,7 @@ const Projects = (): JSX.Element => {
 
   return (
     <Layout>
+      <SEO title="Projects" />
       <Breadcrumb crumbs={[{ label: 'Projects' }]} />
       <div tw="mb-24 md:pl-20">
         <FadeIn move={false}>

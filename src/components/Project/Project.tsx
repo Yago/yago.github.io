@@ -10,6 +10,7 @@ import Gallery from 'components/Gallery';
 import Layout from 'components/Layout';
 import PhotoSwipe from 'components/PhotoSwipe';
 import Picture from 'components/Picture';
+import SEO from 'components/SEO';
 
 export type ProjectProps = {
   children: React.ReactNode;
@@ -42,6 +43,11 @@ export type ProjectProps = {
 
 const Project = ({ children, meta }: ProjectProps): JSX.Element => (
   <Layout outsideChildren={<PhotoSwipe />}>
+    <SEO
+      title={meta.title}
+      description={meta.subtitle}
+      cover={meta.thumbnail}
+    />
     <Breadcrumb
       crumbs={[{ href: '/projects', label: 'Projects' }, { label: meta.title }]}
     />

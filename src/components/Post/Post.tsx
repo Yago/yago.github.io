@@ -9,6 +9,7 @@ import Divider from 'components/Divider';
 import FadeIn from 'components/FadeIn';
 import Layout from 'components/Layout';
 import PhotoSwipe from 'components/PhotoSwipe';
+import SEO from 'components/SEO';
 
 export type PostProps = {
   children: React.ReactNode;
@@ -23,6 +24,7 @@ export type PostProps = {
 
 const Post = ({ children, meta }: PostProps): JSX.Element => (
   <Layout outsideChildren={<PhotoSwipe />}>
+    <SEO title={meta.title} description={meta.description} />
     <Breadcrumb
       crumbs={[{ href: '/blog', label: 'Blog' }, { label: meta.title }]}
     />

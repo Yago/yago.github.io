@@ -7,10 +7,12 @@ import FadeIn from 'components/FadeIn';
 import GalleryTeaser from 'components/GalleryTeaser';
 import Layout from 'components/Layout';
 import PhotoSwipe from 'components/PhotoSwipe';
+import SEO from 'components/SEO';
 import galleries from 'config/galleries.json';
 
 const Photographs = (): JSX.Element => (
   <Layout outsideChildren={<PhotoSwipe />}>
+    <SEO title="Photographs" />
     <Breadcrumb crumbs={[{ label: 'Photographs' }]} />
     <div tw="w-full mb-20 md:pl-20 lg:pl-32">
       <FadeIn move={false}>
