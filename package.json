@@ -6,7 +6,7 @@
     "clean": "rm -rf .next && rm -rf node_modules/.cache",
     "tailwind:build": "yarn run clean && tailwind build src/styles/tailwind.css -o src/styles/base.css -c ./tailwind.config.js",
     "dev": "yarn run tailwind:build && next",
-    "build": "yarn run tailwind:build && yarn run db:update && next build",
+    "build": "yarn run tailwind:build && yarn run config:update && next build",
     "start": "next start",
     "type-check": "tsc",
     "lint:js": "eslint --ext ts,tsx ./ --max-warnings=0",
