@@ -13,7 +13,7 @@
     "postinstall": "husky install && patch-package",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "db:update": "./bin/updatePictureDb.js && ./bin/updateContribDb.js"
+    "config:update": "./bin/updateSitemap.js && ./bin/updatePictureDb.js && ./bin/updateContribDb.js"
   },
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^11.2.0",
@@ -22,6 +22,7 @@
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@next/mdx": "^10.0.7",
+    "@sergeymyssak/nextjs-sitemap": "^1.1.1",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.4",

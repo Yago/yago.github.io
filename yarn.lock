@@ -1713,6 +1713,13 @@
   resolved "https://registry.yarnpkg.com/@opentelemetry/context-base/-/context-base-0.14.0.tgz#c67fc20a4d891447ca1a855d7d70fa79a3533001"
   integrity sha512-sDOAZcYwynHFTbLo6n8kIbLiVF3a3BLkrmehJUyEbT9F+Smbi47kLGS2gG2g0fjBLR/Lr1InPD7kXL7FaTqEkw==
 
+"@sergeymyssak/nextjs-sitemap@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@sergeymyssak/nextjs-sitemap/-/nextjs-sitemap-1.1.1.tgz#6208316926d2d126e72576e0a5ecdbb35f83efbc"
+  integrity sha512-LadL2a4MSSkf/8AzE7J/06mC7gwk7MSPuASVW7j7sEr6l0Pi453C9dagjieCLdXyuPA3UW2ANsklRUzB9qh1uA==
+  dependencies:
+    date-fns "^2.15.0"
+
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.8.2.tgz#858f5c4b48d80778fde4b9d541f27edc0d56488b"
@@ -3567,6 +3574,11 @@ data-urls@^2.0.0:
     abab "^2.0.3"
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
+
+date-fns@^2.15.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.19.0.tgz#65193348635a28d5d916c43ec7ce6fbd145059e1"
+  integrity sha512-X3bf2iTPgCAQp9wvjOQytnf5vO5rESYRXlPIVcgSbtT5OTScPcsf9eZU+B/YIkKAtYr5WeCii58BgATrNitlWg==
 
 date-fns@^2.18.0:
   version "2.18.0"

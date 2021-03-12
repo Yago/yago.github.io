@@ -36,3 +36,5 @@ cypress/screenshots/*
 
 # Sources
 src/config/pictures.json
+src/config/contribs.json
+public/sitemap.xml
