@@ -14,7 +14,7 @@ type Props = {
   props?: any;
 };
 
-const isServer = typeof window === 'undefined';
+const isServer = () => typeof window === 'undefined';
 
 const FadeIn = ({
   move = true,
@@ -40,9 +40,9 @@ const FadeIn = ({
       variants={{
         visible: { opacity: 1, y: 0 },
         hidden: {
-          opacity: isServer ? 1 : 0,
+          opacity: isServer() ? 1 : 0,
           // eslint-disable-next-line no-nested-ternary
-          y: move ? (isServer ? 0 : 20) : 0,
+          y: move ? (isServer() ? 0 : 20) : 0,
         },
       }}
       transition={{
