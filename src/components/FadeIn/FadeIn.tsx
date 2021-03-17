@@ -30,7 +30,7 @@ const FadeIn = ({
     }
   }, [controls, inView]);
 
-  if (typeof window !== 'undefined') return <>{children}</>;
+  if (typeof window === 'undefined') return <>{children}</>;
 
   return (
     <motion.div
