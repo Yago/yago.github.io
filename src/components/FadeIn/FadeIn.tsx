@@ -34,7 +34,7 @@ const FadeIn = ({
     <motion.div
       ref={ref}
       animate={controls}
-      initial="hidden"
+      initial={typeof window !== 'undefined' ? 'hidden' : 'visible'}
       variants={{
         visible: { opacity: 1, y: 0 },
         hidden: { opacity: 0, y: move ? 20 : 0 },
