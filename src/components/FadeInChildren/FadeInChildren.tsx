@@ -11,26 +11,29 @@ type Props = {
   props?: any;
 };
 
+const isServer = typeof window === 'undefined';
+
 const FadeInChildren = ({
   move = true,
   delay = 0,
   children,
   ...props
-}: Props): JSX.Element => {
-  if (typeof window === 'undefined') return <>{children}</>;
-  return (
-    <motion.div
-      initial="hidden"
-      variants={{
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: move ? 20 : 0 },
-      }}
-      transition={{ delay, duration: 0.4 }}
-      {...props}
-    >
-      {children}
-    </motion.div>
-  );
-};
+}: Props): JSX.Element => (
+  <motion.div
+    initial="hidden"
+    variants={{
+      visible: { opacity: 1, y: 0 },
+      hidden: {
+        opacity: isServer ? 1 : 0,
+        // eslint-disable-next-line no-nested-ternary
+        y: move ? (isServer ? 0 : 20) : 0,
+      },
+    }}
+    transition={{ delay, duration: 0.4 }}
+    {...props}
+  >
+    {children}
+  </motion.div>
+);
 
 export default FadeInChildren;
