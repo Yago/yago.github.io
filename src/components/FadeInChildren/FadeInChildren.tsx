@@ -16,18 +16,21 @@ const FadeInChildren = ({
   delay = 0,
   children,
   ...props
-}: Props): JSX.Element => (
-  <motion.div
-    initial={typeof window !== 'undefined' ? 'hidden' : 'visible'}
-    variants={{
-      visible: { opacity: 1, y: 0 },
-      hidden: { opacity: 0, y: move ? 20 : 0 },
-    }}
-    transition={{ delay, duration: 0.4 }}
-    {...props}
-  >
-    {children}
-  </motion.div>
-);
+}: Props): JSX.Element => {
+  if (typeof window !== 'undefined') return <>children</>;
+  return (
+    <motion.div
+      initial="hidden"
+      variants={{
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: move ? 20 : 0 },
+      }}
+      transition={{ delay, duration: 0.4 }}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 export default FadeInChildren;
