@@ -17,7 +17,7 @@ const FadeInChildren = ({
   children,
   ...props
 }: Props): JSX.Element => {
-  if (typeof window !== 'undefined') return <>children</>;
+  if (typeof window !== 'undefined') return <>{children}</>;
   return (
     <motion.div
       initial="hidden"
