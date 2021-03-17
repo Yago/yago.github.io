@@ -14,8 +14,6 @@ type Props = {
   props?: any;
 };
 
-const isServer = () => typeof window === 'undefined';
-
 const FadeIn = ({
   move = true,
   delay = 0,
@@ -35,15 +33,12 @@ const FadeIn = ({
   return (
     <motion.div
       ref={ref}
+      className="fade-in"
       animate={controls}
       initial="hidden"
       variants={{
         visible: { opacity: 1, y: 0 },
-        hidden: {
-          opacity: isServer() ? 1 : 0,
-          // eslint-disable-next-line no-nested-ternary
-          y: move ? (isServer() ? 0 : 20) : 0,
-        },
+        hidden: { opacity: 0, y: move ? 20 : 0 },
       }}
       transition={{
         delay: closing ? 0.7 + delay : 0 + delay,

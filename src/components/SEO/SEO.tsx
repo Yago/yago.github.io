@@ -85,6 +85,20 @@ const SEO = ({ title, cover, description }: Props): JSX.Element => {
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#616161" />
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
+
+      <noscript>
+        <style
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `
+            .fade-in {
+              opacity: 1 !important;
+              transform: none !important;
+            }
+          `,
+          }}
+        />
+      </noscript>
     </Head>
   );
 };
