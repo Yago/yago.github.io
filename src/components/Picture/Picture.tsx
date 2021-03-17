@@ -14,7 +14,7 @@ type Props = {
 
 const Picture = ({ filename, alt, className }: Props): JSX.Element => {
   const img = pictures[filename];
-  const { styles, isExact } = getAspectRatio(img.w, img.h);
+  const { styles } = getAspectRatio(img.w, img.h);
 
   return (
     <div css={styles} className={className}>
@@ -22,7 +22,8 @@ const Picture = ({ filename, alt, className }: Props): JSX.Element => {
         src={img.msrc}
         alt={alt}
         layout="fill"
-        objectFit={isExact ? 'contain' : 'cover'}
+        objectFit="cover"
+        quality={65}
       />
     </div>
   );
