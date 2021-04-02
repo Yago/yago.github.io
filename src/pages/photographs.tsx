@@ -20,47 +20,75 @@ const Photographs = (): JSX.Element => (
           Photographs
         </h1>
       </FadeIn>
-      <div tw="mt-12 md:w-11/12 grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-10 gap-y-12">
+      <div tw="mt-12 md:w-11/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12">
         <FadeIn>
           <GalleryTeaser
-            sources={galleries.bali}
-            cover="bali.jpg"
-            title="Bali"
+            sources={galleries.alps}
+            cover="alps.jpg"
+            title="Alps"
           />
         </FadeIn>
         <FadeIn>
           <GalleryTeaser
-            sources={galleries.mountain}
-            cover="mountain.jpg"
-            title="Mountain"
+            sources={galleries.italia}
+            cover="italia.jpg"
+            title="Italia"
           />
         </FadeIn>
         <FadeIn>
           <GalleryTeaser
-            sources={galleries.italy}
-            cover="italy.jpg"
-            title="Italy"
+            sources={galleries['reunion-mauritius']}
+            cover="reunion-mauritius.jpg"
+            title="Réunion & Mauritius"
           />
         </FadeIn>
         <FadeIn>
           <GalleryTeaser
-            sources={galleries['reunion-maurice']}
-            cover="reunion-maurice.jpg"
-            title="Réunion/Mauritius"
+            sources={galleries.sverige}
+            cover="sverige.jpg"
+            title="Sverige"
           />
         </FadeIn>
         <FadeIn>
           <GalleryTeaser
-            sources={galleries.north}
-            cover="north.jpg"
-            title="North"
+            sources={galleries.film}
+            cover="film.jpg"
+            title="Film"
           />
         </FadeIn>
         <FadeIn>
           <GalleryTeaser
-            sources={galleries.mexico}
-            cover="mexico.jpg"
+            sources={galleries.island}
+            cover="island.jpg"
+            title="Ísland"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
+            sources={galleries.countryside}
+            cover="countryside.jpg"
+            title="Countryside"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
+            sources={galleries.scotland}
+            cover="scotland.jpg"
+            title="Scotland"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
+            sources={galleries.yucatan}
+            cover="yucatan.jpg"
             title="Yucatan"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
+            sources={galleries.lisboa}
+            cover="lisboa.jpg"
+            title="Lisboa"
           />
         </FadeIn>
         <FadeIn>
@@ -68,6 +96,20 @@ const Photographs = (): JSX.Element => (
             sources={galleries['sri-lanka']}
             cover="sri-lanka.jpg"
             title="Sri-Lanka"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
+            sources={galleries.ticino}
+            cover="ticino.jpg"
+            title="Ticino"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
+            sources={galleries.bali}
+            cover="bali.jpg"
+            title="Bali"
           />
         </FadeIn>
       </div>

@@ -58,7 +58,7 @@ const GalleryTeaser = ({ title, sources, cover }: Props): JSX.Element => {
     <button
       css={imageWraper}
       type="button"
-      tw="relative block w-full overflow-hidden text-white bg-gray-950"
+      tw="relative block w-full overflow-hidden text-white bg-gray-950 rounded-2xl focus:outline-none"
       onClick={handleClick}
     >
       <Picture

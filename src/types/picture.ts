@@ -51,4 +51,6 @@ export type Picture = {
   LensMake: string;
   LensModel: string;
   LensSerialNumber: string;
+  Headline: string;
+  Byline: string;
 };

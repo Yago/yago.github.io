@@ -9,7 +9,7 @@ const options = {
   tiff: true,
   xmp: false,
   icc: false,
-  iptc: false,
+  iptc: true,
   jfif: false,
   ihdr: false,
   ifd0: true,

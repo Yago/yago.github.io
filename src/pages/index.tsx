@@ -68,21 +68,30 @@ const Home = (): JSX.Element => {
           <Button href="/photographs">See all</Button>
         </FadeIn>
 
-        <div tw="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-10 gap-y-12">
+        <div tw="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12">
           <FadeIn>
             <GalleryTeaser
-              sources={galleries.north}
-              cover="north.jpg"
-              title="North"
+              sources={galleries.sverige}
+              cover="sverige.jpg"
+              title="Sverige"
             />
           </FadeIn>
           <FadeIn>
             <GalleryTeaser
-              sources={galleries.mountain}
-              cover="mountain.jpg"
-              title="Mountain"
+              sources={galleries.alps}
+              cover="alps.jpg"
+              title="Alps"
             />
           </FadeIn>
+          <div tw="hidden lg:block">
+            <FadeIn>
+              <GalleryTeaser
+                sources={galleries.italia}
+                cover="italia.jpg"
+                title="Italia"
+              />
+            </FadeIn>
+          </div>
         </div>
       </div>
 

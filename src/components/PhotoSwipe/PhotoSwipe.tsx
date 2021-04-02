@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useContext, useEffect, useRef } from 'react';
 import { jsx } from '@emotion/react';
+import { format, parseISO } from 'date-fns';
 import { AnimatePresence, motion } from 'framer-motion';
 import PSWP from 'photoswipe/dist/photoswipe';
 import photoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
@@ -117,13 +118,24 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
                   {!isNil(item?.title) && (
                     <h3 tw="text-lg font-medium md:text-2xl">{item.title}</h3>
                   )}
+                  {!isNil(item?.meta?.Headline) && (
+                    <h3 tw="text-lg font-medium md:text-2xl">
+                      {item.meta.Headline}
+                    </h3>
+                  )}
+                  {!isNil(item?.meta?.DateTimeOriginal) && (
+                    <p tw="text-gray-500 text-sm mt-1">
+                      — {format(parseISO(item.meta.DateTimeOriginal), 'YYY')}
+                    </p>
+                  )}
                   <p tw="mt-2 text-gray-600 md:mt-4">
-                    {!isNil(item?.meta?.Model) && (
-                      <span tw="pr-3 lowercase md:text-lg md:block md:pr-0">
-                        {item.meta?.Model}
-                        <span tw="pl-2 text-gray-400 md:hidden">|</span>
-                      </span>
-                    )}
+                    {!isNil(item?.meta?.Model) &&
+                      item.meta.Model !== 'Tiff File' && (
+                        <span tw="pr-3 lowercase md:text-lg md:block md:pr-0">
+                          {item.meta?.Model}
+                          <span tw="pl-2 text-gray-400 md:hidden">|</span>
+                        </span>
+                      )}
                     {!isNil(item?.meta?.FocalLength) && (
                       <span tw="pr-3 md:text-lg md:block md:pr-0">
                         {Math.round(item.meta?.FocalLength)}mm
