@@ -1,5 +1,7 @@
 const path = require('path');
-const emoji = require('remark-emoji')
+const emoji = require('remark-emoji');
+const withPWA = require('next-pwa');
+
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
@@ -10,8 +12,11 @@ const withMDX = require('@next/mdx')({
 });
 const dirTree = require('directory-tree');
 
-module.exports = withMDX({
+module.exports = withPWA(withMDX({
   pageExtensions: ['tsx', 'mdx'],
+  pwa: {
+    dest: 'public'
+  },
   webpack(config) {
     config.resolve = {
       ...config.resolve,
@@ -30,4 +35,4 @@ module.exports = withMDX({
   },
   env: {
   },
-});
+}));

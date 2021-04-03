@@ -81,9 +81,20 @@ const SEO = ({ title, cover, description }: Props): JSX.Element => {
         sizes="16x16"
         href="/favicon-16x16.png"
       />
-      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="manifest" href="/manifest.json" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#616161" />
       <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta name="theme-color" content="#ffffff" />
+
+      <meta name="application-name" content="Yago.io" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="apple-mobile-web-app-title" content="Yago.io" />
+      <meta name="description" content={defaultDesc} />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="msapplication-TileColor" content="#212529" />
+      <meta name="msapplication-tap-highlight" content="no" />
       <meta name="theme-color" content="#ffffff" />
 
       {/* <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
