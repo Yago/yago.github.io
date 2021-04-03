@@ -38,3 +38,7 @@ cypress/screenshots/*
 src/config/pictures.json
 src/config/contribs.json
 public/sitemap.xml
+public/sw.js
+public/sw.js.map
+public/workbox-*.js
+public/workbox-*.js.map
