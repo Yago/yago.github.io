@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { Global } from '@emotion/react';
 import { MDXProvider } from '@mdx-js/react';
 
 import { Code, Pre } from 'components/Code';
@@ -7,11 +8,11 @@ import Picture from 'components/Picture';
 import { Link } from 'components/Typography';
 import AppProvider from 'contexts/AppProvider';
 
-import 'photoswipe/dist/photoswipe.css';
 import 'prism-themes/themes/prism-duotone-dark.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import '../styles/types.css';
 import '../styles/base.css';
+import * as photoswipecss from 'photoswipe/dist/photoswipe.css';
 
 interface AppProps {
   Component: FunctionComponent;
@@ -30,6 +31,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
         code: Code,
       }}
     >
+      <Global styles={photoswipecss} />
       <Component {...pageProps} />
     </MDXProvider>
   </AppProvider>

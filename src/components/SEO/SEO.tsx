@@ -86,6 +86,24 @@ const SEO = ({ title, cover, description }: Props): JSX.Element => {
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
 
+      {/* <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
+      <link
+        href="https://use.typekit.net/jjy6lvf.css"
+        rel="preload"
+        as="style"
+        crossOrigin=""
+      /> */}
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"
+        integrity="sha512-v/wOVTkoU7mXEJC3hXnw9AA6v32qzpknvuUF6J2Lbkasxaxn2nYcl+HGB7fr/kChGfCqubVr1n2sq1UFu3Gh1w=="
+        crossOrigin="anonymous"
+      />
+      <script>
+        {`WebFont.load({
+          typekit: { id: 'jjy6lvf' }
+        });`}
+      </script>
+
       <noscript>
         <style
           // eslint-disable-next-line react/no-danger

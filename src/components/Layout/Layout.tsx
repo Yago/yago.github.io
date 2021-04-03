@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { jsx } from '@emotion/react';
 import { AnimatePresence, motion } from 'framer-motion';
-import Head from 'next/head';
 import tw from 'twin.macro';
 
 import Footer from 'components/Footer';
@@ -26,9 +25,6 @@ const Layout = ({
 
   return (
     <>
-      <Head>
-        <link rel="stylesheet" href="https://use.typekit.net/jjy6lvf.css" />
-      </Head>
       <Icons />
       <div tw="antialiased">
         <div tw="w-full">
