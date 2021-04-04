@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useContext, useEffect, useRef } from 'react';
 import { jsx } from '@emotion/react';
-import { format, parseISO } from 'date-fns';
 import { AnimatePresence, motion } from 'framer-motion';
 import PSWP from 'photoswipe/dist/photoswipe';
 import photoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
@@ -124,8 +123,8 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
                     </h3>
                   )}
                   {!isNil(item?.meta?.DateTimeOriginal) && (
-                    <p tw="text-gray-500 text-sm mt-1">
-                      — {format(parseISO(item.meta.DateTimeOriginal), 'YYY')}
+                    <p tw="mt-1 text-sm text-gray-500">
+                      — {item.meta.DateTimeOriginal.split(':')[0]}
                     </p>
                   )}
                   <p tw="mt-2 text-gray-600 md:mt-4">
@@ -138,25 +137,25 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
                       )}
                     {!isNil(item?.meta?.FocalLength) && (
                       <span tw="pr-3 md:text-lg md:block md:pr-0">
-                        {Math.round(item.meta?.FocalLength)}mm
+                        {item.meta?.FocalLength}
                         <span tw="pl-2 text-gray-400 md:hidden">|</span>
                       </span>
                     )}
                     {!isNil(item?.meta?.ApertureValue) && (
                       <span tw="pr-3 md:text-lg md:block md:pr-0">
-                        ƒ/{Math.round(item.meta?.ApertureValue * 10) / 10}
+                        ƒ/{Math.round(+item.meta?.ApertureValue * 10) / 10}
                         <span tw="pl-2 text-gray-400 md:hidden">|</span>
                       </span>
                     )}
                     {!isNil(item?.meta?.ExposureTime) && (
                       <span tw="pr-3 md:text-lg md:block md:pr-0">
-                        1/{Math.round(1 / item.meta?.ExposureTime)}s
+                        {item.meta?.ExposureTime}s
                         <span tw="pl-2 text-gray-400 md:hidden">|</span>
                       </span>
                     )}
-                    {!isNil(item?.meta?.ISO) && (
+                    {!isNil(item?.meta?.ISOSpeedRatings) && (
                       <span tw="pr-3 md:text-lg md:block md:pr-0">
-                        {item.meta?.ISO} ISO
+                        {item.meta?.ISOSpeedRatings} ISO
                         <span tw="pl-2 text-gray-400 md:hidden">|</span>
                       </span>
                     )}

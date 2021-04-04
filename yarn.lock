@@ -4895,10 +4895,12 @@ execa@^4.0.0, execa@^4.1.0:
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
 
-exifr@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/exifr/-/exifr-6.2.0.tgz#2892ae75b237d2126c48654bed711e5c684ca88c"
-  integrity sha512-ihHjOl8t6NvQUFy6k90axjyj9vJnPIBZpajoF7LjmdA/SYBBLmDSo0YwmnAbwuAtmbL2oBpeqA5wajXqw7x0gg==
+exifreader@^3.14.1:
+  version "3.14.1"
+  resolved "https://registry.yarnpkg.com/exifreader/-/exifreader-3.14.1.tgz#3c2a81600bce04044cb01030399b6c01f2f605b7"
+  integrity sha512-SUxpOk39IvFc+KqglisSy42P8nNTrX/8HC6VijSQUzDRBolqa0ps7M8patMWCZ4NKuleLVq6qR41pOvF5ITdKg==
+  optionalDependencies:
+    xmldom "^0.1.31"
 
 exit@^0.1.2:
   version "0.1.2"
@@ -10661,6 +10663,11 @@ xmlchars@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
+
+xmldom@^0.1.31:
+  version "0.1.31"
+  resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.1.31.tgz#b76c9a1bd9f0a9737e5a72dc37231cf38375e2ff"
+  integrity sha512-yS2uJflVQs6n+CyjHoaBmVSqIDevTAWrzMmjG1Gc7h1qQ7uVozNhEPJAwZXWyGQ/Gafo3fCwrcaokezLPupVyQ==
 
 xtend@^4.0.0, xtend@^4.0.1, xtend@^4.0.2:
   version "4.0.2"

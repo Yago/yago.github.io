@@ -2,7 +2,7 @@
 
 const fs = require('fs-extra')
 const path = require('path');
-const exifr = require('exifr');
+const ExifReader = require('exifreader');
 const sizeOf = require('image-size');
 
 const options = {
@@ -56,7 +56,16 @@ let pictureDb = {};
           const ext = path.extname(filePath);
 
           if (stat.isFile() && ['.jpg', '.jpeg', '.png', '.gif'].includes(ext)) {
-            const exif = ext !== '.gif' ? await exifr.parse(filePath, options) : {};
+            const exif = ext !== '.gif' ? ExifReader.load(fs.readFileSync(filePath), {expanded: true}) : {};
+
+            if (exif.MakerNote !== undefined) delete exif.MakerNote;
+            if (exif.Thumbnail !== undefined) delete exif.Thumbnail;
+            if (exif.mpf !== undefined) delete exif.mpf;
+            
+            const exifSanitized = Object.keys(exif).reduce((acc, val) => {
+              const data = Object.keys(exif[val]).reduce((cacc, cval) => ({ ...cacc, [cval]: exif[val][cval].description }), {});
+              return { ...acc, ...data };
+            }, {});
             const size = sizeOf(filePath);
 
             pictureDb[file] = {
@@ -67,7 +76,7 @@ let pictureDb = {};
               w: size.width,
               h: size.height,
               type: size.type,
-              ...exif,
+              ...exifSanitized,
             }
           } else if (stat.isDirectory()) {
             console.log("'%s' is a directory.", filePath);
