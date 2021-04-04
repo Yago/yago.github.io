@@ -2,7 +2,6 @@
 
 const fs = require('fs-extra')
 const path = require('path');
-const exifr = require('exifr');
 const sizeOf = require('image-size');
 const axios = require('axios');
 
