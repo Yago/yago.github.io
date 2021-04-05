@@ -4,7 +4,6 @@ import Image from 'next/image';
 import tw from 'twin.macro';
 
 import pictures from 'config/pictures';
-import { getAspectRatio } from 'utils';
 
 type Props = {
   filename: string;
@@ -14,15 +13,15 @@ type Props = {
 
 const Picture = ({ filename, alt, className }: Props): JSX.Element => {
   const img = pictures[filename];
-  const { styles } = getAspectRatio(img.w, img.h);
 
   return (
-    <div css={styles} className={className}>
+    <div className={className}>
       <Image
         src={img.msrc}
         alt={alt}
-        layout="fill"
-        objectFit="cover"
+        width={img.w}
+        height={img.h}
+        layout="responsive"
         quality={65}
       />
     </div>

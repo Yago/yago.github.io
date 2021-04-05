@@ -133,10 +133,12 @@ module.exports = {
               backgroundColor: '#000',
             },
             code: {
-              color: '#212529',
-              backgroundColor: '#eafcf8',
+              color: '#eb5757',
+              backgroundColor: '#eef2f5',
               fontWeight: 400,
               fontFamily: fontFamily.mono.join(', '),
+              padding: '0.1em 0.2em 0 0.2em',
+              borderRadius: '0.2em',
             },
             'code::before': {
               content: '""',
