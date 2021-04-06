@@ -38,6 +38,7 @@ const Picture = ({ filename, alt, className }: Props): JSX.Element => {
           quality={65}
           sizes={!isNil(width) ? `${Math.round(width)}px` : '100vw'}
           onLoad={handleLoad}
+          loading="eager"
         />
       </div>
     </div>
