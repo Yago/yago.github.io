@@ -6,6 +6,10 @@ export const imageWraper = css`
     ${tw`transition-opacity duration-1000 opacity-70`}
   }
 
+  .picture {
+    background: none !important;
+  }
+
   & > div:first-of-type {
     ${tw`relative overflow-hidden`}
 

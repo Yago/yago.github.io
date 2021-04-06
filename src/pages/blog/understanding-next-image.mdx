@@ -104,6 +104,31 @@ Example of a responsive image inside a blog post content.
 />
 ```
 
+### Automatic responsive
+
+As we quickly saw earlier, the `size` property is `100vw` by default. If you want a perfect match to your image size, you can use something like [react-cool-dimensions](https://github.com/wellyshen/react-cool-dimensions) and wrap the `<Image />` into a new component.
+
+```jsx
+import React from 'react';
+import useDimensions from 'react-cool-dimensions';
+import Image from 'next/image';
+
+export default (props): JSX.Element => {
+  const { observe, width } = useDimensions<HTMLDivElement | null>();
+
+  return (
+    <div ref={observe}>
+      <Image
+        {...props}
+        layout="responsive"
+        quality={65}
+        sizes={width !== undefined ? `${Math.round(width)}px` : '100vw'}
+      />
+    </div>
+  );
+};
+```
+
 ### Unknown/variable size with fixed ratio
 
 Sometimes pictures came from an outside source (CMS, APIs, etc) and the image size (width, height) is not available or the ratio can vary. For this case, the `layout="fill"` is very useful with something like [@tailwindcss/aspect-ratio](https://github.com/tailwindlabs/tailwindcss-aspect-ratio).
