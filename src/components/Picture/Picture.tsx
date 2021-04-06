@@ -1,6 +1,8 @@
 import React from 'react';
+import useDimensions from 'react-cool-dimensions';
 import { jsx } from '@emotion/react';
 import Image from 'next/image';
+import { isNil } from 'ramda';
 import tw from 'twin.macro';
 
 import pictures from 'config/pictures';
@@ -13,9 +15,10 @@ type Props = {
 
 const Picture = ({ filename, alt, className }: Props): JSX.Element => {
   const img = pictures[filename];
+  const { observe, width } = useDimensions<HTMLDivElement | null>();
 
   return (
-    <div className={className}>
+    <div ref={observe} className={className}>
       <Image
         src={img.msrc}
         alt={alt}
@@ -23,6 +26,7 @@ const Picture = ({ filename, alt, className }: Props): JSX.Element => {
         height={img.h}
         layout="responsive"
         quality={65}
+        sizes={!isNil(width) ? `${Math.round(width)}px` : '100vw'}
       />
     </div>
   );

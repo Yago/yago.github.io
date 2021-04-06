@@ -42,6 +42,7 @@
     "ramda": "^0.27.1",
     "react": "^17.0.2",
     "react-calendar-heatmap": "^1.8.1",
+    "react-cool-dimensions": "^2.0.1",
     "react-dom": "^17.0.2",
     "react-hotkeys-hook": "^3.3.0",
     "react-intersection-observer": "^8.31.0",

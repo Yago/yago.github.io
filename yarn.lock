@@ -8323,6 +8323,11 @@ react-calendar-heatmap@^1.8.1:
     memoize-one "^5.0.0"
     prop-types "^15.6.2"
 
+react-cool-dimensions@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-cool-dimensions/-/react-cool-dimensions-2.0.1.tgz#afa96d1131d4dbe60384a738dc494955543a4b98"
+  integrity sha512-9T1j2cCGBjZtVQs5R7YVvDmr7W52wgjdRISpO5voCCRjOum/ZZNBFShquGwySswWH8XxCSR28HcRGza1J+70cw==
+
 react-dom@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
