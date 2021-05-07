@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useDimensions from 'react-cool-dimensions';
 import { jsx } from '@emotion/react';
+import { ResizeObserver } from '@juggle/resize-observer';
 import Image from 'next/image';
 import { isNil } from 'ramda';
 import tw from 'twin.macro';
@@ -21,7 +22,9 @@ const loader = ({ src, width }: { src: string; width: number }) =>
 const Picture = ({ filename, alt, className }: Props): JSX.Element => {
   const img = pictures[filename];
   const [loaded, setLoaded] = useState(false);
-  const { observe, width } = useDimensions<HTMLDivElement | null>();
+  const { observe, width } = useDimensions<HTMLDivElement | null>({
+    polyfill: ResizeObserver,
+  });
 
   // eslint-disable-next-line
   const handleLoad = (e: any) => {
