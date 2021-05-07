@@ -1,9 +1,11 @@
-import { css as cssProperty } from '@emotion/react';
-import styledComponent from '@emotion/styled';
+// twin.d.ts
+import { css as cssImport } from '@emotion/react';
+import styledImport from '@emotion/styled';
 
 import 'twin.macro';
 
 declare module 'twin.macro' {
-  const css: typeof cssProperty;
-  const styled: typeof styledComponent;
+  // The styled and css imports
+  const styled: typeof styledImport;
+  const css: typeof cssImport;
 }

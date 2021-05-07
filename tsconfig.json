@@ -18,10 +18,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "types": [
-      "node",
-      "webpack-env"
-    ]
+    "types": ["jest", "cypress"]
   },
   "include": [
     "**/*.ts",
