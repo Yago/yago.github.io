@@ -13,6 +13,11 @@ type Props = {
   className?: string;
 };
 
+const loader = ({ src, width }: { src: string; width: number }) =>
+  // const filename = last(src.split('/')).replace(/\..+$/, '');
+  // return `/images/responsive/${filename}-${width}.jpg`;
+  `https://aznggzkrtq.cloudimg.io/v7/yago.io${src}?w=${width}`;
+
 const Picture = ({ filename, alt, className }: Props): JSX.Element => {
   const img = pictures[filename];
   const [loaded, setLoaded] = useState(false);
@@ -31,6 +36,7 @@ const Picture = ({ filename, alt, className }: Props): JSX.Element => {
       >
         <Image
           src={img.msrc}
+          loader={loader}
           alt={alt}
           width={img.w}
           height={img.h}
@@ -38,7 +44,6 @@ const Picture = ({ filename, alt, className }: Props): JSX.Element => {
           quality={65}
           sizes={!isNil(width) ? `${Math.round(width)}px` : '100vw'}
           onLoad={handleLoad}
-          loading="eager"
         />
       </div>
     </div>

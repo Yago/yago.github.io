@@ -4,7 +4,7 @@ const withPWA = require('next-pwa');
 
 const dirTree = require('directory-tree');
 
-module.exports = /*withPWA(*/{
+module.exports = withPWA({
   // future: {
   //   webpack5: true
   // },
@@ -14,7 +14,8 @@ module.exports = /*withPWA(*/{
   },
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    imageSizes: [256, 384],
+    domains: ['cloudimg.io'],
   },
   webpack(config, options) {
     config.resolve = {
@@ -50,4 +51,4 @@ module.exports = /*withPWA(*/{
     return config;
   },
   env: {},
-}/*)*/ ;
+});
