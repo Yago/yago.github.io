@@ -1,0 +1,30 @@
+import Project from 'components/Project'
+
+export const meta = {
+  date: "2020-06-01T10:49:05Z",
+  published: true,
+  title: "Vevey",
+  subtitle: "City website",
+  type: "project",
+  cover: "vevey-cover.jpg",
+  thumbnail: "vevey01.jpg",
+  year: "2019 -",
+  agency: {
+    name: "Antistatique",
+    url: "https://antistatique.net"
+  },
+  roles: [
+    "Frontend developer",
+  ],
+  gallery: [
+    "vevey01.jpg",
+    "vevey02.jpg",
+    "vevey03.jpg",
+    "vevey04.jpg",
+    "vevey06.jpg",
+  ]
+}
+
+The city of Vevey, located in the coastline of the Leman, needs a new website to better inform its citizen. Based on **Drupal 8**, I worked on the atomic styleguide and the theme creation. The main focus with a website like this one is the **accessibility** to provide a quick and easy access to the information for any kind of user profile.
+
+export default ({ children }) => <Project meta={meta}>{children}</Project>
