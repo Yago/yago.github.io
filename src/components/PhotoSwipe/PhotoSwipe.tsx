@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { jsx } from '@emotion/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import PSWP from 'photoswipe/dist/photoswipe';
@@ -9,6 +9,7 @@ import { isNil } from 'ramda';
 import tw from 'twin.macro';
 
 import { AppContext } from 'contexts/AppProvider';
+import { useWindowDimensions } from 'hooks';
 
 import PhotoSwipeWrapper from '../PhotoSwipeWrapper';
 
@@ -26,10 +27,12 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
     setPhotoswipeIndex,
     photoswipeContainer,
   } = useContext(AppContext);
+  const [displayInfo, setDisplayInfo] = useState(true);
   const pswp = useRef<any>(null);
   const wrapper = useRef<HTMLDivElement>(null);
   const current = photoswipeContainer?.[photoswipeIndex ?? 0];
   const rich = photoswipeContainer?.map(i => !isNil(i.title))?.includes(true);
+  const { smallerThan } = useWindowDimensions();
 
   const settings = {
     bgOpacity: 1,
@@ -101,12 +104,14 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
         rich={rich}
         currentIndex={photoswipeIndex}
         total={photoswipeContainer?.length ?? 0}
+        onContainerClick={() => smallerThan.sm && setDisplayInfo(i => !i)}
       >
         <AnimatePresence>
           {photoswipeContainer?.map(
             (item, i) =>
               !isNil(current) &&
-              i === current.uid && (
+              i === current.uid &&
+              displayInfo && (
                 <motion.div
                   key={`info-${i}`}
                   initial={{ opacity: 0 }}

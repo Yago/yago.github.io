@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
@@ -16,6 +18,7 @@ type Props = {
   total: number;
   transition?: boolean;
   rich?: boolean;
+  onContainerClick: () => void;
 };
 
 const PhotoSwipeWrapper = ({
@@ -25,6 +28,7 @@ const PhotoSwipeWrapper = ({
   total,
   transition,
   rich,
+  onContainerClick,
 }: Props): JSX.Element => (
   <div
     ref={setRef}
@@ -49,6 +53,7 @@ const PhotoSwipeWrapper = ({
           transition &&
           tw`md:transition-transform md:duration-500 md:ease-in-out`
         }
+        onClick={onContainerClick}
       >
         <div className="pswp__item" />
         <div className="pswp__item" />
