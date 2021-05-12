@@ -15,6 +15,7 @@ const TerminalToggle = (): JSX.Element => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       tw="block h-5 cursor-pointer w-9 transform scale-75 md:scale-100 duration-300 transition-transform focus:outline-none"
+      css={{ marginLeft: 'auto !important' }}
     >
       <span tw="sr-only">Toggle terminal</span>
       <span
