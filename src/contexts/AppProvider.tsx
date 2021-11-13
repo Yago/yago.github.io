@@ -76,7 +76,9 @@ const AppProvider = ({ children }: Props): JSX.Element => {
     setPhotoswipeContainer,
   ] = useState<PhotoSwipeContainer | null>(null);
   const [photoswipeIndex, setPhotoswipeIndex] = useState<number | null>(null);
-  const tree = importAll(require.context('../pages/', true));
+  const tree: TreeItem[] = importAll(require.context('../pages/', true)).filter(
+    (i: TreeItem) => i.path !== '/_document'
+  );
 
   useEffect(() => {
     if (menuOpen === true) setTerminalOpen(false);

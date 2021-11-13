@@ -33,6 +33,7 @@ import react from '../../assets/icons/react.svg';
 import reactivex from '../../assets/icons/reactivex.svg';
 import redux from '../../assets/icons/redux.svg';
 import right from '../../assets/icons/right.svg';
+import storybook from '../../assets/icons/storybook.svg';
 import tailwind from '../../assets/icons/tailwind.svg';
 import tipi from '../../assets/icons/tipi.svg';
 import twitter from '../../assets/icons/twitter.svg';
@@ -73,6 +74,7 @@ export type IconNames =
   | 'reactivex'
   | 'redux'
   | 'right'
+  | 'storybook'
   | 'tailwind'
   | 'tipi'
   | 'twitter'
@@ -113,6 +115,7 @@ export const iconList: Record<string, string> = {
   reactivex,
   redux,
   right,
+  storybook,
   tailwind,
   tipi,
   twitter,
