@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useHotkeys } from 'react-hotkeys-hook';
 import ReactTerminal from 'react-terminal-component';
+import clsx from 'clsx';
 import {
   CommandMapping,
   defaultCommandMapping,
@@ -13,7 +14,7 @@ import { useRouter } from 'next/router';
 
 import { AppContext } from 'contexts/AppProvider';
 
-import styles from './Terminal.styles';
+import styles from './Terminal.module.css';
 
 const Terminal = (): JSX.Element => {
   const router = useRouter();
@@ -114,7 +115,7 @@ So those are some of the available commands :
   });
 
   return (
-    <div css={styles}>
+    <div className={clsx(styles.default)}>
       <ReactTerminal
         theme={theme}
         promptSymbol="▲&nbsp;"

@@ -3,10 +3,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
-import { jsx } from '@emotion/react';
+import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import { range } from 'ramda';
-import tw from 'twin.macro';
 
 import Arrow from 'components/Arrow';
 import Icon from 'components/Icon';
@@ -48,11 +47,10 @@ const PhotoSwipeWrapper = ({
             PhotoSwipe keeps only 3 of them in the DOM to save memory.
             Don't modify these 3 pswp__item elements, data is added later on. */}
       <div
-        className="pswp__container"
-        css={
-          transition &&
-          tw`md:transition-transform md:duration-500 md:ease-in-out`
-        }
+        className={clsx(
+          'pswp__container',
+          transition && 'md:transition-transform md:duration-500 md:ease-in-out'
+        )}
         onClick={onContainerClick}
       >
         <div className="pswp__item" />
@@ -65,8 +63,8 @@ const PhotoSwipeWrapper = ({
           {/* Controls are self-explanatory. Order can be changed. */}
           <div className="pswp__counter" />
           <div className="pswp__count">
-            <span tw="relative inline-block">
-              <span aria-hidden tw="opacity-0">
+            <span className="relative inline-block">
+              <span aria-hidden className="opacity-0">
                 {total}
               </span>
               <AnimatePresence>
@@ -78,7 +76,7 @@ const PhotoSwipeWrapper = ({
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         key={`count-${i}`}
-                        tw="absolute top-0 right-0"
+                        className="absolute top-0 right-0"
                       >
                         {currentIndex ? currentIndex + 1 : 1}
                       </motion.span>
@@ -86,7 +84,7 @@ const PhotoSwipeWrapper = ({
                 )}
               </AnimatePresence>
             </span>
-            <span tw="inline-block text-gray-500 transform translate-y-2">
+            <span className="inline-block text-gray-500 transform translate-y-2">
               /{total}
             </span>
           </div>
@@ -95,21 +93,24 @@ const PhotoSwipeWrapper = ({
             className="pswp__button pswp__button--close"
             title="Close (Esc)"
           >
-            <Icon name="pswpclose" tw="text-lg pointer-events-none" />
+            <Icon name="pswpclose" className="text-lg pointer-events-none" />
           </button>
           <button
             type="button"
             className="pswp__button pswp__button--zoom"
             title="Zoom in/out"
           >
-            <Icon name="pswpzoom" tw="text-lg pointer-events-none" />
+            <Icon name="pswpzoom" className="text-lg pointer-events-none" />
           </button>
           <button
             type="button"
             className="pswp__button pswp__button--fs"
             title="Toggle fullscreen"
           >
-            <Icon name="pswpfullscreen" tw="text-lg pointer-events-none" />
+            <Icon
+              name="pswpfullscreen"
+              className="text-lg pointer-events-none"
+            />
           </button>
           {/* Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR */}
           {/* element will get class pswp__preloader--active when preloader is running */}

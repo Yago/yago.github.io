@@ -1,14 +1,9 @@
-import { css } from '@emotion/react';
+.default {
+  --photoswipe-bg: #fff;
+  --photoswipe-fg: #000;
 
-const defaultTheme = {
-  foreground: '#000',
-  background: '#fff',
-};
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const styles = (theme = defaultTheme): any => css`
   .pswp__bg {
-    background: ${theme.background};
+    background: var(--photoswipe-bg);
   }
 
   @media screen and (min-width: 768px) {
@@ -33,6 +28,7 @@ const styles = (theme = defaultTheme): any => css`
   /* 1. Buttons */
 
   /* <button> css reset */
+
   .pswp__button {
     display: block;
     position: relative;
@@ -61,6 +57,7 @@ const styles = (theme = defaultTheme): any => css`
   }
 
   /* pswp__ui--over-close class it added when mouse is over element that should close gallery */
+
   .pswp__ui--over-close .pswp__button--close {
     opacity: 1;
   }
@@ -108,6 +105,7 @@ const styles = (theme = defaultTheme): any => css`
   }
 
   /* no arrows on touch screens */
+
   .pswp--touch .pswp__button--arrow--left,
   .pswp--touch .pswp__button--arrow--right {
     visibility: hidden;
@@ -117,13 +115,14 @@ const styles = (theme = defaultTheme): any => css`
 	Arrow buttons hit area
 	(icon is added to :before pseudo-element)
 */
+
   .pswp__button--arrow--left,
   .pswp__button--arrow--right {
     position: fixed;
     bottom: 0;
     width: 50px;
     height: 50px;
-    background: ${theme.background};
+    background: var(--photoswipe-bg);
     margin-top: 0;
     padding: 0;
     z-index: 9999;
@@ -132,6 +131,7 @@ const styles = (theme = defaultTheme): any => css`
     .arrow * {
       border-color: #adb5bd;
     }
+
     &:hover .arrow * {
       border-color: #000;
     }
@@ -143,9 +143,11 @@ const styles = (theme = defaultTheme): any => css`
       bottom: 42px;
       opacity: 0.4;
       background: transparent;
+
       .arrow * {
         border-color: #000;
       }
+
       &:hover {
         opacity: 1;
       }
@@ -185,6 +187,7 @@ const styles = (theme = defaultTheme): any => css`
   }
 
   /* 2. Share modal/popup and links */
+
   .pswp__count,
   .pswp__share-modal {
     user-select: none;
@@ -198,7 +201,7 @@ const styles = (theme = defaultTheme): any => css`
     width: 100%;
     height: 100%;
     padding: 10px;
-    background: ${theme.background};
+    background: var(--photoswipe-bg);
     transition: opacity 0.25s ease-out;
     z-index: 1600;
     opacity: 0;
@@ -215,7 +218,7 @@ const styles = (theme = defaultTheme): any => css`
     top: 56px;
     right: 44px;
     width: auto;
-    background: ${theme.background};
+    background: var(--photoswipe-bg);
     transform: translateY(6px);
     transition: transform 0.25s;
     z-index: 1620;
@@ -229,13 +232,13 @@ const styles = (theme = defaultTheme): any => css`
     padding: 8px 12px;
     font-size: 14px;
     line-height: 18px;
-    color: ${theme.background};
+    color: var(--photoswipe-bg);
     text-decoration: none;
   }
 
   .pswp__share-tooltip a:hover {
     text-decoration: none;
-    color: ${theme.background};
+    color: var(--photoswipe-bg);
   }
 
   .pswp__share-tooltip a:first-of-type {
@@ -256,6 +259,7 @@ const styles = (theme = defaultTheme): any => css`
   }
 
   /* increase size of share links on touch devices */
+
   .pswp--touch .pswp__share-tooltip a {
     padding: 16px 12px;
   }
@@ -269,18 +273,20 @@ const styles = (theme = defaultTheme): any => css`
     width: 0;
     height: 0;
     border: 6px solid transparent;
-    border-bottom-color: ${theme.foreground};
+    border-bottom-color: var(--photoswipe-fg);
     pointer-events: none;
   }
 
   a.pswp__share--download:hover {
-    background: ${theme.foreground};
+    background: var(--photoswipe-fg);
   }
 
   /* 3. Index indicator ("1 of X" counter) */
+
   .pswp__counter {
     display: none;
   }
+
   .pswp__count {
     position: fixed;
     top: -5px;
@@ -288,7 +294,7 @@ const styles = (theme = defaultTheme): any => css`
     height: 44px;
     padding: 0 10px;
     line-height: 44px;
-    color: ${theme.foreground};
+    color: var(--photoswipe-fg);
     opacity: 0.75;
     z-index: 9999;
   }
@@ -306,6 +312,7 @@ const styles = (theme = defaultTheme): any => css`
   }
 
   /* 4. Caption */
+
   .pswp__caption {
     display: none;
     position: absolute;
@@ -317,7 +324,7 @@ const styles = (theme = defaultTheme): any => css`
 
   .pswp__caption small {
     font-size: 11px;
-    color: ${theme.foreground};
+    color: var(--photoswipe-fg);
   }
 
   .pswp__caption__center {
@@ -325,7 +332,7 @@ const styles = (theme = defaultTheme): any => css`
     padding: 10px;
     font-size: 13px;
     line-height: 20px;
-    color: ${theme.foreground};
+    color: var(--photoswipe-fg);
     text-align: left;
     max-width: 420px;
     text-align: center;
@@ -336,6 +343,7 @@ const styles = (theme = defaultTheme): any => css`
   }
 
   /* Fake caption element, used to calculate height of next/prev image */
+
   .pswp__caption--fake {
     visibility: hidden;
   }
@@ -343,6 +351,7 @@ const styles = (theme = defaultTheme): any => css`
   /* 5. Loading indicator (preloader)	You can play with it here - http://codepen.io/dimsemenov/pen/yyBWoR
 
  */
+
   .pswp__preloader {
     position: absolute;
     top: 0;
@@ -408,7 +417,7 @@ const styles = (theme = defaultTheme): any => css`
     height: 14px;
     margin: 0;
     background: none;
-    border: 2px solid ${theme.foreground};
+    border: 2px solid var(--photoswipe-fg);
     box-sizing: border-box;
     border-radius: 50%;
     border-left-color: transparent;
@@ -452,6 +461,7 @@ const styles = (theme = defaultTheme): any => css`
   /* 6. Additional styles */
 
   /* root element of UI */
+
   .pswp__ui {
     position: relative;
     visibility: visible;
@@ -460,9 +470,10 @@ const styles = (theme = defaultTheme): any => css`
   }
 
   /* top background bar with buttons and "1 of X" indicator */
+
   .pswp__top-bar {
     position: absolute;
-    background: ${theme.background} !important;
+    background: var(--photoswipe-bg) !important;
     top: 0;
     left: 0;
     width: 100%;
@@ -485,6 +496,7 @@ const styles = (theme = defaultTheme): any => css`
   }
 
   /* pswp--has_mouse class is added only when two subsequent mousemove events occur */
+
   .pswp--has_mouse .pswp__button--arrow--left,
   .pswp--has_mouse .pswp__button--arrow--right {
     visibility: visible;
@@ -492,16 +504,18 @@ const styles = (theme = defaultTheme): any => css`
 
   .pswp__top-bar,
   .pswp__caption {
-    background-color: ${theme.background};
+    background-color: var(--photoswipe-bg);
   }
 
   /* pswp__ui--fit class is added when main image "fits" between top bar and bottom bar (caption) */
+
   .pswp__ui--fit .pswp__top-bar,
   .pswp__ui--fit .pswp__caption {
-    background-color: ${theme.background};
+    background-color: var(--photoswipe-bg);
   }
 
   /* pswp__ui--idle class is added when mouse isn't moving for several seconds (JS option timeToIdle) */
+
   .pswp__ui--idle .pswp__top-bar {
     opacity: 1;
   }
@@ -515,6 +529,7 @@ const styles = (theme = defaultTheme): any => css`
 	pswp__ui--hidden class is added when controls are hidden
 	e.g. when user taps to toggle visibility of controls
 */
+
   .pswp__ui--hidden .pswp__top-bar,
   .pswp__ui--hidden .pswp__caption,
   .pswp__ui--hidden .pswp__button--arrow--left,
@@ -524,6 +539,7 @@ const styles = (theme = defaultTheme): any => css`
   }
 
   /* pswp__ui--one-slide class is added when there is just one item in gallery */
+
   .pswp__ui--one-slide .pswp__button--arrow--left,
   .pswp__ui--one-slide .pswp__button--arrow--right,
   .pswp__ui--one-slide .pswp__count {
@@ -544,7 +560,7 @@ const styles = (theme = defaultTheme): any => css`
     bottom: 0;
     top: 0;
     width: 25%;
-    background: ${theme.background};
+    background: var(--photoswipe-bg);
     z-index: 9998;
 
     & > * {
@@ -567,10 +583,8 @@ const styles = (theme = defaultTheme): any => css`
         padding: 15px;
         left: 0;
         bottom: 0;
-        background: ${theme.background};
+        background: var(--photoswipe-bg);
       }
     }
   }
-`;
-
-export default styles;
+};

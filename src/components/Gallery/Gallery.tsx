@@ -1,19 +1,18 @@
 /* eslint-disable prefer-destructuring */
 import React, { useContext, useEffect, useState } from 'react';
-import { jsx } from '@emotion/react';
+import clsx from 'clsx';
 import { isNil, last } from 'ramda';
-import tw, { TwStyle } from 'twin.macro';
-import { PhotoSwipeContainer } from 'types';
 
 import Picture from 'components/Picture';
 import pictures from 'config/pictures';
 import { AppContext } from 'contexts/AppProvider';
+import { PhotoSwipeContainer } from 'types';
 
 type Props = {
   sources: (string | string[])[];
-  wrapperTw?: TwStyle;
-  itemTw?: TwStyle;
-  imgTw?: TwStyle;
+  wrapperTw?: string;
+  itemTw?: string;
+  imgTw?: string;
 };
 
 const Gallery = ({ sources, wrapperTw, itemTw, imgTw }: Props): JSX.Element => {
@@ -57,20 +56,24 @@ const Gallery = ({ sources, wrapperTw, itemTw, imgTw }: Props): JSX.Element => {
   };
 
   return (
-    <div itemScope itemType="http://schema.org/ImageGallery" css={wrapperTw}>
+    <div
+      itemScope
+      itemType="http://schema.org/ImageGallery"
+      className={clsx(wrapperTw)}
+    >
       {container?.map((item, i) => (
         <figure
           key={`thumb-${item.uid || i}`}
           itemProp="associatedMedia"
           itemScope
           itemType="http://schema.org/ImageObject"
-          css={itemTw}
+          className={clsx(itemTw)}
         >
           <a
             href={item.src}
             onClick={e => handleClick(e, item.uid || i)}
             itemProp="contentUrl"
-            css={imgTw}
+            className={clsx(imgTw)}
           >
             <Picture
               filename={last(item.src.split('/')) as string}

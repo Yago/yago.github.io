@@ -1,16 +1,15 @@
 /* eslint-disable prefer-destructuring */
 import React, { useContext, useEffect, useState } from 'react';
-import { jsx } from '@emotion/react';
+import clsx from 'clsx';
 import { isNil } from 'ramda';
-import tw from 'twin.macro';
-import { PhotoSwipeContainer } from 'types';
 
 import Icon from 'components/Icon';
 import Picture from 'components/Picture';
 import pictures from 'config/pictures';
 import { AppContext } from 'contexts/AppProvider';
+import { PhotoSwipeContainer } from 'types';
 
-import { imageWraper } from './GalleryTeaser.styles';
+import styles from './GalleryTeaser.module.css';
 
 type Props = {
   title: string;
@@ -56,19 +55,21 @@ const GalleryTeaser = ({ title, sources, cover }: Props): JSX.Element => {
 
   return (
     <button
-      css={imageWraper}
+      className={clsx(
+        styles.imageWraper,
+        'relative block w-full overflow-hidden text-white bg-gray-950 rounded-2xl focus:outline-none'
+      )}
       type="button"
-      tw="relative block w-full overflow-hidden text-white bg-gray-950 rounded-2xl focus:outline-none"
       onClick={handleClick}
     >
       <Picture
         filename={cover}
         alt={title}
-        tw="transform transition-transform duration-1000"
+        className="transform transition-transform duration-1000"
       />
-      <div tw="absolute inset-0 p-5 text-left pointer-events-none">
-        <h3 tw="font-medium md:text-2xl">
-          <Icon name="film" tw="mr-3 text-lg" />
+      <div className="absolute inset-0 p-5 text-left pointer-events-none">
+        <h3 className="font-medium md:text-2xl">
+          <Icon name="film" className="mr-3 text-lg" />
           {title}
         </h3>
       </div>

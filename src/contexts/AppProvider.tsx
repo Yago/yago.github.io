@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { isNil } from 'ramda';
+
 import { PhotoSwipeContainer } from 'types';
 
 export type TreeItem = {
@@ -71,11 +72,11 @@ const AppProvider = ({ children }: Props): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [photoswipeOpen, setPhotoswipeOpen] = useState(false);
-  const [
-    photoswipeContainer,
-    setPhotoswipeContainer,
-  ] = useState<PhotoSwipeContainer | null>(null);
+  const [photoswipeContainer, setPhotoswipeContainer] =
+    useState<PhotoSwipeContainer | null>(null);
   const [photoswipeIndex, setPhotoswipeIndex] = useState<number | null>(null);
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const tree: TreeItem[] = importAll(require.context('../pages/', true)).filter(
     (i: TreeItem) => i.path !== '/_document'
   );
@@ -120,6 +121,7 @@ const AppProvider = ({ children }: Props): JSX.Element => {
 
   return (
     <AppContext.Provider
+      // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
         closing,
         menuOpen,

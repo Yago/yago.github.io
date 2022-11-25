@@ -1,7 +1,5 @@
 import React from 'react';
-import { jsx } from '@emotion/react';
 import { motion } from 'framer-motion';
-import tw from 'twin.macro';
 
 type Props = {
   move?: boolean;

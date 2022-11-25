@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
-import { jsx } from '@emotion/react';
+import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
-import tw from 'twin.macro';
 
 import Footer from 'components/Footer';
 import Header from 'components/Header';
@@ -26,13 +25,15 @@ const Layout = ({
   return (
     <>
       <Icons />
-      <div tw="antialiased">
-        <div tw="w-full">
+      <div className="antialiased">
+        <div className="w-full">
           <div
-            tw="w-full transition-transform transform duration-700"
-            css={(menuOpen || terminalOpen) && tw`md:-translate-x-1/2`}
+            className={clsx(
+              'w-full transition-transform transform duration-700',
+              (menuOpen || terminalOpen) && 'md:-translate-x-1/2'
+            )}
           >
-            <div tw="px-4 py-4 mx-auto max-w-screen-2xl md:px-14 md:pt-14">
+            <div className="px-4 py-4 mx-auto max-w-screen-2xl md:px-14 md:pt-14">
               <Header />
             </div>
           </div>
@@ -40,18 +41,18 @@ const Layout = ({
 
         <AnimatePresence>
           <div
-            tw="fixed bottom-0 right-0 z-50 w-full text-white md:inset-y-0 md:w-1/2 bg-gray-950 transform translate-x-full transition-transform duration-700"
-            css={[
+            className={clsx(
+              'fixed bottom-0 right-0 z-50 w-full text-white md:inset-y-0 md:w-1/2 bg-gray-950 transform translate-x-full transition-transform duration-700',
               { top: '66px' },
-              (menuOpen || terminalOpen) && tw`translate-x-0`,
-            ]}
+              (menuOpen || terminalOpen) && 'translate-x-0'
+            )}
           >
             {menuOpen && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                tw="absolute top-0 left-0 w-full"
+                className="absolute top-0 left-0 w-full"
               >
                 <Menu />
               </motion.div>
@@ -61,7 +62,7 @@ const Layout = ({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                tw="absolute top-0 left-0 w-full"
+                className="absolute top-0 left-0 w-full"
               >
                 <Terminal />
               </motion.div>
@@ -69,17 +70,21 @@ const Layout = ({
           </div>
         </AnimatePresence>
 
-        <div tw="w-full">
+        <div className="w-full">
           <div
-            tw="w-full transition-transform transform duration-700"
-            css={(menuOpen || terminalOpen) && tw`md:-translate-x-1/2`}
+            className={clsx(
+              'w-full transition-transform transform duration-700',
+              (menuOpen || terminalOpen) && 'md:-translate-x-1/2'
+            )}
           >
             <div
-              css={!noContainer && tw`px-4 mx-auto max-w-screen-2xl md:px-14`}
+              className={clsx(
+                !noContainer && 'px-4 mx-auto max-w-screen-2xl md:px-14'
+              )}
             >
               {children}
             </div>
-            <div tw="px-4 mx-auto max-w-screen-2xl md:px-14">
+            <div className="px-4 mx-auto max-w-screen-2xl md:px-14">
               <Footer />
             </div>
           </div>

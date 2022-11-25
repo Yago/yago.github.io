@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import useDimensions from 'react-cool-dimensions';
-import { jsx } from '@emotion/react';
 import { ResizeObserver } from '@juggle/resize-observer';
+import clsx from 'clsx';
 import Image from 'next/image';
 import { isNil } from 'ramda';
-import tw from 'twin.macro';
 
 import pictures from 'config/pictures';
 
@@ -32,10 +31,12 @@ const Picture = ({ filename, alt, className }: Props): JSX.Element => {
   };
 
   return (
-    <div ref={observe} className={`picture ${className}`} tw="bg-gray-100">
+    <div ref={observe} className={`picture ${className} bg-gray-100`}>
       <div
-        tw="opacity-0 transition-opacity duration-200"
-        css={loaded && tw`opacity-100`}
+        className={clsx(
+          'opacity-0 transition-opacity duration-200',
+          loaded && 'opacity-100'
+        )}
       >
         <Image
           src={img.msrc}

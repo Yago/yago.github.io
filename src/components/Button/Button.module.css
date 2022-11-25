@@ -1,10 +1,5 @@
-import { css } from '@emotion/react';
-import tw from 'twin.macro';
-
-import { theme } from '../../../tailwind.config';
-
-export default css`
-  ${tw`
+.default {
+  @apply
     inline-block
     relative
     border
@@ -25,18 +20,18 @@ export default css`
     focus:ring-blue
     focus:ring-opacity-10
     uppercase
-  `}
+  ;
   border-image-slice: 1;
 
   &:after {
-    ${tw`
+    @apply
       absolute
       border
       border-blue
       transition-opacity
       duration-300
       opacity-0
-    `}
+    ;
     content: '';
     top: -1px;
     right: -1px;
@@ -44,14 +39,14 @@ export default css`
     left: -1px;
     border-image: linear-gradient(
       to right,
-      ${theme.colors.blue} 0%,
-      ${theme.colors.teal} 98%
+      #0002FC 0%,
+      #50E3C2 98%
     );
     border-image-slice: 1;
   }
 
   &:hover:after,
   &:focus:after {
-    ${tw`opacity-100`}
+    @apply opacity-100;
   }
-`;
+}

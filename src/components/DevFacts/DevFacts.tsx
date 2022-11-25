@@ -1,19 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import { PieChart } from 'react-minimal-pie-chart';
-import { jsx } from '@emotion/react';
+import clsx from 'clsx';
 import { format, sub } from 'date-fns';
 import Prism from 'prismjs';
 import { isNil } from 'ramda';
-import tw from 'twin.macro';
 
-import codeStyles from 'components/Code/Code.styles';
+import codeStyles from 'components/Code/Code.module.css';
 import Icon from 'components/Icon';
 import { IconNames } from 'components/Icons/Icons';
 import contribs from 'config/contribs.json';
 import librairies from 'config/librairies.json';
 
-import styles from './DevFacts.styles';
+import styles from './DevFacts.module.css';
 
 type Contrib = {
   date: string;
@@ -49,19 +48,19 @@ const DevFacts = (): JSX.Element => {
   }, [codeElement]);
 
   return (
-    <div tw="text-gray-100 bg-gray-950" css={styles}>
-      <div tw="px-4 py-16 mx-auto max-w-screen-2xl md:px-14">
-        <h2 tw="text-2xl font-medium md:text-3xl lg:text-4xl">
+    <div className={clsx('text-gray-100 bg-gray-950', styles.default)}>
+      <div className="px-4 py-16 mx-auto max-w-screen-2xl md:px-14">
+        <h2 className="text-2xl font-medium md:text-3xl lg:text-4xl">
           Developer facts
         </h2>
-        <div tw="flex flex-wrap">
-          <div tw="w-full mt-12 md:w-1/2" css={codeStyles}>
-            <pre className="line-numbers" tw="rounded">
+        <div className="flex flex-wrap">
+          <div className={clsx('w-full mt-12 md:w-1/2', codeStyles)}>
+            <pre className="rounded line-numbers">
               <code ref={codeElement} className="json">
                 {JSON.stringify(facts, null, 2)}
               </code>
             </pre>
-            <div tw="mt-16">
+            <div className="mt-16">
               <CalendarHeatmap
                 startDate={format(sub(new Date(), { years: 1 }), 'yyyy-MM-dd')}
                 classForValue={(value: Contrib): string => {
@@ -85,8 +84,8 @@ const DevFacts = (): JSX.Element => {
               />
             </div>
           </div>
-          <div tw="w-full md:w-1/2">
-            <div tw="mx-auto lg:max-w-md">
+          <div className="w-full md:w-1/2">
+            <div className="mx-auto lg:max-w-md">
               <PieChart
                 data={pieData}
                 label={({ dataEntry }) => dataEntry.title}
@@ -101,20 +100,20 @@ const DevFacts = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div tw="flex flex-wrap items-center mt-12 space-x-4">
-          <h3 tw="text-xl font-medium text-gray-600 md:text-2xl">
+        <div className="flex flex-wrap items-center mt-12 space-x-4">
+          <h3 className="text-xl font-medium text-gray-600 md:text-2xl">
             Favorite tools
           </h3>
-          <div tw="flex-1 h-0 border-t border-gray-800" />
+          <div className="flex-1 h-0 border-t border-gray-800" />
           {librairies.map(lib => (
             <a
               key={`lib-${lib.icon}`}
               href={lib.url}
               target="_blank"
               rel="noopener noreferrer"
-              tw="my-3 text-gray-600 transition-colors duration-200 hover:text-indigo"
+              className="my-3 text-gray-600 transition-colors duration-200 hover:text-indigo"
             >
-              <Icon name={lib.icon as IconNames} tw="text-4xl" />
+              <Icon name={lib.icon as IconNames} className="text-4xl" />
             </a>
           ))}
         </div>

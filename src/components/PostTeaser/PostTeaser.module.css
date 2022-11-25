@@ -1,0 +1,6 @@
+.default {
+  &:hover span,
+  &:hover p {
+    @apply opacity-100;
+  }
+}

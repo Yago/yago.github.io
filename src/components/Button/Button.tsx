@@ -1,9 +1,8 @@
 import React from 'react';
-import { jsx } from '@emotion/react';
+import clsx from 'clsx';
 import Link from 'next/link';
-import tw from 'twin.macro';
 
-import styles from './Button.styles';
+import styles from './Button.module.css';
 
 type Props = {
   href: string;
@@ -11,8 +10,8 @@ type Props = {
 };
 
 const Button = ({ href, children }: Props): JSX.Element => (
-  <Link href={href} passHref>
-    <a css={styles}>{children}</a>
+  <Link href={href} className={clsx(styles.default)}>
+    {children}
   </Link>
 );
 

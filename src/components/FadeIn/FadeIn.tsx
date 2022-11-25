@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { jsx } from '@emotion/react';
+import clsx from 'clsx';
 import { motion, useAnimation } from 'framer-motion';
-import tw from 'twin.macro';
 
 import { AppContext } from 'contexts/AppProvider';
 
@@ -10,6 +9,7 @@ type Props = {
   move?: boolean;
   delay?: number;
   children: React.ReactNode | React.ReactNodeArray;
+  className?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props?: any;
 };
@@ -17,6 +17,7 @@ type Props = {
 const FadeIn = ({
   move = true,
   delay = 0,
+  className,
   children,
   ...props
 }: Props): JSX.Element => {
@@ -33,7 +34,7 @@ const FadeIn = ({
   return (
     <motion.div
       ref={ref}
-      className="fade-in"
+      className={clsx('fade-in', className)}
       animate={controls}
       initial="hidden"
       variants={{

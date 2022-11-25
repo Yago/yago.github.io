@@ -1,18 +1,18 @@
 import React from 'react';
-import { jsx } from '@emotion/react';
+import clsx from 'clsx';
 import Link from 'next/link';
-import tw from 'twin.macro';
 
 import Logo from 'assets/images/yago.svg';
 import MenuToggle from 'components/MenuToggle';
 import TerminalToggle from 'components/TerminalToggle';
 
 const Header = (): JSX.Element => (
-  <header tw="flex items-center space-x-4">
-    <Link href="/" passHref>
-      <a tw="block w-8 md:w-12" css={{ marginLeft: '0 !important' }}>
-        <Logo tw="w-full" />
-      </a>
+  <header className="flex items-center space-x-4">
+    <Link
+      href="/"
+      className={clsx('block w-8 md:w-12', { marginLeft: '0 !important' })}
+    >
+      <Logo className="w-full" />
     </Link>
     <TerminalToggle />
     <MenuToggle />

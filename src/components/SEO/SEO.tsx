@@ -1,9 +1,7 @@
 import React from 'react';
-import { jsx } from '@emotion/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { isNil } from 'ramda';
-import tw from 'twin.macro';
 
 import pictures from 'config/pictures';
 

@@ -18,11 +18,8 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "types": [
-      "jest",
-      "node",
-      "webpack-env"
-    ]
+    "types": ["jest", "webpack-env"],
+    "incremental": true
   },
   "include": [
     "**/*.ts",

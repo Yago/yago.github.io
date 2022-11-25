@@ -1,10 +1,8 @@
 import React from 'react';
-import { jsx } from '@emotion/react';
 import Link from 'next/link';
-import tw from 'twin.macro';
 
 type Props = {
-  children: string;
+  children: string | null;
   href: string;
 };
 
@@ -18,8 +16,8 @@ const ContentLink = ({ children, href }: Props): JSX.Element => {
   }
 
   return (
-    <Link href={href} passHref>
-      <a className="link">{children}</a>
+    <Link href={href} className="link">
+      {children}
     </Link>
   );
 };

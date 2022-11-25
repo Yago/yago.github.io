@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import { jsx } from '@emotion/react';
+import clsx from 'clsx';
 import Prism from 'prismjs';
 import { isNil } from 'ramda';
-import tw from 'twin.macro';
 
 // import 'prismjs/components/prism-tsx';
-import styles from './Code.styles';
+import styles from './Code.module.css';
 
 type PreProps = {
   children: React.ReactNode;
@@ -17,7 +16,7 @@ type CodeProps = {
 };
 
 export const Pre = ({ children }: PreProps): JSX.Element => (
-  <div css={styles} className="line-numbers" tw="md:-mx-10">
+  <div className={clsx(styles.default, 'line-numbers md:-mx-10')}>
     <pre>{children}</pre>
   </div>
 );

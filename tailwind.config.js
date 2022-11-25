@@ -39,6 +39,9 @@ const fontFamily = {
 };
 
 module.exports = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     colors: {
       black: '#000',

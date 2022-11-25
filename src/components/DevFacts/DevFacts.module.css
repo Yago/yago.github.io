@@ -1,10 +1,8 @@
-import { css } from '@emotion/react';
-import tw from 'twin.macro';
-
-export default css`
+.default {
   text {
-    ${tw`fill-current font-mono`}
+    @apply font-mono;
     font-size: 0.6em;
+    fill: currentColor;
   }
   .react-calendar-heatmap .contrib-empty,
   .react-calendar-heatmap .contrib-0 {
@@ -22,4 +20,4 @@ export default css`
   .react-calendar-heatmap .contrib-4 {
     fill: #67d15a;
   }
-`;
+}

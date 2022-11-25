@@ -1,17 +1,21 @@
 const path = require('path');
-const emoji = require('remark-emoji');
-const withPWA = require('next-pwa');
+const withPWA = require('next-pwa')({
+  dest: 'public'
+});
+
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+    providerImportSource: '@mdx-js/react',
+  },
+})
 
 const dirTree = require('directory-tree');
 
-module.exports = withPWA({
-  // future: {
-  //   webpack5: true
-  // },
+module.exports = withPWA(withMDX({
   pageExtensions: ['tsx', 'mdx'],
-  pwa: {
-    dest: 'public'
-  },
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [256, 384],
@@ -21,27 +25,7 @@ module.exports = withPWA({
     config.resolve = {
       ...config.resolve,
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-      // fallback: {
-      //   fs: false,
-      //   module: false
-      // },
     };
-
-    // MDX support
-    config.module.rules.push({
-      test: /\.mdx?$/,
-      use: [
-        options.defaultLoaders.babel,
-        {
-          loader: require.resolve('@mdx-js/loader'),
-          options: {
-            remarkPlugins: [
-              emoji
-            ],
-          }
-        },
-      ],
-    });
 
     config.module.rules.push({
       test: /\.svg$/,
@@ -51,4 +35,4 @@ module.exports = withPWA({
     return config;
   },
   env: {},
-});
+}));

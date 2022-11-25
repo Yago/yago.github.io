@@ -1,7 +1,5 @@
 import React, { useContext } from 'react';
-import { jsx } from '@emotion/react';
 import { isNil } from 'ramda';
-import tw from 'twin.macro';
 
 import Breadcrumb from 'components/Breadcrumb';
 import FadeIn from 'components/FadeIn';
@@ -18,13 +16,13 @@ const Projects = (): JSX.Element => {
     <Layout>
       <SEO title="Projects" />
       <Breadcrumb crumbs={[{ label: 'Projects' }]} />
-      <div tw="mb-24 md:pl-20">
+      <div className="mb-24 md:pl-20">
         <FadeIn move={false}>
-          <h1 tw="mt-6 text-3xl font-medium text-gray-900 md:text-4xl lg:text-5xl">
+          <h1 className="mt-6 text-3xl font-medium text-gray-900 md:text-4xl lg:text-5xl">
             Projects
           </h1>
         </FadeIn>
-        <div tw="mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12">
+        <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12">
           {projects
             .sort((a, b) => +new Date(b.meta.date) - +new Date(a.meta.date))
             .filter(i => isNil(i.meta.published) || i.meta.published)

@@ -1,19 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { jsx } from '@emotion/react';
+import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import PSWP from 'photoswipe/dist/photoswipe';
 import photoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
 import { isNil } from 'ramda';
-import tw from 'twin.macro';
 
 import { AppContext } from 'contexts/AppProvider';
 import { useWindowDimensions } from 'hooks';
 
 import PhotoSwipeWrapper from '../PhotoSwipeWrapper';
 
-import styles from './PhotoSwipe.styles';
+import styles from './PhotoSwipe.module.css';
 
 type Props = {
   options?: any;
@@ -96,7 +95,7 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
   }, [photoswipeIndex, photoswipeOpen]);
 
   return (
-    <div css={styles()}>
+    <div className={clsx(styles.default)}>
       {/* {photoswipeOpen && ( */}
       <PhotoSwipeWrapper
         setRef={wrapper}
@@ -117,54 +116,59 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  tw="absolute bottom-0 left-0 w-full"
+                  className="absolute bottom-0 left-0 w-full"
                 >
                   {!isNil(item?.title) && (
-                    <h3 tw="text-lg font-medium md:text-2xl">{item.title}</h3>
+                    <h3 className="text-lg font-medium md:text-2xl">
+                      {item.title}
+                    </h3>
                   )}
                   {!isNil(item?.meta?.Headline) && (
-                    <h3 tw="text-lg font-medium md:text-2xl">
+                    <h3 className="text-lg font-medium md:text-2xl">
                       {item.meta.Headline}
                     </h3>
                   )}
                   {!isNil(item?.meta?.DateTimeOriginal) && (
-                    <p tw="mt-1 text-sm text-gray-500">
+                    <p className="mt-1 text-sm text-gray-500">
                       — {item.meta.DateTimeOriginal.split(':')[0]}
                     </p>
                   )}
-                  <p tw="mt-2 text-gray-600 md:mt-4">
+                  <p className="mt-2 text-gray-600 md:mt-4">
                     {!isNil(item?.meta?.Model) &&
                       item.meta.Model !== 'Tiff File' && (
-                        <span tw="pr-3 lowercase md:text-lg md:block md:pr-0">
+                        <span className="pr-3 lowercase md:text-lg md:block md:pr-0">
                           {item.meta?.Model}
-                          <span tw="pl-2 text-gray-400 md:hidden">|</span>
+                          <span className="pl-2 text-gray-400 md:hidden">
+                            |
+                          </span>
                         </span>
                       )}
                     {!isNil(item?.meta?.FocalLength) && (
-                      <span tw="pr-3 md:text-lg md:block md:pr-0">
+                      <span className="pr-3 md:text-lg md:block md:pr-0">
                         {item.meta?.FocalLength}
-                        <span tw="pl-2 text-gray-400 md:hidden">|</span>
+                        <span className="pl-2 text-gray-400 md:hidden">|</span>
                       </span>
                     )}
                     {!isNil(item?.meta?.ApertureValue) && (
-                      <span tw="pr-3 md:text-lg md:block md:pr-0">
-                        ƒ/{Math.round(+item.meta?.ApertureValue * 10) / 10}
-                        <span tw="pl-2 text-gray-400 md:hidden">|</span>
+                      <span className="pr-3 md:text-lg md:block md:pr-0">
+                        ƒ/
+                        {Math.round(+(item.meta?.ApertureValue ?? 0) * 10) / 10}
+                        <span className="pl-2 text-gray-400 md:hidden">|</span>
                       </span>
                     )}
                     {!isNil(item?.meta?.ExposureTime) && (
-                      <span tw="pr-3 md:text-lg md:block md:pr-0">
+                      <span className="pr-3 md:text-lg md:block md:pr-0">
                         {item.meta?.ExposureTime}s
-                        <span tw="pl-2 text-gray-400 md:hidden">|</span>
+                        <span className="pl-2 text-gray-400 md:hidden">|</span>
                       </span>
                     )}
                     {!isNil(item?.meta?.ISOSpeedRatings) && (
-                      <span tw="pr-3 md:text-lg md:block md:pr-0">
+                      <span className="pr-3 md:text-lg md:block md:pr-0">
                         {item.meta?.ISOSpeedRatings} ISO
-                        <span tw="pl-2 text-gray-400 md:hidden">|</span>
+                        <span className="pl-2 text-gray-400 md:hidden">|</span>
                       </span>
                     )}
-                    <span tw="block pt-2 text-sm md:pt-4 md:text-base">
+                    <span className="block pt-2 text-sm md:pt-4 md:text-base">
                       © Yann Gouffon
                     </span>
                   </p>
