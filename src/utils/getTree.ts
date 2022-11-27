@@ -11,7 +11,9 @@ const getTree = (): Promise<Tree> =>
       const cleanedFiles = files
         .filter(
           file =>
-            !['/', '/_app', '/index'].includes(file) && !file.includes('.tsx')
+            !file.includes('/api') &&
+            !file.includes('.tsx') &&
+            !file.includes('.ts')
         )
         .map(file => {
           let meta = null;

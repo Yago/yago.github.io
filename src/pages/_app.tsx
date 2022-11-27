@@ -2,14 +2,10 @@
 import React, { FunctionComponent } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
-import { Code, Pre } from 'components/Code';
-import GalleryProxy from 'components/Gallery/GalleryProxy';
-import Picture from 'components/Picture';
+import Code from 'components/Code';
 import { Link } from 'components/Typography';
 import AppProvider from 'contexts/AppProvider';
 
-import 'prism-themes/themes/prism-duotone-dark.css';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'photoswipe/dist/photoswipe.css';
 import 'styles/types.css';
 import 'styles/base.css';
@@ -26,11 +22,6 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
       components={{
         // @ts-ignore
         a: Link,
-        gallery: GalleryProxy,
-        // @ts-ignore
-        picture: Picture,
-        // @ts-ignore
-        pre: Pre,
         // @ts-ignore
         code: Code,
       }}

@@ -1,43 +1,3 @@
-/* eslint-disable global-require */
-const fontFamily = {
-  sans: [
-    'Runda',
-    'ui-sans-serif',
-    'system-ui',
-    '-apple-system',
-    'BlinkMacSystemFont',
-    '"Segoe UI"',
-    'Roboto',
-    '"Helvetica Neue"',
-    'Arial',
-    '"Noto Sans"',
-    'sans-serif',
-    '"Apple Color Emoji"',
-    '"Segoe UI Emoji"',
-    '"Segoe UI Symbol"',
-    '"Noto Color Emoji"',
-  ],
-  serif: [
-    'CalaWeb',
-    'ui-serif',
-    'Georgia',
-    'Cambria',
-    '"Times New Roman"',
-    'Times',
-    'serif',
-  ],
-  mono: [
-    'Fira Code VF',
-    'SFMono-Regular',
-    'Menlo',
-    'Monaco',
-    'Consolas',
-    'Liberation Mono',
-    'Courier New',
-    'monospace',
-  ],
-};
-
 module.exports = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -66,7 +26,44 @@ module.exports = {
       indigo: '#9a86fd',
       teal: '#50E3C2',
     },
-    fontFamily,
+    fontFamily: {
+      sans: [
+        'Runda',
+        'ui-sans-serif',
+        'system-ui',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        '"Noto Sans"',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
+      serif: [
+        'CalaWeb',
+        'ui-serif',
+        'Georgia',
+        'Cambria',
+        '"Times New Roman"',
+        'Times',
+        'serif',
+      ],
+      mono: [
+        'Fira Code VF',
+        'SFMono-Regular',
+        'Menlo',
+        'Monaco',
+        'Consolas',
+        'Liberation Mono',
+        'Courier New',
+        'monospace',
+      ],
+    },
     extend: {
       fontSize: {
         '2xl': '23px',
@@ -87,103 +84,6 @@ module.exports = {
       },
       maxWidth: {
         'screen-2xl': '1600px',
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            color: '#212529',
-            maxWidth: '100%',
-            p: {
-              lineHeight: '1.618em',
-              marginBottom: '23px',
-            },
-            pre: {
-              backgroundColor: '#161821',
-            },
-            a: {
-              color: '#0002FC',
-              textDecoration: 'none',
-              fontWeight: '400',
-            },
-            h2: {
-              fontSize: '20px',
-              lineHeight: '1.1em',
-              fontFamily: fontFamily.sans.join(', '),
-              fontWeight: 500,
-              marginTop: '60px',
-              marginBottom: '12px',
-            },
-            h3: {
-              fontSize: '19px',
-              lineHeight: '1.1em',
-              fontFamily: fontFamily.sans.join(', '),
-              fontWeight: 500,
-              marginTop: '60px',
-              marginBottom: '12px',
-            },
-            h4: {
-              fontSize: '18px',
-              lineHeight: '1.1em',
-              fontFamily: fontFamily.sans.join(', '),
-              fontWeight: 500,
-              marginTop: '60px',
-              marginBottom: '12px',
-            },
-            strong: {
-              fontWeight: '500',
-            },
-            'ul > li::before': {
-              backgroundColor: '#000',
-            },
-            code: {
-              color: '#eb5757',
-              backgroundColor: '#eef2f5',
-              fontWeight: 400,
-              fontFamily: fontFamily.mono.join(', '),
-              padding: '0.1em 0.2em 0 0.2em',
-              borderRadius: '0.2em',
-            },
-            'code::before': {
-              content: '""',
-            },
-            'code::after': {
-              content: '""',
-            },
-          },
-        },
-        xl: {
-          css: [
-            {
-              fontSize: '21px',
-              lineHeight: '1.618em',
-              h2: {
-                fontSize: '26px',
-              },
-              h3: {
-                fontSize: '24px',
-              },
-              h4: {
-                fontSize: '21px',
-              },
-            },
-          ],
-        },
-        '2xl': {
-          css: [
-            {
-              fontSize: '23px',
-              h2: {
-                fontSize: '28px',
-              },
-              h3: {
-                fontSize: '27px',
-              },
-              h4: {
-                fontSize: '25px',
-              },
-            },
-          ],
-        },
       },
     },
   },

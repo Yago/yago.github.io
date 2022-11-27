@@ -1,6 +1,5 @@
 /* eslint-disable prefer-destructuring */
 import React, { useContext, useEffect, useState } from 'react';
-import clsx from 'clsx';
 import { isNil } from 'ramda';
 
 import Icon from 'components/Icon';
@@ -8,8 +7,6 @@ import Picture from 'components/Picture';
 import pictures from 'config/pictures';
 import { AppContext } from 'contexts/AppProvider';
 import { PhotoSwipeContainer } from 'types';
-
-import styles from './GalleryTeaser.module.css';
 
 type Props = {
   title: string;
@@ -55,10 +52,7 @@ const GalleryTeaser = ({ title, sources, cover }: Props): JSX.Element => {
 
   return (
     <button
-      className={clsx(
-        styles.imageWraper,
-        'relative block w-full overflow-hidden text-white bg-gray-950 rounded-2xl focus:outline-none'
-      )}
+      className="relative block w-full overflow-hidden text-white gallery-teaser bg-gray-950 rounded-2xl focus:outline-none"
       type="button"
       onClick={handleClick}
     >

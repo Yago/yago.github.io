@@ -1,4 +1,5 @@
-import Post from 'components/Post'
+import Post from 'components/Post';
+import Gallery from 'components/Gallery';
 
 export const meta = {
   path: "/blog/lisboa",
@@ -13,39 +14,39 @@ Cette année, durant le week-end de Pâques, je me suis rendu avec des amis à L
 ## Une ville pour flâner
 Riche de plusieurs quartiers historiques, **Lisbonne est une ville où il fait bon ne rien faire**. Par rien faire, j’entends, se promener tranquillement dans ses rues piétonnes, boire une Sagres sur une terrasse ensoleillée et déguster une gastronomie locale tout en fraîcheur marine. En bref, un centre-ville où il fait bon vivre.
 
-<div><gallery sources={[
+<Gallery sources={[
   ["lisboa-1.jpg", 'yolo'],
-]}></gallery></div>
+]} />
 
 ### Alfama
 **Un des plus anciens et des plus atypiques quartiers de la capitale portugaise**, l’Alfama s’arpente et se découvre sans modération. Petites ruelles sinueuses face à la mer, ce quartier est majoritairement sans voiture et donc, emprunt d’une tranquillité méditerranéenne.
 
-<div><gallery sources={[
+<Gallery sources={[
   "lisboa-41.jpg",
   "lisboa-8.jpg",
-]}></gallery></div>
+]} />
 
 ### Bairro Alto
 Véritable San Fransisco du vieux continent, le Bairro Alto est LE quartier pour boire un verre et profiter des meilleures cuisines de la capitale. Situé à son pied, le Mercado da Ribeira offre une des meilleures expériences culinaires de la ville avec sa panoplie de chefs signatures. Parcouru à pied ou à l’aide du petit tram à crémaillère jaune, **ce coin de Lisbonne recèle une véritable atmosphère jeune et détendue**.
 
-<div><gallery sources={[
+<Gallery sources={[
   "lisboa-30.jpg",
   "lisboa-29.jpg",
-]}></gallery></div>
+]} />
 
 ### Belem
 Fameux pour le Mosteiro dos Jerónimos et pour sa tour, **Belem est le quartier touristique par excellence**. En plus des icônes architecturales manuélines, on peut admirer la vue sur le pont du 25 Avril depuis le haut  du Padrão dos Descobrimentos.
 
-<div><gallery sources={[
+<Gallery sources={[
   "lisboa-25.jpg",
   "lisboa-28.jpg",
-]}></gallery></div>
+]} />
 
 <hr />
 
 #### Un paradis photographique
 
-<div><gallery sources={[
+<Gallery sources={[
   "lisboa-2.jpg",
   "lisboa-4.jpg",
   "lisboa-3.jpg",
@@ -83,6 +84,6 @@ Fameux pour le Mosteiro dos Jerónimos et pour sa tour, **Belem est le quartier 
   "lisboa-42.jpg",
   "lisboa-43.jpg",
   "lisboa-44.jpg",
-]}></gallery></div>
+]} />
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>

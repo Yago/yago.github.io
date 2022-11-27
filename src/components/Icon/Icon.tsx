@@ -11,7 +11,10 @@ export type Props = {
 };
 
 const Icon = ({ name = 'tipi', className }: Props): JSX.Element => (
-  <svg className={clsx(styles.default, className)} aria-hidden="true">
+  <svg
+    className={clsx(styles.default, className ?? 'text-[0.7em]')}
+    aria-hidden="true"
+  >
     <use xlinkHref={`#${name}`} />
   </svg>
 );

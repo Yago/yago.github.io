@@ -36,10 +36,7 @@ const SEO = ({ title, cover, description }: Props): JSX.Element => {
             `,
         }}
       />
-      <title>
-        {title}
-        {titleSuffix}
-      </title>
+      <title>{title + titleSuffix}</title>
       <meta property="og:title" content={`${title}${titleSuffix}`} />
       <meta property="twitter:title" content={`${title}${titleSuffix}`} />
       <meta property="og:type" content="website" />

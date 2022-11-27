@@ -1,0 +1,14 @@
+pre,
+code {
+  @apply font-mono text-sm md:text-base;
+  -webkit-font-feature-settings: "liga" on, "calt" on;
+  -webkit-font-smoothing: antialiased;
+}
+
+.line-numbers-rows {
+  @apply border-0 opacity-60;
+
+  span:before {
+    @apply text-gray-500;
+  }
+}

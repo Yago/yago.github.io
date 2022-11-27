@@ -1,9 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useRouter } from 'next/router';
 import { isNil } from 'ramda';
 
-import { PhotoSwipeContainer } from 'types';
+import { PhotoSwipeContainer, Tree } from 'types';
 
 export type TreeItem = {
   path: string;
@@ -45,41 +46,22 @@ export const AppContext = React.createContext<AppContextType>({
   setPhotoswipeContainer: console.log,
 });
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const importAll = (r: any) =>
-  r
-    .keys()
-    .map(
-      (path: string): TreeItem => ({
-        path: path.replace(/^\./g, ''),
-        meta: r(path)?.meta,
-      })
-    )
-    .filter(
-      (item: TreeItem): boolean => !['/', '/_app', '/index'].includes(item.path)
-    )
-    .filter((item: TreeItem): boolean => !item.path.includes('.tsx'))
-    .map(
-      (item: TreeItem): TreeItem => ({
-        ...item,
-        path: item.path.replace(/\.\w+$/g, ''),
-      })
-    );
-
 const AppProvider = ({ children }: Props): JSX.Element => {
   const { asPath } = useRouter();
   const [closing, setClosing] = useState(false);
+  const [tree, setTree] = useState<Tree>([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [photoswipeOpen, setPhotoswipeOpen] = useState(false);
   const [photoswipeContainer, setPhotoswipeContainer] =
     useState<PhotoSwipeContainer | null>(null);
   const [photoswipeIndex, setPhotoswipeIndex] = useState<number | null>(null);
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  const tree: TreeItem[] = importAll(require.context('../pages/', true)).filter(
-    (i: TreeItem) => i.path !== '/_document'
-  );
+
+  useEffect(() => {
+    axios.get('/api/tree').then(({ data }) => {
+      setTree(data);
+    });
+  }, []);
 
   useEffect(() => {
     if (menuOpen === true) setTerminalOpen(false);

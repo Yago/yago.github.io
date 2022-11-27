@@ -1,4 +1,8 @@
 @import "./tailwind.css";
+@import "../components/PhotoSwipe/PhotoSwipe.css";
+@import "../components/GalleryTeaser/GalleryTeaser.css";
+@import "../components/DevFacts/DevFacts.css";
+@import "../components/Code/Code.css";
 
 .default {
     *:hover > .arrow span:first-child {

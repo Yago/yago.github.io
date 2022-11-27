@@ -1,4 +1,4 @@
-.imageWraper {
+.gallery-teaser {
   img {
     @apply transition-opacity duration-1000 opacity-70;
   }

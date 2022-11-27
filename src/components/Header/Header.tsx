@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 import Link from 'next/link';
 
 import Logo from 'assets/images/yago.svg';
@@ -8,10 +7,7 @@ import TerminalToggle from 'components/TerminalToggle';
 
 const Header = (): JSX.Element => (
   <header className="flex items-center space-x-4">
-    <Link
-      href="/"
-      className={clsx('block w-8 md:w-12', { marginLeft: '0 !important' })}
-    >
+    <Link href="/" className="block w-8 ml-0 mr-auto md:w-12">
       <Logo className="w-full" />
     </Link>
     <TerminalToggle />

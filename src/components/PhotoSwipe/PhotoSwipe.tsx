@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import PSWP from 'photoswipe/dist/photoswipe';
 import photoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
@@ -11,8 +10,6 @@ import { AppContext } from 'contexts/AppProvider';
 import { useWindowDimensions } from 'hooks';
 
 import PhotoSwipeWrapper from '../PhotoSwipeWrapper';
-
-import styles from './PhotoSwipe.module.css';
 
 type Props = {
   options?: any;
@@ -95,7 +92,7 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
   }, [photoswipeIndex, photoswipeOpen]);
 
   return (
-    <div className={clsx(styles.default)}>
+    <div>
       {/* {photoswipeOpen && ( */}
       <PhotoSwipeWrapper
         setRef={wrapper}

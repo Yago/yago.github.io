@@ -1,4 +1,5 @@
-import Post from 'components/Post'
+import Post from 'components/Post';
+import Picture from 'components/Picture';
 
 export const meta = {
   path: "/blog/redux-re-introduction",
@@ -13,7 +14,7 @@ export const meta = {
 ## The loop
 Be reassured, we are not talking about Wordpress Loop here, but about **the base concept of Redux: its loop**. The main goal of the library is to manage a store, your local database, and distribute the data across various contexts of your application.
 
-<picture alt="gdal hillshade" filename="redux-loop.png"></picture>
+<Picture alt="gdal hillshade" filename="redux-loop.png" />
 
 So the first (or the last) entity of the loop is the **Store**, basically a big JavaScript object. Then, there is the **consumer** which will be bonded to the store to receive its data. This consumer can also trigger ou third entity, the **actions**. Those simple JavaScript functions will return a object containing at least a `type` . When any actions are fired, our last entity, the **reducers**, will check those types and conditionally mutate the Store.
 
@@ -110,7 +111,7 @@ export default connect(mapState, mapDispatch)(MyComponent);
 ## Async
 If you try to do anything other than directly returning an Object in your action, you will have an error like:
 
-<picture alt="gdal hillshade" filename="redux-error.png"></picture>
+<Picture alt="gdal hillshade" filename="redux-error.png" />
 
 This error is pretty clear: **Redux requires middleware to deal with async actions**. There are a lot of very popular middleware libraries out there and personally my favorite is [redux-thunk](https://github.com/reduxjs/redux-thunk).
 

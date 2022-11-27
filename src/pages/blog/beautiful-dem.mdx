@@ -1,4 +1,5 @@
-import Post from 'components/Post'
+import Post from 'components/Post';
+import Picture from 'components/Picture';
 
 export const meta = {
   path: "/blog/beautiful-dem",
@@ -6,7 +7,7 @@ export const meta = {
   date: "2013-06-24T17:22:29.000Z",
   type: "post",
   description: "Après avoir écrit un article sur la cartographie web, j'ai voulu pousser plus loin la création de cartes. Du coup, je me suis mis à TileMill et les portes du vaste monde du SIG open source se sont ouvertes devant moi. La cartographie web reste un domaine très technique et relativement peu accessible, mais une fois les premières clefs obtenues, le reste vient de soi."
-};
+}; // end-meta
 
 Après avoir écrit un [article](http://antistatique.net/blog/2013/04/05/devenez-un-maitre-cartographe/) sur la cartographie web, j'ai voulu pousser plus loin la création de cartes. Du coup, je me suis mis à [TileMill](http://www.mapbox.com/tilemill/) et les portes du vaste monde du SIG open source se sont ouvertes devant moi. La cartographie web reste un domaine très technique et relativement peu accessible, mais une fois les premières clefs obtenues, le reste vient de soi.
 
@@ -40,7 +41,7 @@ L'image Hillshade permet d'appréhender au mieux un relief. Grâce à ce modèle
 $ gdaldem hillshade -s 111120 combined.dem hillshade.tif
 ```
 
-<picture alt="gdal hillshade" filename="alps-hillshade.jpg"></picture>
+<Picture alt="gdal hillshade" filename="alps-hillshade.jpg" />
 
 ### Color-relief
 Le color-relief vous permettra d'ajouter des couleurs à votre carte, déterminées par l'altitude. Pour cela, commencez par créer un fichier **color.txt** dans lequel vous donnerez des couleurs rgb en fonction de l'altitude (ici 0m, 500m, 1000m, 2500m et 4000m).
@@ -58,7 +59,7 @@ Et dans le terminal :
 $ gdaldem color-relief combined.dem color.txt color.tif
 ```
 
-<picture alt="gdal color-relief" filename="alps-color.jpg"></picture>
+<Picture alt="gdal color-relief" filename="alps-color.jpg" />
 
 ### Slope
 Le slope est une image qui va mettre en valeur le relief d'une façon différente de l'image hillshade, mais qui va apporter une grosse plus value à votre carte finale. Comme pour color-relief, créez un fichier **color_slope.txt**, indiquant cette fois la coloration en fonction de la pente (entre 0 et 90°).
@@ -73,7 +74,7 @@ $ gdaldem slope combined.dem preslope.tif -s 111120
 $ gdaldem color-relief preslope.tif color_slope.txt slope.tif
 ```
 
-<picture alt="gdal slope" filename="alps-slope.jpg"></picture>
+<Picture alt="gdal slope" filename="alps-slope.jpg" />
 
 ## Finalisation
 

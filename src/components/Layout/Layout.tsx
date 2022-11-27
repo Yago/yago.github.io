@@ -42,8 +42,7 @@ const Layout = ({
         <AnimatePresence>
           <div
             className={clsx(
-              'fixed bottom-0 right-0 z-50 w-full text-white md:inset-y-0 md:w-1/2 bg-gray-950 transform translate-x-full transition-transform duration-700',
-              { top: '66px' },
+              'fixed bottom-0 right-0 z-50 w-full text-white md:inset-y-0 md:w-1/2 bg-gray-950 transform translate-x-full transition-transform duration-700 top-[66px]',
               (menuOpen || terminalOpen) && 'translate-x-0'
             )}
           >

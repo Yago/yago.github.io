@@ -1,16 +1,24 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { isNil } from 'ramda';
 
 import Breadcrumb from 'components/Breadcrumb';
 import FadeIn from 'components/FadeIn';
 import Layout from 'components/Layout';
+import { ProjectProps } from 'components/Project/Project';
 import ProjectTeaser from 'components/ProjectTeaser';
 import SEO from 'components/SEO';
-import { AppContext } from 'contexts/AppProvider';
+import { getTree } from 'utils';
 
-const Projects = (): JSX.Element => {
-  const { tree } = useContext(AppContext);
-  const projects = tree.filter(i => i.path.includes('/projects/'));
+import { Tree } from '../types';
+
+type Props = {
+  tree: Tree;
+};
+
+const Projects = ({ tree }: Props): JSX.Element => {
+  const projects = tree.filter(
+    i => i.path.includes('/projects/') && !isNil(i?.meta)
+  );
 
   return (
     <Layout>
@@ -24,17 +32,29 @@ const Projects = (): JSX.Element => {
         </FadeIn>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12">
           {projects
-            .sort((a, b) => +new Date(b.meta.date) - +new Date(a.meta.date))
-            .filter(i => isNil(i.meta.published) || i.meta.published)
+            .sort((a, b) => +new Date(b?.meta?.date) - +new Date(a?.meta?.date))
+            .filter(i => isNil(i?.meta?.published) || i?.meta?.published)
             .map((project, i) => (
               <FadeIn key={`project-${i}`}>
-                <ProjectTeaser project={project.meta} href={project.path} />
+                <ProjectTeaser
+                  project={project.meta as ProjectProps['meta']}
+                  href={project.path}
+                />
               </FadeIn>
             ))}
         </div>
       </div>
     </Layout>
   );
+};
+
+export const getStaticProps = async () => {
+  const tree = await getTree();
+  return {
+    props: {
+      tree,
+    },
+  };
 };
 
 export default Projects;

@@ -1,38 +1,45 @@
-import React, { useEffect, useRef } from 'react';
-import clsx from 'clsx';
-import Prism from 'prismjs';
-import { isNil } from 'ramda';
-
-// import 'prismjs/components/prism-tsx';
-import styles from './Code.module.css';
-
-type PreProps = {
-  children: React.ReactNode;
-};
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import React from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+// @ts-ignore
+import {
+  duotoneDark,
+  nightOwl,
+} from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 type CodeProps = {
-  children: React.ReactNode;
+  children: string;
   className: string;
+  theme?: 'nightOwl' | 'duotoneDark';
 };
 
-export const Pre = ({ children }: PreProps): JSX.Element => (
-  <div className={clsx(styles.default, 'line-numbers md:-mx-10')}>
-    <pre>{children}</pre>
-  </div>
-);
+const themes = {
+  nightOwl,
+  duotoneDark,
+};
 
-export const Code = ({ children, className }: CodeProps): JSX.Element => {
-  const codeElement = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (!isNil(codeElement?.current)) {
-      Prism.highlightElement(codeElement.current);
-    }
-  }, [codeElement]);
+const Code = ({
+  children,
+  className,
+  theme = 'nightOwl',
+}: CodeProps): JSX.Element => {
+  if (!className?.includes('language-')) {
+    return <code>{children}</code>;
+  }
 
   return (
-    <code ref={codeElement} className={className}>
-      {children}
-    </code>
+    // @ts-ignore
+    <SyntaxHighlighter
+      language={className.replace('language-', '')}
+      PreTag="div"
+      style={themes[theme]}
+      codeTagProps={{ className: 'text-base' }}
+      showLineNumbers
+      className="font-mono rounded-lg"
+    >
+      {children.trim()}
+    </SyntaxHighlighter>
   );
 };
+
+export default Code;
