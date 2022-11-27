@@ -3,6 +3,10 @@
   --photoswipe-fg: #000;
 }
 
+.pswp {
+  display: block !important;
+}
+
 .pswp__bg {
   background: var(--photoswipe-bg);
 }

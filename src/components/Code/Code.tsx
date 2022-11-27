@@ -33,7 +33,9 @@ const Code = ({
       language={className.replace('language-', '')}
       PreTag="div"
       style={themes[theme]}
-      codeTagProps={{ className: 'text-base' }}
+      codeTagProps={{
+        style: { fontSize: 16, backgroundColor: 'transparent', padding: 0 },
+      }}
       showLineNumbers
       className="font-mono rounded-lg"
     >

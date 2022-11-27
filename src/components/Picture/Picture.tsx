@@ -44,7 +44,6 @@ const Picture = ({ filename, alt, className }: Props): JSX.Element => {
           alt={alt}
           width={img.w}
           height={img.h}
-          layout="responsive"
           quality={65}
           sizes={!isNil(width) ? `${Math.round(width)}px` : '100vw'}
           onLoad={handleLoad}

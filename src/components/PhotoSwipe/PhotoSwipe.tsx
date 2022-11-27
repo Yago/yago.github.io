@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useContext, useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import PSWP from 'photoswipe/dist/photoswipe';
 import photoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
@@ -92,7 +93,12 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
   }, [photoswipeIndex, photoswipeOpen]);
 
   return (
-    <div>
+    <div
+      className={clsx(
+        'transition-opacity bg-white fixed inset-0',
+        !photoswipeOpen && 'pointer-events-none opacity-0'
+      )}
+    >
       {/* {photoswipeOpen && ( */}
       <PhotoSwipeWrapper
         setRef={wrapper}

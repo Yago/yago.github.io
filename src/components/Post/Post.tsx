@@ -38,7 +38,7 @@ const Post = ({ children, meta }: PostProps): JSX.Element => (
           </h2>
         </Divider>
       </FadeIn>
-      <FadeIn className="mt-16 font-serif text-lg text-gray-900 space-y-6 md:mt-14 prose-headings:pt-4 prose-p:leading-[1.618em] lg:text-xl xl:text-2xl xl:prose-p:leading-[1.618em] prose-a:text-blue prose-headings:font-sans prose-headings:font-medium prose-h2:text-[26px] xl:prose-h2:text-[28px] prose-h3:text-[19px] lg:prose-h3:text-[24px] xl:prose-h3:text-[27px] prose-h4:text-[18px] lg:prose-h4:text-[21px] xl:prose-h4:text-[25px] prose-strong:text-medium xl:prose-pre:w-[106%] xl:prose-pre:-translate-x-[3%] prose-ul:list-disc prose-ul:pl-3 prose-ul:space-y-3 prose-ul:leading-[1.618em] xl:prose-figure:w-[106%] xl:prose-figure:-translate-x-[3%] prose-figure:rounded-lg prose-figure:overflow-hidden prose-figure:my-8">
+      <FadeIn className="mt-16 font-serif text-lg text-gray-900 space-y-6 md:mt-14 prose-headings:pt-4 prose-p:leading-[1.618em] lg:text-xl xl:text-2xl xl:prose-p:leading-[1.618em] prose-a:text-blue prose-headings:font-sans prose-headings:font-medium prose-h2:text-[26px] xl:prose-h2:text-[28px] prose-h3:text-[19px] lg:prose-h3:text-[24px] xl:prose-h3:text-[27px] prose-h4:text-[18px] lg:prose-h4:text-[21px] xl:prose-h4:text-[25px] prose-strong:text-medium xl:prose-pre:w-[106%] xl:prose-pre:-translate-x-[3%] prose-ul:list-disc prose-ul:pl-3 prose-ul:space-y-3 prose-ul:leading-[1.618em] xl:prose-figure:w-[106%] xl:prose-figure:-translate-x-[3%] prose-figure:rounded-lg prose-figure:overflow-hidden prose-figure:my-8 lg:prose-code:text-lg prose-code:bg-gray-200 prose-code:px-1 prose-code:py-0.5 prose-code:rounded">
         {children}
       </FadeIn>
     </article>
