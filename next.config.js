@@ -14,7 +14,7 @@ const withMDX = require('@next/mdx')({
 
 const dirTree = require('directory-tree');
 
-module.exports = withMDX({
+module.exports = withPWA(withMDX({
   pageExtensions: ['ts', 'tsx', 'mdx'],
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -35,4 +35,4 @@ module.exports = withMDX({
     return config;
   },
   env: {},
-});
+}));

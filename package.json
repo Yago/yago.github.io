@@ -5,8 +5,7 @@
   "scripts": {
     "clean": "rm -rf .next && rm -rf node_modules/.cache && rm -rf public/images/responsive/*.*",
     "dev": "yarn run clean && next",
-    "build_legacy": "yarn run config:update && next build",
-    "build": "next build",
+    "build": "yarn run config:update && next build",
     "start": "next start",
     "type-check": "tsc",
     "fix:js": "eslint --ext ts,tsx ./ --max-warnings=0 --fix",
