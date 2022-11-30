@@ -1,5 +1,5 @@
-pre,
-code {
+article pre,
+article code {
   @apply font-mono text-xs md:text-sm !important;
   -webkit-font-feature-settings: "liga" on, "calt" on;
   -webkit-font-smoothing: antialiased;
