@@ -1,6 +1,6 @@
 pre,
 code {
-  @apply font-mono text-sm md:text-base;
+  @apply font-mono text-xs md:text-sm !important;
   -webkit-font-feature-settings: "liga" on, "calt" on;
   -webkit-font-smoothing: antialiased;
 }
@@ -11,4 +11,8 @@ code {
   span:before {
     @apply text-gray-500;
   }
+}
+
+.content-code {
+  @apply lg:text-lg bg-gray-200 px-1 py-0.5 rounded !important;
 }

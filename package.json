@@ -17,6 +17,7 @@
     "images:generate": "./bin/generateImages.js"
   },
   "dependencies": {
+    "@codesandbox/sandpack-react": "^1.17.0",
     "@juggle/resize-observer": "^3.4.0",
     "@mdx-js/loader": "^2.1.5",
     "@mdx-js/react": "^2.1.5",

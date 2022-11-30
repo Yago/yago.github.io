@@ -24,7 +24,7 @@ const Code = ({
   theme = 'nightOwl',
 }: CodeProps): JSX.Element => {
   if (!className?.includes('language-')) {
-    return <code>{children}</code>;
+    return <code className="content-code">{children}</code>;
   }
 
   return (
@@ -37,7 +37,7 @@ const Code = ({
         style: { fontSize: 16, backgroundColor: 'transparent', padding: 0 },
       }}
       showLineNumbers
-      className="font-mono rounded-lg"
+      className="font-mono rounded-lg xl:w-[106%] xl:-translate-x-[2.8%]"
     >
       {children.trim()}
     </SyntaxHighlighter>
