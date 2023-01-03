@@ -1,0 +1,31 @@
+import Project from 'components/Project'
+
+export const meta = {
+  path: "/projects/smarter",
+  date: "2021-03-01T00:00:00.000Z",
+  title: "SmarTer",
+  subtitle: "Territorial Development",
+  type: "project",
+  cover: "smarter-cover.jpg",
+  thumbnail: "smarter04.jpg",
+  year: "2021 -",
+  agency: {
+    name: "Antistatique",
+    url: "https://antistatique.net"
+  },
+  roles: [
+    "Frontend/JavaScript developer"
+  ],
+  gallery: [
+    "smarter01.jpg",
+    "smarter02.jpg",
+    "smarter03.jpg",
+    "smarter04.jpg",
+    "smarter05.jpg",
+    "smarter06.jpg"
+  ]
+}; // end-meta
+
+This project is a platform for the authorities of the Canton du Valais to organise, present and manage all agglomeration projects. I work on the NextJS based client with a complex form management system and a lot of geographical data visualisation.
+
+export default ({ children }) => <Project meta={meta}>{children}</Project>

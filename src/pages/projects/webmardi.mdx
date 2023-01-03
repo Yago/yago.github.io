@@ -1,0 +1,24 @@
+import Project from 'components/Project'
+
+export const meta = {
+  path: "/projects/webmardi",
+  date: "2021-10-01T00:00:00.000Z",
+  title: "Webmardi",
+  subtitle: "Swiss-based monthly events association",
+  type: "project",
+  cover: "webmardi-cover.jpg",
+  thumbnail: "webmardi03.jpg",
+  year: "2021 -",
+  roles: [
+    "Frontend developer"
+  ],
+  gallery: [
+    "webmardi01.jpg",
+    "webmardi02.jpg",
+    "webmardi03.jpg"
+  ]
+}; // end-meta
+
+We were mandated to develop the open-source web styleguide to run all the governments websites of Switzerland. It means a very solid HTML/CSS implementation of the design to support all sorts of devices (even old ones), WCAG AAA compliancy and a good flexibility to be used on any kind of web stack. 
+
+export default ({ children }) => <Project meta={meta}>{children}</Project>

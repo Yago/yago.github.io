@@ -1,0 +1,28 @@
+import Project from 'components/Project'
+
+export const meta = {
+  path: "/projects/hitch",
+  date: "2019-06-01T00:00:00.000Z",
+  title: "Hitch",
+  subtitle: "Sports Coach Booking app",
+  type: "project",
+  cover: "hitch-cover.jpg",
+  thumbnail: "hitch01.jpg",
+  year: "2019 - 2022",
+  agency: {
+    name: "Antistatique",
+    url: "https://antistatique.net"
+  },
+  roles: [
+    "JavaScript developer"
+  ],
+  gallery: [
+    "hitch01.jpg",
+    "hitch02.jpg",
+    "hitch03.jpg"
+  ]
+}; // end-meta
+
+We were mandated to develop a complete service to book individual coaching sessions and my job was to make the mobile application based on React Native. This application did, among other things, authentication using Firebase’s phone numbers, data manipulation with our backend REST API and push notifications.
+
+export default ({ children }) => <Project meta={meta}>{children}</Project>
