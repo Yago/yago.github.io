@@ -1,0 +1,31 @@
+import Project from 'components/Project'
+
+export const meta = {
+  path: "/projects/benevolat-vaud",
+  date: "2022-05-01T00:00:00.000Z",
+  title: "Bénévolat Vaud",
+  subtitle: "Civic and social organisations",
+  type: "project",
+  cover: "benevolat-vaud-cover.jpg",
+  thumbnail: "benevolat-vaud02.jpg",
+  year: "2022 -",
+  agency: {
+    name: "Antistatique",
+    url: "https://antistatique.net"
+  },
+  roles: [
+    "Frontend developer"
+  ],
+  gallery: [
+    "benevolat-vaud01.jpg",
+    "benevolat-vaud02.jpg",
+    "benevolat-vaud03.jpg",
+    "benevolat-vaud04.jpg",
+    "benevolat-vaud05.jpg",
+    "benevolat-vaud06.jpg"
+  ]
+}; // end-meta
+
+We were mandated to develop the new website of Bénévolat Vaud. We use Wordpress with Bedrock, Lumberjack, Timber and Tailwind in order to produce a solid theme foundation.
+
+export default ({ children }) => <Project meta={meta}>{children}</Project>
