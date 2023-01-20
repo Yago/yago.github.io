@@ -42,7 +42,7 @@ const Footer = (): JSX.Element => {
       <div
         className={clsx(
           asPath.includes('/blog/') &&
-            'w-full mx-auto mt-20 sm:w-10/12 xl:w-7/12 md:px-8'
+            'w-full mx-auto mt-20 sm:w-10/12 md:w-2/3 xl:w-7/12 md:px-8'
         )}
       >
         <Divider icon="drakar" />

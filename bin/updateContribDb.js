@@ -3,7 +3,7 @@
 const fs = require('fs-extra')
 const path = require('path');
 const sizeOf = require('image-size');
-const axios = require('axios');
+const axios = require('axios').default;
 
 (async () => {
   try {

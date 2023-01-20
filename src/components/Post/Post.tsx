@@ -26,7 +26,7 @@ const Post = ({ children, meta }: PostProps): JSX.Element => (
     <Breadcrumb
       crumbs={[{ href: '/blog', label: 'Blog' }, { label: meta.title }]}
     />
-    <article className="w-full mx-auto mt-20 sm:w-10/12 xl:w-7/12 md:px-8">
+    <article className="w-full mx-auto mt-20 sm:w-10/12 md:w-2/3 xl:w-7/12 md:px-8">
       <FadeIn move={false}>
         <h1 className="text-3xl font-medium text-gray-900 md:text-4xl lg:text-5xl">
           {meta.title}

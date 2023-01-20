@@ -22,7 +22,7 @@ const Projects = ({ tree }: Props): JSX.Element => {
     <Layout>
       <SEO title="Blog" />
       <Breadcrumb crumbs={[{ label: 'Blog' }]} />
-      <div className="w-full mx-auto mt-12 sm:w-10/12 xl:w-7/12 md:px-8">
+      <div className="w-full mx-auto mt-12 sm:w-10/12 md:w-2/3 xl:w-7/12 md:px-8">
         <FadeIn move={false}>
           <h1 className="mt-6 text-3xl font-medium text-gray-900 md:text-4xl lg:text-5xl">
             Blog

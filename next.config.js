@@ -1,7 +1,7 @@
 const path = require('path');
-const withPWA = require('next-pwa')({
-  dest: 'public'
-});
+// const withPWA = require('next-pwa')({
+//   dest: 'public'
+// });
 
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
@@ -14,7 +14,7 @@ const withMDX = require('@next/mdx')({
 
 const dirTree = require('directory-tree');
 
-module.exports = withPWA(withMDX({
+module.exports = withMDX({
   pageExtensions: ['ts', 'tsx', 'mdx'],
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -35,4 +35,4 @@ module.exports = withPWA(withMDX({
     return config;
   },
   env: {},
-}));
+});
