@@ -7,6 +7,7 @@ import { Tree } from 'types';
 const getTree = (): Promise<Tree> =>
   new Promise((res, rej) => {
     glob('./src/pages/**/*', (err, files) => {
+      console.log('files', files);
       if (err) rej(err);
       const cleanedFiles = files
         .filter(
