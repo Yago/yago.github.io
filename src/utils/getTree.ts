@@ -35,6 +35,7 @@ const getTree = (): Promise<Tree> =>
             meta,
           };
         });
+      console.log('cleanedFiles', cleanedFiles);
       res(cleanedFiles);
     });
   });
