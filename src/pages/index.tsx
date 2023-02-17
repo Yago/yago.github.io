@@ -15,15 +15,12 @@ import { ProjectProps } from 'components/Project/Project';
 import ProjectTeaser from 'components/ProjectTeaser';
 import SEO from 'components/SEO';
 import galleries from 'config/galleries.json';
+import jsonTree from 'config/tree.json';
+import { Tree } from 'types';
 
-import { Tree } from '../types';
-import { getTree } from '../utils';
+const tree: Tree = jsonTree;
 
-type Props = {
-  tree: Tree;
-};
-
-const Home = ({ tree }: Props): JSX.Element => {
+const Home = (): JSX.Element => {
   const projects = tree.filter(
     i => i.path.includes('/projects/') && !isNil(i?.meta)
   );
@@ -138,15 +135,6 @@ const Home = ({ tree }: Props): JSX.Element => {
       </div>
     </Layout>
   );
-};
-
-export const getStaticProps = async () => {
-  const tree = await getTree();
-  return {
-    props: {
-      tree,
-    },
-  };
 };
 
 export default Home;

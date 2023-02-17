@@ -7,15 +7,12 @@ import Layout from 'components/Layout';
 import { ProjectProps } from 'components/Project/Project';
 import ProjectTeaser from 'components/ProjectTeaser';
 import SEO from 'components/SEO';
-import { getTree } from 'utils';
+import jsonTree from 'config/tree.json';
+import { Tree } from 'types';
 
-import { Tree } from '../types';
+const tree: Tree = jsonTree;
 
-type Props = {
-  tree: Tree;
-};
-
-const Projects = ({ tree }: Props): JSX.Element => {
+const Projects = (): JSX.Element => {
   const projects = tree.filter(
     i => i.path.includes('/projects/') && !isNil(i?.meta)
   );
@@ -46,15 +43,6 @@ const Projects = ({ tree }: Props): JSX.Element => {
       </div>
     </Layout>
   );
-};
-
-export const getStaticProps = async () => {
-  const tree = await getTree();
-  return {
-    props: {
-      tree,
-    },
-  };
 };
 
 export default Projects;

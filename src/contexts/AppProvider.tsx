@@ -1,10 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 import { isNil } from 'ramda';
 
+import jsonTree from 'config/tree.json';
 import { PhotoSwipeContainer, Tree } from 'types';
+
+const tree: Tree = jsonTree;
 
 export type TreeItem = {
   path: string;
@@ -49,19 +51,12 @@ export const AppContext = React.createContext<AppContextType>({
 const AppProvider = ({ children }: Props): JSX.Element => {
   const { asPath } = useRouter();
   const [closing, setClosing] = useState(false);
-  const [tree, setTree] = useState<Tree>([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [photoswipeOpen, setPhotoswipeOpen] = useState(false);
   const [photoswipeContainer, setPhotoswipeContainer] =
     useState<PhotoSwipeContainer | null>(null);
   const [photoswipeIndex, setPhotoswipeIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    axios.get('/api/tree').then(({ data }) => {
-      setTree(data);
-    });
-  }, []);
 
   useEffect(() => {
     if (menuOpen === true) setTerminalOpen(false);

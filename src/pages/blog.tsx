@@ -8,14 +8,12 @@ import Layout from 'components/Layout';
 import { PostProps } from 'components/Post/Post';
 import PostTeaser from 'components/PostTeaser';
 import SEO from 'components/SEO';
+import jsonTree from 'config/tree.json';
 import { Tree } from 'types';
-import { getTree } from 'utils';
 
-type Props = {
-  tree: Tree;
-};
+const tree: Tree = jsonTree;
 
-const Projects = ({ tree }: Props): JSX.Element => {
+const Projects = (): JSX.Element => {
   const posts = tree.filter(i => i.path.includes('/blog/') && !isNil(i?.meta));
 
   return (
@@ -49,15 +47,6 @@ const Projects = ({ tree }: Props): JSX.Element => {
       </div>
     </Layout>
   );
-};
-
-export const getStaticProps = async () => {
-  const tree = await getTree();
-  return {
-    props: {
-      tree,
-    },
-  };
 };
 
 export default Projects;
