@@ -34,8 +34,6 @@ cypress/videos
 cypress/screenshots/*
 
 # Sources
-src/config/pictures.json
-src/config/tree.json
 src/config/contribs.json
 public/sitemap.xml
 public/sw.js
