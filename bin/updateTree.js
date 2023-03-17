@@ -3,8 +3,8 @@
 const fs = require('fs-extra');
 const glob = require('glob');
 
-glob('./src/pages/**/*', (err, files) => {
-  if (err) rej(err);
+const updateTree = async () => {
+  const files = await glob('./src/pages/**/*');
   const cleanedFiles = files
     .filter(
       file =>
@@ -27,7 +27,7 @@ glob('./src/pages/**/*', (err, files) => {
         }
       }
       return {
-        path: file.replace('./src/pages', '').replace('.mdx', ''),
+        path: file.replace('src/pages', '').replace('.mdx', ''),
         meta,
       };
     });
@@ -35,4 +35,6 @@ glob('./src/pages/**/*', (err, files) => {
     if (err) return console.error(err)
     console.log('Tree updated!')
   })
-});
+};
+
+updateTree();

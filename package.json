@@ -13,7 +13,7 @@
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "config:update": "./bin/generateImages.js && ./bin/updatePictureDb.js && ./bin/updateTree.js",
+    "config:update": "./bin/updateSitemap.js && ./bin/updatePictureDb.js && ./bin/updateTree.js",
     "images:generate": "./bin/generateImages.js",
     "contribs:update": "./bin/updateContribDb.js"
   },

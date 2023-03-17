@@ -1,0 +1,31 @@
+import Project from 'components/Project'
+
+export const meta = {
+  path: "/projects/vernier",
+  date: "2023-02-27T01:00:00.000Z",
+  title: "Vernier",
+  subtitle: "City website",
+  type: "project",
+  cover: "vernier-cover.jpg",
+  thumbnail: "vernier01.jpg",
+  year: "2023 -",
+  agency: {
+    name: "Antistatique",
+    url: "https://antistatique.net"
+  },
+  roles: [
+    "Frontend developer"
+  ],
+  gallery: [
+    "vernier01.jpg",
+    "vernier02.jpg",
+    "vernier03.jpg",
+    "vernier04.jpg",
+    "vernier05.jpg",
+    "vernier06.jpg"
+  ]
+}; // end-meta
+
+The city of Vernier, located in near Geneva, needs a new website to better inform its citizen. Based on **Drupal**, I worked on the styleguide and the theme creation.
+
+export default ({ children }) => <Project meta={meta}>{children}</Project>
