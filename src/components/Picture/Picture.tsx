@@ -13,6 +13,7 @@ type Props = {
   className?: string;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const loader = ({ src, width }: { src: string; width: number }) =>
   // const filename = last(src.split('/')).replace(/\..+$/, '');
   // return `/images/responsive/${filename}-${width}.jpg`;
@@ -40,7 +41,7 @@ const Picture = ({ filename, alt, className }: Props): JSX.Element => {
       >
         <Image
           src={img.msrc}
-          loader={loader}
+          // loader={loader}
           alt={alt}
           width={img.w}
           height={img.h}

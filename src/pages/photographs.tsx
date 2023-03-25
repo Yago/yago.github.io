@@ -21,6 +21,13 @@ const Photographs = (): JSX.Element => (
       <div className="mt-14 md:w-11/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12">
         <FadeIn>
           <GalleryTeaser
+            sources={galleries.italia}
+            cover="italia.jpg"
+            title="Italia"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
             sources={galleries.alps}
             cover="alps.jpg"
             title="Alps"
@@ -28,9 +35,9 @@ const Photographs = (): JSX.Element => (
         </FadeIn>
         <FadeIn>
           <GalleryTeaser
-            sources={galleries.italia}
-            cover="italia.jpg"
-            title="Italia"
+            sources={galleries.breizh}
+            cover="breizh.jpg"
+            title="Breizh"
           />
         </FadeIn>
         <FadeIn>
@@ -49,6 +56,13 @@ const Photographs = (): JSX.Element => (
         </FadeIn>
         <FadeIn>
           <GalleryTeaser
+            sources={galleries.bali}
+            cover="bali.jpg"
+            title="Bali"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
             sources={galleries.film}
             cover="film.jpg"
             title="Film"
@@ -63,6 +77,13 @@ const Photographs = (): JSX.Element => (
         </FadeIn>
         <FadeIn>
           <GalleryTeaser
+            sources={galleries.scotland}
+            cover="scotland.jpg"
+            title="Scotland"
+          />
+        </FadeIn>
+        <FadeIn>
+          <GalleryTeaser
             sources={galleries.countryside}
             cover="countryside.jpg"
             title="Countryside"
@@ -70,9 +91,9 @@ const Photographs = (): JSX.Element => (
         </FadeIn>
         <FadeIn>
           <GalleryTeaser
-            sources={galleries.scotland}
-            cover="scotland.jpg"
-            title="Scotland"
+            sources={galleries.macro}
+            cover="macro.jpg"
+            title="Macro"
           />
         </FadeIn>
         <FadeIn>
@@ -101,13 +122,6 @@ const Photographs = (): JSX.Element => (
             sources={galleries.ticino}
             cover="ticino.jpg"
             title="Ticino"
-          />
-        </FadeIn>
-        <FadeIn>
-          <GalleryTeaser
-            sources={galleries.bali}
-            cover="bali.jpg"
-            title="Bali"
           />
         </FadeIn>
       </div>
