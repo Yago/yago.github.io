@@ -82,6 +82,7 @@ const DevFacts = (): JSX.Element => (
         </h3>
         <div className="flex-1 h-0 border-t border-gray-800" />
         {librairies.map(lib => (
+          // eslint-disable-next-line jsx-a11y/control-has-associated-label
           <a
             key={`lib-${lib.icon}`}
             href={lib.url}
