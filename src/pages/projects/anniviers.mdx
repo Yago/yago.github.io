@@ -1,0 +1,31 @@
+import Project from 'components/Project'
+
+export const meta = {
+  path: "/projects/anniviers",
+  date: "2023-12-01T01:00:00.000Z",
+  title: "Anniviers",
+  subtitle: "Tourist office",
+  type: "project",
+  cover: "anniviers-cover.jpg",
+  thumbnail: "anniviers01.jpg",
+  year: "2023 -",
+  agency: {
+    name: "Antistatique",
+    url: "https://antistatique.net"
+  },
+  roles: [
+    "Frontend developer"
+  ],
+  gallery: [
+    "anniviers03.jpg",
+    "anniviers04.jpg",
+    "anniviers05.jpg",
+    "anniviers06.jpg",
+    "anniviers07.jpg",
+    "anniviers02.jpg",
+  ]
+}; // end-meta
+
+The Sierre-Anniviers tourist office needs a new design system to create its three new websites. I worked on the front-end development of the styleguide based on Storybook and Tailwind.
+
+export default ({ children }) => <Project meta={meta}>{children}</Project>

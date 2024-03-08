@@ -1,0 +1,31 @@
+import Project from 'components/Project'
+
+export const meta = {
+  path: "/projects/pyxis",
+  date: "2024-02-01T01:00:00.000Z",
+  title: "Pyxis",
+  subtitle: "Digital exploration",
+  type: "project",
+  cover: "pyxis-cover.jpg",
+  thumbnail: "pyxis02.jpg",
+  year: "2024 -",
+  agency: {
+    name: "Antistatique",
+    url: "https://antistatique.net"
+  },
+  roles: [
+    "Frontend developer"
+  ],
+  gallery: [
+    "pyxis02.jpg",
+    "pyxis03.jpg",
+    "pyxis04.jpg",
+    "pyxis05.jpg",
+    "pyxis06.jpg",
+    "pyxis01.jpg",
+  ]
+}; // end-meta
+
+Pyxis, the new digital exploration entity of the city of Lausanne, needs a website to present its activities, projects and coffee. I worked on the frontend development of the website made with Wordpress.
+
+export default ({ children }) => <Project meta={meta}>{children}</Project>

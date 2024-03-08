@@ -1,0 +1,30 @@
+import Project from 'components/Project'
+
+export const meta = {
+  path: "/projects/cpef",
+  date: "2024-01-01T01:00:00.000Z",
+  title: "CPEF",
+  subtitle: "Pension found",
+  type: "project",
+  cover: "cpef-cover.jpg",
+  thumbnail: "cpef02.jpg",
+  year: "2024 -",
+  agency: {
+    name: "Antistatique",
+    url: "https://antistatique.net"
+  },
+  roles: [
+    "Frontend developer"
+  ],
+  gallery: [
+    "cpef02.jpg",
+    "cpef03.jpg",
+    "cpef04.jpg",
+    "cpef05.jpg",
+    "cpef01.jpg"
+  ]
+}; // end-meta
+
+The CPEF, the pension fund for employees of the State of Fribourg, needs a new website to better inform its insured. Based on **Drupal**, I worked on the theme.
+
+export default ({ children }) => <Project meta={meta}>{children}</Project>

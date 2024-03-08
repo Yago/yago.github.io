@@ -1,0 +1,29 @@
+import Project from 'components/Project'
+
+export const meta = {
+  path: "/projects/tl",
+  date: "2023-10-01T01:00:00.000Z",
+  title: "TL",
+  subtitle: "Lausanne public transport",
+  type: "project",
+  cover: "tl-cover.jpg",
+  thumbnail: "tl04.jpg",
+  year: "2023 -",
+  agency: {
+    name: "Antistatique",
+    url: "https://antistatique.net"
+  },
+  roles: [
+    "Frontend developer"
+  ],
+  gallery: [
+    "tl01.jpg",
+    "tl02.jpg",
+    "tl03.jpg",
+    "tl04.jpg"
+  ]
+}; // end-meta
+
+The public transport of Lausanne (TL) is a major actor in the mobility of the city. The website is a key tool for the users to plan their trips, check the schedules and get information about the network. The website is also a major tool for the company to communicate with the users and provide them with the latest news and updates. I worked on the design system and on the Wordpress behind the new website.
+
+export default ({ children }) => <Project meta={meta}>{children}</Project>
