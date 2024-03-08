@@ -55,13 +55,15 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
     );
 
     if (!isNil(pswp.current)) {
-      pswp.current.init();
+      (pswp.current as any).init();
 
-      pswp.current.listen('close', () => setPhotoswipeOpen(false));
-      pswp.current.listen('beforeChange', () =>
-        setPhotoswipeIndex(pswp.current ? pswp.current.getCurrentIndex() : 0)
+      (pswp.current as any).listen('close', () => setPhotoswipeOpen(false));
+      (pswp.current as any).listen('beforeChange', () =>
+        setPhotoswipeIndex(
+          pswp.current ? (pswp.current as any).getCurrentIndex() : 0
+        )
       );
-      pswp.current.listen('destroy', () => {
+      (pswp.current as any).listen('destroy', () => {
         pswp.current = null;
       });
     }
@@ -69,7 +71,7 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
 
   // Go to slide #
   const goTo = (i: number): void => {
-    if (!isNil(pswp.current)) pswp.current.goTo(i);
+    if (!isNil(pswp.current)) (pswp.current as any).goTo(i);
   };
 
   useEffect(() => {
@@ -85,7 +87,7 @@ const PhotoSwipe = ({ options = {} }: Props): JSX.Element => {
       if (photoswipeOpen && isNil(pswp.current)) openGallery(photoswipeIndex);
       if (
         !isNil(pswp.current) &&
-        photoswipeIndex !== pswp.current.getCurrentIndex()
+        photoswipeIndex !== (pswp.current as any).getCurrentIndex()
       ) {
         goTo(photoswipeIndex);
       }
