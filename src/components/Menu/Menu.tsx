@@ -10,17 +10,16 @@ const Menu = (): JSX.Element => {
   console.log(setMenuOpen, setTerminalOpen);
 
   return (
-    <nav className="flex flex-col p-8 md:p-14 space-y-8">
+    <nav className="flex flex-col p-8 space-y-8 md:p-14">
       {[
         ['/', 'Homepage'],
         ['/projects', 'Projects'],
         ['/blog', 'Blog'],
-        ['/photographs', 'Photographs'],
       ].map(([href, label]) => (
         <Link
           href={href}
           key={`menuitem-${href}`}
-          className="text-2xl font-light hover:text-green transition-colors duration-200"
+          className="text-2xl font-light transition-colors duration-200 hover:text-green"
           onClick={() => {
             // setMenuOpen(false);
             // setTerminalOpen(false);

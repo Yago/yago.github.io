@@ -18,7 +18,7 @@ type Contrib = {
 const facts = {
   name: 'yago',
   profile: 'github.com/yago',
-  editor: 'PhpStorm',
+  editor: 'VSCode',
   platform: 'macOS',
 };
 

@@ -5,7 +5,6 @@ import { isNil } from 'ramda';
 import Button from 'components/Button';
 import DevFacts from 'components/DevFacts';
 import FadeIn from 'components/FadeIn';
-import GalleryTeaser from 'components/GalleryTeaser';
 import Icon from 'components/Icon';
 import Layout from 'components/Layout';
 import PhotoSwipe from 'components/PhotoSwipe';
@@ -14,7 +13,6 @@ import PostTeaser from 'components/PostTeaser';
 import { ProjectProps } from 'components/Project/Project';
 import ProjectTeaser from 'components/ProjectTeaser';
 import SEO from 'components/SEO';
-import galleries from 'config/galleries.json';
 import jsonTree from 'config/tree.json';
 import { Tree } from 'types';
 
@@ -68,39 +66,6 @@ const Home = (): JSX.Element => {
                 />
               </FadeIn>
             ))}
-        </div>
-
-        <FadeIn className="flex items-baseline justify-between mt-32">
-          <h2 className="text-2xl font-medium text-gray-900 md:text-3xl lg:text-4xl">
-            Last photographs
-          </h2>
-          <Button href="/photographs">See all</Button>
-        </FadeIn>
-
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12">
-          <FadeIn>
-            <GalleryTeaser
-              sources={galleries.italia}
-              cover="italia.jpg"
-              title="Italia"
-            />
-          </FadeIn>
-          <FadeIn>
-            <GalleryTeaser
-              sources={galleries.alps}
-              cover="alps.jpg"
-              title="Alps"
-            />
-          </FadeIn>
-          <div className="hidden lg:block">
-            <FadeIn>
-              <GalleryTeaser
-                sources={galleries.breizh}
-                cover="breizh.jpg"
-                title="Breizh"
-              />
-            </FadeIn>
-          </div>
         </div>
       </div>
 
