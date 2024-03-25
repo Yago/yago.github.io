@@ -10,7 +10,7 @@ const isDev = import.meta.env.DEV;
 interface Props {
   filename: string;
   alt: string;
-  sizes: string;
+  sizes?: string;
   class?: string;
   loading?: 'lazy' | 'eager';
   fetchpriority?: 'auto' | 'high' | 'low';
@@ -20,10 +20,10 @@ interface Props {
 const {
   filename,
   alt,
-  sizes,
+  sizes = '(min-width: 1700px) 852px, (min-width: 1280px) 49.5vw, (min-width: 780px) calc(66.67vw - 139px), (min-width: 640px) 83.33vw, calc(100vw - 32px)', // Article images
   class: classes,
-  loading,
-  fetchpriority,
+  loading = 'lazy',
+  fetchpriority = 'auto',
 } = Astro.props;
 
 const picture: PictureType = pictures[filename];
@@ -77,8 +77,8 @@ if (!img)
       formats={['jpg', 'avif']}
       fallbackFormat="jpeg"
       quality={45}
-      loading={loading || 'lazy'}
-      fetchpriority={fetchpriority || 'auto'}
+      loading={loading}
+      fetchpriority={fetchpriority}
     />
   )
 }

@@ -9,13 +9,15 @@ type Props = {
 
 const { href, project }: Props = Astro.props;
 ---
+
 <a href={href} class="link-wrapper">
-  <div
-    class="tilt"
-    style={{ transformStyle: 'preserve-3d' }}
-  >
+  <div class="tilt" style={{ transformStyle: 'preserve-3d' }}>
     <div class="mb-4">
-      <Picture filename={project.thumbnail} alt="Picture of the author" sizes='100vw' />
+      <Picture
+        filename={project.thumbnail}
+        alt="Picture of the author"
+        sizes="(min-width: 1680px) 469px, (min-width: 780px) calc(31.02vw - 46px), calc(50vw - 28px)"
+      />
     </div>
     <div style={{ transform: 'translateZ(20px) translateX(5px)' }}>
       <h3 class="text-lg font-medium md:text-2xl link-inner">
@@ -28,8 +30,8 @@ const { href, project }: Props = Astro.props;
 
 <script>
   import Tilt from 'vanilla-tilt';
-  Tilt.init(document.querySelectorAll(".tilt") as unknown as HTMLElement[], {
-		max: 6,
-		perspective: 500
-	});
+  Tilt.init(document.querySelectorAll('.tilt') as unknown as HTMLElement[], {
+    max: 6,
+    perspective: 500,
+  });
 </script>

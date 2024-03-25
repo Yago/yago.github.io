@@ -1,8 +1,11 @@
 ---
+import { isNotNil } from 'ramda';
+
+import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
 import Menu from '@/components/Menu.astro';
 import Terminal from '@/components/Terminal.astro';
-import Footer from '@/components/Footer.astro';
+import pictures from '@/config/pictures';
 import { cm } from '@/utils';
 
 import '@/styles/base.css';
@@ -14,13 +17,13 @@ type Props = {
   noContainer?: boolean;
 };
 
-const { title, description, noContainer }: Props = Astro.props;
+const { title, description, noContainer, cover }: Props = Astro.props;
 const url = 'https://yago.io/';
 const asPath = Astro.url.pathname;
 
 const defaultDesc =
-  "Ahoy there ! I'm Yann, Frontend and JavaScript developer by day and photographer when the night comes (or during my days off).";
-const titleSuffix = ' | Yann Gouffon, developer and photographer';
+  "Ahoy there ! I'm Yann, senior web developer specialised in Frontend and JavaScript projects.";
+const titleSuffix = ' | Yann Gouffon, senior web developer';
 ---
 
 <script is:inline>
@@ -63,12 +66,12 @@ const titleSuffix = ' | Yann Gouffon, developer and photographer';
     <meta property="description" content={description ?? defaultDesc} />
     <meta property="og:description" content={description ?? defaultDesc} />
     <meta property="twitter:description" content={description ?? defaultDesc} />
-    <!-- <meta
+    <meta
       property="og:image"
-      content={cover && !isNil(pictures[cover])
+      content={cover && isNotNil(pictures[cover])
         ? `${url}${pictures[cover].src}`
-        : '${url}/images/yago-og-image.jpg'}
-    /> -->
+        : `${url}/images/yago-og-image.jpg`}
+    />
     <meta property="og:url" content={`${url}${asPath}`} />
     <link rel="canonical" href={`${url}${asPath}`} />
 
@@ -91,8 +94,14 @@ const titleSuffix = ' | Yann Gouffon, developer and photographer';
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="theme-color" content="#ffffff" />
 
-    <link id="lazyload-css" rel="preload" href="/fonts/types.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/fonts/types.css"></noscript>
+    <link
+      id="lazyload-css"
+      rel="preload"
+      href="/fonts/types.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/fonts/types.css" /></noscript>
 
     <script
       is:inline
@@ -130,38 +139,36 @@ const titleSuffix = ' | Yann Gouffon, developer and photographer';
       style={{ display: 'none' }}
       class="fixed bottom-0 right-0 z-50 w-full text-white md:inset-y-0 md:w-1/2 bg-gray-950 transform transition-transform duration-700 top-[66px]"
     >
-        <div
-          x-show="menuOpen"
-          x-transition:enter-start="opacity-0"
-          x-transition:enter-end="opacity-100"
-          x-transition:leave-start="opacity-100"
-          x-transition:leave-end="opacity-0"
-          class="absolute top-0 left-0 w-full transition-opacity"
-        >
-          <Menu />
-        </div>
-        <div
-          x-show="terminalOpen"
-          x-transition:enter-start="opacity-0"
-          x-transition:enter-end="opacity-100"
-          x-transition:leave-start="opacity-100"
-          x-transition:leave-end="opacity-0"
-          style={{ display: 'none' }}
-          class="absolute inset-0 w-full transition-opacity"
-        >
-          <Terminal />
-        </div>
+      <div
+        x-show="menuOpen"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="absolute top-0 left-0 w-full transition-opacity"
+      >
+        <Menu />
+      </div>
+      <div
+        x-show="terminalOpen"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        style={{ display: 'none' }}
+        class="absolute inset-0 w-full transition-opacity"
+      >
+        <Terminal />
+      </div>
     </div>
 
-     <div class="w-full">
+    <div class="w-full">
       <div
         class="w-full transition-transform duration-700 transform"
         x-bind:class="(menuOpen || terminalOpen) && 'md:-translate-x-1/2'"
       >
         <div
-          class={cm(
-            !noContainer && 'px-4 mx-auto max-w-screen-2xl md:px-14'
-          )}
+          class={cm(!noContainer && 'px-4 mx-auto max-w-screen-2xl md:px-14')}
         >
           <slot />
         </div>

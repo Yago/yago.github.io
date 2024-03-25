@@ -2,13 +2,13 @@
 import { getCollection } from 'astro:content';
 import { format, parseISO } from 'date-fns';
 
-import BaseLayout from '@/layouts/BaseLayout.astro';
 import Breadcrumb from '@/components/Breadcrumb.astro';
 import Divider from '@/components/Divider.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
-  return posts.map((entry) => ({
+  return posts.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -23,7 +23,9 @@ const {
 
 <BaseLayout title={title} description={description}>
   <Breadcrumb crumbs={[{ href: '/blog', label: 'Blog' }, { label: title }]} />
-  <article class="w-full mx-auto mt-20 astro-post sm:w-10/12 md:w-2/3 xl:w-7/12 md:px-8">
+  <article
+    class="w-full mx-auto mt-20 astro-post sm:w-10/12 md:w-2/3 xl:w-7/12 md:px-8"
+  >
     <div class="scroll-fade-in">
       <h1 class="text-3xl font-medium text-gray-900 md:text-4xl lg:text-5xl">
         {title}
@@ -36,7 +38,7 @@ const {
       </Divider>
     </div>
     <div
-      class="mt-16 font-serif text-lg text-gray-900 space-y-6 md:mt-14 prose-headings:pt-4 prose-p:leading-[1.618em] lg:text-xl xl:text-2xl xl:prose-p:leading-[1.618em] prose-a:text-blue prose-headings:font-sans prose-headings:font-medium prose-h2:text-[26px] xl:prose-h2:text-[28px] prose-h3:text-[19px] lg:prose-h3:text-[24px] xl:prose-h3:text-[27px] prose-h4:text-[18px] lg:prose-h4:text-[21px] xl:prose-h4:text-[25px] prose-strong:text-medium prose-ul:list-disc prose-ul:pl-3 prose-ul:space-y-3 prose-ul:leading-[1.618em] xl:prose-img:w-[106%] xl:prose-img:-translate-x-[2.8%] prose-img:rounded-lg prose-img:overflow-hidden prose-img:my-8 scroll-fade-in"
+      class="mt-16 font-serif text-lg text-gray-900 space-y-6 md:mt-14 prose-headings:pt-4 prose-p:leading-[1.618em] lg:text-xl xl:text-2xl xl:prose-p:leading-[1.618em] prose-a:text-blue prose-headings:font-sans prose-headings:font-medium prose-h2:text-[26px] xl:prose-h2:text-[28px] prose-h3:text-[19px] lg:prose-h3:text-[24px] xl:prose-h3:text-[27px] prose-h4:text-[18px] lg:prose-h4:text-[21px] xl:prose-h4:text-[25px] prose-strong:text-medium prose-ul:list-disc prose-ul:pl-3 prose-ul:space-y-3 prose-ul:leading-[1.618em] [&_picture]:!inline-block xl:[&_picture]:w-[106%] prose-img:w-full xl:[&_picture]:-translate-x-[2.8%] prose-img:rounded-lg prose-img:overflow-hidden [&_picture]:my-8 scroll-fade-in"
     >
       <Content />
     </div>
