@@ -1,0 +1,19 @@
+---
+  title: "Choisissez le SVG"
+  date: "2013-05-24T09:12:47.000Z"
+  description: "Avec la multiplication des différences de densité de pixel sur les nouveaux devices, rendre une image où un pictogramme peut devenir un véritable casse-tête. Il existe plusieurs solutions afin d'arriver au meilleur résultat."
+---
+
+
+Avec la multiplication des différences de densité de pixel sur les nouveaux devices, rendre une image où un pictogramme peut devenir un véritable casse-tête. Il existe des solutions comme [Slicy](http://macrabbit.com/slicy/) qui dédoubleront vos images afin de les optimiser pour retina, mais cela demande un effort supplémentaire.
+
+Personnellement et pour toute image flat ou pictographique, je vous recommande fortement le SVG. Comme son nom l'indique (Scalable Vector Graphics), il sera toujours rendu parfaitement quel que soit sa taille et quel que soit la densité de pixel présente sur le device. Le SVG n'est malheureusement pas compatible avec tous les navigateurs. Pour parer à ce problème, il existe plusieurs solutions. On peut tout à fait utiliser une librairie comme [Raphaël](http://raphaeljs.com/) qui, en plus de rendre votre SVG correctement, vous permettra de l'animer en JavaScript. [SVGWeb](http://code.google.com/p/svgweb/) est également un bon choix dans le sens où il encapsulera votre animation dans du Flash pour les navigateurs ne supportant pas cette technologie.
+
+Mais pour ceux qui souhaiteraient simplement intégrer une image SVG avec une compatibilité maximum, il existe un moyen facile. Créer votre SVG et exporter une copie en PNG, puis dans l'HTML :
+
+```html
+<img src="images/logo.svg" onerror="this.onerror=null; this.src='images/logo.png'" alt="logo" />
+```
+
+Dans le cas où le navigateur ne supporte pas le SVG, le JavaScript le remplacera par son homologue PNG.
+

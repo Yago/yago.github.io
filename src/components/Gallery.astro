@@ -1,0 +1,180 @@
+---
+import { cm } from '@/utils';
+
+import Picture from '@/components/Picture.astro';
+import pictures from '@/config/pictures';
+
+import 'photoswipe/dist/photoswipe.css';
+import '@/styles/photoswipe.css';
+import { isNotNil } from 'ramda';
+
+type Props = {
+  images: (string | string[])[];
+  type?: 'project' | 'post';
+};
+
+const { images, type = 'post' }: Props = Astro.props;
+---
+
+<div class={cm(type === 'project' && 'grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10 my-20')} id="gallery">
+  {
+    images.map((item, i) => {
+      const image = Array.isArray(item) ? item[0] : item;
+      const caption = Array.isArray(item) ? item[1] : null;
+
+      return (
+        <a
+          href={pictures[image].msrc}
+          data-pswp-width={pictures[image].w}
+          data-pswp-height={pictures[image].h}
+          data-exif={JSON.stringify(pictures[image])}
+          target="_blank"
+          data-index={i}
+          class="gallery-item group"
+          rel="noreferrer"
+        >
+          <figure>
+            <div class="relative overflow-hidden bordered">
+              <Picture
+                filename={image}
+                alt={`Photography of ${pictures[image]?.Headline}`}
+                sizes="(min-width: 1280px) 193px, calc(33.33vw - 32px)"
+                class={cm(type === 'project' && 'relative transition-all duration-300 -z-10 md:scale-105 group-hover:scale-100')}
+              />
+            </div>
+            {isNotNil(caption) && (<figcaption class="hidden">{caption}</figcaption>)}
+          </figure>
+        </a>
+      )
+    })
+  }
+</div>
+
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import PhotoSwipe from 'photoswipe';
+
+  const vw = window.innerWidth;
+
+  const left =
+    '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M67.172 88.613 28.449 49.894l38.723-38.723-5.89-5.89-44.614 44.612 44.613 44.613z" fill-rule="evenodd" fill="currentColor"/></svg>';
+  
+  const right =
+    '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m38.723 94.508 44.609-44.613L38.723 5.282l-5.895 5.89 38.723 38.724-38.723 38.719z" fill-rule="evenodd" fill="currentColor"/></svg>';
+
+  const close =
+    '<svg viewBox="0 0 24 24" width="15" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M21.9.686l1.414 1.415-9.9 9.9 9.9 9.898-1.415 1.415-9.899-9.9-9.9 9.9-1.414-1.415 9.9-9.899-9.9-9.9L2.101.687l9.9 9.9 9.898-9.9z" fill="currentColor" fill-rule="evenodd"/></svg>';
+  
+  const fullscreen =
+    '<svg viewBox="0 0 20 22" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M20 15v7h-7v-2h5v-5h2zM2 15v5h5v2H0v-7h2zM20 0v7h-2V2h-5V0h7zM7 0v2H2v5H0V0h7z" fill="currentColor" fill-rule="evenodd"/></svg>';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#gallery',
+    children: 'a',
+    showHideAnimationType: 'fade',
+    pswpModule: PhotoSwipe,
+    arrowPrevSVG: left,
+    arrowNextSVG: right,
+    closeSVG: close,
+    zoom: false,
+    padding: {
+      top: vw > 762 ? 90 : 60,
+      bottom: vw > 762 ? 90 : 60,
+      left: vw > 762 ? 100 : 10,
+      right: vw > 762 ? 100 : 10,
+    },
+    bgOpacity: 1,
+    mainClass: 'pswp--custom-bg',
+  });
+
+  // Add custom UI
+  lightbox.on('uiRegister', function () {
+    // Fullscreen button
+    lightbox.pswp?.ui?.registerElement({
+      name: 'fullscreen-button',
+      order: 9,
+      isButton: true,
+      tagName: 'button',
+      className: '[&_svg]:w-4',
+
+      html: {
+        isCustomSVG: true,
+        inner: fullscreen,
+        outlineID: 'pswp__fullscreen',
+      },
+
+      onInit: el => {
+        el.addEventListener('click', () => {
+          if (document.fullscreenElement) {
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
+            }
+          } else {
+            const element = document.documentElement;
+            if (element.requestFullscreen) {
+              element.requestFullscreen();
+            }
+          }
+        });
+      },
+    });
+
+    // Custom counter
+    lightbox.pswp?.ui?.registerElement({
+      name: 'counter',
+      className: 'pswp-custom-counter' + (lightbox.getNumItems() > 1 ? '' : ' hidden'),
+      appendTo: 'wrapper',
+      onInit: el => {
+        const current = document.createElement('span');
+        current.id = 'counter-current';
+        current.className = 'inline-block text-xl pr-1 -translate-y-2';
+        current.innerText = '0';
+        el.appendChild(current);
+
+        const divider = document.createElement('span');
+        divider.className = 'text-gray-500';
+        divider.innerText = `/`;
+        el.appendChild(divider);
+
+        const total = document.createElement('span');
+        total.className = 'inline-block text-gray-500 translate-y-2';
+        total.innerText = String(lightbox.getNumItems());
+        el.appendChild(total);
+      },
+    });
+
+    // Caption
+    lightbox.pswp?.ui?.registerElement({
+      name: 'custom-caption',
+      order: 9,
+      isButton: false,
+      appendTo: 'root',
+      html: 'Caption text',
+      className: 'fixed bottom-0 left-0 right-0 p-4 text-black text-center bg-white text-sm',
+      onInit: (el) => {
+        lightbox.pswp?.on('change', () => {
+          const currSlideElement = lightbox.pswp?.currSlide?.data.element;
+          let captionHTML = '';
+          if (currSlideElement) {
+            const hiddenCaption = currSlideElement.querySelector('.hidden');
+            if (hiddenCaption) {
+              captionHTML = hiddenCaption.innerHTML;
+            }
+          }
+          el.innerHTML = captionHTML || '';
+        });
+      }
+    });
+  });
+
+  // Update caption
+  lightbox.on('contentActivate', ({ content }) => {
+    // @ts-ignore
+    content.instance.scrollWrap.querySelector('#counter-current').innerText =
+      content.index + 1;
+  });
+
+  lightbox.init();
+
+  // lightbox.loadAndOpen(0);
+</script>

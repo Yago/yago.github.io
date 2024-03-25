@@ -1,0 +1,82 @@
+---
+import { cm } from '@/utils';
+
+import Icon from '@/components/Icon.astro';
+import Divider from '@/components/Divider.astro';
+
+const currentPath = Astro.url.pathname;
+const socials = [
+  {
+    label: 'Github',
+    icon: 'github',
+    url: 'https://github.com/yago/',
+  },
+  // {
+  //   label: 'Instagram',
+  //   icon: 'instagram',
+  //   url: 'https://www.instagram.com/yago_0/',
+  // },
+  // {
+  //   label: '500px',
+  //   icon: '500px',
+  //   url: 'https://500px.com/YannGouffon',
+  // },
+  // {
+  //   label: 'Twitter',
+  //   icon: 'twitter',
+  //   url: 'https://twitter.com/Yago_0',
+  // },
+  {
+    label: 'Email',
+    icon: 'email',
+    url: 'mailto:hello@yago.io',
+  },
+];
+---
+
+<div
+  class={cm(
+    currentPath.includes('/blog/') &&
+      'w-full mx-auto mt-20 sm:w-10/12 md:w-2/3 xl:w-7/12 md:px-8'
+  )}
+>
+  <Divider icon="drakar" />
+</div>
+<footer class="mb-20 text-center ">
+  <p class="mt-20 font-serif text-xl md:text-2xl">
+    Let's keep in touch !
+  </p>
+
+  <div class="flex flex-wrap items-center justify-center mt-8 space-x-12">
+    {socials.map(social => (
+      <a
+        href={social.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mb-6 md:text-lg text-blue whitespace-nowrap link"
+      >
+        <Icon
+          name={social.icon}
+          className="mr-1 text-lg text-gray-900"
+        />
+        <span> {social.label}</span>
+      </a>
+    ))}
+  </div>
+
+  <p class="mt-2 text-gray-600 md:text-lg">
+    ©Yann Gouffon, All Rights Reserved
+    <br />
+    <small class="text-sm">
+      Feel free to{' '}
+      <a
+        href="https://github.com/Yago/yago.github.io"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link text-blue"
+      >
+        take a look at the code
+      </a>of this website
+    </small>
+  </p>
+</footer>

@@ -1,0 +1,28 @@
+---
+import { cm } from '@/utils';
+
+type Props = {
+  name: string;
+  className?: string;
+};
+
+const { name, className }: Props = Astro.props;
+---
+<svg class={cm('icon inline-flex self-center justify-center items-center relative ', className)} aria-hidden="true">
+  <use xlink:href={`/icons.svg#${name}`} />
+</svg>
+
+<style is:global>
+  .icon {
+    top: -0.1em;
+    width: 1em;
+    height: 1em;
+    font-size: 0.7em;
+  }
+
+  .icon svg {
+    width: 1em;
+    height: 1em;
+    fill: currentcolor;
+  }
+</style>

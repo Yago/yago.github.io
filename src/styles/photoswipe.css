@@ -1,0 +1,92 @@
+@media screen and (min-width: 1000px) {
+  .pswp__container {
+    transition: transform 0.4s ease-in-out;
+  }
+}
+
+.pswp__counter,
+.pswp__preloader {
+  display: none;
+}
+
+.pswp--custom-bg {
+  --pswp-bg: white !important;
+  transition: background-color 0.25s !important;
+}
+
+.dark .pswp--custom-bg {
+  --pswp-bg: black !important;
+}
+
+.pswp__top-bar {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.pswp__button {
+  opacity: 0.4 !important;
+  transition: opacity 0.25s !important;
+}
+
+.pswp__button,
+.pswp__icn {
+  color: black !important;
+  transition: color 0.25s !important;
+}
+
+.dark .pswp__button,
+.dark .pswp__icn {
+  color: white !important;
+}
+
+.pswp__button:hover {
+  opacity: 1 !important;
+  cursor: pointer !important;
+}
+
+@media screen and (max-width: 762px) {
+  .pswp__button {
+    display: none;
+  }
+}
+
+.pswp__button--arrow {
+  top: auto !important;
+  bottom: 0px !important;
+  width: 20px !important;
+  margin-right: 10px !important;
+  margin-left: 30px !important;
+  margin-bottom: -10px !important;
+}
+
+.pswp__button--arrow--next {
+  right: 20px;
+}
+
+.pswp__button--arrow--prev {
+  left: auto !important;
+  right: 60px;
+}
+
+@media screen and (max-width: 762px) {
+  .pswp__button--arrow {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
+}
+
+.pswp-custom-counter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 20px;
+  margin-top: 24px;
+}
+
+@media screen and (max-width: 762px) {
+  .pswp-custom-counter {
+    margin-left: 12px;
+    margin-top: 12px;
+  }
+}

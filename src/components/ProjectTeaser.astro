@@ -1,0 +1,35 @@
+---
+import Picture from '@/components/Picture.astro';
+import type { Project } from '@/content/config';
+
+type Props = {
+  href: string;
+  project: Project;
+};
+
+const { href, project }: Props = Astro.props;
+---
+<a href={href} class="link-wrapper">
+  <div
+    class="tilt"
+    style={{ transformStyle: 'preserve-3d' }}
+  >
+    <div class="mb-4">
+      <Picture filename={project.thumbnail} alt="Picture of the author" sizes='100vw' />
+    </div>
+    <div style={{ transform: 'translateZ(20px) translateX(5px)' }}>
+      <h3 class="text-lg font-medium md:text-2xl link-inner">
+        {project.title}
+      </h3>
+      <p class="md:mt-2 md:text-xl">{project.subtitle}</p>
+    </div>
+  </div>
+</a>
+
+<script>
+  import Tilt from 'vanilla-tilt';
+  Tilt.init(document.querySelectorAll(".tilt") as unknown as HTMLElement[], {
+		max: 6,
+		perspective: 500
+	});
+</script>

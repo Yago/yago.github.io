@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import { isNil } from 'ramda';
+
+import ProjectTeaser from '@/components/ProjectTeaser.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const projects = await getCollection('projects');
+---
+<BaseLayout title="Projects">
+  <Breadcrumb crumbs={[{ label: 'Projects' }]} />
+  <div class="mb-24 md:pl-20">
+    <h1 class="mt-6 text-3xl font-medium text-gray-900 md:text-4xl lg:text-5xl motion-safe:animate-fadeInTop">
+      Projects
+    </h1>
+    <div class="grid grid-cols-2 mt-12 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12">
+      {projects
+        .sort((a, b) => +new Date(b?.data?.date) - +new Date(a?.data?.date))
+        .filter(i => isNil(i?.data?.published) || i?.data?.published)
+        .map((project) => (
+          <div class="scroll-fade-in">
+          <ProjectTeaser
+            project={project.data}
+            href={`/projects/${project.slug}`}
+          />
+        </div>
+        ))}
+    </div>
+  </div>
+</Layout>

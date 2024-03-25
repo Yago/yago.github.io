@@ -1,0 +1,84 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Picture as AstroPicture } from 'astro:assets';
+
+import pictures from '@/config/pictures';
+import type { Picture as PictureType } from '@/types';
+
+const isDev = import.meta.env.DEV;
+
+interface Props {
+  filename: string;
+  alt: string;
+  sizes: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'auto' | 'high' | 'low';
+  ratio?: string;
+}
+
+const {
+  filename,
+  alt,
+  sizes,
+  class: classes,
+  loading,
+  fetchpriority,
+} = Astro.props;
+
+const picture: PictureType = pictures[filename];
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '../../public/images/**/*'
+);
+
+const img = images[`../../public${picture.msrc}`];
+
+if (!img)
+  throw new Error(
+    `"${img}" does not exist in glob: "public/images/**/*.{jpeg,jpg,png,gif}"`
+  );
+---
+
+{
+  !isDev && (
+    <picture>
+      <source
+        type="image/avif"
+        srcset={[256, 384, 640, 750, 828, 1080, 1200, 1920, 2560]
+          .map(w => `/_vercel/image?url=${picture.msrc}&w=${w}&q=65 ${w}w`)
+          .join(', ')}
+        sizes={sizes}
+      />
+      <img
+        class:list={classes}
+        srcset={[256, 384, 640, 750, 828, 1080, 1200, 1920, 2560]
+          .map(w => `/_vercel/image?url=${picture.msrc}&w=${w}&q=65 ${w}w`)
+          .join(', ')}
+        sizes={sizes}
+        loading={loading || 'lazy'}
+        fetchpriority={fetchpriority || 'auto'}
+        alt={alt}
+      />
+    </picture>
+  )
+}
+
+{
+  isDev && (
+    <AstroPicture
+      class:list={classes}
+      src={img()}
+      width={picture.w}
+      height={picture.h}
+      alt={alt}
+      widths={[256, 384, 640, 750, 828, 1080, 1200, 1920, 2560]}
+      sizes={sizes}
+      formats={['jpg', 'avif']}
+      fallbackFormat="jpeg"
+      quality={45}
+      loading={loading || 'lazy'}
+      fetchpriority={fetchpriority || 'auto'}
+    />
+  )
+}

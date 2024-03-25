@@ -1,0 +1,92 @@
+---
+  title: "Immer: state mutation made simple"
+  date: "2018-09-21T00:00:00.000Z"
+  description: "When your JavaScript application gets bigger, you’ll quickly need something like Redux to distribute data across your application and your components. With Redux or any kind of state management library, the idea is to trigger some actions with a payload, which will themselves alter the global data storage of the app using this portion of new data."
+---
+
+
+When your JavaScript application gets bigger, **you’ll quickly need something like [Redux](https://redux.js.org/) to distribute data across your application and your components**.  With Redux or any kind of state management library, the idea is to trigger some actions with a *payload*, which will themselves alter the global data storage of the app using this portion of new data.
+
+It’s fairly easy to setup when you deal with simple data structure.  **For example**, if you want to update your `content` at your Store’s root, you can do something like:
+
+```js
+const reducer = (state = {}, action) => {
+  if (action.type === "ALTER_STORE") {
+    return {
+      ...state,
+      content: action.payload
+    };
+  }
+  return state;
+};
+```
+
+[📦 Play with the CodeSandbox example!](https://codesandbox.io/s/rlo00m8lwn)
+
+But when you’re starting to have a more complex data structure with nested objects and arrays, things became quickly tricky and after the Callbacks and the Promises of Hell, please welcome the “*Reducer of Hell*” (thanks to Object Spread goodness)! 
+
+**For example** if your want to update a specific post’s `content` attribute:
+```js
+const complexDefaultState = {
+  contents: {
+    post: [
+      { id: 0, type: "post", content: "First article" },
+      { id: 1, type: "post", content: "Second article" },
+      { id: 2, type: "post", content: "Third article" }
+    ],
+    page: []
+  }
+};
+
+const reducer = (state = complexDefaultState, action) => {
+  if (action.type === "ALTER_STORE") {
+    return {
+      ...state,
+      contents: {
+        ...state.contents,
+        [action.payload.type]: [
+          ...state.contents[action.payload.type].slice(0, action.payload.id),
+          {
+            ...state.contents[action.payload.type][action.payload.id],
+            ...action.payload
+          },
+          ...state.contents[action.payload.type].slice(action.payload.id + 1)
+        ]
+      }
+    };
+  }
+  return state;
+};
+```
+
+[📦 Play with the CodeSandbox example!](https://codesandbox.io/s/64k1rzpyjk)
+
+Dirty, right? Ok, maybe you can be smarter and start modeling something more decoupled and less nested, or maybe not… Thankfully, **Michel Weststrate**, the smart guy behind [MobX](https://github.com/mobxjs/mobx), had provided us a more elegant solution for making state mutations: [Immer.js](https://github.com/mweststrate/immer)!
+
+You simply have to wrap your reducer inside the `immer` method and replace your dirty mutation code by a more elegant one, same as native `Array`  and `Object` prototype methods.
+
+**For the same complex example** using Immer, your reducer will look like:
+
+```js
+import p from "immer";
+
+const complexDefaultState = {/* see previous example */};
+
+const reducer = p((state = complexDefaultState, action) => {
+  if (action.type === "ALTER_STORE") {
+    state.contents[action.payload.type][action.payload.id].content =
+      action.payload.content;
+  }
+  return state;
+});
+```
+
+[📦 Play with the CodeSandbox example!](https://codesandbox.io/s/047y582040)
+
+Holy cow! Yep, my first reaction too. **Now you can handle complex Store data without having dirty reducers**. Complex data; clean, typed and performant reducers, what else?
+
+I invite you to read all the good stuff of Immer.js on it [repository](https://github.com/mweststrate/immer). There is a great and visual explanation of how it works under the hood and what are all the benefits of using it (aside of reducing your code size by 1,000).
+
+---
+
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*

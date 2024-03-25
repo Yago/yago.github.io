@@ -1,0 +1,49 @@
+---
+import { isNotNil } from 'ramda';
+
+import Icon from '@/components/Icon.astro';
+import { cm } from '@/utils';
+
+type Props = {
+  crumbs: {
+    href?: string;
+    label: string;
+  }[];
+};
+
+const { crumbs }: Props = Astro.props;
+---
+<nav
+    aria-label="breadcrumb"
+    class="mb-6 transform md:translate-x-1 md:mb-0"
+  >
+    <ol class="inline-flex text-sm text-gray-600 lowercase transition-opacity duration-500 transform md:text-lg opacity-60 hover:opacity-100 md:-translate-x-full md:translate-y-2 md:-rotate-90 md:origin-right">
+      <li>
+        <a href="/" class="link">
+          <span class="sr-only">Homepage</span>
+          <Icon name="tipi" className="text-base md:text-lg" />
+        </a>
+      </li>
+      {crumbs.map(({ href, label }) =>
+        isNotNil(href) ? (
+          <li>
+            <span class="px-3" aria-hidden>
+              ·
+            </span>
+            <a href={href} class="link">
+              {label}
+            </a>
+          </li>
+        ) : (
+          <li aria-current="page">
+            <span class="px-3" aria-hidden>
+              ·
+            </span>
+            <span class={cm('inline-block truncate', { maxWidth: 250 })}>
+              {label}
+            </span>
+          </li>
+        )
+      )}
+    </ol>
+  </nav>

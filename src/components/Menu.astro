@@ -1,0 +1,14 @@
+<nav class="flex flex-col p-8 space-y-8 md:p-14">
+  {[
+    ['/', 'Homepage'],
+    ['/projects', 'Projects'],
+    ['/blog', 'Blog'],
+  ].map(([href, label]) => (
+    <a
+      href={href}
+      class="text-2xl font-light transition-colors duration-200 hover:text-green"
+    >
+      {label}
+    </a>
+  ))}
+</nav>

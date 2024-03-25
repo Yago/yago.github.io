@@ -1,0 +1,118 @@
+---
+  title: "Typescript by default"
+  date: "2019-01-23T00:00:00.000Z"
+  description: "So, TypeScript is not new stuff, but it became more and more popular in the JavaScript community those days and this is why is great to use it by default in your JavaScript projects."
+---
+
+
+— What a click bait title?!?<br />
+— I know, right?
+
+So, TypeScript is not new stuff, but it became more and more popular in the JavaScript community those days and **this is why is great to use it by default in your JavaScript projects**.
+
+— But TypeScript is an alternative language to JavaScript, right?<br />
+— Yeah... no
+
+Unlike CoffeeScript, ELM, Reason or any kind of languages that produce executable JavaScript, **TypeScript is still your beloved ECMAScript syntax**, plus some cool features like type definition, interfaces, etc. Basically, it's **half an extended version of JavaScript**, **half a compiler** like Babel.
+
+— But you can also compile TypeScript code [with Babel](https://babeljs.io/docs/en/babel-preset-typescript)<br />
+— I know, right?
+
+Anyway, **you can see TypeScript like Sass or SCSS**. Even if your styles are compiled with Sass, you can still use only plain old CSS syntax. There is no obligation of using Sass features. It's the same thing with TypeScript; it's not mandatory to define types or to use all of the good stuff brought by it. It means that theoretically, you can already use TypeScript on all your existing JavaScript projects. Cool, right?
+
+Now it's time to dig in the small configuration required by each kind of project. It's impossible to describe them all, we'll start with the most popular ones (for me). But remember, with it actual popularity, **there is plugins, modules or even core support for TypeScript in almost all libraries and framework.**
+
+## Node/Express server
+First, you'll need some new dependencies to execute your TypeScript code:
+
+```bash
+$ npm install --save typescript @types/node ts-node
+# or
+$ yarn add typescript @types/node ts-node
+```
+
+Then, you'll need to change the default classic nodemon `start` command in your `package.json`:
+
+```json
+{
+  "scripts": {
+    "start": "nodemon --exec 'ts-node' src/index.ts localhost 8080"
+  }
+}
+```
+
+The only difference with your usual configuration, the executable is overrode as `ts-node` instead of the default `node` and your entry point is now a `.ts` file. As you may understand at this point, **your files will not be `.js` anymore, but `.ts`** (obvious, I know).
+
+Finally, you need a new `tsconfig.json` file at your project's root (like in any TypeScript project) for the related configuration. Something like:
+
+```json
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "allowJs": true,
+    "lib": ["esnext"],
+    "target": "es5"
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "__tests__"]
+}
+```
+
+**And that's it!** Now your app's code will like something like:
+
+```typescript
+import * as express from 'express';
+import { homeCtrl, aboutCtrl } from './controllers';
+
+const app = express();
+const port: number = 8080;
+
+app.get('/', homeCtrl);
+app.get('/about', aboutCtrl);
+
+app.listen(port, () => console.log(`Typescript app listening on port ${port}!`));
+```
+[📦 Play with the CodeSandbox example!](https://codesandbox.io/s/r5438v0z9m)
+
+— `import` in Node projects without Webpack :heart_eyes:
+
+## React applications
+Good news if you're using **react-create-app**, it's already embedded in it! The only thing you must do is to use the following command:
+
+```bash
+npx create-react-app my-app --typescript
+# or
+yarn create react-app my-app --typescript
+```
+
+Same difference for file extensions here,  `.jsx` will be transformed to `.tsx`. Nothing else change from your favorite React architecture. 
+
+## Next.js applications
+Because SSR is more than a trendy thing, you'll maybe also add TypeScript to your Next.js powered project. To do that, just use the official plugin with:
+
+```bash
+$ npm install --save @zeit/next-typescript
+# or
+$ yarn add @zeit/next-typescript
+```
+
+And follow the [official recipe](https://github.com/zeit/next-plugins/tree/master/packages/next-typescript#usage).
+
+## Gatsby websites
+Same thing here, official plugin, great [doc](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-typescript).
+
+```bash
+$ npm install --save gatsby-plugin-typescript
+# or
+$ yarn add gatsby-plugin-typescript
+```
+
+
+## Conclusion
+As you can see, **it's a fairly easy process** to create a new project or even moving an existing one with TypeScript and still keeping your favorite JavaScript stack. **There is no reason in the world, that will prevent you for using TypeScript**. Trust me:wink:
+
+*See also the [official migration guide](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html)*
+
+---
+
+*Supported with* 💛 *by [Antistatique](https://antistatique.net)*

@@ -1,0 +1,26 @@
+.button {
+  @apply
+    box-border relative inline-block px-3 py-1 text-sm uppercase transition duration-300 border border-gray-300 cursor-pointer hover:text-blue md:px-4 md:py-2 md:text-base focus:outline-none focus:ring-4 focus:ring-blue focus:ring-opacity-10 ;
+  border-image-slice: 1;
+
+  &:after {
+    @apply
+      absolute transition-opacity duration-300 border opacity-0 border-blue ;
+    content: '';
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border-image: linear-gradient(
+      to right,
+      #0002FC 0%,
+      #50E3C2 98%
+    );
+    border-image-slice: 1;
+  }
+
+  &:hover:after,
+  &:focus:after {
+    @apply opacity-100;
+  }
+}

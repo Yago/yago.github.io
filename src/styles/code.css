@@ -1,0 +1,44 @@
+.astro-code {
+  @apply font-mono text-xs md:text-base pl-2 pr-4 py-2.5 rounded-lg !important;
+  -webkit-font-feature-settings: "liga" on, "calt" on;
+  -webkit-font-smoothing: antialiased;
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+.astro-code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1.5rem;
+  display: inline-block;
+  text-align: right;
+  color: rgba(255,255,255, 0.3);
+}
+
+.astro-post .astro-code .line:last-child {
+  display: none;
+}
+
+.astro-code * {
+  @apply not-italic !important;
+}
+
+.astro-post .astro-code {
+  @apply text-xs md:!text-sm font-mono rounded-lg lg:w-[106%] lg:-translate-x-[2.8%];
+}
+
+.line-numbers-rows {
+  @apply border-0 opacity-60;
+
+  span:before {
+    @apply text-gray-500;
+  }
+}
+
+.astro-post p > code,
+.astro-post a > code,
+.astro-post li > code,
+.astro-post ul > code {
+  @apply lg:text-lg bg-gray-200 px-1 py-0.5 rounded font-normal !important;
+}

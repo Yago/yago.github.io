@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+
+import PostTeaser from '@/components/PostTeaser.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { cm } from '@/utils';
+
+const posts = await getCollection('posts');
+---
+<BaseLayout title="Blog">
+  <Breadcrumb crumbs={[{ label: 'Blog' }]} />
+  <div class="w-full mx-auto mt-12 sm:w-10/12 md:w-2/3 xl:w-7/12 md:px-8">
+    <h1 class="mt-6 text-3xl font-medium text-gray-900 md:text-4xl lg:text-5xl motion-safe:animate-fadeInTop">
+      Blog
+    </h1>
+    <div class="mt-16">
+      {posts
+        .sort((a, b) => +new Date(b?.data?.date) - +new Date(a?.data?.date))
+        .map((post, i) => (
+          <div
+            class={cm('scroll-fade-in', i === posts.length - 1 && 'mb-20')}
+          >
+            <PostTeaser
+              post={post.data}
+              href={`/blog/${post.slug}`}
+            />
+            {i !== posts.length - 1 && (
+              <hr class="w-1/2 my-10 border-t border-gray-300 md:my-16" />
+            )}
+          </div>
+        ))}
+    </div>
+  </div>
+</BaseLayout>

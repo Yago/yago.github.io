@@ -1,0 +1,70 @@
+[
+  {
+    "url": "https://www.typescriptlang.org/",
+    "icon": "typescript"
+  },
+  {
+    "url": "https://facebook.github.io/react/",
+    "icon": "react"
+  },
+  {
+    "url": "https://graphql.org",
+    "icon": "graphql"
+  },
+  {
+    "url": "https://zod.dev/",
+    "icon": "zod"
+  },
+  {
+    "url": "https://nextjs.org/",
+    "icon": "next"
+  },
+  {
+    "url": "https://remix.run/",
+    "icon": "remix"
+  },
+  {
+    "url": "https://astro.build/",
+    "icon": "astro"
+  },
+  {
+    "url": "http://reactivex.io/rxjs/",
+    "icon": "reactivex"
+  },
+  {
+    "url": "https://nodejs.org/",
+    "icon": "nodejs"
+  },
+  {
+    "url": "https://deno.land/",
+    "icon": "deno"
+  },
+  {
+    "url": "https://bun.sh/",
+    "icon": "bun"
+  },
+  {
+    "url": "https://git-scm.com/",
+    "icon": "git"
+  },
+  {
+    "url": "https://tailwindcss.com/",
+    "icon": "tailwind"
+  },
+  {
+    "url": "https://storybook.js.org/",
+    "icon": "storybook"
+  },
+  {
+    "url": "https://www.mongodb.org/",
+    "icon": "mongodb"
+  },
+  {
+    "url": "https://www.npmjs.com/",
+    "icon": "npm"
+  },
+  {
+    "url": "https://wordpress.org/",
+    "icon": "wordpress"
+  }
+]

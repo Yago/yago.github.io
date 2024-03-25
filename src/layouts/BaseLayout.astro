@@ -1,0 +1,174 @@
+---
+import Header from '@/components/Header.astro';
+import Menu from '@/components/Menu.astro';
+import Terminal from '@/components/Terminal.astro';
+import Footer from '@/components/Footer.astro';
+import { cm } from '@/utils';
+
+import '@/styles/base.css';
+
+type Props = {
+  title: string;
+  cover?: string;
+  description?: string;
+  noContainer?: boolean;
+};
+
+const { title, description, noContainer }: Props = Astro.props;
+const url = 'https://yago.io/';
+const asPath = Astro.url.pathname;
+
+const defaultDesc =
+  "Ahoy there ! I'm Yann, Frontend and JavaScript developer by day and photographer when the night comes (or during my days off).";
+const titleSuffix = ' | Yann Gouffon, developer and photographer';
+---
+
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    return 'light';
+  };
+  const isDark = getThemePreference() === 'dark';
+  document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
+  if (typeof localStorage !== 'undefined') {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+  }
+</script>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title + titleSuffix}</title>
+    <meta property="og:title" content={`${title}${titleSuffix}`} />
+    <meta property="twitter:title" content={`${title}${titleSuffix}`} />
+    <meta property="og:type" content="website" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:creator" content="Yann Gouffon" />
+    <meta property="description" content={description ?? defaultDesc} />
+    <meta property="og:description" content={description ?? defaultDesc} />
+    <meta property="twitter:description" content={description ?? defaultDesc} />
+    <!-- <meta
+      property="og:image"
+      content={cover && !isNil(pictures[cover])
+        ? `${url}${pictures[cover].src}`
+        : '${url}/images/yago-og-image.jpg'}
+    /> -->
+    <meta property="og:url" content={`${url}${asPath}`} />
+    <link rel="canonical" href={`${url}${asPath}`} />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#616161" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta name="application-name" content="Yago.io" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Yago.io" />
+    <meta name="description" content={defaultDesc} />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-TileColor" content="#212529" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link id="lazyload-css" rel="preload" href="/fonts/types.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/fonts/types.css"></noscript>
+
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"
+      integrity="sha512-v/wOVTkoU7mXEJC3hXnw9AA6v32qzpknvuUF6J2Lbkasxaxn2nYcl+HGB7fr/kChGfCqubVr1n2sq1UFu3Gh1w=="
+      crossOrigin="anonymous" />
+    <script is:inline>
+      WebFont.load({
+        typekit: { id: 'jjy6lvf' },
+      });
+    </script>
+  </head>
+  <body
+    x-data="{ menuOpen: false, terminalOpen: false }"
+    class="min-h-screen text-xl antialiased bg-white dark:!bg-black"
+    x-bind:class="(menuOpen || terminalOpen) && 'overflow-hidden'"
+  >
+    <div class="w-full">
+      <div
+        class="w-full transition-transform duration-700 transform"
+        x-bind:class="(menuOpen || terminalOpen) && 'md:-translate-x-1/2'"
+      >
+        <div class="px-4 py-4 mx-auto max-w-screen-2xl md:px-14 md:pt-14">
+          <Header />
+        </div>
+      </div>
+    </div>
+
+    <div
+      x-show="menuOpen || terminalOpen"
+      x-transition:enter-start="translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="translate-x-full"
+      style={{ display: 'none' }}
+      class="fixed bottom-0 right-0 z-50 w-full text-white md:inset-y-0 md:w-1/2 bg-gray-950 transform transition-transform duration-700 top-[66px]"
+    >
+        <div
+          x-show="menuOpen"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="absolute top-0 left-0 w-full transition-opacity"
+        >
+          <Menu />
+        </div>
+        <div
+          x-show="terminalOpen"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          style={{ display: 'none' }}
+          class="absolute inset-0 w-full transition-opacity"
+        >
+          <Terminal />
+        </div>
+    </div>
+
+     <div class="w-full">
+      <div
+        class="w-full transition-transform duration-700 transform"
+        x-bind:class="(menuOpen || terminalOpen) && 'md:-translate-x-1/2'"
+      >
+        <div
+          class={cm(
+            !noContainer && 'px-4 mx-auto max-w-screen-2xl md:px-14'
+          )}
+        >
+          <slot />
+        </div>
+        <div class="px-4 mx-auto max-w-screen-2xl md:px-14">
+          <Footer />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

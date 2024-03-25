@@ -1,0 +1,27 @@
+---
+import { isNil, isNotNil } from 'ramda';
+import Icon from '@/components/Icon.astro';
+import type { IconNames } from '@/types';
+
+
+type Props = {
+  icon?: IconNames;
+};
+
+const { icon }: Props = Astro.props;
+---
+<div class="relative my-8">
+  <div class="absolute inset-0 flex items-center" aria-hidden="true">
+    <div class="w-full border-t border-gray-300" />
+  </div>
+  {isNotNil(icon) && (
+    <div class="relative flex justify-center">
+      <span class="px-2 text-5xl text-gray-400 bg-white">
+        <Icon name={icon} />
+      </span>
+    </div>
+  )}
+  {isNil(icon) && <div class="relative flex justify-start">
+    <span class="pr-2 text-sm text-gray-500 bg-white"><slot /></span>
+  </div>}
+</div>

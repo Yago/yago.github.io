@@ -1,0 +1,48 @@
+---
+  title: "Réduire l'impact écologique du développement web"
+  date: "2022-07-12T00:00:00.000Z"
+  description: "Avec la crise climatique, les consciences s’éveillent face à l’impact d’Internet, placé aux côtés des pays les plus pollueurs de la planète. Maintenant, quoi de plus stimulant pour un développeur ou une développeuse web que de résoudre un problème aussi complexe que minimiser l’emprunte écologique de ses réalisations ?"
+---
+import Picture from '@/components/Picture.astro';
+
+
+Avec la crise climatique, les consciences s’éveillent face à l’impact d’Internet, placé aux côtés des pays les plus pollueurs de la planète. Maintenant, quoi de plus stimulant pour un développeur ou une développeuse web que de résoudre un problème aussi complexe que minimiser l’emprunte écologique de ses réalisations ?
+
+## L’énergie au cœur du problème
+
+Si Internet est autant problématique dans la crise actuelle, c’est parce qu’il consomme énormément d’électricité; électricité rarement produite avec des sources d’énergie renouvelable. Alors face à des *blockchains* et des services de *streamings* de plus en plus énergivores, en quoi optimiser mon site ou mon application web va changer les choses ? C’est là toute la philosophie du colibri de Pierre Rabhi; **si chaque développeur et chaque développeuse applique les principes suivants, alors par effet de masse, le web devrait s’en porter un peu mieux**. Même s’il s’agit, au fond, simplement de “faire sa part”.
+
+Dans le cas qui nous intéresse, nous pouvons distinguer trois “moments” durant lesquels notre site va consommer de l’énergie : **l’hébergement, la transmission ou le réseau et le navigateur**. On pourrait aussi citer le contexte dans lequel est produit le site; déplacements, outils, infrastructures, mais cela va énormément varier en fonction de la culture d’entreprise et il serait plus difficile d’en sortir des axes d’améliorations généraux.
+
+## L’hébergement
+
+Premier “moment” et bien souvent, le premier axe auquel on pense quand se penche sur la consommation énergétique de son site internet. Pour être consulté, notre site doit être disponible 24/7, ce qui implique de l’héberger sur un serveur ou *datacenter*. Ces gros ordinateurs mis en réseau vont consommer énormément d’énergie pour fonctionner, mais aussi et surtout pour se refroidir.
+
+Le premier axe d’amélioration consiste à **sélectionner un hébergeur vert** ou *Greenhosting* qui va consommer uniquement de l’électricité issue de sources renouvelables. Vous pourrez trouver des pages d’informations chez votre prestataire sur le sujet, mais attention au *greenwashing*. Pour simplifier le choix d’un hébergeur, il vous suffit de vous rendre sur l’annuaire de [The Green Web Foundation](https://www.thegreenwebfoundation.org/directory/).
+
+Un autre axe d’amélioration réside dans l’**optimisation de notre site**. En effet, plus le temps d’exécution est faible, moins on consomme d’énergie. Cela passe par la réduction du nombre de requêtes, l’optimisation de la charge CPU, etc. Il s’agit également de réduire l’espace disque utilisé en optimisant la taille et le nombre des médias, mais aussi des archives. Et pour finir, afin d’éviter de tout recalculer à chaque requête, une partie ou même la totalité de la réponse peut être mise en cache pour une période définie.
+
+Le dernier axe, un peu plus méconnu, est **la gestion des BOTs**. Ces robots vont référencer votre site sur les moteurs de recherches, mais pas que. À eux seuls, ils sont responsables de 50% de la bande passante et de la charge CPU de votre serveur. Il s’agit donc de les filtrer intelligemment.
+
+## Le réseau
+
+Pour acheminer les données de votre site du serveur vers l’internaute et vis et versa, de l’énergie va être consommée. Contrairement à l’hébergement, on ne va pas pouvoir opter pour un réseau vert, les sources étant très variables d’un pays à l’autre, mais cela ne veut pas dire qu’il n’y a rien que nous puissions faire.
+
+Nous pouvons commencer par **favoriser la proximité**. Moins les données parcourront de distante, moins notre site consommera d’énergie. Il s’agit en premier lieu de sélectionner un hébergeur proche de notre public cible et d’utiliser, dans le cas d’un site ou d’une application plus internationale, un *CDN*. Ces *Content Delivery Network* vont servir votre site depuis différents endroits du monde, toujours au plus proche de l’internaute. Attention toutefois à l’effet multiplicatif sur l’espace disque utilisé, car chaque lieu possédera une “copie” de votre site.
+
+Une autre piste est d’**optimiser la taille des ressources envoyées** comme la taille et le format des images, des vidéos, des scripts, etc. Par exemple pour les images, il s’agit d’envoyer une taille adaptée à sa consultation; petite pour un mobile et grande pour un *desktop*. Et préférez les “nouveaux” formats comme WebP ou Avif qui offre un rapport poids-compression-qualité très intéressant. Sur le sujet, j’ai développé un [petit outil](https://antistatique.github.io/images/) qui vous permettra de vous guider dans ces choix.
+
+## Le navigateur
+
+Pour consulter votre site, l’internaute va utiliser un navigateur web; navigateur qui va demander de la puissance de calcul à l’appareil utilisé, qui va lui-même consommer de l’énergie et/ou de la batterie.
+
+Afin de réduire l’impact de notre site, c’est déjà sur **cet aspect de la puissance de calcul que nous pouvons agir**. Premièrement en optimisant notre JavaScript qui peut drastiquement augmenter la charge *CPU/GPU.* Il s’agit d’envoyer uniquement les scripts nécessaires au moment où ils sont utiles, mais également de sélectionner minutieusement vos frameworks et librairies en fonction de leur poids et performances. Après, il faut aussi tenir compte de la quantité de code que les navigateurs vont devoir *parser* comme la taille de votre HTML/CSS ou la présence de médias.
+
+Un autre aspect dont on parle depuis longtemps pour faire des sites “écolos”, c’est d’**utiliser des couleurs sombres**. Cela ne vaut que pour les appareils disposant d’écrans (AM)OLED ou cathodiques, même si ces derniers se sont faits très rares pour naviguer sur Internet. Maintenant, avec la généralisation des écrans OLED dont chaque pixel définit sa propre consommation d’énergie, opter pour des couleurs sombres ou des pixels éteins, permet de réduire la consommation énergétique des écrans. Tout comme utiliser trop de bleu aura un impact négatif, car il s’agit de la couleur la plus énergivore. Attention, cela ne vaut pas pour les écrans LCD qui composent encore la majorité des écrans de nos internautes.
+
+## Pour conclure
+
+Si vous optez pour un hébergement vert, que vous optimisez la puissance de calcule nécessaire à faire tourner votre site et que tous vos choix ont pris en compte l’impact écologique qu’ils auront, alors vous êtes dans la bonne direction !
+
+Cela peut toutefois sembler anecdotique dans un projet, loin derrière les enjeux de conversions, de référencement ou d’accessibilité. Maintenant, il est de notre responsabilité de tout mettre en œuvre pour limiter notre impact écologique et sortir de cette crise. Après, il ne s’agit pas non plus d’être naïf, **le site le plus écologique du monde sera toujours celui qui n’existe pas**, donc réfléchissez aux bienfaits potentiels et indirects sur le climat avant de démarrer un projet.
+

@@ -1,0 +1,164 @@
+---
+  title: "Understanding Next/Image"
+  date: "2021-04-05T13:26:39Z"
+  description: "With Next.js version 10, a new image component was introduced to offer modern format and on-demand optimisation for images as well. If you came from Gatsby, it's the Next.js answer to gastby-image and it just rocks!"
+---
+
+
+With Next.js version 10, a new image component was introduced to offer modern format and on-demand optimisation for images as well. If you came from Gatsby, it's the Next.js answer to gastby-image and it just rocks!
+
+> Images are always rendered in such a way as to avoid [Cumulative Layout Shift](https://web.dev/cls/), a [Core Web Vital](https://web.dev/vitals/) that Google is going to [use in search ranking](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html).
+
+Weirdly, it's so simple and magic that I was struggling to know how to use it. Also, the doc is not great to really understand how it works and to advise you to the most common practice: responsive user interface.
+
+## Let's dive in
+
+If you read the short [documentation page](https://nextjs.org/docs/api-reference/next/image) about `next/image` , the only example you will see is basically this one.
+
+```jsx
+<Image
+  src="/my-16-by-9-big-image.jpg"
+  alt="Picture of something nice"
+  width={1000}
+  height={1000}
+/>
+```
+
+It's an easy mistake to think that our output will be a 1000 by 1000 pixels image (and a 2x for retina), **but instead we've got a 1080 × 608 pixels image stretched in a square**... So before going further, we need to understand few concepts about this component.
+
+### The layouts
+
+There is four different layout available for your `<Picture />` :
+
+- `layout="intrinsic"` is the default value; it's basically a CSS `max-width`. In our example, the image will be 1000 pixels wide on desktop and will fit to its parent width on mobile, but the **resolution will not change, only the displayed size**.
+- `layout="fixed"` is pretty self-explanatory; just like a CSS `width`, the image will be displayed in the defined sizes without any resizing. Here 1000 by 1000 pixels, but the resolution is still 1080 × 608 pixels.
+- `layout="responsive"` is the magic and maybe **the main one to remember**, because we are in 2021 and performances matter. This time it's more like a CSS `width: 100%;`, but unlike the first two above, it will provide a large number of different resolutions in the `srcset` output.
+- `layout="fill"` is useful when you don't want (and don't need) to define a `width` and a `height`. It's a standard CSS `object-fit`. For this variant only, you will be able to add the extra `objectFit` and `objectPosition` properties to your component; they work just like the related CSS specification. It also provides a responsive `srcset`.
+
+What you must remember:
+
+- The `width` and `height` properties must match your image ratio, unless you are using `layout="fill"`
+- `intrinsic` (by default) and `fixed` are used for static resolutions and `responsive` and `fill` for responsive resolutions.
+- If you know the image size, use `responsive` and if you don't, use `fill`
+
+### The resolutions
+
+As you can see in our example, the resolution doesn't quite match the size. It's because there are two *options in your `next.config.js` that you must be aware of:
+
+- `deviceSizes` are large breakpoints
+- `imageSizes` are small breakpoints
+
+By default, these options are set this way:
+
+```jsx
+module.exports = {
+  images: {
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+}
+```
+
+These two arrays are merged to form a complete collection of potential widths. So, if like me, you want a picture resized precisely to 1000 by 1000 px (and 2000 for retina), these sizes must be present in the `deviceSizes` array.
+
+** There are also other options to [allow external images](https://nextjs.org/docs/basic-features/image-optimization#domains) or to [define a custom loader](https://nextjs.org/docs/basic-features/image-optimization#loader).* 
+
+### Other available props
+
+Apart from the main things to know when using `next/image`, there are some useful properties to be aware of:
+
+- `loader` is useful to pass a loader component
+- `sizes` is to override the default sizes of `100vw`, useful only when `layout="responsive"` or `layout="fill"` are defined
+- `quality` can be used to override the default quality of `75`
+- `priority` must be used only when the image is visible above the fold. It's `false` by default.
+- `loading` is `lazy` by default, but can be changed to `eager` to force an immediate loading.
+- `unoptimized` if you want something close to the default `<img />` behaviour.
+- You can also use `style`, `srcSet` and `decoding` to directly target the `<img />`
+
+## Examples
+
+Now that we better understand how `next/image` works and how it can be configured, here is some real-life examples.
+
+### Classic responsive
+
+Example of a responsive image inside a blog post content.
+
+```jsx
+<Image
+  src="/my-16-by-9-big-image.jpg"
+  alt="Picture of something nice"
+  width={800}
+  height={450}
+  layout="responsive"
+  quality={65}
+/>
+{/* Or for the same result */}
+<Image
+  src="/my-16-by-9-big-image.jpg"
+  alt="Picture of something nice"
+  width={16}
+  height={9}
+  layout="responsive"
+  quality={65}
+/>
+```
+
+### Automatic responsive
+
+As we quickly saw earlier, the `size` property is `100vw` by default. If you want a perfect match to your image size, you can use something like [react-cool-dimensions](https://github.com/wellyshen/react-cool-dimensions) and wrap the `<Picture />` into a new component.
+
+```jsx
+import React from 'react';
+import useDimensions from 'react-cool-dimensions';
+import Image from 'next/image';
+
+export default (props): JSX.Element => {
+  const { observe, width } = useDimensions<HTMLDivElement | null>();
+
+  return (
+    <div ref={observe}>
+      <Image
+        {...props}
+        layout="responsive"
+        quality={65}
+        sizes={width !== undefined ? `${Math.round(width)}px` : '100vw'}
+      />
+    </div>
+  );
+};
+```
+
+### Unknown/variable size with fixed ratio
+
+Sometimes pictures came from an outside source (CMS, APIs, etc) and the image size (width, height) is not available or the ratio can vary. For this case, the `layout="fill"` is very useful with something like [@tailwindcss/aspect-ratio](https://github.com/tailwindlabs/tailwindcss-aspect-ratio).
+
+```jsx
+<div className="aspect-w-16 aspect-h-9">
+  <Image
+    src="/my-big-variable-image.jpg"
+    alt="Picture of something nice"
+    layout="fill"
+    objectFit="cover"
+  />
+</div>
+```
+
+### Unknown/variable size with variable ratio
+
+Sadly for the moment, **there is no way to respect an image ratio without knowing its width and height** or at least, its ratio. You can still define an area where the image will be rendered without crop. For example, here, inside a gray square.
+
+```jsx
+<div className="aspect-w-1 aspect-h-1 bg-gray-100">
+  <Image
+    src="/my-big-variable-image.jpg"
+    alt="Picture of something nice"
+    layout="fill"
+    objectFit="contain"
+  />
+</div>
+```
+
+## Conclusion
+
+`next/image` is a great add to the Next.js ecosystem, especially for people coming from Gatsby. It provides a very simple way to add the responsive layers to your images without any complicated backend configuration. It's another great example of the capabilities of clients to manage the media from a frontend perspective. Let your backend deal with the sources images and let your client application deal with the size needed by the consumers.
+
