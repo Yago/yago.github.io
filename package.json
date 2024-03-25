@@ -6,7 +6,7 @@
     "icons:build": "svg-sprite -s --symbol-inline --symbol-dest public --symbol-sprite icons.svg src/assets/icons/*.svg",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "npm run contribs:update && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint:js": "eslint --ext js,jsx,ts,tsx,astro ./ --max-warnings=0",
