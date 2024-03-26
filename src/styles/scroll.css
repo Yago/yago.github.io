@@ -3,7 +3,7 @@
 }
 
 
-@media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) and (min-width: 762px) {
   .scroll-fade-in {
     opacity: 0;
     transform: translateY(150px); 

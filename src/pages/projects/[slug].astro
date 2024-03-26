@@ -38,15 +38,15 @@ const {
   <Breadcrumb
     crumbs={[{ href: '/projects', label: 'Projects' }, { label: title }]}
   />
-  <div class="flex flex-col-reverse mt-20 md:flex-row md:pl-20 lg:pl-32">
+  <div
+    class="flex flex-col-reverse mt-20 md:flex-row md:pl-20 lg:pl-32 motion-safe:animate-fadeInTop"
+  >
     <article class="w-full md:w-3/5 lg:w-1/2">
-      <h1
-        class="text-3xl font-medium text-gray-900 md:text-4xl lg:text-5xl motion-safe:animate-fadeInTop"
-      >
+      <h1 class="text-3xl font-medium text-gray-900 md:text-4xl lg:text-5xl">
         {title}
       </h1>
       <h2
-        class="mt-3 text-xl font-medium text-gray-500 md:text-2xl lg:text-3xl motion-safe:animate-fadeInTop"
+        class="mt-3 text-xl font-medium text-gray-500 md:text-2xl lg:text-3xl"
       >
         {subtitle}
       </h2>
