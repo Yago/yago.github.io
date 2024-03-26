@@ -1,5 +1,5 @@
 /**
- * Hydrate on first click on the window
+ * Hydrate on first click on a given id
  * @type {import('astro').ClientDirective}
  */
 export default (load, opts, el) => {

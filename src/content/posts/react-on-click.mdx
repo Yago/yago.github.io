@@ -1,0 +1,89 @@
+---
+  title: "Load React on click"
+  date: "2024-03-26T19:08:36Z"
+  description: "Learn more about Astro directives and how to create a custom one to load a React component by the click of a button."
+---
+
+Oops, I've recoded my website again! I've recently been using Astro, not because Next.js is outdated, but because Astro seems increasingly suitable for this type of presentational website.
+
+Anyway, even if my goal is to ship the more performant site possible with the less JavaScript possible, I still have some JavaScript components that need to be loaded, like the terminal, accessible in the header above. It was previously a React component and I choose to keep it. But I don't want to make everybody load React.js if they don't plan to use this component.
+
+## Directives
+
+By default and thanks to the sweet [Island Architecture](https://docs.astro.build/en/concepts/islands/) approach, Astro provide [hydration directives](https://docs.astro.build/en/reference/directives-reference/#client-directives) to control when the UI Framework component will be loaded by the user. At page load (`client:load`), when the browser is idle (`client:idle`), when the component is visible in the viewport (`client:visible`), for certain contexts (`client:media`) or even only in the client without any build/server side pre-rendering (`client:only`).
+
+## Custom directive
+
+In my case, none of these scenarios suit my needs. I want the users to load my terminal component only if they want to use it, so when they click on the terminal toggle button. Fortunately, Astro allows custom directives!
+
+First you need to create your directives logic:
+
+```js
+/* directives/astro-click-directive/click.js */
+
+/**
+ * Hydrate on first click on a given id
+ * @type {import('astro').ClientDirective}
+ */
+export default (load, opts, el) => {
+  document.getElementById(opts.value)?.addEventListener('click', async () => {
+    const hydrate = await load()
+    await hydrate()
+  }, { once: true })
+}
+```
+
+Then the register:
+
+```js
+/* directives/astro-click-directive/register.js */
+
+/**
+ * @type {() => import('astro').AstroIntegration}
+ */
+export default () => ({
+  name: "client:click",
+  hooks: {
+    "astro:config:setup": ({ addClientDirective }) => {
+      addClientDirective({
+        name: "click",
+        entrypoint: "./directives/astro-click-directive/click.js",
+      });
+    },
+  },
+});
+```
+
+The optional TypeScript declaration:
+
+```ts
+/* directives/astro-click-directive/index.d.ts */
+
+import 'astro'
+declare module 'astro' {
+  interface AstroClientDirectives {
+    'client:click'?: boolean
+  }
+}
+```
+
+And finally, just import it to your Astro configuration file:
+
+```js
+/* astro.config.mjs */
+
+import { defineConfig } from 'astro/config';
+import clickDirective from './directives/astro-click-directive/register.js'
+
+export default defineConfig({
+  integrations: [clickDirective()],
+});
+```
+
+To use it, simply add the new directive to any UI Framework component:
+
+```jsx
+<TerminalReact client:click="toggle-terminal" />
+```
+
+In this case, the component, including React.js, will only be loaded if the user clicks on the terminal toggle button. No more waste of resources!
