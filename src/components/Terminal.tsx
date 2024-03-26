@@ -13,10 +13,10 @@ import {
 const Terminal = (): JSX.Element | null => {
   if (typeof window === 'undefined') return null;
 
-  const { tree: treeConfig, path: currentPath } = document.getElementById(
+  const { tree: treeConfig, path: currentPathRaw } = document.getElementById(
     'terminal-props'
   )?.dataset as { tree: string; path: string };
-  console.log(currentPath);
+  const currentPath = currentPathRaw.replace(/\/$/g, '');
   const tree = JSON.parse(treeConfig) as string[];
 
   // react-terminal-component theme options
