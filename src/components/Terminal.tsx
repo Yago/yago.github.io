@@ -16,6 +16,7 @@ const Terminal = (): JSX.Element | null => {
   const { tree: treeConfig, path: currentPath } = document.getElementById(
     'terminal-props'
   )?.dataset as { tree: string; path: string };
+  console.log(currentPath);
   const tree = JSON.parse(treeConfig) as string[];
 
   // react-terminal-component theme options
@@ -36,11 +37,11 @@ const Terminal = (): JSX.Element | null => {
   const help = `A good reflex to see your options here.
 So those are some of the available commands :
 
-  pwd             Print the current path
-  ls              List directory contents
-  open [path]     Go to path 
-  contact         Get my contact information
-  secret          Learn a small secret
+pwd             Print the current path
+ls              List directory contents
+open [path]     Go to path 
+contact         Get my contact information
+secret          Learn a small secret
   `;
 
   const simpleOutput = (str: string) => ({
@@ -62,10 +63,10 @@ So those are some of the available commands :
     commandMapping: CommandMapping.create({
       ...defaultCommandMapping,
       ll: defaultCommandMapping.ls,
-      ps: simpleOutput('Someone here is a bit too curius!'),
+      ps: simpleOutput('Someone here is a bit too curious!'),
       rm: simpleOutput("Do you want to destroy my life's work? 😥"),
       touch: simpleOutput(
-        "File successfully created !\n\nNo, I'm just kidding 😆"
+        "File successfully created!\n\nNo, I'm just kidding 😆"
       ),
       vim: simpleOutput('Edition not permitted. You only have read access.'),
       vi: simpleOutput('Edition not permitted. You only have read access.'),
