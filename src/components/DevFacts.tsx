@@ -111,8 +111,9 @@ const DevFacts = (): JSX.Element => (
             rel="noopener noreferrer"
             className="my-3 text-gray-600 transition-colors duration-200 hover:text-indigo"
           >
+            <span className="sr-only">{lib.icon} icon</span>
             <svg
-              className="relative inline-flex items-center self-center justify-center text-4xl icon"
+              className="relative inline-flex items-center self-center justify-center !text-4xl icon"
               aria-hidden="true"
             >
               <use xlinkHref={`/icons.svg#${lib.icon}`} />
