@@ -1,6 +1,7 @@
 ---
-import type { Post } from '@/content/config';
 import { format, parseISO } from 'date-fns';
+
+import type { Post } from '@/content/config';
 
 type Props = {
   href: string;
@@ -9,16 +10,21 @@ type Props = {
 
 const { href, post }: Props = Astro.props;
 ---
+
 <a href={href} class="link-wrapper group">
   <div class="flex items-baseline">
     <h3 class="text-xl font-medium md:text-3xl link-inner">
       {post.title}
     </h3>
-    <span class="pl-2 transition-opacity duration-200 opacity-50 md:text-lg group-hover:opacity-100">
+    <span
+      class="pl-2 opacity-50 transition-opacity duration-200 md:text-lg group-hover:opacity-100 whitespace-nowrap"
+    >
       — {format(parseISO(post.date), 'PPP')}
     </span>
   </div>
-  <p class="mt-2 font-serif text-lg leading-7 transition-opacity duration-200 opacity-50 md:text-2xl md:leading-9 group-hover:opacity-100">
+  <p
+    class="mt-2 font-serif text-lg opacity-50 leading-7 transition-opacity duration-200 md:text-2xl md:leading-9 group-hover:opacity-100"
+  >
     {post.description}
   </p>
 </a>
