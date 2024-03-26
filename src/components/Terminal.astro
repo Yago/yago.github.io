@@ -1,32 +1,35 @@
 ---
 import { getCollection } from 'astro:content';
-import TerminalReact from '@/components/Terminal'
-import type { Tree } from '@/types';
 import { isNotNil } from 'ramda';
+
+import TerminalReact from '@/components/Terminal';
+import type { Tree } from '@/types';
 
 const currentPath = Astro.url.pathname;
 const posts = await getCollection('posts');
 const projects = await getCollection('projects');
 
 const tree: Tree = [
-  { "path": "/projects" },
-  { "path": "/blog" },
-  ...posts.map((post) => ({
-    path: `/blog/${post.slug}`,
-  })),
-  ...projects.map((project) => ({
-    path: `/projects/${project.slug}`,
-  })),
-]
+  '/projects',
+  '/blog',
+  ...posts.map(post => `/blog/${post.slug}`),
+  ...projects.map(project => `/projects/${project.slug}`),
+];
 ---
+
 <div id="terminal" class="w-full h-full">
-  <div id="terminal-props" data-tree={JSON.stringify(tree, null, 2)} data-path={currentPath} />
+  <div
+    id="terminal-props"
+    data-tree={JSON.stringify(tree)}
+    data-path={currentPath}
+   />
   <TerminalReact client:click="toggle-terminal" />
 </div>
 
 <style is:global>
   .terminalContainer {
-    font-family: 'Fira Code VF', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace !important;
+    font-family: 'Fira Code VF', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
+      'Liberation Mono', 'Courier New', monospace !important;
     line-height: 1.5rem !important;
     padding: 2rem !important;
     overflow-y: auto !important;
@@ -45,7 +48,8 @@ const tree: Tree = [
 
   .terminalContainer .terminalInput input,
   .terminalContainer .terminalInput input:focus {
-    font-family: 'Fira Code VF', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace !important;
+    font-family: 'Fira Code VF', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
+      'Liberation Mono', 'Courier New', monospace !important;
     box-shadow: none !important;
     outline: none !important;
     padding: 0 0.25em !important;

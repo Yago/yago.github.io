@@ -5,11 +5,10 @@ import {
   defaultCommandMapping,
   EmulatorState,
   EnvironmentVariables,
+  EnvVariableUtil,
   FileSystem,
   OutputFactory,
 } from 'javascript-terminal';
-
-import type { Tree } from '@/types';
 
 const Terminal = (): JSX.Element | null => {
   if (typeof window === 'undefined') return null;
@@ -17,7 +16,7 @@ const Terminal = (): JSX.Element | null => {
   const { tree: treeConfig, path: currentPath } = document.getElementById(
     'terminal-props'
   )?.dataset as { tree: string; path: string };
-  const tree = JSON.parse(treeConfig) as Tree;
+  const tree = JSON.parse(treeConfig) as string[];
 
   // react-terminal-component theme options
   const theme = {
@@ -53,7 +52,7 @@ So those are some of the available commands :
   const defaultEnvVariables = defaultState.getEnvVariables();
   const customState = EmulatorState.create({
     fs: FileSystem.create(
-      tree.reduce((acc, val) => ({ ...acc, [val.path]: val }), {})
+      tree.reduce((acc, val) => ({ ...acc, [val]: {} }), {})
     ),
     environmentVariables: EnvironmentVariables.setEnvironmentVariable(
       defaultEnvVariables,
@@ -84,9 +83,6 @@ So those are some of the available commands :
         function: (state: any, opts: any) => {
           const cwd = state.getEnvVariables('cwd').get('cwd') as string;
           const isGlobal = opts[0].charAt(0) === '/';
-
-          // console.log('cwd', cwd);
-          // console.log('isGlobal', isGlobal);
 
           let path =
             opts[0] === '.' ? cwd : `${cwd === '/' ? '' : cwd}/${opts[0]}`;
