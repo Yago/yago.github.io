@@ -25,9 +25,9 @@ const Terminal = (): JSX.Element | null => {
   // react-terminal-component theme options
   const theme = {
     background: 'transparent',
-    promptSymbolColor: '#22E922',
-    commandColor: '#fcfcfc',
-    outputColor: '#fcfcfc',
+    promptSymbolColor: 'var(--terminal-symbol)',
+    commandColor: 'var(--terminal-fg)',
+    outputColor: 'var(--terminal-fg)',
     errorOutputColor: '#FF1479',
     fontSize: '16px',
     spacing: '10%',

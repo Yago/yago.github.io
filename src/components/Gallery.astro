@@ -164,7 +164,7 @@ const { images, type = 'post' }: Props = Astro.props;
       appendTo: 'root',
       html: 'Caption text',
       className:
-        'fixed bottom-0 left-0 right-0 p-4 text-black text-center bg-white text-sm',
+        'fixed bottom-0 left-0 right-0 p-4 text-black dark:text-white text-center bg-white dark:bg-black text-sm',
       onInit: el => {
         lightbox.pswp?.on('change', () => {
           const currSlideElement = lightbox.pswp?.currSlide?.data.element;

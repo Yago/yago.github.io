@@ -11,7 +11,10 @@ import react from "@astrojs/react";
 export default defineConfig({
   markdown: {
     shikiConfig: {
-      theme: 'night-owl',
+      themes: {
+        light: 'night-owl',
+        dark: 'catppuccin-latte',
+      },
       langs: ['apache', 'bash', 'css', 'html', 'javascript', 'js', 'json', 'jsx', 'markdown', 'php', 'ruby', 'scss', 'shell', 'typescript'],
       wrap: false,
       transformers: [],

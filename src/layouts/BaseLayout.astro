@@ -116,7 +116,7 @@ const titleSuffix = ' | Yann Gouffon, senior web developer';
   </head>
   <body
     x-data="{ menuOpen: false, terminalOpen: false }"
-    class="min-h-screen text-xl antialiased bg-white dark:!bg-black"
+    class="min-h-screen text-xl antialiased bg-white dark:!bg-gray-950 transition-colors"
     x-bind:class="(menuOpen || terminalOpen) && 'overflow-hidden'"
   >
     <div class="w-full">
@@ -137,7 +137,7 @@ const titleSuffix = ' | Yann Gouffon, senior web developer';
       x-transition:leave-start="translate-x-0"
       x-transition:leave-end="translate-x-full"
       style={{ display: 'none' }}
-      class="fixed bottom-0 right-0 z-50 w-full text-white md:inset-y-0 md:w-1/2 bg-gray-950 transform transition-transform duration-700 top-[66px]"
+      class="fixed bottom-0 right-0 z-50 w-full text-white dark:text-black md:inset-y-0 md:w-1/2 bg-gray-950 dark:bg-gray-50 transform transition-transform duration-700 top-[66px]"
     >
       <div
         x-show="menuOpen"

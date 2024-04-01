@@ -1,8 +1,7 @@
 ---
-import { cm } from '@/utils';
-
-import Icon from '@/components/Icon.astro';
 import Divider from '@/components/Divider.astro';
+import Icon from '@/components/Icon.astro';
+import { cm } from '@/utils';
 
 const currentPath = Astro.url.pathname;
 const socials = [
@@ -42,26 +41,26 @@ const socials = [
 >
   <Divider icon="drakar" />
 </div>
-<footer class="mb-20 text-center ">
-  <p class="mt-20 font-serif text-xl md:text-2xl">
-    Let's keep in touch !
-  </p>
+<footer class="mb-20 text-center">
+  <p class="mt-20 font-serif text-xl md:text-2xl">Let's keep in touch !</p>
 
   <div class="flex flex-wrap items-center justify-center mt-8 space-x-12">
-    {socials.map(social => (
-      <a
-        href={social.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mb-6 md:text-lg text-blue whitespace-nowrap link"
-      >
-        <Icon
-          name={social.icon}
-          className="mr-1 text-lg text-gray-900"
-        />
-        <span> {social.label}</span>
-      </a>
-    ))}
+    {
+      socials.map(social => (
+        <a
+          href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mb-6 md:text-lg text-blue dark:text-teal whitespace-nowrap link"
+        >
+          <Icon
+            name={social.icon}
+            className="mr-1 text-lg text-gray-900 dark:text-gray-100"
+          />
+          <span> {social.label}</span>
+        </a>
+      ))
+    }
   </div>
 
   <p class="mt-2 text-gray-600 md:text-lg">
@@ -73,7 +72,7 @@ const socials = [
         href="https://github.com/Yago/yago.github.io"
         target="_blank"
         rel="noopener noreferrer"
-        class="link text-blue"
+        class="link text-blue dark:text-teal"
       >
         take a look at the code
       </a>of this website

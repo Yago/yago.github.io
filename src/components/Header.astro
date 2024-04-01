@@ -1,11 +1,33 @@
 ---
 import { range } from 'ramda';
+
+import Icon from '@/components/Icon.astro';
 ---
 
 <header class="flex items-center space-x-4">
   <a href="/" class="block w-8 ml-0 mr-auto md:w-12">
-    <img class="w-full" src="/svg/yago.svg" alt="Yago.io brand" />
+    <img class="w-full dark:hidden" src="/svg/yago.svg" alt="Yago.io brand" />
+    <img
+      class="hidden w-full dark:inline"
+      src="/svg/yago-clear.svg"
+      alt="Yago.io brand"
+    />
   </a>
+
+  <button
+    type="button"
+    @click="document.documentElement.classList.toggle('dark')"
+    class="h-5 transition-transform w-7 dark:text-white hover:scale-110 active:rotate-[720deg] hover:rotate-45 translate-y-[-2px] -translate-x-2 lg:-translate-x-3"
+  >
+    <Icon
+      name="moon"
+      className="inline-block text-xl dark:hidden lg:text-[25px] translate-y-[-3px]"
+    />
+    <Icon
+      name="sun"
+      className="hidden text-xl dark:inline-block lg:text-[25px] translate-y-[-3px]"
+    />
+  </button>
 
   <button
     id="toggle-terminal"
@@ -14,29 +36,29 @@ import { range } from 'ramda';
     @click="terminalOpen = !terminalOpen; menuOpen = false"
     @mouseenter="hover = true"
     @mouseleave="hover = false"
-    class="block h-5 transition-transform duration-300 transform scale-75 cursor-pointer w-9 md:scale-100 focus:outline-none"
+    class="block h-5 cursor-pointer transition-transform duration-300 transform scale-75 w-9 md:scale-100 focus:outline-none"
   >
     <span class="sr-only">Toggle terminal</span>
     <span
-      class="block w-3 h-3 border-black mt-0.5 -ml-0.5 border-r-3 border-b-3 transform -rotate-45 duration-300 transition-transform"
+      class="block w-3 h-3 border-black dark:border-white mt-0.5 -ml-0.5 border-r-3 border-b-3 transform -rotate-45 duration-300 transition-transform"
       x-bind:class="{ '-translate-x-2': hover, 'rotate-135 translate-x-7': terminalOpen}"
      />
     <span
-      class="block w-4 mx-auto bg-black mt-0.5 duration-300 transition-transform transform h-[3px]"
+      class="block w-4 mx-auto bg-black dark:bg-white mt-0.5 duration-300 transition-transform transform h-[3px]"
       x-bind:class="hover && 'translate-y-1'" />
   </button>
 
   <button
     type="button"
     @click="menuOpen = !menuOpen; terminalOpen = false"
-    class="block h-5 transition-transform duration-300 transform scale-75 cursor-pointer w-7 md:scale-100 focus:outline-none group"
+    class="block h-5 cursor-pointer transition-transform duration-300 transform scale-75 w-7 md:scale-100 focus:outline-none group"
     x-bind:class="menuOpen && 'rotate-135'"
   >
     <span class="sr-only">Toggle navigation</span>
     {
       range(0, 3).map(i => (
         <span
-          class="block mx-auto bg-black w-7 transform duration-300 transition-transform h-[3px] mb-[5px]"
+          class="block mx-auto bg-black dark:bg-white w-7 transform duration-300 transition-transform h-[3px] mb-[5px]"
           x-bind:class={
             // eslint-disable-next-line no-nested-ternary
             i === 0

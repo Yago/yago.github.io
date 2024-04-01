@@ -6,6 +6,7 @@ module.exports = {
       black: '#000',
       white: '#fff',
       gray: {
+        50: '#f4f6fe',
         100: '#f8f9fa',
         200: '#e9ecef',
         300: '#dee2e6',
@@ -21,7 +22,10 @@ module.exports = {
       red: '#D00000',
       orange: '#F48C06',
       yellow: '#FFBA08',
-      green: '#67d15a',
+      green: {
+        DEFAULT: '#67d15a',
+        dark: '#40AA33',
+      },
       indigo: '#9a86fd',
       teal: '#50E3C2',
     },

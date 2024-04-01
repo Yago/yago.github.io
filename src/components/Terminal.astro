@@ -27,6 +27,16 @@ const tree: Tree = [
 </div>
 
 <style is:global>
+  :root {
+    --terminal-fg: #fcfcfc;
+    --terminal-symbol: #22e922;
+  }
+
+  .dark {
+    --terminal-fg: #080808;
+    --terminal-symbol: #0002fc;
+  }
+
   .terminalContainer {
     font-family: 'Fira Code VF', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
       'Liberation Mono', 'Courier New', monospace !important;
@@ -43,7 +53,7 @@ const tree: Tree = [
   }
 
   .terminalContainer .terminalInput span {
-    color: #67d15a !important;
+    color: var(--terminal-symbol) !important;
   }
 
   .terminalContainer .terminalInput input,
@@ -56,7 +66,7 @@ const tree: Tree = [
     padding-left: 0 !important;
     background: transparent !important;
     border: none !important;
-    color: #fcfcfc !important;
+    color: var(--terminal-fg) !important;
   }
 
   .terminalContainer .terminalOutput > div {

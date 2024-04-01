@@ -42,7 +42,9 @@ const {
     class="flex flex-col-reverse mt-20 md:flex-row md:pl-20 lg:pl-32 lg:motion-safe:animate-fadeInTop"
   >
     <article class="w-full md:w-3/5 lg:w-1/2">
-      <h1 class="text-3xl font-medium text-gray-900 md:text-4xl lg:text-5xl">
+      <h1
+        class="text-3xl font-medium text-gray-900 dark:text-gray-100 md:text-4xl lg:text-5xl"
+      >
         {title}
       </h1>
       <h2
@@ -63,7 +65,7 @@ const {
                       href={agency.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="link text-blue"
+                      class="link text-blue dark:text-teal"
                     >
                       {agency.name}
                     </a>
@@ -80,7 +82,7 @@ const {
                       href={open_source.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="link text-blue"
+                      class="link text-blue dark:text-teal"
                     >
                       {open_source.name}
                     </a>
@@ -123,7 +125,7 @@ const {
                       href={visit.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="link text-blue"
+                      class="link text-blue dark:text-teal"
                     >
                       {visit.label}
                     </a>
@@ -134,7 +136,9 @@ const {
           </tbody>
         </table>
 
-        <div class="mt-12 font-serif prose prose-lg md:prose-xl lg:prose-2xl">
+        <div
+          class="mt-12 font-serif prose prose-lg md:prose-xl lg:prose-2xl dark:text-gray-200"
+        >
           <Content />
         </div>
       </div>
