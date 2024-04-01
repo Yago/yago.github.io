@@ -65,7 +65,7 @@ const DevFacts = (): JSX.Element => (
             </code>
           </pre>
 
-          <div className="mt-16 dark:text-gray-900">
+          <div className="hidden mt-16 dark:text-gray-900">
             <CalendarHeatmap
               startDate={format(sub(new Date(), { years: 1 }), 'yyyy-MM-dd')}
               classForValue={(value: Contrib): string => {
