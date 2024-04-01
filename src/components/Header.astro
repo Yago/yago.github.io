@@ -17,15 +17,15 @@ import Icon from '@/components/Icon.astro';
   <button
     type="button"
     @click="document.documentElement.classList.toggle('dark')"
-    class="h-5 transition-transform w-7 dark:text-white hover:scale-110 active:rotate-[720deg] hover:rotate-45 translate-y-[-2px] -translate-x-2 lg:-translate-x-3"
+    class="h-5 transition-transform w-7 dark:text-white hover:scale-110 active:rotate-[720deg] hover:rotate-45 translate-y-[-2px] lg:-translate-x-2 lg:-translate-x-3"
   >
     <Icon
       name="moon"
-      className="inline-block text-xl dark:hidden lg:text-[25px] translate-y-[-3px]"
+      className="inline-block !text-[16px] dark:hidden lg:text-[25px] translate-y-[-1px] lg:translate-y-[-3px]"
     />
     <Icon
       name="sun"
-      className="hidden text-xl dark:inline-block lg:text-[25px] translate-y-[-3px]"
+      className="hidden !text-[16px] dark:inline-block lg:text-[25px] translate-y-[-1px] lg:translate-y-[-3px]"
     />
   </button>
 
