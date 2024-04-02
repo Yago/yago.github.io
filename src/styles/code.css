@@ -44,7 +44,7 @@
 .astro-post a > code,
 .astro-post li > code,
 .astro-post ul > code {
-  @apply lg:text-lg bg-gray-200 dark:bg-gray-800 px-1 py-0.5 rounded font-normal !important;
+  @apply text-sm lg:text-lg bg-gray-200 dark:bg-gray-800 px-1 py-0.5 rounded font-normal !important;
 }
 
 html.dark .astro-code:not(.astro-code-hardcoded),
