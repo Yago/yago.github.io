@@ -1,7 +1,6 @@
 import React from 'react';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import { PieChart } from 'react-minimal-pie-chart';
-import { format, sub } from 'date-fns';
 
 import contribs from '@/config/contribs.json';
 import librairies from '@/config/librairies.json';
@@ -65,17 +64,17 @@ const DevFacts = (): JSX.Element => (
             </code>
           </pre>
 
-          <div className="hidden mt-16 dark:text-gray-900">
+          <div className="mt-16 dark:text-gray-900">
             <CalendarHeatmap
-              startDate={format(sub(new Date(), { years: 1 }), 'yyyy-MM-dd')}
+              startDate={new Date(contribs[0].date)}
+              endDate={new Date(contribs.at(-1)?.date ?? '')}
               classForValue={(value: Contrib): string => {
                 if (!value) {
                   return 'contrib-empty';
                 }
                 return `contrib-${value.intensity}`;
               }}
-              endDate={format(new Date(), 'yyyy-MM-dd')}
-              values={contribs.contributions}
+              values={contribs}
               showWeekdayLabels
               weekdayLabels={['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}
             />
