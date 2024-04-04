@@ -109,6 +109,20 @@ secret          Learn a small secret
         },
         optDef: {},
       },
+      history: simpleOutput(
+        `
+Here is a list of all the previous versions of this website (all statically exported):
+
+├── 2009.yago.io (plain HTML/CSS/JS)
+├── 2010.yago.io (plain HTML/CSS/JS)
+├── 2011.yago.io (Flash AS3, good luck to view it ^^')
+├── 2012.yago.io (PHP)
+├── 2014.yago.io (Pico CMS)
+├── 2016.yago.io (Metalsmith)
+├── 2019.yago.io (Gatsby)
+└── 2022.yago.io (Next.js)
+        `
+      ),
     }),
   });
 
