@@ -117,9 +117,10 @@ Here is a list of all the previous versions of this website (all statically expo
 ├── 2010.yago.io (plain HTML/CSS/JS)
 ├── 2011.yago.io (Flash AS3, good luck to view it ^^')
 ├── 2012.yago.io (PHP)
+├── 2013 lost forever (Anchor CMS)
 ├── 2014.yago.io (Pico CMS)
-├── 2016.yago.io (Metalsmith)
-├── 2019.yago.io (Gatsby)
+├── 2016.yago.io (Metalsmith.js)
+├── 2019.yago.io (Gatsby.js)
 └── 2022.yago.io (Next.js)
         `
       ),
