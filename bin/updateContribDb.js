@@ -3,6 +3,7 @@
 import fs from 'fs-extra';
 import path from 'path';
 import { gql, GraphQLClient } from 'graphql-request';
+import 'dotenv/config';
 
 const getIntensity = (level) => {
   switch (level) {

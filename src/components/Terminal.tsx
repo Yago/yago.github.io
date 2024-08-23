@@ -5,7 +5,6 @@ import {
   defaultCommandMapping,
   EmulatorState,
   EnvironmentVariables,
-  EnvVariableUtil,
   FileSystem,
   OutputFactory,
 } from 'javascript-terminal';
