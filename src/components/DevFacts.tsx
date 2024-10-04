@@ -13,13 +13,13 @@ type Contrib = {
 
 const pieData = [
   { title: 'CSS', value: 2, color: '#F48C06' },
-  { title: 'JSON', value: 1, color: '#E85D04' },
-  { title: 'Twig', value: 1, color: '#DC2F02' },
+  { title: 'Twig', value: 2, color: '#E85D04' },
+  { title: 'JSON', value: 1, color: '#DC2F02' },
   { title: 'HTML', value: 1, color: '#D00000' },
   { title: 'Markdown', value: 1, color: '#9D0208' },
   { title: 'Other', value: 2, color: '#870614' },
-  { title: 'JS/JSX', value: 4, color: '#FFBA08' },
-  { title: 'TS/TSX', value: 5, color: '#FAA307' },
+  // { title: 'JS/JSX', value: 8, color: '#FAA307' },
+  { title: 'TS/TSX', value: 8, color: '#FFBA08' },
 ];
 
 const DevFacts = (): JSX.Element => (
@@ -50,7 +50,7 @@ const DevFacts = (): JSX.Element => (
               <span className="block line">
                 <span> "editor"</span>
                 <span>: </span>
-                <span>"VSCode"</span>
+                <span>"Cursor"</span>
                 <span>,</span>
               </span>
               <span className="block line">
@@ -115,7 +115,7 @@ const DevFacts = (): JSX.Element => (
               className="relative inline-flex items-center self-center justify-center !text-4xl icon"
               aria-hidden="true"
             >
-              <use xlinkHref={`/icons.svg#${lib.icon}`} />
+              <use href={`/icons.svg#${lib.icon}`} />
             </svg>
           </a>
         ))}

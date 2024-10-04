@@ -1,4 +1,5 @@
 export type IconNames =
+  | 'alpine'
   | 'astro'
   | 'bun'
   | 'deno'
@@ -14,6 +15,7 @@ export type IconNames =
   | 'github'
   | 'graphql'
   | 'gulp'
+  | 'htmx'
   | 'igloo'
   | 'instagram'
   | 'ionic'

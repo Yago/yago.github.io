@@ -26,8 +26,9 @@
 @layer components {
   .link-wrapper .link-inner,
   .link,
-  .astro-post a {
-    @apply inline no-underline transition-all duration-200 cursor-pointer bg-gradient-to-r from-blue to-teal;
+  .astro-post a,
+  .astro-project-content a {
+    @apply inline no-underline bg-gradient-to-r transition-all duration-200 cursor-pointer from-blue to-teal;
     background-size: 0 1px;
     background-repeat: no-repeat;
     background-position: left 94%;
@@ -36,7 +37,8 @@
 
   .link-wrapper:hover .link-inner,
   .link:hover,
-  .astro-post a:hover {
+  .astro-post a:hover,
+  .astro-project-content a:hover {
     background-size: 100% 1px;
   }
 }
