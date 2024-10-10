@@ -1,0 +1,156 @@
+---
+  title: "Your first RAG POC"
+  date: "2024-08-24T19:08:36Z"
+  description: "Learn more about RAGs and how to implement a simple POC."
+---
+
+*Disclaimer*: The following post is not intended for production use. As the title suggests, it's the simplest possible JavaScript proof of concept for implementing a locally functioning RAG system.
+
+A RAG or Retrieval-Augmented Generation, is a simple way to enrich the knowledge of a LLM with external data. The idea is to use a LLM to generate a vector embedding of a given text, then store it in a vector database.
+
+When we want to ask the LLM a question about a given topic, we will give it the question and the original text, and the LLM will generate a new text that answers the question.
+
+## The tools
+
+- [Ollama](https://ollama.ai/): a local alternative to OpenAI, Claude, and other LLM providers. It's an open-source alternative that can run on your local machine or server.
+- [Chroma](https://www.trychroma.com/): a vector database that can store and query vector embeddings. It's an open-source alternative to Pinecone, Faiss, and other vector databases.
+
+```ts
+import ollama from 'ollama';
+import { ChromaClient } from 'chromadb';
+```
+
+## The code
+
+To begin, let's get our documents ready. In this example, we'll work with an array of complete markdown pages. However, it's worth exploring different ways to divide your content, as this can significantly enhance both the indexing process and subsequent queries.
+
+```ts
+// Array of markdown contents
+const documents = [
+  `# Page title
+  ## Section
+
+  Content...
+  `,
+];
+```
+
+Next up, we'll organize our documents by establishing a fresh collection in Chroma and populating it with our content.
+
+```ts
+const client = new ChromaClient();
+
+let collection;
+try {
+  collection = await client.getCollection({ name: 'docs' });
+} catch (error) {
+  collection = await client.createCollection({ name: 'docs' });
+}
+
+// Index
+documents.forEach(async (doc, i) => {
+  const response = await ollama.embeddings({
+    prompt: doc,
+    model: 'llama3:latest',
+    keep_alive: '5m',
+  });
+
+  await collection.add({
+    ids: [String(i)],
+    documents: [doc],
+    embeddings: [response.embedding],
+  });
+});
+```
+
+Now that our documents are indexed, let's try to retrieve them. For that, we will use the `embeddings` method again to generate an embedding of our query, then use the `query` method to find the most similar document in our collection. Finally, we will use the `generate` method to answer our query.
+
+```ts
+const prompt = 'My very in ?';
+
+const response = await ollama.embeddings({
+  prompt,
+  model: 'llama3:latest',
+});
+
+const results = await collection.query({
+  queryEmbeddings: [response.embedding],
+  nResults: 1,
+});
+
+const data = results.documents[0][0];
+
+const output = await ollama.generate({
+  model: 'llama3:latest',
+  prompt: `Based on this data: ${data}. Answer this prompt: ${prompt}`,
+});
+
+console.log(output.response);
+```
+
+Throughout this article, we've consistently used a single model for both embedding and response generation. It's worth noting, however, that this approach isn't considered best practice. For optimal results, you might consider using separate, specialized models: one dedicated to embedding and another for generating responses.
+
+Here is the complete code:
+
+```ts
+import ollama from 'ollama';
+import { ChromaClient } from 'chromadb';
+
+const documents = [
+  `# Page title
+  ## Section
+
+  Content...
+  `,
+];
+
+const client = new ChromaClient();
+
+let collection;
+try {
+  collection = await client.getCollection({ name: 'docs' });
+} catch (error) {
+  collection = await client.createCollection({ name: 'docs' });
+}
+
+// Index
+documents.forEach(async (doc, i) => {
+  const response = await ollama.embeddings({
+    prompt: doc,
+    model: 'llama3:latest',
+    keep_alive: '5m',
+  });
+
+  await collection.add({
+    ids: [String(i)],
+    documents: [doc],
+    embeddings: [response.embedding],
+  });
+});
+
+// Query
+const prompt = 'My very interesting question?';
+
+const response = await ollama.embeddings({
+  prompt,
+  model: 'llama3:latest',
+});
+
+const results = await collection.query({
+  queryEmbeddings: [response.embedding],
+  nResults: 1,
+});
+
+const data = results.documents[0][0];
+
+const output = await ollama.generate({
+  model: 'llama3:latest',
+  prompt: `Based on this data: ${data}. Answer this prompt: ${prompt}`,
+});
+
+console.log(output.response);
+```
+
+## Conclusion
+
+This is a very simple proof of concept, but it shows the potential of RAG. It's a very powerful tool to have in your AI toolkit. This technology could power a sleek website search feature or enhance a user-friendly research assistant.
