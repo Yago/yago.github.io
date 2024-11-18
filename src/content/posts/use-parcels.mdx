@@ -1,0 +1,81 @@
+---
+  title: "useParcels"
+  date: "2024-11-14T19:08:36Z"
+  description: "Learn more about parcels in your applications."
+---
+Building an application, whether with React or not, often requires distributing data across pages and components. In such cases, well-designed and thoughtful state managers are often the preferred solution. However, sometimes you just need to send something from one point to another, and parcels are perfect for this task!
+
+The concept is straightforward: you ship a package, which enters the tracking system. Once retrieved, it exits the tracking system.
+
+## In practice
+
+Concretely, I need this feature in a Next.js project where some components need redirect the user to another page and send some data to this new page without bloating the URL.
+
+For that implementation, I used the [`zustand`](https://zustand.docs.pmnd.rs/getting-started/introduction) store manager and the [`nanoid`](https://github.com/ai/nanoid) library to generate unique ids.
+
+#### The store
+
+```ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { nanoid } from 'nanoid';
+import { create } from 'zustand';
+
+type ParcelsStore = {
+  tracking: Record<string, any>;
+  send: (content: any) => string;
+  retrieve: (id: string) => any;
+};
+
+const createParcels = () =>
+  create<ParcelsStore>(set, get) => ({
+    tracking: [],
+    send: (content: any) => {
+      const id = nanoid();
+      set(state => ({ tracking: { ...state.tracking, [id]: content } }));
+      return id;
+    },
+    retrieve: (id: string) => {
+      const parcel = get().tracking[id];
+      set(state => {
+        const { [id]: deleted, ...rest } = state.tracking;
+        return { tracking: rest };
+      });
+      return parcel;
+    },
+  });
+
+export default createParcels;
+```
+
+#### The hook
+
+```ts
+import { createParcels } from 'stores';
+
+const useParcels = createParcels();
+
+export default useParcels;
+```
+
+#### Usage
+
+```tsx
+// Component A
+const parcels = useParcels();
+const { push } = useRouter();
+
+const parcelId = parcels.send(bigArrayOfData);
+push(`${pathname}?parcel=${parcelId}`);
+
+// Component B
+const { query } = useRouter();
+const parcels = useParcels();
+
+const parcelId = query.parcel as string;
+const bigArrayOfData = parcels.retrieve(parcelId);
+```
+
+## Conclusion
+
+Parcels are a straightforward and efficient method for transmitting data from one component to another without the need for a complex store. They are particularly beneficial when you need to transmit data that is too voluminous to be transmitted through the URL or when you require the data to persist for any given duration. I recommend using them sparingly, only when necessary, like any other software development practice 😉
+
