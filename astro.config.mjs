@@ -1,14 +1,17 @@
 import vercel from '@astrojs/vercel/static';
 import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import alpinejs from "@astrojs/alpinejs";
 import clickDirective from './directives/astro-click-directive/register.js'
+import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
   markdown: {
     shikiConfig: {
       themes: {
@@ -24,7 +27,7 @@ export default defineConfig({
     port: 3000,
     host: true
   },
-  integrations: [tailwind(), mdx(), alpinejs(), react(), clickDirective()],
+  integrations: [mdx(), alpinejs(), react(), clickDirective()],
   adapter: vercel({
     imageService: true,
     imagesConfig: {

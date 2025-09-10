@@ -16,7 +16,7 @@ const { crumbs }: Props = Astro.props;
 
 <nav aria-label="breadcrumb" class="mb-6 transform md:translate-x-1 md:mb-0">
   <ol
-    class="inline-flex text-sm text-gray-600 lowercase transition-opacity duration-500 transform dark:text-gray-400 md:text-lg opacity-60 hover:opacity-100 md:-translate-x-full md:translate-y-2 md:-rotate-90 md:origin-right"
+    class="inline-flex items-center text-sm text-gray-600 lowercase transition-opacity duration-500 transform dark:text-gray-400 md:text-lg opacity-60 hover:opacity-100 md:-translate-x-full md:translate-y-2 md:-rotate-90 md:origin-right whitespace-nowrap"
   >
     <li>
       <a href="/" class="link">
@@ -36,13 +36,11 @@ const { crumbs }: Props = Astro.props;
             </a>
           </li>
         ) : (
-          <li aria-current="page">
+          <li aria-current="page" class="flex items-center h-5">
             <span class="px-3" aria-hidden>
               ·
             </span>
-            <span class={cm('inline-block truncate', { maxWidth: 250 })}>
-              {label}
-            </span>
+            <span class="inline-block truncate max-w-60">{label}</span>
           </li>
         )
       )

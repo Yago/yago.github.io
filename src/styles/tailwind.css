@@ -1,3 +1,172 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/aspect-ratio';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-gray-50: #f4f6fe;
+  --color-gray-100: #f8f9fa;
+  --color-gray-200: #e9ecef;
+  --color-gray-300: #dee2e6;
+  --color-gray-400: #ced4da;
+  --color-gray-500: #adb5bd;
+  --color-gray-600: #6c757d;
+  --color-gray-700: #495057;
+  --color-gray-800: #343a40;
+  --color-gray-900: #212529;
+  --color-gray-950: #0e1012;
+
+  --color-blue: #0002fc;
+  --color-red: #d00000;
+  --color-orange: #f48c06;
+  --color-yellow: #ffba08;
+
+  --color-green: #67d15a;
+  --color-green-dark: #40aa33;
+
+  --color-indigo: #9a86fd;
+  --color-teal: #50e3c2;
+
+  --font-*: initial;
+  --font-sans:
+    Runda, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif:
+    CalaWeb, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono:
+    Fira Code VF, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+    Courier New, monospace;
+
+  --text-2xl: 23px;
+  --text-2_5xl: 26.5px;
+
+  --rotate-135: 135deg;
+
+  --margin-0_5: 2px;
+  --margin-1\/4: 25%;
+
+  --margin--1\/4: -25%;
+
+  --margin-1\/2: 50%;
+
+  --margin--1\/2: -50%;
+
+  --border-width-3: 3px;
+
+  --container-screen-2xl: 1600px;
+
+  --animate-fade-in: fadeIn 0.8s ease-out both;
+  --animate-fade-in-top: fadeInTop 0.5s ease-out both;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeInTop {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility link-wrapper {
+  & .link-inner {
+    @apply inline no-underline bg-gradient-to-r transition-all duration-200 cursor-pointer from-blue to-teal;
+    background-size: 0 1px;
+    background-repeat: no-repeat;
+    background-position: left 94%;
+    padding-bottom: 0.2em;
+  }
+
+  &:hover .link-inner {
+    background-size: 100% 1px;
+  }
+}
+
+@utility link-inner {
+  .link-wrapper & {
+    @apply inline no-underline bg-gradient-to-r transition-all duration-200 cursor-pointer from-blue to-teal;
+    background-size: 0 1px;
+    background-repeat: no-repeat;
+    background-position: left 94%;
+    padding-bottom: 0.2em;
+  }
+
+  .link-wrapper:hover & {
+    background-size: 100% 1px;
+  }
+}
+
+@utility link {
+  @apply inline no-underline bg-gradient-to-r transition-all duration-200 cursor-pointer from-blue to-teal;
+  background-size: 0 1px;
+  background-repeat: no-repeat;
+  background-position: left 94%;
+  padding-bottom: 0.2em;
+
+  &:hover {
+    background-size: 100% 1px;
+  }
+}
+
+@utility astro-post {
+  & a {
+    @apply inline no-underline bg-gradient-to-r transition-all duration-200 cursor-pointer from-blue to-teal;
+    background-size: 0 1px;
+    background-repeat: no-repeat;
+    background-position: left 94%;
+    padding-bottom: 0.2em;
+  }
+
+  & a:hover {
+    background-size: 100% 1px;
+  }
+}
+
+@utility astro-project-content {
+  & a {
+    @apply inline no-underline bg-gradient-to-r transition-all duration-200 cursor-pointer from-blue to-teal;
+    background-size: 0 1px;
+    background-repeat: no-repeat;
+    background-position: left 94%;
+    padding-bottom: 0.2em;
+  }
+
+  & a:hover {
+    background-size: 100% 1px;
+  }
+}

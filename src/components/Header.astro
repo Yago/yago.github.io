@@ -17,15 +17,15 @@ import Icon from '@/components/Icon.astro';
   <button
     type="button"
     @click="document.documentElement.classList.toggle('dark')"
-    class="h-5 transition-transform w-7 dark:text-white hover:scale-110 active:rotate-[720deg] hover:rotate-45 translate-y-[-2px] lg:-translate-x-2 lg:-translate-x-3"
+    class="h-5 transition-transform w-7 dark:text-white hover:scale-110 active:rotate-720 hover:rotate-45 translate-y-[-2px] lg:-translate-x-2 lg:-translate-x-3"
   >
     <Icon
       name="moon"
-      className="inline-block !text-[16px] dark:hidden lg:!text-[25px]"
+      className="inline-block text-[16px]! dark:hidden lg:text-[25px]!"
     />
     <Icon
       name="sun"
-      className="hidden !text-[16px] dark:inline-block lg:!text-[25px]"
+      className="hidden text-[16px]! dark:inline-block lg:text-[25px]!"
     />
   </button>
 
@@ -36,7 +36,7 @@ import Icon from '@/components/Icon.astro';
     @click="terminalOpen = !terminalOpen; menuOpen = false"
     @mouseenter="hover = true"
     @mouseleave="hover = false"
-    class="block h-5 cursor-pointer transition-transform duration-300 transform scale-75 w-9 md:scale-100 focus:outline-none"
+    class="block h-5 cursor-pointer transition-transform duration-300 transform scale-75 w-9 md:scale-100 focus:outline-hidden"
   >
     <span class="sr-only">Toggle terminal</span>
     <span
@@ -51,7 +51,7 @@ import Icon from '@/components/Icon.astro';
   <button
     type="button"
     @click="menuOpen = !menuOpen; terminalOpen = false"
-    class="block h-5 cursor-pointer transition-transform duration-300 transform scale-75 w-7 md:scale-100 focus:outline-none group"
+    class="block h-5 cursor-pointer transition-transform duration-300 transform scale-75 w-7 md:scale-100 focus:outline-hidden group"
     x-bind:class="menuOpen && 'rotate-135'"
   >
     <span class="sr-only">Toggle navigation</span>

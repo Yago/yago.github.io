@@ -24,13 +24,13 @@ const pieData = [
 
 const DevFacts = (): JSX.Element => (
   <div className="text-gray-100 bg-gray-950 dark:bg-gray-50 dev-facts">
-    <div className="px-4 py-16 mx-auto max-w-screen-2xl md:px-14">
+    <div className="px-4 py-16 mx-auto max-w-(--breakpoint-2xl) md:px-14">
       <h2 className="text-2xl font-medium md:text-3xl lg:text-4xl dark:text-gray-900">
         Developer facts
       </h2>
       <div className="flex flex-wrap">
         <div className="w-full mt-12 md:w-1/2">
-          <pre className="astro-code astro-code-hardcoded bg-[#2a2734] text-[#9a86fd] dark:bg-[#e7e9f1] dark:text-[#8839EF]">
+          <pre className="astro-code astro-code-hardcoded bg-[#2a2734] text-indigo dark:bg-[#e7e9f1] dark:text-[#8839EF]">
             <code>
               <span className="block line">
                 <span>{'{'}</span>
@@ -112,7 +112,7 @@ const DevFacts = (): JSX.Element => (
           >
             <span className="sr-only">{lib.icon} icon</span>
             <svg
-              className="relative inline-flex items-center self-center justify-center !text-4xl icon"
+              className="relative inline-flex items-center self-center justify-center text-4xl! icon"
               aria-hidden="true"
             >
               <use href={`/icons.svg#${lib.icon}`} />

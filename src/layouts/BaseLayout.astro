@@ -116,7 +116,7 @@ const titleSuffix = ' | Yann Gouffon, senior web developer';
   </head>
   <body
     x-data="{ menuOpen: false, terminalOpen: false }"
-    class="min-h-screen text-base antialiased text-black bg-white dark:!bg-gray-950 dark:text-white transition-colors"
+    class="min-h-screen text-base antialiased text-black bg-white dark:bg-gray-950! dark:text-white transition-colors"
     x-bind:class="(menuOpen || terminalOpen) && 'overflow-hidden'"
   >
     <div class="w-full">
@@ -124,7 +124,9 @@ const titleSuffix = ' | Yann Gouffon, senior web developer';
         class="w-full transition-transform duration-700 transform"
         x-bind:class="(menuOpen || terminalOpen) && 'md:-translate-x-1/2'"
       >
-        <div class="px-4 py-4 mx-auto max-w-screen-2xl md:px-14 md:pt-14">
+        <div
+          class="px-4 py-4 mx-auto max-w-(--breakpoint-2xl) md:px-14 md:pt-14"
+        >
           <Header />
         </div>
       </div>
@@ -168,11 +170,13 @@ const titleSuffix = ' | Yann Gouffon, senior web developer';
         x-bind:class="(menuOpen || terminalOpen) && 'md:-translate-x-1/2'"
       >
         <div
-          class={cm(!noContainer && 'px-4 mx-auto max-w-screen-2xl md:px-14')}
+          class={cm(
+            !noContainer && 'px-4 mx-auto max-w-(--breakpoint-2xl) md:px-14'
+          )}
         >
           <slot />
         </div>
-        <div class="px-4 mx-auto max-w-screen-2xl md:px-14">
+        <div class="px-4 mx-auto max-w-(--breakpoint-2xl) md:px-14">
           <Footer />
         </div>
       </div>

@@ -1,7 +1,7 @@
-@import "./tailwind.css";
-@import "./scroll.css";
-@import "./button.css";
-@import "./code.css";
+@import './tailwind.css';
+@import './scroll.css';
+@import './button.css';
+@import './code.css';
 /* @import "../components/PhotoSwipe/PhotoSwipe.css";
 @import "../components/GalleryTeaser/GalleryTeaser.css";
 @import "../components/DevFacts/DevFacts.css";
@@ -21,25 +21,5 @@
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
-}
-
-@layer components {
-  .link-wrapper .link-inner,
-  .link,
-  .astro-post a,
-  .astro-project-content a {
-    @apply inline no-underline bg-gradient-to-r transition-all duration-200 cursor-pointer from-blue to-teal;
-    background-size: 0 1px;
-    background-repeat: no-repeat;
-    background-position: left 94%;
-    padding-bottom: 0.2em;
-  }
-
-  .link-wrapper:hover .link-inner,
-  .link:hover,
-  .astro-post a:hover,
-  .astro-project-content a:hover {
-    background-size: 100% 1px;
-  }
 }
 

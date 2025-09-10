@@ -17,7 +17,7 @@ const projects = await getCollection('projects');
 
 <BaseLayout title="Welcome" noContainer>
   <div
-    class="px-4 mx-auto max-w-screen-2xl md:px-14 lg:motion-safe:animate-fadeInTop"
+    class="px-4 mx-auto max-w-(--breakpoint-2xl) md:px-14 lg:motion-safe:animate-fade-in-top"
   >
     <h1 class="sr-only">Yann Gouffon, developer and photographer</h1>
     <blockquote class="w-10/12 my-44 md:w-8/12 lg:w-1/2 xl:w-1/3">
@@ -44,7 +44,7 @@ const projects = await getCollection('projects');
     </div>
 
     <div
-      class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12"
+      class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-14 gap-y-12"
     >
       {
         projects
@@ -68,7 +68,7 @@ const projects = await getCollection('projects');
     <DevFacts />
   </div>
 
-  <div class="px-4 mx-auto max-w-screen-2xl md:px-14">
+  <div class="px-4 mx-auto max-w-(--breakpoint-2xl) md:px-14">
     <div class="flex items-baseline justify-between mt-16 scroll-fade-in">
       <h2
         class="text-2xl font-medium text-gray-900 dark:text-gray-100 md:text-3xl lg:text-4xl"

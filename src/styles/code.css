@@ -1,5 +1,7 @@
+@reference "./tailwind.css";
+
 .astro-code {
-  @apply font-mono text-xs md:text-base pl-2 pr-4 py-2.5 rounded-lg !important;
+  @apply font-mono! text-xs! md:text-base! pl-2! pr-4! py-2.5! rounded-lg!;
   -webkit-font-feature-settings: "liga" on, "calt" on;
   -webkit-font-smoothing: antialiased;
   counter-reset: step;
@@ -25,7 +27,7 @@
 }
 
 .astro-code * {
-  @apply not-italic !important;
+  @apply not-italic!;
 }
 
 .astro-post .astro-code {
@@ -44,7 +46,7 @@
 .astro-post a > code,
 .astro-post li > code,
 .astro-post ul > code {
-  @apply text-sm lg:text-lg bg-gray-200 dark:bg-gray-800 px-1 py-0.5 rounded font-normal !important;
+  @apply text-sm! lg:text-lg! bg-gray-200! dark:bg-gray-800! px-1! py-0.5! rounded! font-normal!;
 }
 
 html.dark .astro-code:not(.astro-code-hardcoded),
