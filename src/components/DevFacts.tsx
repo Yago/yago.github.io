@@ -22,7 +22,7 @@ const pieData = [
   { title: 'TS/TSX', value: 8, color: '#FFBA08' },
 ];
 
-const DevFacts = (): JSX.Element => (
+const DevFacts = () => (
   <div className="text-gray-100 bg-gray-950 dark:bg-gray-50 dev-facts">
     <div className="px-4 py-16 mx-auto max-w-(--breakpoint-2xl) md:px-14">
       <h2 className="text-2xl font-medium md:text-3xl lg:text-4xl dark:text-gray-900">

@@ -9,7 +9,7 @@ import {
   OutputFactory,
 } from 'javascript-terminal';
 
-const Terminal = (): JSX.Element | null => {
+const Terminal = () => {
   if (typeof window === 'undefined') return null;
 
   const { tree: treeConfig, path: currentPathRaw } = document.getElementById(

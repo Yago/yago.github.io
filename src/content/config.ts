@@ -5,19 +5,14 @@ const postSchema = z.object({
   title: z.string(),
   date: z.string().datetime({ offset: true }),
   description: z.string(),
+  slug: z.string(),
 });
 
 export type Post = z.infer<typeof postSchema>;
 
-export const posts = {
-  posts: defineCollection({
-    type: 'content',
-    schema: postSchema,
-  }),
-};
-
 const projectSchema = z.object({
   path: z.string(),
+  slug: z.string(),
   published: z.boolean(),
   date: z.string(),
   title: z.string(),
@@ -48,8 +43,12 @@ const projectSchema = z.object({
 
 export type Project = z.infer<typeof projectSchema>;
 
-export const projects = {
+export const collections = {
   posts: defineCollection({
+    type: 'content',
+    schema: postSchema,
+  }),
+  projects: defineCollection({
     type: 'content',
     schema: projectSchema,
   }),
