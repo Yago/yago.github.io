@@ -1,4 +1,4 @@
-@keyframes fade-in {
+@keyframes scrollFadeIn {
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -7,10 +7,14 @@
   .scroll-fade-in {
     opacity: 0;
     transform: translateY(150px); 
-    animation: 3s fade-in ease-out forwards;
-    animation-timeline: view();
-    animation-range-start: entry;
-    animation-range-end: 60vh;
+
+    view-timeline: --subject-reveal block;
+    animation-timeline: --subject-reveal;
+
+    animation-name: scrollFadeIn;
+    animation-range: entry 0% entry 60vh;
+    animation-fill-mode: both;
+    animation-duration: 3s;
   }
 
   .scroll-fade-in:nth-child(2) { animation-delay: 1s; }
