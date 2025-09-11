@@ -5,19 +5,16 @@ const postSchema = z.object({
   title: z.string(),
   date: z.string().datetime({ offset: true }),
   description: z.string(),
-  slug: z.string(),
 });
 
 export type Post = z.infer<typeof postSchema>;
 
 const projectSchema = z.object({
-  path: z.string(),
-  slug: z.string(),
-  published: z.boolean(),
+  path: z.string().optional(),
   date: z.string(),
   title: z.string(),
   subtitle: z.string(),
-  type: z.string(),
+  type: z.string().optional(),
   cover: z.string(),
   thumbnail: z.string(),
   agency: z
@@ -35,10 +32,12 @@ const projectSchema = z.object({
     .optional(),
   year: z.string().optional(),
   gallery: z.array(z.string()),
-  visit: z.object({
-    url: z.string(),
-    label: z.string(),
-  }),
+  visit: z
+    .object({
+      url: z.string(),
+      label: z.string(),
+    })
+    .optional(),
 });
 
 export type Project = z.infer<typeof projectSchema>;

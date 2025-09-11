@@ -17,7 +17,6 @@ const projects = await getCollection('projects');
     <div class="grid grid-cols-2 mt-12 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12">
       {projects
         .sort((a, b) => +new Date(b?.data?.date) - +new Date(a?.data?.date))
-        .filter(i => isNil(i?.data?.published) || i?.data?.published)
         .map((project) => (
           <div class="scroll-fade-in">
           <ProjectTeaser

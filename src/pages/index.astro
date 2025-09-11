@@ -49,7 +49,6 @@ const projects = await getCollection('projects');
       {
         projects
           .filter(i => isNotNil(i.data))
-          .filter(i => isNil(i?.data?.published) || i?.data?.published)
           .sort((a, b) => +new Date(b?.data?.date) - +new Date(a?.data?.date))
           .slice(0, 6)
           .map(project => (
