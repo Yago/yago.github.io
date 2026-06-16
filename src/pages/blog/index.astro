@@ -27,7 +27,7 @@ const posts = await getCollection('posts');
             <div
               class={cm('scroll-fade-in', i === posts.length - 1 && 'mb-20')}
             >
-              <PostTeaser post={post.data} href={`/blog/${post.slug}`} />
+              <PostTeaser post={post.data} href={`/blog/${post.id}`} />
               {i !== posts.length - 1 && (
                 <hr class="w-1/2 my-10 border-t border-gray-300 dark:border-gray-700 md:my-16" />
               )}

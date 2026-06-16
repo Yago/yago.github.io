@@ -125,7 +125,7 @@ const titleSuffix = ' | Yann Gouffon, senior web developer';
         x-bind:class="(menuOpen || terminalOpen) && 'md:-translate-x-1/2'"
       >
         <div
-          class="px-4 py-4 mx-auto max-w-(--breakpoint-2xl) md:px-14 md:pt-14"
+          class="px-4 py-4 mx-auto max-w-screen-2xl md:px-14 md:pt-14"
         >
           <Header />
         </div>
@@ -171,12 +171,12 @@ const titleSuffix = ' | Yann Gouffon, senior web developer';
       >
         <div
           class={cm(
-            !noContainer && 'px-4 mx-auto max-w-(--breakpoint-2xl) md:px-14'
+            !noContainer && 'px-4 mx-auto max-w-screen-2xl md:px-14'
           )}
         >
           <slot />
         </div>
-        <div class="px-4 mx-auto max-w-(--breakpoint-2xl) md:px-14">
+        <div class="px-4 mx-auto max-w-screen-2xl md:px-14">
           <Footer />
         </div>
       </div>

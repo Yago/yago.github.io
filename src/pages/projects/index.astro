@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import { isNil } from 'ramda';
 
 import ProjectTeaser from '@/components/ProjectTeaser.astro';
 import Breadcrumb from '@/components/Breadcrumb.astro';
@@ -21,10 +20,10 @@ const projects = await getCollection('projects');
           <div class="scroll-fade-in">
           <ProjectTeaser
             project={project.data}
-            href={`/projects/${project.slug}`}
+            href={`/projects/${project.id}`}
           />
         </div>
         ))}
     </div>
   </div>
-</Layout>
+</BaseLayout>

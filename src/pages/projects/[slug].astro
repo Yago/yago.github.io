@@ -1,23 +1,23 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import { isNotNil } from 'ramda';
 
 import Breadcrumb from '@/components/Breadcrumb.astro';
 import Gallery from '@/components/Gallery.astro';
 import Picture from '@/components/Picture.astro';
-import type { Project } from '@/content/config';
+import type { Project } from '@/content.config';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
   return projects.map(entry => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 const {
   data: {
     cover,

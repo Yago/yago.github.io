@@ -1,9 +1,10 @@
-// eslint-disable-next-line import/no-unresolved
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const postSchema = z.object({
   title: z.string(),
-  date: z.string().datetime({ offset: true }),
+  date: z.iso.datetime({ offset: true }),
   description: z.string(),
 });
 
@@ -44,11 +45,11 @@ export type Project = z.infer<typeof projectSchema>;
 
 export const collections = {
   posts: defineCollection({
-    type: 'content',
+    loader: glob({ base: './src/content/posts', pattern: '**/*.{md,mdx}' }),
     schema: postSchema,
   }),
   projects: defineCollection({
-    type: 'content',
+    loader: glob({ base: './src/content/projects', pattern: '**/*.{md,mdx}' }),
     schema: projectSchema,
   }),
 };
