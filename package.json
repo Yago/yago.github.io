@@ -59,10 +59,8 @@
     "dotenv": "^17.4.2",
     "exifreader": "^4.41.0",
     "fs-extra": "^11.3.5",
-    "husky": "^9.1.7",
     "image-size": "^2.0.2",
     "jest": "^30.4.2",
-    "lint-staged": "^16.2.3",
     "pinst": "^3.0.0",
     "svg-sprite": "^2.0.4"
   }
