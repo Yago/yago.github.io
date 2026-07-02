@@ -1,6 +1,6 @@
 ---
-import type { ImageMetadata } from 'astro';
 import { Picture as AstroPicture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
 import pictures from '@/config/pictures';
 import type { Picture as PictureType } from '@/types';
@@ -29,14 +29,14 @@ const {
 const picture: PictureType = pictures[filename];
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  '../../public/images/**/*'
+  '../../public/images/**/*',
 );
 
 const img = images[`../../public${picture.msrc}`];
 
 if (!img)
   throw new Error(
-    `"${img}" does not exist in glob: "public/images/**/*.{jpeg,jpg,png,gif}"`
+    `"${img}" does not exist in glob: "public/images/**/*.{jpeg,jpg,png,gif}"`,
   );
 ---
 

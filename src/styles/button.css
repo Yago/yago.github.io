@@ -7,16 +7,12 @@
     &:after {
       @apply
         absolute transition-opacity duration-300 border opacity-0 border-blue ;
-      content: '';
+      content: "";
       top: -1px;
       right: -1px;
       bottom: -1px;
       left: -1px;
-      border-image: linear-gradient(
-        to right,
-        #0002FC 0%,
-        #50E3C2 98%
-      );
+      border-image: linear-gradient(to right, #0002fc 0%, #50e3c2 98%);
       border-image-slice: 1;
     }
 

@@ -1,12 +1,14 @@
 @keyframes scrollFadeIn {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 
 @media (prefers-reduced-motion: no-preference) and (min-width: 762px) {
   .scroll-fade-in {
     opacity: 0;
-    transform: translateY(150px); 
+    transform: translateY(150px);
 
     view-timeline: --subject-reveal block;
     animation-timeline: --subject-reveal;
@@ -17,15 +19,37 @@
     animation-duration: 3s;
   }
 
-  .scroll-fade-in:nth-child(2) { animation-delay: 1s; }
-  .scroll-fade-in:nth-child(3) { animation-delay: 2s; }
-  .scroll-fade-in:nth-child(4) { animation-delay: 3s; }
-  .scroll-fade-in:nth-child(5) { animation-delay: 4s; }
-  .scroll-fade-in:nth-child(6) { animation-delay: 5s; }
-  .scroll-fade-in:nth-child(7) { animation-delay: 5s; }
-  .scroll-fade-in:nth-child(8) { animation-delay: 5s; }
-  .scroll-fade-in:nth-child(9) { animation-delay: 5s; }
-  .scroll-fade-in:nth-child(10) { animation-delay: 5s; }
-  .scroll-fade-in:nth-child(11) { animation-delay: 5s; }
-  .scroll-fade-in:nth-child(12) { animation-delay: 5s; }
+  .scroll-fade-in:nth-child(2) {
+    animation-delay: 1s;
+  }
+  .scroll-fade-in:nth-child(3) {
+    animation-delay: 2s;
+  }
+  .scroll-fade-in:nth-child(4) {
+    animation-delay: 3s;
+  }
+  .scroll-fade-in:nth-child(5) {
+    animation-delay: 4s;
+  }
+  .scroll-fade-in:nth-child(6) {
+    animation-delay: 5s;
+  }
+  .scroll-fade-in:nth-child(7) {
+    animation-delay: 5s;
+  }
+  .scroll-fade-in:nth-child(8) {
+    animation-delay: 5s;
+  }
+  .scroll-fade-in:nth-child(9) {
+    animation-delay: 5s;
+  }
+  .scroll-fade-in:nth-child(10) {
+    animation-delay: 5s;
+  }
+  .scroll-fade-in:nth-child(11) {
+    animation-delay: 5s;
+  }
+  .scroll-fade-in:nth-child(12) {
+    animation-delay: 5s;
+  }
 }

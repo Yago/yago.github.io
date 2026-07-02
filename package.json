@@ -9,8 +9,8 @@
     "build": "npm run contribs:update && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint:js": "eslint --ext js,jsx,ts,tsx,astro ./ --max-warnings=0",
-    "fix:js": "eslint --ext js,jsx,ts,tsx,astro ./ --max-warnings=0 --fix",
+    "lint:js": "biome check .",
+    "fix:js": "biome check --write .",
     "config:update": "./bin/updatePictureDb.js",
     "contribs:update": "./bin/updateContribDb.js",
     "postinstall": "husky install",
@@ -54,6 +54,7 @@
     "vanilla-tilt": "^1.8.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.5.0",
     "@types/ramda": "^0.31.1",
     "dotenv": "^17.4.2",
     "exifreader": "^4.41.0",

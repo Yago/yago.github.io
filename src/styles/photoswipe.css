@@ -11,12 +11,12 @@
   }
 
   .pswp--custom-bg {
-    --pswp-bg: white !important;
-    transition: background-color 0.25s !important;
+    --pswp-bg: white;
+    transition: background-color 0.25s;
   }
 
   .dark .pswp--custom-bg {
-    --pswp-bg: black !important;
+    --pswp-bg: black;
   }
 
   .pswp__top-bar {
@@ -26,24 +26,24 @@
   }
 
   .pswp__button {
-    opacity: 0.4 !important;
-    transition: opacity 0.25s !important;
+    opacity: 0.4;
+    transition: opacity 0.25s;
   }
 
   .pswp__button,
   .pswp__icn {
-    color: black !important;
-    transition: color 0.25s !important;
+    color: black;
+    transition: color 0.25s;
   }
 
   .dark .pswp__button,
   .dark .pswp__icn {
-    color: white !important;
+    color: white;
   }
 
   .pswp__button:hover {
-    opacity: 1 !important;
-    cursor: pointer !important;
+    opacity: 1;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 762px) {
@@ -53,12 +53,12 @@
   }
 
   .pswp__button--arrow {
-    top: auto !important;
-    bottom: 0px !important;
-    width: 20px !important;
-    margin-right: 10px !important;
-    margin-left: 30px !important;
-    margin-bottom: -10px !important;
+    top: auto;
+    bottom: 0px;
+    width: 20px;
+    margin-right: 10px;
+    margin-left: 30px;
+    margin-bottom: -10px;
   }
 
   .pswp__button--arrow--next {
@@ -66,14 +66,14 @@
   }
 
   .pswp__button--arrow--prev {
-    left: auto !important;
+    left: auto;
     right: 60px;
   }
 
   @media screen and (max-width: 762px) {
     .pswp__button--arrow {
-      margin-right: 0px !important;
-      margin-left: 0px !important;
+      margin-right: 0px;
+      margin-left: 0px;
     }
   }
 

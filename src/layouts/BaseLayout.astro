@@ -10,16 +10,15 @@ import { cm } from '@/utils';
 
 import '@/styles/base.css';
 
+const { title, description, noContainer, cover }: Props = Astro.props;
+const url = 'https://yago.io/';
+const asPath = Astro.url.pathname;
 type Props = {
   title: string;
   cover?: string;
   description?: string;
   noContainer?: boolean;
 };
-
-const { title, description, noContainer, cover }: Props = Astro.props;
-const url = 'https://yago.io/';
-const asPath = Astro.url.pathname;
 
 const defaultDesc =
   "Ahoy there ! I'm Yann, senior web developer specialised in Frontend and JavaScript projects.";

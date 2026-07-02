@@ -12,8 +12,8 @@ const projects = await getCollection('projects');
 const tree: Tree = [
   '/projects',
   '/blog',
-  ...posts.map(post => `/blog/${post.id}`),
-  ...projects.map(project => `/projects/${project.id}`),
+  ...posts.map((post) => `/blog/${post.id}`),
+  ...projects.map((project) => `/projects/${project.id}`),
 ];
 ---
 

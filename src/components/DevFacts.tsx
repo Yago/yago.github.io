@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CalendarHeatmap from 'react-calendar-heatmap';
 import { PieChart } from 'react-minimal-pie-chart';
 
@@ -23,42 +24,42 @@ const pieData = [
 ];
 
 const DevFacts = () => (
-  <div className="text-gray-100 bg-gray-950 dark:bg-gray-50 dev-facts">
-    <div className="px-4 py-16 mx-auto max-w-screen-2xl md:px-14">
-      <h2 className="text-2xl font-medium md:text-3xl lg:text-4xl dark:text-gray-900">
+  <div className="dev-facts bg-gray-950 text-gray-100 dark:bg-gray-50">
+    <div className="mx-auto max-w-screen-2xl px-4 py-16 md:px-14">
+      <h2 className="font-medium text-2xl md:text-3xl lg:text-4xl dark:text-gray-900">
         Developer facts
       </h2>
       <div className="flex flex-wrap">
-        <div className="w-full mt-12 md:w-1/2">
+        <div className="mt-12 w-full md:w-1/2">
           <pre className="astro-code astro-code-hardcoded bg-[#2a2734] text-indigo dark:bg-[#e7e9f1] dark:text-[#8839EF]">
             <code>
-              <span className="block line">
+              <span className="line block">
                 <span>{'{'}</span>
               </span>
-              <span className="block line">
+              <span className="line block">
                 <span> "name"</span>
                 <span>: </span>
                 <span>"yago"</span>
                 <span>,</span>
               </span>
-              <span className="block line">
+              <span className="line block">
                 <span> "profile"</span>
                 <span>: </span>
                 <span>"github.com/yago"</span>
                 <span>,</span>
               </span>
-              <span className="block line">
+              <span className="line block">
                 <span> "editor"</span>
                 <span>: </span>
                 <span>"Cursor"</span>
                 <span>,</span>
               </span>
-              <span className="block line">
+              <span className="line block">
                 <span> "platform"</span>
                 <span>: </span>
                 <span>"macOS"</span>
               </span>
-              <span className="block line">
+              <span className="line block">
                 <span>{'}'}</span>
               </span>
             </code>
@@ -85,7 +86,7 @@ const DevFacts = () => (
             <PieChart
               data={pieData}
               label={({ dataEntry }) => dataEntry.title}
-              labelStyle={index => ({
+              labelStyle={(index) => ({
                 fill: pieData[index].color,
                 fontSize: '3.5px',
               })}
@@ -96,23 +97,23 @@ const DevFacts = () => (
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap items-center mt-12 space-x-4">
-        <h3 className="text-xl font-medium text-gray-600 dark:text-gray-500 md:text-2xl">
+      <div className="mt-12 flex flex-wrap items-center space-x-4">
+        <h3 className="font-medium text-gray-600 text-xl md:text-2xl dark:text-gray-500">
           Favorite tools
         </h3>
-        <div className="flex-1 h-0 border-t border-gray-800 dark:border-gray-200" />
-        {librairies.map(lib => (
+        <div className="h-0 flex-1 border-gray-800 border-t dark:border-gray-200" />
+        {librairies.map((lib) => (
           // eslint-disable-next-line jsx-a11y/control-has-associated-label
           <a
             key={`lib-${lib.icon}`}
             href={lib.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="my-3 text-gray-600 transition-colors duration-200 dark:text-gray-500 hover:text-indigo"
+            className="my-3 text-gray-600 transition-colors duration-200 hover:text-indigo dark:text-gray-500"
           >
             <span className="sr-only">{lib.icon} icon</span>
             <svg
-              className="relative inline-flex items-center self-center justify-center text-4xl! icon"
+              className="icon relative inline-flex items-center justify-center self-center text-4xl!"
               aria-hidden="true"
             >
               <use href={`/icons.svg#${lib.icon}`} />
