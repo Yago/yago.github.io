@@ -36,7 +36,6 @@ cypress/videos
 cypress/screenshots/*
 
 # Sources
-src/config/contribs.json
 public/sitemap.xml
 public/sw.js
 public/sw.js.map
