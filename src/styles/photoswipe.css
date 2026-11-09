@@ -1,94 +1,94 @@
 @layer base {
   @media screen and (min-width: 1000px) {
     .pswp__container {
-      transition: transform 0.4s ease-in-out;
+      transition: transform 0.4s ease-in-out !important;
     }
   }
 
   .pswp__counter,
   .pswp__preloader {
-    display: none;
+    display: none !important;
   }
 
   .pswp--custom-bg {
-    --pswp-bg: white;
-    transition: background-color 0.25s;
+    --pswp-bg: white !important;
+    transition: background-color 0.25s !important;
   }
 
   .dark .pswp--custom-bg {
-    --pswp-bg: black;
+    --pswp-bg: black !important;
   }
 
   .pswp__top-bar {
-    display: flex;
-    align-items: center;
-    padding-top: 15px;
+    display: flex !important;
+    align-items: center !important;
+    padding-top: 15px !important;
   }
 
   .pswp__button {
-    opacity: 0.4;
-    transition: opacity 0.25s;
+    opacity: 0.4 !important;
+    transition: opacity 0.25s !important;
   }
 
   .pswp__button,
   .pswp__icn {
-    color: black;
-    transition: color 0.25s;
+    color: black !important;
+    transition: color 0.25s !important;
   }
 
   .dark .pswp__button,
   .dark .pswp__icn {
-    color: white;
+    color: white !important;
   }
 
   .pswp__button:hover {
-    opacity: 1;
-    cursor: pointer;
+    opacity: 1 !important;
+    cursor: pointer !important;
   }
 
   @media screen and (max-width: 762px) {
     .pswp__button {
-      display: none;
+      display: none !important;
     }
   }
 
   .pswp__button--arrow {
-    top: auto;
-    bottom: 0px;
-    width: 20px;
-    margin-right: 10px;
-    margin-left: 30px;
-    margin-bottom: -10px;
+    top: auto !important;
+    bottom: 0px !important;
+    width: 20px !important;
+    margin-right: 10px !important;
+    margin-left: 30px !important;
+    margin-bottom: -10px !important;
   }
 
   .pswp__button--arrow--next {
-    right: 20px;
+    right: 20px !important;
   }
 
   .pswp__button--arrow--prev {
-    left: auto;
-    right: 60px;
+    left: auto !important;
+    right: 60px !important;
   }
 
   @media screen and (max-width: 762px) {
     .pswp__button--arrow {
-      margin-right: 0px;
-      margin-left: 0px;
+      margin-right: 0px !important;
+      margin-left: 0px !important;
     }
   }
 
   .pswp-custom-counter {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: 20px;
-    margin-top: 24px;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin-left: 20px !important;
+    margin-top: 24px !important;
   }
 
   @media screen and (max-width: 762px) {
     .pswp-custom-counter {
-      margin-left: 12px;
-      margin-top: 12px;
+      margin-left: 12px !important;
+      margin-top: 12px !important;
     }
   }
 }

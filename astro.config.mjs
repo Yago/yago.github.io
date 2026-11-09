@@ -24,7 +24,6 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000,
     host: true
   },
   integrations: [mdx(), alpinejs(), react(), clickDirective()],

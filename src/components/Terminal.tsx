@@ -8,14 +8,20 @@ import {
   FileSystem,
   OutputFactory,
 } from 'javascript-terminal';
-import ReactTerminal from 'react-terminal-component';
+import reactTerminalComponent from 'react-terminal-component';
+
+const { ReactTerminal } = reactTerminalComponent;
 
 const Terminal = () => {
   if (typeof window === 'undefined') return null;
 
-  const { tree: treeConfig, path: currentPathRaw } = document.getElementById(
-    'terminal-props',
-  )?.dataset as { tree: string; path: string };
+  const terminalProps = document.getElementById('terminal-props');
+  if (terminalProps === null) return null;
+
+  const treeConfig = terminalProps.dataset.tree;
+  const currentPathRaw = terminalProps.dataset.path;
+  if (treeConfig === undefined || currentPathRaw === undefined) return null;
+
   const currentPath =
     currentPathRaw !== '/'
       ? currentPathRaw.replace(/\/$/g, '')

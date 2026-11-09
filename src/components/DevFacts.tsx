@@ -26,7 +26,7 @@ const pieData = [
 const DevFacts = () => (
   <div className="dev-facts bg-gray-950 text-gray-100 dark:bg-gray-50">
     <div className="mx-auto max-w-screen-2xl px-4 py-16 md:px-14">
-      <h2 className="font-medium text-2xl md:text-3xl lg:text-4xl dark:text-gray-900">
+      <h2 className="text-2xl font-medium md:text-3xl lg:text-4xl dark:text-gray-900">
         Developer facts
       </h2>
       <div className="flex flex-wrap">
@@ -98,10 +98,10 @@ const DevFacts = () => (
         </div>
       </div>
       <div className="mt-12 flex flex-wrap items-center space-x-4">
-        <h3 className="font-medium text-gray-600 text-xl md:text-2xl dark:text-gray-500">
+        <h3 className="text-xl font-medium text-gray-600 md:text-2xl dark:text-gray-500">
           Favorite tools
         </h3>
-        <div className="h-0 flex-1 border-gray-800 border-t dark:border-gray-200" />
+        <div className="h-0 flex-1 border-t border-gray-800 dark:border-gray-200" />
         {librairies.map((lib) => (
           // eslint-disable-next-line jsx-a11y/control-has-associated-label
           <a
