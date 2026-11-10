@@ -12,7 +12,6 @@
     "lint": "biome check .",
     "fix": "biome check --write .",
     "config:update": "./bin/updatePictureDb.js",
-    "contribs:update": "./bin/updateContribDb.js",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
   },
@@ -36,12 +35,10 @@
     "axios": "^1.21.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.4.0",
-    "graphql-request": "^7.4.0",
     "javascript-terminal": "^1.1.1",
     "photoswipe": "^5.4.4",
     "ramda": "^0.32.0",
     "react": "^19.3.1",
-    "react-calendar-heatmap": "^1.10.0",
     "react-dom": "^19.3.1",
     "react-minimal-pie-chart": "^9.1.2",
     "react-terminal-component": "^1.5.0",
@@ -55,7 +52,6 @@
   "devDependencies": {
     "@biomejs/biome": "2.6.6",
     "@types/ramda": "^0.32.0",
-    "dotenv": "^18.0.10",
     "exifreader": "^4.54.0",
     "fs-extra": "^11.4.1",
     "image-size": "^2.1.0",

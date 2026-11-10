@@ -1,16 +1,8 @@
-import React from 'react';
-
-import CalendarHeatmap from 'react-calendar-heatmap';
 import { PieChart } from 'react-minimal-pie-chart';
 
-import contribs from '@/config/contribs.json';
 import librairies from '@/config/librairies.json';
 
-type Contrib = {
-  date: string;
-  count: number;
-  intensity: number;
-};
+import ContributionGraph from './ContributionGraph';
 
 const pieData = [
   { title: 'CSS', value: 2, color: '#F48C06' },
@@ -66,19 +58,7 @@ const DevFacts = () => (
           </pre>
 
           <div className="mt-16 dark:text-gray-900">
-            <CalendarHeatmap
-              startDate={new Date(contribs[0].date)}
-              endDate={new Date(contribs.at(-1)?.date ?? '')}
-              classForValue={(value: Contrib): string => {
-                if (!value) {
-                  return 'contrib-empty';
-                }
-                return `contrib-${value.intensity}`;
-              }}
-              values={contribs}
-              showWeekdayLabels
-              weekdayLabels={['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}
-            />
+            <ContributionGraph />
           </div>
         </div>
         <div className="w-full md:w-1/2">
